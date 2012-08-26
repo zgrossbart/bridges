@@ -38,11 +38,8 @@
     glLineWidth(3.0f);
     ccDrawColor4B(255,0,0,255);
     
-    
     ccDrawRect( ccp(100, 100), ccp(40, 40) );
-    
-    
-    
+
     ccPointSize(32);
 	ccDrawColor4B(0,0,255,128);
 	ccDrawPoint( ccp(s.width / 2, s.height / 2) );

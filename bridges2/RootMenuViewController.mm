@@ -132,6 +132,10 @@
     [self setupCocos2D];
 }
 
+- (IBAction)goHomeTapped:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];

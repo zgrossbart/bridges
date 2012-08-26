@@ -20,4 +20,6 @@
 @property (readonly) CCDirectorIOS *director;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
+- (IBAction)goHomeTapped:(id)sender;
+
 @end
