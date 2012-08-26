@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RootMenuViewController.h"
 
-@interface MainMenuViewController : UIViewController
+@interface MainMenuViewController : UIViewController {
+    RootMenuViewController *_rootMenuViewController;
+}
+
+@property (retain) RootMenuViewController *rootMenuViewController;
+
 
 - (IBAction)showBridgesTapped:(id)sender;
 

@@ -14,6 +14,8 @@
 
 @implementation MainMenuViewController
 
+@synthesize rootMenuViewController = _rootMenuViewController;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -43,13 +45,25 @@
 
 - (IBAction)showBridgesTapped:(id)sender {
 //    [self viewBridges:nil];
-    printf("hey there...");
+    printf("hey there...\n");
+    
+    if (_rootMenuViewController == nil) {
+        self.rootMenuViewController = [[[RootMenuViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+    }
+    [self.navigationController pushViewController:_rootMenuViewController animated:YES];
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
+}
+
+- (void)dealloc
+{
+    [_rootMenuViewController release];
+    _rootMenuViewController = nil;
+    [super dealloc];
 }
 
 @end
