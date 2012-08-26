@@ -179,7 +179,6 @@
 		CE6D67F715EAC5FD00C7EDD7 /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F615EAC5FD00C7EDD7 /* HelloWorldLayer.mm */; };
 		CE6D67FA15EAC5FD00C7EDD7 /* IntroLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F915EAC5FD00C7EDD7 /* IntroLayer.mm */; };
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
-		CE6D680015EAC5FD00C7EDD7 /* PhysicsSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FF15EAC5FD00C7EDD7 /* PhysicsSprite.mm */; };
 		CE6D680215EAC5FD00C7EDD7 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6D680115EAC5FD00C7EDD7 /* blocks.png */; };
 /* End PBXBuildFile section */
 
@@ -542,8 +541,6 @@
 		CE6D67F915EAC5FD00C7EDD7 /* IntroLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = IntroLayer.mm; sourceTree = "<group>"; };
 		CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
-		CE6D67FE15EAC5FD00C7EDD7 /* PhysicsSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
-		CE6D67FF15EAC5FD00C7EDD7 /* PhysicsSprite.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PhysicsSprite.mm; sourceTree = "<group>"; };
 		CE6D680115EAC5FD00C7EDD7 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -611,8 +608,6 @@
 				CE6D67F915EAC5FD00C7EDD7 /* IntroLayer.mm */,
 				CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */,
 				CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */,
-				CE6D67FE15EAC5FD00C7EDD7 /* PhysicsSprite.h */,
-				CE6D67FF15EAC5FD00C7EDD7 /* PhysicsSprite.mm */,
 				CE6D65E815EAC5FB00C7EDD7 /* Resources */,
 				CE6D660215EAC5FB00C7EDD7 /* libs */,
 				CE6D67EE15EAC5FD00C7EDD7 /* Supporting Files */,
@@ -1366,7 +1361,6 @@
 				CE6D67F715EAC5FD00C7EDD7 /* HelloWorldLayer.mm in Sources */,
 				CE6D67FA15EAC5FD00C7EDD7 /* IntroLayer.mm in Sources */,
 				CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */,
-				CE6D680015EAC5FD00C7EDD7 /* PhysicsSprite.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

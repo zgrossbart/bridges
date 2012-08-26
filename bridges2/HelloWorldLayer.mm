@@ -28,13 +28,13 @@
     
     glLineWidth(6.0f);
     ccDrawColor4B(255,0,255,255);
-    ccDrawLine( ccp(0, 0), ccp(100, 0) );
+    ccDrawLine( ccp(150, 250), ccp(250, 250) );
     
     glLineWidth(3.0f);
     ccDrawColor4B(255,0,0,255);
     
     
-    ccDrawRect( ccp(20, 20), ccp(40, 40) );
+    ccDrawRect( ccp(100, 100), ccp(40, 40) );
     
     CGSize s = [[CCDirector sharedDirector] winSize];
     
