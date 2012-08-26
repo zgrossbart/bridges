@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "cocos2d.h"
 
-@interface RootMenuViewController : UIViewController
+@interface RootMenuViewController : UIViewController<CCDirectorDelegate> {
+    UIWindow *window_;
+	UINavigationController *navController_;
+	
+	CCDirectorIOS	*director_;							// weak ref
+}
+
+@property (readonly) UINavigationController *navController;
+@property (readonly) CCDirectorIOS *director;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
 
 @end
