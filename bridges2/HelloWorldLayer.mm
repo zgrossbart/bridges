@@ -26,6 +26,11 @@
     
     [super draw];
     
+    CGSize s = [[CCDirector sharedDirector] winSize];
+    
+    ccDrawColor4B(255,255,255,255);
+    ccDrawSolidRect( ccp(0, 0), ccp(s.width, s.height), ccc4f(255, 255, 255, 255) );
+    
     glLineWidth(6.0f);
     ccDrawColor4B(255,0,255,255);
     ccDrawLine( ccp(150, 250), ccp(250, 250) );
@@ -36,7 +41,7 @@
     
     ccDrawRect( ccp(100, 100), ccp(40, 40) );
     
-    CGSize s = [[CCDirector sharedDirector] winSize];
+    
     
     ccPointSize(32);
 	ccDrawColor4B(0,0,255,128);
