@@ -180,6 +180,9 @@
 		CE6D67FA15EAC5FD00C7EDD7 /* IntroLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F915EAC5FD00C7EDD7 /* IntroLayer.mm */; };
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
 		CE6D680215EAC5FD00C7EDD7 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6D680115EAC5FD00C7EDD7 /* blocks.png */; };
+		CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */; };
+		CEBD81F215EACA9D00EE27CF /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81F015EACA9D00EE27CF /* MainMenuViewController.m */; };
+		CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -542,6 +545,10 @@
 		CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		CE6D680115EAC5FD00C7EDD7 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
+		CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		CEBD81F015EACA9D00EE27CF /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -611,6 +618,10 @@
 				CE6D65E815EAC5FB00C7EDD7 /* Resources */,
 				CE6D660215EAC5FB00C7EDD7 /* libs */,
 				CE6D67EE15EAC5FD00C7EDD7 /* Supporting Files */,
+				CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */,
+				CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */,
+				CEBD81F015EACA9D00EE27CF /* MainMenuViewController.m */,
+				CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */,
 			);
 			path = bridges2;
 			sourceTree = "<group>";
@@ -1201,6 +1212,8 @@
 				CE6D660115EAC5FB00C7EDD7 /* iTunesArtwork in Resources */,
 				CE6D673F15EAC5FC00C7EDD7 /* ChangeLog in Resources */,
 				CE6D680215EAC5FD00C7EDD7 /* blocks.png in Resources */,
+				CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */,
+				CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1361,6 +1374,7 @@
 				CE6D67F715EAC5FD00C7EDD7 /* HelloWorldLayer.mm in Sources */,
 				CE6D67FA15EAC5FD00C7EDD7 /* IntroLayer.mm in Sources */,
 				CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */,
+				CEBD81F215EACA9D00EE27CF /* MainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1466,6 +1480,7 @@
 				CE6D680715EAC5FD00C7EDD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
