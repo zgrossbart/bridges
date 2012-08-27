@@ -177,7 +177,6 @@
 		CE6D67F115EAC5FD00C7EDD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F015EAC5FD00C7EDD7 /* main.m */; };
 		CE6D67F415EAC5FD00C7EDD7 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F315EAC5FD00C7EDD7 /* AppDelegate.mm */; };
 		CE6D67F715EAC5FD00C7EDD7 /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F615EAC5FD00C7EDD7 /* HelloWorldLayer.mm */; };
-		CE6D67FA15EAC5FD00C7EDD7 /* IntroLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F915EAC5FD00C7EDD7 /* IntroLayer.mm */; };
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
 		CE6D680215EAC5FD00C7EDD7 /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6D680115EAC5FD00C7EDD7 /* blocks.png */; };
 		CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */; };
@@ -185,6 +184,8 @@
 		CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */; };
 		CEBD81FD15EACDC100EE27CF /* RootMenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */; };
 		CEBD81FE15EACDC100EE27CF /* RootMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */; };
+		CEDBC2C815EB83AA00094695 /* octosprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEDBC2C615EB83AA00094695 /* octosprite.plist */; };
+		CEDBC2C915EB83AA00094695 /* octosprite.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDBC2C715EB83AA00094695 /* octosprite.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -542,8 +543,6 @@
 		CE6D67F315EAC5FD00C7EDD7 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		CE6D67F515EAC5FD00C7EDD7 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		CE6D67F615EAC5FD00C7EDD7 /* HelloWorldLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldLayer.mm; sourceTree = "<group>"; };
-		CE6D67F815EAC5FD00C7EDD7 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
-		CE6D67F915EAC5FD00C7EDD7 /* IntroLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = IntroLayer.mm; sourceTree = "<group>"; };
 		CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		CE6D680115EAC5FD00C7EDD7 /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
@@ -554,6 +553,8 @@
 		CEBD81FA15EACDC100EE27CF /* RootMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootMenuViewController.h; sourceTree = "<group>"; };
 		CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootMenuViewController.mm; sourceTree = "<group>"; };
 		CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootMenuViewController.xib; sourceTree = "<group>"; };
+		CEDBC2C615EB83AA00094695 /* octosprite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = octosprite.plist; sourceTree = "<group>"; };
+		CEDBC2C715EB83AA00094695 /* octosprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octosprite.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -616,8 +617,6 @@
 				CE6D67F315EAC5FD00C7EDD7 /* AppDelegate.mm */,
 				CE6D67F515EAC5FD00C7EDD7 /* HelloWorldLayer.h */,
 				CE6D67F615EAC5FD00C7EDD7 /* HelloWorldLayer.mm */,
-				CE6D67F815EAC5FD00C7EDD7 /* IntroLayer.h */,
-				CE6D67F915EAC5FD00C7EDD7 /* IntroLayer.mm */,
 				CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */,
 				CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */,
 				CE6D65E815EAC5FB00C7EDD7 /* Resources */,
@@ -637,6 +636,8 @@
 		CE6D65E815EAC5FB00C7EDD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEDBC2C615EB83AA00094695 /* octosprite.plist */,
+				CEDBC2C715EB83AA00094695 /* octosprite.png */,
 				CE6D65E915EAC5FB00C7EDD7 /* Default.png */,
 				CE6D65EB15EAC5FB00C7EDD7 /* Default-Landscape~ipad.png */,
 				CE6D65ED15EAC5FB00C7EDD7 /* fps_images.png */,
@@ -1223,6 +1224,8 @@
 				CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */,
 				CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */,
 				CEBD81FE15EACDC100EE27CF /* RootMenuViewController.xib in Resources */,
+				CEDBC2C815EB83AA00094695 /* octosprite.plist in Resources */,
+				CEDBC2C915EB83AA00094695 /* octosprite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1381,7 +1384,6 @@
 				CE6D67F115EAC5FD00C7EDD7 /* main.m in Sources */,
 				CE6D67F415EAC5FD00C7EDD7 /* AppDelegate.mm in Sources */,
 				CE6D67F715EAC5FD00C7EDD7 /* HelloWorldLayer.mm in Sources */,
-				CE6D67FA15EAC5FD00C7EDD7 /* IntroLayer.mm in Sources */,
 				CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */,
 				CEBD81F215EACA9D00EE27CF /* MainMenuViewController.m in Sources */,
 				CEBD81FD15EACDC100EE27CF /* RootMenuViewController.mm in Sources */,
