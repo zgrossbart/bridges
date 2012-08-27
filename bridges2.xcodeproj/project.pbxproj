@@ -186,6 +186,11 @@
 		CEBD81FE15EACDC100EE27CF /* RootMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */; };
 		CEDBC2C815EB83AA00094695 /* octosprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEDBC2C615EB83AA00094695 /* octosprite.plist */; };
 		CEDBC2C915EB83AA00094695 /* octosprite.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDBC2C715EB83AA00094695 /* octosprite.png */; };
+		CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */; };
+		CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E015EB8A8400094695 /* HouseNode.mm */; };
+		CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E315EB8AF600094695 /* PlayerNode.mm */; };
+		CEDBC2E715EB8B5300094695 /* MyContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E615EB8B5300094695 /* MyContactListener.mm */; };
+		CEDBC2EC15EB8C8200094695 /* BridgeNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -555,6 +560,17 @@
 		CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootMenuViewController.xib; sourceTree = "<group>"; };
 		CEDBC2C615EB83AA00094695 /* octosprite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = octosprite.plist; sourceTree = "<group>"; };
 		CEDBC2C715EB83AA00094695 /* octosprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octosprite.png; sourceTree = "<group>"; };
+		CEDBC2DA15EB89DA00094695 /* BridgeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeColors.h; sourceTree = "<group>"; };
+		CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerMgr.h; sourceTree = "<group>"; };
+		CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LayerMgr.mm; sourceTree = "<group>"; };
+		CEDBC2DF15EB8A8400094695 /* HouseNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseNode.h; sourceTree = "<group>"; };
+		CEDBC2E015EB8A8400094695 /* HouseNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HouseNode.mm; sourceTree = "<group>"; };
+		CEDBC2E215EB8AF600094695 /* PlayerNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerNode.h; sourceTree = "<group>"; };
+		CEDBC2E315EB8AF600094695 /* PlayerNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerNode.mm; sourceTree = "<group>"; };
+		CEDBC2E515EB8B5300094695 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
+		CEDBC2E615EB8B5300094695 /* MyContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyContactListener.mm; sourceTree = "<group>"; };
+		CEDBC2EA15EB8C8200094695 /* BridgeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeNode.h; sourceTree = "<group>"; };
+		CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BridgeNode.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -622,10 +638,21 @@
 				CE6D65E815EAC5FB00C7EDD7 /* Resources */,
 				CE6D660215EAC5FB00C7EDD7 /* libs */,
 				CE6D67EE15EAC5FD00C7EDD7 /* Supporting Files */,
-				CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */,
+				CEDBC2DA15EB89DA00094695 /* BridgeColors.h */,
+				CEDBC2EA15EB8C8200094695 /* BridgeNode.h */,
+				CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */,
+				CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */,
+				CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */,
+				CEDBC2DF15EB8A8400094695 /* HouseNode.h */,
+				CEDBC2E015EB8A8400094695 /* HouseNode.mm */,
 				CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */,
 				CEBD81F015EACA9D00EE27CF /* MainMenuViewController.m */,
 				CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */,
+				CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */,
+				CEDBC2E515EB8B5300094695 /* MyContactListener.h */,
+				CEDBC2E615EB8B5300094695 /* MyContactListener.mm */,
+				CEDBC2E215EB8AF600094695 /* PlayerNode.h */,
+				CEDBC2E315EB8AF600094695 /* PlayerNode.mm */,
 				CEBD81FA15EACDC100EE27CF /* RootMenuViewController.h */,
 				CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */,
 				CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */,
@@ -1387,6 +1414,11 @@
 				CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */,
 				CEBD81F215EACA9D00EE27CF /* MainMenuViewController.m in Sources */,
 				CEBD81FD15EACDC100EE27CF /* RootMenuViewController.mm in Sources */,
+				CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */,
+				CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */,
+				CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */,
+				CEDBC2E715EB8B5300094695 /* MyContactListener.mm in Sources */,
+				CEDBC2EC15EB8C8200094695 /* BridgeNode.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
