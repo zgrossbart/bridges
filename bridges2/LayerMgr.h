@@ -23,4 +23,6 @@
 -(void)addBoxBodyForSprite:(CCSprite *)sprite;
 -(void)spriteDone:(id)sender;
 
+@property (readwrite) CGSize tileSize;
+
 @end

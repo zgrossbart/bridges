@@ -79,8 +79,11 @@
          * our objects which rely on knowing the dimensions of
          * the window until that happens.
          */
+        _layerMgr.tileSize = CGSizeMake(s.height / 25, s.height / 25);
         [self addRivers];
     }
+    
+//     _world->DrawDebugData();
     /*
     glLineWidth(6.0f);
     ccDrawColor4B(255,0,255,255);
@@ -396,31 +399,40 @@
     
 }
 
-- (void)addRivers {
+-(CGSize)winSizeTiles {
     CGSize winSize = [self getWinSize];
+    return CGSizeMake(winSize.width / _layerMgr.tileSize.width,
+                      winSize.height / _layerMgr.tileSize.height);
+}
+
+-(CGPoint)tileToPoint:(int) x: (int)y {
+    printf("tileToPoint (%i, %i)\n", x, y);
+    printf("tileSize (%f, %f)\n", _layerMgr.tileSize.width, _layerMgr.tileSize.height);
+    return CGPointMake(x * _layerMgr.tileSize.width,
+                       y * _layerMgr.tileSize.height);
+}
+
+- (void)addRivers {
+    CGSize winSize = [self winSizeTiles];
     
     _rivers = [[NSMutableArray alloc] init];
     int y = winSize.height / 2;
     
-    CCSprite *river = [self addRiver:0:y];
+    CCSprite *river = [self addHRiver:0:y];
     [_rivers addObject:river];
     
     int count = 0;
-    for (int i = river.contentSize.width; i < winSize.width + river.contentSize.width; i += river.contentSize.width) {
+    for (int i = 1; i <= winSize.width; i++) {
         count++;
         
-        if (count == 4 || count == 8) {
-            continue;
-        }
-        
-        CCSprite *r = [self addRiver:i:y];
+        CCSprite *r = [self addHRiver:i:y];
         [_rivers addObject:r];
     }
     
-    [self addBridge:river.contentSize.width * 4:y:true:RED];
-    [self addBridge:river.contentSize.width * 8:y:true:GREEN];
+    [self addBridge:8:y:true:RED];
+    [self addBridge:18:y:true:GREEN];
     
-    [self addHouse:100:100:GREEN];
+    [self addHouse:4:4:GREEN];
 }
 
 -(CGSize)getWinSize {
@@ -429,11 +441,14 @@
     return [[CCDirector sharedDirector] winSize];
 }
 
-- (CCSprite*)addRiver:(int) x:(int) y {
+- (CCSprite*)addHRiver:(int) x:(int) y {
     
     CCSprite *river = [CCSprite spriteWithSpriteFrameName:@"river_h.png"];
     
-    CGPoint startPos = ccp(x, y);
+    [self resizeSprite:river:1];
+    CGPoint startPos = [self tileToPoint:x:y];
+    
+    printf("addingRiverTo (%f, %f)\n", startPos.x, startPos.y);
     
     river.position = startPos;
     river.tag = RIVER;
@@ -444,12 +459,18 @@
     
 }
 
+-(void)resizeSprite:(CCSprite*) sprite: (int) tiles {
+    sprite.scale = _layerMgr.tileSize.width/sprite.contentSize.width;
+    sprite.contentSize = _layerMgr.tileSize;
+    
+}
+
 - (BridgeNode*)addBridge:(int) x:(int) y:(bool) vertical:(int) color {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
     BridgeNode *bridgeNode = [[BridgeNode alloc] initWithDir:vertical:BRIDGE:color:_layerMgr];
-    CGPoint startPos = ccp(x, y);
+    CGPoint startPos = [self tileToPoint:x:y];
     
     [bridgeNode setBridgePosition:startPos];
     
@@ -464,7 +485,7 @@
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
     HouseNode *houseNode = [[HouseNode alloc] initWithColor:HOUSE:color:_layerMgr];
-    CGPoint startPos = ccp(x, y);
+    CGPoint startPos = [self tileToPoint:x:y];
     
     [houseNode setHousePosition:startPos];
     
