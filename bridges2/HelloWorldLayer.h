@@ -16,6 +16,8 @@
     GLESDebugDraw *_debugDraw;
     MyContactListener *_contactListener;
     
+    
+    
     PlayerNode *_player;
     
     LayerMgr *_layerMgr;
@@ -32,8 +34,7 @@
 + (id) scene;
 
 @property (nonatomic, retain) PlayerNode *player;
-@property (nonatomic, retain) CCAction *walkAction;
-@property (nonatomic, retain) CCAction *moveAction;
+
 
 
 @end

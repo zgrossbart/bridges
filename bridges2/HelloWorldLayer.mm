@@ -7,6 +7,7 @@
 
 @implementation HelloWorldLayer
 
+
 + (id)scene {
     
     CCScene *scene = [CCScene node];
@@ -70,6 +71,7 @@
     CGSize s = [[CCDirector sharedDirector] winSize];
     
     ccDrawSolidRect( ccp(0, 0), ccp(s.width, s.height), ccc4f(255, 255, 255, 255) );
+    
     if ([_rivers count] < 1) {
         /*
          * The director doesn't know the window width correctly
@@ -307,6 +309,8 @@
         printf("This should never happen\n");
     }
     
+    [_player playerMoveEnded];
+    
     [mgr removeAllActionsFromTarget:player];
     [mgr resumeTarget:player];
     
@@ -384,11 +388,10 @@
         }
     } else {
         _inCross = false;
-        CGFloat distance = [LayerMgr distanceBetweenTwoPoints:_player.player.position: location];
-        float velocity = 240/1; // 240pixels/1sec
         
-        [_player.player runAction:
-         [CCMoveTo actionWithDuration:distance/velocity position:ccp(location.x,location.y)]];
+        [_player moveTo:location];
+//        [_player.player runAction:
+//         [CCMoveTo actionWithDuration:distance/velocity position:ccp(location.x,location.y)]];
     }
     
 }
@@ -493,6 +496,7 @@
     delete _contactListener;
     [_spriteSheet release];
     [_player dealloc];
+    
     [super dealloc];
 }
 

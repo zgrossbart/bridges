@@ -16,6 +16,10 @@
 
 @implementation PlayerNode
 
+@synthesize player = _player;
+@synthesize moveAction = _moveAction;
+@synthesize walkAction = _walkAction;
+
 -(id)initWithTag:(int)tag :(int) color: (LayerMgr *)layerMgr {
     if( (self=[super init] )) {
         _manager = layerMgr;
@@ -31,10 +35,33 @@
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1.png"]];
         }
         
+        NSMutableArray *walkAnimFrames = [NSMutableArray array];
+        for(int i = 1; i <= 5; ++i) {
+            [walkAnimFrames addObject:
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+              [NSString stringWithFormat:@"octopus%d.png", i]]];
+        }
+        
+        CCAnimation *walkAnim = [CCAnimation
+                                 animationWithSpriteFrames:walkAnimFrames delay:0.1f];
+        
+        //        CGSize winSize = [CCDirector sharedDirector].winSize;
+        //self.player = [CCSprite spriteWithSpriteFrameName:@"octopus1.png"];
+//        _playerSprite.position = ccp(200, 100);
+        self.walkAction = [CCRepeatForever actionWithAction:
+                           [CCAnimate actionWithAnimation:walkAnim]];
+        //
+//        [_spriteSheet addChild:_playerSprite];
+        
         [_manager addChildToSheet:self.player];
     }
     
     return self;
+}
+
+-(void)playerMoveEnded {
+    [_player stopAction:_walkAction];
+    _moving = FALSE;
 }
 
 -(void)updateColor:(int)color {
@@ -63,6 +90,34 @@
     self.player.tag = [self tag];
 }
 
+-(void)moveTo:(CGPoint)p {
+    if (_moving) {
+        /*
+         * If we're already moving then we just ignore 
+         * new requests to move.
+         */
+        return;
+    }
+    
+    [_player runAction:_walkAction];
+    
+    CGFloat distance = [LayerMgr distanceBetweenTwoPoints:_player.position: p];
+    float velocity = 240/1; // 240pixels/1sec
+    
+    _moving = TRUE;
+    self.moveAction = [CCSequence actions:
+                       [CCMoveTo actionWithDuration:distance/velocity position:p],
+                       [CCCallFunc actionWithTarget:self selector:@selector(playerMoveEnded)],
+                       nil
+                       ];
+    
+   // self.moveAction =
+   //           [CCMoveTo actionWithDuration:distance/velocity position:ccp(p.x,p.y)];
+    
+    
+    [_player runAction:self.moveAction];
+}
+
 -(void)position:(CGPoint)p {
     super.position = p;
     self.player.position = ccp(p.x, p.y);
@@ -75,6 +130,10 @@
 -(void)dealloc {
     
     [self.player dealloc];
+    
+    self.player = nil;
+    self.walkAction = nil;
+    
     [super dealloc];
 }
 
