@@ -2,8 +2,7 @@
 #import "BridgeNode.h"
 #import "HouseNode.h"
 #import "BridgeColors.h"
-
-#import <YAJLiOS/YAJL.h>
+#import "JSONKit.h"
 
 //#define PTM_RATIO 32.0
 
@@ -62,18 +61,16 @@
         
         self.isTouchEnabled = YES;
         
-        NSArray *test = [NSArray arrayWithObjects:@"one", @"two", @"three", nil];
-        NSLog(@"%@", [test yajl_JSONString]);
-        
         NSString *path = [[NSBundle mainBundle] bundlePath];
-        NSString *xmlPath = [path stringByAppendingPathComponent:@"level1.json"];
-        NSString *xmlString = [NSString stringWithContentsOfFile:xmlPath encoding:NSUTF8StringEncoding error:nil];
-        NSLog(@"xml string: %@",xmlString);
+        NSString *jsonPath = [path stringByAppendingPathComponent:@"level1.json"];
+        NSString *jsonString = [NSString stringWithContentsOfFile:jsonPath encoding:NSUTF8StringEncoding error:nil];
         
-        NSArray *arrayFromString = [xmlString yajl_JSON];
-        NSLog(@"%@", [arrayFromString yajl_JSONString]);
-
-
+        NSDictionary *resultsDictionary = [jsonString objectFromJSONString];
+        NSDictionary *movieArray = [resultsDictionary objectForKey:@"glossary"];
+        NSLog(@"movieArray: %@", movieArray);
+        
+        NSString *title = [movieArray objectForKey:@"title"];
+        NSLog(@"title: %@", title);
     }
     return self;
     

@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE453BB515F1589E00053407 /* octosprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE453BB315F1589E00053407 /* octosprite.plist */; };
 		CE453BB615F1589E00053407 /* octosprite.png in Resources */ = {isa = PBXBuildFile; fileRef = CE453BB415F1589E00053407 /* octosprite.png */; };
-		CE453BC115F1604900053407 /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE453BC015F1604900053407 /* YAJLiOS.framework */; };
 		CE453BC415F1626400053407 /* level1.json in Resources */ = {isa = PBXBuildFile; fileRef = CE453BC315F1626400053407 /* level1.json */; };
+		CE453BC715F174A900053407 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CE453BC615F174A900053407 /* JSONKit.m */; };
 		CE6D65D615EAC5FB00C7EDD7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6D65D515EAC5FB00C7EDD7 /* QuartzCore.framework */; };
 		CE6D65D815EAC5FB00C7EDD7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6D65D715EAC5FB00C7EDD7 /* OpenGLES.framework */; };
 		CE6D65DA15EAC5FB00C7EDD7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6D65D915EAC5FB00C7EDD7 /* OpenAL.framework */; };
@@ -197,8 +197,9 @@
 /* Begin PBXFileReference section */
 		CE453BB315F1589E00053407 /* octosprite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = octosprite.plist; sourceTree = "<group>"; };
 		CE453BB415F1589E00053407 /* octosprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octosprite.png; sourceTree = "<group>"; };
-		CE453BC015F1604900053407 /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLiOS.framework; path = Frameworks/YAJLiOS.framework; sourceTree = "<group>"; };
 		CE453BC315F1626400053407 /* level1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level1.json; sourceTree = "<group>"; };
+		CE453BC515F174A900053407 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		CE453BC615F174A900053407 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		CE6D65D115EAC5FB00C7EDD7 /* bridges2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bridges2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6D65D515EAC5FB00C7EDD7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE6D65D715EAC5FB00C7EDD7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -589,7 +590,6 @@
 				CE6D65E215EAC5FB00C7EDD7 /* Foundation.framework in Frameworks */,
 				CE6D65E415EAC5FB00C7EDD7 /* CoreGraphics.framework in Frameworks */,
 				CE6D65E615EAC5FB00C7EDD7 /* GameKit.framework in Frameworks */,
-				CE453BC115F1604900053407 /* YAJLiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +624,6 @@
 		CE6D65D415EAC5FB00C7EDD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CE453BC015F1604900053407 /* YAJLiOS.framework */,
 				CE6D65D515EAC5FB00C7EDD7 /* QuartzCore.framework */,
 				CE6D65D715EAC5FB00C7EDD7 /* OpenGLES.framework */,
 				CE6D65D915EAC5FB00C7EDD7 /* OpenAL.framework */,
@@ -706,6 +705,8 @@
 				CE6D671A15EAC5FC00C7EDD7 /* CocosDenshion */,
 				CE6D672915EAC5FC00C7EDD7 /* kazmath */,
 				CE6D675B15EAC5FC00C7EDD7 /* Box2D */,
+				CE453BC515F174A900053407 /* JSONKit.h */,
+				CE453BC615F174A900053407 /* JSONKit.m */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -1431,6 +1432,7 @@
 				CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */,
 				CEDBC2E715EB8B5300094695 /* MyContactListener.mm in Sources */,
 				CEDBC2EC15EB8C8200094695 /* BridgeNode.mm in Sources */,
+				CE453BC715F174A900053407 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
