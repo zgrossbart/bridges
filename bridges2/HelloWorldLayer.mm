@@ -3,6 +3,8 @@
 #import "HouseNode.h"
 #import "BridgeColors.h"
 
+#import <YAJLiOS/YAJL.h>
+
 //#define PTM_RATIO 32.0
 
 @implementation HelloWorldLayer
@@ -59,6 +61,19 @@
         //        [self spawnPlayer];
         
         self.isTouchEnabled = YES;
+        
+        NSArray *test = [NSArray arrayWithObjects:@"one", @"two", @"three", nil];
+        NSLog(@"%@", [test yajl_JSONString]);
+        
+        NSString *path = [[NSBundle mainBundle] bundlePath];
+        NSString *xmlPath = [path stringByAppendingPathComponent:@"level1.json"];
+        NSString *xmlString = [NSString stringWithContentsOfFile:xmlPath encoding:NSUTF8StringEncoding error:nil];
+        NSLog(@"xml string: %@",xmlString);
+        
+        NSArray *arrayFromString = [xmlString yajl_JSON];
+        NSLog(@"%@", [arrayFromString yajl_JSONString]);
+
+
     }
     return self;
     
@@ -84,20 +99,6 @@
     }
     
 //     _world->DrawDebugData();
-    /*
-    glLineWidth(6.0f);
-    ccDrawColor4B(255,0,255,255);
-    ccDrawLine( ccp(150, 250), ccp(250, 250) );
-    
-    glLineWidth(3.0f);
-    ccDrawColor4B(255,0,0,255);
-    
-    ccDrawRect( ccp(100, 100), ccp(40, 40) );
-    
-    ccPointSize(32);
-	ccDrawColor4B(0,0,255,128);
-	ccDrawPoint( ccp(s.width / 2, s.height / 2) );
-    */
 }
 
 
