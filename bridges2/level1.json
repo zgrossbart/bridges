@@ -3,21 +3,21 @@
         "name": "Level 1",
         "rivers": [
             {
-                "x": "r-l",
+                "x": "l-r",
                 "y": "16",
-                "direction": "h"
+                "dir": "h"
             }
         ],
         "bridges": [
             {
                 "x": "10",
                 "y": "16",
-                "direction": "v"
+                "dir": "v"
             },
             {
                 "x": "20",
                 "y": "16",
-                "direction": "v"
+                "dir": "v"
             }
         ]
     }

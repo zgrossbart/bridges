@@ -2,7 +2,7 @@
 #import "BridgeNode.h"
 #import "HouseNode.h"
 #import "BridgeColors.h"
-#import "JSONKit.h"
+#import "Level.h"
 
 //#define PTM_RATIO 32.0
 
@@ -60,20 +60,18 @@
         //        [self spawnPlayer];
         
         self.isTouchEnabled = YES;
-        
-        NSString *path = [[NSBundle mainBundle] bundlePath];
-        NSString *jsonPath = [path stringByAppendingPathComponent:@"level1.json"];
-        NSString *jsonString = [NSString stringWithContentsOfFile:jsonPath encoding:NSUTF8StringEncoding error:nil];
-        
-        NSDictionary *resultsDictionary = [jsonString objectFromJSONString];
-        NSDictionary *movieArray = [resultsDictionary objectForKey:@"glossary"];
-        NSLog(@"movieArray: %@", movieArray);
-        
-        NSString *title = [movieArray objectForKey:@"title"];
-        NSLog(@"title: %@", title);
     }
     return self;
     
+}
+
+-(void)readLevel {
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSString *jsonPath = [path stringByAppendingPathComponent:@"level1.json"];
+    NSString *jsonString = [NSString stringWithContentsOfFile:jsonPath encoding:NSUTF8StringEncoding error:nil];
+    
+    Level *level = [[Level alloc] initWithJson:jsonString: _layerMgr];
+    [level dealloc];
 }
 
 -(void)draw {
@@ -92,6 +90,7 @@
          * the window until that happens.
          */
         _layerMgr.tileSize = CGSizeMake(s.height / 32, s.height / 32);
+        [self readLevel];
         [self addRivers];
     }
     

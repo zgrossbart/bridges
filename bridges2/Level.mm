@@ -10,6 +10,7 @@
 #import "BridgeColors.h"
 #import "BridgeNode.h"
 #import "HouseNode.h"
+#import "JSONKit.h"
 
 @interface Level()
 @property (readwrite) NSMutableArray *rivers;
@@ -28,13 +29,131 @@
         self.houses = [[NSMutableArray alloc] init];
         
         self.layerMgr = layerMgr;
+        
+        [self parseLevel:jsonString];
     }
     
     return self;
     
 }
 
-- (CCSprite*)addRiver:(int) x:(int) y:(bool) vert {
+-(void)parseLevel: (NSString*) jsonString {
+    NSLog(@"jsonString\n: %@", jsonString);
+    NSDictionary *level = [[jsonString objectFromJSONString] objectForKey:@"level"];
+    NSString *name = [level objectForKey:@"name"];
+    NSLog(@"name: %@", name);
+    
+    NSArray *rivers = [level objectForKey:@"rivers"];
+    NSLog(@"rivers.count: %i", rivers.count);
+    
+    for (NSDictionary *r in rivers) {
+        NSString *x = [r objectForKey:@"x"];
+        NSString *y = [r objectForKey:@"y"];
+        NSString *dir = [r objectForKey:@"dir"];
+        NSLog(@"river(%@, %@, %@)", x, y, dir);
+        
+        [self addRivers:x:y:[dir isEqualToString:@"v"]];
+    }
+    
+}
+
+-(void)addRivers:(NSString*) xSpec:(NSString*) ySpec:(BOOL) vert {
+    /*
+     * There are a few ways to define a tile coordinate.
+     * You can define a simple number like 5 or 12, you 
+     * can define an edge of the screen like l for left
+     * or t for top, or you can define a range with a dash.
+     * For example, if you wanted a river to go from the left
+     * side of the screen to the right then you could 
+     * define it as l-r.
+     *
+     * We'll start by parsing out the x and then we'll handle
+     * the y.
+     */
+    unsigned int len = [xSpec length];
+    const char *str = [xSpec UTF8String];
+    NSMutableString *x1 = [NSMutableString stringWithCapacity:2];
+    NSMutableString *x2 = [NSMutableString stringWithCapacity:2];
+    bool inSecond = false;
+    
+    for(int i = 0; i < len; i++) {
+        char c = str[i];
+        if (c == '-') {
+            inSecond = true;
+        } else if (inSecond) {
+            [x2 appendString: [NSString stringWithFormat:@"%c" , c]];
+        } else {
+            [x1 appendString: [NSString stringWithFormat:@"%c" , c]];
+        }
+    }
+    
+    if ([x2 length] == 0) {
+        [x2 appendString:x1];
+    }
+    
+    len = [ySpec length];
+    str = [ySpec UTF8String];
+    
+    NSMutableString *y1 = [NSMutableString stringWithCapacity:2];
+    NSMutableString *y2 = [NSMutableString stringWithCapacity:2];
+    inSecond = false;
+    
+    for(int i = 0; i < len; i++) {
+        char c = str[i];
+        if (c == '-') {
+            inSecond = true;
+        } else if (inSecond) {
+            [y2 appendString: [NSString stringWithFormat:@"%c" , c]];
+        } else {
+            [y1 appendString: [NSString stringWithFormat:@"%c" , c]];
+        }
+    }
+    
+    if ([y2 length] == 0) {
+        [y2 appendString:y1];
+    }
+    
+    int xi1 = [self parseInt:x1];
+    int yi1 = [self parseInt:y1];
+    
+    int xi2 = [self parseInt:x2];
+    int yi2 = [self parseInt:y2];
+    
+    /*
+     * Now we have two ranges specified by the
+     * point x1, y1 and x2, y2.  The two points
+     * might be the same if the coordinate was
+     * simple, but we can still handle it like
+     * a range.
+     */
+    for (int i = xi1; i <= xi2; i++) {
+        for (int j = yi1; j <= yi2; j++) {
+            NSLog(@"Adding a river at: %i, %i", i, j);
+            
+        }
+    }
+    
+}
+
+-(int)parseInt:(NSString*) s {
+    if ([s characterAtIndex:0] == 'l') {
+        // The left side of the screen
+        return 0;
+    } else if ([s characterAtIndex:0] == 'b') {
+        // The bottom side of the screen
+        return 0;
+    } else if ([s characterAtIndex:0] == 'r') {
+        // The right side of the screen
+        return [self winSizeTiles].width;
+    } else if ([s characterAtIndex:0] == 't') {
+        // The top side of the screen
+        return [self winSizeTiles].height;
+    } else {
+        return [s integerValue];
+    }
+}
+
+- (CCSprite*)addRiver:(int) x:(int) y:(BOOL) vert {
     
     CCSprite *river;
     if (vert) {
