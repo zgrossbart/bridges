@@ -182,7 +182,7 @@
 		CE6D67F715EAC5FD00C7EDD7 /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F615EAC5FD00C7EDD7 /* HelloWorldLayer.mm */; };
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
 		CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */; };
-		CEBD81F215EACA9D00EE27CF /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81F015EACA9D00EE27CF /* MainMenuViewController.m */; };
+		CEBD81F215EACA9D00EE27CF /* MainMenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */; };
 		CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */; };
 		CEBD81FD15EACDC100EE27CF /* RootMenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */; };
 		CEBD81FE15EACDC100EE27CF /* RootMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */; };
@@ -560,7 +560,7 @@
 		CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
-		CEBD81F015EACA9D00EE27CF /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainMenuViewController.mm; sourceTree = "<group>"; };
 		CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
 		CEBD81FA15EACDC100EE27CF /* RootMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootMenuViewController.h; sourceTree = "<group>"; };
 		CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootMenuViewController.mm; sourceTree = "<group>"; };
@@ -664,7 +664,7 @@
 				CECE256615F2819200517973 /* LevelMgr.h */,
 				CECE256715F2819200517973 /* LevelMgr.mm */,
 				CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */,
-				CEBD81F015EACA9D00EE27CF /* MainMenuViewController.m */,
+				CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */,
 				CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */,
 				CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */,
 				CEDBC2E515EB8B5300094695 /* MyContactListener.h */,
@@ -1441,7 +1441,7 @@
 				CE6D67F415EAC5FD00C7EDD7 /* AppDelegate.mm in Sources */,
 				CE6D67F715EAC5FD00C7EDD7 /* HelloWorldLayer.mm in Sources */,
 				CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */,
-				CEBD81F215EACA9D00EE27CF /* MainMenuViewController.m in Sources */,
+				CEBD81F215EACA9D00EE27CF /* MainMenuViewController.mm in Sources */,
 				CEBD81FD15EACDC100EE27CF /* RootMenuViewController.mm in Sources */,
 				CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */,
 				CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */,

@@ -7,7 +7,7 @@
 //#define PTM_RATIO 32.0
 
 @interface HelloWorldLayer()
-    @property (nonatomic, retain, readwrite) NSString *currentLevelPath;
+
 @end
 
 @implementation HelloWorldLayer
@@ -22,6 +22,7 @@
     return scene;
     
 }
+
 
 - (id)init {
     
@@ -67,35 +68,30 @@
     
 }
 
--(void)readLevel {
-    NSString *path = [[NSBundle mainBundle] bundlePath];
-    NSString *jsonPath = [path stringByAppendingPathComponent:self.currentLevelPath];
-    NSString *jsonString = [NSString stringWithContentsOfFile:jsonPath encoding:NSUTF8StringEncoding error:nil];
-    
-    self.currentLevel = [[Level alloc] initWithJson:jsonString: _layerMgr];
-    
+-(void)readLevel {    
  //   [level.rivers makeObjectsPerformSelector:@selector(addSprite:)];
     
-    [self.currentLevel addSprites];
+    [self.currentLevel addSprites:_layerMgr];
     
     
     //[level dealloc];
 }
 
 -(void)reset {
-    _hasInit = false;
-    [self removeAllChildrenWithCleanup:true];
-    
-    [self.currentLevel dealloc];
-    self.currentLevelPath = nil;
+    [_layerMgr removeAll];
 }
 
--(void)setLevel:(NSString*) path {
-    if (self.currentLevelPath && ![self.currentLevelPath isEqualToString:path]) {
-        [self reset];
+-(void)setLevel:(Level*) level {
+    if (self.currentLevel && [level.levelId isEqualToString:self.currentLevel.levelId]) {
+        /*
+         * If we already have that layer we just ignore it
+         */
+        return;
     }
     
-    self.currentLevelPath = path;
+    [self reset];
+    
+    self.currentLevel = level;
     
     /*
      * The first time we run we don't have the window dimensions
@@ -444,11 +440,9 @@
     delete _contactListener;
     [_spriteSheet release];
     [_player dealloc];
+
     
-    [_currentLevelPath release];
-    _currentLevelPath = nil;
-    
-    [self.currentLevel dealloc];
+//    [self.currentLevel dealloc];
     
     [super dealloc];
 }

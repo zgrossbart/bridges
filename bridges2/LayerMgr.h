@@ -22,6 +22,7 @@
 -(void)addChildToSheet:(CCSprite*) sprite;
 -(void)addBoxBodyForSprite:(CCSprite *)sprite;
 -(void)spriteDone:(id)sender;
+-(void)removeAll;
 
 @property (readwrite) CGSize tileSize;
 

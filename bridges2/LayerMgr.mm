@@ -8,7 +8,9 @@
 
 #import "LayerMgr.h"
 
-@implementation LayerMgr
+@implementation LayerMgr {
+    CCSpriteBatchNode *_sheet;
+}
 
 +(CGFloat) distanceBetweenTwoPoints: (CGPoint) point1: (CGPoint) point2 {
     CGFloat dx = point2.x - point1.x;
@@ -16,7 +18,7 @@
     return sqrt(dx*dx + dy*dy );
 }
 
-CCSpriteBatchNode *_sheet;
+
 
 -(id) initWithSpriteSheet:(CCSpriteBatchNode*) spriteSheet:(b2World*) world {
     _sheet = spriteSheet;
@@ -30,7 +32,7 @@ CCSpriteBatchNode *_sheet;
 }
 
 -(void)addBoxBodyForSprite:(CCSprite *)sprite {
-    
+    NSLog(@"Adding tag: %i", sprite.tag);
     b2BodyDef spriteBodyDef;
     spriteBodyDef.type = b2_dynamicBody;
     spriteBodyDef.position.Set(sprite.position.x/PTM_RATIO,
@@ -47,6 +49,14 @@ CCSpriteBatchNode *_sheet;
     spriteShapeDef.isSensor = true;
     spriteBody->CreateFixture(&spriteShapeDef);
     
+}
+
+-(void)removeAll {
+    for (int i = _sheet.children.count - 1; i >= 0; i--) {
+        [self spriteDone:[_sheet.children objectAtIndex:i]];
+    }
+    
+//    NSLog(@"children.count: %i", _sheet.children.count);
 }
 
 -(void)spriteDone:(id)sender {

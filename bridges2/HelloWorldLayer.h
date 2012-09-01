@@ -29,11 +29,10 @@
 
 + (id) scene;
 
--(void)setLevel:(NSString*) path;
+-(void)setLevel:(Level*) level;
 
 @property (nonatomic, retain) PlayerNode *player;
 @property (nonatomic, retain) Level *currentLevel;
-@property (nonatomic, retain, readonly) NSString *currentLevelPath;
 
 
 @end

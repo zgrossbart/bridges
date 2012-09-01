@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
+#import "Level.h"
 
 @interface RootMenuViewController : UIViewController<CCDirectorDelegate> {
     UIWindow *window_;
@@ -24,7 +25,7 @@
 @property (readonly) CCDirectorIOS *director;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
--(void)showLevel:(NSString*) levelPath;
+-(void)showLevel:(Level*) level;
 
 - (IBAction)goHomeTapped:(id)sender;
 

@@ -8,6 +8,7 @@
 
 #import "LevelMgr.h"
 #import "JSONKit.h"
+#import "Level.h"
 
 @interface LevelMgr()
 @property (readwrite) NSMutableDictionary *levels;
@@ -40,24 +41,13 @@
     for (NSString *file in directoryContents) {
         if ([file hasPrefix:@"level"] &&
             [file hasSuffix:@".json"]) {
-            [self getLevelName:[path stringByAppendingPathComponent:file]:file];
+            NSString *jsonString = [NSString stringWithContentsOfFile:[path stringByAppendingPathComponent:file] encoding:NSUTF8StringEncoding error:nil];
+            Level *level = [[Level alloc] initWithJson:jsonString];
+            [self.levels setObject:level forKey:level.levelId];
         }
     }
     
 //    NSLog(@"levels ====== %@",self.levels);
-}
-
--(NSString*)getLevelName:(NSString*) path:(NSString*) file {
-    NSString *jsonString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-//    NSLog(@"jsonString\n: %@", jsonString);
-    NSDictionary *level = [[jsonString objectFromJSONString] objectForKey:@"level"];
-    
-    NSString *name = [level objectForKey:@"name"];
-    
-    [self.levels setObject:name forKey:file];
-    
-    return name;
-    
 }
 
 -(void)dealloc {

@@ -14,7 +14,9 @@
 
 @end
 
-@implementation RootMenuViewController
+@implementation RootMenuViewController {
+    HelloWorldLayer *_layer;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -107,22 +109,23 @@
     layer.currentLevelPath = self.currentLevelPath;
     [[CCDirector sharedDirector] runWithScene:scene];*/
     
+    CCScene *scene = [HelloWorldLayer scene];
+    _layer = (HelloWorldLayer*)[scene getChildByTag:LEVEL];
+    
+    //    [[CCDirector sharedDirector] setOpenGLView:glView];
+    
+    [[CCDirector sharedDirector] runWithScene:scene];
+    
     _hasInit = true;
 }
 
--(void)showLevel:(NSString*) levelPath {
+-(void)showLevel:(Level*) level {
     
     if (!_hasInit) {
         [self setupCocos2D];
     }
     
-    CCScene *scene = [HelloWorldLayer scene];
-    HelloWorldLayer *layer = (HelloWorldLayer*)[scene getChildByTag:LEVEL];
-    
-    //    [[CCDirector sharedDirector] setOpenGLView:glView];
-    
-    [layer setLevel:levelPath];
-    [[CCDirector sharedDirector] runWithScene:scene];
+    [_layer setLevel:level];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -156,6 +159,7 @@
 
 -(void)dealloc {
     
+    [_layer dealloc];
     [super dealloc];
 }
 

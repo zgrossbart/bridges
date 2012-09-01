@@ -11,16 +11,22 @@
 #import "LayerMgr.h"
 
 @interface Level : NSObject {
+
     
 }
 
--(id) initWithJson:(NSString*) jsonString: (LayerMgr*) layerMgr;
--(void) addSprites;
+-(id) initWithJson:(NSString*) jsonString;
+-(void) addSprites: (LayerMgr*) layerMgr;
+-(void) removeSprites:(LayerMgr*) layerMgr;
 -(bool)hasWon;
 
 @property (readonly) NSMutableArray *rivers;
 @property (readonly) NSMutableArray *bridges;
 @property (readonly) NSMutableArray *houses;
+@property (readonly, copy) NSDictionary *levelData;;
+
+@property (readonly) NSString *name;
+@property (readonly) NSString *levelId;
 
 @property (readonly) LayerMgr *layerMgr;
 

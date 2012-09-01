@@ -17,18 +17,20 @@
 @property (readwrite) NSMutableArray *bridges;
 @property (readwrite) NSMutableArray *houses;
 @property (readwrite) LayerMgr *layerMgr;
+@property (readwrite, copy) NSDictionary *levelData;
+
+@property (readwrite) NSString *name;
+@property (readwrite) NSString *levelId;
 @end
 
 @implementation Level
 
--(id) initWithJson:(NSString*) jsonString: (LayerMgr*) layerMgr
+-(id) initWithJson:(NSString*) jsonString
 {
     if( (self=[super init] )) {
         self.bridges = [[NSMutableArray alloc] init];
         self.rivers = [[NSMutableArray alloc] init];
         self.houses = [[NSMutableArray alloc] init];
-        
-        self.layerMgr = layerMgr;
         
         [self parseLevel:jsonString];
     }
@@ -39,11 +41,16 @@
 
 -(void)parseLevel: (NSString*) jsonString {
     NSLog(@"jsonString\n: %@", jsonString);
-    NSDictionary *level = [[jsonString objectFromJSONString] objectForKey:@"level"];
-    NSString *name = [level objectForKey:@"name"];
-    NSLog(@"name: %@", name);
+    self.levelData = [[jsonString objectFromJSONString] objectForKey:@"level"];
     
-    NSArray *rivers = [level objectForKey:@"rivers"];
+    _levelId = [self.levelData objectForKey:@"id"];
+    _name = [self.levelData objectForKey:@"name"];
+}
+
+-(void)loadSprites {
+    
+    
+    NSArray *rivers = [_levelData objectForKey:@"rivers"];
     NSLog(@"rivers.count: %i", rivers.count);
     
     /*
@@ -60,7 +67,7 @@
     /*
      * Add the bridges
      */
-    NSArray *bridges = [level objectForKey:@"bridges"];
+    NSArray *bridges = [_levelData objectForKey:@"bridges"];
     for (NSDictionary *b in bridges) {
         NSString *x = [b objectForKey:@"x"];
         NSString *y = [b objectForKey:@"y"];
@@ -74,7 +81,7 @@
     /*
      * Add the houses
      */
-    NSArray *houses = [level objectForKey:@"houses"];
+    NSArray *houses = [_levelData objectForKey:@"houses"];
     for (NSDictionary *h in houses) {
         NSString *x = [h objectForKey:@"x"];
         NSString *y = [h objectForKey:@"y"];
@@ -85,18 +92,47 @@
     
 }
 
--(void)addSprites {
+-(void)removeSprites:(LayerMgr*) layerMgr {
+    self.layerMgr = layerMgr;
+    
+    if (self.rivers.count == 0) {
+        /* 
+         * If we haven't loaded yet then there's nothing to do
+         */
+        return;
+    }
+    
+    
+    [self.rivers removeAllObjects];
+    [self.bridges removeAllObjects];
+    [self.houses removeAllObjects];
+}
+
+-(void)addSprites: (LayerMgr*) layerMgr {
+    
+    self.layerMgr = layerMgr;
+    
+    if (self.rivers.count > 0) {
+        [self removeSprites:self.layerMgr];
+    } 
+    
+    [self loadSprites];
+    
     for (CCSprite *r in self.rivers) {
         [self.layerMgr addChildToSheet:r];
     }
     
+    
     for (BridgeNode *b in self.bridges) {
-        [b addSprite];
+        //[b addSprite];
+        NSLog(@"Adding bridge: %i", b.bridge.tag);
+        [self.layerMgr addChildToSheet:b.bridge];
     }
     
     for (HouseNode *h in self.houses) {
         [h addSprite];
     }
+    
 }
 
 -(int)getColor:(NSString*) color {
@@ -319,6 +355,15 @@
     
     [_houses release];
     _houses = nil;
+    
+    [_name release];
+    _name = nil;
+    
+    [_levelId release];
+    _levelId = nil;
+    
+    [_levelData release];
+    _levelData = nil;
     
     [super dealloc];
 }
