@@ -44,12 +44,17 @@
     [tempFontNames release];
     // Match the system font
     self.fontSize = [UIFont systemFontSize];
+    
+    _navItem.title = @"Select a level";
+//    [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
 }
 
 - (void)viewDidUnload
 {
 //    [_view release];
 //    _view = nil;
+    [_navItem release];
+    _navItem = nil;
     [super viewDidUnload];
     self.fontNames = nil;
 }
@@ -122,6 +127,7 @@
     [mFontNames release];
     
 //    [_view release];
+    [_navItem release];
     [super dealloc];
 }
 

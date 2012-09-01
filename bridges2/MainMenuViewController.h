@@ -15,6 +15,7 @@
 //    IBOutlet UITableView *_view;
     CGFloat  mFontSize;
     NSArray* mFontNames;
+    IBOutlet UINavigationItem *_navItem;
 }
 
 @property (retain) RootMenuViewController *rootMenuViewController;
