@@ -4,6 +4,7 @@
 #import "LayerMgr.h"
 #import "MyContactListener.h"
 #import "PlayerNode.h"
+#import "Level.h"
 
 #define PTM_RATIO 32.0
 
@@ -23,6 +24,7 @@
     LayerMgr *_layerMgr;
     
     bool _inCross;
+    bool _hasInit;
     
     NSMutableArray *_rivers;
     NSMutableArray *_bridges;
@@ -34,6 +36,7 @@
 + (id) scene;
 
 @property (nonatomic, retain) PlayerNode *player;
+@property (nonatomic, retain) Level *currentLevel;
 
 
 

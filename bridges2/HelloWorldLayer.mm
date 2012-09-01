@@ -70,8 +70,14 @@
     NSString *jsonPath = [path stringByAppendingPathComponent:@"level1.json"];
     NSString *jsonString = [NSString stringWithContentsOfFile:jsonPath encoding:NSUTF8StringEncoding error:nil];
     
-    Level *level = [[Level alloc] initWithJson:jsonString: _layerMgr];
-    [level dealloc];
+    self.currentLevel = [[Level alloc] initWithJson:jsonString: _layerMgr];
+    
+ //   [level.rivers makeObjectsPerformSelector:@selector(addSprite:)];
+    
+    [self.currentLevel addSprites];
+    
+    
+    //[level dealloc];
 }
 
 -(void)draw {
@@ -82,16 +88,18 @@
     
     ccDrawSolidRect( ccp(0, 0), ccp(s.width, s.height), ccc4f(255, 255, 255, 255) );
     
-    if ([_rivers count] < 1) {
+    if (!_hasInit) {
         /*
          * The director doesn't know the window width correctly
          * until we do the first draw so we need to delay adding
          * our objects which rely on knowing the dimensions of
          * the window until that happens.
          */
-        _layerMgr.tileSize = CGSizeMake(s.height / 32, s.height / 32);
+        _layerMgr.tileSize = CGSizeMake(s.height / 28, s.height / 28);
         [self readLevel];
-        [self addRivers];
+       // [self addRivers];
+        
+        _hasInit = true;
     }
     
 //     _world->DrawDebugData();
@@ -147,11 +155,10 @@
             }
         }
     }
-    
 }
 
 -(BridgeNode*)findBridge:(CCSprite*) bridge {
-    for (BridgeNode *n in _bridges) {
+    for (BridgeNode *n in self.currentLevel.bridges) {
         if (n.bridge == bridge) {
             return n;
         }
@@ -161,7 +168,7 @@
 }
 
 -(HouseNode*)findHouse:(CCSprite*) house {
-    for (HouseNode *n in _houses) {
+    for (HouseNode *n in self.currentLevel.houses) {
         if (n.house == house) {
             return n;
         }
@@ -211,9 +218,9 @@
     
     int padding = bridge.bridge.contentSize.width / 2;
     
-    //    printf("player (%f, %f)\n", player.position.x, player.position.y);
+    //     printf("player (%f, %f)\n", player.position.x, player.position.y);
     //    printf("bridge (%f, %f)\n", object.position.x, object.position.y);
-    //    printf("vertical: %i\n", bridge.vertical);
+    //     printf("vertical: %i\n", bridge.vertical);
     
     if (player.position.y + player.contentSize.height < object.position.y + padding) {
         // Then the player is below the bridge
@@ -264,7 +271,7 @@
         [_player updateColor:bridge.color];
     }
     
-    if ([self hasWon]) {
+    if ([self.currentLevel hasWon]) {
         printf("You've won");
     }
 }
@@ -314,6 +321,10 @@
     [mgr removeAllActionsFromTarget:player];
     [mgr resumeTarget:player];
     
+    if ([self.currentLevel hasWon]) {
+        printf("You've won");
+    }
+    
 }
 
 - (void)spawnPlayer:(int) x: (int) y {
@@ -335,20 +346,20 @@
 }
 
 -(bool)inObject:(CGPoint) p {
-    for (BridgeNode *n in _bridges) {
+    for (BridgeNode *n in self.currentLevel.bridges) {
         if (CGRectContainsPoint([n.bridge boundingBox], p)) {
             return true;
         }
     }
     
-    for (CCSprite *s in _rivers) {
+    for (CCSprite *s in self.currentLevel.rivers) {
         if (CGRectContainsPoint([s boundingBox], p)) {
             return true;
         }
     }
     
-    for (CCSprite *s in _houses) {
-        if (CGRectContainsPoint([s boundingBox], p)) {
+    for (HouseNode *h in self.currentLevel.houses) {
+        if (CGRectContainsPoint([h.house boundingBox], p)) {
             return true;
         }
     }
@@ -356,24 +367,6 @@
     return false;
     
 }
-
--(bool)hasWon {
-    for (BridgeNode *n in _bridges) {
-        if (!n.isCrossed) {
-            return false;
-        }
-    }
-    
-    for (HouseNode *n in _houses) {
-        if (!n.isVisited) {
-            return false;
-        }
-    }
-    
-    return true;
-    
-}
-
 
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
@@ -518,6 +511,8 @@
     delete _contactListener;
     [_spriteSheet release];
     [_player dealloc];
+    
+    [self.currentLevel dealloc];
     
     [super dealloc];
 }

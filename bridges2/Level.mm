@@ -46,15 +46,71 @@
     NSArray *rivers = [level objectForKey:@"rivers"];
     NSLog(@"rivers.count: %i", rivers.count);
     
+    /*
+     * Add the rivers
+     */
     for (NSDictionary *r in rivers) {
         NSString *x = [r objectForKey:@"x"];
         NSString *y = [r objectForKey:@"y"];
         NSString *dir = [r objectForKey:@"dir"];
-        NSLog(@"river(%@, %@, %@)", x, y, dir);
         
         [self addRivers:x:y:[dir isEqualToString:@"v"]];
     }
     
+    /*
+     * Add the bridges
+     */
+    NSArray *bridges = [level objectForKey:@"bridges"];
+    for (NSDictionary *b in bridges) {
+        NSString *x = [b objectForKey:@"x"];
+        NSString *y = [b objectForKey:@"y"];
+        NSString *dir = [b objectForKey:@"dir"];
+        NSString *color = [b objectForKey:@"color"];
+        
+        [self addBridge:[x integerValue]:[y integerValue]:
+         [dir isEqualToString:@"v"]:[self getColor:color]];
+    }
+    
+    /*
+     * Add the houses
+     */
+    NSArray *houses = [level objectForKey:@"houses"];
+    for (NSDictionary *h in houses) {
+        NSString *x = [h objectForKey:@"x"];
+        NSString *y = [h objectForKey:@"y"];
+        NSString *color = [h objectForKey:@"color"];
+        
+        [self addHouse:[x integerValue]:[y integerValue]:[self getColor:color]];
+    }
+    
+}
+
+-(void)addSprites {
+    for (CCSprite *r in self.rivers) {
+        [self.layerMgr addChildToSheet:r];
+    }
+    
+    for (BridgeNode *b in self.bridges) {
+        [b addSprite];
+    }
+    
+    for (HouseNode *h in self.houses) {
+        [h addSprite];
+    }
+}
+
+-(int)getColor:(NSString*) color {
+    if ([color isEqualToString:@"red"]) {
+        return RED;
+    } else if ([color isEqualToString:@"green"]) {
+        return GREEN;
+    } else if ([color isEqualToString:@"blue"]) {
+        return BLUE;
+    } else if ([color isEqualToString:@"black"]) {
+        return BLACK;
+    } else {
+        return NONE;
+    }
 }
 
 -(void)addRivers:(NSString*) xSpec:(NSString*) ySpec:(BOOL) vert {
@@ -128,7 +184,7 @@
      */
     for (int i = xi1; i <= xi2; i++) {
         for (int j = yi1; j <= yi2; j++) {
-            NSLog(@"Adding a river at: %i, %i", i, j);
+            [self addRiver:i:j:vert];
             
         }
     }
@@ -165,7 +221,7 @@
     [self resizeSprite:river:1];
     CGPoint startPos = [self tileToPoint:x:y];
     
-    printf("addingRiverTo (%f, %f)\n", startPos.x, startPos.y);
+//    printf("addingRiverTo (%f, %f)\n", startPos.x, startPos.y);
     
     river.position = startPos;
     river.tag = RIVER;
@@ -180,7 +236,7 @@
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
-    BridgeNode *bridgeNode = [[BridgeNode alloc] initWithDir:vertical:BRIDGE:color:_layerMgr];
+    BridgeNode *bridgeNode = [[BridgeNode alloc] initWithDir:vertical:BRIDGE:color:self.layerMgr];
     CGPoint startPos = [self tileToPoint:x:y];
     
     [bridgeNode setBridgePosition:startPos];
@@ -191,11 +247,28 @@
     
 }
 
+-(bool)hasWon {
+    for (BridgeNode *n in _bridges) {
+        if (!n.isCrossed) {
+            return false;
+        }
+    }
+    
+    for (HouseNode *n in _houses) {
+        if (!n.isVisited) {
+            return false;
+        }
+    }
+    
+    return true;
+    
+}
+
 -(HouseNode*)addHouse:(int) x:(int) y:(int) color {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
-    HouseNode *houseNode = [[HouseNode alloc] initWithColor:HOUSE:color:_layerMgr];
+    HouseNode *houseNode = [[HouseNode alloc] initWithColor:HOUSE:color:self.layerMgr];
     CGPoint startPos = [self tileToPoint:x:y];
     
     [houseNode setHousePosition:startPos];

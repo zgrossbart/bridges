@@ -15,6 +15,8 @@
 }
 
 -(id) initWithJson:(NSString*) jsonString: (LayerMgr*) layerMgr;
+-(void) addSprites;
+-(bool)hasWon;
 
 @property (readonly) NSMutableArray *rivers;
 @property (readonly) NSMutableArray *bridges;
