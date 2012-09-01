@@ -218,7 +218,7 @@
         river = [CCSprite spriteWithSpriteFrameName:@"river_v.png"];
     }
     
-    [self resizeSprite:river:1];
+    [self resizeSprite:river:1:vert];
     CGPoint startPos = [self tileToPoint:x:y];
     
 //    printf("addingRiverTo (%f, %f)\n", startPos.x, startPos.y);
@@ -285,9 +285,14 @@
     return [[CCDirector sharedDirector] winSize];
 }
 
--(void)resizeSprite:(CCSprite*) sprite: (int) tiles {
-    sprite.scale = self.layerMgr.tileSize.width/sprite.contentSize.width;
-    sprite.contentSize = self.layerMgr.tileSize;
+-(void)resizeSprite:(CCSprite*) sprite: (int) tiles: (bool) vert {
+    if (vert) {
+        sprite.scaleY = self.layerMgr.tileSize.width/sprite.contentSize.width;
+        sprite.contentSize = CGSizeMake(sprite.contentSize.width, self.layerMgr.tileSize.height);
+    } else {
+        sprite.scaleX = self.layerMgr.tileSize.width/sprite.contentSize.width;
+        sprite.contentSize = CGSizeMake(self.layerMgr.tileSize.width, sprite.contentSize.height);
+    }
     
 }
 
