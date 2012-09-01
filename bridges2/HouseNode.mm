@@ -13,14 +13,16 @@
 @property (readwrite) CCSprite *house;
 @property (nonatomic, assign, getter=isVisited, readwrite) bool visited;
 @property (nonatomic, assign, readwrite) int color;
+@property (readwrite) LayerMgr *layerMgr;
+@property (nonatomic, assign, readwrite) int tag;
 @end
 
 @implementation HouseNode
 
 -(id)initWithColor:(int) tag:(int) color:(LayerMgr*) layerMgr {
     if( (self=[super init] )) {
-        _manager = layerMgr;
-        _tag = tag;
+        self.layerMgr = layerMgr;
+        self.tag = tag;
         self.visited = false;
         self.color = color;
         if (color == RED) {
@@ -32,11 +34,13 @@
         } else if (color == BLACK) {
             [self setHouseSprite:[CCSprite spriteWithSpriteFrameName:@"house.png"]];
         }
-        
-        [_manager addChildToSheet:self.house];
     }
     
     return self;
+}
+
+- (void) addSprite {
+    [self.layerMgr addChildToSheet:self.house];
 }
 
 -(void)setHouseSprite:(CCSprite*)house {
@@ -59,9 +63,6 @@
         [self.house setDisplayFrame:frame];
     }
     self.visited = true;
-}
--(int)tag {
-    return _tag;
 }
 
 -(void)setHousePosition:(CGPoint)p {

@@ -187,6 +187,7 @@
 		CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */; };
 		CEBD81FD15EACDC100EE27CF /* RootMenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */; };
 		CEBD81FE15EACDC100EE27CF /* RootMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */; };
+		CECE255B15F21FDB00517973 /* Level.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE255A15F21FDB00517973 /* Level.mm */; };
 		CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */; };
 		CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E015EB8A8400094695 /* HouseNode.mm */; };
 		CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E315EB8AF600094695 /* PlayerNode.mm */; };
@@ -563,6 +564,9 @@
 		CEBD81FA15EACDC100EE27CF /* RootMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootMenuViewController.h; sourceTree = "<group>"; };
 		CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootMenuViewController.mm; sourceTree = "<group>"; };
 		CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootMenuViewController.xib; sourceTree = "<group>"; };
+		CECE255915F21FDB00517973 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		CECE255A15F21FDB00517973 /* Level.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level.mm; sourceTree = "<group>"; };
+		CECE255D15F227D200517973 /* GameNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameNode.h; sourceTree = "<group>"; };
 		CEDBC2DA15EB89DA00094695 /* BridgeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeColors.h; sourceTree = "<group>"; };
 		CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerMgr.h; sourceTree = "<group>"; };
 		CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LayerMgr.mm; sourceTree = "<group>"; };
@@ -653,10 +657,13 @@
 				CEDBC2DA15EB89DA00094695 /* BridgeColors.h */,
 				CEDBC2EA15EB8C8200094695 /* BridgeNode.h */,
 				CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */,
-				CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */,
-				CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */,
+				CECE255D15F227D200517973 /* GameNode.h */,
 				CEDBC2DF15EB8A8400094695 /* HouseNode.h */,
 				CEDBC2E015EB8A8400094695 /* HouseNode.mm */,
+				CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */,
+				CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */,
+				CECE255915F21FDB00517973 /* Level.h */,
+				CECE255A15F21FDB00517973 /* Level.mm */,
 				CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */,
 				CEBD81F015EACA9D00EE27CF /* MainMenuViewController.m */,
 				CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */,
@@ -1433,6 +1440,7 @@
 				CEDBC2E715EB8B5300094695 /* MyContactListener.mm in Sources */,
 				CEDBC2EC15EB8C8200094695 /* BridgeNode.mm in Sources */,
 				CE453BC715F174A900053407 /* JSONKit.m in Sources */,
+				CECE255B15F21FDB00517973 /* Level.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

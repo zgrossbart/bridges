@@ -14,17 +14,16 @@
 @property (readwrite) CCSprite *bridge;
 @property (nonatomic, assign, getter=isCrossed, readwrite) bool crossed;
 @property (nonatomic, assign, readwrite) int color;
+@property (readwrite) LayerMgr *layerMgr;
+@property (nonatomic, assign, readwrite) int tag;
 @end
 
 @implementation BridgeNode
 
-LayerMgr *_manager;
-
-
 -(id) initWithDir:(bool) vertical:(int) tag: (int) color:(LayerMgr*) layerMgr {
     if( (self=[super init] )) {
-        _manager = layerMgr;
-        _tag = tag;
+        self.layerMgr = layerMgr;
+        self.tag = tag;
         self.color = color;
         if (vertical) {
             if (color == RED) {
@@ -50,11 +49,13 @@ LayerMgr *_manager;
         
         
         self.vertical = vertical;
-        
-        [_manager addChildToSheet:self.bridge];
     }
     
     return self;
+}
+
+- (void) addSprite {
+    [self.layerMgr addChildToSheet:self.bridge];
 }
 
 -(void)setBridgeSprite:(CCSprite*)bridge {
@@ -84,9 +85,6 @@ LayerMgr *_manager;
         [self.bridge setDisplayFrame:frame];
     }
     self.crossed = true;
-}
--(int)tag {
-    return _tag;
 }
 
 -(void)dealloc {

@@ -91,7 +91,7 @@
          * our objects which rely on knowing the dimensions of
          * the window until that happens.
          */
-        _layerMgr.tileSize = CGSizeMake(s.height / 25, s.height / 25);
+        _layerMgr.tileSize = CGSizeMake(s.height / 32, s.height / 32);
         [self addRivers];
     }
     
@@ -472,6 +472,8 @@
     
     [bridgeNode setBridgePosition:startPos];
     
+    [bridgeNode addSprite];
+    
     [_bridges addObject:bridgeNode];
     
     return bridgeNode;
@@ -486,6 +488,8 @@
     CGPoint startPos = [self tileToPoint:x:y];
     
     [houseNode setHousePosition:startPos];
+    
+    [houseNode addSprite];
     
     [_houses addObject:houseNode];
     

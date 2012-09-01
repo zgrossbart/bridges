@@ -1,8 +1,9 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "LayerMgr.h"
+#import "GameNode.h"
 
-@interface HouseNode : CCLayer {
+@interface HouseNode : CCLayer <GameNode> {
 @private
     int _tag;
     LayerMgr *_manager;
@@ -21,5 +22,6 @@
 @property (nonatomic, assign, getter=isVisited, readonly) bool visited;
 @property (nonatomic, assign, readonly) int color;
 @property (nonatomic, assign, setter=position:) CGPoint position;
+@property (readonly) LayerMgr *layerMgr;
 
 @end
