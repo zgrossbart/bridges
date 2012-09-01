@@ -26,9 +26,6 @@
         
         _inCross = false;
         
-        _bridges = [[NSMutableArray alloc] init];
-        _houses = [[NSMutableArray alloc] init];
-        
         b2Vec2 gravity = b2Vec2(0.0f, 0.0f);
         bool doSleep = false;
         _world = new b2World(gravity);
@@ -402,111 +399,16 @@
                        y * _layerMgr.tileSize.height);
 }
 
-- (void)addRivers {
-    CGSize winSize = [self winSizeTiles];
-    
-    _rivers = [[NSMutableArray alloc] init];
-    int y = winSize.height / 2;
-    
-    CCSprite *river = [self addHRiver:0:y];
-    [_rivers addObject:river];
-    
-    int count = 0;
-    for (int i = 1; i <= winSize.width; i++) {
-        count++;
-        
-        CCSprite *r = [self addHRiver:i:y];
-        [_rivers addObject:r];
-    }
-    
-    [self addBridge:8:y:true:RED];
-    [self addBridge:18:y:true:GREEN];
-    
-    [self addHouse:4:4:GREEN];
-}
-
 -(CGSize)getWinSize {
     //CGRect r = [[UIScreen mainScreen] bounds];
     //return r.size;
     return [[CCDirector sharedDirector] winSize];
 }
 
-- (CCSprite*)addHRiver:(int) x:(int) y {
-    
-    CCSprite *river = [CCSprite spriteWithSpriteFrameName:@"river_h.png"];
-    
-    [self resizeSprite:river:1];
-    CGPoint startPos = [self tileToPoint:x:y];
-    
-    printf("addingRiverTo (%f, %f)\n", startPos.x, startPos.y);
-    
-    river.position = startPos;
-    river.tag = RIVER;
-    
-    [self addChildToSheet:river];
-    
-    return river;
-    
-}
-
--(void)resizeSprite:(CCSprite*) sprite: (int) tiles {
-    sprite.scale = _layerMgr.tileSize.width/sprite.contentSize.width;
-    sprite.contentSize = _layerMgr.tileSize;
-    
-}
-
-- (BridgeNode*)addBridge:(int) x:(int) y:(bool) vertical:(int) color {
-    
-    //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
-    
-    BridgeNode *bridgeNode = [[BridgeNode alloc] initWithDir:vertical:BRIDGE:color:_layerMgr];
-    CGPoint startPos = [self tileToPoint:x:y];
-    
-    [bridgeNode setBridgePosition:startPos];
-    
-    [bridgeNode addSprite];
-    
-    [_bridges addObject:bridgeNode];
-    
-    return bridgeNode;
-    
-}
-
--(HouseNode*)addHouse:(int) x:(int) y:(int) color {
-    
-    //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
-    
-    HouseNode *houseNode = [[HouseNode alloc] initWithColor:HOUSE:color:_layerMgr];
-    CGPoint startPos = [self tileToPoint:x:y];
-    
-    [houseNode setHousePosition:startPos];
-    
-    [houseNode addSprite];
-    
-    [_houses addObject:houseNode];
-    
-    return houseNode;
-    
-}
-
--(void)addChildToSheet:(CCSprite*) sprite {
-    [_layerMgr addBoxBodyForSprite:sprite];
-    [_spriteSheet addChild:sprite];
-}
-
 -(void)dealloc {
     
     delete _world;
     delete _debugDraw;
-    
-    [_rivers release];
-    _rivers = nil;
-    
-    [_bridges release];
-    _bridges = nil;
-    
-    [_houses release];
-    _houses = nil;
     
     delete _contactListener;
     [_spriteSheet release];

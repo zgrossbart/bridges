@@ -17,18 +17,12 @@
     GLESDebugDraw *_debugDraw;
     MyContactListener *_contactListener;
     
-    
-    
     PlayerNode *_player;
     
     LayerMgr *_layerMgr;
     
     bool _inCross;
     bool _hasInit;
-    
-    NSMutableArray *_rivers;
-    NSMutableArray *_bridges;
-    NSMutableArray *_houses;
     
     CCDirectorIOS	*director_;							// weak ref
 }
