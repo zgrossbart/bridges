@@ -33,6 +33,7 @@
 									sharegroup:nil
 								 multiSampling:NO
 							   numberOfSamples:0];
+    glView_ = glView;
     
 	// Enable multiple touches
 	[glView setMultipleTouchEnabled:YES];
@@ -94,14 +95,33 @@
     // make main window visible
     [window_ makeKeyAndVisible];
     
+    [self.view insertSubview:glView_ atIndex:0];
+    
     //    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] withColor:ccWHITE]];
     //[[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
     
-    [self.view insertSubview:glView atIndex:0];
+    /*[self.view insertSubview:glView atIndex:0];
     //    [[CCDirector sharedDirector] setOpenGLView:glView];
     CCScene *scene = [HelloWorldLayer scene];
     HelloWorldLayer *layer = (HelloWorldLayer*)[scene getChildByTag:LEVEL];
     layer.currentLevelPath = self.currentLevelPath;
+    [[CCDirector sharedDirector] runWithScene:scene];*/
+    
+    _hasInit = true;
+}
+
+-(void)showLevel:(NSString*) levelPath {
+    
+    if (!_hasInit) {
+        [self setupCocos2D];
+    }
+    
+    CCScene *scene = [HelloWorldLayer scene];
+    HelloWorldLayer *layer = (HelloWorldLayer*)[scene getChildByTag:LEVEL];
+    
+    //    [[CCDirector sharedDirector] setOpenGLView:glView];
+    
+    [layer setLevel:levelPath];
     [[CCDirector sharedDirector] runWithScene:scene];
 }
 
@@ -113,8 +133,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    printf("View did load...\n");
-    [self setupCocos2D];
+
+    
+    
+//    [self showLevel];
 }
 
 - (IBAction)goHomeTapped:(id)sender {
@@ -133,9 +155,6 @@
 }
 
 -(void)dealloc {
-    
-    [_currentLevelPath release];
-    _currentLevelPath = nil;
     
     [super dealloc];
 }

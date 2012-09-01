@@ -6,6 +6,10 @@
 
 //#define PTM_RATIO 32.0
 
+@interface HelloWorldLayer()
+    @property (nonatomic, retain, readwrite) NSString *currentLevelPath;
+@end
+
 @implementation HelloWorldLayer
 
 
@@ -76,6 +80,32 @@
     
     
     //[level dealloc];
+}
+
+-(void)reset {
+    _hasInit = false;
+    [self removeAllChildrenWithCleanup:true];
+    
+    [self.currentLevel dealloc];
+    self.currentLevelPath = nil;
+}
+
+-(void)setLevel:(NSString*) path {
+    if (self.currentLevelPath && ![self.currentLevelPath isEqualToString:path]) {
+        [self reset];
+    }
+    
+    self.currentLevelPath = path;
+    
+    /*
+     * The first time we run we don't have the window dimensions
+     * so we can't draw yet and we wait to add the level until the 
+     * first draw.  After that we have the dimensions so we can 
+     * just set the new level.
+     */
+    if (_hasInit) {
+        [self readLevel];
+    }
 }
 
 -(void)draw {

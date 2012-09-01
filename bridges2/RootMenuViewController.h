@@ -14,14 +14,18 @@
 	UINavigationController *navController_;
 	
 	CCDirectorIOS	*director_;							// weak ref
+    CCGLView *glView_;
+    
+    bool _hasInit;
+
 }
 
 @property (readonly) UINavigationController *navController;
 @property (readonly) CCDirectorIOS *director;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
-- (IBAction)goHomeTapped:(id)sender;
+-(void)showLevel:(NSString*) levelPath;
 
-@property (nonatomic, retain) NSString *currentLevelPath;
+- (IBAction)goHomeTapped:(id)sender;
 
 @end

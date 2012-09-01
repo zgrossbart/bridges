@@ -102,7 +102,9 @@
         self.rootMenuViewController = [[[RootMenuViewController alloc] initWithNibName:nil bundle:nil] autorelease];
     }
     
-    self.rootMenuViewController.currentLevelPath = [[[LevelMgr getLevelMgr].levels allKeys] objectAtIndex:self.curIndex];
+    [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:false];
+    
+    [self.rootMenuViewController showLevel:[[[LevelMgr getLevelMgr].levels allKeys] objectAtIndex:self.curIndex]];
     [self.navigationController pushViewController:_rootMenuViewController animated:YES];
 }
 
