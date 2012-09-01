@@ -11,9 +11,16 @@
 
 @interface MainMenuViewController : UIViewController {
     RootMenuViewController *_rootMenuViewController;
+    
+//    IBOutlet UITableView *_view;
+    CGFloat  mFontSize;
+    NSArray* mFontNames;
 }
 
 @property (retain) RootMenuViewController *rootMenuViewController;
+
+@property (nonatomic, assign) CGFloat fontSize;
+@property (nonatomic, retain) NSArray* fontNames;
 
 
 - (IBAction)showBridgesTapped:(id)sender;
