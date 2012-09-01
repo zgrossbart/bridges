@@ -5,20 +5,20 @@
             {
                 "x": "l-r",
                 "y": "14",
-                "dir": "h"
+                "orient": "h"
             }
         ],
         "bridges": [
             {
                 "x": "10",
                 "y": "14",
-                "dir": "v",
+                "orient": "v",
                 "color": "red"
             },
             {
                 "x": "20",
                 "y": "14",
-                "dir": "v",
+                "orient": "v",
                 "color": "green"
             }
         ],

@@ -52,7 +52,7 @@
     for (NSDictionary *r in rivers) {
         NSString *x = [r objectForKey:@"x"];
         NSString *y = [r objectForKey:@"y"];
-        NSString *dir = [r objectForKey:@"dir"];
+        NSString *dir = [r objectForKey:@"orient"];
         
         [self addRivers:x:y:[dir isEqualToString:@"v"]];
     }
@@ -64,7 +64,7 @@
     for (NSDictionary *b in bridges) {
         NSString *x = [b objectForKey:@"x"];
         NSString *y = [b objectForKey:@"y"];
-        NSString *dir = [b objectForKey:@"dir"];
+        NSString *dir = [b objectForKey:@"orient"];
         NSString *color = [b objectForKey:@"color"];
         
         [self addBridge:[x integerValue]:[y integerValue]:
