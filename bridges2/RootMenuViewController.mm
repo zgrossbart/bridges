@@ -8,6 +8,7 @@
 
 #import "RootMenuViewController.h"
 #import "HelloWorldLayer.h"
+#import "BridgeColors.h"
 
 @interface RootMenuViewController ()
 
@@ -99,6 +100,8 @@
     [self.view insertSubview:glView atIndex:0];
     //    [[CCDirector sharedDirector] setOpenGLView:glView];
     CCScene *scene = [HelloWorldLayer scene];
+    HelloWorldLayer *layer = (HelloWorldLayer*)[scene getChildByTag:LEVEL];
+    layer.currentLevelPath = self.currentLevelPath;
     [[CCDirector sharedDirector] runWithScene:scene];
 }
 
@@ -127,6 +130,14 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void)dealloc {
+    
+    [_currentLevelPath release];
+    _currentLevelPath = nil;
+    
+    [super dealloc];
 }
 
 @end

@@ -31,7 +31,7 @@
 
 @property (nonatomic, retain) PlayerNode *player;
 @property (nonatomic, retain) Level *currentLevel;
-
+@property (nonatomic, retain) NSString *currentLevelPath;
 
 
 @end

@@ -13,6 +13,7 @@
     
     CCScene *scene = [CCScene node];
     HelloWorldLayer *layer = [HelloWorldLayer node];
+    layer.tag = LEVEL;
     [scene addChild:layer];
     return scene;
     
@@ -64,7 +65,7 @@
 
 -(void)readLevel {
     NSString *path = [[NSBundle mainBundle] bundlePath];
-    NSString *jsonPath = [path stringByAppendingPathComponent:@"level1.json"];
+    NSString *jsonPath = [path stringByAppendingPathComponent:self.currentLevelPath];
     NSString *jsonString = [NSString stringWithContentsOfFile:jsonPath encoding:NSUTF8StringEncoding error:nil];
     
     self.currentLevel = [[Level alloc] initWithJson:jsonString: _layerMgr];
@@ -413,6 +414,9 @@
     delete _contactListener;
     [_spriteSheet release];
     [_player dealloc];
+    
+    [_currentLevelPath release];
+    _currentLevelPath = nil;
     
     [self.currentLevel dealloc];
     

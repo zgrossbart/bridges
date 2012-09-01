@@ -22,6 +22,8 @@
 @property (nonatomic, assign) CGFloat fontSize;
 @property (nonatomic, retain) NSArray* fontNames;
 
+@property (nonatomic) int curIndex;
+
 
 - (IBAction)showBridgesTapped:(id)sender;
 

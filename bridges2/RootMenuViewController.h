@@ -22,4 +22,6 @@
 
 - (IBAction)goHomeTapped:(id)sender;
 
+@property (nonatomic, retain) NSString *currentLevelPath;
+
 @end
