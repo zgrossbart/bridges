@@ -1,4 +1,4 @@
-//
+    //
 //  RiverNode.m
 //  Cocos2DSimpleGame
 //
@@ -53,7 +53,7 @@
         //
 //        [_spriteSheet addChild:_playerSprite];
         
-        [_manager addChildToSheet:self.player];
+        _spriteBody = [_manager addChildToSheet:self.player];
     }
     
     return self;
@@ -62,6 +62,8 @@
 -(void)playerMoveEnded {
     [_player stopAction:_walkAction];
     _moving = FALSE;
+    
+    _spriteBody->SetTransform(b2Vec2(self.player.position.x,self.player.position.y), _spriteBody->GetAngle());
 }
 
 -(void)updateColor:(int)color {
@@ -88,6 +90,14 @@
     self.contentSize = CGSizeMake(self.player.contentSize.width,
                                   self.player.contentSize.height);
     self.player.tag = [self tag];
+}
+
+-(void)moveTo:(CGPoint)p:(bool)force {
+    if (force) {
+        _moving = false;
+    }
+    
+    [self moveTo:p];
 }
 
 -(void)moveTo:(CGPoint)p {

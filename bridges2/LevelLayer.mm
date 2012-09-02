@@ -154,7 +154,7 @@
         _hasInit = true;
     }
     
-//     _world->DrawDebugData();
+     _world->DrawDebugData();
 }
 
 
@@ -288,7 +288,9 @@
         if (!bridge.vertical) {
             [self bumpObject:player:object];
         } else {
-            location = ccp(player.position.x, (object.position.y - 1) - player.contentSize.height );
+            int x = (object.position.x + (object.contentSize.width / 2)) -
+                (player.contentSize.width);
+            location = ccp(x, (object.position.y - 1) - (player.contentSize.height * 2));
         }
     } else if (player.position.x + player.contentSize.width < object.position.x + padding) {
         // Then the player is to the right of the bridge
@@ -320,8 +322,7 @@
     [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color]];
     [self.undoBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
-    [_player.player runAction:
-     [CCMoveTo actionWithDuration:0.3 position:ccp(location.x,location.y)]];
+    [_player moveTo: ccp(location.x, location.y):true];
     
     [bridge cross];
     

@@ -19,8 +19,8 @@
 +(CGFloat) distanceBetweenTwoPoints: (CGPoint) point1: (CGPoint) point2;
 
 -(id) initWithSpriteSheet:(CCSpriteBatchNode*) spriteSheet:(b2World*) world;
--(void)addChildToSheet:(CCSprite*) sprite;
--(void)addBoxBodyForSprite:(CCSprite *)sprite;
+-(b2Body*)addChildToSheet:(CCSprite*) sprite;
+-(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite;
 -(void)spriteDone:(id)sender;
 -(void)removeAll;
 

@@ -26,13 +26,15 @@
     return self;
 }
 
--(void)addChildToSheet:(CCSprite*) sprite {
-    [self addBoxBodyForSprite:sprite];
+-(b2Body*)addChildToSheet:(CCSprite*) sprite {
+    b2Body *body = [self addBoxBodyForSprite:sprite];
     [_sheet addChild:sprite];
+    
+    return body;
 }
 
--(void)addBoxBodyForSprite:(CCSprite *)sprite {
-    NSLog(@"Adding tag: %i", sprite.tag);
+-(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite {
+    
     b2BodyDef spriteBodyDef;
     spriteBodyDef.type = b2_dynamicBody;
     spriteBodyDef.position.Set(sprite.position.x/PTM_RATIO,
@@ -48,6 +50,8 @@
     spriteShapeDef.density = 10.0;
     spriteShapeDef.isSensor = true;
     spriteBody->CreateFixture(&spriteShapeDef);
+
+    return spriteBody;
     
 }
 

@@ -8,6 +8,7 @@
     LayerMgr *_manager;
     
     CCSprite *_playerSprite;
+    b2Body *_spriteBody;
     CCAction *_walkAction;
     CCAction *_moveAction;
     BOOL _moving;
@@ -18,6 +19,7 @@
 -(void)updateColor:(int)color;
 -(int)tag;
 -(void)moveTo:(CGPoint)p;
+-(void)moveTo:(CGPoint)p:(bool)force;
 -(void)playerMoveEnded;
 
 @property (readonly) CCSprite *player;
