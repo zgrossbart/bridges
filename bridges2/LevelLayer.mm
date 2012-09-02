@@ -84,6 +84,9 @@
     [_layerMgr removeAll];
     [self.undoStack removeAllObjects];
     [self.undoBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    
+    [_player dealloc];
+    _player = nil;
 }
 
 -(void)setLevel:(Level*) level {
@@ -154,7 +157,7 @@
         _hasInit = true;
     }
     
-     _world->DrawDebugData();
+//     _world->DrawDebugData();
 }
 
 

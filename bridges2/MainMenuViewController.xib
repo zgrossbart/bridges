@@ -40,10 +40,9 @@
 					<object class="IBUITableView" id="396085634">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{20, 44}, {440, 207}}</string>
+						<string key="NSFrame">{{0, 44}, {480, 207}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -218,6 +217,17 @@
 						<object class="IBActionInfo" key="NS.object.0">
 							<string key="name">showBridgesTapped:</string>
 							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">_navItem</string>
+						<string key="NS.object.0">UINavigationItem</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">_navItem</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">_navItem</string>
+							<string key="candidateClassName">UINavigationItem</string>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">

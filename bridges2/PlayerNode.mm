@@ -127,11 +127,7 @@
                        [CCCallFunc actionWithTarget:self selector:@selector(playerMoveEnded)],
                        nil
                        ];
-    
-   // self.moveAction =
-   //           [CCMoveTo actionWithDuration:distance/velocity position:ccp(p.x,p.y)];
-    
-    
+
     [_player runAction:self.moveAction];
 }
 
@@ -145,8 +141,13 @@
 }
 
 -(void)dealloc {
-    
-    [self.player dealloc];
+    /*
+     * We don't need to deallocate the player sprite
+     * since it was removed from the sprite sheet and
+     * that deallocates it for us.
+     *
+     * [self.player dealloc];
+     */
     
     self.player = nil;
     self.walkAction = nil;
