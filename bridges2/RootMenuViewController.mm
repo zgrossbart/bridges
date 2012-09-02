@@ -111,10 +111,13 @@
     
     CCScene *scene = [HelloWorldLayer scene];
     _layer = (HelloWorldLayer*)[scene getChildByTag:LEVEL];
+    _layer.undoBtn = _undoBtn;
     
     //    [[CCDirector sharedDirector] setOpenGLView:glView];
     
     [[CCDirector sharedDirector] runWithScene:scene];
+    
+    [_undoBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     
     _hasInit = true;
 }
@@ -152,6 +155,8 @@
 
 - (void)viewDidUnload
 {
+    [_undoBtn release];
+    _undoBtn = nil;
     [super viewDidUnload];
     [[CCDirector sharedDirector] end];
 }
@@ -164,6 +169,7 @@
 -(void)dealloc {
     
     [_layer dealloc];
+    [_undoBtn release];
     [super dealloc];
 }
 

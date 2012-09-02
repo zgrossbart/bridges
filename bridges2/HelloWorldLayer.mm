@@ -82,6 +82,8 @@
 
 -(void)reset {
     [_layerMgr removeAll];
+    [self.undoStack removeAllObjects];
+    [self.undoBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
 }
 
 -(void)setLevel:(Level*) level {
@@ -118,8 +120,15 @@
     [undo.node undo];
     [self.player updateColor:undo.color];
     self.player.player.position = undo.pos;
+    self.player.position = undo.pos;
     
     [self.undoStack removeLastObject];
+    
+    if (self.undoStack.count == 0) {
+        [self.undoBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    } else {
+        [self.undoBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
     
 }
 
@@ -230,6 +239,7 @@
     if (![node isVisited]) {
         if (_player.color == node.color) {
             [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color]];
+            [self.undoBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [node visit];
         }
     }
@@ -308,6 +318,7 @@
     //    _player.position = location;
     
     [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color]];
+    [self.undoBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     [_player.player runAction:
      [CCMoveTo actionWithDuration:0.3 position:ccp(location.x,location.y)]];

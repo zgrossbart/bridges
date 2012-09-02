@@ -18,6 +18,7 @@
     CCGLView *glView_;
     
     bool _hasInit;
+    IBOutlet UIButton *_undoBtn;
 
 }
 
