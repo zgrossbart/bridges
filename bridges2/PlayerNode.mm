@@ -63,6 +63,13 @@
     [_player stopAction:_walkAction];
     _moving = FALSE;
     
+    /*
+     * If this move caused us to collide with something (like crossing 
+     * a bridge) then the bounding box for our sprite gets stuck against
+     * the item we collided with until the next click.  We need to manually
+     * update the position so the next click can move the player sprite
+     * properly instead of just repositioning the box.
+     */
     _spriteBody->SetTransform(b2Vec2(self.player.position.x,self.player.position.y), _spriteBody->GetAngle());
 }
 
