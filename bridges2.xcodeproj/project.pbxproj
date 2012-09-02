@@ -179,7 +179,7 @@
 		CE6D67EB15EAC5FD00C7EDD7 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67EA15EAC5FD00C7EDD7 /* b2Rope.cpp */; };
 		CE6D67F115EAC5FD00C7EDD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F015EAC5FD00C7EDD7 /* main.m */; };
 		CE6D67F415EAC5FD00C7EDD7 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F315EAC5FD00C7EDD7 /* AppDelegate.mm */; };
-		CE6D67F715EAC5FD00C7EDD7 /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F615EAC5FD00C7EDD7 /* HelloWorldLayer.mm */; };
+		CE6D67F715EAC5FD00C7EDD7 /* LevelLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */; };
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
 		CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */; };
 		CEBD81F215EACA9D00EE27CF /* MainMenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */; };
@@ -555,8 +555,8 @@
 		CE6D67F015EAC5FD00C7EDD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE6D67F215EAC5FD00C7EDD7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE6D67F315EAC5FD00C7EDD7 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		CE6D67F515EAC5FD00C7EDD7 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		CE6D67F615EAC5FD00C7EDD7 /* HelloWorldLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldLayer.mm; sourceTree = "<group>"; };
+		CE6D67F515EAC5FD00C7EDD7 /* LevelLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelLayer.h; sourceTree = "<group>"; };
+		CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelLayer.mm; sourceTree = "<group>"; };
 		CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -646,8 +646,6 @@
 			children = (
 				CE6D67F215EAC5FD00C7EDD7 /* AppDelegate.h */,
 				CE6D67F315EAC5FD00C7EDD7 /* AppDelegate.mm */,
-				CE6D67F515EAC5FD00C7EDD7 /* HelloWorldLayer.h */,
-				CE6D67F615EAC5FD00C7EDD7 /* HelloWorldLayer.mm */,
 				CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */,
 				CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */,
 				CE6D65E815EAC5FB00C7EDD7 /* Resources */,
@@ -664,6 +662,8 @@
 				CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */,
 				CECE255915F21FDB00517973 /* Level.h */,
 				CECE255A15F21FDB00517973 /* Level.mm */,
+				CE6D67F515EAC5FD00C7EDD7 /* LevelLayer.h */,
+				CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */,
 				CECE256615F2819200517973 /* LevelMgr.h */,
 				CECE256715F2819200517973 /* LevelMgr.mm */,
 				CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */,
@@ -1444,7 +1444,7 @@
 				CE6D67EB15EAC5FD00C7EDD7 /* b2Rope.cpp in Sources */,
 				CE6D67F115EAC5FD00C7EDD7 /* main.m in Sources */,
 				CE6D67F415EAC5FD00C7EDD7 /* AppDelegate.mm in Sources */,
-				CE6D67F715EAC5FD00C7EDD7 /* HelloWorldLayer.mm in Sources */,
+				CE6D67F715EAC5FD00C7EDD7 /* LevelLayer.mm in Sources */,
 				CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */,
 				CEBD81F215EACA9D00EE27CF /* MainMenuViewController.mm in Sources */,
 				CEBD81FD15EACDC100EE27CF /* RootMenuViewController.mm in Sources */,

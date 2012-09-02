@@ -7,7 +7,7 @@
 //
 
 #import "RootMenuViewController.h"
-#import "HelloWorldLayer.h"
+#import "LevelLayer.h"
 #import "BridgeColors.h"
 
 @interface RootMenuViewController ()
@@ -15,7 +15,7 @@
 @end
 
 @implementation RootMenuViewController {
-    HelloWorldLayer *_layer;
+    LevelLayer *_layer;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -99,18 +99,18 @@
     
     [self.view insertSubview:glView_ atIndex:0];
     
-    //    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] withColor:ccWHITE]];
-    //[[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
+    //    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelLayer scene] withColor:ccWHITE]];
+    //[[CCDirector sharedDirector] replaceScene:[LevelLayer scene]];
     
     /*[self.view insertSubview:glView atIndex:0];
     //    [[CCDirector sharedDirector] setOpenGLView:glView];
-    CCScene *scene = [HelloWorldLayer scene];
-    HelloWorldLayer *layer = (HelloWorldLayer*)[scene getChildByTag:LEVEL];
+    CCScene *scene = [LevelLayer scene];
+    LevelLayer *layer = (LevelLayer*)[scene getChildByTag:LEVEL];
     layer.currentLevelPath = self.currentLevelPath;
     [[CCDirector sharedDirector] runWithScene:scene];*/
     
-    CCScene *scene = [HelloWorldLayer scene];
-    _layer = (HelloWorldLayer*)[scene getChildByTag:LEVEL];
+    CCScene *scene = [LevelLayer scene];
+    _layer = (LevelLayer*)[scene getChildByTag:LEVEL];
     _layer.undoBtn = _undoBtn;
     
     //    [[CCDirector sharedDirector] setOpenGLView:glView];
