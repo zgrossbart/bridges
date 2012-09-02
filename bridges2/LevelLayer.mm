@@ -272,47 +272,41 @@
     
     int padding = bridge.bridge.contentSize.width / 2;
     
-    //     printf("player (%f, %f)\n", player.position.x, player.position.y);
-    //    printf("bridge (%f, %f)\n", object.position.x, object.position.y);
-    //     printf("vertical: %i\n", bridge.vertical);
+    printf("player (%f, %f)\n", player.position.x, player.position.y);
+    printf("bridge (%f, %f)\n", object.position.x, object.position.y);
+    printf("vertical: %i\n", bridge.vertical);
     
-    if (player.position.y + player.contentSize.height < object.position.y + padding) {
-        // Then the player is below the bridge
-        if (!bridge.vertical) {
-            [self bumpObject:player:object];
-        } else {
+    if (bridge.vertical) {
+        if (player.position.y + player.contentSize.height < object.position.y + padding) {
+            // Then the player is below the bridge
             int x = (object.position.x + (object.contentSize.width / 2)) -
                 (player.contentSize.width);
             location = ccp(x, object.position.y + object.contentSize.height + 1);
-        }
-    } else if (player.position.y > (object.position.y + object.contentSize.height) - padding) {
-        // Then the player is above the bridge
-        if (!bridge.vertical) {
-            [self bumpObject:player:object];
-        } else {
+        } else if (player.position.y > (object.position.y + object.contentSize.height) - padding) {
+            // Then the player is above the bridge
             int x = (object.position.x + (object.contentSize.width / 2)) -
                 (player.contentSize.width);
             location = ccp(x, (object.position.y - 1) - (player.contentSize.height * 2));
         }
-    } else if (player.position.x + player.contentSize.width < object.position.x + padding) {
-        // Then the player is to the right of the bridge
-        if (bridge.vertical) {
-            [self bumpObject:player:object];
-        } else {
-            location = ccp((object.position.x - 1) - player.contentSize.width, player.position.y);
-        }
-    } else if (player.position.x > (object.position.x + object.contentSize.width) - padding) {
-        // Then the player is to the left of the bridge
-        if (bridge.vertical) {
-            [self bumpObject:player:object];
-        } else {
-            location = ccp(object.position.x + 1 + object.contentSize.width, player.position.y);
-        }
     } else {
+        if (player.position.x > (object.position.x + object.contentSize.width) - padding) {
+            // Then the player is to the right of the bridge
+            int y = (object.position.y + (object.contentSize.height / 2)) -
+                (player.contentSize.height);
+            location = ccp((object.position.x - 1) - (player.contentSize.width * 2), y);
+        } else if (player.position.x + player.contentSize.width < object.position.x + padding) {
+            // Then the player is to the left of the bridge
+            int y = (object.position.y + (object.contentSize.height / 2)) -
+                (player.contentSize.height);
+            location = ccp(object.position.x + 1 + object.contentSize.width, y);
+        }
+    }
+    
+    /*if (location == NULL) {
         printf("player (%f, %f)\n", player.position.x, player.position.y);
         printf("river (%f, %f)\n", object.position.x, object.position.y);
         printf("This should never happen\n");
-    }
+    }*/
     
     [mgr removeAllActionsFromTarget:player];
     [mgr resumeTarget:player];

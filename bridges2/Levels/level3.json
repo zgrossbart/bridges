@@ -1,0 +1,39 @@
+{
+    "level": {
+        "id": "3",
+        "name": "Level 3",
+        "rivers": [
+            {
+                "x": "18",
+                "y": "b-t",
+                "orient": "v"
+            }
+        ],
+        "bridges": [
+            {
+                "x": "18",
+                "y": "18",
+                "orient": "h",
+                "color": "red"
+            },
+            {
+                "x": "18",
+                "y": "8",
+                "orient": "h",
+                "color": "green"
+            }
+        ],
+        "houses": [
+            {
+                "x": "8",
+                "y": "18",
+                "color": "green"
+            },
+            {
+                "x": "28",
+                "y": "10",
+                "color": "red"
+            }
+        ]
+    }
+}

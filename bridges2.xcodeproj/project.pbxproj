@@ -181,6 +181,7 @@
 		CE6D67F415EAC5FD00C7EDD7 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F315EAC5FD00C7EDD7 /* AppDelegate.mm */; };
 		CE6D67F715EAC5FD00C7EDD7 /* LevelLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */; };
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
+		CEAE47F815F3894400898698 /* level3.json in Resources */ = {isa = PBXBuildFile; fileRef = CEAE47F715F3894400898698 /* level3.json */; };
 		CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */; };
 		CEBD81F215EACA9D00EE27CF /* MainMenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */; };
 		CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */; };
@@ -559,6 +560,7 @@
 		CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelLayer.mm; sourceTree = "<group>"; };
 		CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
+		CEAE47F715F3894400898698 /* level3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level3.json; sourceTree = "<group>"; };
 		CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainMenuViewController.mm; sourceTree = "<group>"; };
@@ -1213,6 +1215,7 @@
 			children = (
 				CECE256D15F2869300517973 /* level1.json */,
 				CECE256E15F2869300517973 /* level2.json */,
+				CEAE47F715F3894400898698 /* level3.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1287,6 +1290,7 @@
 				CE453BB615F1589E00053407 /* octosprite.png in Resources */,
 				CECE256F15F2869300517973 /* level1.json in Resources */,
 				CECE257015F2869300517973 /* level2.json in Resources */,
+				CEAE47F815F3894400898698 /* level3.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
