@@ -281,7 +281,9 @@
         if (!bridge.vertical) {
             [self bumpObject:player:object];
         } else {
-            location = ccp(player.position.x, object.position.y + object.contentSize.height + 1);
+            int x = (object.position.x + (object.contentSize.width / 2)) -
+                (player.contentSize.width);
+            location = ccp(x, object.position.y + object.contentSize.height + 1);
         }
     } else if (player.position.y > (object.position.y + object.contentSize.height) - padding) {
         // Then the player is above the bridge
