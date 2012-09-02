@@ -25,18 +25,32 @@
         self.tag = tag;
         self.visited = false;
         self.color = color;
-        if (color == RED) {
-            [self setHouseSprite:[CCSprite spriteWithSpriteFrameName:@"house_red.png"]];
-        } else if (color == BLUE) {
-            [self setHouseSprite:[CCSprite spriteWithSpriteFrameName:@"house_blue.png"]];
-        } else if (color == GREEN) {
-            [self setHouseSprite:[CCSprite spriteWithSpriteFrameName:@"house_green.png"]];
-        } else if (color == BLACK) {
-            [self setHouseSprite:[CCSprite spriteWithSpriteFrameName:@"house.png"]];
-        }
+        [self setHouseSprite:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
     }
     
     return self;
+}
+
+-(NSString*)getSpriteName {
+    if (self.color == RED) {
+        return @"house_red.png";
+    } else if (self.color == BLUE) {
+        return @"house_blue.png";
+    } else if (self.color == GREEN) {
+        return @"house_green.png";
+    } else {
+        return @"house.png";
+    }
+}
+
+-(void)undo {
+    if (self.isVisited) {
+        CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
+        CCSpriteFrame* frame;
+        frame = [cache spriteFrameByName:[self getSpriteName]];
+        [self.house setDisplayFrame:frame];
+        self.visited = false;
+    }
 }
 
 - (void) addSprite {

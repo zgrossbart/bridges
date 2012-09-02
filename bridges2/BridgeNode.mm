@@ -25,30 +25,9 @@
         self.layerMgr = layerMgr;
         self.tag = tag;
         self.color = color;
-        if (vertical) {
-            if (color == RED) {
-                [self setBridgeSprite:[CCSprite spriteWithSpriteFrameName:@"bridge_v_red.png"]];
-            } else if (color == BLUE) {
-                [self setBridgeSprite:[CCSprite spriteWithSpriteFrameName:@"bridge_v_blue.png"]];
-            } else if (color == GREEN) {
-                [self setBridgeSprite:[CCSprite spriteWithSpriteFrameName:@"bridge_v_green.png"]];
-            } else if (color == BLACK || color == NONE) {
-                [self setBridgeSprite:[CCSprite spriteWithSpriteFrameName:@"bridge_v.png"]];
-            }
-        } else {
-            if (color == RED) {
-                [self setBridgeSprite:[CCSprite spriteWithSpriteFrameName:@"bridge_h_red.png"]];
-            } else if (color == BLUE) {
-                [self setBridgeSprite:[CCSprite spriteWithSpriteFrameName:@"bridge_h_blue.png"]];
-            } else if (color == GREEN) {
-                [self setBridgeSprite:[CCSprite spriteWithSpriteFrameName:@"bridge_h_green.png"]];
-            } else if (color == BLACK || color == NONE) {
-                [self setBridgeSprite:[CCSprite spriteWithSpriteFrameName:@"bridge_h.png"]];
-            }
-        }
-        
-        
         self.vertical = vertical;
+        
+        [self setBridgeSprite:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
     }
     
     return self;
@@ -71,6 +50,41 @@
 
 -(CGPoint)getBridgePosition {
     return self.bridge.position;
+}
+
+- (void) undo {
+    if (self.crossed) {
+        CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
+        CCSpriteFrame* frame = [cache spriteFrameByName:[self getSpriteName]];
+        [self.bridge setDisplayFrame:frame];
+        
+        self.crossed = false;
+    }
+    
+}
+
+-(NSString*)getSpriteName {
+    if (self.vertical) {
+        if (self.color == RED) {
+            return @"bridge_v_red.png";
+        } else if (self.color == BLUE) {
+            return @"bridge_v_blue.png";
+        } else if (self.color == GREEN) {
+            return @"bridge_v_green.png";
+        } else {
+            return @"bridge_v.png";
+        }
+    } else {
+        if (self.color == RED) {
+            return @"bridge_h_red.png";
+        } else if (self.color == BLUE) {
+            return @"bridge_h_blue.png";
+        } else if (self.color == GREEN) {
+            return @"bridge_h_green.png";
+        } else {
+            return @"bridge_h.png";
+        }
+    }
 }
 
 -(void)cross {

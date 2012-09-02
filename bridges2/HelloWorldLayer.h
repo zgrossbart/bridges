@@ -23,6 +23,7 @@
     
     bool _inCross;
     bool _hasInit;
+    CGPoint _prevPlayerPos;
     
     CCDirectorIOS	*director_;							// weak ref
 }
@@ -30,9 +31,11 @@
 + (id) scene;
 
 -(void)setLevel:(Level*) level;
+-(void)undo;
 
 @property (nonatomic, retain) PlayerNode *player;
 @property (nonatomic, retain) Level *currentLevel;
+@property (readonly) NSMutableArray *undoStack;
 
 
 @end

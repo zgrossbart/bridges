@@ -28,5 +28,6 @@
 -(void)showLevel:(Level*) level;
 
 - (IBAction)goHomeTapped:(id)sender;
+- (IBAction)undoTapped:(id)sender;
 
 @end

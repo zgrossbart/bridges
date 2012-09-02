@@ -3,11 +3,12 @@
 #import "HouseNode.h"
 #import "BridgeColors.h"
 #import "Level.h"
+#import "Undoable.h"
 
 //#define PTM_RATIO 32.0
 
 @interface HelloWorldLayer()
-
+    @property (readwrite) NSMutableArray *undoStack;
 @end
 
 @implementation HelloWorldLayer
@@ -58,6 +59,8 @@
          addSpriteFramesWithFile:@"octosprite.plist"];
         [self addChild:_spriteSheet];
         
+        self.undoStack = [[NSMutableArray alloc] init];
+        
         _layerMgr = [[LayerMgr alloc] initWithSpriteSheet:_spriteSheet:_world];
         
         //        [self spawnPlayer];
@@ -102,6 +105,22 @@
     if (_hasInit) {
         [self readLevel];
     }
+}
+
+-(void)undo {
+    if (self.undoStack.count == 0) {
+        // There's nothing to undo
+        return;
+    }
+    
+    Undoable *undo = [self.undoStack objectAtIndex:self.undoStack.count - 1];
+    
+    [undo.node undo];
+    [self.player updateColor:undo.color];
+    self.player.player.position = undo.pos;
+    
+    [self.undoStack removeLastObject];
+    
 }
 
 -(void)draw {
@@ -210,6 +229,7 @@
     
     if (![node isVisited]) {
         if (_player.color == node.color) {
+            [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color]];
             [node visit];
         }
     }
@@ -286,6 +306,9 @@
     //    printf("Moving to (%f, %f)\n", location.x, location.y);
     //    location.y += 5;
     //    _player.position = location;
+    
+    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color]];
+    
     [_player.player runAction:
      [CCMoveTo actionWithDuration:0.3 position:ccp(location.x,location.y)]];
     
@@ -405,6 +428,7 @@
         }
     } else {
         _inCross = false;
+        _prevPlayerPos = _player.player.position;
         
         [_player moveTo:location];
 //        [_player.player runAction:
@@ -440,6 +464,9 @@
     delete _contactListener;
     [_spriteSheet release];
     [_player dealloc];
+    
+    [_undoStack release];
+    _undoStack = nil;
 
     
 //    [self.currentLevel dealloc];

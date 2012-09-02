@@ -146,6 +146,10 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)undoTapped:(id)sender {
+    [_layer undo];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
