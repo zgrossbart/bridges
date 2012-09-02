@@ -282,7 +282,7 @@
     if (bridge.vertical) {
         if (player.position.y + player.contentSize.height < object.position.y + padding) {
             // Then the player is below the bridge
-            if (bridge.direction != UP) {
+            if (bridge.direction != UP && bridge.direction != NONE) {
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
@@ -291,7 +291,7 @@
             location = ccp(x, object.position.y + object.contentSize.height + 1);
         } else if (player.position.y > (object.position.y + object.contentSize.height) - padding) {
             // Then the player is above the bridge
-            if (bridge.direction != DOWN) {
+            if (bridge.direction != DOWN && bridge.direction != NONE) {
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
@@ -302,7 +302,7 @@
     } else {
         if (player.position.x > (object.position.x + object.contentSize.width) - padding) {
             // Then the player is to the right of the bridge
-            if (bridge.direction != LEFT) {
+            if (bridge.direction != LEFT && bridge.direction != NONE) {
                 [self bumpObject:player: bridge.bridge];
                 return;
             }
@@ -311,7 +311,7 @@
             location = ccp((object.position.x - 1) - (player.contentSize.width * 2), y);
         } else if (player.position.x + player.contentSize.width < object.position.x + padding) {
             // Then the player is to the left of the bridge
-            if (bridge.direction != RIGHT) {
+            if (bridge.direction != RIGHT && bridge.direction != NONE) {
                 [self bumpObject:player :bridge.bridge];
                 return;
             }

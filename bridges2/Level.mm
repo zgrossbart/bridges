@@ -75,7 +75,7 @@
         NSString *dir = [b objectForKey:@"dir"];
         NSString *color = [b objectForKey:@"color"];
         
-        [self addBridge:[x integerValue]:[y integerValue]:
+        [self addBridge:[self parseInt:x]:[self parseInt:y]:
          [orient isEqualToString:@"v"]:[self getDir:dir]:[self getColor:color]];
     }
     
@@ -88,7 +88,7 @@
         NSString *y = [h objectForKey:@"y"];
         NSString *color = [h objectForKey:@"color"];
         
-        [self addHouse:[x integerValue]:[y integerValue]:[self getColor:color]];
+        [self addHouse:[self parseInt:x]:[self parseInt:y]:[self getColor:color]];
     }
     
 }
@@ -255,6 +255,12 @@
     } else if ([s characterAtIndex:0] == 't') {
         // The top side of the screen
         return [self winSizeTiles].height;
+    } else if ([s characterAtIndex:0] == 'm') {
+        // The vertical middle of the screen
+        return [self winSizeTiles].height / 2;
+    } else if ([s characterAtIndex:0] == 'c') {
+        // The horizontal center of the screen
+        return [self winSizeTiles].width / 2;
     } else {
         return [s integerValue];
     }
