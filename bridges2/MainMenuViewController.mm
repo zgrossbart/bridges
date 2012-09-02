@@ -93,7 +93,7 @@
     }
     
 //    NSAssert(self.fontNames, @"Illegal nil self.familyNames");
-    NSString* key = [[[LevelMgr getLevelMgr].levels allKeys] objectAtIndex:indexPath.row];
+    NSString* key = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
     cell.textLabel.text = ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:key]).name;
     
     return cell;
@@ -109,7 +109,7 @@
     
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:false];
     
-    NSString *key = [[[LevelMgr getLevelMgr].levels allKeys] objectAtIndex:self.curIndex];
+    NSString* key = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
     [self.rootMenuViewController showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
     [self.navigationController pushViewController:_rootMenuViewController animated:YES];
 }

@@ -13,5 +13,7 @@
 +(LevelMgr *)getLevelMgr;
 
 @property (readonly) NSMutableDictionary *levels;
+@property (readonly,copy) NSArray *levelIds;
+
 
 @end

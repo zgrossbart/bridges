@@ -12,6 +12,7 @@
 
 @interface LevelMgr()
 @property (readwrite) NSMutableDictionary *levels;
+@property (readwrite,copy) NSArray *levelIds;
 @end
 
 @implementation LevelMgr
@@ -47,6 +48,8 @@
         }
     }
     
+    self.levelIds = [[self.levels allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    
 //    NSLog(@"levels ====== %@",self.levels);
 }
 
@@ -54,6 +57,9 @@
     
     [_levels release];
     _levels = nil;
+    
+    [_levelIds release];
+    _levelIds = nil;
     
     [super dealloc];
     
