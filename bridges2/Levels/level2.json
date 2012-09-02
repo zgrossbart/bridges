@@ -1,0 +1,44 @@
+{
+    "level": {
+        "id": "2",
+        "name": "Level 2",
+        "rivers": [
+            {
+                "x": "l-r",
+                "y": "14",
+                "orient": "h"
+            }
+        ],
+        "bridges": [
+            {
+                "x": "10",
+                "y": "14",
+                "orient": "v",
+                "color": "red"
+            },
+            {
+                "x": "20",
+                "y": "14",
+                "orient": "v",
+                "color": "green"
+            }
+        ],
+        "houses": [
+            {
+                "x": "12",
+                "y": "4",
+                "color": "green"
+            },
+            {
+                "x": "22",
+                "y": "24",
+                "color": "red"
+            },
+            {
+                "x": "22",
+                "y": "4",
+                "color": "green"
+            }
+        ]
+    }
+}
