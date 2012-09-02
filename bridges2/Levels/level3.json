@@ -14,13 +14,15 @@
                 "x": "18",
                 "y": "18",
                 "orient": "h",
-                "color": "red"
+                "color": "red",
+                "dir": "right"
             },
             {
                 "x": "18",
                 "y": "8",
                 "orient": "h",
-                "color": "green"
+                "color": "green",
+                "dir": "left"
             }
         ],
         "houses": [

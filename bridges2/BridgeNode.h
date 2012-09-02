@@ -9,7 +9,9 @@
     
 }
 
--(id)initWithDir: (bool)vertical:(int) tag:(int) color:(LayerMgr*) layerMgr;
+-(id)initWithOrient: (bool)vertical:(int) tag:(int) color:(LayerMgr*) layerMgr;
+
+-(id)initWithOrientAndDir: (bool)vertical:(int)dir: (int) tag:(int) color:(LayerMgr*) layerMgr;
 
 -(void)cross;
 -(bool)isCrossed;
@@ -18,6 +20,7 @@
 -(int)tag;
 
 @property (readonly) bool vertical;
+@property (readonly) int direction;
 @property (readonly) CCSprite *bridge;
 @property (nonatomic, assign, readonly) int color;
 @property (nonatomic, assign, getter=isCrossed, readonly) bool crossed;

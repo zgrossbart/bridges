@@ -71,11 +71,12 @@
     for (NSDictionary *b in bridges) {
         NSString *x = [b objectForKey:@"x"];
         NSString *y = [b objectForKey:@"y"];
-        NSString *dir = [b objectForKey:@"orient"];
+        NSString *orient = [b objectForKey:@"orient"];
+        NSString *dir = [b objectForKey:@"dir"];
         NSString *color = [b objectForKey:@"color"];
         
         [self addBridge:[x integerValue]:[y integerValue]:
-         [dir isEqualToString:@"v"]:[self getColor:color]];
+         [orient isEqualToString:@"v"]:[self getDir:dir]:[self getColor:color]];
     }
     
     /*
@@ -90,6 +91,20 @@
         [self addHouse:[x integerValue]:[y integerValue]:[self getColor:color]];
     }
     
+}
+
+-(int)getDir:(NSString*) dir {
+    if ([@"left" isEqualToString:dir]) {
+        return LEFT;
+    } else if ([@"right" isEqualToString:dir]) {
+        return RIGHT;
+    } else if ([@"up" isEqualToString:dir]) {
+        return UP;
+    } else if ([@"down" isEqualToString:dir]) {
+        return DOWN;
+    } else {
+        return NONE;
+    }
 }
 
 -(void)removeSprites:(LayerMgr*) layerMgr {
@@ -268,11 +283,11 @@
     
 }
 
-- (BridgeNode*)addBridge:(int) x:(int) y:(bool) vertical:(int) color {
+- (BridgeNode*)addBridge:(int) x:(int) y:(bool) vertical:(int) dir: (int) color {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
-    BridgeNode *bridgeNode = [[BridgeNode alloc] initWithDir:vertical:BRIDGE:color:self.layerMgr];
+    BridgeNode *bridgeNode = [[BridgeNode alloc] initWithOrientAndDir:vertical:dir:BRIDGE:color:self.layerMgr];
     CGPoint startPos = [self tileToPoint:x:y];
     
     [bridgeNode setBridgePosition:startPos];
