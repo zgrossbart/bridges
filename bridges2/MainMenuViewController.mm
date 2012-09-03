@@ -42,76 +42,50 @@
 
 -(void)loadLevelPicker {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSArray *documentArray;
     if([paths count] > 0)
     {
         NSString *documentsDirectory = [paths objectAtIndex:0];
-        NSError *error = nil;
-        documentArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectory error:&error];
-        if(error) {
-            NSLog(@"Could not get list of documents in directory, error = %@",error);
-        } else {
-            int row = 0;
-            int column = 0;
-            CGSize s = CGSizeMake(96, 64);
+        
+        int row = 0;
+        int column = 0;
+        CGSize s = CGSizeMake(96, 64);
+        
+        for (int i = 0; i < [LevelMgr getLevelMgr].levelIds.count; i++) {
+            NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:i];
+            UIImage *image = [UIImage imageWithContentsOfFile:[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", levelId]]];
             
-            for (NSString *file in documentArray) {
-                if ([file hasPrefix:@"level"] &&
-                    [file hasSuffix:@".png"]) {
-                    UIImage *image = [UIImage imageWithContentsOfFile:[documentsDirectory stringByAppendingPathComponent:file]];
-                    
-                    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-                    button.frame = CGRectMake(column*(s.width + 15)+24, row*s.height+10, s.width + 15, s.height);
-                    [button setImage:[image imageByScalingAndCroppingForSize:s] forState:UIControlStateNormal];
-                    [button addTarget:self
-                               action:@selector(levelSelected:)
-                     forControlEvents:UIControlEventTouchUpInside];
-                    button.tag = [[self getLevelId:file] integerValue];
-                    [_scrollView addSubview:button];
-                    
-                    if (column == 3) {
-                        column = 0;
-                        row++;
-                    } else {
-                        column++;
-                    }
-                }
-                
+            UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+            button.frame = CGRectMake(column*(s.width + 15)+24, row*s.height+10, s.width + 15, s.height);
+            [button setImage:[image imageByScalingAndCroppingForSize:s] forState:UIControlStateNormal];
+            [button addTarget:self
+                       action:@selector(levelSelected:)
+             forControlEvents:UIControlEventTouchUpInside];
+            button.tag = i;
+            [_scrollView addSubview:button];
+            
+            if (column == 3) {
+                column = 0;
+                row++;
+            } else {
+                column++;
             }
         }
+            
+        
     }
-    
-}
-
--(void)addButton:(NSString*) file: (NSString*) documentsDirectory {
-    
-}
-
--(NSString*)getLevelId:(NSString*) file {
-    /*
-     * Level images have names like level5.png.
-     * We want the number after the word level
-     * and before the dot.
-     */
-    
-    NSMutableString *levelId = [[NSMutableString alloc]initWithCapacity:3];
-    
-    for (int i = 5; i < file.length; i++) {
-        if ([file characterAtIndex:i] == '.') {
-            break;
-        } else {
-            [levelId appendString: [NSString stringWithFormat:@"%c" , [file characterAtIndex:i]]];
-        }
-    }
-    
-    NSLog(@"levelId: %@", levelId);
-    
-    return levelId;
 }
 
 -(void)levelSelected:(id)sender {
     UIButton *button = (UIButton *)sender;
 	int tag = button.tag;
+    
+    if (_rootMenuViewController == nil) {
+        self.rootMenuViewController = [[[RootMenuViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+    }
+    
+    NSString* key = [[LevelMgr getLevelMgr].levelIds objectAtIndex:tag];
+    [self.rootMenuViewController showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
+    [self.navigationController pushViewController:_rootMenuViewController animated:YES];
     
 }
 
