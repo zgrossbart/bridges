@@ -31,7 +31,12 @@
     [super viewDidLoad];
     
     [LevelMgr getLevelMgr];
-
+    
+    [self generateLevelImages];
+    return;
+    
+    
+    
     // Get the list of font family names and from that
     // build the list of all font names in tempFontNames
     NSArray* familyNames = [UIFont familyNames];
@@ -112,6 +117,22 @@
     NSString* key = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
     [self.rootMenuViewController showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
     [self.navigationController pushViewController:_rootMenuViewController animated:YES];
+}
+
+-(void)generateLevelImages {
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    /*
+     * Sometimes the screen will be in portrait mode at this point and
+     * we always want to draw the screen shots in landscape so we create
+     * a new bounding rect.
+     */
+    CGRect r = CGRectMake(screenRect.origin.x, screenRect.origin.y,
+                          fmaxf(screenRect.size.width, screenRect.size.height),
+                          fminf(screenRect.size.width, screenRect.size.height));
+    
+    [[LevelMgr getLevelMgr] drawLevels:r];
+
 }
 
 - (void) viewWillAppear:(BOOL)animated

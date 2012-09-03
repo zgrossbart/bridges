@@ -13,9 +13,6 @@
 @interface RootMenuViewController : UIViewController<CCDirectorDelegate> {
     UIWindow *window_;
 	UINavigationController *navController_;
-	
-	CCDirectorIOS	*director_;							// weak ref
-    CCGLView *glView_;
     
     bool _hasInit;
     IBOutlet UIButton *_undoBtn;

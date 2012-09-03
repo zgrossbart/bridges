@@ -187,6 +187,7 @@
 		CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */; };
 		CEBD81FD15EACDC100EE27CF /* RootMenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */; };
 		CEBD81FE15EACDC100EE27CF /* RootMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */; };
+		CEC65C0515F4C1CD0010EAC3 /* ScreenShotLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */; };
 		CECE255B15F21FDB00517973 /* Level.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE255A15F21FDB00517973 /* Level.mm */; };
 		CECE256815F2819200517973 /* LevelMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE256715F2819200517973 /* LevelMgr.mm */; };
 		CECE256F15F2869300517973 /* level1.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256D15F2869300517973 /* level1.json */; };
@@ -569,6 +570,8 @@
 		CEBD81FA15EACDC100EE27CF /* RootMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootMenuViewController.h; sourceTree = "<group>"; };
 		CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootMenuViewController.mm; sourceTree = "<group>"; };
 		CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootMenuViewController.xib; sourceTree = "<group>"; };
+		CEC65C0315F4C1CD0010EAC3 /* ScreenShotLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenShotLayer.h; sourceTree = "<group>"; };
+		CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScreenShotLayer.mm; sourceTree = "<group>"; };
 		CECE255915F21FDB00517973 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		CECE255A15F21FDB00517973 /* Level.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level.mm; sourceTree = "<group>"; };
 		CECE255D15F227D200517973 /* GameNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameNode.h; sourceTree = "<group>"; };
@@ -681,6 +684,8 @@
 				CEBD81FA15EACDC100EE27CF /* RootMenuViewController.h */,
 				CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */,
 				CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */,
+				CEC65C0315F4C1CD0010EAC3 /* ScreenShotLayer.h */,
+				CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */,
 				CECFA62F15F36AEE00FF1E8D /* Undoable.h */,
 				CECFA63015F36AEE00FF1E8D /* Undoable.m */,
 			);
@@ -1465,6 +1470,7 @@
 				CECE255B15F21FDB00517973 /* Level.mm in Sources */,
 				CECE256815F2819200517973 /* LevelMgr.mm in Sources */,
 				CECFA63115F36AEF00FF1E8D /* Undoable.m in Sources */,
+				CEC65C0515F4C1CD0010EAC3 /* ScreenShotLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

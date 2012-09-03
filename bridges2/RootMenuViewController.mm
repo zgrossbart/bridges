@@ -9,6 +9,7 @@
 #import "RootMenuViewController.h"
 #import "LevelLayer.h"
 #import "BridgeColors.h"
+#import "LevelMgr.h"
 
 @interface RootMenuViewController ()
 
@@ -28,7 +29,7 @@
 }
 
 - (void)setupCocos2D {
-    CCGLView *glView = [CCGLView viewWithFrame:[window_ bounds]
+    /*CCGLView *glView = [CCGLView viewWithFrame:[window_ bounds]
 								   pixelFormat:kEAGLColorFormatRGB565	//kEAGLColorFormatRGBA8
 								   depthFormat:0	//GL_DEPTH_COMPONENT24_OES
 							preserveBackbuffer:NO
@@ -83,11 +84,13 @@
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
 	
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-	//[director_ pushScene: [IntroLayer scene]];
+	//[director_ pushScene: [IntroLayer scene]];*/
+    
+    CCDirectorIOS *director = (CCDirectorIOS*) [CCDirector sharedDirector];
 	
     
     // Create a Navigation Controller with the Director
-    navController_ = [[UINavigationController alloc] initWithRootViewController:director_];
+    navController_ = [[UINavigationController alloc] initWithRootViewController:director];
     navController_.navigationBarHidden = YES;
     
     // set the Navigation Controller as the root view controller
@@ -97,7 +100,7 @@
     // make main window visible
     [window_ makeKeyAndVisible];
     
-    [self.view insertSubview:glView_ atIndex:0];
+    [self.view insertSubview:[LevelMgr getLevelMgr].glView atIndex:0];
     
     //    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelLayer scene] withColor:ccWHITE]];
     //[[CCDirector sharedDirector] replaceScene:[LevelLayer scene]];

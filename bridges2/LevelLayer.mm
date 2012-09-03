@@ -157,7 +157,7 @@
         _hasInit = true;
     }
     
-     _world->DrawDebugData();
+ //    _world->DrawDebugData();
 }
 
 
@@ -275,9 +275,9 @@
     
     int padding = bridge.bridge.contentSize.width / 2;
     
-    printf("player (%f, %f)\n", player.position.x, player.position.y);
-    printf("bridge (%f, %f)\n", object.position.x, object.position.y);
-    printf("vertical: %i\n", bridge.vertical);
+//    printf("player (%f, %f)\n", player.position.x, player.position.y);
+//    printf("bridge (%f, %f)\n", object.position.x, object.position.y);
+//    printf("vertical: %i\n", bridge.vertical);
     
     if (bridge.vertical) {
         if (player.position.y + player.contentSize.height < object.position.y + padding) {
