@@ -16,6 +16,7 @@
     CGFloat  mFontSize;
     NSArray* mFontNames;
     IBOutlet UINavigationItem *_navItem;
+    IBOutlet UIScrollView *_scrollView;
 }
 
 @property (retain) RootMenuViewController *rootMenuViewController;

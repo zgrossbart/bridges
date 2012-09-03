@@ -164,7 +164,7 @@
         
         //	return [renderer getUIImageFromBuffer];
         
-        BOOL success = [renderer saveToFile: [NSString stringWithFormat:@"%@.png", level.levelId] format:kCCImageFormatPNG];
+        BOOL success = [renderer saveToFile: [NSString stringWithFormat:@"level%@.png", level.levelId] format:kCCImageFormatPNG];
         
         [layerMgr removeAll];
         
