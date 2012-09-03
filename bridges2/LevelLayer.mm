@@ -75,6 +75,11 @@
  //   [level.rivers makeObjectsPerformSelector:@selector(addSprite:)];
     
     [self.currentLevel addSprites:_layerMgr];
+    
+    for (UIButton *l in self.currentLevel.labels) {
+        [self.view addSubview:l];
+    }
+    
     if (self.currentLevel.playerPos.x > -1) {
         [self spawnPlayer:self.currentLevel.playerPos.x :self.currentLevel.playerPos.y];
     }
@@ -88,6 +93,12 @@
     [self.undoStack removeAllObjects];
     UIImage *undoD = [UIImage imageNamed:@"left_arrow_d.png"];
     [_undoBtn setImage:undoD forState:UIControlStateNormal];
+    
+    if (self.currentLevel) {
+        for (UIButton *l in self.currentLevel.labels) {
+            [l removeFromSuperview];
+        }
+    }
     
     [_player dealloc];
     _player = nil;

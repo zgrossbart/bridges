@@ -2,20 +2,36 @@
     "level": {
         "id": "1",
         "name": "Level 1",
+        "labels": [
+            {
+                "x": "2",
+                "y": "8",
+                "w": "10",
+                "h": "4",
+                "text": "This is you"
+            },
+            {
+                "x": "20",
+                "y": "4",
+                "w": "15",
+                "h": "15",
+                "text": "You can't cross rivers.\n\nYou can only cross bridges once.\n\nCross all the bridges to win."
+            }
+        ],
 		"player": {
 			"x": "6",
 			"y": "m"
 		},
         "rivers": [
             {
-                "x": "c",
+                "x": "14",
                 "y": "b-t",
                 "orient": "v"
             }
         ],
         "bridges": [
             {
-                "x": "c",
+                "x": "14",
                 "y": "m",
                 "orient": "h"
             }

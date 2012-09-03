@@ -115,6 +115,7 @@
     CCScene *scene = [LevelLayer scene];
     _layer = (LevelLayer*)[scene getChildByTag:LEVEL];
     _layer.undoBtn = _undoBtn;
+    _layer.view = self.view;
     
     //    [[CCDirector sharedDirector] setOpenGLView:glView];
     

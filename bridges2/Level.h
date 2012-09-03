@@ -23,6 +23,7 @@
 @property (readonly) NSMutableArray *rivers;
 @property (readonly) NSMutableArray *bridges;
 @property (readonly) NSMutableArray *houses;
+@property (readonly) NSMutableArray *labels;
 @property (readonly, copy) NSDictionary *levelData;
 
 @property (readonly) NSString *name;

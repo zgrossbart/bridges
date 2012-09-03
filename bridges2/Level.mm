@@ -16,6 +16,7 @@
 @property (readwrite) NSMutableArray *rivers;
 @property (readwrite) NSMutableArray *bridges;
 @property (readwrite) NSMutableArray *houses;
+@property (readwrite) NSMutableArray *labels;
 @property (readwrite) LayerMgr *layerMgr;
 @property (readwrite, copy) NSDictionary *levelData;
 
@@ -32,6 +33,7 @@
         self.bridges = [[NSMutableArray alloc] init];
         self.rivers = [[NSMutableArray alloc] init];
         self.houses = [[NSMutableArray alloc] init];
+        self.labels = [[NSMutableArray alloc] init];
         
         [self parseLevel:jsonString];
     }
@@ -88,13 +90,31 @@
     /*
      * Add the houses
      */
-    NSArray *houses = [_levelData objectForKey:@"houses"];
-    for (NSDictionary *h in houses) {
-        NSString *x = [h objectForKey:@"x"];
-        NSString *y = [h objectForKey:@"y"];
-        NSString *color = [h objectForKey:@"color"];
-        
-        [self addHouse:[self parseInt:x]:[self parseInt:y]:[self getColor:color]];
+    if ([_levelData objectForKey:@"houses"] != nil) {
+        NSArray *houses = [_levelData objectForKey:@"houses"];
+        for (NSDictionary *h in houses) {
+            NSString *x = [h objectForKey:@"x"];
+            NSString *y = [h objectForKey:@"y"];
+            NSString *color = [h objectForKey:@"color"];
+            
+            [self addHouse:[self parseInt:x]:[self parseInt:y]:[self getColor:color]];
+        }
+    }
+    
+    /*
+     * Add the labels
+     */
+    if ([_levelData objectForKey:@"labels"] != nil) {
+        NSArray *labels = [_levelData objectForKey:@"labels"];
+        for (NSDictionary *l in labels) {
+            NSString *x = [l objectForKey:@"x"];
+            NSString *y = [l objectForKey:@"y"];
+            NSString *w = [l objectForKey:@"w"];
+            NSString *h = [l objectForKey:@"h"];
+            NSString *text = [l objectForKey:@"text"];
+            
+            [self addLabel:[self parseInt:x]:[self parseInt:y]:[self parseInt:w]:[self parseInt:h]:text];
+        }
     }
     
 }
@@ -310,6 +330,31 @@
     
 }
 
+-(UIButton*)addLabel:(int) x:(int) y:(int) w:(int) h:(NSString*) text {
+
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    CGPoint s = [self tileToPoint:x:y];
+    button.frame = CGRectMake(s.x, s.y, w * _layerMgr.tileSize.width, h * _layerMgr.tileSize.height);
+    [button setTitle:text forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button.layer setCornerRadius:8.0f];
+    [button.layer setMasksToBounds:YES];
+    [button.layer setBorderWidth:1.0f];
+    [button.layer setBorderColor:[[UIColor clearColor] CGColor]];
+    button.backgroundColor = [UIColor colorWithRed:(1.0 * 224) / 255 green:(1.0 * 203) / 255 blue:(1.0 * 97) / 255 alpha:0.7];
+    button.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    button.titleLabel.font = [UIFont fontWithName:@"Lucida Grande" size: 14.0];
+    button.titleEdgeInsets = UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0);
+//    button.titleLabel.textAlignment = UITextAlignmentCenter;
+
+    
+    [self.labels addObject:button];
+    
+    
+    return button;
+    
+}
+
 -(bool)hasWon {
     for (BridgeNode *n in _bridges) {
         if (!n.isCrossed) {
@@ -382,6 +427,9 @@
     
     [_houses release];
     _houses = nil;
+    
+    [_labels release];
+    _labels = nil;
     
     [_name release];
     _name = nil;
