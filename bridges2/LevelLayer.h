@@ -32,6 +32,7 @@
 
 -(void)setLevel:(Level*) level;
 -(void)undo;
+-(void)refresh;
 
 @property (nonatomic, retain) PlayerNode *player;
 @property (nonatomic, retain) Level *currentLevel;

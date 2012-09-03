@@ -83,7 +83,8 @@
 -(void)reset {
     [_layerMgr removeAll];
     [self.undoStack removeAllObjects];
-    [self.undoBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    UIImage *undoD = [UIImage imageNamed:@"left_arrow_d.png"];
+    [_undoBtn setImage:undoD forState:UIControlStateNormal];
     
     [_player dealloc];
     _player = nil;
@@ -128,10 +129,22 @@
     [self.undoStack removeLastObject];
     
     if (self.undoStack.count == 0) {
-        [self.undoBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        UIImage *undoD = [UIImage imageNamed:@"left_arrow_d.png"];
+        [_undoBtn setImage:undoD forState:UIControlStateNormal];
     } else {
-        [self.undoBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        UIImage *undoD = [UIImage imageNamed:@"left_arrow.png"];
+        [_undoBtn setImage:undoD forState:UIControlStateNormal];
     }
+    
+}
+
+-(void)refresh {
+    [self reset];
+    Level *level = self.currentLevel;
+    self.currentLevel = nil;
+    
+    [self setLevel:level];
+    
     
 }
 
@@ -242,7 +255,8 @@
     if (![node isVisited]) {
         if (_player.color == node.color) {
             [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color]];
-            [self.undoBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            UIImage *undoD = [UIImage imageNamed:@"left_arrow.png"];
+            [_undoBtn setImage:undoD forState:UIControlStateNormal];
             [node visit];
         }
     }
@@ -335,7 +349,8 @@
     //    _player.position = location;
     
     [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color]];
-    [self.undoBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    UIImage *undoD = [UIImage imageNamed:@"left_arrow.png"];
+    [_undoBtn setImage:undoD forState:UIControlStateNormal];
     
     [_player moveTo: ccp(location.x, location.y):true];
     

@@ -27,5 +27,6 @@
 
 - (IBAction)goHomeTapped:(id)sender;
 - (IBAction)undoTapped:(id)sender;
+- (IBAction)refreshTapped:(id)sender;
 
 @end

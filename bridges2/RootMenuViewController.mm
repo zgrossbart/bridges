@@ -120,8 +120,6 @@
     
     [[CCDirector sharedDirector] runWithScene:scene];
     
-    [_undoBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    
     _hasInit = true;
 }
 
@@ -143,9 +141,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
-    
-//    [self showLevel];
+    UIImage *undoD = [UIImage imageNamed:@"left_arrow_d.png"];
+    [_undoBtn setImage:undoD forState:UIControlStateNormal];
 }
 
 - (IBAction)goHomeTapped:(id)sender {
@@ -154,6 +151,10 @@
 
 - (IBAction)undoTapped:(id)sender {
     [_layer undo];
+}
+
+- (IBAction)refreshTapped:(id)sender {
+    [_layer refresh];
 }
 
 - (void)viewDidUnload
