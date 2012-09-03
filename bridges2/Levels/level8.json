@@ -1,0 +1,69 @@
+{
+    "level": {
+        "id": "8",
+        "name": "Level 8",
+        "rivers": [
+            {
+                "x": "c",
+                "y": "b-t",
+                "orient": "v"
+            },
+            {
+                "x": "l-c",
+                "y": "18",
+                "orient": "h"
+            },
+            {
+                "x": "c-r",
+                "y": "8",
+                "orient": "h"
+            }
+        ],
+        "bridges": [
+            {
+                "x": "c",
+                "y": "m",
+                "orient": "h",
+                "color": "red",
+                "dir": "right"
+            },
+            {
+                "x": "c",
+                "y": "22",
+                "orient": "h",
+                "color": "green",
+                "dir": "left"
+            },
+            {
+                "x": "6",
+                "y": "18",
+                "orient": "v",
+                "color": "black"
+            },
+            {
+                "x": "30",
+                "y": "8",
+                "orient": "v",
+                "color": "black"
+            },
+            {
+                "x": "c",
+                "y": "4",
+                "orient": "h",
+                "color": "black"
+            }
+        ],
+        "houses": [
+            {
+                "x": "10",
+                "y": "24",
+                "color": "green"
+            },
+            {
+                "x": "30",
+                "y": "14",
+                "color": "red"
+            }
+        ]
+    }
+}

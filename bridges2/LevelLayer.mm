@@ -75,6 +75,9 @@
  //   [level.rivers makeObjectsPerformSelector:@selector(addSprite:)];
     
     [self.currentLevel addSprites:_layerMgr];
+    if (self.currentLevel.playerPos.x > -1) {
+        [self spawnPlayer:self.currentLevel.playerPos.x :self.currentLevel.playerPos.y];
+    }
     
     
     //[level dealloc];

@@ -2,38 +2,25 @@
     "level": {
         "id": "1",
         "name": "Level 1",
+		"player": {
+			"x": "6",
+			"y": "m"
+		},
         "rivers": [
             {
-                "x": "l-r",
-                "y": "14",
-                "orient": "h"
+                "x": "c",
+                "y": "b-t",
+                "orient": "v"
             }
         ],
         "bridges": [
             {
-                "x": "10",
-                "y": "14",
-                "orient": "v",
-                "color": "red"
-            },
-            {
-                "x": "20",
-                "y": "14",
-                "orient": "v",
-                "color": "green"
+                "x": "c",
+                "y": "m",
+                "orient": "h"
             }
         ],
         "houses": [
-            {
-                "x": "4",
-                "y": "4",
-                "color": "green"
-            },
-            {
-                "x": "22",
-                "y": "24",
-                "color": "red"
-            }
         ]
     }
 }

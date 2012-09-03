@@ -21,6 +21,7 @@
 
 @property (readwrite) NSString *name;
 @property (readwrite) NSString *levelId;
+@property (readwrite) CGPoint playerPos;
 @end
 
 @implementation Level
@@ -40,7 +41,6 @@
 }
 
 -(void)parseLevel: (NSString*) jsonString {
-    NSLog(@"jsonString\n: %@", jsonString);
     self.levelData = [[jsonString objectFromJSONString] objectForKey:@"level"];
     
     _levelId = [self.levelData objectForKey:@"id"];
@@ -49,6 +49,12 @@
 
 -(void)loadSprites {
     
+    if ([self.levelData objectForKey:@"player"] != nil) {
+        self.playerPos = [self tileToPoint:[self parseInt:[[self.levelData objectForKey:@"player"] objectForKey:@"x"]]:
+                             [self parseInt:[[self.levelData objectForKey:@"player"] objectForKey:@"y"]]];
+    } else {
+        self.playerPos = ccp(-1, -1);
+    }
     
     NSArray *rivers = [_levelData objectForKey:@"rivers"];
     NSLog(@"rivers.count: %i", rivers.count);

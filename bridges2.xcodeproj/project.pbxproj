@@ -179,7 +179,7 @@
 		CE6D67F415EAC5FD00C7EDD7 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F315EAC5FD00C7EDD7 /* AppDelegate.mm */; };
 		CE6D67F715EAC5FD00C7EDD7 /* LevelLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */; };
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
-		CEAE47F815F3894400898698 /* level3.json in Resources */ = {isa = PBXBuildFile; fileRef = CEAE47F715F3894400898698 /* level3.json */; };
+		CEAE47F815F3894400898698 /* level7.json in Resources */ = {isa = PBXBuildFile; fileRef = CEAE47F715F3894400898698 /* level7.json */; };
 		CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */; };
 		CEBD81F215EACA9D00EE27CF /* MainMenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */; };
 		CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */; };
@@ -189,15 +189,15 @@
 		CEC65C1115F4D0320010EAC3 /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */; };
 		CECE255B15F21FDB00517973 /* Level.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE255A15F21FDB00517973 /* Level.mm */; };
 		CECE256815F2819200517973 /* LevelMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE256715F2819200517973 /* LevelMgr.mm */; };
-		CECE256F15F2869300517973 /* level1.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256D15F2869300517973 /* level1.json */; };
-		CECE257015F2869300517973 /* level2.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256E15F2869300517973 /* level2.json */; };
+		CECE256F15F2869300517973 /* level5.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256D15F2869300517973 /* level5.json */; };
+		CECE257015F2869300517973 /* level6.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256E15F2869300517973 /* level6.json */; };
 		CECFA63115F36AEF00FF1E8D /* Undoable.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFA63015F36AEE00FF1E8D /* Undoable.m */; };
 		CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */; };
 		CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E015EB8A8400094695 /* HouseNode.mm */; };
 		CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E315EB8AF600094695 /* PlayerNode.mm */; };
 		CEDBC2E715EB8B5300094695 /* MyContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E615EB8B5300094695 /* MyContactListener.mm */; };
 		CEDBC2EC15EB8C8200094695 /* BridgeNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */; };
-		CEEFF6F215F3A9CB0095649C /* level4.json in Resources */ = {isa = PBXBuildFile; fileRef = CEEFF6F115F3A9CB0095649C /* level4.json */; };
+		CEEFF6F215F3A9CB0095649C /* level8.json in Resources */ = {isa = PBXBuildFile; fileRef = CEEFF6F115F3A9CB0095649C /* level8.json */; };
 		CEF0649815F51AF10061C872 /* octosprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF0649615F51AF10061C872 /* octosprite.plist */; };
 		CEF0649915F51AF10061C872 /* octosprite.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF0649715F51AF10061C872 /* octosprite.png */; };
 		CEF0649D15F51B0B0061C872 /* left_arrow_d.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF0649A15F51B0B0061C872 /* left_arrow_d.png */; };
@@ -205,6 +205,7 @@
 		CEF0649F15F51B0B0061C872 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF0649C15F51B0B0061C872 /* menu.png */; };
 		CEF064A215F51B180061C872 /* refresh_d.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A015F51B180061C872 /* refresh_d.png */; };
 		CEF064A315F51B180061C872 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A115F51B180061C872 /* refresh.png */; };
+		CEF064A515F521AF0061C872 /* level1.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A415F521AF0061C872 /* level1.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -566,7 +567,7 @@
 		CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelLayer.mm; sourceTree = "<group>"; };
 		CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
-		CEAE47F715F3894400898698 /* level3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level3.json; sourceTree = "<group>"; };
+		CEAE47F715F3894400898698 /* level7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level7.json; sourceTree = "<group>"; };
 		CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainMenuViewController.mm; sourceTree = "<group>"; };
@@ -583,8 +584,8 @@
 		CECE255D15F227D200517973 /* GameNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameNode.h; sourceTree = "<group>"; };
 		CECE256615F2819200517973 /* LevelMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMgr.h; sourceTree = "<group>"; };
 		CECE256715F2819200517973 /* LevelMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelMgr.mm; sourceTree = "<group>"; };
-		CECE256D15F2869300517973 /* level1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level1.json; sourceTree = "<group>"; };
-		CECE256E15F2869300517973 /* level2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level2.json; sourceTree = "<group>"; };
+		CECE256D15F2869300517973 /* level5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level5.json; sourceTree = "<group>"; };
+		CECE256E15F2869300517973 /* level6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level6.json; sourceTree = "<group>"; };
 		CECFA62F15F36AEE00FF1E8D /* Undoable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Undoable.h; sourceTree = "<group>"; };
 		CECFA63015F36AEE00FF1E8D /* Undoable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Undoable.m; sourceTree = "<group>"; };
 		CEDBC2DA15EB89DA00094695 /* BridgeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeColors.h; sourceTree = "<group>"; };
@@ -598,7 +599,7 @@
 		CEDBC2E615EB8B5300094695 /* MyContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyContactListener.mm; sourceTree = "<group>"; };
 		CEDBC2EA15EB8C8200094695 /* BridgeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeNode.h; sourceTree = "<group>"; };
 		CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BridgeNode.mm; sourceTree = "<group>"; };
-		CEEFF6F115F3A9CB0095649C /* level4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level4.json; sourceTree = "<group>"; };
+		CEEFF6F115F3A9CB0095649C /* level8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level8.json; sourceTree = "<group>"; };
 		CEF0649615F51AF10061C872 /* octosprite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = octosprite.plist; sourceTree = "<group>"; };
 		CEF0649715F51AF10061C872 /* octosprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octosprite.png; sourceTree = "<group>"; };
 		CEF0649A15F51B0B0061C872 /* left_arrow_d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow_d.png; sourceTree = "<group>"; };
@@ -606,6 +607,7 @@
 		CEF0649C15F51B0B0061C872 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		CEF064A015F51B180061C872 /* refresh_d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh_d.png; sourceTree = "<group>"; };
 		CEF064A115F51B180061C872 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		CEF064A415F521AF0061C872 /* level1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level1.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1240,10 +1242,11 @@
 		CECE256C15F2869200517973 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				CECE256D15F2869300517973 /* level1.json */,
-				CECE256E15F2869300517973 /* level2.json */,
-				CEAE47F715F3894400898698 /* level3.json */,
-				CEEFF6F115F3A9CB0095649C /* level4.json */,
+				CEF064A415F521AF0061C872 /* level1.json */,
+				CECE256D15F2869300517973 /* level5.json */,
+				CECE256E15F2869300517973 /* level6.json */,
+				CEAE47F715F3894400898698 /* level7.json */,
+				CEEFF6F115F3A9CB0095649C /* level8.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1314,10 +1317,10 @@
 				CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */,
 				CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */,
 				CEBD81FE15EACDC100EE27CF /* RootMenuViewController.xib in Resources */,
-				CECE256F15F2869300517973 /* level1.json in Resources */,
-				CECE257015F2869300517973 /* level2.json in Resources */,
-				CEAE47F815F3894400898698 /* level3.json in Resources */,
-				CEEFF6F215F3A9CB0095649C /* level4.json in Resources */,
+				CECE256F15F2869300517973 /* level5.json in Resources */,
+				CECE257015F2869300517973 /* level6.json in Resources */,
+				CEAE47F815F3894400898698 /* level7.json in Resources */,
+				CEEFF6F215F3A9CB0095649C /* level8.json in Resources */,
 				CEF0649815F51AF10061C872 /* octosprite.plist in Resources */,
 				CEF0649915F51AF10061C872 /* octosprite.png in Resources */,
 				CEF0649D15F51B0B0061C872 /* left_arrow_d.png in Resources */,
@@ -1325,6 +1328,7 @@
 				CEF0649F15F51B0B0061C872 /* menu.png in Resources */,
 				CEF064A215F51B180061C872 /* refresh_d.png in Resources */,
 				CEF064A315F51B180061C872 /* refresh.png in Resources */,
+				CEF064A515F521AF0061C872 /* level1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
