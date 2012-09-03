@@ -150,6 +150,10 @@
     ScreenShotLayer *scene = [[ScreenShotLayer alloc] init];
     [scene addChild:spriteSheet];
     
+    /*
+     * TODO - We should check each level and only draw a new
+     * image if we need to.
+     */
     for (NSString* levelId in self.levelIds) {
         Level *level = (Level*) [self.levels objectForKey:levelId];
         [level addSprites:layerMgr];

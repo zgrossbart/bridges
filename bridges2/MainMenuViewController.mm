@@ -33,22 +33,6 @@
     [LevelMgr getLevelMgr];
     
     [self generateLevelImages];
-    return;
-    
-    
-    
-    // Get the list of font family names and from that
-    // build the list of all font names in tempFontNames
-    NSArray* familyNames = [UIFont familyNames];
-    NSMutableArray* tempFontNames = [[NSMutableArray alloc] init];
-    for(NSString* familyName in familyNames)
-    {
-        [tempFontNames addObjectsFromArray:[UIFont fontNamesForFamilyName:familyName]];
-    }
-    self.fontNames = tempFontNames;
-    [tempFontNames release];
-    // Match the system font
-    self.fontSize = [UIFont systemFontSize];
     
     _navItem.title = @"Select a level";
 //    [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
@@ -61,7 +45,6 @@
     [_navItem release];
     _navItem = nil;
     [super viewDidUnload];
-    self.fontNames = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -83,7 +66,6 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    NSAssert(self.fontNames, @"Illegal nil self.familyNames");
     return [LevelMgr getLevelMgr].levels.count;
 }
 
@@ -97,7 +79,6 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-//    NSAssert(self.fontNames, @"Illegal nil self.familyNames");
     NSString* key = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
     cell.textLabel.text = ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:key]).name;
     
@@ -145,8 +126,6 @@
 {
     [_rootMenuViewController release];
     _rootMenuViewController = nil;
-    
-    [mFontNames release];
     
 //    [_view release];
     [_navItem release];

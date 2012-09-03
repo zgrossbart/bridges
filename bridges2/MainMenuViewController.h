@@ -20,9 +20,6 @@
 
 @property (retain) RootMenuViewController *rootMenuViewController;
 
-@property (nonatomic, assign) CGFloat fontSize;
-@property (nonatomic, retain) NSArray* fontNames;
-
 @property (nonatomic) int curIndex;
 
 
