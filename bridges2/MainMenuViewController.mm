@@ -105,7 +105,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+    return TRUE;//UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 - (IBAction)showBridgesTapped:(id)sender {

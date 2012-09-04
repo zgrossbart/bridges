@@ -135,8 +135,15 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
-    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:NO];
+//    [super viewWillAppear:animated];
+    
+    UIViewController *viewController = [[UIViewController alloc] init];
+    [viewController setModalPresentationStyle:UIModalPresentationCurrentContext];
+    viewController.view.frame = CGRectZero;
+    [self presentModalViewController:viewController animated:NO];
+    [self dismissModalViewControllerAnimated:NO];
+    [viewController release];
 }
 
 - (void)viewDidLoad {
@@ -168,7 +175,9 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+//    return (interfaceOrientation == UIInterfaceOrientationLandscape);
+//    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft);
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 -(void)dealloc {
