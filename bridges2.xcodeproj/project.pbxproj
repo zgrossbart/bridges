@@ -192,8 +192,8 @@
 		CECE256F15F2869300517973 /* level5.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256D15F2869300517973 /* level5.json */; };
 		CECE257015F2869300517973 /* level6.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256E15F2869300517973 /* level6.json */; };
 		CECFA63115F36AEF00FF1E8D /* Undoable.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFA63015F36AEE00FF1E8D /* Undoable.m */; };
-		CEDADF4A15F6B30600D9AE0E /* octosprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEDADF4815F6B30600D9AE0E /* octosprite.plist */; };
-		CEDADF4B15F6B30600D9AE0E /* octosprite.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDADF4915F6B30600D9AE0E /* octosprite.png */; };
+		CEDADF4E15F6B44600D9AE0E /* octosprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEDADF4C15F6B44600D9AE0E /* octosprite.plist */; };
+		CEDADF4F15F6B44600D9AE0E /* octosprite.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDADF4D15F6B44600D9AE0E /* octosprite.png */; };
 		CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */; };
 		CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E015EB8A8400094695 /* HouseNode.mm */; };
 		CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E315EB8AF600094695 /* PlayerNode.mm */; };
@@ -588,8 +588,8 @@
 		CECE256E15F2869300517973 /* level6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level6.json; sourceTree = "<group>"; };
 		CECFA62F15F36AEE00FF1E8D /* Undoable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Undoable.h; sourceTree = "<group>"; };
 		CECFA63015F36AEE00FF1E8D /* Undoable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Undoable.m; sourceTree = "<group>"; };
-		CEDADF4815F6B30600D9AE0E /* octosprite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = octosprite.plist; sourceTree = "<group>"; };
-		CEDADF4915F6B30600D9AE0E /* octosprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octosprite.png; sourceTree = "<group>"; };
+		CEDADF4C15F6B44600D9AE0E /* octosprite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = octosprite.plist; sourceTree = "<group>"; };
+		CEDADF4D15F6B44600D9AE0E /* octosprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octosprite.png; sourceTree = "<group>"; };
 		CEDBC2DA15EB89DA00094695 /* BridgeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeColors.h; sourceTree = "<group>"; };
 		CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerMgr.h; sourceTree = "<group>"; };
 		CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LayerMgr.mm; sourceTree = "<group>"; };
@@ -712,8 +712,8 @@
 		CE6D65E815EAC5FB00C7EDD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CEDADF4815F6B30600D9AE0E /* octosprite.plist */,
-				CEDADF4915F6B30600D9AE0E /* octosprite.png */,
+				CEDADF4C15F6B44600D9AE0E /* octosprite.plist */,
+				CEDADF4D15F6B44600D9AE0E /* octosprite.png */,
 				CEF0649A15F51B0B0061C872 /* left_arrow_d.png */,
 				CEF064A015F51B180061C872 /* refresh_d.png */,
 				CEF064A115F51B180061C872 /* refresh.png */,
@@ -1327,8 +1327,8 @@
 				CEF064A215F51B180061C872 /* refresh_d.png in Resources */,
 				CEF064A315F51B180061C872 /* refresh.png in Resources */,
 				CEF064A515F521AF0061C872 /* level1.json in Resources */,
-				CEDADF4A15F6B30600D9AE0E /* octosprite.plist in Resources */,
-				CEDADF4B15F6B30600D9AE0E /* octosprite.png in Resources */,
+				CEDADF4E15F6B44600D9AE0E /* octosprite.plist in Resources */,
+				CEDADF4F15F6B44600D9AE0E /* octosprite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
