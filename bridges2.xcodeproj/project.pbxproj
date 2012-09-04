@@ -187,6 +187,7 @@
 		CEBD81FE15EACDC100EE27CF /* RootMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */; };
 		CEC65C0515F4C1CD0010EAC3 /* ScreenShotLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */; };
 		CEC65C1115F4D0320010EAC3 /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */; };
+		CECDC54815F6C54000D266FD /* green_check.png in Resources */ = {isa = PBXBuildFile; fileRef = CECDC54715F6C54000D266FD /* green_check.png */; };
 		CECE255B15F21FDB00517973 /* Level.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE255A15F21FDB00517973 /* Level.mm */; };
 		CECE256815F2819200517973 /* LevelMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE256715F2819200517973 /* LevelMgr.mm */; };
 		CECE256F15F2869300517973 /* level5.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256D15F2869300517973 /* level5.json */; };
@@ -579,6 +580,7 @@
 		CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScreenShotLayer.mm; sourceTree = "<group>"; };
 		CEC65C0F15F4D0320010EAC3 /* UIImageExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtras.h; sourceTree = "<group>"; };
 		CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtras.m; sourceTree = "<group>"; };
+		CECDC54715F6C54000D266FD /* green_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_check.png; sourceTree = "<group>"; };
 		CECE255915F21FDB00517973 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		CECE255A15F21FDB00517973 /* Level.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level.mm; sourceTree = "<group>"; };
 		CECE255D15F227D200517973 /* GameNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameNode.h; sourceTree = "<group>"; };
@@ -712,6 +714,7 @@
 		CE6D65E815EAC5FB00C7EDD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CECDC54715F6C54000D266FD /* green_check.png */,
 				CEDADF4C15F6B44600D9AE0E /* octosprite.plist */,
 				CEDADF4D15F6B44600D9AE0E /* octosprite.png */,
 				CEF0649A15F51B0B0061C872 /* left_arrow_d.png */,
@@ -1329,6 +1332,7 @@
 				CEF064A515F521AF0061C872 /* level1.json in Resources */,
 				CEDADF4E15F6B44600D9AE0E /* octosprite.plist in Resources */,
 				CEDADF4F15F6B44600D9AE0E /* octosprite.png in Resources */,
+				CECDC54815F6C54000D266FD /* green_check.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

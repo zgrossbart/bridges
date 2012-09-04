@@ -145,6 +145,10 @@
             cell.imageView.image = [image imageByScalingAndCroppingForSize:s];
             
         }
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"green_check.png"]];
+        cell.accessoryView = imageView;
+        [imageView release];
     }
     
     NSString* key = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
