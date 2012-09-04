@@ -374,9 +374,7 @@
         [_player updateColor:bridge.color];
     }
     
-    if ([self.currentLevel hasWon]) {
-        printf("You've won");
-    }
+    [self hasWon];
 }
 
 - (void)bumpObject:(CCSprite *) player:(CCSprite*) object {
@@ -425,8 +423,18 @@
     [mgr removeAllActionsFromTarget:player];
     [mgr resumeTarget:player];
     
+    [self hasWon];
+    
+}
+
+-(void) hasWon {
     if ([self.currentLevel hasWon]) {
         printf("You've won");
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
+        [defaults setBool:TRUE forKey:[NSString stringWithFormat:@"%@-won", self.currentLevel.levelId]];
+        [defaults synchronize];
     }
     
 }

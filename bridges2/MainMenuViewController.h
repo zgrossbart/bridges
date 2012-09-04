@@ -15,6 +15,7 @@
 //    IBOutlet UITableView *_view;
     CGFloat  mFontSize;
     NSArray* mFontNames;
+    IBOutlet UITableView *_mainTable;
     IBOutlet UINavigationItem *_navItem;
     IBOutlet UIScrollView *_scrollView;
 }

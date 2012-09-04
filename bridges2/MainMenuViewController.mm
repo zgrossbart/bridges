@@ -100,6 +100,8 @@
     _navItem = nil;
     [_scrollView release];
     _scrollView = nil;
+    [_mainTable release];
+    _mainTable = nil;
     [super viewDidUnload];
 }
 
@@ -130,29 +132,31 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
+    NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        
         if([paths count] > 0) {
             NSString *documentsDirectory = [paths objectAtIndex:0];
-            
-            NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
             
             CGSize s = CGSizeMake(96, 64);
             UIImage *image = [UIImage imageWithContentsOfFile:[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", levelId]]];
             cell.imageView.image = [image imageByScalingAndCroppingForSize:s];
             
         }
-        
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", levelId]]) {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"green_check.png"]];
         cell.accessoryView = imageView;
         [imageView release];
     }
     
-    NSString* key = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
-    cell.textLabel.text = ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:key]).name;
+    cell.textLabel.text = ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).name;
     
     return cell;
 }
@@ -192,6 +196,8 @@
 {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
+    
+    [_mainTable reloadData];
 }
 
 - (void)dealloc
@@ -202,6 +208,7 @@
 //    [_view release];
     [_navItem release];
     [_scrollView release];
+    [_mainTable release];
     [super dealloc];
 }
 
