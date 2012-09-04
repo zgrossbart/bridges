@@ -96,6 +96,14 @@
             } else {
                 return @"bridge_v_green.png";
             }
+        } else if (self.color == ORANGE) {
+            if (self.direction == UP) {
+                return @"bridge_orange_up.png";
+            } else if (self.direction == DOWN) {
+                return @"bridge_orange_down.png";
+            } else {
+                return @"bridge_v_orange.png";
+            }
         } else {
             if (self.direction == UP) {
                 return @"bridge_up.png";
@@ -129,6 +137,14 @@
                 return @"bridge_green_right.png";
             } else {
                 return @"bridge_h_green.png";
+            }
+        } else if (self.color == ORANGE) {
+            if (self.direction == LEFT) {
+                return @"bridge_orange_left.png";
+            } else if (self.direction == RIGHT) {
+                return @"bridge_orange_right.png";
+            } else {
+                return @"bridge_h_orange.png";
             }
         } else {
             if (self.direction == LEFT) {

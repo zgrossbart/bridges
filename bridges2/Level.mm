@@ -181,6 +181,8 @@
         return RED;
     } else if ([color isEqualToString:@"green"]) {
         return GREEN;
+    } else if ([color isEqualToString:@"orange"]) {
+        return ORANGE;
     } else if ([color isEqualToString:@"blue"]) {
         return BLUE;
     } else if ([color isEqualToString:@"black"]) {

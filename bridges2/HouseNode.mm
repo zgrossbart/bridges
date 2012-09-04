@@ -38,6 +38,8 @@
         return @"house_blue.png";
     } else if (self.color == GREEN) {
         return @"house_green.png";
+    } else if (self.color == ORANGE) {
+        return @"house_orange.png";
     } else {
         return @"house.png";
     }

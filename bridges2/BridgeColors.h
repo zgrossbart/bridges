@@ -16,7 +16,8 @@ static int const NONE = -1;
 static int const RED = 0;
 static int const BLUE = 1;
 static int const GREEN = 2;
-static int const BLACK = 3;
+static int const ORANGE = 3;
+static int const BLACK = 4;
 
 static int const LEFT = 0;
 static int const RIGHT = 1;
