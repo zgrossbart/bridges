@@ -34,7 +34,7 @@
     [LevelMgr getLevelMgr];
     
     [self generateLevelImages];
-    [self loadLevelPicker];
+ //   [self loadLevelPicker];
     
     _navItem.title = @"Select a level";
 //    [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
@@ -52,18 +52,21 @@
         
         for (int i = 0; i < [LevelMgr getLevelMgr].levelIds.count; i++) {
             NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:i];
+            Level *level = [[LevelMgr getLevelMgr].levels objectForKey:levelId];
             UIImage *image = [UIImage imageWithContentsOfFile:[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", levelId]]];
             
             UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-            button.frame = CGRectMake(column*(s.width + 15)+24, row*s.height+10, s.width + 15, s.height);
+            button.frame = CGRectMake(column*(s.width + 15)+24, row*(s.height + 50)+10, s.width + 15, s.height);
             [button setImage:[image imageByScalingAndCroppingForSize:s] forState:UIControlStateNormal];
+            [button setTitle:level.name forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [button addTarget:self
                        action:@selector(levelSelected:)
              forControlEvents:UIControlEventTouchUpInside];
             button.tag = i;
             [_scrollView addSubview:button];
             
-            if (column == 3) {
+            if (column == 10) {
                 column = 0;
                 row++;
             } else {
@@ -130,6 +133,18 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        if([paths count] > 0) {
+            NSString *documentsDirectory = [paths objectAtIndex:0];
+            
+            NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
+            
+            CGSize s = CGSizeMake(96, 64);
+            UIImage *image = [UIImage imageWithContentsOfFile:[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", levelId]]];
+            cell.imageView.image = [image imageByScalingAndCroppingForSize:s];
+            
+        }
     }
     
     NSString* key = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
