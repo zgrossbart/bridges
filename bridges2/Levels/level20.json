@@ -1,0 +1,17 @@
+{
+    "level": {
+        "id": "20",
+        "name": "4-way bridge",
+        "rivers": [
+            
+        ],
+        "bridge4s": [
+            {
+                "x": "c",
+                "y": "m"
+            }
+        ],
+        "houses": [
+        ]
+    }
+}

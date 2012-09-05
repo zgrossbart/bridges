@@ -11,7 +11,7 @@
 
 @interface BridgeNode()
 @property (readwrite) bool vertical;
-@property (readwrite) CCSprite *bridge;
+@property (readwrite, retain) CCSprite *bridge;
 @property (nonatomic, assign, getter=isCrossed, readwrite) bool crossed;
 @property (nonatomic, assign, readwrite) int color;
 @property (readwrite) LayerMgr *layerMgr;

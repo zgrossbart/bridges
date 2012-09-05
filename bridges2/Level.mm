@@ -9,12 +9,14 @@
 #import "Level.h"
 #import "BridgeColors.h"
 #import "BridgeNode.h"
+#import "Bridge4Node.h"
 #import "HouseNode.h"
 #import "JSONKit.h"
 
 @interface Level()
 @property (readwrite) NSMutableArray *rivers;
 @property (readwrite) NSMutableArray *bridges;
+@property (readwrite) NSMutableArray *bridge4s;
 @property (readwrite) NSMutableArray *houses;
 @property (readwrite) NSMutableArray *labels;
 @property (readwrite) LayerMgr *layerMgr;
@@ -31,6 +33,7 @@
 {
     if( (self=[super init] )) {
         self.bridges = [[NSMutableArray alloc] init];
+        self.bridge4s = [[NSMutableArray alloc] init];
         self.rivers = [[NSMutableArray alloc] init];
         self.houses = [[NSMutableArray alloc] init];
         self.labels = [[NSMutableArray alloc] init];
@@ -85,6 +88,18 @@
         
         [self addBridge:[self parseInt:x]:[self parseInt:y]:
          [orient isEqualToString:@"v"]:[self getDir:dir]:[self getColor:color]];
+    }
+    
+    /*
+     * Add the 4-way bridges
+     */
+    NSArray *bridge4s = [_levelData objectForKey:@"bridge4s"];
+    for (NSDictionary *b in bridge4s) {
+        NSString *x = [b objectForKey:@"x"];
+        NSString *y = [b objectForKey:@"y"];
+        NSString *color = [b objectForKey:@"color"];
+        
+        [self addBridge4:[self parseInt:x]:[self parseInt:y]:[self getColor:color]];
     }
     
     /*
@@ -146,6 +161,7 @@
     
     [self.rivers removeAllObjects];
     [self.bridges removeAllObjects];
+    [self.bridge4s removeAllObjects];
     [self.houses removeAllObjects];
 }
 
@@ -163,10 +179,13 @@
         [self.layerMgr addChildToSheet:r];
     }
     
-    
     for (BridgeNode *b in self.bridges) {
         //[b addSprite];
-        NSLog(@"Adding bridge: %i", b.bridge.tag);
+        [self.layerMgr addChildToSheet:b.bridge];
+    }
+    
+    for (Bridge4Node *b in self.bridge4s) {
+        //[b addSprite];
         [self.layerMgr addChildToSheet:b.bridge];
     }
     
@@ -317,6 +336,21 @@
     
 }
 
+- (Bridge4Node*)addBridge4:(int) x:(int) y:(int) color {
+    
+    //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
+    
+    Bridge4Node *bridgeNode = [[Bridge4Node alloc] initWithTagAndColor:BRIDGE4:color:self.layerMgr];
+    CGPoint startPos = [self tileToPoint:x:y];
+    
+    [bridgeNode setBridgePosition:startPos];
+    
+    [self.bridge4s addObject:bridgeNode];
+    
+    return bridgeNode;
+    
+}
+
 - (BridgeNode*)addBridge:(int) x:(int) y:(bool) vertical:(int) dir: (int) color {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
@@ -359,6 +393,12 @@
 
 -(bool)hasWon {
     for (BridgeNode *n in _bridges) {
+        if (!n.isCrossed) {
+            return false;
+        }
+    }
+    
+    for (Bridge4Node *n in _bridge4s) {
         if (!n.isCrossed) {
             return false;
         }
@@ -426,6 +466,9 @@
     
     [_bridges release];
     _bridges = nil;
+    
+    [_bridge4s release];
+    _bridge4s = nil;
     
     [_houses release];
     _houses = nil;

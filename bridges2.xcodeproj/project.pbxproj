@@ -198,6 +198,8 @@
 		CECE689415F75AE60042A7DF /* level17.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689315F75AE60042A7DF /* level17.json */; };
 		CECE689715F767790042A7DF /* octosprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = CECE689515F767790042A7DF /* octosprite.plist */; };
 		CECE689815F767790042A7DF /* octosprite.png in Resources */ = {isa = PBXBuildFile; fileRef = CECE689615F767790042A7DF /* octosprite.png */; };
+		CECE689B15F76A510042A7DF /* Bridge4Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE689A15F76A510042A7DF /* Bridge4Node.mm */; };
+		CECE689D15F76E120042A7DF /* level20.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689C15F76E120042A7DF /* level20.json */; };
 		CECFA63115F36AEF00FF1E8D /* Undoable.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFA63015F36AEE00FF1E8D /* Undoable.m */; };
 		CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */; };
 		CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E015EB8A8400094695 /* HouseNode.mm */; };
@@ -598,6 +600,9 @@
 		CECE689315F75AE60042A7DF /* level17.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level17.json; sourceTree = "<group>"; };
 		CECE689515F767790042A7DF /* octosprite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = octosprite.plist; sourceTree = "<group>"; };
 		CECE689615F767790042A7DF /* octosprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octosprite.png; sourceTree = "<group>"; };
+		CECE689915F76A510042A7DF /* Bridge4Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge4Node.h; sourceTree = "<group>"; };
+		CECE689A15F76A510042A7DF /* Bridge4Node.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Bridge4Node.mm; sourceTree = "<group>"; };
+		CECE689C15F76E120042A7DF /* level20.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level20.json; sourceTree = "<group>"; };
 		CECFA62F15F36AEE00FF1E8D /* Undoable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Undoable.h; sourceTree = "<group>"; };
 		CECFA63015F36AEE00FF1E8D /* Undoable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Undoable.m; sourceTree = "<group>"; };
 		CEDBC2DA15EB89DA00094695 /* BridgeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeColors.h; sourceTree = "<group>"; };
@@ -687,6 +692,8 @@
 				CEDBC2DA15EB89DA00094695 /* BridgeColors.h */,
 				CEDBC2EA15EB8C8200094695 /* BridgeNode.h */,
 				CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */,
+				CECE689915F76A510042A7DF /* Bridge4Node.h */,
+				CECE689A15F76A510042A7DF /* Bridge4Node.mm */,
 				CECE255D15F227D200517973 /* GameNode.h */,
 				CEDBC2DF15EB8A8400094695 /* HouseNode.h */,
 				CEDBC2E015EB8A8400094695 /* HouseNode.mm */,
@@ -1262,6 +1269,7 @@
 				CEAE47F715F3894400898698 /* level7.json */,
 				CEEFF6F115F3A9CB0095649C /* level8.json */,
 				CECE689315F75AE60042A7DF /* level17.json */,
+				CECE689C15F76E120042A7DF /* level20.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1349,6 +1357,7 @@
 				CECE689415F75AE60042A7DF /* level17.json in Resources */,
 				CECE689715F767790042A7DF /* octosprite.plist in Resources */,
 				CECE689815F767790042A7DF /* octosprite.png in Resources */,
+				CECE689D15F76E120042A7DF /* level20.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1521,6 +1530,7 @@
 				CECFA63115F36AEF00FF1E8D /* Undoable.m in Sources */,
 				CEC65C0515F4C1CD0010EAC3 /* ScreenShotLayer.mm in Sources */,
 				CEC65C1115F4D0320010EAC3 /* UIImageExtras.m in Sources */,
+				CECE689B15F76A510042A7DF /* Bridge4Node.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@
 #import "BridgeColors.h"
 
 @interface HouseNode()
-@property (readwrite) CCSprite *house;
+@property (readwrite, retain) CCSprite *house;
 @property (nonatomic, assign, getter=isVisited, readwrite) bool visited;
 @property (nonatomic, assign, readwrite) int color;
 @property (readwrite) LayerMgr *layerMgr;

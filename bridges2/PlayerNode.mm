@@ -10,7 +10,7 @@
 #import "BridgeColors.h"
 
 @interface PlayerNode()
-@property (readwrite) CCSprite *player;
+@property (readwrite, retain) CCSprite *player;
 @property (nonatomic, assign, readwrite) int color;
 @end
 

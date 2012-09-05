@@ -18,7 +18,7 @@
 -(CGPoint)getHousePosition;
 -(int)tag;
 
-@property (readonly) CCSprite *house;
+@property (readonly, retain) CCSprite *house;
 @property (nonatomic, assign, getter=isVisited, readonly) bool visited;
 @property (nonatomic, assign, readonly) int color;
 @property (nonatomic, assign, setter=position:) CGPoint position;
