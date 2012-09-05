@@ -1,14 +1,14 @@
 {
     "level": {
-        "id": "6",
-        "name": "One-way bridges",
+        "id": "4",
+        "name": "Start anywhere",
         "labels": [
         	{
             	"x": "22",
 				"y": "1",
 				"w": "16",
 				"h": "10",
-				"text": "Some bridges only go one way."
+				"text": "Sometimes you choose where to start.  Tap any island."
 			}
         ],
         "rivers": [
@@ -27,26 +27,22 @@
             {
                 "x": "14",
                 "y": "22",
-                "orient": "h",
-				"dir": "right"
+                "orient": "h"
             },
             {
                 "x": "14",
                 "y": "6",
-                "orient": "h",
-				"dir": "left"
+                "orient": "h"
             },
             {
                 "x": "8",
                 "y": "14",
-                "orient": "v",
-				"dir": "up"
+                "orient": "v"
             },
             {
                 "x": "20",
                 "y": "14",
-                "orient": "v",
-				"dir": "down"
+                "orient": "v"
             }
         ],
         "houses": [

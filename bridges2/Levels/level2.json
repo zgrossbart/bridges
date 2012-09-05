@@ -1,0 +1,45 @@
+{
+    "level": {
+        "id": "2",
+        "name": "Two bridges",
+        "labels": [
+            {
+                "x": "22",
+                "y": "1",
+                "w": "16",
+                "h": "10",
+                "text": "You can only cross bridges once"
+            }
+        ],
+		"player": {
+			"x": "4",
+			"y": "16"
+		},
+        "rivers": [
+            {
+                "x": "8",
+                "y": "b-t",
+                "orient": "v"
+            },
+            {
+                "x": "18",
+                "y": "b-t",
+                "orient": "v"
+            }
+        ],
+        "bridges": [
+            {
+                "x": "8",
+                "y": "18",
+                "orient": "h"
+            },
+            {
+                "x": "18",
+                "y": "8",
+                "orient": "h"
+            }
+        ],
+        "houses": [
+        ]
+    }
+}

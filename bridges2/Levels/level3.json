@@ -1,0 +1,39 @@
+{
+    "level": {
+        "id": "3",
+        "name": "A house by the river",
+        "labels": [
+        	{
+            	"x": "22",
+				"y": "1",
+				"w": "16",
+				"h": "10",
+				"text": "Make sure to visit every house"
+			}
+        ],
+		"player": {
+			"x": "6",
+			"y": "m"
+		},
+        "rivers": [
+            {
+                "x": "14",
+                "y": "b-t",
+                "orient": "v"
+            }
+        ],
+        "bridges": [
+            {
+                "x": "14",
+                "y": "m",
+                "orient": "h"
+            }
+        ],
+        "houses": [
+        	{
+            	"x": "24",
+           	 	"y": "6"
+        	}
+        ]
+    }
+}

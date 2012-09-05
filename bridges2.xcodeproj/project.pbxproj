@@ -192,6 +192,9 @@
 		CECE256815F2819200517973 /* LevelMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE256715F2819200517973 /* LevelMgr.mm */; };
 		CECE256F15F2869300517973 /* level5.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256D15F2869300517973 /* level5.json */; };
 		CECE257015F2869300517973 /* level6.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256E15F2869300517973 /* level6.json */; };
+		CECE688D15F750F70042A7DF /* level3.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE688C15F750F70042A7DF /* level3.json */; };
+		CECE689015F752780042A7DF /* level2.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE688F15F752780042A7DF /* level2.json */; };
+		CECE689215F754BA0042A7DF /* level4.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689115F754BA0042A7DF /* level4.json */; };
 		CECFA63115F36AEF00FF1E8D /* Undoable.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFA63015F36AEE00FF1E8D /* Undoable.m */; };
 		CEDADF4E15F6B44600D9AE0E /* octosprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEDADF4C15F6B44600D9AE0E /* octosprite.plist */; };
 		CEDADF4F15F6B44600D9AE0E /* octosprite.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDADF4D15F6B44600D9AE0E /* octosprite.png */; };
@@ -588,6 +591,9 @@
 		CECE256715F2819200517973 /* LevelMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelMgr.mm; sourceTree = "<group>"; };
 		CECE256D15F2869300517973 /* level5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level5.json; sourceTree = "<group>"; };
 		CECE256E15F2869300517973 /* level6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level6.json; sourceTree = "<group>"; };
+		CECE688C15F750F70042A7DF /* level3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level3.json; sourceTree = "<group>"; };
+		CECE688F15F752780042A7DF /* level2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level2.json; sourceTree = "<group>"; };
+		CECE689115F754BA0042A7DF /* level4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level4.json; sourceTree = "<group>"; };
 		CECFA62F15F36AEE00FF1E8D /* Undoable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Undoable.h; sourceTree = "<group>"; };
 		CECFA63015F36AEE00FF1E8D /* Undoable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Undoable.m; sourceTree = "<group>"; };
 		CEDADF4C15F6B44600D9AE0E /* octosprite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = octosprite.plist; sourceTree = "<group>"; };
@@ -1246,6 +1252,9 @@
 			isa = PBXGroup;
 			children = (
 				CEF064A415F521AF0061C872 /* level1.json */,
+				CECE688F15F752780042A7DF /* level2.json */,
+				CECE688C15F750F70042A7DF /* level3.json */,
+				CECE689115F754BA0042A7DF /* level4.json */,
 				CECE256D15F2869300517973 /* level5.json */,
 				CECE256E15F2869300517973 /* level6.json */,
 				CEAE47F715F3894400898698 /* level7.json */,
@@ -1333,6 +1342,9 @@
 				CEDADF4E15F6B44600D9AE0E /* octosprite.plist in Resources */,
 				CEDADF4F15F6B44600D9AE0E /* octosprite.png in Resources */,
 				CECDC54815F6C54000D266FD /* green_check.png in Resources */,
+				CECE688D15F750F70042A7DF /* level3.json in Resources */,
+				CECE689015F752780042A7DF /* level2.json in Resources */,
+				CECE689215F754BA0042A7DF /* level4.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

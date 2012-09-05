@@ -59,7 +59,7 @@
     }
     
     NSArray *rivers = [_levelData objectForKey:@"rivers"];
-    NSLog(@"rivers.count: %i", rivers.count);
+//    NSLog(@"rivers.count: %i", rivers.count);
     
     /*
      * Add the rivers
@@ -298,9 +298,9 @@
     
     CCSprite *river;
     if (vert) {
-        river = [CCSprite spriteWithSpriteFrameName:@"river_h.png"];
-    } else {
         river = [CCSprite spriteWithSpriteFrameName:@"river_v.png"];
+    } else {
+        river = [CCSprite spriteWithSpriteFrameName:@"river_h.png"];
     }
     
     [self resizeSprite:river:1:vert];

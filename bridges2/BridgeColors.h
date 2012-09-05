@@ -19,7 +19,7 @@ static int const GREEN = 2;
 static int const ORANGE = 3;
 static int const BLACK = 4;
 
-static int const LEFT = 0;
-static int const RIGHT = 1;
-static int const UP = 2;
+static int const LEFT = 1;
+static int const RIGHT = 2;
+static int const UP = 3;
 static int const DOWN = 4;

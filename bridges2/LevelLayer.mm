@@ -267,7 +267,7 @@
     HouseNode *node = [self findHouse:house];
     
     if (![node isVisited]) {
-        if (_player.color == node.color) {
+        if (node.color == NONE || _player.color == node.color) {
             [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color]];
             UIImage *undoD = [UIImage imageNamed:@"left_arrow.png"];
             [_undoBtn setImage:undoD forState:UIControlStateNormal];

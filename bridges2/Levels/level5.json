@@ -1,37 +1,46 @@
 {
     "level": {
         "id": "5",
-        "name": "Level 5",
+        "name": "Change colors",
+		"labels": [
+        	{
+            	"x": "22",
+				"y": "1",
+				"w": "16",
+				"h": "14",
+				"text": "You can only visit a house if you're the same color.\n\nCross a bridge to change colors."
+			}
+        ],        
         "rivers": [
             {
                 "x": "l-r",
-                "y": "14",
+                "y": "10",
                 "orient": "h"
             }
         ],
         "bridges": [
             {
                 "x": "10",
-                "y": "14",
+                "y": "10",
                 "orient": "v",
                 "color": "red"
             },
             {
                 "x": "20",
-                "y": "14",
+                "y": "10",
                 "orient": "v",
                 "color": "green"
             }
         ],
         "houses": [
             {
-                "x": "4",
+                "x": "8",
                 "y": "4",
                 "color": "green"
             },
             {
-                "x": "22",
-                "y": "24",
+                "x": "12",
+                "y": "16",
                 "color": "red"
             }
         ]
