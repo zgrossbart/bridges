@@ -37,8 +37,6 @@
 
 -(void)setBridgeSprite:(CCSprite*)bridge {
     self.bridge = bridge;
-    self.contentSize = CGSizeMake(self.bridge.contentSize.width,
-                                  self.bridge.contentSize.height);
     self.bridge.tag = [self tag];
 }
 

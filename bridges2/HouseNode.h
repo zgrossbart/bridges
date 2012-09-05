@@ -3,7 +3,7 @@
 #import "LayerMgr.h"
 #import "GameNode.h"
 
-@interface HouseNode : CCLayer <GameNode> {
+@interface HouseNode : NSObject <GameNode> {
 @private
     int _tag;
     LayerMgr *_manager;

@@ -3,7 +3,7 @@
 #import "LayerMgr.h"
 #import "GameNode.h"
 
-@interface BridgeNode : CCLayer <GameNode> {
+@interface BridgeNode : NSObject <GameNode> {
     int _tag;
     bool _vertical;
     

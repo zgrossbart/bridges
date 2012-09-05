@@ -2,7 +2,7 @@
 #import "cocos2d.h"
 #import "LayerMgr.h"
 
-@interface PlayerNode : CCLayer {
+@interface PlayerNode : NSObject {
 @private
     int _tag;
     LayerMgr *_manager;

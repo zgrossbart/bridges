@@ -61,8 +61,6 @@
 
 -(void)setHouseSprite:(CCSprite*)house {
     self.house = house;
-    self.contentSize = CGSizeMake(self.house.contentSize.width,
-                                  self.house.contentSize.height);
     self.house.tag = [self tag];
 }
 

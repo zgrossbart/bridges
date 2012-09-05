@@ -139,7 +139,7 @@
     [undo.node undo];
     [self.player updateColor:undo.color];
     self.player.player.position = undo.pos;
-    self.player.position = undo.pos;
+    self.player.player.position = undo.pos;
     
     [self.undoStack removeLastObject];
     
@@ -395,12 +395,6 @@ CGFloat CGPointToDegree(CGPoint point) {
     CGPoint location = ccp(bridge.bridge.position.x, bridge.bridge.position.y);
     
     int padding = bridge.bridge.contentSize.width / 2;
-    
-    printf("player (%f, %f)\n", player.position.x, player.position.y);
-    printf("bridge (%f, %f)\n", object.position.x, object.position.y);
-    printf("bridge.size (%f, %f)\n", bridge.contentSize.width, object.contentSize.height);
-    
-    printf("location (%f, %f)\n", location.x, location.y);
     
     if (player.position.x < bridge.bridge.position.x - padding) {
         _bridgeEntry = LEFT;

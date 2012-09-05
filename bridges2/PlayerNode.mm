@@ -94,8 +94,6 @@
 
 -(void)setPlayerSprite:(CCSprite*)player {
     self.player = player;
-    self.contentSize = CGSizeMake(self.player.contentSize.width,
-                                  self.player.contentSize.height);
     self.player.tag = [self tag];
 }
 
@@ -129,11 +127,6 @@
                        ];
 
     [_player runAction:self.moveAction];
-}
-
--(void)position:(CGPoint)p {
-    super.position = p;
-    self.player.position = ccp(p.x, p.y);
 }
 
 -(int)tag {
