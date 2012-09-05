@@ -1,5 +1,6 @@
 #import "LevelLayer.h"
 #import "BridgeNode.h"
+#import "Bridge4Node.h"
 #import "HouseNode.h"
 #import "BridgeColors.h"
 #import "Level.h"
@@ -184,7 +185,7 @@
         _hasInit = true;
     }
     
- //    _world->DrawDebugData();
+     _world->DrawDebugData();
 }
 
 
@@ -230,6 +231,10 @@
                 [self crossBridge:spriteB:spriteA];
             } else if (spriteA.tag == PLAYER && spriteB.tag == BRIDGE) {
                 [self crossBridge:spriteA:spriteB];
+            } else if (spriteA.tag == BRIDGE4 && spriteB.tag == PLAYER) {
+                [self crossBridge4:spriteB:spriteA];
+            } else if (spriteA.tag == PLAYER && spriteB.tag == BRIDGE4) {
+                [self crossBridge4:spriteA:spriteB];
             } else if (spriteA.tag == HOUSE && spriteB.tag == PLAYER) {
                 [self visitHouse:spriteB:spriteA];
             } else if (spriteA.tag == PLAYER && spriteB.tag == HOUSE) {
@@ -241,6 +246,16 @@
 
 -(BridgeNode*)findBridge:(CCSprite*) bridge {
     for (BridgeNode *n in self.currentLevel.bridges) {
+        if (n.bridge == bridge) {
+            return n;
+        }
+    }
+    
+    return nil;
+}
+
+-(Bridge4Node*)findBridge4:(CCSprite*) bridge {
+    for (Bridge4Node *n in self.currentLevel.bridge4s) {
         if (n.bridge == bridge) {
             return n;
         }
@@ -293,6 +308,133 @@
         [self doCross:player:node:bridge];
     }
     
+}
+
+- (void)crossBridge4:(CCSprite *) player:(CCSprite*) bridge {
+    
+    if (_inBridge) {
+        return;
+    }
+    /*
+     * The player has run into a 4-way bridge.  We need to cross the bridge
+     * if it hasn't been crossed yet and not if it has.
+     */
+    Bridge4Node *node = [self findBridge4:bridge];
+    
+    if ([node isCrossed]) {
+        [self bumpObject:player:bridge];
+    } else {
+        _inCross = true;
+        _inBridge = true;
+        [self doCross4:player:node:bridge];
+    }
+    
+}
+
+- (void)finishCross4: (CGPoint) touch {
+    int exitDir = -1;
+    
+    CGPoint p0 = _player.player.position;
+    CGPoint p1 = touch;
+    CGPoint pnormal = ccpSub(p1, p0);
+    CGFloat angle = CGPointToDegree(pnormal);
+    
+    if (angle > 45 && angle < 135) {
+        exitDir = RIGHT;
+    } else if ((angle > 135 && angle < 180) || (angle < -135 && angle > -180)) {
+        exitDir = DOWN;
+    } else if (angle < -45 && angle > -135) {
+        exitDir = LEFT;
+    } else {
+        exitDir = UP;
+    }
+    
+    if (exitDir == _bridgeEntry) {
+        /*
+         * You can't exit the bridge from the same direction you enter it
+         */
+        return;
+    }
+        
+    CGPoint location;
+    
+//    printf("current bridge (%f, %f)\n", _currentBridge.bridge.position.x, _currentBridge.bridge.position.y);
+    
+    if (exitDir == RIGHT) {
+        location = ccp(_currentBridge.bridge.position.x + (_currentBridge.bridge.contentSize.width / 2) + (_player.player.contentSize.width), _currentBridge.bridge.position.y);
+    } else if (exitDir == LEFT) {
+        location = ccp((_currentBridge.bridge.position.x - (_currentBridge.bridge.contentSize.width / 2)) - (_player.player.contentSize.width), _currentBridge.bridge.position.y);
+    } else if (exitDir == UP) {
+        location = ccp(_currentBridge.bridge.position.x, _currentBridge.bridge.position.y + (_currentBridge.bridge.contentSize.height / 2) + (_player.player.contentSize.height));
+    } else if (exitDir == DOWN) {
+        location = ccp(_currentBridge.bridge.position.x, (_currentBridge.bridge.position.y - (_currentBridge.bridge.contentSize.height / 2)) - (_player.player.contentSize.height));
+    }
+    
+    [_player moveTo: location:true];
+    
+    _currentBridge = nil;
+    _inBridge = false;
+
+    
+}
+
+CGFloat CGPointToDegree(CGPoint point) {
+    CGFloat bearingRadians = atan2f(point.x, point.y);
+    CGFloat bearingDegrees = bearingRadians * (180. / M_PI);
+    return bearingDegrees;
+}
+
+- (void)doCross4:(CCSprite *) player:(Bridge4Node*) bridge:(CCSprite*) object {
+    CCActionManager *mgr = [player actionManager];
+    [mgr pauseTarget:player];
+    
+    /*
+     * When the player hits a 4-way bridge we take them to the middle of the bridge
+     * and make them tap again to decide which way they'll exit the bridge.
+     */
+    CGPoint location = ccp(bridge.bridge.position.x, bridge.bridge.position.y);
+    
+    int padding = bridge.bridge.contentSize.width / 2;
+    
+    printf("player (%f, %f)\n", player.position.x, player.position.y);
+    printf("bridge (%f, %f)\n", object.position.x, object.position.y);
+    printf("bridge.size (%f, %f)\n", bridge.contentSize.width, object.contentSize.height);
+    
+    printf("location (%f, %f)\n", location.x, location.y);
+    
+    if (player.position.x < bridge.bridge.position.x - padding) {
+        _bridgeEntry = LEFT;
+    } else if (player.position.x > bridge.bridge.position.x + padding) {
+        _bridgeEntry = RIGHT;
+    } else if (player.position.y < bridge.bridge.position.y - padding) {
+        _bridgeEntry = DOWN;
+    } else if (player.position.y > bridge.bridge.position.y - padding) {
+        _bridgeEntry = UP;
+    }
+    
+    _currentBridge = bridge;
+    
+    
+    [mgr removeAllActionsFromTarget:player];
+    [mgr resumeTarget:player];
+    
+    //    printf("Moving to (%f, %f)\n", location.x, location.y);
+    //    location.y += 5;
+    //    _player.position = location;
+    
+    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color]];
+    UIImage *undoD = [UIImage imageNamed:@"left_arrow.png"];
+    [_undoBtn setImage:undoD forState:UIControlStateNormal];
+    
+    [_player moveTo: ccp(location.x, location.y):true];
+    
+    [bridge cross];
+    
+    if (bridge.color != NONE) {
+        [_player updateColor:bridge.color];
+    }
+    
+    [self hasWon];
 }
 
 - (void)doCross:(CCSprite *) player:(BridgeNode*) bridge:(CCSprite*) object {
@@ -486,6 +628,11 @@
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:[touch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
+    
+    if (_inBridge) {
+        [self finishCross4:location];
+        return;
+    }
     
     if (_player == nil) {
         if (![self inObject:location]) {

@@ -22,7 +22,7 @@
 -(void)moveTo:(CGPoint)p:(bool)force;
 -(void)playerMoveEnded;
 
-@property (readonly, retain) CCSprite *player;
+@property (readonly) CCSprite *player;
 @property (nonatomic, assign, readonly) int color;
 @property (nonatomic, retain) CCAction *walkAction;
 @property (nonatomic, retain) CCAction *moveAction;

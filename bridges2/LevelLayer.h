@@ -5,6 +5,7 @@
 #import "MyContactListener.h"
 #import "PlayerNode.h"
 #import "Level.h"
+#import "Bridge4Node.h"
 
 #define PTM_RATIO 32.0
 
@@ -22,6 +23,9 @@
     LayerMgr *_layerMgr;
     
     bool _inCross;
+    bool _inBridge;
+    Bridge4Node *_currentBridge;
+    int _bridgeEntry;
     bool _hasInit;
     CGPoint _prevPlayerPos;
     
