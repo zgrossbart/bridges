@@ -372,10 +372,11 @@
     
     [_player moveTo: location:true];
     
+    [_currentBridge cross];
     _currentBridge = nil;
     _inBridge = false;
-
     
+    [self hasWon];
 }
 
 CGFloat CGPointToDegree(CGPoint point) {
@@ -422,13 +423,11 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     [_player moveTo: ccp(location.x, location.y):true];
     
-    [bridge cross];
+    [bridge enterBridge:_bridgeEntry];
     
     if (bridge.color != NONE) {
         [_player updateColor:bridge.color];
     }
-    
-    [self hasWon];
 }
 
 - (void)doCross:(CCSprite *) player:(BridgeNode*) bridge:(CCSprite*) object {

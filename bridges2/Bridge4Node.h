@@ -11,6 +11,7 @@
 -(id)initWithTagAndColor: (int) tag:(int) color:(LayerMgr*) layerMgr;
 
 -(void)cross;
+-(void)enterBridge:(int)dir;
 -(bool)isCrossed;
 -(void)setBridgePosition:(CGPoint)p;
 -(CGPoint)getBridgePosition;
