@@ -54,9 +54,23 @@
         }
     }
     
-    self.levelIds = [[self.levels allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    self.levelIds = [self sortLevels];
     
 //    NSLog(@"levels ====== %@",self.levels);
+}
+
+- (NSArray *)sortLevels {
+    return [[self.levels allKeys] sortedArrayUsingComparator:(NSComparator)^(id obj1, id obj2){
+        int i1 = [obj1 integerValue];
+        int i2 = [obj2 integerValue];
+        if (i1 > i2) {
+            return NSOrderedDescending;
+        } else if (i1 < i2) {
+            return NSOrderedAscending;
+        } else {
+            return NSOrderedSame;
+        }
+    }];
 }
 
 - (void)setupCocos2D: (CGRect) bounds {
