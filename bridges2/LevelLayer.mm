@@ -185,7 +185,7 @@
         _hasInit = true;
     }
     
-     _world->DrawDebugData();
+//     _world->DrawDebugData();
 }
 
 
