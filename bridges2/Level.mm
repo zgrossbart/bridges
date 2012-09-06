@@ -267,11 +267,11 @@
         [y2 appendString:y1];
     }
     
-    int xi1 = [self parseInt:x1];
-    int yi1 = [self parseInt:y1];
+    float xi1 = [self parseInt:x1];
+    float yi1 = [self parseInt:y1];
     
-    int xi2 = [self parseInt:x2];
-    int yi2 = [self parseInt:y2];
+    float xi2 = [self parseInt:x2];
+    float yi2 = [self parseInt:y2];
     
     /*
      * Now we have two ranges specified by the
@@ -280,8 +280,8 @@
      * simple, but we can still handle it like
      * a range.
      */
-    for (int i = xi1; i <= xi2; i++) {
-        for (int j = yi1; j <= yi2; j++) {
+    for (float i = xi1; i <= xi2; i++) {
+        for (float j = yi1; j <= yi2; j++) {
             [self addRiver:i:j:vert];
             
         }
@@ -289,7 +289,7 @@
     
 }
 
--(int)parseInt:(NSString*) s {
+-(float)parseInt:(NSString*) s {
     if ([s characterAtIndex:0] == 'l') {
         // The left side of the screen
         return 0;
@@ -309,11 +309,11 @@
         // The horizontal center of the screen
         return [self winSizeTiles].width / 2;
     } else {
-        return [s integerValue];
+        return [s floatValue];
     }
 }
 
-- (CCSprite*)addRiver:(int) x:(int) y:(BOOL) vert {
+- (CCSprite*)addRiver:(float) x:(float) y:(BOOL) vert {
     
     CCSprite *river;
     if (vert) {
@@ -336,7 +336,7 @@
     
 }
 
-- (Bridge4Node*)addBridge4:(int) x:(int) y:(int) color {
+- (Bridge4Node*)addBridge4:(float) x:(float) y:(float) color {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
@@ -351,7 +351,7 @@
     
 }
 
-- (BridgeNode*)addBridge:(int) x:(int) y:(bool) vertical:(int) dir: (int) color {
+- (BridgeNode*)addBridge:(float) x:(float) y:(bool) vertical:(float) dir: (float) color {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
@@ -366,7 +366,7 @@
     
 }
 
--(UIButton*)addLabel:(int) x:(int) y:(int) w:(int) h:(NSString*) text {
+-(UIButton*)addLabel:(float) x:(float) y:(float) w:(float) h:(NSString*) text {
 
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     CGPoint s = [self tileToPoint:x:y];
@@ -414,7 +414,7 @@
     
 }
 
--(HouseNode*)addHouse:(int) x:(int) y:(int) color {
+-(HouseNode*)addHouse:(float) x:(float) y:(float) color {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
@@ -435,7 +435,7 @@
     return [[CCDirector sharedDirector] winSize];
 }
 
--(void)resizeSprite:(CCSprite*) sprite: (int) tiles: (bool) vert {
+-(void)resizeSprite:(CCSprite*) sprite: (float) tiles: (bool) vert {
     if (vert) {
         sprite.scaleY = self.layerMgr.tileSize.width/sprite.contentSize.width;
         sprite.contentSize = CGSizeMake(sprite.contentSize.width, self.layerMgr.tileSize.height);
@@ -452,7 +452,7 @@
                       winSize.height / self.layerMgr.tileSize.height);
 }
 
--(CGPoint)tileToPoint:(int) x: (int)y {
+-(CGPoint)tileToPoint:(float) x: (float)y {
 //    printf("tileToPoint (%i, %i)\n", x, y);
 //    printf("tileSize (%f, %f)\n", self.layerMgr.tileSize.width, self.layerMgr.tileSize.height);
     return CGPointMake(x * self.layerMgr.tileSize.width,
