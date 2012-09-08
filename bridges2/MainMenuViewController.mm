@@ -136,17 +136,17 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    if([paths count] > 0) {
+        NSString *documentsDirectory = [paths objectAtIndex:0];
         
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        CGSize s = CGSizeMake(96, 64);
+        UIImage *image = [UIImage imageWithContentsOfFile:[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", levelId]]];
+        cell.imageView.image = [image imageByScalingAndCroppingForSize:s];
         
-        if([paths count] > 0) {
-            NSString *documentsDirectory = [paths objectAtIndex:0];
-            
-            CGSize s = CGSizeMake(96, 64);
-            UIImage *image = [UIImage imageWithContentsOfFile:[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", levelId]]];
-            cell.imageView.image = [image imageByScalingAndCroppingForSize:s];
-            
-        }
     }
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
