@@ -6,12 +6,14 @@
 @interface BridgeNode : NSObject <GameNode> {
     int _tag;
     bool _vertical;
+    UILabel *_label;
     
 }
 
 -(id)initWithOrient: (bool)vertical:(int) tag:(int) color:(LayerMgr*) layerMgr;
 
 -(id)initWithOrientAndDir: (bool)vertical:(int)dir: (int) tag:(int) color:(LayerMgr*) layerMgr;
+-(id)initWithOrientAndDirAndCoins: (bool)vertical:(int)dir: (int) tag:(int) color:(LayerMgr*) layerMgr:(int)coins;
 
 -(void)cross;
 -(bool)isCrossed;

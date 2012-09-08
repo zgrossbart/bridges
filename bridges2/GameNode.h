@@ -5,5 +5,6 @@
 - (void) undo;
 
 @property (nonatomic, assign, readonly) int tag;
+@property (nonatomic, assign, readonly) int coins;
 
 @end

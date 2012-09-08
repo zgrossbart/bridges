@@ -201,6 +201,7 @@
 		CECE689B15F76A510042A7DF /* Bridge4Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE689A15F76A510042A7DF /* Bridge4Node.mm */; };
 		CECE689D15F76E120042A7DF /* level20.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689C15F76E120042A7DF /* level20.json */; };
 		CECFA63115F36AEF00FF1E8D /* Undoable.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFA63015F36AEE00FF1E8D /* Undoable.m */; };
+		CED0303015FB724A008E7EA4 /* level9.json in Resources */ = {isa = PBXBuildFile; fileRef = CED0302F15FB724A008E7EA4 /* level9.json */; };
 		CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */; };
 		CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E015EB8A8400094695 /* HouseNode.mm */; };
 		CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E315EB8AF600094695 /* PlayerNode.mm */; };
@@ -605,6 +606,7 @@
 		CECE689C15F76E120042A7DF /* level20.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level20.json; sourceTree = "<group>"; };
 		CECFA62F15F36AEE00FF1E8D /* Undoable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Undoable.h; sourceTree = "<group>"; };
 		CECFA63015F36AEE00FF1E8D /* Undoable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Undoable.m; sourceTree = "<group>"; };
+		CED0302F15FB724A008E7EA4 /* level9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level9.json; sourceTree = "<group>"; };
 		CEDBC2DA15EB89DA00094695 /* BridgeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeColors.h; sourceTree = "<group>"; };
 		CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerMgr.h; sourceTree = "<group>"; };
 		CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LayerMgr.mm; sourceTree = "<group>"; };
@@ -1268,6 +1270,7 @@
 				CECE256E15F2869300517973 /* level6.json */,
 				CEAE47F715F3894400898698 /* level7.json */,
 				CEEFF6F115F3A9CB0095649C /* level8.json */,
+				CED0302F15FB724A008E7EA4 /* level9.json */,
 				CECE689315F75AE60042A7DF /* level17.json */,
 				CECE689C15F76E120042A7DF /* level20.json */,
 			);
@@ -1358,6 +1361,7 @@
 				CECE689D15F76E120042A7DF /* level20.json in Resources */,
 				CECBC41015F81613004B5C96 /* octosprite.plist in Resources */,
 				CECBC41115F81613004B5C96 /* octosprite.png in Resources */,
+				CED0303015FB724A008E7EA4 /* level9.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

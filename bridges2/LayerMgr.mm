@@ -85,6 +85,15 @@
     
 }
 
+/*
+ * UIKit counts from the upper left, but Cocos2d counts from
+ * the bottom left so we need to calculate the Y position to
+ * compensate for that.
+ */
++(float)normalizeYForControl:(float) y {
+    return [[CCDirector sharedDirector] winSize].height - y;
+}
+
 -(void)dealloc {
     
     [_sheet release];

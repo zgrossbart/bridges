@@ -1,68 +1,44 @@
 {
     "level": {
         "id": "8",
-        "name": "Level 8",
+        "name": "Economics",
         "rivers": [
             {
-                "x": "c",
+                "x": "18",
                 "y": "b-t",
                 "orient": "v"
-            },
-            {
-                "x": "l-c",
-                "y": "18",
-                "orient": "h"
-            },
-            {
-                "x": "c-r",
-                "y": "8",
-                "orient": "h"
             }
         ],
         "bridges": [
             {
-                "x": "c",
-                "y": "m",
+                "x": "18",
+                "y": "18",
                 "orient": "h",
                 "color": "red",
-                "dir": "right"
+                "dir": "right",
+                "coins": "1"
             },
             {
-                "x": "c",
-                "y": "22",
+                "x": "18",
+                "y": "8",
                 "orient": "h",
                 "color": "green",
-                "dir": "left"
-            },
-            {
-                "x": "6",
-                "y": "18",
-                "orient": "v",
-                "color": "black"
-            },
-            {
-                "x": "30",
-                "y": "8",
-                "orient": "v",
-                "color": "black"
-            },
-            {
-                "x": "c",
-                "y": "4",
-                "orient": "h",
-                "color": "black"
+                "dir": "left",
+                "coins": "4"
             }
         ],
         "houses": [
             {
-                "x": "10",
-                "y": "24",
-                "color": "green"
+                "x": "8",
+                "y": "18",
+                "color": "green",
+                "coins": "2"
             },
             {
-                "x": "30",
-                "y": "14",
-                "color": "red"
+                "x": "28",
+                "y": "10",
+                "color": "red",
+                "coins": "3"
             }
         ]
     }

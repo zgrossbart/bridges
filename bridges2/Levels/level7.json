@@ -1,7 +1,11 @@
 {
     "level": {
         "id": "7",
-        "name": "Level 7",
+        "name": "Tolls",
+        "player": {
+            "x": "8",
+            "y": "18"
+        },
         "rivers": [
             {
                 "x": "18",
@@ -14,27 +18,14 @@
                 "x": "18",
                 "y": "18",
                 "orient": "h",
-                "color": "red",
-                "dir": "right"
-            },
-            {
-                "x": "18",
-                "y": "8",
-                "orient": "h",
-                "color": "green",
-                "dir": "left"
+                "coins": "1"
             }
         ],
         "houses": [
             {
-                "x": "8",
+                "x": "25",
                 "y": "18",
-                "color": "green"
-            },
-            {
-                "x": "28",
-                "y": "10",
-                "color": "red"
+                "coins": "1"
             }
         ]
     }

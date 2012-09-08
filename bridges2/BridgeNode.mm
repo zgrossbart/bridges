@@ -16,6 +16,7 @@
 @property (nonatomic, assign, readwrite) int color;
 @property (readwrite) LayerMgr *layerMgr;
 @property (nonatomic, assign, readwrite) int tag;
+@property (nonatomic, assign, readwrite) int coins;
 @property (readwrite) int direction;
 @end
 
@@ -27,6 +28,11 @@
 }
 
 -(id)initWithOrientAndDir: (bool)vertical:(int)dir: (int) tag:(int) color:(LayerMgr*) layerMgr {
+    self=[super init];
+    return [self initWithOrientAndDirAndCoins:vertical:NONE:tag:color:layerMgr:0];
+}
+
+-(id)initWithOrientAndDirAndCoins: (bool)vertical:(int)dir: (int) tag:(int) color:(LayerMgr*) layerMgr:(int)coins {
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;
         self.tag = tag;
@@ -35,6 +41,21 @@
         self.direction = dir;
         
         [self setBridgeSprite:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
+        
+        self.coins = coins;
+        
+        if (self.coins > 0) {
+            _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 16, 16)];
+            _label.text = [NSString stringWithFormat:@"%i", self.coins];
+            _label.textColor = [UIColor blackColor];
+            _label.backgroundColor = [UIColor lightGrayColor];
+            _label.layer.cornerRadius = 6;
+            _label.font = [UIFont fontWithName:@"Verdana" size: 11.0];
+            _label.textAlignment = UITextAlignmentCenter;
+            [_label sizeToFit];
+            
+            _label.frame = CGRectMake(0, 0, _label.frame.size.width + 6, _label.frame.size.height + 3);
+        }
     }
     
     return self;
@@ -51,6 +72,9 @@
 
 -(void)setBridgePosition:(CGPoint)p {
     self.bridge.position = ccp(p.x, p.y);
+    if (_label != nil) {
+        _label.frame = CGRectMake((p.x + (self.bridge.contentSize.width / 2)) - (_label.frame.size.width / 2), [LayerMgr normalizeYForControl:p.y] - ((self.bridge.contentSize.height / 2) + (_label.frame.size.height / 2)), _label.frame.size.width, _label.frame.size.height);
+    }
 }
 
 -(CGPoint)getBridgePosition {
@@ -58,6 +82,11 @@
 }
 
 - (void) undo {
+    if (_label != nil) {
+        self.coins++;
+        _label.text = [NSString stringWithFormat:@"%i", self.coins];
+    }
+    
     if (self.crossed) {
         CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
         CCSpriteFrame* frame = [cache spriteFrameByName:[self getSpriteName]];
@@ -157,7 +186,13 @@
 }
 
 -(void)cross {
-    if (!self.crossed) {
+    
+    if (self.coins > 0) {
+        self.coins--;
+        _label.text = [NSString stringWithFormat:@"%i", self.coins];
+    }
+    
+    if (self.coins == 0 && !self.crossed) {
         CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
         CCSpriteFrame* frame;
         if (self.vertical) {
@@ -171,10 +206,18 @@
 }
 
 -(NSArray*) controls {
-    return [NSMutableArray arrayWithCapacity:1];
+    NSMutableArray *controls = [NSMutableArray arrayWithCapacity:1];
+    if (_label != nil) {
+        [controls addObject:_label];
+    }
+    return controls;
 }
 
 -(void)dealloc {
+    
+    if (_label != nil) {
+        [_label dealloc];
+    }
     
     [self.bridge dealloc];
     [super dealloc];

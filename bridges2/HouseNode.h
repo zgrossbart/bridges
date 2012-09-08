@@ -7,10 +7,12 @@
 @private
     int _tag;
     LayerMgr *_manager;
+    UILabel *_label;
     
 }
 
 -(id)initWithColor:(int) tag:(int) color:(LayerMgr*) layerMgr;
+-(id)initWithColorAndCoins:(int) tag:(int) color:(LayerMgr*) layerMgr: (int) coins;
 
 -(void)visit;
 -(bool)isVisited;

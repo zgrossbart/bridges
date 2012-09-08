@@ -15,6 +15,7 @@
 @property (nonatomic, assign, readwrite) int color;
 @property (readwrite) LayerMgr *layerMgr;
 @property (nonatomic, assign, readwrite) int tag;
+@property (nonatomic, assign, readwrite) int coins;
 @end
 
 @implementation Bridge4Node

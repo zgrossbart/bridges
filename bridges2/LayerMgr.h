@@ -17,12 +17,14 @@
 }
 
 +(CGFloat) distanceBetweenTwoPoints: (CGPoint) point1: (CGPoint) point2;
++(float)normalizeYForControl:(float) y;
 
 -(id) initWithSpriteSheet:(CCSpriteBatchNode*) spriteSheet:(b2World*) world;
 -(b2Body*)addChildToSheet:(CCSprite*) sprite;
 -(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite;
 -(void)spriteDone:(id)sender;
 -(void)removeAll;
+
 
 @property (readwrite) CGSize tileSize;
 

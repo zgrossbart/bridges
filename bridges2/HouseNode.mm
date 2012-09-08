@@ -15,17 +15,39 @@
 @property (nonatomic, assign, readwrite) int color;
 @property (readwrite) LayerMgr *layerMgr;
 @property (nonatomic, assign, readwrite) int tag;
+@property (nonatomic, assign, readwrite) int coins;
 @end
 
 @implementation HouseNode
 
 -(id)initWithColor:(int) tag:(int) color:(LayerMgr*) layerMgr {
+    self = [super init];
+    return [self initWithColorAndCoins:tag :color :layerMgr :0];
+}
+    
+-(id)initWithColorAndCoins:(int) tag:(int) color:(LayerMgr*) layerMgr: (int) coins {
+    
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;
         self.tag = tag;
         self.visited = false;
         self.color = color;
         [self setHouseSprite:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
+        
+        self.coins = coins;
+        
+        if (self.coins > 0) {
+            _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 16, 16)];
+            _label.text = [NSString stringWithFormat:@"%i", self.coins];
+            _label.textColor = [UIColor blackColor];
+            _label.backgroundColor = [UIColor lightGrayColor];
+            _label.layer.cornerRadius = 6;
+            _label.font = [UIFont fontWithName:@"Verdana" size: 11.0];
+            _label.textAlignment = UITextAlignmentCenter;
+            [_label sizeToFit];
+            
+            _label.frame = CGRectMake(0, 0, _label.frame.size.width + 6, _label.frame.size.height + 3);
+        }
     }
     
     return self;
@@ -46,6 +68,11 @@
 }
 
 -(void)undo {
+    if (_label != nil) {
+        self.coins++;
+        _label.text = [NSString stringWithFormat:@"%i", self.coins];
+    }
+    
     if (self.isVisited) {
         CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
         CCSpriteFrame* frame;
@@ -64,23 +91,27 @@
     self.house.tag = [self tag];
 }
 
--(void)position:(CGPoint)p {
-    super.position = p;
-    self.house.position = ccp(p.x, p.y);
-}
-
 -(void)visit {
-    if (!self.visited) {
+    if (self.coins > 0) {
+        self.coins--;
+        _label.text = [NSString stringWithFormat:@"%i", self.coins];
+    }
+    
+    if (self.coins == 0 && !self.visited) {
         CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
         CCSpriteFrame* frame;
         frame = [cache spriteFrameByName:@"house_gray.png"];
         [self.house setDisplayFrame:frame];
+        self.visited = true;
     }
-    self.visited = true;
+    
 }
 
 -(void)setHousePosition:(CGPoint)p {
     self.house.position = ccp(p.x, p.y);
+    if (_label != nil) {
+        _label.frame = CGRectMake(p.x, [LayerMgr normalizeYForControl:p.y] - _label.frame.size.height, _label.frame.size.width, _label.frame.size.height);
+    }
 }
 
 -(CGPoint)getHousePosition {
@@ -88,10 +119,17 @@
 }
 
 -(NSArray*) controls {
-    return [NSMutableArray arrayWithCapacity:1];
+    NSMutableArray *controls = [NSMutableArray arrayWithCapacity:1];
+    if (_label != nil) {
+        [controls addObject:_label];
+    }
+    return controls;
 }
 
 -(void)dealloc {
+    if (_label != nil) {
+        [_label dealloc];
+    }
     
     [self.house dealloc];
     [super dealloc];

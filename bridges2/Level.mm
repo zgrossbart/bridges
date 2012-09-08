@@ -85,9 +85,10 @@
         NSString *orient = [b objectForKey:@"orient"];
         NSString *dir = [b objectForKey:@"dir"];
         NSString *color = [b objectForKey:@"color"];
+        NSString *coins = [b objectForKey:@"coins"];
         
         [self addBridge:[self parseInt:x]:[self parseInt:y]:
-         [orient isEqualToString:@"v"]:[self getDir:dir]:[self getColor:color]];
+         [orient isEqualToString:@"v"]:[self getDir:dir]:[self getColor:color]:coins];
     }
     
     /*
@@ -111,8 +112,9 @@
             NSString *x = [h objectForKey:@"x"];
             NSString *y = [h objectForKey:@"y"];
             NSString *color = [h objectForKey:@"color"];
+            NSString *coins = [h objectForKey:@"coins"];
             
-            [self addHouse:[self parseInt:x]:[self parseInt:y]:[self getColor:color]];
+            [self addHouse:[self parseInt:x]:[self parseInt:y]:[self getColor:color]:coins];
         }
     }
     
@@ -186,16 +188,23 @@
     }
     
     for (BridgeNode *b in self.bridges) {
-        //[b addSprite];
+        for (UIControl *c in [b controls]) {
+            [view addSubview:c];
+        }
         [self.layerMgr addChildToSheet:b.bridge];
     }
     
     for (Bridge4Node *b in self.bridge4s) {
-        //[b addSprite];
+        for (UIControl *c in [b controls]) {
+            [view addSubview:c];
+        }
         [self.layerMgr addChildToSheet:b.bridge];
     }
     
     for (HouseNode *h in self.houses) {
+        for (UIControl *c in [h controls]) {
+            [view addSubview:c];
+        }
         [h addSprite];
     }
     
@@ -357,11 +366,11 @@
     
 }
 
-- (BridgeNode*)addBridge:(float) x:(float) y:(bool) vertical:(float) dir: (float) color {
+- (BridgeNode*)addBridge:(float) x:(float) y:(bool) vertical:(float) dir: (float) color: (NSString*) coins {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
-    BridgeNode *bridgeNode = [[BridgeNode alloc] initWithOrientAndDir:vertical:dir:BRIDGE:color:self.layerMgr];
+    BridgeNode *bridgeNode = [[BridgeNode alloc] initWithOrientAndDirAndCoins:vertical:dir:BRIDGE:color:self.layerMgr: [self coins:coins]];
     CGPoint startPos = [self tileToPoint:x:y];
     
     [bridgeNode setBridgePosition:startPos];
@@ -420,11 +429,19 @@
     
 }
 
--(HouseNode*)addHouse:(float) x:(float) y:(float) color {
+-(int)coins:(NSString*)coins {
+    if (coins) {
+        return [coins integerValue];
+    } else {
+        return 0;
+    }
+}
+
+-(HouseNode*)addHouse:(float) x:(float) y:(float) color:(NSString*) coins {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
-    HouseNode *houseNode = [[HouseNode alloc] initWithColor:HOUSE:color:self.layerMgr];
+    HouseNode *houseNode = [[HouseNode alloc] initWithColorAndCoins:HOUSE:color:self.layerMgr:[self coins:coins]];
     CGPoint startPos = [self tileToPoint:x:y];
     
     [houseNode setHousePosition:startPos];
