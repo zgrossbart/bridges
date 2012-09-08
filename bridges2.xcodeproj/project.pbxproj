@@ -202,6 +202,7 @@
 		CECE689D15F76E120042A7DF /* level20.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689C15F76E120042A7DF /* level20.json */; };
 		CECFA63115F36AEF00FF1E8D /* Undoable.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFA63015F36AEE00FF1E8D /* Undoable.m */; };
 		CED0303015FB724A008E7EA4 /* level9.json in Resources */ = {isa = PBXBuildFile; fileRef = CED0302F15FB724A008E7EA4 /* level9.json */; };
+		CED45E8115FB7D7D0066F0FE /* UIButtonExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */; };
 		CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */; };
 		CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E015EB8A8400094695 /* HouseNode.mm */; };
 		CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E315EB8AF600094695 /* PlayerNode.mm */; };
@@ -607,6 +608,8 @@
 		CECFA62F15F36AEE00FF1E8D /* Undoable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Undoable.h; sourceTree = "<group>"; };
 		CECFA63015F36AEE00FF1E8D /* Undoable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Undoable.m; sourceTree = "<group>"; };
 		CED0302F15FB724A008E7EA4 /* level9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level9.json; sourceTree = "<group>"; };
+		CED45E7F15FB7D7D0066F0FE /* UIButtonExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonExtras.h; sourceTree = "<group>"; };
+		CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonExtras.m; sourceTree = "<group>"; };
 		CEDBC2DA15EB89DA00094695 /* BridgeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeColors.h; sourceTree = "<group>"; };
 		CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerMgr.h; sourceTree = "<group>"; };
 		CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LayerMgr.mm; sourceTree = "<group>"; };
@@ -683,6 +686,7 @@
 		CE6D65E715EAC5FB00C7EDD7 /* bridges2 */ = {
 			isa = PBXGroup;
 			children = (
+				CED45E7B15FB7D3C0066F0FE /* Categories */,
 				CE6D67F215EAC5FD00C7EDD7 /* AppDelegate.h */,
 				CE6D67F315EAC5FD00C7EDD7 /* AppDelegate.mm */,
 				CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */,
@@ -720,8 +724,6 @@
 				CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */,
 				CEC65C0315F4C1CD0010EAC3 /* ScreenShotLayer.h */,
 				CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */,
-				CEC65C0F15F4D0320010EAC3 /* UIImageExtras.h */,
-				CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */,
 				CECFA62F15F36AEE00FF1E8D /* Undoable.h */,
 				CECFA63015F36AEE00FF1E8D /* Undoable.m */,
 			);
@@ -1277,6 +1279,17 @@
 			path = Levels;
 			sourceTree = "<group>";
 		};
+		CED45E7B15FB7D3C0066F0FE /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CED45E7F15FB7D7D0066F0FE /* UIButtonExtras.h */,
+				CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */,
+				CEC65C0F15F4D0320010EAC3 /* UIImageExtras.h */,
+				CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1535,6 +1548,7 @@
 				CEC65C0515F4C1CD0010EAC3 /* ScreenShotLayer.mm in Sources */,
 				CEC65C1115F4D0320010EAC3 /* UIImageExtras.m in Sources */,
 				CECE689B15F76A510042A7DF /* Bridge4Node.mm in Sources */,
+				CED45E8115FB7D7D0066F0FE /* UIButtonExtras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

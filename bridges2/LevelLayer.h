@@ -24,6 +24,12 @@
     
     bool _inCross;
     bool _inBridge;
+    
+    /*
+     * After you visit a house you must cross a 
+     * bridge before visiting another one.
+     */
+    bool _canVisit;
     Bridge4Node *_currentBridge;
     int _bridgeEntry;
     bool _hasInit;

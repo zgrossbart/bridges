@@ -2,43 +2,56 @@
     "level": {
         "id": "8",
         "name": "Economics",
+        "labels": [
+            {
+                "x": "22",
+                "y": "1",
+                "w": "16",
+                "h": "10",
+                "text": "You can cross some bridges more than once."
+            }
+        ],
         "rivers": [
             {
-                "x": "18",
+                "x": "14",
                 "y": "b-t",
                 "orient": "v"
             }
         ],
         "bridges": [
             {
-                "x": "18",
+                "x": "14",
                 "y": "18",
                 "orient": "h",
                 "color": "red",
-                "dir": "right",
-                "coins": "1"
+                "coins": "2"
             },
             {
-                "x": "18",
+                "x": "14",
                 "y": "8",
                 "orient": "h",
                 "color": "green",
-                "dir": "left",
-                "coins": "4"
+                "coins": "1"
             }
         ],
         "houses": [
             {
-                "x": "8",
+                "x": "4",
                 "y": "18",
+                "color": "black",
+                "coins": "1"
+            },
+            {
+                "x": "4",
+                "y": "8",
                 "color": "green",
-                "coins": "2"
+                "coins": "1"
             },
             {
                 "x": "28",
                 "y": "10",
                 "color": "red",
-                "coins": "3"
+                "coins": "1"
             }
         ]
     }

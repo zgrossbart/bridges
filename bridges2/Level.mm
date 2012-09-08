@@ -397,6 +397,10 @@
     button.titleLabel.font = [UIFont fontWithName:@"Lucida Grande" size: 14.0];
     button.titleEdgeInsets = UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0);
 //    button.titleLabel.textAlignment = UITextAlignmentCenter;
+    
+    [button sizeThatFits:CGSizeMake(w, 0)];
+    
+    button.frame = CGRectMake(s.x, s.y, button.frame.size.width + 6, button.frame.size.height + 3);
 
     
     [self.labels addObject:button];

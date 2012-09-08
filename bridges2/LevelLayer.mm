@@ -61,6 +61,7 @@
         [self addChild:_spriteSheet];
         
         self.undoStack = [[NSMutableArray alloc] init];
+        _canVisit = true;
         
         _layerMgr = [[LayerMgr alloc] initWithSpriteSheet:_spriteSheet:_world];
         
@@ -285,7 +286,7 @@
      */
     HouseNode *node = [self findHouse:house];
     
-    if (![node isVisited]) {
+    if (_canVisit && ![node isVisited]) {
         if (node.color == NONE || _player.color == node.color) {
             [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins]];
             UIImage *undoD = [UIImage imageNamed:@"left_arrow.png"];
@@ -295,6 +296,7 @@
                 self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
             }
             [node visit];
+            _canVisit = false;
         }
     }
     
@@ -381,6 +383,7 @@
     [_player moveTo: location:true];
     
     [_currentBridge cross];
+    _canVisit = true;
     _currentBridge = nil;
     _inBridge = false;
     
@@ -516,6 +519,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
     }
     [bridge cross];
+    _canVisit = true;
     
     if (bridge.color != NONE) {
         [_player updateColor:bridge.color];
@@ -611,6 +615,12 @@ CGFloat CGPointToDegree(CGPoint point) {
         }
     }
     
+    for (Bridge4Node *n in self.currentLevel.bridge4s) {
+        if (CGRectContainsPoint([n.bridge boundingBox], p)) {
+            return true;
+        }
+    }
+    
     for (CCSprite *s in self.currentLevel.rivers) {
         if (CGRectContainsPoint([s boundingBox], p)) {
             return true;
@@ -652,25 +662,6 @@ CGFloat CGPointToDegree(CGPoint point) {
 //         [CCMoveTo actionWithDuration:distance/velocity position:ccp(location.x,location.y)]];
     }
     
-}
-
--(CGSize)winSizeTiles {
-    CGSize winSize = [self getWinSize];
-    return CGSizeMake(winSize.width / _layerMgr.tileSize.width,
-                      winSize.height / _layerMgr.tileSize.height);
-}
-
--(CGPoint)tileToPoint:(int) x: (int)y {
-    printf("tileToPoint (%i, %i)\n", x, y);
-    printf("tileSize (%f, %f)\n", _layerMgr.tileSize.width, _layerMgr.tileSize.height);
-    return CGPointMake(x * _layerMgr.tileSize.width,
-                       y * _layerMgr.tileSize.height);
-}
-
--(CGSize)getWinSize {
-    //CGRect r = [[UIScreen mainScreen] bounds];
-    //return r.size;
-    return [[CCDirector sharedDirector] winSize];
 }
 
 -(void)dealloc {

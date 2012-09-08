@@ -201,8 +201,9 @@
             frame = [cache spriteFrameByName:@"bridge_h_x.png"];
         }
         [self.bridge setDisplayFrame:frame];
+        self.crossed = true;
     }
-    self.crossed = true;
+    
 }
 
 -(NSArray*) controls {
