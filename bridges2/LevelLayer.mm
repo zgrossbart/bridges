@@ -92,8 +92,8 @@
     [_undoBtn setImage:undoD forState:UIControlStateNormal];
     
     if (self.currentLevel) {
-        for (UIButton *l in self.currentLevel.labels) {
-            [l removeFromSuperview];
+        for (UIControl *c in [self.currentLevel controls]) {
+            [c removeFromSuperview];
         }
     }
     

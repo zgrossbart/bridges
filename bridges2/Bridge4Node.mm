@@ -101,6 +101,10 @@
     }
 }
 
+-(NSArray*) controls {
+    return [NSMutableArray arrayWithCapacity:1];
+}
+
 -(void)dealloc {
     
     [self.bridge dealloc];

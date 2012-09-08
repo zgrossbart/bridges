@@ -87,6 +87,10 @@
     return self.house.position;
 }
 
+-(NSArray*) controls {
+    return [NSMutableArray arrayWithCapacity:1];
+}
+
 -(void)dealloc {
     
     [self.house dealloc];

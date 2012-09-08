@@ -19,6 +19,7 @@
 -(void) addSprites: (LayerMgr*) layerMgr:(UIView*) view;
 -(void) removeSprites:(LayerMgr*) layerMgr;
 -(bool)hasWon;
+-(NSArray*) controls;
 
 @property (readonly) NSMutableArray *rivers;
 @property (readonly) NSMutableArray *bridges;

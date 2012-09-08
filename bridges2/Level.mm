@@ -465,6 +465,34 @@
                        y * self.layerMgr.tileSize.height);
 }
 
+-(NSArray*) controls {
+    NSMutableArray *controls = [NSMutableArray arrayWithCapacity:10];
+    
+    for (UIButton *l in self.labels) {
+        [controls addObject:l];
+    }
+    
+    for (BridgeNode *b in self.bridges) {
+        for (UIControl *c in [b controls]) {
+            [controls addObject:c];
+        }
+    }
+    
+    for (Bridge4Node *b in self.bridge4s) {
+        for (UIControl *c in [b controls]) {
+            [controls addObject:c];
+        }
+    }
+    
+    for (HouseNode *h in self.houses) {
+        for (UIControl *c in [h controls]) {
+            [controls addObject:c];
+        }
+    }
+    
+    return controls;
+}
+
 -(void)dealloc {
     
     [_rivers release];
