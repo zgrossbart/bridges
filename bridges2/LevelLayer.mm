@@ -84,8 +84,10 @@
     
     if ([self.currentLevel hasCoins]) {
         self.coinLbl.text = [NSString stringWithFormat:@"%i", 0];
+        self.coinImage.hidden = NO;
     } else {
         self.coinLbl.text = @"";
+        self.coinImage.hidden = YES;
     }
     
     

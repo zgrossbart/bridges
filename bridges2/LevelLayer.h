@@ -48,6 +48,7 @@
 @property (nonatomic, retain) Level *currentLevel;
 @property (nonatomic, retain) UIButton *undoBtn;
 @property (nonatomic, retain) UILabel *coinLbl;
+@property (nonatomic, retain) UIImageView *coinImage;
 @property (nonatomic, retain) UIView *view;
 @property (readonly) NSMutableArray *undoStack;
 
