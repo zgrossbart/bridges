@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
 #import "Level.h"
+#import "YouWonViewController.h"
+#import "LevelController.h"
 
-@interface RootMenuViewController : UIViewController<CCDirectorDelegate> {
+@interface RootMenuViewController : UIViewController<CCDirectorDelegate,LevelController> {
     UIWindow *window_;
 	UINavigationController *navController_;
     
@@ -24,6 +26,7 @@
 @property (readonly) UINavigationController *navController;
 @property (readonly) CCDirectorIOS *director;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (retain) YouWonViewController *youWonController;
 
 -(void)showLevel:(Level*) level;
 

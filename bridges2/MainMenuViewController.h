@@ -12,6 +12,7 @@
 
 @interface MainMenuViewController : UIViewController {
     RootMenuViewController *_rootMenuViewController;
+    RootMenuViewControlleriPad *_rootMenuViewControlleriPad;
     
 //    IBOutlet UITableView *_view;
     CGFloat  mFontSize;

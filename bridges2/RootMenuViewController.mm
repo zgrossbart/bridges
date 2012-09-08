@@ -19,6 +19,8 @@
     LevelLayer *_layer;
 }
 
+@synthesize youWonController = _youWonController;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,6 +54,8 @@
     _layer.coinLbl = _coinLabel;
     _layer.coinImage = _coinImage;
     _layer.view = self.view;
+    _layer.controller = self;
+    
     
     //    [[CCDirector sharedDirector] setOpenGLView:glView];
     
@@ -118,6 +122,17 @@
 //    return (interfaceOrientation == UIInterfaceOrientationLandscape);
 //    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft);
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+}
+
+-(void) won {
+    if (self.youWonController == nil) {
+        self.youWonController = [[[YouWonViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+    }
+    
+    self.youWonController.currentLevel = _layer.currentLevel;
+    self.youWonController.layer = _layer;
+    [self.navigationController pushViewController:self.youWonController animated:NO];
+    
 }
 
 -(void)dealloc {

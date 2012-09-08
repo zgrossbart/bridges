@@ -6,6 +6,7 @@
 #import "PlayerNode.h"
 #import "Level.h"
 #import "Bridge4Node.h"
+#import "LevelController.h"
 
 #define PTM_RATIO 32.0
 
@@ -50,6 +51,7 @@
 @property (nonatomic, retain) UILabel *coinLbl;
 @property (nonatomic, retain) UIImageView *coinImage;
 @property (nonatomic, retain) UIView *view;
+@property (readwrite, retain) id<LevelController> controller;
 @property (readonly) NSMutableArray *undoStack;
 
 

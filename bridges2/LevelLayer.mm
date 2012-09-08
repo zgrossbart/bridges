@@ -582,12 +582,12 @@ CGFloat CGPointToDegree(CGPoint point) {
 
 -(void) hasWon {
     if ([self.currentLevel hasWon]) {
-        printf("You've won");
-        
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
         [defaults setBool:TRUE forKey:[NSString stringWithFormat:@"%@-won", self.currentLevel.levelId]];
         [defaults synchronize];
+        
+        [self.controller won];
     }
     
 }
@@ -677,7 +677,13 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     [_undoStack release];
     _undoStack = nil;
-
+    
+    [self.currentLevel release];
+    [self.undoBtn release];
+    [self.coinLbl release];
+    [self.coinImage release];
+    [self.view release];
+    [self.controller release];
     
 //    [self.currentLevel dealloc];
     
