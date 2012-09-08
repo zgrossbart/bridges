@@ -49,7 +49,10 @@
         if ([file hasPrefix:@"level"] &&
             [file hasSuffix:@".json"]) {
             NSString *jsonString = [NSString stringWithContentsOfFile:[path stringByAppendingPathComponent:file] encoding:NSUTF8StringEncoding error:nil];
-            Level *level = [[Level alloc] initWithJson:jsonString];
+            NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[path stringByAppendingPathComponent:file] error:&error];
+            NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
+            
+            Level *level = [[Level alloc] initWithJson:jsonString: fileDate];
             [self.levels setObject:level forKey:level.levelId];
         }
     }
@@ -165,12 +168,31 @@
     ScreenShotLayer *scene = [[ScreenShotLayer alloc] init];
     [scene addChild:spriteSheet];
     
-    /*
-     * TODO - We should check each level and only draw a new
-     * image if we need to.
-     */
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     for (NSString* levelId in self.levelIds) {
+        
         Level *level = (Level*) [self.levels objectForKey:levelId];
+        if([paths count] > 0) {
+            NSString *documentsDirectory = [paths objectAtIndex:0];
+
+            NSString *path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", level.levelId]];
+                
+            NSError *error;
+                
+            if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+                NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[path stringByAppendingPathComponent:path] error:&error];
+                NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
+                
+                if ([fileDate compare:level.date] == NSOrderedDescending) {
+                    /*
+                     * Then the image is more recent than the file
+                     * and there's no need to regenerate it.
+                     */
+                    continue;
+                }
+            }
+        }
+        
         [level addSprites:layerMgr:nil];
         
         [renderer begin];

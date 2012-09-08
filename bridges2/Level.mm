@@ -23,13 +23,14 @@
 @property (readwrite, copy) NSDictionary *levelData;
 
 @property (readwrite) NSString *name;
+@property (readwrite) NSDate *date;
 @property (readwrite) NSString *levelId;
 @property (readwrite) CGPoint playerPos;
 @end
 
 @implementation Level
 
--(id) initWithJson:(NSString*) jsonString
+-(id) initWithJson:(NSString*) jsonString: (NSDate*) date;
 {
     if( (self=[super init] )) {
         self.bridges = [[NSMutableArray alloc] init];
@@ -37,6 +38,7 @@
         self.rivers = [[NSMutableArray alloc] init];
         self.houses = [[NSMutableArray alloc] init];
         self.labels = [[NSMutableArray alloc] init];
+        self.date = date;
         
         [self parseLevel:jsonString];
     }

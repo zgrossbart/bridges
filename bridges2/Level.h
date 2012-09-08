@@ -15,7 +15,7 @@
     
 }
 
--(id) initWithJson:(NSString*) jsonString;
+-(id) initWithJson:(NSString*) jsonString: (NSDate*) date;
 -(void) addSprites: (LayerMgr*) layerMgr:(UIView*) view;
 -(void) removeSprites:(LayerMgr*) layerMgr;
 -(bool)hasWon;
@@ -30,6 +30,7 @@
 @property (readonly, copy) NSDictionary *levelData;
 
 @property (readonly) NSString *name;
+@property (readonly) NSDate *date;
 @property (readonly) NSString *levelId;
 @property (readonly) CGPoint playerPos;
 
