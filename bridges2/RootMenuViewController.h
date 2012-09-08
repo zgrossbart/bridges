@@ -16,6 +16,7 @@
     
     bool _hasInit;
     IBOutlet UIButton *_undoBtn;
+    IBOutlet UILabel *_coinLabel;
 
 }
 

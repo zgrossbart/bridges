@@ -510,6 +510,28 @@
     return controls;
 }
 
+-(bool)hasCoins {
+    for (BridgeNode *b in self.bridges) {
+        if (b.coins > 0) {
+            return true;
+        }
+    }
+    
+    for (Bridge4Node *b in self.bridge4s) {
+        if (b.coins > 0) {
+            return true;
+        }
+    }
+    
+    for (HouseNode *h in self.houses) {
+        if (h.coins > 0) {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
 -(void)dealloc {
     
     [_rivers release];

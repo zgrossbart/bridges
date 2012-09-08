@@ -20,6 +20,7 @@
 -(void) removeSprites:(LayerMgr*) layerMgr;
 -(bool)hasWon;
 -(NSArray*) controls;
+-(bool)hasCoins;
 
 @property (readonly) NSMutableArray *rivers;
 @property (readonly) NSMutableArray *bridges;

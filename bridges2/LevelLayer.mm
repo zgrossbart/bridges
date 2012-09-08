@@ -81,6 +81,12 @@
         [self spawnPlayer:self.currentLevel.playerPos.x :self.currentLevel.playerPos.y];
     }
     
+    if ([self.currentLevel hasCoins]) {
+        self.coinLbl.text = [NSString stringWithFormat:@"%i", 0];
+    } else {
+        self.coinLbl.text = @"";
+    }
+    
     
     //[level dealloc];
 }
@@ -135,7 +141,8 @@
     [undo.node undo];
     [self.player updateColor:undo.color];
     self.player.player.position = undo.pos;
-    self.player.player.position = undo.pos;
+    self.player.coins = undo.coins;
+    self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
     
     [self.undoStack removeLastObject];
     
@@ -176,6 +183,7 @@
          */
         _layerMgr.tileSize = CGSizeMake(s.height / 28, s.height / 28);
         [self readLevel];
+    
        // [self addRivers];
         
         _hasInit = true;
@@ -279,9 +287,13 @@
     
     if (![node isVisited]) {
         if (node.color == NONE || _player.color == node.color) {
-            [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color]];
+            [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins]];
             UIImage *undoD = [UIImage imageNamed:@"left_arrow.png"];
             [_undoBtn setImage:undoD forState:UIControlStateNormal];
+            if (node.coins > 0) {
+                _player.coins++;
+                self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
+            }
             [node visit];
         }
     }
@@ -297,7 +309,7 @@
      */
     BridgeNode *node = [self findBridge:bridge];
     
-    if ([node isCrossed]) {
+    if ([node isCrossed] || (node.coins > 0 && _player.coins < 1)) {
         [self bumpObject:player:bridge];
     } else {
         _inCross = true;
@@ -413,7 +425,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     //    location.y += 5;
     //    _player.position = location;
     
-    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color]];
+    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color: _player.coins]];
     UIImage *undoD = [UIImage imageNamed:@"left_arrow.png"];
     [_undoBtn setImage:undoD forState:UIControlStateNormal];
     
@@ -493,12 +505,16 @@ CGFloat CGPointToDegree(CGPoint point) {
     //    location.y += 5;
     //    _player.position = location;
     
-    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color]];
+    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color: _player.coins]];
     UIImage *undoD = [UIImage imageNamed:@"left_arrow.png"];
     [_undoBtn setImage:undoD forState:UIControlStateNormal];
     
     [_player moveTo: ccp(location.x, location.y):true];
     
+    if (bridge.coins > 0) {
+        _player.coins--;
+        self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
+    }
     [bridge cross];
     
     if (bridge.color != NONE) {

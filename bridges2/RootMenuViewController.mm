@@ -115,6 +115,7 @@
     CCScene *scene = [LevelLayer scene];
     _layer = (LevelLayer*)[scene getChildByTag:LEVEL];
     _layer.undoBtn = _undoBtn;
+    _layer.coinLbl = _coinLabel;
     _layer.view = self.view;
     
     //    [[CCDirector sharedDirector] setOpenGLView:glView];
@@ -169,6 +170,8 @@
 {
     [_undoBtn release];
     _undoBtn = nil;
+    [_coinLabel release];
+    _coinLabel = nil;
     [super viewDidUnload];
     [[CCDirector sharedDirector] end];
 }
@@ -184,6 +187,7 @@
     
     [_layer dealloc];
     [_undoBtn release];
+    [_coinLabel release];
     [super dealloc];
 }
 

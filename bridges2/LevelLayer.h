@@ -41,6 +41,7 @@
 @property (nonatomic, retain) PlayerNode *player;
 @property (nonatomic, retain) Level *currentLevel;
 @property (nonatomic, retain) UIButton *undoBtn;
+@property (nonatomic, retain) UILabel *coinLbl;
 @property (nonatomic, retain) UIView *view;
 @property (readonly) NSMutableArray *undoStack;
 

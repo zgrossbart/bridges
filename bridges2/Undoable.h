@@ -11,10 +11,11 @@
 
 @interface Undoable : NSObject
 
--(id) initWithPosAndNode:(CGPoint) pos:(id<GameNode>) node: (int) color;
+-(id) initWithPosAndNode:(CGPoint) pos:(id<GameNode>) node: (int) color: (int) coins;
 
 @property (readonly) CGPoint pos;
 @property (readonly, assign) id<GameNode> node;
 @property (readonly) int color;
+@property (nonatomic, assign, readonly) int coins;
 
 @end

@@ -26,5 +26,6 @@
 @property (nonatomic, assign, readonly) int color;
 @property (nonatomic, retain) CCAction *walkAction;
 @property (nonatomic, retain) CCAction *moveAction;
+@property (nonatomic, assign, readwrite) int coins;
 
 @end
