@@ -1,3 +1,21 @@
+/*******************************************************************************
+ *
+ * Copyright 2012 Zack Grossbart
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ ******************************************************************************/
+
 @interface UIButton (ExpandsVertically)
 
 - (CGSize)sizeThatFits:(CGSize)size;
@@ -9,9 +27,6 @@
 - (CGSize)sizeThatFits:(CGSize)size {
     
     self.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
-    
-    // for the width, I subtract 24 for the border
-    // for the height, I use a large value that will be reduced when the size is returned from sizeWithFont
     CGSize tempSize = CGSizeMake(size.width - 24, 1000);
     
     CGSize stringSize = [self.titleLabel.text
