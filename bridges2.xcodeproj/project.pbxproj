@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE39AC8D15FB9E67005607B0 /* octosprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC8B15FB9E67005607B0 /* octosprite.plist */; };
+		CE39AC8E15FB9E67005607B0 /* octosprite.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC8C15FB9E67005607B0 /* octosprite.png */; };
 		CE453BC715F174A900053407 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CE453BC615F174A900053407 /* JSONKit.m */; };
 		CE6D65D615EAC5FB00C7EDD7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6D65D515EAC5FB00C7EDD7 /* QuartzCore.framework */; };
 		CE6D65D815EAC5FB00C7EDD7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6D65D715EAC5FB00C7EDD7 /* OpenGLES.framework */; };
@@ -187,8 +189,6 @@
 		CEBD81FE15EACDC100EE27CF /* RootMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */; };
 		CEC65C0515F4C1CD0010EAC3 /* ScreenShotLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */; };
 		CEC65C1115F4D0320010EAC3 /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */; };
-		CECBC41015F81613004B5C96 /* octosprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = CECBC40E15F81613004B5C96 /* octosprite.plist */; };
-		CECBC41115F81613004B5C96 /* octosprite.png in Resources */ = {isa = PBXBuildFile; fileRef = CECBC40F15F81613004B5C96 /* octosprite.png */; };
 		CECDC54815F6C54000D266FD /* green_check.png in Resources */ = {isa = PBXBuildFile; fileRef = CECDC54715F6C54000D266FD /* green_check.png */; };
 		CECE255B15F21FDB00517973 /* Level.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE255A15F21FDB00517973 /* Level.mm */; };
 		CECE256815F2819200517973 /* LevelMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE256715F2819200517973 /* LevelMgr.mm */; };
@@ -219,6 +219,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE39AC8B15FB9E67005607B0 /* octosprite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = octosprite.plist; sourceTree = "<group>"; };
+		CE39AC8C15FB9E67005607B0 /* octosprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octosprite.png; sourceTree = "<group>"; };
 		CE453BC515F174A900053407 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		CE453BC615F174A900053407 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		CE6D65D115EAC5FB00C7EDD7 /* bridges2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bridges2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -589,8 +591,6 @@
 		CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScreenShotLayer.mm; sourceTree = "<group>"; };
 		CEC65C0F15F4D0320010EAC3 /* UIImageExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtras.h; sourceTree = "<group>"; };
 		CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtras.m; sourceTree = "<group>"; };
-		CECBC40E15F81613004B5C96 /* octosprite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = octosprite.plist; sourceTree = "<group>"; };
-		CECBC40F15F81613004B5C96 /* octosprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octosprite.png; sourceTree = "<group>"; };
 		CECDC54715F6C54000D266FD /* green_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_check.png; sourceTree = "<group>"; };
 		CECE255915F21FDB00517973 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		CECE255A15F21FDB00517973 /* Level.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level.mm; sourceTree = "<group>"; };
@@ -735,8 +735,8 @@
 		CE6D65E815EAC5FB00C7EDD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CECBC40E15F81613004B5C96 /* octosprite.plist */,
-				CECBC40F15F81613004B5C96 /* octosprite.png */,
+				CE39AC8B15FB9E67005607B0 /* octosprite.plist */,
+				CE39AC8C15FB9E67005607B0 /* octosprite.png */,
 				CED45E8215FB81EF0066F0FE /* coins.png */,
 				CECDC54715F6C54000D266FD /* green_check.png */,
 				CEF0649A15F51B0B0061C872 /* left_arrow_d.png */,
@@ -1375,10 +1375,10 @@
 				CECE689215F754BA0042A7DF /* level4.json in Resources */,
 				CECE689415F75AE60042A7DF /* level17.json in Resources */,
 				CECE689D15F76E120042A7DF /* level20.json in Resources */,
-				CECBC41015F81613004B5C96 /* octosprite.plist in Resources */,
-				CECBC41115F81613004B5C96 /* octosprite.png in Resources */,
 				CED0303015FB724A008E7EA4 /* level9.json in Resources */,
 				CED45E8315FB81EF0066F0FE /* coins.png in Resources */,
+				CE39AC8D15FB9E67005607B0 /* octosprite.plist in Resources */,
+				CE39AC8E15FB9E67005607B0 /* octosprite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
