@@ -17,6 +17,7 @@
 @implementation MainMenuViewController
 
 @synthesize rootMenuViewController = _rootMenuViewController;
+@synthesize rootMenuViewControlleriPad = _rootMenuViewControlleriPad;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -82,14 +83,27 @@
     UIButton *button = (UIButton *)sender;
 	int tag = button.tag;
     
-    if (_rootMenuViewController == nil) {
-        self.rootMenuViewController = [[[RootMenuViewController alloc] initWithNibName:nil bundle:nil] autorelease];
-    }
-    
     NSString* key = [[LevelMgr getLevelMgr].levelIds objectAtIndex:tag];
-    [self.rootMenuViewController showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
-    [self.navigationController pushViewController:_rootMenuViewController animated:YES];
+    [self selectLevel:key];
     
+}
+
+-(void)selectLevel:(NSString*) key {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        if (_rootMenuViewControlleriPad == nil) {
+            self.rootMenuViewControlleriPad = [[[RootMenuViewControlleriPad alloc] initWithNibName:nil bundle:nil] autorelease];
+        }
+        
+        [self.rootMenuViewControlleriPad showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
+        [self.navigationController pushViewController:_rootMenuViewControlleriPad animated:YES];
+    } else {
+        if (_rootMenuViewController == nil) {
+            self.rootMenuViewController = [[[RootMenuViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+        }
+        
+        [self.rootMenuViewController showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
+        [self.navigationController pushViewController:_rootMenuViewController animated:YES];
+    }
 }
 
 - (void)viewDidUnload
@@ -165,15 +179,10 @@
     self.curIndex = indexPath.row;
     NSLog(@"Selected level: %@", [[[LevelMgr getLevelMgr].levels allValues] objectAtIndex:indexPath.row]);
     
-    if (_rootMenuViewController == nil) {
-        self.rootMenuViewController = [[[RootMenuViewController alloc] initWithNibName:nil bundle:nil] autorelease];
-    }
-    
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:false];
     
     NSString* key = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
-    [self.rootMenuViewController showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
-    [self.navigationController pushViewController:_rootMenuViewController animated:YES];
+    [self selectLevel:key];
 }
 
 -(void)generateLevelImages {

@@ -77,6 +77,10 @@
 }
 
 - (void)setupCocos2D: (CGRect) bounds {
+    if (_hasInit) {
+        return;
+    }
+    
     CCGLView *glView = [CCGLView viewWithFrame:bounds
 								   pixelFormat:kEAGLColorFormatRGB565	//kEAGLColorFormatRGBA8
 								   depthFormat:0	//GL_DEPTH_COMPONENT24_OES
@@ -137,9 +141,7 @@
 }
 
 -(void)drawLevels:(CGRect) bounds {
-    if (!_hasInit) {
-        [self setupCocos2D:bounds];
-    }
+    [self setupCocos2D:bounds];
     
     b2Vec2 gravity = b2Vec2(0.0f, 0.0f);
     bool doSleep = false;

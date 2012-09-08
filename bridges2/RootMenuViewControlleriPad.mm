@@ -1,23 +1,25 @@
 //
-//  RootViewController.m
-//  bridges
+//  RootMenuViewControlleriPad.m
+//  bridges2
 //
-//  Created by Zack Grossbart on 8/26/12.
+//  Created by Zack Grossbart on 9/8/12.
 //
 //
 
-#import "RootMenuViewController.h"
+#import "RootMenuViewControlleriPad.h"
 #import "LevelLayer.h"
 #import "BridgeColors.h"
 #import "LevelMgr.h"
 
-@interface RootMenuViewController ()
+
+@interface RootMenuViewControlleriPad () {
+    LevelLayer *_layer;
+    bool _hasInit;
+}
 
 @end
 
-@implementation RootMenuViewController {
-    LevelLayer *_layer;
-}
+@implementation RootMenuViewControlleriPad
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -71,8 +73,8 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-//    [self.navigationController setNavigationBarHidden:YES animated:NO];
-//    [super viewWillAppear:animated];
+    //    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    //    [super viewWillAppear:animated];
     
     UIViewController *viewController = [[UIViewController alloc] init];
     [viewController setModalPresentationStyle:UIModalPresentationCurrentContext];
@@ -84,7 +86,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     UIImage *undoD = [UIImage imageNamed:@"left_arrow_d.png"];
     [_undoBtn setImage:undoD forState:UIControlStateNormal];
 }
@@ -110,23 +112,19 @@
     [_coinImage release];
     _coinImage = nil;
     [super viewDidUnload];
-    [[CCDirector sharedDirector] end];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-//    return (interfaceOrientation == UIInterfaceOrientationLandscape);
-//    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft);
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
--(void)dealloc {
-    
-    [_layer dealloc];
+- (void)dealloc {
     [_undoBtn release];
     [_coinLabel release];
     [_coinImage release];
     [super dealloc];
 }
-
 @end
