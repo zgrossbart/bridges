@@ -54,6 +54,7 @@
     _layer.coinLbl = _coinLabel;
     _layer.coinImage = _coinImage;
     _layer.view = self.view;
+    _layer.controller = self;
     
     //    [[CCDirector sharedDirector] setOpenGLView:glView];
     
@@ -101,6 +102,17 @@
 
 - (IBAction)refreshTapped:(id)sender {
     [_layer refresh];
+}
+
+-(void) won {
+    if (self.youWonController == nil) {
+        self.youWonController = [[[YouWonViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+    }
+    
+    self.youWonController.currentLevel = _layer.currentLevel;
+    self.youWonController.layer = _layer;
+    [self.navigationController pushViewController:self.youWonController animated:NO];
+    
 }
 
 - (void)viewDidUnload

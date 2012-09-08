@@ -108,8 +108,6 @@
 
 - (void)viewDidUnload
 {
-//    [_view release];
-//    _view = nil;
     [_navItem release];
     _navItem = nil;
     [_scrollView release];

@@ -212,6 +212,7 @@
 		CEDBC2EC15EB8C8200094695 /* BridgeNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */; };
 		CEE7AF0815FBD12F00DC0B7F /* YouWonViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */; };
 		CEE7AF0915FBD12F00DC0B7F /* YouWonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */; };
+		CEE7AF0C15FBDD0F00DC0B7F /* YouWonViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7AF0B15FBDD0F00DC0B7F /* YouWonViewiPad.xib */; };
 		CEEFF6F215F3A9CB0095649C /* level8.json in Resources */ = {isa = PBXBuildFile; fileRef = CEEFF6F115F3A9CB0095649C /* level8.json */; };
 		CEF0649D15F51B0B0061C872 /* left_arrow_d.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF0649A15F51B0B0061C872 /* left_arrow_d.png */; };
 		CEF0649E15F51B0B0061C872 /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF0649B15F51B0B0061C872 /* left_arrow.png */; };
@@ -631,6 +632,7 @@
 		CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = YouWonViewController.mm; sourceTree = "<group>"; };
 		CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouWonViewController.xib; sourceTree = "<group>"; };
 		CEE7AF0A15FBD48600DC0B7F /* LevelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelController.h; sourceTree = "<group>"; };
+		CEE7AF0B15FBDD0F00DC0B7F /* YouWonViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouWonViewiPad.xib; sourceTree = "<group>"; };
 		CEEFF6F115F3A9CB0095649C /* level8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level8.json; sourceTree = "<group>"; };
 		CEF0649A15F51B0B0061C872 /* left_arrow_d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow_d.png; sourceTree = "<group>"; };
 		CEF0649B15F51B0B0061C872 /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
@@ -1318,6 +1320,7 @@
 				CEE7AF0515FBD12F00DC0B7F /* YouWonViewController.h */,
 				CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */,
 				CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */,
+				CEE7AF0B15FBDD0F00DC0B7F /* YouWonViewiPad.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1410,6 +1413,7 @@
 				CE39AC8E15FB9E67005607B0 /* octosprite.png in Resources */,
 				CE39AC9315FBA146005607B0 /* RootMenuViewControlleriPad.xib in Resources */,
 				CEE7AF0915FBD12F00DC0B7F /* YouWonViewController.xib in Resources */,
+				CEE7AF0C15FBDD0F00DC0B7F /* YouWonViewiPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

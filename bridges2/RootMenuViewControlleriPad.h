@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Level.h"
+#import "LevelController.h"
+#import "YouWonViewController.h"
 
-@interface RootMenuViewControlleriPad : UIViewController {
+@interface RootMenuViewControlleriPad : UIViewController<LevelController> {
     UIWindow *window_;
 	UINavigationController *navController_;
     
@@ -29,5 +31,7 @@
 - (IBAction)goHomeTapped:(id)sender;
 - (IBAction)undoTapped:(id)sender;
 - (IBAction)refreshTapped:(id)sender;
+
+@property (retain) YouWonViewController *youWonController;
 
 @end
