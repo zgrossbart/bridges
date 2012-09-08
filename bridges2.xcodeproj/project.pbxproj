@@ -180,7 +180,6 @@
 		CE6D67E715EAC5FD00C7EDD7 /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67E615EAC5FD00C7EDD7 /* b2WheelJoint.cpp */; };
 		CE6D67EB15EAC5FD00C7EDD7 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67EA15EAC5FD00C7EDD7 /* b2Rope.cpp */; };
 		CE6D67F115EAC5FD00C7EDD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F015EAC5FD00C7EDD7 /* main.m */; };
-		CE6D67F415EAC5FD00C7EDD7 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F315EAC5FD00C7EDD7 /* AppDelegate.mm */; };
 		CE6D67F715EAC5FD00C7EDD7 /* LevelLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */; };
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
 		CEAE47F815F3894400898698 /* level7.json in Resources */ = {isa = PBXBuildFile; fileRef = CEAE47F715F3894400898698 /* level7.json */; };
@@ -578,8 +577,6 @@
 		CE6D67ED15EAC5FD00C7EDD7 /* LICENSE_Box2D.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Box2D.txt; path = libs/LICENSE_Box2D.txt; sourceTree = "<group>"; };
 		CE6D67EF15EAC5FD00C7EDD7 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		CE6D67F015EAC5FD00C7EDD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CE6D67F215EAC5FD00C7EDD7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		CE6D67F315EAC5FD00C7EDD7 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		CE6D67F515EAC5FD00C7EDD7 /* LevelLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelLayer.h; sourceTree = "<group>"; };
 		CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelLayer.mm; sourceTree = "<group>"; };
 		CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
@@ -693,49 +690,15 @@
 		CE6D65E715EAC5FB00C7EDD7 /* bridges2 */ = {
 			isa = PBXGroup;
 			children = (
+				CEE7AF0315FBD07000DC0B7F /* Classes */,
 				CED45E7B15FB7D3C0066F0FE /* Categories */,
-				CE6D67F215EAC5FD00C7EDD7 /* AppDelegate.h */,
-				CE6D67F315EAC5FD00C7EDD7 /* AppDelegate.mm */,
 				CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */,
 				CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */,
 				CE6D65E815EAC5FB00C7EDD7 /* Resources */,
 				CE6D660215EAC5FB00C7EDD7 /* libs */,
 				CECE256C15F2869200517973 /* Levels */,
 				CE6D67EE15EAC5FD00C7EDD7 /* Supporting Files */,
-				CEDBC2DA15EB89DA00094695 /* BridgeColors.h */,
-				CEDBC2EA15EB8C8200094695 /* BridgeNode.h */,
-				CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */,
-				CECE689915F76A510042A7DF /* Bridge4Node.h */,
-				CECE689A15F76A510042A7DF /* Bridge4Node.mm */,
-				CECE255D15F227D200517973 /* GameNode.h */,
-				CEDBC2DF15EB8A8400094695 /* HouseNode.h */,
-				CEDBC2E015EB8A8400094695 /* HouseNode.mm */,
-				CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */,
-				CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */,
-				CECE255915F21FDB00517973 /* Level.h */,
-				CECE255A15F21FDB00517973 /* Level.mm */,
-				CE6D67F515EAC5FD00C7EDD7 /* LevelLayer.h */,
-				CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */,
-				CECE256615F2819200517973 /* LevelMgr.h */,
-				CECE256715F2819200517973 /* LevelMgr.mm */,
-				CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */,
-				CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */,
-				CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */,
-				CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */,
-				CEDBC2E515EB8B5300094695 /* MyContactListener.h */,
-				CEDBC2E615EB8B5300094695 /* MyContactListener.mm */,
-				CEDBC2E215EB8AF600094695 /* PlayerNode.h */,
-				CEDBC2E315EB8AF600094695 /* PlayerNode.mm */,
-				CEBD81FA15EACDC100EE27CF /* RootMenuViewController.h */,
-				CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */,
-				CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */,
-				CE39AC8F15FBA145005607B0 /* RootMenuViewControlleriPad.h */,
-				CE39AC9015FBA145005607B0 /* RootMenuViewControlleriPad.mm */,
-				CE39AC9115FBA145005607B0 /* RootMenuViewControlleriPad.xib */,
-				CEC65C0315F4C1CD0010EAC3 /* ScreenShotLayer.h */,
-				CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */,
-				CECFA62F15F36AEE00FF1E8D /* Undoable.h */,
-				CECFA63015F36AEE00FF1E8D /* Undoable.m */,
+				CEE7AF0415FBD0AC00DC0B7F /* Views */,
 			);
 			path = bridges2;
 			sourceTree = "<group>";
@@ -1301,6 +1264,54 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		CEE7AF0315FBD07000DC0B7F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CEDBC2DA15EB89DA00094695 /* BridgeColors.h */,
+				CEDBC2EA15EB8C8200094695 /* BridgeNode.h */,
+				CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */,
+				CECE689915F76A510042A7DF /* Bridge4Node.h */,
+				CECE689A15F76A510042A7DF /* Bridge4Node.mm */,
+				CECE255D15F227D200517973 /* GameNode.h */,
+				CEDBC2DF15EB8A8400094695 /* HouseNode.h */,
+				CEDBC2E015EB8A8400094695 /* HouseNode.mm */,
+				CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */,
+				CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */,
+				CECE255915F21FDB00517973 /* Level.h */,
+				CECE255A15F21FDB00517973 /* Level.mm */,
+				CE6D67F515EAC5FD00C7EDD7 /* LevelLayer.h */,
+				CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */,
+				CECE256615F2819200517973 /* LevelMgr.h */,
+				CECE256715F2819200517973 /* LevelMgr.mm */,
+				CEDBC2E515EB8B5300094695 /* MyContactListener.h */,
+				CEDBC2E615EB8B5300094695 /* MyContactListener.mm */,
+				CEDBC2E215EB8AF600094695 /* PlayerNode.h */,
+				CEDBC2E315EB8AF600094695 /* PlayerNode.mm */,
+				CEC65C0315F4C1CD0010EAC3 /* ScreenShotLayer.h */,
+				CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */,
+				CECFA62F15F36AEE00FF1E8D /* Undoable.h */,
+				CECFA63015F36AEE00FF1E8D /* Undoable.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		CEE7AF0415FBD0AC00DC0B7F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */,
+				CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */,
+				CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */,
+				CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */,
+				CEBD81FA15EACDC100EE27CF /* RootMenuViewController.h */,
+				CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */,
+				CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */,
+				CE39AC8F15FBA145005607B0 /* RootMenuViewControlleriPad.h */,
+				CE39AC9015FBA145005607B0 /* RootMenuViewControlleriPad.mm */,
+				CE39AC9115FBA145005607B0 /* RootMenuViewControlleriPad.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1544,7 +1555,6 @@
 				CE6D67E715EAC5FD00C7EDD7 /* b2WheelJoint.cpp in Sources */,
 				CE6D67EB15EAC5FD00C7EDD7 /* b2Rope.cpp in Sources */,
 				CE6D67F115EAC5FD00C7EDD7 /* main.m in Sources */,
-				CE6D67F415EAC5FD00C7EDD7 /* AppDelegate.mm in Sources */,
 				CE6D67F715EAC5FD00C7EDD7 /* LevelLayer.mm in Sources */,
 				CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */,
 				CEBD81F215EACA9D00EE27CF /* MainMenuViewController.mm in Sources */,
