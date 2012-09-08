@@ -23,7 +23,11 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self = [super initWithNibName:@"RootMenuViewControlleriPad" bundle:nibBundleOrNil];
+    } else {
+        self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    }
     if (self) {
         // Custom initialization
     }

@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "RootMenuViewController.h"
-#import "RootMenuViewControlleriPad.h"
 
 @interface MainMenuViewController : UIViewController {
     RootMenuViewController *_rootMenuViewController;
-    RootMenuViewControlleriPad *_rootMenuViewControlleriPad;
     
 //    IBOutlet UITableView *_view;
     CGFloat  mFontSize;
@@ -23,7 +21,6 @@
 }
 
 @property (retain) RootMenuViewController *rootMenuViewController;
-@property (retain) RootMenuViewControlleriPad *rootMenuViewControlleriPad;
 
 @property (nonatomic) int curIndex;
 

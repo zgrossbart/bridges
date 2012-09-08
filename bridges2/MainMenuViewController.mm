@@ -17,7 +17,6 @@
 @implementation MainMenuViewController
 
 @synthesize rootMenuViewController = _rootMenuViewController;
-@synthesize rootMenuViewControlleriPad = _rootMenuViewControlleriPad;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -89,21 +88,13 @@
 }
 
 -(void)selectLevel:(NSString*) key {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        if (_rootMenuViewControlleriPad == nil) {
-            self.rootMenuViewControlleriPad = [[[RootMenuViewControlleriPad alloc] initWithNibName:nil bundle:nil] autorelease];
-        }
-        
-        [self.rootMenuViewControlleriPad showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
-        [self.navigationController pushViewController:_rootMenuViewControlleriPad animated:YES];
-    } else {
-        if (_rootMenuViewController == nil) {
-            self.rootMenuViewController = [[[RootMenuViewController alloc] initWithNibName:nil bundle:nil] autorelease];
-        }
-        
-        [self.rootMenuViewController showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
-        [self.navigationController pushViewController:_rootMenuViewController animated:YES];
+    if (_rootMenuViewController == nil) {
+        self.rootMenuViewController = [[[RootMenuViewController alloc] initWithNibName:nil bundle:nil] autorelease];
     }
+    
+    [self.rootMenuViewController showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
+    [self.navigationController pushViewController:_rootMenuViewController animated:YES];
+    
 }
 
 - (void)viewDidUnload
