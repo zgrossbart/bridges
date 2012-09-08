@@ -171,7 +171,7 @@
      */
     for (NSString* levelId in self.levelIds) {
         Level *level = (Level*) [self.levels objectForKey:levelId];
-        [level addSprites:layerMgr];
+        [level addSprites:layerMgr:nil];
         
         [renderer begin];
         [scene visit];

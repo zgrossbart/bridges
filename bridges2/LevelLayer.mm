@@ -75,11 +75,7 @@
 -(void)readLevel {    
  //   [level.rivers makeObjectsPerformSelector:@selector(addSprite:)];
     
-    [self.currentLevel addSprites:_layerMgr];
-    
-    for (UIButton *l in self.currentLevel.labels) {
-        [self.view addSubview:l];
-    }
+    [self.currentLevel addSprites:_layerMgr:self.view];
     
     if (self.currentLevel.playerPos.x > -1) {
         [self spawnPlayer:self.currentLevel.playerPos.x :self.currentLevel.playerPos.y];

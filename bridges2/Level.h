@@ -16,7 +16,7 @@
 }
 
 -(id) initWithJson:(NSString*) jsonString;
--(void) addSprites: (LayerMgr*) layerMgr;
+-(void) addSprites: (LayerMgr*) layerMgr:(UIView*) view;
 -(void) removeSprites:(LayerMgr*) layerMgr;
 -(bool)hasWon;
 

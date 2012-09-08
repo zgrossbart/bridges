@@ -165,7 +165,7 @@
     [self.houses removeAllObjects];
 }
 
--(void)addSprites: (LayerMgr*) layerMgr {
+-(void)addSprites: (LayerMgr*) layerMgr: (UIView*) view {
     
     self.layerMgr = layerMgr;
     
@@ -174,6 +174,12 @@
     } 
     
     [self loadSprites];
+    
+    if (view != nil) {
+        for (UIButton *l in self.labels) {
+            [view addSubview:l];
+        }
+    }
     
     for (CCSprite *r in self.rivers) {
         [self.layerMgr addChildToSheet:r];
