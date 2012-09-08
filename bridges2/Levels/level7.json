@@ -6,6 +6,15 @@
             "x": "8",
             "y": "18"
         },
+        "labels": [
+            {
+                "x": "22",
+                "y": "1",
+                "w": "16",
+                "h": "10",
+                "text": "Some bridges aren't free.\n\nCollect money at houses to pay the toll."
+            }
+        ],
         "rivers": [
             {
                 "x": "18",
@@ -16,15 +25,15 @@
         "bridges": [
             {
                 "x": "18",
-                "y": "18",
+                "y": "8",
                 "orient": "h",
                 "coins": "1"
             }
         ],
         "houses": [
             {
-                "x": "25",
-                "y": "18",
+                "x": "8",
+                "y": "8",
                 "coins": "1"
             }
         ]
