@@ -29,6 +29,7 @@
 
 @interface LevelLayer() {
     bool _reportedWon;
+    CGPoint _playerStart;
 }
     @property (readwrite, retain) NSMutableArray *undoStack;
     @property (nonatomic, retain) PlayerNode *player;
@@ -217,7 +218,7 @@
 }
 
 
-- (void)tickX:(ccTime)dt {
+- (void)tick:(ccTime)dt {
     if (_inCross) {
         /*
          * We get a lot of collisions when crossing a bridge
@@ -267,58 +268,6 @@
                 [self visitHouse:spriteB:spriteA];
             } else if (spriteA.tag == PLAYER && spriteB.tag == HOUSE) {
                 [self visitHouse:spriteA:spriteB];
-            }
-        }
-    }
-}
-
-- (void)tick:(ccTime)dt {
-    if (_inMove) {
-        return;
-    }
-    
-    CGRect playerRect = CGRectMake(self.player.player.position.x, self.player.player.position.y,
-                                   self.player.player.contentSize.width, self.player.player.contentSize.height);
-    
-    for (BridgeNode *node in self.currentLevel.bridges) {
-        CGRect bridgeRect = CGRectMake(node.bridge.position.x, node.bridge.position.y,
-                                        node.bridge.contentSize.width, node.bridge.contentSize.height);
-        
-        if (CGRectIntersectsRect(playerRect, bridgeRect)) {
-            [self crossBridge:self.player.player:node.bridge];
-            return;
-            
-        }
-    }
-    
-    for (Bridge4Node *node in self.currentLevel.bridge4s) {
-        CGRect bridgeRect = CGRectMake(node.bridge.position.x, node.bridge.position.y,
-                                       node.bridge.contentSize.width, node.bridge.contentSize.height);
-        
-        if (CGRectIntersectsRect(playerRect, bridgeRect)) {
-            [self crossBridge4:self.player.player:node.bridge];
-            return;
-            
-        }
-    }
-    
-    for (HouseNode *node in self.currentLevel.houses) {
-        CGRect houseRect = CGRectMake(node.house.position.x, node.house.position.y,
-                                       node.house.contentSize.width, node.house.contentSize.height);
-        
-        if (CGRectIntersectsRect(playerRect, houseRect)) {
-            [self visitHouse:self.player.player:node.house];
-            return;
-            
-        }
-    }
-    
-    for (RiverNode *river in self.currentLevel.rivers) {
-                
-        for (CCSprite *sprite in river.rivers) {
-            if (CGRectIntersectsRect(playerRect, [sprite boundingBox])) {
-                [self bumpRiver:self.player.player:river];
-                
             }
         }
     }
@@ -622,98 +571,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     
-    int padding = player.contentSize.width;
-    
-    int side = [self collidedSide:player: object];
-    
-    /*
-     * When the player collides with a river we need to move
-     * the player back a little bit so they don't overlap anymore.
-     */
-    
-    if (side == DOWN) {
-        // Then the player is below the river
-        player.position = ccp(player.position.x,
-                              player.position.y - padding);
-    } else if (side == UP) {
-        // Then the player is above the river
-        player.position = ccp(player.position.x,
-                              player.position.y + padding);
-    } else if (side == RIGHT) {
-        // Then the player is to the right of the river
-        player.position = ccp(player.position.x + padding,
-                              player.position.y);
-    } else if (side == LEFT) {
-        // Then the player is to the left of the river
-        player.position = ccp(player.position.x - padding,
-                              player.position.y);
-    } else {
-        printf("player (%f, %f)\n", player.position.x, player.position.y);
-        printf("river (%f, %f)\n", object.position.x, object.position.y);
-        printf("padding (%i)\n", padding);
-        printf("This should never happen\n");
-    }
-    
-    [_player playerMoveEnded];
-    
-    [mgr removeAllActionsFromTarget:player];
-    [mgr resumeTarget:player];
-    
-    [self hasWon];
-    
-}
-
-- (void)bumpRiver:(CCSprite *) player:(RiverNode*) river {
-    /*
-     * The player bumped into a river or crossed bridge and is now
-     * in the middle of an animation overlapping a river.  We need
-     * to stop the animation and move the player back off the river
-     * so they aren't overlapping anymore.
-     */
-    
-    if (_inMove) {
-        return;
-    }
-    
-    _inMove = true;
-    
-    CCActionManager *mgr = [player actionManager];
-    [mgr pauseTarget:player];
-    
-    int padding = player.contentSize.width;
-    
-    CGRect playerRect = CGRectMake(player.position.x,
-                                   player.position.y,
-                                   player.contentSize.width, player.contentSize.height);
-    
-    int side = [self collidedSideForRect:playerRect: river.frame];
-    
-    /*
-     * When the player collides with a river we need to move
-     * the player back a little bit so they don't overlap anymore.
-     */
-    
-    if (side == DOWN) {
-        // Then the player is below the river
-        player.position = ccp(player.position.x,
-                              player.position.y - padding);
-    } else if (side == UP) {
-        // Then the player is above the river
-        player.position = ccp(player.position.x,
-                              player.position.y + padding);
-    } else if (side == RIGHT) {
-        // Then the player is to the right of the river
-        player.position = ccp(player.position.x + padding,
-                              player.position.y);
-    } else if (side == LEFT) {
-        // Then the player is to the left of the river
-        player.position = ccp(player.position.x - padding,
-                              player.position.y);
-    } else {
-        printf("player (%f, %f)\n", player.position.x, player.position.y);
-        printf("padding (%i)\n", padding);
-        printf("This should never happen\n");
-    }
+    _player.player.position = [self pointOnLine: _playerStart: _player.player.position: 20];
     
     [_player playerMoveEnded];
     
@@ -749,6 +607,32 @@ CGFloat CGPointToDegree(CGPoint point) {
         printf("padding (%i)\n", padding);*/
         return -1;
     }
+}
+
+-(CGPoint)pointOnLine: (CGPoint) p1: (CGPoint) p2: (int) distance {
+    
+    /*float x1 = p1.x;
+    float x2 = p2.x;
+    float y1 = p1.y;
+    float y2 = p2.y;
+    
+  //  float theta = atanf((y2 - y1) - (x2 - x1));
+    
+    float h = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+    float xd = x2 - (distance / h) * (y2 - y1);
+    float yd = y2 - (distance / h) * (x2 - x1);
+    
+    return ccp(xd, yd);*/
+    
+    double rads = atan2(p2.y - p1.y, p2.x - p1.x);
+    
+    double x3 = p2.x - distance * cos(rads);
+    double y3 = p2.y - distance * sin(rads);
+    
+    return ccp(x3, y3);
+    
+    
+    
 }
 
 -(void) hasWon {
@@ -833,6 +717,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         _inCross = false;
         _prevPlayerPos = _player.player.position;
         
+        _playerStart = _player.player.position;
         [_player moveTo:location];
 //        [_player.player runAction:
 //         [CCMoveTo actionWithDuration:distance/velocity position:ccp(location.x,location.y)]];
