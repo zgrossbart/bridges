@@ -24,11 +24,11 @@
 #import "JSONKit.h"
 
 @interface Level()
-@property (readwrite) NSMutableArray *rivers;
-@property (readwrite) NSMutableArray *bridges;
-@property (readwrite) NSMutableArray *bridge4s;
-@property (readwrite) NSMutableArray *houses;
-@property (readwrite) NSMutableArray *labels;
+@property (readwrite, retain) NSMutableArray *rivers;
+@property (readwrite, retain) NSMutableArray *bridges;
+@property (readwrite, retain) NSMutableArray *bridge4s;
+@property (readwrite, retain) NSMutableArray *houses;
+@property (readwrite, retain) NSMutableArray *labels;
 @property (readwrite, retain) LayerMgr *layerMgr;
 @property (readwrite, copy) NSDictionary *levelData;
 
@@ -172,17 +172,18 @@
         return;
     }
     
+    if (view) {
+        for (UIControl *c in [self controls]) {
+            [c removeFromSuperview];
+        }
+    }
     
     [self.rivers removeAllObjects];
     [self.bridges removeAllObjects];
     [self.bridge4s removeAllObjects];
     [self.houses removeAllObjects];
     
-    if (view) {
-        for (UIControl *c in [self controls]) {
-            [c removeFromSuperview];
-        }
-    }
+    
 }
 
 -(void)addSprites: (LayerMgr*) layerMgr: (UIView*) view {
@@ -191,7 +192,7 @@
     
     if (self.rivers.count > 0) {
         [self removeSprites:self.layerMgr: view];
-    } 
+    }
     
     [self loadSprites];
     

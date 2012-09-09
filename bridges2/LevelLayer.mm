@@ -114,8 +114,9 @@
 }
 
 -(void)reset {
-    [_layerMgr removeAll];
     [self.currentLevel removeSprites: _layerMgr: self.view];
+    [_layerMgr removeAll];
+    
     
     [self.undoStack removeAllObjects];
     UIImage *undoD = [UIImage imageNamed:@"left_arrow_d.png"];

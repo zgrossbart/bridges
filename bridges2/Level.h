@@ -74,27 +74,27 @@
 /** 
  * The list of river nodes for this level
  */
-@property (readonly) NSMutableArray *rivers;
+@property (readonly, retain) NSMutableArray *rivers;
 
 /** 
  * The list of bridge nodes for this level
  */
-@property (readonly) NSMutableArray *bridges;
+@property (readonly, retain) NSMutableArray *bridges;
 
 /** 
  * The list of 4-way bridges for this level
  */
-@property (readonly) NSMutableArray *bridge4s;
+@property (readonly, retain) NSMutableArray *bridge4s;
 
 /** 
  * The list of house nodes for this level
  */
-@property (readonly) NSMutableArray *houses;
+@property (readonly, retain) NSMutableArray *houses;
 
 /** 
  * The list of labels for this level
  */
-@property (readonly) NSMutableArray *labels;
+@property (readonly, retain) NSMutableArray *labels;
 
 /** 
  * The display name for this level
