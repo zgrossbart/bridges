@@ -58,7 +58,7 @@
             _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 16, 16)];
             _label.text = [NSString stringWithFormat:@"%i", self.coins];
             _label.textColor = [UIColor blackColor];
-            _label.backgroundColor = [UIColor lightGrayColor];
+            _label.backgroundColor = [UIColor colorWithRed:(1.0 * 170) / 255 green:(1.0 * 170) / 255 blue:(1.0 * 170) / 255 alpha:0.5];
             _label.layer.cornerRadius = 6;
             _label.font = [UIFont fontWithName:@"Verdana" size: 11.0];
             _label.textAlignment = UITextAlignmentCenter;
@@ -83,7 +83,7 @@
 -(void)setBridgePosition:(CGPoint)p {
     self.bridge.position = ccp(p.x, p.y);
     if (_label != nil) {
-        _label.frame = CGRectMake((p.x + (self.bridge.contentSize.width / 2)) - (_label.frame.size.width / 2), [LayerMgr normalizeYForControl:p.y] - ((self.bridge.contentSize.height / 2) + (_label.frame.size.height / 2)), _label.frame.size.width, _label.frame.size.height);
+        _label.frame = CGRectMake((p.x + (self.bridge.contentSize.width / 2)) - (_label.frame.size.width / 2) + 3, [LayerMgr normalizeYForControl:p.y] - ((self.bridge.contentSize.height / 2) + (_label.frame.size.height / 2)) - 3, _label.frame.size.width, _label.frame.size.height);
     }
 }
 
