@@ -19,13 +19,41 @@
 #import <Foundation/Foundation.h>
 #import "GameNode.h"
 
+/** 
+ * Undoables represent a game action which the user can undo.
+ * The undoable doesn't perform the undo, but acts as a struct
+ * for the level layer and level to use while undoing the action.
+ */
 @interface Undoable : NSObject
 
+/** 
+ * Create a new undoable.
+ *
+ * @param pos the previous position of the player
+ * @param node the node the player interacted with to cause this undoable event
+ * @param color the previous color of the player
+ * @param coins the previous coin count of the player
+ */
 -(id) initWithPosAndNode:(CGPoint) pos:(id<GameNode>) node: (int) color: (int) coins;
 
+/** 
+ * The previous player position
+ */
 @property (readonly) CGPoint pos;
+
+/** 
+ * The game node for this undoable
+ */
 @property (readonly, assign) id<GameNode> node;
+
+/** 
+ * The previous player color
+ */
 @property (readonly) int color;
+
+/** 
+ * The previous coin count of the player
+ */
 @property (nonatomic, assign, readonly) int coins;
 
 @end

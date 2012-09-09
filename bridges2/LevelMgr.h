@@ -19,18 +19,43 @@
 #import <Foundation/Foundation.h>
 #import "Level.h"
 
+/** 
+ * The LevelMgr manages the list of levels, generates the level 
+ * screenshots and handles the Cocos2d framework initialization.
+ */
 @interface LevelMgr : NSObject {
+    @private
     CCDirectorIOS	*director_;							// weak ref
     CCGLView *glView_;
     
     bool _hasInit;
 }
 
+/** 
+ * Gets the singleton of the LevelMgr
+ */
 +(LevelMgr *)getLevelMgr;
+
+/** 
+ * Generate a set of images of each level in the documents directory.
+ *
+ * @param bounds the size to draw the level image.
+ */
 -(void)drawLevels:(CGRect) bounds;
 
+/** 
+ * The loaded levels for this game.
+ */
 @property (readonly) NSMutableDictionary *levels;
+
+/** 
+ * The array of sorted level IDs.
+ */
 @property (readonly,copy) NSArray *levelIds;
+
+/** 
+ * The graphics view used to add the Cocos2d view into the UIKit stack
+ */
 @property (readonly) CCGLView *glView;
 
 

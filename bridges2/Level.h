@@ -20,31 +20,101 @@
 #import "cocos2d.h"
 #import "LayerMgr.h"
 
+/**
+ * A level is responsible for managing all of the nodes that
+ * make up a single level.  It also determines if the player
+ * has won the level and loads all of the objects from the 
+ * level JSON definition.
+ */
 @interface Level : NSObject {
 
     
 }
 
+/**
+ * Create a new level with a set of JSON data describing the
+ * level.
+ * 
+ * @param jsonString the string of JSON data for this level
+ * @param date the date this level was last modified.
+ */
 -(id) initWithJson:(NSString*) jsonString: (NSDate*) date;
+
+/**
+ * Add the sprites from this level to the specified layer 
+ * manager and UIView.
+ *
+ * @param layerMgr the layer manager to add the sprites too
+ * @param view the UIView to add any controls required for 
+ *        this level too
+ */
 -(void) addSprites: (LayerMgr*) layerMgr:(UIView*) view;
--(void) removeSprites:(LayerMgr*) layerMgr;
+
+/**
+ * Remove all of the sprites and controls this level has added
+ * to the level.
+ *
+ * @param layerMgr the layer manager to remove sprites from
+ */
+-(void) removeSprites:(LayerMgr*) layerMgr: (UIView*) view;
+
+/**
+ * Determines if the player has won the level.  Returns true
+ * if the level is won and false otherwise.
+ */
 -(bool)hasWon;
--(NSArray*) controls;
+
+/** 
+ * Determines if the current level uses coins and the level layer
+ * should show the coin count.  Returns true if the level uses
+ * coins and false otherwise.
+ */
 -(bool)hasCoins;
 
+/** 
+ * The list of river nodes for this level
+ */
 @property (readonly) NSMutableArray *rivers;
+
+/** 
+ * The list of bridge nodes for this level
+ */
 @property (readonly) NSMutableArray *bridges;
+
+/** 
+ * The list of 4-way bridges for this level
+ */
 @property (readonly) NSMutableArray *bridge4s;
+
+/** 
+ * The list of house nodes for this level
+ */
 @property (readonly) NSMutableArray *houses;
+
+/** 
+ * The list of labels for this level
+ */
 @property (readonly) NSMutableArray *labels;
-@property (readonly, copy) NSDictionary *levelData;
 
+/** 
+ * The display name for this level
+ */
 @property (readonly) NSString *name;
-@property (readonly) NSDate *date;
-@property (readonly) NSString *levelId;
-@property (readonly) CGPoint playerPos;
 
-@property (readonly) LayerMgr *layerMgr;
+/** 
+ * The last modified date for this level
+ */
+@property (readonly) NSDate *date;
+
+/** 
+ * The unique id for this level
+ */
+@property (readonly) NSString *levelId;
+
+/** 
+ * The current player position in the level
+ */
+@property (readonly) CGPoint playerPos;
 
 @end
 

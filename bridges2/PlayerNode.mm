@@ -22,6 +22,8 @@
 @interface PlayerNode()
 @property (readwrite) CCSprite *player;
 @property (nonatomic, assign, readwrite) int color;
+@property (nonatomic, retain) CCAction *walkAction;
+@property (nonatomic, retain) CCAction *moveAction;
 @end
 
 @implementation PlayerNode
@@ -30,10 +32,10 @@
 @synthesize moveAction = _moveAction;
 @synthesize walkAction = _walkAction;
 
--(id)initWithTag:(int)tag :(int) color: (LayerMgr *)layerMgr {
+-(id)initWithColor:(int) color:(LayerMgr*) layerMgr {
     if( (self=[super init] )) {
         _manager = layerMgr;
-        _tag = tag;
+        _tag = PLAYER;
         self.color = color;
         if (color == RED) {
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_red.png"]];

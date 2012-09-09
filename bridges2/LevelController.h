@@ -16,6 +16,10 @@
  *
  ******************************************************************************/
 
+/** 
+ * The level control protocol defines the controller which interacts
+ * with the level layer.
+ */
 @protocol LevelController <NSObject>
 @required
 - (void) won;

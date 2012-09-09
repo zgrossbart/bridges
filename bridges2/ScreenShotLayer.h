@@ -20,12 +20,20 @@
 
 #define PTM_RATIO 32.0
 
+/** 
+ * The screen shot layer is a simple scene used when drawing
+ * layer screen shots.  It's primary functions is to draw the
+ * white background for the layer.
+ */
 @interface ScreenShotLayer : CCLayerColor {
     
 @private
     
 }
 
+/** 
+ * The size of the screen shot image to draw.
+ */
 @property (nonatomic, readwrite) CGRect bounds;
 
 

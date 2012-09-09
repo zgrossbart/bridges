@@ -27,6 +27,15 @@
 
 #define PTM_RATIO 32.0
 
+/** 
+ * The LevelLayer handles all of the user interactions for a level.
+ * It also takes care of interactions with nodes and handling the 
+ * undo chain.  This means the LevelLayer has knowledge of each node
+ * which violates object-oriented ideals, but it can isolate it's
+ * implementation from the other nodes by doing that and simplifies
+ * the code since the game support a relatively small number of
+ * nodes.
+ */
 @interface LevelLayer : CCLayerColor {
     
 @private
@@ -56,20 +65,62 @@
     CCDirectorIOS	*director_;							// weak ref
 }
 
+/** 
+ * The factory method for getting a static instance of a 
+ * scene containing this layer.
+ */
 + (id) scene;
 
+/** 
+ * Set the specified level as the current level.
+ *
+ * @param level the level to play
+ */
 -(void)setLevel:(Level*) level;
+
+/** 
+ * Undo the last player move resetting and node interactions.
+ */
 -(void)undo;
+
+/** 
+ * Refresh the current level by resetting all nodes and restoring
+ * the level state to the original state in the leve definition.
+ */
 -(void)refresh;
 
-@property (nonatomic, retain) PlayerNode *player;
+/** 
+ * Holds the current level this layer is working work
+ */
 @property (nonatomic, retain) Level *currentLevel;
+
+/** 
+ * Sets the undo button so the layer can enable and disable it correctly.
+ */
 @property (nonatomic, retain) UIButton *undoBtn;
+
+/** 
+ * The coin label shows the current number of coins the player has.
+ */
 @property (nonatomic, retain) UILabel *coinLbl;
+
+/** 
+ * The coin image is a simple decorator for the coin label.  It's 
+ * hidden if the current label doesn't use coins.
+ */
 @property (nonatomic, retain) UIImageView *coinImage;
+
+/** 
+ * The UIKit view associated with this layer.  It's used for node labels
+ * and other controls not renderred by Cocos2d.
+ */
 @property (nonatomic, retain) UIView *view;
+
+/** 
+ * The controller for this level
+ */
 @property (readwrite, retain) id<LevelController> controller;
-@property (readonly) NSMutableArray *undoStack;
+
 
 
 @end

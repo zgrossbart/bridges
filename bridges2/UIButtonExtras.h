@@ -16,6 +16,10 @@
  *
  ******************************************************************************/
 
+/** 
+ * This extends the ButtonImage used by UIButton to allow buttons that
+ * stay a fixed width and grow in height.
+ */
 @interface ButtonImage (Extras)
 
 - (CGSize)sizeThatFits:(CGSize)size;

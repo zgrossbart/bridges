@@ -211,13 +211,13 @@
         [scene visit];
         [renderer end];
         
-        //	return [renderer getUIImageFromBuffer];
-        
         BOOL success = [renderer saveToFile: [NSString stringWithFormat:@"level%@.png", level.levelId] format:kCCImageFormatPNG];
         
         [layerMgr removeAll];
         
-        NSLog(@"success: %c", success);
+        if (!success) {
+            [NSException raise:@"Unable to save level image" format:@"Unable to save image for %@", [NSString stringWithFormat:@"level%@.png", level.levelId]];
+        }
         
     }
     

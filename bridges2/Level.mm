@@ -29,7 +29,7 @@
 @property (readwrite) NSMutableArray *bridge4s;
 @property (readwrite) NSMutableArray *houses;
 @property (readwrite) NSMutableArray *labels;
-@property (readwrite) LayerMgr *layerMgr;
+@property (readwrite, retain) LayerMgr *layerMgr;
 @property (readwrite, copy) NSDictionary *levelData;
 
 @property (readwrite) NSString *name;
@@ -162,7 +162,7 @@
     }
 }
 
--(void)removeSprites:(LayerMgr*) layerMgr {
+-(void)removeSprites:(LayerMgr*) layerMgr: (UIView*) view {
     self.layerMgr = layerMgr;
     
     if (self.rivers.count == 0) {
@@ -177,6 +177,12 @@
     [self.bridges removeAllObjects];
     [self.bridge4s removeAllObjects];
     [self.houses removeAllObjects];
+    
+    if (view) {
+        for (UIControl *c in [self controls]) {
+            [c removeFromSuperview];
+        }
+    }
 }
 
 -(void)addSprites: (LayerMgr*) layerMgr: (UIView*) view {
@@ -184,7 +190,7 @@
     self.layerMgr = layerMgr;
     
     if (self.rivers.count > 0) {
-        [self removeSprites:self.layerMgr];
+        [self removeSprites:self.layerMgr: view];
     } 
     
     [self loadSprites];

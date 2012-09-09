@@ -20,6 +20,11 @@
 #import "cocos2d.h"
 #import "LayerMgr.h"
 
+/** 
+ * The player node is a special game node which represents the 
+ * active player.  Unlike other nodes the player node can move
+ * and interact with other nodes.
+ */
 @interface PlayerNode : NSObject {
 @private
     int _tag;
@@ -33,17 +38,65 @@
     
 }
 
--(id)initWithTag:(int) tag:(int) color:(LayerMgr*) layerMgr;
+/** 
+ * Create a new player with the specified color.
+ *
+ * @param color the color for this player
+ * @param layerMgr the layer manager used to handle the player sprites
+ */
+-(id)initWithColor:(int) color:(LayerMgr*) layerMgr;
+
+/** 
+ * The player can change color by walking over colored bridges.  This
+ * method updates the players color when crossing a bridge.
+ *
+ * @param color the new color
+ */
 -(void)updateColor:(int)color;
+
+/** 
+ * Gets the tag for this node.  It is always PLAYER
+ */
 -(int)tag;
+
+/** 
+ * Move the player to specified position.  The player will stop if it
+ * collides with another object while moving to the specified point.
+ *
+ * @param p the new player position
+ */
 -(void)moveTo:(CGPoint)p;
+
+/**
+ * Move the player to specified position.  The player will stop if it
+ * collides with another object while moving to the specified point.
+ *
+ * @param p the new player position
+ * @param force normally moves are ignored if the player is already
+ *              moving.  This flag forces the move even if the player
+ *              is in the middle of a move.
+ */
 -(void)moveTo:(CGPoint)p:(bool)force;
+
+/** 
+ * Called to update the player node and indicate a move operation is 
+ * complete.
+ */
 -(void)playerMoveEnded;
 
+/** 
+ * The player sprite representing this node.
+ */
 @property (readonly) CCSprite *player;
+
+/** 
+ * The current color of this player.
+ */
 @property (nonatomic, assign, readonly) int color;
-@property (nonatomic, retain) CCAction *walkAction;
-@property (nonatomic, retain) CCAction *moveAction;
+
+/** 
+ * The number of coins the player currently has.
+ */
 @property (nonatomic, assign, readwrite) int coins;
 
 @end

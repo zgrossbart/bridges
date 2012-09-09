@@ -27,7 +27,8 @@
 //#define PTM_RATIO 32.0
 
 @interface LevelLayer()
-    @property (readwrite) NSMutableArray *undoStack;
+    @property (readwrite, retain) NSMutableArray *undoStack;
+    @property (nonatomic, retain) PlayerNode *player;
 @end
 
 @implementation LevelLayer
@@ -114,15 +115,11 @@
 
 -(void)reset {
     [_layerMgr removeAll];
+    [self.currentLevel removeSprites: _layerMgr: self.view];
+    
     [self.undoStack removeAllObjects];
     UIImage *undoD = [UIImage imageNamed:@"left_arrow_d.png"];
     [_undoBtn setImage:undoD forState:UIControlStateNormal];
-    
-    if (self.currentLevel) {
-        for (UIControl *c in [self.currentLevel controls]) {
-            [c removeFromSuperview];
-        }
-    }
     
     [_player dealloc];
     _player = nil;
@@ -612,7 +609,7 @@ CGFloat CGPointToDegree(CGPoint point) {
 
 - (void)spawnPlayer:(int) x: (int) y {
     
-    _player = [[PlayerNode alloc] initWithTag:PLAYER:BLACK:_layerMgr];
+    _player = [[PlayerNode alloc] initWithColor:BLACK:_layerMgr];
     _player.player.position = ccp(x, y);
     
     //   CCSprite *player = [_player player];

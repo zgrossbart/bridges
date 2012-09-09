@@ -16,6 +16,10 @@
  *
  ******************************************************************************/
 
+/** 
+ * This category extends UIImage to create new images which are scaled
+ * and cropped to a specific size.
+ */
 @interface UIImage (Extras)
 
 - (UIImage*)imageByScalingAndCroppingForSize:(CGSize)targetSize;
