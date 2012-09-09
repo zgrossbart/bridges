@@ -155,18 +155,15 @@
     _scrollView = nil;
     [_mainTable release];
     _mainTable = nil;
+    [_resetBtn release];
+    _resetBtn = nil;
+
     [super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return TRUE;//UIInterfaceOrientationIsLandscape(interfaceOrientation);
-}
-
-- (IBAction)showBridgesTapped:(id)sender {
-//    [self viewBridges:nil];
-    
-    
 }
 
 // Customize the number of sections in the table view.
@@ -257,6 +254,7 @@
     [_navItem release];
     [_scrollView release];
     [_mainTable release];
+    [_resetBtn release];
     [super dealloc];
 }
 

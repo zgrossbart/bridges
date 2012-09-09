@@ -19,7 +19,7 @@
 #import <UIKit/UIKit.h>
 #import "RootMenuViewController.h"
 
-@interface MainMenuViewController : UIViewController {
+@interface MainMenuViewController : UIViewController <UIAlertViewDelegate> {
     RootMenuViewController *_rootMenuViewController;
     
 //    IBOutlet UITableView *_view;
@@ -28,13 +28,12 @@
     IBOutlet UITableView *_mainTable;
     IBOutlet UINavigationItem *_navItem;
     IBOutlet UIScrollView *_scrollView;
+    IBOutlet UIBarButtonItem *_resetBtn;
 }
 
 @property (retain) RootMenuViewController *rootMenuViewController;
 
 @property (nonatomic) int curIndex;
 
-
-- (IBAction)showBridgesTapped:(id)sender;
 
 @end

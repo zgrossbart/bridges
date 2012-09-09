@@ -43,13 +43,31 @@
     return body;
 }
 
+-(b2Body*)addChildToSheet:(CCSprite*) sprite: (bool) bullet {
+    b2Body *body = [self addBoxBodyForSprite:sprite:YES];
+    [_sheet addChild:sprite];
+    
+    return body;
+}
+
 -(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite {
+    return [self addBoxBodyForSprite:sprite:NO];
+}
+
+-(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite: (bool) bullet {
     
     b2BodyDef spriteBodyDef;
-    spriteBodyDef.type = b2_dynamicBody;
+    spriteBodyDef.bullet = bullet;
+    if (bullet) {
+        spriteBodyDef.type = b2_dynamicBody;
+        spriteBodyDef.allowSleep = NO;
+    } else {
+        spriteBodyDef.type = b2_staticBody;
+    }
     spriteBodyDef.position.Set(sprite.position.x/PTM_RATIO,
                                sprite.position.y/PTM_RATIO);
     spriteBodyDef.userData = sprite;
+    spriteBodyDef.fixedRotation = YES;
     b2Body *spriteBody = _world->CreateBody(&spriteBodyDef);
     
     b2PolygonShape spriteShape;
@@ -57,8 +75,10 @@
                          sprite.contentSize.height/PTM_RATIO/2);
     b2FixtureDef spriteShapeDef;
     spriteShapeDef.shape = &spriteShape;
-    spriteShapeDef.density = 10.0;
-    spriteShapeDef.isSensor = true;
+    spriteShapeDef.density = 9999;
+    spriteShapeDef.restitution = 1;
+    spriteShapeDef.friction = 1;
+    spriteShapeDef.isSensor = false;
     spriteBody->CreateFixture(&spriteShapeDef);
 
     return spriteBody;

@@ -190,6 +190,7 @@
 		CEC65C0515F4C1CD0010EAC3 /* ScreenShotLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */; };
 		CEC65C1115F4D0320010EAC3 /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */; };
 		CECA1DFA15FCC37A0052A58E /* MainMenuViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA1DF915FCC37A0052A58E /* MainMenuViewiPad.xib */; };
+		CECA1E0315FD21240052A58E /* RiverNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CECA1E0215FD21240052A58E /* RiverNode.m */; };
 		CECDC54815F6C54000D266FD /* green_check.png in Resources */ = {isa = PBXBuildFile; fileRef = CECDC54715F6C54000D266FD /* green_check.png */; };
 		CECE255B15F21FDB00517973 /* Level.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE255A15F21FDB00517973 /* Level.mm */; };
 		CECE256815F2819200517973 /* LevelMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE256715F2819200517973 /* LevelMgr.mm */; };
@@ -595,6 +596,8 @@
 		CEC65C0F15F4D0320010EAC3 /* UIImageExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtras.h; sourceTree = "<group>"; };
 		CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtras.m; sourceTree = "<group>"; };
 		CECA1DF915FCC37A0052A58E /* MainMenuViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewiPad.xib; sourceTree = "<group>"; };
+		CECA1E0115FD21240052A58E /* RiverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiverNode.h; sourceTree = "<group>"; };
+		CECA1E0215FD21240052A58E /* RiverNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiverNode.m; sourceTree = "<group>"; };
 		CECDC54715F6C54000D266FD /* green_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_check.png; sourceTree = "<group>"; };
 		CECE255915F21FDB00517973 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		CECE255A15F21FDB00517973 /* Level.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level.mm; sourceTree = "<group>"; };
@@ -1294,6 +1297,8 @@
 				CEDBC2E615EB8B5300094695 /* MyContactListener.mm */,
 				CEDBC2E215EB8AF600094695 /* PlayerNode.h */,
 				CEDBC2E315EB8AF600094695 /* PlayerNode.mm */,
+				CECA1E0115FD21240052A58E /* RiverNode.h */,
+				CECA1E0215FD21240052A58E /* RiverNode.m */,
 				CEC65C0315F4C1CD0010EAC3 /* ScreenShotLayer.h */,
 				CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */,
 				CECFA62F15F36AEE00FF1E8D /* Undoable.h */,
@@ -1587,6 +1592,7 @@
 				CECE689B15F76A510042A7DF /* Bridge4Node.mm in Sources */,
 				CED45E8115FB7D7D0066F0FE /* UIButtonExtras.m in Sources */,
 				CEE7AF0815FBD12F00DC0B7F /* YouWonViewController.mm in Sources */,
+				CECA1E0315FD21240052A58E /* RiverNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

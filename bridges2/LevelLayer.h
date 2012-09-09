@@ -51,6 +51,7 @@
     
     bool _inCross;
     bool _inBridge;
+    bool _inMove;
     
     /*
      * After you visit a house you must cross a 

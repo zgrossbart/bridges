@@ -62,6 +62,16 @@
 -(b2Body*)addChildToSheet:(CCSprite*) sprite;
 
 /**
+ * Add a sprite to the sprite sheet for display
+ *
+ * @param sprite the sprite to add
+  * @param bullet true if this item is a fast moving "bullet" like the player
+ *
+ * @return the box2d body for this sprite
+ */
+-(b2Body*)addChildToSheet:(CCSprite*) sprite: (bool) bullet;
+
+/**
  * Add a box2d body for this sprite to support collision detection.
  *
  * @param sprite the sprite to add
@@ -69,6 +79,16 @@
  * @return the box2d body for this sprite
  */
 -(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite;
+
+/**
+ * Add a box2d body for this sprite to support collision detection.
+ *
+ * @param sprite the sprite to add
+ * @param bullet true if this item is a fast moving "bullet" like the player
+ *
+ * @return the box2d body for this sprite
+ */
+-(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite: (bool) bullet;
 
 /*
  * Remove all the sprites from the sprite sheet.  This is called when reloading a

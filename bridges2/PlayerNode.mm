@@ -65,7 +65,7 @@
         //
 //        [_spriteSheet addChild:_playerSprite];
         
-        _spriteBody = [_manager addChildToSheet:self.player];
+        _spriteBody = [_manager addChildToSheet:self.player:YES];
     }
     
     return self;

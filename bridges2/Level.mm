@@ -21,6 +21,7 @@
 #import "BridgeNode.h"
 #import "Bridge4Node.h"
 #import "HouseNode.h"
+#import "RiverNode.h"
 #import "JSONKit.h"
 
 @interface Level()
@@ -202,8 +203,10 @@
         }
     }
     
-    for (CCSprite *r in self.rivers) {
-        [self.layerMgr addChildToSheet:r];
+    for (RiverNode *r in self.rivers) {
+        for (CCSprite *s in r.rivers) {
+            [self.layerMgr addChildToSheet:s];
+        }
     }
     
     for (BridgeNode *b in self.bridges) {
@@ -307,6 +310,8 @@
     float xi2 = [self parseInt:x2];
     float yi2 = [self parseInt:y2];
     
+    NSMutableArray *rivers = [NSMutableArray arrayWithCapacity:10];
+    
     /*
      * Now we have two ranges specified by the
      * point x1, y1 and x2, y2.  The two points
@@ -316,10 +321,17 @@
      */
     for (float i = xi1; i <= xi2; i++) {
         for (float j = yi1; j <= yi2; j++) {
-            [self addRiver:i:j:vert];
+            [rivers addObject:[self addRiver:i:j:vert]];
             
         }
     }
+    
+    CGPoint start = [self tileToPoint:xi1 :yi1];
+    CGPoint end = [self tileToPoint:xi2 :yi2];
+    
+    RiverNode *node = [[RiverNode alloc] initWithFrame:CGRectMake(start.x, start.y, end.x - start.x, end.y - start.y): rivers];
+    
+    [self.rivers addObject:node];
     
 }
 
@@ -363,8 +375,6 @@
     
     river.position = startPos;
     river.tag = RIVER;
-    
-    [self.rivers addObject:river];
     
     return river;
     

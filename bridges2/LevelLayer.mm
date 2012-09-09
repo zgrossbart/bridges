@@ -21,12 +21,15 @@
 #import "Bridge4Node.h"
 #import "HouseNode.h"
 #import "BridgeColors.h"
+#import "RiverNode.h"
 #import "Level.h"
 #import "Undoable.h"
 
 //#define PTM_RATIO 32.0
 
-@interface LevelLayer()
+@interface LevelLayer() {
+    bool _reportedWon;
+}
     @property (readwrite, retain) NSMutableArray *undoStack;
     @property (nonatomic, retain) PlayerNode *player;
 @end
@@ -124,6 +127,8 @@
     
     [_player dealloc];
     _player = nil;
+    
+    _reportedWon = false;
 }
 
 -(void)setLevel:(Level*) level {
@@ -208,11 +213,11 @@
         _hasInit = true;
     }
     
-//     _world->DrawDebugData();
+     _world->DrawDebugData();
 }
 
 
-- (void)tick:(ccTime)dt {
+- (void)tickX:(ccTime)dt {
     if (_inCross) {
         /*
          * We get a lot of collisions when crossing a bridge
@@ -242,7 +247,7 @@
         
         b2Body *bodyA = contact.fixtureA->GetBody();
         b2Body *bodyB = contact.fixtureB->GetBody();
-        if (bodyA->GetUserData() != NULL && bodyB->GetUserData() != NULL) {
+        if (bodyA->GetUserData() != NULL && bodyB->GetUserData() != NULL) {            
             CCSprite *spriteA = (CCSprite *) bodyA->GetUserData();
             CCSprite *spriteB = (CCSprite *) bodyB->GetUserData();
             
@@ -262,6 +267,58 @@
                 [self visitHouse:spriteB:spriteA];
             } else if (spriteA.tag == PLAYER && spriteB.tag == HOUSE) {
                 [self visitHouse:spriteA:spriteB];
+            }
+        }
+    }
+}
+
+- (void)tick:(ccTime)dt {
+    if (_inMove) {
+        return;
+    }
+    
+    CGRect playerRect = CGRectMake(self.player.player.position.x, self.player.player.position.y,
+                                   self.player.player.contentSize.width, self.player.player.contentSize.height);
+    
+    for (BridgeNode *node in self.currentLevel.bridges) {
+        CGRect bridgeRect = CGRectMake(node.bridge.position.x, node.bridge.position.y,
+                                        node.bridge.contentSize.width, node.bridge.contentSize.height);
+        
+        if (CGRectIntersectsRect(playerRect, bridgeRect)) {
+            [self crossBridge:self.player.player:node.bridge];
+            return;
+            
+        }
+    }
+    
+    for (Bridge4Node *node in self.currentLevel.bridge4s) {
+        CGRect bridgeRect = CGRectMake(node.bridge.position.x, node.bridge.position.y,
+                                       node.bridge.contentSize.width, node.bridge.contentSize.height);
+        
+        if (CGRectIntersectsRect(playerRect, bridgeRect)) {
+            [self crossBridge4:self.player.player:node.bridge];
+            return;
+            
+        }
+    }
+    
+    for (HouseNode *node in self.currentLevel.houses) {
+        CGRect houseRect = CGRectMake(node.house.position.x, node.house.position.y,
+                                       node.house.contentSize.width, node.house.contentSize.height);
+        
+        if (CGRectIntersectsRect(playerRect, houseRect)) {
+            [self visitHouse:self.player.player:node.house];
+            return;
+            
+        }
+    }
+    
+    for (RiverNode *river in self.currentLevel.rivers) {
+                
+        for (CCSprite *sprite in river.rivers) {
+            if (CGRectIntersectsRect(playerRect, [sprite boundingBox])) {
+                [self bumpRiver:self.player.player:river];
+                
             }
         }
     }
@@ -417,6 +474,7 @@ CGFloat CGPointToDegree(CGPoint point) {
 - (void)doCross4:(CCSprite *) player:(Bridge4Node*) bridge:(CCSprite*) object {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
+    _inMove = true;
     
     /*
      * When the player hits a 4-way bridge we take them to the middle of the bridge
@@ -462,6 +520,7 @@ CGFloat CGPointToDegree(CGPoint point) {
 - (void)doCross:(CCSprite *) player:(BridgeNode*) bridge:(CCSprite*) object {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
+    _inMove = true;
     
     CGPoint location;
     
@@ -554,29 +613,37 @@ CGFloat CGPointToDegree(CGPoint point) {
      * so they aren't overlapping anymore.
      */
     
+    if (_inMove) {
+        return;
+    }
+    
+    _inMove = true;
+    
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     
-    int padding = object.contentSize.width / 2;
+    int padding = player.contentSize.width;
+    
+    int side = [self collidedSide:player: object];
     
     /*
      * When the player collides with a river we need to move
      * the player back a little bit so they don't overlap anymore.
      */
     
-    if (player.position.y + player.contentSize.height < object.position.y + padding) {
+    if (side == DOWN) {
         // Then the player is below the river
         player.position = ccp(player.position.x,
                               player.position.y - padding);
-    } else if (player.position.y > (object.position.y + object.contentSize.height) - padding) {
+    } else if (side == UP) {
         // Then the player is above the river
         player.position = ccp(player.position.x,
                               player.position.y + padding);
-    } else if (player.position.x > (object.position.x) - padding) {
+    } else if (side == RIGHT) {
         // Then the player is to the right of the river
         player.position = ccp(player.position.x + padding,
                               player.position.y);
-    } else if (player.position.x < object.position.x) {
+    } else if (side == LEFT) {
         // Then the player is to the left of the river
         player.position = ccp(player.position.x - padding,
                               player.position.y);
@@ -596,8 +663,97 @@ CGFloat CGPointToDegree(CGPoint point) {
     
 }
 
+- (void)bumpRiver:(CCSprite *) player:(RiverNode*) river {
+    /*
+     * The player bumped into a river or crossed bridge and is now
+     * in the middle of an animation overlapping a river.  We need
+     * to stop the animation and move the player back off the river
+     * so they aren't overlapping anymore.
+     */
+    
+    if (_inMove) {
+        return;
+    }
+    
+    _inMove = true;
+    
+    CCActionManager *mgr = [player actionManager];
+    [mgr pauseTarget:player];
+    
+    int padding = player.contentSize.width;
+    
+    CGRect playerRect = CGRectMake(player.position.x,
+                                   player.position.y,
+                                   player.contentSize.width, player.contentSize.height);
+    
+    int side = [self collidedSideForRect:playerRect: river.frame];
+    
+    /*
+     * When the player collides with a river we need to move
+     * the player back a little bit so they don't overlap anymore.
+     */
+    
+    if (side == DOWN) {
+        // Then the player is below the river
+        player.position = ccp(player.position.x,
+                              player.position.y - padding);
+    } else if (side == UP) {
+        // Then the player is above the river
+        player.position = ccp(player.position.x,
+                              player.position.y + padding);
+    } else if (side == RIGHT) {
+        // Then the player is to the right of the river
+        player.position = ccp(player.position.x + padding,
+                              player.position.y);
+    } else if (side == LEFT) {
+        // Then the player is to the left of the river
+        player.position = ccp(player.position.x - padding,
+                              player.position.y);
+    } else {
+        printf("player (%f, %f)\n", player.position.x, player.position.y);
+        printf("padding (%i)\n", padding);
+        printf("This should never happen\n");
+    }
+    
+    [_player playerMoveEnded];
+    
+    [mgr removeAllActionsFromTarget:player];
+    [mgr resumeTarget:player];
+    
+    [self hasWon];
+    
+}
+
+-(int) collidedSide:(CCSprite *) player:(CCSprite*) object {
+    return [self collidedSideForRect:[player boundingBox] :[object boundingBox]];
+}
+
+-(int) collidedSideForRect:(CGRect) playerRect:(CGRect) objectRect {
+    
+    if (playerRect.origin.x < objectRect.origin.x) {
+        /*
+         * Then the right side of the player is to the right of the left
+         * side of the object.  That means the player is on the left
+         */
+        return LEFT;
+    } else if (playerRect.origin.x > objectRect.origin.x) {
+        return RIGHT;
+    } else if (playerRect.origin.y > objectRect.origin.y) {
+        // The player is above the object
+        return UP;
+    } else if (playerRect.origin.y < objectRect.origin.y) {
+        return DOWN;
+    } else {
+       /* printf("player (%f, %f)\n", player.position.x, player.position.y);
+        printf("river (%f, %f)\n", object.position.x, object.position.y);
+        printf("padding (%i)\n", padding);*/
+        return -1;
+    }
+}
+
 -(void) hasWon {
-    if ([self.currentLevel hasWon]) {
+    if (!_reportedWon && [self.currentLevel hasWon]) {
+        _reportedWon = true;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
         [defaults setBool:TRUE forKey:[NSString stringWithFormat:@"%@-won", self.currentLevel.levelId]];
@@ -639,8 +795,8 @@ CGFloat CGPointToDegree(CGPoint point) {
         }
     }
     
-    for (CCSprite *s in self.currentLevel.rivers) {
-        if (CGRectContainsPoint([s boundingBox], p)) {
+    for (RiverNode *n in self.currentLevel.rivers) {
+        if (CGRectContainsPoint(n.frame, p)) {
             return true;
         }
     }
@@ -661,6 +817,8 @@ CGFloat CGPointToDegree(CGPoint point) {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:[touch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
+    
+    _inMove = false;
     
     if (_inBridge) {
         [self finishCross4:location];
