@@ -21,23 +21,56 @@
 #import "LayerMgr.h"
 #import "GameNode.h"
 
+/**
+ * This node represents a 4-way bridge.  The player can enter in one direction
+ * and exit through one of the three remaining directions.
+ */
 @interface Bridge4Node : NSObject <GameNode> {
+    @private
     int _tag;
-    
 }
 
--(id)initWithTagAndColor: (int) tag:(int) color:(LayerMgr*) layerMgr;
+/**
+ * Create a new 4-way bridge
+ *
+ * color the color of this bridge
+ * the layer manager for use with this node
+ */
+-(id)initWithTagAndColor: (int)color: (LayerMgr*)layerMgr;
 
+/**
+ * Called to finish crossing the bridge after enterring and choosing an exit direction
+ */
 -(void)cross;
--(void)enterBridge:(int)dir;
--(bool)isCrossed;
--(void)setBridgePosition:(CGPoint)p;
--(CGPoint)getBridgePosition;
--(int)tag;
 
+/**
+ * Enter the bridge at the specified direction.  The player then waits
+ * in the middle of the bridge until another tap determines the exit
+ * direction.
+ *
+ * @param dir the direction the player enterred from
+ */
+-(void)enterBridge:(int)dir;
+
+/**
+ * True if this bridge is crossed and false otherwise
+ */
+-(bool)isCrossed;
+
+/**
+ * Set the position of this bridge sprite
+ *
+ */
+-(void)setBridgePosition:(CGPoint)p;
+
+/**
+ * Get the position of this bridgr sprite
+ */
+-(CGPoint)getBridgePosition;
+
+/**
+ * The sprite for this bridge
+ */
 @property (readonly, retain) CCSprite *bridge;
-@property (nonatomic, assign, readonly) int color;
-@property (nonatomic, assign, getter=isCrossed, readonly) bool crossed;
-@property (readonly) LayerMgr *layerMgr;
 
 @end

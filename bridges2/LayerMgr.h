@@ -21,21 +21,67 @@
 #import "Box2D.h"
 
 #define PTM_RATIO 32.0
-
+/**
+ * The layer manager manages the interactions between sprites, the sprite
+ * sheet, and the box model which looks for collisions.  It also provides
+ * some utility methods for doing math on coordinates in the game layer.
+ */
 @interface LayerMgr : NSObject {
+    @private
     b2World *_world;
 }
 
+/**
+ * Calculate the difference between two points.
+ */
 +(CGFloat) distanceBetweenTwoPoints: (CGPoint) point1: (CGPoint) point2;
+
+/**
+ * Cocos2d calculates all coordinates with the bottom left of the screen as
+ * the 0,0 point.  UIKit puts that point in the top left.  This method will
+ * take a coordinate from the UIKit coordinate system and convert if to the
+ * Cocos2d system.
+ */
 +(float)normalizeYForControl:(float) y;
 
+/**
+ * Create a new LayerManager
+ *
+ * @param spriteSheet the sprite sheet for managing sprites
+ * @param world the box2d world for this game layer
+ */
 -(id) initWithSpriteSheet:(CCSpriteBatchNode*) spriteSheet:(b2World*) world;
+
+/**
+ * Add a sprite to the sprite sheet for display
+ *
+ * @param sprite the sprite to add
+ *
+ * @return the box2d body for this sprite
+ */
 -(b2Body*)addChildToSheet:(CCSprite*) sprite;
+
+/**
+ * Add a box2d body for this sprite to support collision detection.
+ *
+ * @param sprite the sprite to add
+ *
+ * @return the box2d body for this sprite
+ */
 -(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite;
--(void)spriteDone:(id)sender;
+
+/*
+ * Remove all the sprites from the sprite sheet.  This is called when reloading a
+ * level or clearing out the previous level to load a new one.
+ */
 -(void)removeAll;
 
-
+/*
+ * This property shows holds the size of a tile.  Each game board is 28
+ * tiles tall and all levels specify coordinates using tiles instead of
+ * pixels or points.  The tiles change size depending on the size of the
+ * screen.
+ */
 @property (readwrite) CGSize tileSize;
 
 @end

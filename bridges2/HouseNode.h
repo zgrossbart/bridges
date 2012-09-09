@@ -21,6 +21,10 @@
 #import "LayerMgr.h"
 #import "GameNode.h"
 
+/**
+ * A house node represents a house with a specific color that the player must visit
+ * to win the level.
+ */
 @interface HouseNode : NSObject <GameNode> {
 @private
     int _tag;
@@ -29,19 +33,47 @@
     
 }
 
--(id)initWithColor:(int) tag:(int) color:(LayerMgr*) layerMgr;
--(id)initWithColorAndCoins:(int) tag:(int) color:(LayerMgr*) layerMgr: (int) coins;
+/**
+ * Create a new house with the specified color
+ *
+ * @param color the color of this house
+ * @param layerMgr the layer manager to use for this house instance
+ */
+-(id)initWithColor:(int) color:(LayerMgr*) layerMgr;
 
+/**
+ * Create a new house with the specified color
+ *
+ * @param color the color of this house
+ * @param layerMgr the layer manager to use for this house instance
+ * @param coins the number of coins this house can provide
+ */
+-(id)initWithColorAndCoins:(int) color:(LayerMgr*) layerMgr: (int) coins;
+
+/**
+ * Visit this house and subtract one coin.
+ */
 -(void)visit;
--(bool)isVisited;
--(void)setHousePosition:(CGPoint)p;
--(CGPoint)getHousePosition;
--(int)tag;
 
+/**
+ * True if this house has been visited and false otherwise
+ */
+-(bool)isVisited;
+
+/**
+ * Set the position of this house sprite
+ */
+-(void)setHousePosition:(CGPoint)p;
+
+/**
+ * Get the position of this house sprite
+ */
+-(CGPoint)getHousePosition;
+
+/**
+ * The sprite for this house
+ */
 @property (readonly, retain) CCSprite *house;
-@property (nonatomic, assign, getter=isVisited, readonly) bool visited;
-@property (nonatomic, assign, readonly) int color;
-@property (nonatomic, assign, setter=position:) CGPoint position;
-@property (readonly) LayerMgr *layerMgr;
+
 
 @end

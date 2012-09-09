@@ -21,29 +21,89 @@
 #import "LayerMgr.h"
 #import "GameNode.h"
 
+/**
+ * A bridge node represents a single two-way bridge in the game
+ */
 @interface BridgeNode : NSObject <GameNode> {
+    
+    @private
     int _tag;
     bool _vertical;
     UILabel *_label;
     
 }
 
--(id)initWithOrient: (bool)vertical:(int) tag:(int) color:(LayerMgr*) layerMgr;
+/**
+ * Create a new bridge node
+ *
+ * @param vertical true if this bridge is vertical and false if it's horizontal
+ * @param color the color constant for this bridge
+ * @param layerMgr the layer manager instance to add sprites to
+ */
+-(id)initWithOrient: (bool) vertical :(int) color :(LayerMgr*) layerMgr;
 
--(id)initWithOrientAndDir: (bool)vertical:(int)dir: (int) tag:(int) color:(LayerMgr*) layerMgr;
--(id)initWithOrientAndDirAndCoins: (bool)vertical:(int)dir: (int) tag:(int) color:(LayerMgr*) layerMgr:(int)coins;
+/**
+ * Create a new bridge node
+ *
+ * @param vertical true if this bridge is vertical and false if it's horizontal
+ * @param dir the direction of the bridge.  Players can only cross in this direction
+ * @param color the color constant for this bridge
+ * @param layerMgr the layer manager instance to add sprites to
+ */
+-(id)initWithOrientAndDir: (bool)vertical:(int)dir: (int) color:(LayerMgr*) layerMgr;
 
+/**
+ * Create a new bridge node
+ *
+ * @param vertical true if this bridge is vertical and false if it's horizontal
+ * @param dir the direction of the bridge.  Players can only cross in this direction
+ * @param color the color constant for this bridge
+ * @param layerMgr the layer manager instance to add sprites to
+ * @param coins the number of coins it costs to completely cross this bridge
+ */
+-(id)initWithOrientAndDirAndCoins: (bool)vertical:(int)dir: (int) color:(LayerMgr*) layerMgr:(int)coins;
+
+/**
+ * Cross this bridge.  This will decrement the coin count or disable the bridge if there
+ * are no more coins.
+ */
 -(void)cross;
--(bool)isCrossed;
--(void)setBridgePosition:(CGPoint)p;
--(CGPoint)getBridgePosition;
--(int)tag;
 
+/**
+ * True if this bridge has been completely crossed and false otherwise
+ */
+-(bool)isCrossed;
+
+/**
+ * Set the position of this bridge's sprite and count label.
+ *
+ * @param p the position for the bridge
+ */
+-(void)setBridgePosition:(CGPoint)p;
+
+/**
+ * Get the position of this bridge sprite
+ */
+-(CGPoint)getBridgePosition;
+
+/**
+ * True if this bridge is vertical and false otherwise
+ */
 @property (readonly) bool vertical;
+
+/**
+ * The direction of this bridge:  UP, DOWN, LEFT, or RIGHT
+ */
 @property (readonly) int direction;
+
+/**
+ * The sprite which draws the bridge image
+ */
 @property (readonly, retain) CCSprite *bridge;
-@property (nonatomic, assign, readonly) int color;
+
+/**
+ * True if this bridge has been crossed and false otherwise
+ */
 @property (nonatomic, assign, getter=isCrossed, readonly) bool crossed;
-@property (readonly) LayerMgr *layerMgr;
 
 @end

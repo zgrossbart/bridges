@@ -367,7 +367,7 @@
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
-    Bridge4Node *bridgeNode = [[Bridge4Node alloc] initWithTagAndColor:BRIDGE4:color:self.layerMgr];
+    Bridge4Node *bridgeNode = [[Bridge4Node alloc] initWithTagAndColor:color:self.layerMgr];
     CGPoint startPos = [self tileToPoint:x:y];
     
     [bridgeNode setBridgePosition:startPos];
@@ -382,7 +382,7 @@
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
-    BridgeNode *bridgeNode = [[BridgeNode alloc] initWithOrientAndDirAndCoins:vertical:dir:BRIDGE:color:self.layerMgr: [self coins:coins]];
+    BridgeNode *bridgeNode = [[BridgeNode alloc] initWithOrientAndDirAndCoins:vertical:dir:color:self.layerMgr: [self coins:coins]];
     CGPoint startPos = [self tileToPoint:x:y];
     
     [bridgeNode setBridgePosition:startPos];
@@ -457,7 +457,7 @@
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
-    HouseNode *houseNode = [[HouseNode alloc] initWithColorAndCoins:HOUSE:color:self.layerMgr:[self coins:coins]];
+    HouseNode *houseNode = [[HouseNode alloc] initWithColorAndCoins:color:self.layerMgr:[self coins:coins]];
     CGPoint startPos = [self tileToPoint:x:y];
     
     [houseNode setHousePosition:startPos];

@@ -24,7 +24,7 @@
 @property (readwrite, retain) CCSprite *bridge;
 @property (nonatomic, assign, getter=isCrossed, readwrite) bool crossed;
 @property (nonatomic, assign, readwrite) int color;
-@property (readwrite) LayerMgr *layerMgr;
+@property (assign, readwrite) LayerMgr *layerMgr;
 @property (nonatomic, assign, readwrite) int tag;
 @property (nonatomic, assign, readwrite) int coins;
 @property (readwrite) int direction;
@@ -32,20 +32,20 @@
 
 @implementation BridgeNode
 
--(id) initWithOrient:(bool) vertical:(int) tag: (int) color:(LayerMgr*) layerMgr {
+-(id) initWithOrient:(bool) vertical:(int) color:(LayerMgr*) layerMgr {
     self=[super init];
-    return [self initWithOrientAndDir:vertical:NONE:tag:color:layerMgr];
+    return [self initWithOrientAndDir:vertical:NONE:color:layerMgr];
 }
 
--(id)initWithOrientAndDir: (bool)vertical:(int)dir: (int) tag:(int) color:(LayerMgr*) layerMgr {
+-(id)initWithOrientAndDir: (bool)vertical:(int)dir: (int) color:(LayerMgr*) layerMgr {
     self=[super init];
-    return [self initWithOrientAndDirAndCoins:vertical:NONE:tag:color:layerMgr:0];
+    return [self initWithOrientAndDirAndCoins:vertical:NONE:color:layerMgr:0];
 }
 
--(id)initWithOrientAndDirAndCoins: (bool)vertical:(int)dir: (int) tag:(int) color:(LayerMgr*) layerMgr:(int)coins {
+-(id)initWithOrientAndDirAndCoins: (bool)vertical:(int)dir:(int) color:(LayerMgr*) layerMgr:(int)coins {
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;
-        self.tag = tag;
+        self.tag = BRIDGE;
         self.color = color;
         self.vertical = vertical;
         self.direction = dir;

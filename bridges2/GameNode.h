@@ -16,13 +16,43 @@
  *
  ******************************************************************************/
 
+/**
+ * A game node represents an object on the game board the user can interact 
+ * with like a bridge or a house.
+ */
 @protocol GameNode <NSObject>
 @required
-- (void) addSprite;
-- (NSArray*) controls;
-- (void) undo;
 
+/**
+ * Called when this node should add it's sprite to the sprite sheet.
+ */
+-(void) addSprite;
+
+/**
+ * Get the list of UIControls like coin label associated with this node.
+ */
+-(NSArray*) controls;
+
+/**
+ * Undoes the previous action taken on this node.
+ */
+-(void) undo;
+
+/**
+ * The tag that uniquely identifies this type of node.
+ */
 @property (nonatomic, assign, readonly) int tag;
+
+/**
+ * The number of coins for this node.  Some nodes use this value to store
+ * the number of coins they have available and others use it to store the 
+ * number of coins they require.
+ */
 @property (nonatomic, assign, readonly) int coins;
+
+/**
+ * The color of this node
+ */
+@property (nonatomic, assign, readonly) int color;
 
 @end

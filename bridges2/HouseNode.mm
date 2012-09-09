@@ -23,23 +23,23 @@
 @property (readwrite, retain) CCSprite *house;
 @property (nonatomic, assign, getter=isVisited, readwrite) bool visited;
 @property (nonatomic, assign, readwrite) int color;
-@property (readwrite) LayerMgr *layerMgr;
+@property (readwrite, assign) LayerMgr *layerMgr;
 @property (nonatomic, assign, readwrite) int tag;
 @property (nonatomic, assign, readwrite) int coins;
 @end
 
 @implementation HouseNode
 
--(id)initWithColor:(int) tag:(int) color:(LayerMgr*) layerMgr {
+-(id)initWithColor:(int) color:(LayerMgr*) layerMgr {
     self = [super init];
-    return [self initWithColorAndCoins:tag :color :layerMgr :0];
+    return [self initWithColorAndCoins: color :layerMgr :0];
 }
     
--(id)initWithColorAndCoins:(int) tag:(int) color:(LayerMgr*) layerMgr: (int) coins {
+-(id)initWithColorAndCoins:(int) color:(LayerMgr*) layerMgr: (int) coins {
     
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;
-        self.tag = tag;
+        self.tag = HOUSE;
         self.visited = false;
         self.color = color;
         [self setHouseSprite:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];

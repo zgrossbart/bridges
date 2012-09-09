@@ -23,17 +23,17 @@
 @property (readwrite, retain) CCSprite *bridge;
 @property (nonatomic, assign, getter=isCrossed, readwrite) bool crossed;
 @property (nonatomic, assign, readwrite) int color;
-@property (readwrite) LayerMgr *layerMgr;
+@property (readwrite, assign) LayerMgr *layerMgr;
 @property (nonatomic, assign, readwrite) int tag;
 @property (nonatomic, assign, readwrite) int coins;
 @end
 
 @implementation Bridge4Node
 
--(id) initWithTagAndColor:(int)tag :(int)color :(LayerMgr *)layerMgr {
+-(id) initWithTagAndColor:(int)color :(LayerMgr *)layerMgr {
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;
-        self.tag = tag;
+        self.tag = BRIDGE4;
         self.color = color;
         
         [self setBridgeSprite:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
