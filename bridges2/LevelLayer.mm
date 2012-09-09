@@ -554,13 +554,21 @@ CGFloat CGPointToDegree(CGPoint point) {
     [self hasWon];
 }
 
+/**
+ * The player bumped into a river or crossed bridge and is now
+ * in the middle of an animation overlapping a river.  We need
+ * to stop the animation and move the player back off the river
+ * so they aren't overlapping anymore.
+ *
+ * This method happens as the result of a colision.  I was hoping
+ * that we'd be notified as soon as the colission happened, but 
+ * instead the notification happens a variable time after the 
+ * colision and while the objects are intersecting.  That means 
+ * we can't use the position of the objects to determine their 
+ * direction and we have to use the original starting position instead.
+ */
 - (void)bumpObject:(CCSprite *) player:(CCSprite*) object {
-    /*
-     * The player bumped into a river or crossed bridge and is now
-     * in the middle of an animation overlapping a river.  We need
-     * to stop the animation and move the player back off the river
-     * so they aren't overlapping anymore.
-     */
+    
     
     if (_inMove) {
         return;
