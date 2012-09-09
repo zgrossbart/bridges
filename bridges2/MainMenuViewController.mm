@@ -30,11 +30,20 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
     }
     return self;
+}
+
+-(void) awakeFromNib {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewiPad" owner:self options:nil];
+        [self viewDidLoad];
+    }
+    
+//    [super awakeFromNib];
+//    [self addSubview:self.view];
 }
 
 - (void)viewDidLoad
@@ -44,7 +53,10 @@
     [LevelMgr getLevelMgr];
     
     [self generateLevelImages];
- //   [self loadLevelPicker];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self loadLevelPicker];
+    }
     
     _navItem.title = @"Select a level";
 //    [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
@@ -58,7 +70,9 @@
         
         int row = 0;
         int column = 0;
-        CGSize s = CGSizeMake(96, 64);
+        CGSize s = CGSizeMake(216, 144);
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
         for (int i = 0; i < [LevelMgr getLevelMgr].levelIds.count; i++) {
             NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:i];
@@ -66,22 +80,48 @@
             UIImage *image = [UIImage imageWithContentsOfFile:[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", levelId]]];
             
             UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-            button.frame = CGRectMake(column*(s.width + 15)+24, row*(s.height + 50)+10, s.width + 15, s.height);
-            [button setImage:[image imageByScalingAndCroppingForSize:s] forState:UIControlStateNormal];
+            button.frame = CGRectMake(column*(s.width + 30)+24, row*(s.height + 20)+10, s.width + 15, s.height);
+            [button setBackgroundImage:[image imageByScalingAndCroppingForSize:s] forState:UIControlStateNormal];
             [button setTitle:level.name forState:UIControlStateNormal];
             [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [button.layer setCornerRadius:8.0f];
+            [button.layer setMasksToBounds:YES];
+            [button.layer setBorderWidth:1.0f];
+            [button.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+            
+            [button setTitle:level.name forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            button.titleLabel.backgroundColor = [UIColor whiteColor];
+            
             [button addTarget:self
                        action:@selector(levelSelected:)
              forControlEvents:UIControlEventTouchUpInside];
             button.tag = i;
-            [_scrollView addSubview:button];
             
-            if (column == 10) {
+            if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", levelId]]) {
+                UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"green_check.png"]];
+                imageView.contentMode = UIViewContentModeCenter;
+                imageView.backgroundColor = [UIColor clearColor];
+                imageView.frame = CGRectMake(button.frame.size.width - 25, 5, 20, 20);
+                
+                [button addSubview:imageView];
+                [_scrollView addSubview:button];
+                
+                [imageView release];
+            } else {
+                [_scrollView addSubview:button];
+            }
+            
+            button.titleLabel.frame = CGRectMake(button.titleLabel.frame.origin.x, 1, button.titleLabel.frame.size.width, button.titleLabel.frame.size.height);
+            
+            if (column == 3) {
                 column = 0;
                 row++;
             } else {
                 column++;
             }
+            
+//            [button release];
         }
             
         
@@ -115,6 +155,8 @@
     _scrollView = nil;
     [_mainTable release];
     _mainTable = nil;
+    [_testLabel release];
+    _testLabel = nil;
     [super viewDidUnload];
 }
 
@@ -217,6 +259,7 @@
     [_navItem release];
     [_scrollView release];
     [_mainTable release];
+    [_testLabel release];
     [super dealloc];
 }
 

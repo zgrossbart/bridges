@@ -28,6 +28,7 @@
     IBOutlet UITableView *_mainTable;
     IBOutlet UINavigationItem *_navItem;
     IBOutlet UIScrollView *_scrollView;
+    IBOutlet UILabel *_testLabel;
 }
 
 @property (retain) RootMenuViewController *rootMenuViewController;
