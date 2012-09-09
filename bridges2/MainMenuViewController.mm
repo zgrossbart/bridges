@@ -87,7 +87,7 @@
             [button.layer setCornerRadius:8.0f];
             [button.layer setMasksToBounds:YES];
             [button.layer setBorderWidth:1.0f];
-            [button.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+            [button.layer setBorderColor:[[UIColor colorWithRed:(1.0 * 233) / 255 green:(1.0 * 233) / 255 blue:(1.0 * 233) / 255 alpha:1] CGColor]];
             
             [button setTitle:level.name forState:UIControlStateNormal];
             [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -155,8 +155,6 @@
     _scrollView = nil;
     [_mainTable release];
     _mainTable = nil;
-    [_testLabel release];
-    _testLabel = nil;
     [super viewDidUnload];
 }
 
@@ -259,7 +257,6 @@
     [_navItem release];
     [_scrollView release];
     [_mainTable release];
-    [_testLabel release];
     [super dealloc];
 }
 
