@@ -167,10 +167,10 @@
     debugDraw->SetFlags(flags);
     
     // Create our sprite sheet and frame cache
-    CCSpriteBatchNode *spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"octosprite.png"
+    CCSpriteBatchNode *spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprite.png"
                                                 capacity:2] retain];
     [[CCSpriteFrameCache sharedSpriteFrameCache]
-     addSpriteFramesWithFile:@"octosprite.plist"];
+     addSpriteFramesWithFile:@"bridgesprite.plist"];
     
     LayerMgr *layerMgr = [[LayerMgr alloc] initWithSpriteSheet:spriteSheet:world];
     layerMgr.tileSize = CGSizeMake(bounds.size.height / 28, bounds.size.height / 28);

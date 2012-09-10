@@ -77,10 +77,10 @@
         _world->SetContactListener(_contactListener);
         
         // Create our sprite sheet and frame cache
-        _spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"octosprite.png"
+        _spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprite.png"
                                                     capacity:2] retain];
         [[CCSpriteFrameCache sharedSpriteFrameCache]
-         addSpriteFramesWithFile:@"octosprite.plist"];
+         addSpriteFramesWithFile:@"bridgesprite.plist"];
         [self addChild:_spriteSheet];
         
         self.undoStack = [[NSMutableArray alloc] init];
