@@ -47,3 +47,5 @@ static int const LEFT = 1;
 static int const RIGHT = 2;
 static int const UP = 3;
 static int const DOWN = 4;
+
+static int const TILE_COUNT = 28;

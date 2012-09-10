@@ -414,6 +414,9 @@
 
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     CGPoint s = [self tileToPoint:x:y];
+    
+    s = ccp(s.x, [LayerMgr normalizeYForControl:s.y]);
+    
     button.frame = CGRectMake(s.x, s.y, w * _layerMgr.tileSize.width, h * _layerMgr.tileSize.height);
     [button setTitle:text forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

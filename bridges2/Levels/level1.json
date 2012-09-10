@@ -5,14 +5,14 @@
         "labels": [
             {
                 "x": "2",
-                "y": "1",
+                "y": "27",
                 "w": "10",
                 "h": "4",
                 "text": "This is you"
             },
             {
                 "x": "18",
-                "y": "1",
+                "y": "27",
                 "w": "20",
                 "h": "10",
                 "text": "You can't cross rivers.\n\nCross every bridge to win."

@@ -206,7 +206,7 @@
          * our objects which rely on knowing the dimensions of
          * the window until that happens.
          */
-        _layerMgr.tileSize = CGSizeMake(s.height / 28, s.height / 28);
+        _layerMgr.tileSize = CGSizeMake(s.height / TILE_COUNT, s.height / TILE_COUNT);
         [self readLevel];
     
        // [self addRivers];
@@ -214,7 +214,7 @@
         _hasInit = true;
     }
     
-     _world->DrawDebugData();
+//     _world->DrawDebugData();
 }
 
 
