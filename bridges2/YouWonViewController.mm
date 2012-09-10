@@ -58,6 +58,29 @@
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    /*[UIView beginAnimations:@"View Flip" context:nil];
+    [UIView setAnimationDuration:0.80];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    
+    [UIView setAnimationTransition:
+     UIViewAnimationTransitionFlipFromRight
+                           forView:self.navigationController.view cache:NO];
+    
+    
+    //[self.navigationController pushViewController:menu animated:YES];
+    [UIView commitAnimations];
+    */
+    
+    self.view.alpha = 0;
+    
+    [UIView beginAnimations:@"fade in" context:nil];
+    [UIView setAnimationDuration:0.5];
+    self.view.alpha = 1;
+    [UIView commitAnimations];
+    
+}
+
 - (IBAction)replayTapped:(id)sender {
     [self.layer refresh];
     [self.navigationController popViewControllerAnimated:YES];
