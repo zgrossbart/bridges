@@ -48,4 +48,11 @@ static int const RIGHT = 2;
 static int const UP = 3;
 static int const DOWN = 4;
 
+/*
+ * The tile count represents the number of playable 
+ * tiles in a give board.  All level object positions
+ * are specified in tiles.  
+ *
+ * The playable level is 42 tiles wide and 28 tiles tall.
+ */
 static int const TILE_COUNT = 28;
