@@ -91,6 +91,8 @@
         frame = [cache spriteFrameByName:@"octopus1_blue.png"];
     } else if (color == GREEN) {
         frame = [cache spriteFrameByName:@"octopus1_green.png"];
+    } else if (color == ORANGE) {
+        frame = [cache spriteFrameByName:@"octopus1_orange.png"];
     } else if (color == BLACK) {
         frame = [cache spriteFrameByName:@"octopus1.png"];
     }

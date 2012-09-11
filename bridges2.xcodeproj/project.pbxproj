@@ -204,6 +204,7 @@
 		CECE689D15F76E120042A7DF /* level20.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689C15F76E120042A7DF /* level20.json */; };
 		CECFA63115F36AEF00FF1E8D /* Undoable.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFA63015F36AEE00FF1E8D /* Undoable.m */; };
 		CED0303015FB724A008E7EA4 /* level9.json in Resources */ = {isa = PBXBuildFile; fileRef = CED0302F15FB724A008E7EA4 /* level9.json */; };
+		CED0704415FF7A5E0050CA9D /* level16.json in Resources */ = {isa = PBXBuildFile; fileRef = CED0704315FF7A5E0050CA9D /* level16.json */; };
 		CED45E8115FB7D7D0066F0FE /* UIButtonExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */; };
 		CED45E8315FB81EF0066F0FE /* coins.png in Resources */ = {isa = PBXBuildFile; fileRef = CED45E8215FB81EF0066F0FE /* coins.png */; };
 		CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */; };
@@ -616,6 +617,7 @@
 		CECFA62F15F36AEE00FF1E8D /* Undoable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Undoable.h; sourceTree = "<group>"; };
 		CECFA63015F36AEE00FF1E8D /* Undoable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Undoable.m; sourceTree = "<group>"; };
 		CED0302F15FB724A008E7EA4 /* level9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level9.json; sourceTree = "<group>"; };
+		CED0704315FF7A5E0050CA9D /* level16.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level16.json; sourceTree = "<group>"; };
 		CED45E7F15FB7D7D0066F0FE /* UIButtonExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonExtras.h; sourceTree = "<group>"; };
 		CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonExtras.m; sourceTree = "<group>"; };
 		CED45E8215FB81EF0066F0FE /* coins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coins.png; sourceTree = "<group>"; };
@@ -1258,6 +1260,7 @@
 				CEEFF6F115F3A9CB0095649C /* level8.json */,
 				CED0302F15FB724A008E7EA4 /* level9.json */,
 				CECE689315F75AE60042A7DF /* level17.json */,
+				CED0704315FF7A5E0050CA9D /* level16.json */,
 				CECE689C15F76E120042A7DF /* level20.json */,
 			);
 			path = Levels;
@@ -1418,6 +1421,7 @@
 				CEE7AF0915FBD12F00DC0B7F /* YouWonViewController.xib in Resources */,
 				CEE7AF0C15FBDD0F00DC0B7F /* YouWonViewiPad.xib in Resources */,
 				CECA1DFA15FCC37A0052A58E /* MainMenuViewiPad.xib in Resources */,
+				CED0704415FF7A5E0050CA9D /* level16.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
