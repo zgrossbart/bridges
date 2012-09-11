@@ -7,7 +7,13 @@ The city of Königsberg in Prussia (now [Kaliningrad, Russia](https://maps.googl
 
 This project is an iPad and iPhone game based on those famous bridges.  Each level presents a puzzle with bridges to cross, houses to visit, and sometimes coins to collect.  Take a look at the [original design](http://www.zackgrossbart.com/extras/bridges) for an idea how to play and some sample levels
 
+Level 8: Economics
+--------------------------------------
+
 ![Economics Level](/zgrossbart/bridges/raw/master/screenshots/economics.png)
+
+Level 16: A House of Another Color
+--------------------------------------
 
 ![House of Another Color Level](/zgrossbart/bridges/raw/master/screenshots/different_color.png)
 
