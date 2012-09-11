@@ -64,6 +64,10 @@
 -(void)parseLevel: (NSString*) jsonString {
     self.levelData = [[jsonString objectFromJSONString] objectForKey:@"level"];
     
+    if (self.levelData == nil) {
+        [NSException raise:@"Invalid level definition" format:@"The level definition %@ is invalid JSON", jsonString];
+    }
+    
     _levelId = [self.levelData objectForKey:@"id"];
     _name = [self.levelData objectForKey:@"name"];
 }
