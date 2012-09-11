@@ -158,9 +158,6 @@
             [self addLabel:[self parseInt:x]:[self parseInt:y]:[self parseInt:w]:[self parseInt:h]:text];
         }
     }
-    
-    _hasLoadedSprites = true;
-    
 }
 
 -(int)getDir:(NSString*) dir {
