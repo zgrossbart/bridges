@@ -312,6 +312,14 @@
      */
     HouseNode *node = [self findHouse:house];
     
+    if (node.isVisited) {
+        /* 
+         * If the house is visited then there's no reason to bounce
+         * off of it.
+         */
+        return;
+    }
+    
     if (_canVisit && ![node isVisited]) {
         if (node.color == NONE || _player.color == node.color) {
             [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins]];
@@ -585,7 +593,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     
-    _player.player.position = [self pointOnLine: _playerStart: _player.player.position: 20];
+    _player.player.position = [self pointOnLine: _playerStart: _player.player.position: _layerMgr.tileSize.width * 1.5];
     
     [_player playerMoveEnded];
     
@@ -606,11 +614,19 @@ CGFloat CGPointToDegree(CGPoint point) {
  * @param distance the distance along the line to travel
  */
 -(CGPoint)pointOnLine: (CGPoint) p1: (CGPoint) p2: (int) distance {
-    
     double rads = atan2(p2.y - p1.y, p2.x - p1.x);
     
     double x3 = p2.x - distance * cos(rads);
     double y3 = p2.y - distance * sin(rads);
+        
+    if ([LayerMgr distanceBetweenTwoPoints:p1 :p2] == 0) {
+        return p1;
+    }
+    
+    if ([LayerMgr distanceBetweenTwoPoints:p1 :p2] < _layerMgr.tileSize.width) {
+        x3 = p2.x + distance * cos(rads);
+        y3 = p2.y - distance * sin(rads);
+    }
     
     return ccp(x3, y3);
 }
