@@ -381,7 +381,7 @@
         river = [CCSprite spriteWithSpriteFrameName:@"river_h.png"];
     }
     
-  //  [self resizeSprite:river:1:vert];
+    [self resizeSprite:river:1:vert];
     CGPoint startPos = [self tileToPoint:x:y];
     
 //    printf("addingRiverTo (%f, %f)\n", startPos.x, startPos.y);
@@ -429,6 +429,10 @@
     CGPoint s = [self tileToPoint:x:y];
     
     s = ccp(s.x, [LayerMgr normalizeYForControl:s.y]);
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        w = w / 2;
+        h = h / 2;
+    }
     
     button.frame = CGRectMake(s.x, s.y, w * _layerMgr.tileSize.width, h * _layerMgr.tileSize.height);
     [button setTitle:text forState:UIControlStateNormal];

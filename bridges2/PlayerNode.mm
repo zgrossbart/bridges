@@ -127,6 +127,10 @@
     CGFloat distance = [LayerMgr distanceBetweenTwoPoints:_player.position: p];
     float velocity = 240/1; // 240pixels/1sec
     
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        velocity = velocity * 2;
+    }
+    
     _moving = TRUE;
     self.moveAction = [CCSequence actions:
                        [CCMoveTo actionWithDuration:distance/velocity position:p],
