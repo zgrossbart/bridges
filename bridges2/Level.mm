@@ -73,9 +73,7 @@
 }
 
 -(void)loadSprites {
-    if (_hasLoadedSprites) {
-        return;
-    }
+    
     
     if ([self.levelData objectForKey:@"player"] != nil) {
         self.playerPos = [self tileToPoint:[self parseInt:[[self.levelData objectForKey:@"player"] objectForKey:@"x"]]:
@@ -193,6 +191,8 @@
         for (UIControl *c in [self controls]) {
             [c removeFromSuperview];
         }
+        
+        [self.labels removeAllObjects];
     }
     
     [self.rivers removeAllObjects];
@@ -207,9 +207,9 @@
     
     self.layerMgr = layerMgr;
     
-    /*if (self.rivers.count > 0) {
+    if (self.rivers.count > 0) {
         [self removeSprites:self.layerMgr: view];
-    }*/
+    }
     
     [self loadSprites];
     
