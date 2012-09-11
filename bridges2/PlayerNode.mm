@@ -56,14 +56,8 @@
         
         CCAnimation *walkAnim = [CCAnimation
                                  animationWithSpriteFrames:walkAnimFrames delay:0.1f];
-        
-        //        CGSize winSize = [CCDirector sharedDirector].winSize;
-        //self.player = [CCSprite spriteWithSpriteFrameName:@"octopus1.png"];
-//        _playerSprite.position = ccp(200, 100);
         self.walkAction = [CCRepeatForever actionWithAction:
                            [CCAnimate actionWithAnimation:walkAnim]];
-        //
-//        [_spriteSheet addChild:_playerSprite];
         
         _spriteBody = [_manager addChildToSheet:self.player:YES];
     }

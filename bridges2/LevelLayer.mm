@@ -592,47 +592,16 @@ CGFloat CGPointToDegree(CGPoint point) {
     
 }
 
--(int) collidedSide:(CCSprite *) player:(CCSprite*) object {
-    return [self collidedSideForRect:[player boundingBox] :[object boundingBox]];
-}
-
--(int) collidedSideForRect:(CGRect) playerRect:(CGRect) objectRect {
-    
-    if (playerRect.origin.x < objectRect.origin.x) {
-        /*
-         * Then the right side of the player is to the right of the left
-         * side of the object.  That means the player is on the left
-         */
-        return LEFT;
-    } else if (playerRect.origin.x > objectRect.origin.x) {
-        return RIGHT;
-    } else if (playerRect.origin.y > objectRect.origin.y) {
-        // The player is above the object
-        return UP;
-    } else if (playerRect.origin.y < objectRect.origin.y) {
-        return DOWN;
-    } else {
-       /* printf("player (%f, %f)\n", player.position.x, player.position.y);
-        printf("river (%f, %f)\n", object.position.x, object.position.y);
-        printf("padding (%i)\n", padding);*/
-        return -1;
-    }
-}
-
+/**
+ * Given the line defined by two points (p1 and p2) this method finds
+ * the point along that line which is the specified distance away from
+ * the second point.
+ *
+ * @param p1 the first point defining the line
+ * @param p2 the second point defining the line
+ * @param distance the distance along the line to travel
+ */
 -(CGPoint)pointOnLine: (CGPoint) p1: (CGPoint) p2: (int) distance {
-    
-    /*float x1 = p1.x;
-    float x2 = p2.x;
-    float y1 = p1.y;
-    float y2 = p2.y;
-    
-  //  float theta = atanf((y2 - y1) - (x2 - x1));
-    
-    float h = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-    float xd = x2 - (distance / h) * (y2 - y1);
-    float yd = y2 - (distance / h) * (x2 - x1);
-    
-    return ccp(xd, yd);*/
     
     double rads = atan2(p2.y - p1.y, p2.x - p1.x);
     
@@ -640,9 +609,6 @@ CGFloat CGPointToDegree(CGPoint point) {
     double y3 = p2.y - distance * sin(rads);
     
     return ccp(x3, y3);
-    
-    
-    
 }
 
 -(void) hasWon {
@@ -652,6 +618,12 @@ CGFloat CGPointToDegree(CGPoint point) {
         
         [defaults setBool:TRUE forKey:[NSString stringWithFormat:@"%@-won", self.currentLevel.levelId]];
         [defaults synchronize];
+        
+        /*
+         * TODO - We should do something cute here when
+         * you win a level.  Right now the you won screen
+         * comes a little too fast.
+         */
         
         [self.controller won];
     }

@@ -384,7 +384,7 @@
         river = [CCSprite spriteWithSpriteFrameName:@"river_h.png"];
     }
     
-    [self resizeSprite:river:1:vert];
+  //  [self resizeSprite:river:1:vert];
     CGPoint startPos = [self tileToPoint:x:y];
     
 //    printf("addingRiverTo (%f, %f)\n", startPos.x, startPos.y);
