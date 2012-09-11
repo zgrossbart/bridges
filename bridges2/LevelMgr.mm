@@ -173,7 +173,6 @@
      addSpriteFramesWithFile:@"bridgesprite.plist"];
     
     LayerMgr *layerMgr = [[LayerMgr alloc] initWithSpriteSheet:spriteSheet:world];
-    layerMgr.tileSize = CGSizeMake(bounds.size.height / 28, bounds.size.height / 28);
     
     CCRenderTexture *renderer	= [CCRenderTexture renderTextureWithWidth:bounds.size.width height:bounds.size.height];
     
@@ -184,6 +183,7 @@
     for (NSString* levelId in self.levelIds) {
         
         Level *level = (Level*) [self.levels objectForKey:levelId];
+        layerMgr.tileSize = CGSizeMake(bounds.size.height / level.tileCount, bounds.size.height / level.tileCount);
         if([paths count] > 0) {
             NSString *documentsDirectory = [paths objectAtIndex:0];
 

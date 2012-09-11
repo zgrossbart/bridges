@@ -37,6 +37,7 @@
 @property (readwrite) NSDate *date;
 @property (readwrite) NSString *levelId;
 @property (readwrite) CGPoint playerPos;
+@property (readwrite) int tileCount;
 @end
 
 @implementation Level
@@ -50,6 +51,8 @@
         self.houses = [[NSMutableArray alloc] init];
         self.labels = [[NSMutableArray alloc] init];
         self.date = date;
+        
+        self.tileCount = TILE_COUNT;
         
         [self parseLevel:jsonString];
     }
@@ -66,12 +69,19 @@
 }
 
 -(void)loadSprites {
+    if (_hasLoadedSprites) {
+        return;
+    }
     
     if ([self.levelData objectForKey:@"player"] != nil) {
         self.playerPos = [self tileToPoint:[self parseInt:[[self.levelData objectForKey:@"player"] objectForKey:@"x"]]:
                              [self parseInt:[[self.levelData objectForKey:@"player"] objectForKey:@"y"]]];
     } else {
         self.playerPos = ccp(-1, -1);
+    }
+    
+    if ([_levelData objectForKey:@"tiles"] != nil) {
+        self.tileCount = [[_levelData objectForKey:@"tiles"] intValue];
     }
     
     NSArray *rivers = [_levelData objectForKey:@"rivers"];
@@ -147,6 +157,8 @@
         }
     }
     
+    _hasLoadedSprites = true;
+    
 }
 
 -(int)getDir:(NSString*) dir {
@@ -191,9 +203,9 @@
     
     self.layerMgr = layerMgr;
     
-    if (self.rivers.count > 0) {
+    /*if (self.rivers.count > 0) {
         [self removeSprites:self.layerMgr: view];
-    }
+    }*/
     
     [self loadSprites];
     

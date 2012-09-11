@@ -27,6 +27,8 @@
  * level JSON definition.
  */
 @interface Level : NSObject {
+    @private
+    bool _hasLoadedSprites;
 
     
 }
@@ -105,6 +107,11 @@
  * The last modified date for this level
  */
 @property (readonly) NSDate *date;
+
+/**
+ * The tile count for this level.  The default is 28
+ */
+@property (readonly) int tileCount;
 
 /** 
  * The unique id for this level

@@ -99,6 +99,9 @@
 -(void)readLevel {    
  //   [level.rivers makeObjectsPerformSelector:@selector(addSprite:)];
     
+    CGSize s = [[CCDirector sharedDirector] winSize];
+    _layerMgr.tileSize = CGSizeMake(s.height / self.currentLevel.tileCount, s.height / self.currentLevel.tileCount);
+    
     [self.currentLevel addSprites:_layerMgr:self.view];
     
     if (self.currentLevel.playerPos.x > -1) {
@@ -206,7 +209,6 @@
          * our objects which rely on knowing the dimensions of
          * the window until that happens.
          */
-        _layerMgr.tileSize = CGSizeMake(s.height / TILE_COUNT, s.height / TILE_COUNT);
         [self readLevel];
     
        // [self addRivers];
