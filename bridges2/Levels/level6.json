@@ -1,56 +1,48 @@
 {
     "level": {
         "id": "6",
-        "name": "One-way bridges",
-        "labels": [
+        "name": "Change colors",
+		"labels": [
         	{
             	"x": "22",
 				"y": "27",
 				"w": "16",
-				"h": "10",
-				"text": "Some bridges only go one way."
+				"h": "14",
+				"text": "You can only visit a house if you're the same color.\n\nCross a bridge to change colors."
 			}
-        ],
+        ],        
         "rivers": [
             {
-                "x": "14",
-                "y": "b-t",
-                "orient": "v"
-            },
-            {
                 "x": "l-r",
-                "y": "14",
+                "y": "10",
                 "orient": "h"
             }
         ],
         "bridges": [
             {
-                "x": "14",
-                "y": "22",
-                "orient": "h",
-				"dir": "right"
-            },
-            {
-                "x": "14",
-                "y": "6",
-                "orient": "h",
-				"dir": "left"
-            },
-            {
-                "x": "8",
-                "y": "14",
+                "x": "10",
+                "y": "10",
                 "orient": "v",
-				"dir": "up"
+                "color": "red"
             },
             {
                 "x": "20",
-                "y": "14",
+                "y": "10",
                 "orient": "v",
-				"dir": "down"
+                "color": "green"
             }
         ],
         "houses": [
-        	
+            {
+                "x": "8",
+                "y": "4",
+                "color": "green"
+            },
+            {
+                "x": "12",
+                "y": "16",
+                "color": "red"
+            }
         ]
     }
 }

@@ -112,7 +112,7 @@
                 [_scrollView addSubview:button];
             }
             
-            button.titleLabel.frame = CGRectMake(button.titleLabel.frame.origin.x, 1, button.titleLabel.frame.size.width, button.titleLabel.frame.size.height);
+            button.titleLabel.frame = CGRectMake(2, 2, button.titleLabel.frame.size.width, button.titleLabel.frame.size.height);
             
             if (column == 3) {
                 column = 0;

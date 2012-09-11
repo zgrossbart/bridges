@@ -9,10 +9,10 @@
         "labels": [
             {
                 "x": "22",
-                "y": "1",
+                "y": "27",
                 "w": "16",
                 "h": "10",
-                "text": "Some bridges aren't free.\n\nCollect money at houses to pay the toll."
+                "text": "Some bridges aren't free.\n\nCollect money at houses to pay the tolls."
             }
         ],
         "rivers": [
