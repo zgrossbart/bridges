@@ -485,6 +485,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         if (_playerStart.y + player.contentSize.height < object.position.y + padding) {
             // Then the player is below the bridge
             if (bridge.direction != UP && bridge.direction != NONE) {
+                _inMove = false;
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
@@ -494,6 +495,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         } else if (_playerStart.y > (object.position.y + object.contentSize.height) - padding) {
             // Then the player is above the bridge
             if (bridge.direction != DOWN && bridge.direction != NONE) {
+                _inMove = false;
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
@@ -505,6 +507,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         if (_playerStart.x > (object.position.x + object.contentSize.width) - padding) {
             // Then the player is to the right of the bridge
             if (bridge.direction != LEFT && bridge.direction != NONE) {
+                _inMove = false;
                 [self bumpObject:player: bridge.bridge];
                 return;
             }
@@ -514,6 +517,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         } else if (_playerStart.x + player.contentSize.width < object.position.x + padding) {
             // Then the player is to the left of the bridge
             if (bridge.direction != RIGHT && bridge.direction != NONE) {
+                _inMove = false;
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
