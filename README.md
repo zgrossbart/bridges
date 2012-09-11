@@ -9,6 +9,8 @@ This project is an iPad and iPhone game based on those famous bridges.  Each lev
 
 ![Economics Level](/zgrossbart/bridges/raw/master/screenshots/economics.png)
 
+![House of Another Color Level](/zgrossbart/bridges/raw/master/screenshots/different_color_.png)
+
 This game is currently under development and not ready to play yet.  When it's done I'll release it in the App store.
 
 This project is available under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
