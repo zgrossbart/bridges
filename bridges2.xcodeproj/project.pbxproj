@@ -181,6 +181,7 @@
 		CE6D67F115EAC5FD00C7EDD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F015EAC5FD00C7EDD7 /* main.m */; };
 		CE6D67F715EAC5FD00C7EDD7 /* LevelLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */; };
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
+		CEA3D478160120610060F511 /* AboutViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA3D477160120610060F511 /* AboutViewiPad.xib */; };
 		CEAE47F815F3894400898698 /* level7.json in Resources */ = {isa = PBXBuildFile; fileRef = CEAE47F715F3894400898698 /* level7.json */; };
 		CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */; };
 		CEBD81F215EACA9D00EE27CF /* MainMenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */; };
@@ -584,6 +585,7 @@
 		CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelLayer.mm; sourceTree = "<group>"; };
 		CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
+		CEA3D477160120610060F511 /* AboutViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewiPad.xib; sourceTree = "<group>"; };
 		CEAE47F715F3894400898698 /* level7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level7.json; sourceTree = "<group>"; };
 		CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
@@ -1313,6 +1315,7 @@
 		CEE7AF0415FBD0AC00DC0B7F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEA3D477160120610060F511 /* AboutViewiPad.xib */,
 				CEE7AF0A15FBD48600DC0B7F /* LevelController.h */,
 				CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */,
 				CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */,
@@ -1422,6 +1425,7 @@
 				CEE7AF0C15FBDD0F00DC0B7F /* YouWonViewiPad.xib in Resources */,
 				CECA1DFA15FCC37A0052A58E /* MainMenuViewiPad.xib in Resources */,
 				CED0704415FF7A5E0050CA9D /* level16.json in Resources */,
+				CEA3D478160120610060F511 /* AboutViewiPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

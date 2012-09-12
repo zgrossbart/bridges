@@ -27,13 +27,19 @@
     NSArray* mFontNames;
     IBOutlet UITableView *_mainTable;
     IBOutlet UINavigationItem *_navItem;
+    IBOutlet UINavigationItem *_aboutNavItem;
     IBOutlet UIScrollView *_scrollView;
     IBOutlet UIBarButtonItem *_resetBtn;
+    IBOutlet UIWebView *_webView;
 }
 
 @property (retain) RootMenuViewController *rootMenuViewController;
 
 @property (nonatomic) int curIndex;
+
+- (IBAction)aboutTapped:(id)sender;
+
+- (IBAction)backToGameTapped:(id)sender;
 
 
 @end

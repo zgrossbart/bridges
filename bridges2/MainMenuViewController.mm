@@ -37,6 +37,7 @@
 }
 
 -(void) awakeFromNib {
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewiPad" owner:self options:nil];
         [self viewDidLoad];
@@ -158,6 +159,10 @@
     [_resetBtn release];
     _resetBtn = nil;
 
+    [_webView release];
+    _webView = nil;
+    [_aboutNavItem release];
+    _aboutNavItem = nil;
     [super viewDidUnload];
 }
 
@@ -213,7 +218,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.curIndex = indexPath.row;
-    NSLog(@"Selected level: %@", [[[LevelMgr getLevelMgr].levels allValues] objectAtIndex:indexPath.row]);
     
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:false];
     
@@ -245,6 +249,27 @@
     [_mainTable reloadData];
 }
 
+- (IBAction)backToGameTapped:(id)sender {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewiPad" owner:self options:nil];
+    } else {
+        [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewController" owner:self options:nil];
+    }
+    
+    [self viewDidLoad];
+}
+
+- (IBAction)aboutTapped:(id)sender {
+    [[NSBundle mainBundle] loadNibNamed:@"AboutViewiPad" owner:self options:nil];
+    
+    NSString *urlAddress = @"http://www.google.com";
+    NSURL *url = [NSURL URLWithString:urlAddress];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [_webView loadRequest:requestObj];
+    
+    _aboutNavItem.title = @"The Seven Bridges of Königsberg";
+}
+
 - (void)dealloc
 {
     [_rootMenuViewController release];
@@ -255,6 +280,8 @@
     [_scrollView release];
     [_mainTable release];
     [_resetBtn release];
+    [_webView release];
+    [_aboutNavItem release];
     [super dealloc];
 }
 
