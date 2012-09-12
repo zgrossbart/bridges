@@ -653,19 +653,7 @@ CGFloat CGPointToDegree(CGPoint point) {
 - (void)spawnPlayer:(int) x: (int) y {
     
     _player = [[PlayerNode alloc] initWithColor:BLACK:_layerMgr];
-    _player.player.position = ccp(x, y);
-    
-    //   CCSprite *player = [_player player];
-    /*
-     [_player runAction:
-     [CCSequence actions:
-     [CCMoveTo actionWithDuration:1.0 position:ccp(300,100)],
-     [CCMoveTo actionWithDuration:1.0 position:ccp(200,200)],
-     [CCMoveTo actionWithDuration:1.0 position:ccp(100,100)],
-     nil]];
-     */
-    //    [self addChildToSheet:player];
-    
+    _player.player.position = ccp(x, y);    
 }
 
 -(bool)inObject:(CGPoint) p {

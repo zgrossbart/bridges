@@ -57,8 +57,7 @@
         [self parseLevel:jsonString];
     }
     
-    return self;
-    
+    return self;    
 }
 
 -(void)parseLevel: (NSString*) jsonString {
@@ -348,6 +347,17 @@
     
 }
 
+/**
+ * Parse the specified string as an int.  This string contains 
+ * individual characters for preset coordinates.
+ *
+ * l - The left side of the screen
+ * b - The bottom of the screen
+ * r - The right side of the screen
+ * t - The top of the screen
+ * m - The vertical middle of the screen
+ * c - The horizontal center of the screen
+ */
 -(float)parseInt:(NSString*) s {
     if ([s characterAtIndex:0] == 'l') {
         // The left side of the screen
@@ -425,6 +435,10 @@
 
 -(UIButton*)addLabel:(float) x:(float) y:(float) w:(float) h:(NSString*) text {
 
+    /*
+     * We make all labels buttons so the button consumes taps and the player
+     * doesn't get lost under the labels.
+     */
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     CGPoint s = [self tileToPoint:x:y];
     
@@ -505,6 +519,9 @@
     
 }
 
+/**
+ * Gets the dimensions of the current screen
+ */
 -(CGSize)getWinSize {
     //CGRect r = [[UIScreen mainScreen] bounds];
     //return r.size;
@@ -522,12 +539,19 @@
     
 }
 
+/**
+ * Gets the size of each tile in points on the screen.  All tiles are
+ * squares.
+ */
 -(CGSize)winSizeTiles {
     CGSize winSize = [self getWinSize];
     return CGSizeMake(winSize.width / self.layerMgr.tileSize.width,
                       winSize.height / self.layerMgr.tileSize.height);
 }
 
+/**
+ * Convert a position in tiles to a point on the screen
+ */
 -(CGPoint)tileToPoint:(float) x: (float)y {
 //    printf("tileToPoint (%i, %i)\n", x, y);
 //    printf("tileSize (%f, %f)\n", self.layerMgr.tileSize.width, self.layerMgr.tileSize.height);
