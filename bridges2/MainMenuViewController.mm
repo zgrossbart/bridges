@@ -20,7 +20,9 @@
 #import "LevelMgr.h"
 #import "UIImageExtras.h"
 
-@interface MainMenuViewController ()
+@interface MainMenuViewController()
+
+@property (readwrite, retain) NSMutableArray *buttons;
 
 @end
 
@@ -31,6 +33,8 @@
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     if (self) {
+        
+        self.buttons = [NSMutableArray array];
         
     }
     return self;
@@ -51,6 +55,8 @@
 {
     [super viewDidLoad];
     
+    self.buttons = [NSMutableArray array];
+    
     [LevelMgr getLevelMgr];
     
     [self generateLevelImages];
@@ -59,18 +65,18 @@
         [self loadLevelPicker];
     }
     
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
+    
     _navItem.title = @"Select a level";
 //    [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
 }
 
 -(void)loadLevelPicker {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    if([paths count] > 0)
-    {
+    if([paths count] > 0) {
         NSString *documentsDirectory = [paths objectAtIndex:0];
         
-        int row = 0;
-        int column = 0;
         CGSize s = CGSizeMake(216, 144);
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -80,8 +86,8 @@
             Level *level = [[LevelMgr getLevelMgr].levels objectForKey:levelId];
             UIImage *image = [UIImage imageWithContentsOfFile:[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", levelId]]];
             
-            UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-            button.frame = CGRectMake(column*(s.width + 30)+24, row*(s.height + 20)+10, s.width + 15, s.height);
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            [self.buttons addObject:button];
             [button setBackgroundImage:[image imageByScalingAndCroppingForSize:s] forState:UIControlStateNormal];
             [button setTitle:level.name forState:UIControlStateNormal];
             [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -114,18 +120,7 @@
             }
             
             button.titleLabel.frame = CGRectMake(2, 2, button.titleLabel.frame.size.width, button.titleLabel.frame.size.height);
-            
-            if (column == 3) {
-                column = 0;
-                row++;
-            } else {
-                column++;
-            }
-            
-//            [button release];
         }
-            
-        
     }
 }
 
@@ -148,8 +143,7 @@
     
 }
 
--(void)viewDidUnload
-{
+-(void)viewDidUnload {
     [_navItem release];
     _navItem = nil;
     [_scrollView release];
@@ -158,6 +152,9 @@
     _mainTable = nil;
     [_resetBtn release];
     _resetBtn = nil;
+    
+    [self.buttons release];
+    self.buttons = nil;
 
     [_webView release];
     _webView = nil;
@@ -166,8 +163,7 @@
     [super viewDidUnload];
 }
 
--(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return TRUE;//UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
@@ -241,6 +237,42 @@
 
 }
 
+-(void)arrangeButtons {
+    
+    int row = 0;
+    int column = 0;
+    CGSize s = CGSizeMake(216, 144);
+    int cols = 3;
+    
+    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait ||
+        [[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown) {
+        cols = 2;
+    }
+    
+    for (UIButton *button in self.buttons) {
+        button.frame = CGRectMake(column*(s.width + 30)+24, row*(s.height + 20)+10, s.width + 15, s.height);
+        
+        if (column == cols) {
+            column = 0;
+            row++;
+        } else {
+            column++;
+        }
+    }
+    
+}
+
+-(void) detectOrientation {
+    [self arrangeButtons];
+/*    if (([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft) ||
+        ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight)) {
+        [self doLandscapeThings];
+    } else if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
+        [self doPortraitThings];
+    }
+ */
+}
+
 -(void) viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
@@ -274,6 +306,9 @@
 {
     [_rootMenuViewController release];
     _rootMenuViewController = nil;
+    
+    [self.buttons release];
+    self.buttons = nil;
     
 //    [_view release];
     [_navItem release];
