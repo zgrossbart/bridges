@@ -263,14 +263,9 @@
 }
 
 -(void) detectOrientation {
-    [self arrangeButtons];
-/*    if (([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft) ||
-        ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight)) {
-        [self doLandscapeThings];
-    } else if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
-        [self doPortraitThings];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self arrangeButtons];
     }
- */
 }
 
 -(void) viewWillAppear:(BOOL)animated
