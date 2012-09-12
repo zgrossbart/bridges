@@ -30,6 +30,7 @@
     IBOutlet UIButton *_undoBtn;
     IBOutlet UILabel *_coinLabel;
     IBOutlet UIImageView *_coinImage;
+    IBOutlet UILabel *_levelTitle;
 
 }
 

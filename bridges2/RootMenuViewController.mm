@@ -86,6 +86,19 @@
     }
     
     [_layer setLevel:level];
+    _levelTitle.text = level.name;
+    
+    [_levelTitle setAlpha:1.0];
+    
+    [UIView animateWithDuration:3
+                          delay:3
+                        options:UIViewAnimationOptionAllowUserInteraction
+                     animations:^{
+                         [_levelTitle setAlpha:0.0];
+                     }
+                     completion:nil];
+    
+//    [UIView animateWithDuration:3.3f delay:0.5f animations:^{_levelTitle.alpha = 0.f;}];
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -99,6 +112,8 @@
     [self presentModalViewController:viewController animated:NO];
     [self dismissModalViewControllerAnimated:NO];
     [viewController release];
+    
+    _levelTitle.backgroundColor = [UIColor colorWithRed:(1.0 * 0) / 255 green:(1.0 * 0) / 255 blue:(1.0 * 0) / 255 alpha:0.8];
 }
 
 -(void)viewDidLoad {
@@ -128,6 +143,8 @@
     _coinLabel = nil;
     [_coinImage release];
     _coinImage = nil;
+    [_levelTitle release];
+    _levelTitle = nil;
     [super viewDidUnload];
     [[CCDirector sharedDirector] end];
 }
@@ -156,6 +173,7 @@
     [_undoBtn release];
     [_coinLabel release];
     [_coinImage release];
+    [_levelTitle release];
     [super dealloc];
 }
 
