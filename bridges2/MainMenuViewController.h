@@ -37,9 +37,9 @@
 
 @property (nonatomic) int curIndex;
 
-- (IBAction)aboutTapped:(id)sender;
+-(IBAction)aboutTapped:(id)sender;
 
-- (IBAction)backToGameTapped:(id)sender;
+-(IBAction)backToGameTapped:(id)sender;
 
 
 @end

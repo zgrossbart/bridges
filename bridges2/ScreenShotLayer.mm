@@ -20,7 +20,7 @@
 
 @implementation ScreenShotLayer
 
-- (id)init {
+-(id)init {
     
     if( (self=[super initWithColor:ccc4(255,255,255,255)] )) {
     }

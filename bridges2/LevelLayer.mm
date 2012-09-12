@@ -49,7 +49,7 @@
 }
 
 
-- (id)init {
+-(id)init {
     
     if( (self=[super initWithColor:ccc4(255,255,255,255)] )) {
         
@@ -220,7 +220,7 @@
 }
 
 
-- (void)tick:(ccTime)dt {
+-(void)tick:(ccTime)dt {
     if (_inCross) {
         /*
          * We get a lot of collisions when crossing a bridge
@@ -305,7 +305,7 @@
     return nil;
 }
 
-- (void)visitHouse:(CCSprite *) player:(CCSprite*) house {
+-(void)visitHouse:(CCSprite *) player:(CCSprite*) house {
     /*
      * The player has run into a house.  We need to visit the house
      * if the player is the right color and bump it if it isn't
@@ -338,7 +338,7 @@
     
 }
 
-- (void)crossBridge:(CCSprite *) player:(CCSprite*) bridge {
+-(void)crossBridge:(CCSprite *) player:(CCSprite*) bridge {
     /*
      * The player has run into a bridge.  We need to cross the bridge
      * if it hasn't been crossed yet and not if it has.
@@ -354,7 +354,7 @@
     
 }
 
-- (void)crossBridge4:(CCSprite *) player:(CCSprite*) bridge {
+-(void)crossBridge4:(CCSprite *) player:(CCSprite*) bridge {
     
     if (_inBridge) {
         return;
@@ -375,7 +375,7 @@
     
 }
 
-- (void)finishCross4: (CGPoint) touch {
+-(void)finishCross4: (CGPoint) touch {
     int exitDir = -1;
     
     CGPoint p0 = _player.player.position;
@@ -407,11 +407,11 @@
     if (exitDir == RIGHT) {
         location = ccp(_currentBridge.bridge.position.x + (_currentBridge.bridge.contentSize.width / 2) + (_player.player.contentSize.width), _currentBridge.bridge.position.y);
     } else if (exitDir == LEFT) {
-        location = ccp((_currentBridge.bridge.position.x - (_currentBridge.bridge.contentSize.width / 2)) - (_player.player.contentSize.width), _currentBridge.bridge.position.y);
+        location = ccp((_currentBridge.bridge.position.x -(_currentBridge.bridge.contentSize.width / 2)) -(_player.player.contentSize.width), _currentBridge.bridge.position.y);
     } else if (exitDir == UP) {
         location = ccp(_currentBridge.bridge.position.x, _currentBridge.bridge.position.y + (_currentBridge.bridge.contentSize.height / 2) + (_player.player.contentSize.height));
     } else if (exitDir == DOWN) {
-        location = ccp(_currentBridge.bridge.position.x, (_currentBridge.bridge.position.y - (_currentBridge.bridge.contentSize.height / 2)) - (_player.player.contentSize.height));
+        location = ccp(_currentBridge.bridge.position.x, (_currentBridge.bridge.position.y -(_currentBridge.bridge.contentSize.height / 2)) -(_player.player.contentSize.height));
     }
     
     [_player moveTo: location:true];
@@ -430,7 +430,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     return bearingDegrees;
 }
 
-- (void)doCross4:(CCSprite *) player:(Bridge4Node*) bridge:(CCSprite*) object {
+-(void)doCross4:(CCSprite *) player:(Bridge4Node*) bridge:(CCSprite*) object {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     _inMove = true;
@@ -476,7 +476,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     }
 }
 
-- (void)doCross:(CCSprite *) player:(BridgeNode*) bridge:(CCSprite*) object {
+-(void)doCross:(CCSprite *) player:(BridgeNode*) bridge:(CCSprite*) object {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     _inMove = true;
@@ -509,7 +509,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             }
             int x = (object.position.x + (object.contentSize.width / 2)) -
                 (player.contentSize.width);
-            location = ccp(x, (object.position.y - 1) - (player.contentSize.height * 2));
+            location = ccp(x, (object.position.y - 1) -(player.contentSize.height * 2));
         }
     } else {
         if (_playerStart.x > (object.position.x + object.contentSize.width) - padding) {
@@ -521,7 +521,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             }
             int y = (object.position.y + (object.contentSize.height / 2)) -
                 (player.contentSize.height);
-            location = ccp((object.position.x - 1) - (player.contentSize.width * 2), y);
+            location = ccp((object.position.x - 1) -(player.contentSize.width * 2), y);
         } else if (_playerStart.x + player.contentSize.width < object.position.x + padding) {
             // Then the player is to the left of the bridge
             if (bridge.direction != RIGHT && bridge.direction != NONE) {
@@ -581,7 +581,7 @@ CGFloat CGPointToDegree(CGPoint point) {
  * we can't use the position of the objects to determine their 
  * direction and we have to use the original starting position instead.
  */
-- (void)bumpObject:(CCSprite *) player:(CCSprite*) object {
+-(void)bumpObject:(CCSprite *) player:(CCSprite*) object {
     
     
     if (_inMove) {
@@ -650,7 +650,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     
 }
 
-- (void)spawnPlayer:(int) x: (int) y {
+-(void)spawnPlayer:(int) x: (int) y {
     
     _player = [[PlayerNode alloc] initWithColor:BLACK:_layerMgr];
     _player.player.position = ccp(x, y);    

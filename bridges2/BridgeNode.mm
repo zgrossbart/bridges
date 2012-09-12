@@ -71,7 +71,7 @@
     return self;
 }
 
-- (void) addSprite {
+-(void) addSprite {
     [self.layerMgr addChildToSheet:self.bridge];
 }
 
@@ -83,7 +83,7 @@
 -(void)setBridgePosition:(CGPoint)p {
     self.bridge.position = ccp(p.x, p.y);
     if (_label != nil) {
-        _label.frame = CGRectMake((p.x + (self.bridge.contentSize.width / 2)) - (_label.frame.size.width / 2) + 3, [LayerMgr normalizeYForControl:p.y] - ((self.bridge.contentSize.height / 2) + (_label.frame.size.height / 2)) - 3, _label.frame.size.width, _label.frame.size.height);
+        _label.frame = CGRectMake((p.x + (self.bridge.contentSize.width / 2)) -(_label.frame.size.width / 2) + 3, [LayerMgr normalizeYForControl:p.y] -((self.bridge.contentSize.height / 2) + (_label.frame.size.height / 2)) - 3, _label.frame.size.width, _label.frame.size.height);
     }
 }
 
@@ -91,7 +91,7 @@
     return self.bridge.position;
 }
 
-- (void) undo {
+-(void) undo {
     if (_label != nil) {
         self.coins++;
         _label.text = [NSString stringWithFormat:@"%i", self.coins];

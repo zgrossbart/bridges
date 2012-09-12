@@ -31,7 +31,7 @@
 
 @synthesize youWonController = _youWonController;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self = [super initWithNibName:@"RootMenuViewControlleriPad" bundle:nibBundleOrNil];
@@ -45,7 +45,7 @@
     return self;
 }
 
-- (void)setupCocos2D {
+-(void)setupCocos2D {
     
     CCDirectorIOS *director = (CCDirectorIOS*) [CCDirector sharedDirector];
 	
@@ -88,7 +88,7 @@
     [_layer setLevel:level];
 }
 
-- (void) viewWillAppear:(BOOL)animated
+-(void) viewWillAppear:(BOOL)animated
 {
 //    [self.navigationController setNavigationBarHidden:YES animated:NO];
 //    [super viewWillAppear:animated];
@@ -101,26 +101,26 @@
     [viewController release];
 }
 
-- (void)viewDidLoad {
+-(void)viewDidLoad {
     [super viewDidLoad];
 
     UIImage *undoD = [UIImage imageNamed:@"left_arrow_d.png"];
     [_undoBtn setImage:undoD forState:UIControlStateNormal];
 }
 
-- (IBAction)goHomeTapped:(id)sender {
+-(IBAction)goHomeTapped:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)undoTapped:(id)sender {
+-(IBAction)undoTapped:(id)sender {
     [_layer undo];
 }
 
-- (IBAction)refreshTapped:(id)sender {
+-(IBAction)refreshTapped:(id)sender {
     [_layer refresh];
 }
 
-- (void)viewDidUnload
+-(void)viewDidUnload
 {
     [_undoBtn release];
     _undoBtn = nil;
@@ -132,7 +132,7 @@
     [[CCDirector sharedDirector] end];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
 //    return (interfaceOrientation == UIInterfaceOrientationLandscape);
 //    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft);

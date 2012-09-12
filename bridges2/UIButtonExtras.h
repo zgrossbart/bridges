@@ -22,6 +22,6 @@
  */
 @interface ButtonImage (Extras)
 
-- (CGSize)sizeThatFits:(CGSize)size;
+-(CGSize)sizeThatFits:(CGSize)size;
 
 @end

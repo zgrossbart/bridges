@@ -20,8 +20,7 @@
 
 @implementation UIImage (Extras)
 
-- (UIImage*)imageByScalingAndCroppingForSize:(CGSize)targetSize
-{
+-(UIImage*)imageByScalingAndCroppingForSize:(CGSize)targetSize {
 	UIImage *sourceImage = self;
 	UIImage *newImage = nil;
 	CGSize imageSize = sourceImage.size;
@@ -34,8 +33,7 @@
 	CGFloat scaledHeight = targetHeight;
 	CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
 	
-	if (CGSizeEqualToSize(imageSize, targetSize) == NO)
-	{
+	if (CGSizeEqualToSize(imageSize, targetSize) == NO) {
 		CGFloat widthFactor = targetWidth / width;
 		CGFloat heightFactor = targetHeight / height;
 		
@@ -47,15 +45,11 @@
 		scaledHeight = height * scaleFactor;
 		
 		// center the image
-		if (widthFactor > heightFactor)
-		{
+		if (widthFactor > heightFactor) {
 			thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;
+		} else if (widthFactor < heightFactor) {
+			thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
 		}
-		else
-			if (widthFactor < heightFactor)
-			{
-				thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
-			}
 	}
 	
 	UIGraphicsBeginImageContext(targetSize); // this will crop

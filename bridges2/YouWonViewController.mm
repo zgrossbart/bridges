@@ -25,8 +25,7 @@
 
 @implementation YouWonViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self = [super initWithNibName:@"YouWonViewiPad" bundle:nibBundleOrNil];
     } else {
@@ -40,21 +39,18 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+-(void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)viewDidUnload
-{
+-(void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
@@ -81,13 +77,13 @@
     
 }
 
-- (IBAction)replayTapped:(id)sender {
+-(IBAction)replayTapped:(id)sender {
     [self.layer refresh];
     [self.navigationController popViewControllerAnimated:YES];
     
 }
 
-- (IBAction)nextTapped:(id)sender {
+-(IBAction)nextTapped:(id)sender {
     int i = [[LevelMgr getLevelMgr].levelIds indexOfObject:self.currentLevel.levelId];
     
     if (i == [[LevelMgr getLevelMgr].levelIds count] - 1) {
@@ -103,7 +99,7 @@
     
 }
 
-- (IBAction)menuTapped:(id)sender {
+-(IBAction)menuTapped:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

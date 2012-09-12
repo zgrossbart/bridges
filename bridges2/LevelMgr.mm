@@ -72,7 +72,7 @@
 //    NSLog(@"levels ====== %@",self.levels);
 }
 
-- (NSArray *)sortLevels {
+-(NSArray *)sortLevels {
     return [[self.levels allKeys] sortedArrayUsingComparator:(NSComparator)^(id obj1, id obj2){
         int i1 = [obj1 integerValue];
         int i2 = [obj2 integerValue];
@@ -86,7 +86,7 @@
     }];
 }
 
-- (void)setupCocos2D: (CGRect) bounds {
+-(void)setupCocos2D: (CGRect) bounds {
     if (_hasInit) {
         return;
     }

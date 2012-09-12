@@ -28,7 +28,7 @@
 
 @synthesize rootMenuViewController = _rootMenuViewController;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     if (self) {
         
@@ -47,7 +47,7 @@
 //    [self addSubview:self.view];
 }
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [super viewDidLoad];
     
@@ -148,7 +148,7 @@
     
 }
 
-- (void)viewDidUnload
+-(void)viewDidUnload
 {
     [_navItem release];
     _navItem = nil;
@@ -166,25 +166,25 @@
     [super viewDidUnload];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return TRUE;//UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 // Customize the number of sections in the table view.
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 
 // Customize the number of rows in the table view.
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [LevelMgr getLevelMgr].levels.count;
 }
 
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
     NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
@@ -216,7 +216,7 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.curIndex = indexPath.row;
     
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:false];
@@ -241,7 +241,7 @@
 
 }
 
-- (void) viewWillAppear:(BOOL)animated
+-(void) viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
@@ -249,7 +249,7 @@
     [_mainTable reloadData];
 }
 
-- (IBAction)backToGameTapped:(id)sender {
+-(IBAction)backToGameTapped:(id)sender {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewiPad" owner:self options:nil];
     } else {
@@ -259,7 +259,7 @@
     [self viewDidLoad];
 }
 
-- (IBAction)aboutTapped:(id)sender {
+-(IBAction)aboutTapped:(id)sender {
     [[NSBundle mainBundle] loadNibNamed:@"AboutViewiPad" owner:self options:nil];
     
     NSString *urlAddress = @"http://www.google.com";
@@ -270,7 +270,7 @@
     _aboutNavItem.title = @"The Seven Bridges of Königsberg";
 }
 
-- (void)dealloc
+-(void)dealloc
 {
     [_rootMenuViewController release];
     _rootMenuViewController = nil;

@@ -22,9 +22,9 @@
 
 @interface YouWonViewController : UIViewController
 
-- (IBAction)replayTapped:(id)sender;
-- (IBAction)nextTapped:(id)sender;
-- (IBAction)menuTapped:(id)sender;
+-(IBAction)replayTapped:(id)sender;
+-(IBAction)nextTapped:(id)sender;
+-(IBAction)menuTapped:(id)sender;
 
 @property (nonatomic, retain) Level *currentLevel;
 @property (nonatomic, retain) LevelLayer *layer;

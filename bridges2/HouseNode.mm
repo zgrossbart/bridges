@@ -93,7 +93,7 @@
     }
 }
 
-- (void) addSprite {
+-(void) addSprite {
     [self.layerMgr addChildToSheet:self.house];
 }
 

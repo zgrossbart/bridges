@@ -18,13 +18,13 @@
 
 @interface UIButton (ExpandsVertically)
 
-- (CGSize)sizeThatFits:(CGSize)size;
+-(CGSize)sizeThatFits:(CGSize)size;
 
 @end
 
 @implementation UIButton (Expandable)
 
-- (CGSize)sizeThatFits:(CGSize)size {
+-(CGSize)sizeThatFits:(CGSize)size {
     
     self.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
     CGSize tempSize = CGSizeMake(size.width - 24, 1000);

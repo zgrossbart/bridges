@@ -22,6 +22,6 @@
  */
 @protocol LevelController <NSObject>
 @required
-- (void) won;
+-(void) won;
 
 @end

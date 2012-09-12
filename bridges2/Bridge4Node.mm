@@ -42,7 +42,7 @@
     return self;
 }
 
-- (void) addSprite {
+-(void) addSprite {
     [self.layerMgr addChildToSheet:self.bridge];
 }
 
@@ -59,7 +59,7 @@
     return self.bridge.position;
 }
 
-- (void) undo {
+-(void) undo {
     if (self.crossed) {
         CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
         CCSpriteFrame* frame = [cache spriteFrameByName:[self getSpriteName]];

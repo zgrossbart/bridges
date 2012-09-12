@@ -382,7 +382,7 @@
     }
 }
 
-- (CCSprite*)addRiver:(float) x:(float) y:(BOOL) vert {
+-(CCSprite*)addRiver:(float) x:(float) y:(BOOL) vert {
     
     CCSprite *river;
     if (vert) {
@@ -403,7 +403,7 @@
     
 }
 
-- (Bridge4Node*)addBridge4:(float) x:(float) y:(float) color {
+-(Bridge4Node*)addBridge4:(float) x:(float) y:(float) color {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
@@ -418,7 +418,7 @@
     
 }
 
-- (BridgeNode*)addBridge:(float) x:(float) y:(bool) vertical:(float) dir: (float) color: (NSString*) coins {
+-(BridgeNode*)addBridge:(float) x:(float) y:(bool) vertical:(float) dir: (float) color: (NSString*) coins {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
