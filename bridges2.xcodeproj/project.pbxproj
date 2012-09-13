@@ -238,7 +238,7 @@
 		CE39AC9115FBA145005607B0 /* RootMenuViewControlleriPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootMenuViewControlleriPad.xib; sourceTree = "<group>"; };
 		CE453BC515F174A900053407 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		CE453BC615F174A900053407 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		CE6D65D115EAC5FB00C7EDD7 /* bridges2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bridges2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE6D65D115EAC5FB00C7EDD7 /* 7Bridges.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 7Bridges.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6D65D515EAC5FB00C7EDD7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE6D65D715EAC5FB00C7EDD7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		CE6D65D915EAC5FB00C7EDD7 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -690,7 +690,7 @@
 		CE6D65D215EAC5FB00C7EDD7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE6D65D115EAC5FB00C7EDD7 /* bridges2.app */,
+				CE6D65D115EAC5FB00C7EDD7 /* 7Bridges.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1366,7 +1366,7 @@
 			);
 			name = bridges2;
 			productName = bridges2;
-			productReference = CE6D65D115EAC5FB00C7EDD7 /* bridges2.app */;
+			productReference = CE6D65D115EAC5FB00C7EDD7 /* 7Bridges.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1688,7 +1688,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = 7Bridges;
 				USER_HEADER_SEARCH_PATHS = "\"bridges2/libs\"";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1714,7 +1714,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = 7Bridges;
 				USER_HEADER_SEARCH_PATHS = "\"bridges2/libs\"";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
