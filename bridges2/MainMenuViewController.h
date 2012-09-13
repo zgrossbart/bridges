@@ -41,5 +41,10 @@
 
 -(IBAction)backToGameTapped:(id)sender;
 
+-(IBAction)backToMainTapped:(id)sender;
+
+-(IBAction)playTapped:(id)sender;
+-(IBAction)creditsTapped:(id)sender;
+
 
 @end

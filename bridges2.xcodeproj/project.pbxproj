@@ -208,6 +208,7 @@
 		CECFA63115F36AEF00FF1E8D /* Undoable.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFA63015F36AEE00FF1E8D /* Undoable.m */; };
 		CED0303015FB724A008E7EA4 /* level9.json in Resources */ = {isa = PBXBuildFile; fileRef = CED0302F15FB724A008E7EA4 /* level9.json */; };
 		CED0704415FF7A5E0050CA9D /* level16.json in Resources */ = {isa = PBXBuildFile; fileRef = CED0704315FF7A5E0050CA9D /* level16.json */; };
+		CED31C76160247510010A1E6 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED31C74160247510010A1E6 /* MainView.xib */; };
 		CED45E8115FB7D7D0066F0FE /* UIButtonExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */; };
 		CED45E8315FB81EF0066F0FE /* coins.png in Resources */ = {isa = PBXBuildFile; fileRef = CED45E8215FB81EF0066F0FE /* coins.png */; };
 		CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */; };
@@ -624,6 +625,7 @@
 		CECFA63015F36AEE00FF1E8D /* Undoable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Undoable.m; sourceTree = "<group>"; };
 		CED0302F15FB724A008E7EA4 /* level9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level9.json; sourceTree = "<group>"; };
 		CED0704315FF7A5E0050CA9D /* level16.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level16.json; sourceTree = "<group>"; };
+		CED31C74160247510010A1E6 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		CED45E7F15FB7D7D0066F0FE /* UIButtonExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonExtras.h; sourceTree = "<group>"; };
 		CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonExtras.m; sourceTree = "<group>"; };
 		CED45E8215FB81EF0066F0FE /* coins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coins.png; sourceTree = "<group>"; };
@@ -1327,6 +1329,7 @@
 				CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */,
 				CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */,
 				CECA1DF915FCC37A0052A58E /* MainMenuViewiPad.xib */,
+				CED31C74160247510010A1E6 /* MainView.xib */,
 				CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */,
 				CEBD81FA15EACDC100EE27CF /* RootMenuViewController.h */,
 				CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */,
@@ -1434,6 +1437,7 @@
 				CEA3D478160120610060F511 /* AboutViewiPad.xib in Resources */,
 				CE31DCD11601E3790084C38B /* level18.json in Resources */,
 				CE31DCD31601EBDD0084C38B /* level24.json in Resources */,
+				CED31C76160247510010A1E6 /* MainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

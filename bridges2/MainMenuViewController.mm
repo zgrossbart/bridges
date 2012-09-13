@@ -42,10 +42,9 @@
 
 -(void) awakeFromNib {
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewiPad" owner:self options:nil];
-        [self viewDidLoad];
-    }
+    [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
+    [self viewDidLoad];
+    
     
 //    [super awakeFromNib];
 //    [self addSubview:self.view];
@@ -61,14 +60,10 @@
     
     [self generateLevelImages];
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [self loadLevelPicker];
-    }
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
     
-    _navItem.title = @"Select a level";
 //    [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
 }
 
@@ -277,16 +272,41 @@
 }
 
 -(IBAction)backToGameTapped:(id)sender {
+    [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
+}
+
+-(IBAction)aboutTapped:(id)sender {
+    [[NSBundle mainBundle] loadNibNamed:@"AboutViewiPad" owner:self options:nil];
+    
+    NSString *urlAddress = @"http://www.google.com";
+    NSURL *url = [NSURL URLWithString:urlAddress];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [_webView loadRequest:requestObj];
+    
+    _aboutNavItem.title = @"The Seven Bridges of Königsberg";
+}
+
+-(IBAction)playTapped:(id)sender {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewiPad" owner:self options:nil];
+        
     } else {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewController" owner:self options:nil];
     }
     
-    [self viewDidLoad];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self loadLevelPicker];
+        [self arrangeButtons];
+    }
+    
+    _navItem.title = @"Select a level";
 }
 
--(IBAction)aboutTapped:(id)sender {
+-(IBAction)backToMainTapped:(id)sender {
+    [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
+}
+
+-(IBAction)creditsTapped:(id)sender {
     [[NSBundle mainBundle] loadNibNamed:@"AboutViewiPad" owner:self options:nil];
     
     NSString *urlAddress = @"http://www.google.com";
