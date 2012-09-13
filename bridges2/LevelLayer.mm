@@ -497,7 +497,7 @@ CGFloat CGPointToDegree(CGPoint point) {
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
-            int x = (object.position.x + (object.contentSize.width / 2)) -
+            int x = (object.position.x + (object.contentSize.width / 3)) -
                 (player.contentSize.width);
             location = ccp(x, object.position.y + object.contentSize.height + 1);
         } else if (_playerStart.y > (object.position.y + object.contentSize.height) - padding) {
@@ -507,7 +507,7 @@ CGFloat CGPointToDegree(CGPoint point) {
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
-            int x = (object.position.x + (object.contentSize.width / 2)) -
+            int x = (object.position.x + (object.contentSize.width / 3)) -
                 (player.contentSize.width);
             location = ccp(x, (object.position.y - 1) -(player.contentSize.height * 2));
         }
@@ -520,8 +520,8 @@ CGFloat CGPointToDegree(CGPoint point) {
                 return;
             }
             int y = (object.position.y + (object.contentSize.height / 2)) -
-                (player.contentSize.height);
-            location = ccp((object.position.x - 1) -(player.contentSize.width * 2), y);
+                (player.contentSize.height / 2);
+            location = ccp((object.position.x - 3) -(player.contentSize.width), y);
         } else if (_playerStart.x + player.contentSize.width < object.position.x + padding) {
             // Then the player is to the left of the bridge
             if (bridge.direction != RIGHT && bridge.direction != NONE) {
@@ -530,8 +530,8 @@ CGFloat CGPointToDegree(CGPoint point) {
                 return;
             }
             int y = (object.position.y + (object.contentSize.height / 2)) -
-                (player.contentSize.height);
-            location = ccp(object.position.x + 1 + object.contentSize.width, y);
+                (player.contentSize.height / 2);
+            location = ccp(object.position.x + 3 + object.contentSize.width, y);
         }
     }
     
@@ -593,7 +593,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     
-    _player.player.position = [self pointOnLine: _playerStart: _player.player.position: _layerMgr.tileSize.width * 1.5];
+    _player.player.position = [self pointOnLine: _playerStart: _player.player.position: _layerMgr.tileSize.width * 1.2];
     
     [_player playerMoveEnded];
     
