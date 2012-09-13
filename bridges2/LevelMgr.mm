@@ -22,6 +22,8 @@
 #import "GLES-Render.h"
 #import "LayerMgr.h"
 #import "ScreenShotLayer.h"
+#import "BridgeColors.h"
+#import "UIImageExtras.h"
 
 #define PTM_RATIO 32.0
 
@@ -69,7 +71,7 @@
     
     self.levelIds = [self sortLevels];
     
-//    NSLog(@"levels ====== %@",self.levels);
+    //    NSLog(@"levels ====== %@",self.levels);
 }
 
 -(NSArray *)sortLevels {
@@ -168,7 +170,7 @@
     
     // Create our sprite sheet and frame cache
     CCSpriteBatchNode *spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprite.png"
-                                                capacity:2] retain];
+                                                                  capacity:2] retain];
     [[CCSpriteFrameCache sharedSpriteFrameCache]
      addSpriteFramesWithFile:@"bridgesprite.plist"];
     
@@ -179,6 +181,12 @@
     ScreenShotLayer *scene = [[ScreenShotLayer alloc] init];
     [scene addChild:spriteSheet];
     
+    CGSize s = CGSizeMake(96, 64);
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        s = CGSizeMake(216, 144);
+    }
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     for (NSString* levelId in self.levelIds) {
         
@@ -186,11 +194,11 @@
         layerMgr.tileSize = CGSizeMake(bounds.size.height / level.tileCount, bounds.size.height / level.tileCount);
         if([paths count] > 0) {
             NSString *documentsDirectory = [paths objectAtIndex:0];
-
+            
             NSString *path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", level.levelId]];
-                
+            
             NSError *error;
-                
+            
             if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
                 NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[path stringByAppendingPathComponent:path] error:&error];
                 NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
@@ -211,8 +219,16 @@
         [scene visit];
         [renderer end];
         
-        BOOL success = [renderer saveToFile: [NSString stringWithFormat:@"level%@.png", level.levelId] format:kCCImageFormatPNG];
+        NSString *fileName = [NSString stringWithFormat:@"level%@.png", level.levelId];
         
+        BOOL success = [renderer saveToFile: fileName format:kCCImageFormatPNG];
+        
+        UIImage *image = [UIImage imageWithContentsOfFile:fileName];
+        [image imageByScalingAndCroppingForSize:s];
+        [UIImagePNGRepresentation(image) writeToFile:fileName atomically:YES];
+        
+        [image release];
+                
         [layerMgr removeAll];
         
         if (!success) {

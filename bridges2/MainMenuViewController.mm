@@ -20,15 +20,19 @@
 #import "LevelMgr.h"
 #import "UIImageExtras.h"
 
-@interface MainMenuViewController()
+@interface MainMenuViewController() {
+    
+}
 
 @property (readwrite, retain) NSMutableArray *buttons;
+@property (retain) UIImage *checkImage;
 
 @end
 
 @implementation MainMenuViewController
 
 @synthesize rootMenuViewController = _rootMenuViewController;
+@synthesize checkImage = _checkImage;
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,13 +50,16 @@
     [self viewDidLoad];
     
     
-//    [super awakeFromNib];
-//    [self addSubview:self.view];
+    //    [super awakeFromNib];
+    //    [self addSubview:self.view];
 }
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    if (_checkImage == nil) {
+        _checkImage = [UIImage imageNamed:@"green_check.png"];
+    }
     
     self.buttons = [NSMutableArray array];
     
@@ -64,15 +71,13 @@
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
     
-//    [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
+    //    [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
 }
 
 -(void)loadLevelPicker {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     if([paths count] > 0) {
         NSString *documentsDirectory = [paths objectAtIndex:0];
-        
-        CGSize s = CGSizeMake(216, 144);
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
@@ -83,7 +88,7 @@
             
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             [self.buttons addObject:button];
-            [button setBackgroundImage:[image imageByScalingAndCroppingForSize:s] forState:UIControlStateNormal];
+            [button setBackgroundImage:image forState:UIControlStateNormal];
             [button setTitle:level.name forState:UIControlStateNormal];
             [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [button.layer setCornerRadius:8.0f];
@@ -150,7 +155,7 @@
     
     [self.buttons release];
     self.buttons = nil;
-
+    
     [_webView release];
     _webView = nil;
     [_aboutNavItem release];
@@ -182,6 +187,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:_checkImage];
+        cell.accessoryView = imageView;
+        //[imageView release];
     }
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -189,17 +198,17 @@
     if([paths count] > 0) {
         NSString *documentsDirectory = [paths objectAtIndex:0];
         
-        CGSize s = CGSizeMake(96, 64);
         UIImage *image = [UIImage imageWithContentsOfFile:[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", levelId]]];
-        cell.imageView.image = [image imageByScalingAndCroppingForSize:s];
+        cell.imageView.image = image;
         
     }
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", levelId]]) {
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"green_check.png"]];
-        cell.accessoryView = imageView;
-        [imageView release];
+        
+        [((UIImageView*) cell.accessoryView) setImage:_checkImage];
+    } else {
+        ((UIImageView*) cell.accessoryView).image = nil;
     }
     
     cell.textLabel.text = ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).name;
@@ -229,7 +238,7 @@
                           fminf(screenRect.size.width, screenRect.size.height));
     
     [[LevelMgr getLevelMgr] drawLevels:r];
-
+    
 }
 
 -(void)arrangeButtons {
@@ -325,7 +334,9 @@
     [self.buttons release];
     self.buttons = nil;
     
-//    [_view release];
+    [_checkImage release];
+    
+    //    [_view release];
     [_navItem release];
     [_scrollView release];
     [_mainTable release];
