@@ -21,6 +21,7 @@
 #import "UIImageExtras.h"
 
 @interface MainMenuViewController() {
+    bool _hasLoadedPicker;
     
 }
 
@@ -75,6 +76,10 @@
 }
 
 -(void)loadLevelPicker {
+    if (_hasLoadedPicker) {
+        [self.buttons removeAllObjects];
+    }
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     if([paths count] > 0) {
         NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -106,10 +111,10 @@
             button.tag = i;
             
             if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", levelId]]) {
-                UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"green_check.png"]];
+                UIImageView *imageView = [[UIImageView alloc] initWithImage:_checkImage];
                 imageView.contentMode = UIViewContentModeCenter;
                 imageView.backgroundColor = [UIColor clearColor];
-                imageView.frame = CGRectMake(button.frame.size.width - 25, 5, 20, 20);
+                imageView.frame = CGRectMake(205, 5, 20, 20);
                 
                 [button addSubview:imageView];
                 [_scrollView addSubview:button];
@@ -122,6 +127,8 @@
             button.titleLabel.frame = CGRectMake(2, 2, button.titleLabel.frame.size.width, button.titleLabel.frame.size.height);
         }
     }
+    
+    _hasLoadedPicker = true;
 }
 
 -(void)levelSelected:(id)sender {
@@ -263,6 +270,8 @@
             column++;
         }
     }
+    
+    [_scrollView setNeedsDisplay];
     
 }
 
