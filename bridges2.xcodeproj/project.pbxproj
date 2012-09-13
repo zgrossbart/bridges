@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE31DCD11601E3790084C38B /* level18.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD01601E3790084C38B /* level18.json */; };
 		CE39AC8D15FB9E67005607B0 /* bridgesprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC8B15FB9E67005607B0 /* bridgesprite.plist */; };
 		CE39AC8E15FB9E67005607B0 /* bridgesprite.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC8C15FB9E67005607B0 /* bridgesprite.png */; };
 		CE39AC9315FBA146005607B0 /* RootMenuViewControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC9115FBA145005607B0 /* RootMenuViewControlleriPad.xib */; };
@@ -226,6 +227,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE31DCD01601E3790084C38B /* level18.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level18.json; sourceTree = "<group>"; };
 		CE39AC8B15FB9E67005607B0 /* bridgesprite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bridgesprite.plist; sourceTree = "<group>"; };
 		CE39AC8C15FB9E67005607B0 /* bridgesprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridgesprite.png; sourceTree = "<group>"; };
 		CE39AC9115FBA145005607B0 /* RootMenuViewControlleriPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootMenuViewControlleriPad.xib; sourceTree = "<group>"; };
@@ -1261,8 +1263,9 @@
 				CEAE47F715F3894400898698 /* level7.json */,
 				CEEFF6F115F3A9CB0095649C /* level8.json */,
 				CED0302F15FB724A008E7EA4 /* level9.json */,
-				CECE689315F75AE60042A7DF /* level17.json */,
 				CED0704315FF7A5E0050CA9D /* level16.json */,
+				CECE689315F75AE60042A7DF /* level17.json */,
+				CE31DCD01601E3790084C38B /* level18.json */,
 				CECE689C15F76E120042A7DF /* level20.json */,
 			);
 			path = Levels;
@@ -1426,6 +1429,7 @@
 				CECA1DFA15FCC37A0052A58E /* MainMenuViewiPad.xib in Resources */,
 				CED0704415FF7A5E0050CA9D /* level16.json in Resources */,
 				CEA3D478160120610060F511 /* AboutViewiPad.xib in Resources */,
+				CE31DCD11601E3790084C38B /* level18.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
