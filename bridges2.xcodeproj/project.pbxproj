@@ -193,6 +193,7 @@
 		CEC65C0515F4C1CD0010EAC3 /* ScreenShotLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */; };
 		CEC65C1115F4D0320010EAC3 /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */; };
 		CEC8828416027431007DC0EA /* level10.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC8828316027431007DC0EA /* level10.json */; };
+		CEC88287160276B1007DC0EA /* level11.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC88286160276B1007DC0EA /* level11.json */; };
 		CECA1DFA15FCC37A0052A58E /* MainMenuViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA1DF915FCC37A0052A58E /* MainMenuViewiPad.xib */; };
 		CECA1E0315FD21240052A58E /* RiverNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CECA1E0215FD21240052A58E /* RiverNode.m */; };
 		CECDC54815F6C54000D266FD /* green_check.png in Resources */ = {isa = PBXBuildFile; fileRef = CECDC54715F6C54000D266FD /* green_check.png */; };
@@ -605,6 +606,7 @@
 		CEC65C0F15F4D0320010EAC3 /* UIImageExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtras.h; sourceTree = "<group>"; };
 		CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtras.m; sourceTree = "<group>"; };
 		CEC8828316027431007DC0EA /* level10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level10.json; sourceTree = "<group>"; };
+		CEC88286160276B1007DC0EA /* level11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level11.json; sourceTree = "<group>"; };
 		CECA1DF915FCC37A0052A58E /* MainMenuViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewiPad.xib; sourceTree = "<group>"; };
 		CECA1E0115FD21240052A58E /* RiverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiverNode.h; sourceTree = "<group>"; };
 		CECA1E0215FD21240052A58E /* RiverNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiverNode.m; sourceTree = "<group>"; };
@@ -1270,6 +1272,7 @@
 				CEEFF6F115F3A9CB0095649C /* level8.json */,
 				CED0302F15FB724A008E7EA4 /* level9.json */,
 				CEC8828316027431007DC0EA /* level10.json */,
+				CEC88286160276B1007DC0EA /* level11.json */,
 				CED0704315FF7A5E0050CA9D /* level16.json */,
 				CECE689315F75AE60042A7DF /* level17.json */,
 				CE31DCD01601E3790084C38B /* level18.json */,
@@ -1442,6 +1445,7 @@
 				CE31DCD31601EBDD0084C38B /* level24.json in Resources */,
 				CED31C76160247510010A1E6 /* MainView.xib in Resources */,
 				CEC8828416027431007DC0EA /* level10.json in Resources */,
+				CEC88287160276B1007DC0EA /* level11.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
