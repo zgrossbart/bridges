@@ -175,6 +175,7 @@
      addSpriteFramesWithFile:@"bridgesprite.plist"];
     
     LayerMgr *layerMgr = [[LayerMgr alloc] initWithSpriteSheet:spriteSheet:world];
+    layerMgr.addBoxes = false;
     
     CCRenderTexture *renderer	= [CCRenderTexture renderTextureWithWidth:bounds.size.width height:bounds.size.height];
     
@@ -243,6 +244,8 @@
     
     [spriteSheet release];
     [scene dealloc];
+    
+    layerMgr.addBoxes = true;
     
 }
 

@@ -90,18 +90,26 @@
  */
 -(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite: (bool) bullet;
 
-/*
+/**
  * Remove all the sprites from the sprite sheet.  This is called when reloading a
  * level or clearing out the previous level to load a new one.
  */
 -(void)removeAll;
 
-/*
+/**
  * This property shows holds the size of a tile.  Each game board is 28
  * tiles tall and all levels specify coordinates using tiles instead of
  * pixels or points.  The tiles change size depending on the size of the
  * screen.
  */
 @property (readwrite) CGSize tileSize;
+
+/**
+ * This property determines if the layer manager will draw boxes around each
+ * sprite or not.  The boxes are what Box2d uses to do collision detection.
+ * We need boxes when we're playing the level, but we don't want them when 
+ * we're just rendering the layer screen shot.
+ */
+@property (readwrite) bool addBoxes;
 
 @end

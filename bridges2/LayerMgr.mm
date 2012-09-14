@@ -33,18 +33,22 @@
 -(id) initWithSpriteSheet:(CCSpriteBatchNode*) spriteSheet:(b2World*) world {
     _sheet = spriteSheet;
     _world = world;
+    self.addBoxes = true;
     return self;
 }
 
 -(b2Body*)addChildToSheet:(CCSprite*) sprite {
-    b2Body *body = [self addBoxBodyForSprite:sprite];
-    [_sheet addChild:sprite];
-    
-    return body;
+    return [self addChildToSheet:sprite :FALSE];
 }
 
 -(b2Body*)addChildToSheet:(CCSprite*) sprite: (bool) bullet {
-    b2Body *body = [self addBoxBodyForSprite:sprite:YES];
+    
+    b2Body *body = nil;
+    
+    if (self.addBoxes) {
+        body = [self addBoxBodyForSprite:sprite:YES];
+    }
+    
     [_sheet addChild:sprite];
     
     return body;
