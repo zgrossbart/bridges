@@ -45,11 +45,11 @@
 -(id) initWithJson:(NSString*) jsonString: (NSDate*) date;
 {
     if( (self=[super init] )) {
-        self.bridges = [[NSMutableArray alloc] init];
-        self.bridge4s = [[NSMutableArray alloc] init];
-        self.rivers = [[NSMutableArray alloc] init];
-        self.houses = [[NSMutableArray alloc] init];
-        self.labels = [[NSMutableArray alloc] init];
+        self.bridges = [NSMutableArray arrayWithCapacity:10];
+        self.bridge4s = [NSMutableArray arrayWithCapacity:3];
+        self.rivers = [NSMutableArray arrayWithCapacity:25];
+        self.houses = [NSMutableArray arrayWithCapacity:10];
+        self.labels = [NSMutableArray arrayWithCapacity:5];
         self.date = date;
         
         self.tileCount = TILE_COUNT;
@@ -344,6 +344,7 @@
     RiverNode *node = [[RiverNode alloc] initWithFrame:CGRectMake(start.x, start.y, end.x - start.x, end.y - start.y): rivers];
     
     [self.rivers addObject:node];
+    [node release];
     
 }
 
@@ -413,6 +414,7 @@
     [bridgeNode setBridgePosition:startPos];
     
     [self.bridge4s addObject:bridgeNode];
+    [bridgeNode release];
     
     return bridgeNode;
     
@@ -428,6 +430,7 @@
     [bridgeNode setBridgePosition:startPos];
     
     [self.bridges addObject:bridgeNode];
+    [bridgeNode release];
     
     return bridgeNode;
     
@@ -514,6 +517,7 @@
     [houseNode setHousePosition:startPos];
     
     [self.houses addObject:houseNode];
+    [houseNode release];
     
     return houseNode;
     
