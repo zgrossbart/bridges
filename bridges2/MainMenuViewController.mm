@@ -199,15 +199,20 @@
         cell.accessoryView = imageView;
         //[imageView release];
     }
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    
-    if([paths count] > 0) {
-        NSString *documentsDirectory = [paths objectAtIndex:0];
+
+    if (((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).screenshot == nil) {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         
-        UIImage *image = [UIImage imageWithContentsOfFile:[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", levelId]]];
-        cell.imageView.image = image;
-        
+        if([paths count] > 0) {
+            NSString *documentsDirectory = [paths objectAtIndex:0];
+            
+            UIImage *image = [UIImage imageWithContentsOfFile:[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", levelId]]];
+            ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).screenshot = image;
+            cell.imageView.image = image;
+            
+        }
+    } else {
+        cell.imageView.image = ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).screenshot;
     }
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

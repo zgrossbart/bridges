@@ -121,6 +121,11 @@
  */
 @property (readonly) CGPoint playerPos;
 
+/**
+ * The screen shot image of this level used in the menu screens
+ */
+@property (readwrite, retain) UIImage *screenshot;
+
 @end
 
 
