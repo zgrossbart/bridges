@@ -26,10 +26,7 @@
  * to win the level.
  */
 @interface HouseNode : NSObject <GameNode> {
-@private
-    int _tag;
-    UILabel *_label;
-    
+
 }
 
 /**

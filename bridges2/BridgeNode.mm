@@ -25,6 +25,7 @@
 @property (nonatomic, assign, getter=isCrossed, readwrite) bool crossed;
 @property (nonatomic, assign, readwrite) int color;
 @property (assign, readwrite) LayerMgr *layerMgr;
+@property (readwrite, retain) UILabel *label;
 @property (nonatomic, assign, readwrite) int tag;
 @property (nonatomic, assign, readwrite) int coins;
 @property (readwrite) int direction;

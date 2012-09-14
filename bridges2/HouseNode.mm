@@ -24,6 +24,7 @@
 @property (nonatomic, assign, getter=isVisited, readwrite) bool visited;
 @property (nonatomic, assign, readwrite) int color;
 @property (readwrite, assign) LayerMgr *layerMgr;
+@property (readwrite, retain) UILabel *label;
 @property (nonatomic, assign, readwrite) int tag;
 @property (nonatomic, assign, readwrite) int coins;
 @end

@@ -344,7 +344,6 @@
     RiverNode *node = [[RiverNode alloc] initWithFrame:CGRectMake(start.x, start.y, end.x - start.x, end.y - start.y): rivers];
     
     [self.rivers addObject:node];
-    [node release];
     
 }
 
@@ -414,7 +413,6 @@
     [bridgeNode setBridgePosition:startPos];
     
     [self.bridge4s addObject:bridgeNode];
-    [bridgeNode release];
     
     return bridgeNode;
     
@@ -430,7 +428,6 @@
     [bridgeNode setBridgePosition:startPos];
     
     [self.bridges addObject:bridgeNode];
-    [bridgeNode release];
     
     return bridgeNode;
     
@@ -517,7 +514,6 @@
     [houseNode setHousePosition:startPos];
     
     [self.houses addObject:houseNode];
-    [houseNode release];
     
     return houseNode;
     

@@ -167,8 +167,10 @@
     [undo.node undo];
     [self.player updateColor:undo.color];
     self.player.player.position = undo.pos;
-    self.player.coins = undo.coins;
-    self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
+    if (self.currentLevel.hasCoins) {
+        self.player.coins = undo.coins;
+        self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
+    }
     
     [self.undoStack removeLastObject];
     

@@ -27,10 +27,7 @@
 @interface BridgeNode : NSObject <GameNode> {
     
     @private
-    int _tag;
     bool _vertical;
-    UILabel *_label;
-    
 }
 
 /**
