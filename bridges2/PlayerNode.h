@@ -82,10 +82,12 @@
  */
 -(void)playerMoveEnded;
 
+-(b2Body*)getSpriteBody;
+
 /** 
  * The player sprite representing this node.
  */
-@property (readonly) CCSprite *player;
+@property (readonly, retain) CCSprite *player;
 
 /** 
  * The current color of this player.

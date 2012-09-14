@@ -79,10 +79,10 @@
                          sprite.contentSize.height/PTM_RATIO/2);
     b2FixtureDef spriteShapeDef;
     spriteShapeDef.shape = &spriteShape;
-    spriteShapeDef.density = 9999;
+    spriteShapeDef.density = 1;
     spriteShapeDef.restitution = 1;
     spriteShapeDef.friction = 1;
-    spriteShapeDef.isSensor = false;
+    spriteShapeDef.isSensor = true;
     spriteBody->CreateFixture(&spriteShapeDef);
 
     return spriteBody;

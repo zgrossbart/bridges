@@ -31,8 +31,8 @@
     bool _reportedWon;
     CGPoint _playerStart;
 }
-    @property (readwrite, retain) NSMutableArray *undoStack;
-    @property (nonatomic, retain) PlayerNode *player;
+@property (readwrite, retain) NSMutableArray *undoStack;
+@property (nonatomic, retain) PlayerNode *player;
 @end
 
 @implementation LevelLayer
@@ -96,8 +96,8 @@
     
 }
 
--(void)readLevel {    
- //   [level.rivers makeObjectsPerformSelector:@selector(addSprite:)];
+-(void)readLevel {
+    //   [level.rivers makeObjectsPerformSelector:@selector(addSprite:)];
     
     CGSize s = [[CCDirector sharedDirector] winSize];
     _layerMgr.tileSize = CGSizeMake(s.height / self.currentLevel.tileCount, s.height / self.currentLevel.tileCount);
@@ -116,8 +116,7 @@
         self.coinImage.hidden = YES;
     }
     
-    
-    //[level dealloc];
+    [self updateAllBoxBodies];
 }
 
 -(void)reset {
@@ -147,8 +146,8 @@
     
     /*
      * The first time we run we don't have the window dimensions
-     * so we can't draw yet and we wait to add the level until the 
-     * first draw.  After that we have the dimensions so we can 
+     * so we can't draw yet and we wait to add the level until the
+     * first draw.  After that we have the dimensions so we can
      * just set the new level.
      */
     if (_hasInit) {
@@ -208,13 +207,28 @@
          * the window until that happens.
          */
         [self readLevel];
-    
-       // [self addRivers];
+        
+        // [self addRivers];
         
         _hasInit = true;
     }
     
-//     _world->DrawDebugData();
+//    _world->DrawDebugData();
+}
+
+-(void)updateAllBoxBodies {
+    
+    for(b2Body *b = _world->GetBodyList(); b; b=b->GetNext()) {
+        if (b->GetUserData() != NULL) {
+            CCSprite *sprite = (CCSprite *)b->GetUserData();
+            
+            b2Vec2 b2Position = b2Vec2(sprite.position.x/PTM_RATIO,
+                                       sprite.position.y/PTM_RATIO);
+            float32 b2Angle = -1 * CC_DEGREES_TO_RADIANS(sprite.rotation);
+            
+            b->SetTransform(b2Position, b2Angle);
+        }
+    }
 }
 
 
@@ -228,17 +242,33 @@
     }
     
     _world->Step(dt, 10, 10);
+    
+    /*
+     * We need to update the box for each sprite on each frame
+     * so we can still detect collisions, but if we update all 
+     * of them the player moves really slowly on more complex 
+     * levels.  
+     *
+     * The solution is to only update the player box since all of
+     * the other objects are stationary and don't need an update.
+     */    
     for(b2Body *b = _world->GetBodyList(); b; b=b->GetNext()) {
         if (b->GetUserData() != NULL) {
             CCSprite *sprite = (CCSprite *)b->GetUserData();
+            
+            if (sprite != self.player.player) {
+                continue;
+            }
             
             b2Vec2 b2Position = b2Vec2(sprite.position.x/PTM_RATIO,
                                        sprite.position.y/PTM_RATIO);
             float32 b2Angle = -1 * CC_DEGREES_TO_RADIANS(sprite.rotation);
             
             b->SetTransform(b2Position, b2Angle);
+            break;
         }
     }
+    
     
     //    std::vector<b2Body *>toDestroy;
     std::vector<MyContact>::iterator pos;
@@ -248,7 +278,7 @@
         
         b2Body *bodyA = contact.fixtureA->GetBody();
         b2Body *bodyB = contact.fixtureB->GetBody();
-        if (bodyA->GetUserData() != NULL && bodyB->GetUserData() != NULL) {            
+        if (bodyA->GetUserData() != NULL && bodyB->GetUserData() != NULL) {
             CCSprite *spriteA = (CCSprite *) bodyA->GetUserData();
             CCSprite *spriteB = (CCSprite *) bodyB->GetUserData();
             
@@ -311,7 +341,7 @@
     HouseNode *node = [self findHouse:house];
     
     if (node.isVisited) {
-        /* 
+        /*
          * If the house is visited then there's no reason to bounce
          * off of it.
          */
@@ -396,10 +426,10 @@
          */
         return;
     }
-        
+    
     CGPoint location;
     
-//    printf("current bridge (%f, %f)\n", _currentBridge.bridge.position.x, _currentBridge.bridge.position.y);
+    //    printf("current bridge (%f, %f)\n", _currentBridge.bridge.position.x, _currentBridge.bridge.position.y);
     
     if (exitDir == RIGHT) {
         location = ccp(_currentBridge.bridge.position.x + (_currentBridge.bridge.contentSize.width / 2) + (_player.player.contentSize.width), _currentBridge.bridge.position.y);
@@ -481,9 +511,9 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     int padding = bridge.bridge.contentSize.width / 2;
     
-//    printf("player (%f, %f)\n", player.position.x, player.position.y);
-//    printf("bridge (%f, %f)\n", object.position.x, object.position.y);
-//    printf("vertical: %i\n", bridge.vertical);
+    //    printf("player (%f, %f)\n", player.position.x, player.position.y);
+    //    printf("bridge (%f, %f)\n", object.position.x, object.position.y);
+    //    printf("vertical: %i\n", bridge.vertical);
     
     if (bridge.vertical) {
         if (_playerStart.y + player.contentSize.height < object.position.y + padding) {
@@ -494,8 +524,8 @@ CGFloat CGPointToDegree(CGPoint point) {
                 return;
             }
             int x = (object.position.x + (object.contentSize.width / 3)) -
-                (player.contentSize.width);
-            location = ccp(x, object.position.y + object.contentSize.height + 1);
+            (player.contentSize.width);
+            location = ccp(x, object.position.y + object.contentSize.height + 5);
         } else if (_playerStart.y > (object.position.y + object.contentSize.height) - padding) {
             // Then the player is above the bridge
             if (bridge.direction != DOWN && bridge.direction != NONE) {
@@ -504,8 +534,8 @@ CGFloat CGPointToDegree(CGPoint point) {
                 return;
             }
             int x = (object.position.x + (object.contentSize.width / 3)) -
-                (player.contentSize.width);
-            location = ccp(x, (object.position.y - 1) -(player.contentSize.height * 2));
+            (player.contentSize.width);
+            location = ccp(x, (object.position.y - 5) -(player.contentSize.height * 2));
         }
     } else {
         if (_playerStart.x > (object.position.x + object.contentSize.width) - padding) {
@@ -516,7 +546,7 @@ CGFloat CGPointToDegree(CGPoint point) {
                 return;
             }
             int y = (object.position.y + (object.contentSize.height / 2)) -
-                (player.contentSize.height / 2);
+            (player.contentSize.height / 2);
             location = ccp((object.position.x - 3) -(player.contentSize.width), y);
         } else if (_playerStart.x + player.contentSize.width < object.position.x + padding) {
             // Then the player is to the left of the bridge
@@ -526,16 +556,16 @@ CGFloat CGPointToDegree(CGPoint point) {
                 return;
             }
             int y = (object.position.y + (object.contentSize.height / 2)) -
-                (player.contentSize.height / 2);
+            (player.contentSize.height / 2);
             location = ccp(object.position.x + 3 + object.contentSize.width, y);
         }
     }
     
     /*if (location == NULL) {
-        printf("player (%f, %f)\n", player.position.x, player.position.y);
-        printf("river (%f, %f)\n", object.position.x, object.position.y);
-        printf("This should never happen\n");
-    }*/
+     printf("player (%f, %f)\n", player.position.x, player.position.y);
+     printf("river (%f, %f)\n", object.position.x, object.position.y);
+     printf("This should never happen\n");
+     }*/
     
     [mgr removeAllActionsFromTarget:player];
     [mgr resumeTarget:player];
@@ -570,10 +600,10 @@ CGFloat CGPointToDegree(CGPoint point) {
  * so they aren't overlapping anymore.
  *
  * This method happens as the result of a colision.  I was hoping
- * that we'd be notified as soon as the colission happened, but 
- * instead the notification happens a variable time after the 
- * colision and while the objects are intersecting.  That means 
- * we can't use the position of the objects to determine their 
+ * that we'd be notified as soon as the colission happened, but
+ * instead the notification happens a variable time after the
+ * colision and while the objects are intersecting.  That means
+ * we can't use the position of the objects to determine their
  * direction and we have to use the original starting position instead.
  */
 -(void)bumpObject:(CCSprite *) player:(CCSprite*) object {
@@ -613,7 +643,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     double x3 = p2.x - distance * cos(rads);
     double y3 = p2.y - distance * sin(rads);
-        
+    
     if ([LayerMgr distanceBetweenTwoPoints:p1 :p2] == 0) {
         return p1;
     }
@@ -648,7 +678,7 @@ CGFloat CGPointToDegree(CGPoint point) {
 -(void)spawnPlayer:(int) x: (int) y {
     
     _player = [[PlayerNode alloc] initWithColor:BLACK:_layerMgr];
-    _player.player.position = ccp(x, y);    
+    _player.player.position = ccp(x, y);
 }
 
 -(bool)inObject:(CGPoint) p {
@@ -704,8 +734,8 @@ CGFloat CGPointToDegree(CGPoint point) {
         
         _playerStart = _player.player.position;
         [_player moveTo:location];
-//        [_player.player runAction:
-//         [CCMoveTo actionWithDuration:distance/velocity position:ccp(location.x,location.y)]];
+        //        [_player.player runAction:
+        //         [CCMoveTo actionWithDuration:distance/velocity position:ccp(location.x,location.y)]];
     }
     
 }
@@ -729,7 +759,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     [self.view release];
     [self.controller release];
     
-//    [self.currentLevel dealloc];
+    //    [self.currentLevel dealloc];
     
     [super dealloc];
 }

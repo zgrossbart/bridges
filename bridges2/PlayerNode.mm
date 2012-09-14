@@ -20,7 +20,7 @@
 #import "BridgeColors.h"
 
 @interface PlayerNode()
-@property (readwrite) CCSprite *player;
+@property (readwrite, retain) CCSprite *player;
 @property (nonatomic, assign, readwrite) int color;
 @property (nonatomic, retain) CCAction *walkAction;
 @property (nonatomic, retain) CCAction *moveAction;
@@ -63,6 +63,10 @@
     }
     
     return self;
+}
+
+-(b2Body*)getSpriteBody {
+    return _spriteBody;
 }
 
 -(void)playerMoveEnded {
