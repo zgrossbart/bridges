@@ -86,9 +86,15 @@
 
 /** 
  * Refresh the current level by resetting all nodes and restoring
- * the level state to the original state in the leve definition.
+ * the level state to the original state in the level definition.
  */
 -(void)refresh;
+
+/**
+ * Reset the level layer by removing all objects so it's ready to 
+ * show a new level.
+ */
+-(void)reset;
 
 /** 
  * Holds the current level this layer is working work
