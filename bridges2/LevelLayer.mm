@@ -133,7 +133,7 @@
 }
 
 -(void)setLevel:(Level*) level {
-    if (self.currentLevel && [level.levelId isEqualToString:self.currentLevel.levelId]) {
+    if (self.currentLevel && [level.levelId isEqualToString:self.currentLevel.levelId] && !self.currentLevel.hasWon) {
         /*
          * If we already have that layer we just ignore it
          */

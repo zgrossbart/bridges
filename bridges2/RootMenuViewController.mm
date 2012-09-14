@@ -125,7 +125,6 @@
 }
 
 -(IBAction)goHomeTapped:(id)sender {
-    [_layer reset];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
