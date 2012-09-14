@@ -276,6 +276,14 @@
         }
     }
     
+    //_scrollView.frame = self.view.frame;
+    CGSize size = _scrollView.contentSize;
+    size.width = CGRectGetWidth(_scrollView.frame);
+    _scrollView.contentSize = size;
+    _scrollView.alwaysBounceHorizontal = NO;
+    
+    _scrollView.contentSize = CGSizeMake(self.view.frame.size.width - 25, row*(s.height + 20)+10);
+    
     [_scrollView setNeedsDisplay];
     
 }
