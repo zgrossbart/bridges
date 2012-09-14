@@ -222,19 +222,12 @@
         
         NSString *fileName = [NSString stringWithFormat:@"level%@.png", level.levelId];
         
-        BOOL success = [renderer saveToFile: fileName format:kCCImageFormatPNG];
-        
-        UIImage *image = [UIImage imageWithContentsOfFile:fileName];
+        UIImage *image = [renderer getUIImage];
         [image imageByScalingAndCroppingForSize:s];
         [UIImagePNGRepresentation(image) writeToFile:fileName atomically:YES];
-        
-//        [image release];
+        level.screenshot = image;
                 
         [layerMgr removeAll];
-        
-        if (!success) {
-            [NSException raise:@"Unable to save level image" format:@"Unable to save image for %@", [NSString stringWithFormat:@"level%@.png", level.levelId]];
-        }
         
     }
     
