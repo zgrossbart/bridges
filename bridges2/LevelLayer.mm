@@ -125,8 +125,7 @@
     [self.currentLevel removeSprites: _layerMgr: self.view];
     
     [self.undoStack removeAllObjects];
-    UIImage *undoD = [UIImage imageNamed:@"left_arrow_d.png"];
-    [_undoBtn setImage:undoD forState:UIControlStateNormal];
+    _undoBtn.enabled = NO;
     
     [_player dealloc];
     _player = nil;
@@ -174,11 +173,9 @@
     [self.undoStack removeLastObject];
     
     if (self.undoStack.count == 0) {
-        UIImage *undoD = [UIImage imageNamed:@"left_arrow_d.png"];
-        [_undoBtn setImage:undoD forState:UIControlStateNormal];
+        _undoBtn.enabled = NO;
     } else {
-        UIImage *undoD = [UIImage imageNamed:@"left_arrow.png"];
-        [_undoBtn setImage:undoD forState:UIControlStateNormal];
+        _undoBtn.enabled = YES;
     }
     
 }
@@ -322,8 +319,7 @@
     if (_canVisit && ![node isVisited]) {
         if (node.color == NONE || _player.color == node.color) {
             [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins]];
-            UIImage *undoD = [UIImage imageNamed:@"left_arrow.png"];
-            [_undoBtn setImage:undoD forState:UIControlStateNormal];
+            _undoBtn.enabled = YES;
             if (node.coins > 0) {
                 _player.coins++;
                 self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
@@ -463,7 +459,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     //    _player.position = location;
     
     [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color: _player.coins]];
-    [_undoBtn setImage:[UIImage imageNamed:@"left_arrow.png"] forState:UIControlStateNormal];
+    _undoBtn.enabled = YES;
     
     [_player moveTo: ccp(location.x, location.y):true];
     
@@ -547,8 +543,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     //    _player.position = location;
     
     [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color: _player.coins]];
-    UIImage *undoD = [UIImage imageNamed:@"left_arrow.png"];
-    [_undoBtn setImage:undoD forState:UIControlStateNormal];
+    _undoBtn.enabled = YES;
     
     [_player moveTo: ccp(location.x, location.y):true];
     

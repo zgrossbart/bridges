@@ -119,8 +119,9 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
 
-    UIImage *undoD = [UIImage imageNamed:@"left_arrow_d.png"];
-    [_undoBtn setImage:undoD forState:UIControlStateNormal];
+    [_undoBtn setImage:[UIImage imageNamed:@"left_arrow.png"] forState:UIControlStateNormal];
+    [_undoBtn setImage:[UIImage imageNamed:@"left_arrow_d.png"] forState:UIControlStateDisabled];
+    _undoBtn.enabled = NO;
 }
 
 -(IBAction)goHomeTapped:(id)sender {
