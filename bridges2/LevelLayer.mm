@@ -83,7 +83,7 @@
          addSpriteFramesWithFile:@"bridgesprite.plist"];
         [self addChild:_spriteSheet];
         
-        self.undoStack = [[NSMutableArray alloc] init];
+        self.undoStack = [NSMutableArray arrayWithCapacity:10];
         _canVisit = true;
         
         _layerMgr = [[LayerMgr alloc] initWithSpriteSheet:_spriteSheet:_world];
@@ -464,8 +464,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     //    _player.position = location;
     
     [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color: _player.coins]];
-    UIImage *undoD = [UIImage imageNamed:@"left_arrow.png"];
-    [_undoBtn setImage:undoD forState:UIControlStateNormal];
+    [_undoBtn setImage:[UIImage imageNamed:@"left_arrow.png"] forState:UIControlStateNormal];
     
     [_player moveTo: ccp(location.x, location.y):true];
     

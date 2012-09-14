@@ -45,11 +45,11 @@
 						<string key="NSFrame">{{0, 45}, {1004, 723}}</string>
 						<reference key="NSSuperview" ref="289157864"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<bool key="IBUIPagingEnabled">YES</bool>
 					</object>
 					<object class="IBUINavigationBar" id="90964483">
 						<reference key="NSNextResponder" ref="289157864"/>

@@ -104,7 +104,7 @@
             frame = [cache spriteFrameByName:@"bridge_4_down.png"];
         } else if (dir == RIGHT) {
             frame = [cache spriteFrameByName:@"bridge_4_right.png"];
-        } else if (dir == LEFT) {
+        } else {
             frame = [cache spriteFrameByName:@"bridge_4_left.png"];
         }
         
@@ -118,7 +118,7 @@
 
 -(void)dealloc {
     
-    [self.bridge dealloc];
+    [_bridge dealloc];
     [super dealloc];
 }
 

@@ -111,7 +111,7 @@
         _world->DestroyBody(spriteBody);
     }
     
-    [_sheet removeChild:sprite cleanup:YES];
+    [_sheet removeChild:sprite cleanup:NO];
     
 }
 

@@ -28,7 +28,7 @@
 #define PTM_RATIO 32.0
 
 @interface LevelMgr()
-@property (readwrite) NSMutableDictionary *levels;
+@property (readwrite, retain) NSMutableDictionary *levels;
 @property (readwrite,copy) NSArray *levelIds;
 @property (readwrite) CCGLView *glView;
 @end
@@ -42,7 +42,7 @@
     {
         if (!levelMgr) {
             levelMgr = [[LevelMgr alloc] init];
-            levelMgr.levels = [[NSMutableDictionary alloc] init];
+            levelMgr.levels = [NSMutableDictionary dictionaryWithCapacity:25];
             
             [levelMgr loadLevels];
         }
@@ -227,7 +227,7 @@
         [image imageByScalingAndCroppingForSize:s];
         [UIImagePNGRepresentation(image) writeToFile:fileName atomically:YES];
         
-        [image release];
+//        [image release];
                 
         [layerMgr removeAll];
         
@@ -238,6 +238,7 @@
     }
     
     delete world;
+    world = nil;
     delete debugDraw;
     
     [spriteSheet release];

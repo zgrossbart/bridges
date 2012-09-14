@@ -142,7 +142,7 @@
         [_label dealloc];
     }
     
-    [self.house dealloc];
+    [_house dealloc];
     [super dealloc];
 }
 

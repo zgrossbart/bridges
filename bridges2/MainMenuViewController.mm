@@ -62,7 +62,7 @@
         _checkImage = [UIImage imageNamed:@"green_check.png"];
     }
     
-    self.buttons = [NSMutableArray array];
+    self.buttons = [NSMutableArray arrayWithCapacity:25];
     
     [LevelMgr getLevelMgr];
     
@@ -160,7 +160,7 @@
     [_resetBtn release];
     _resetBtn = nil;
     
-    [self.buttons release];
+//    [self.buttons release];
     self.buttons = nil;
     
     [_webView release];
@@ -340,7 +340,7 @@
     [_rootMenuViewController release];
     _rootMenuViewController = nil;
     
-    [self.buttons release];
+//    [self.buttons release];
     self.buttons = nil;
     
     [_checkImage release];

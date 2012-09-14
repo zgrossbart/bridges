@@ -230,7 +230,7 @@
         [_label dealloc];
     }
     
-    [self.bridge dealloc];
+    [_bridge dealloc];
     [super dealloc];
 }
 

@@ -28,7 +28,6 @@
 @interface HouseNode : NSObject <GameNode> {
 @private
     int _tag;
-    LayerMgr *_manager;
     UILabel *_label;
     
 }

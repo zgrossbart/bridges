@@ -46,7 +46,7 @@
 /** 
  * The loaded levels for this game.
  */
-@property (readonly) NSMutableDictionary *levels;
+@property (readonly, retain) NSMutableDictionary *levels;
 
 /** 
  * The array of sorted level IDs.

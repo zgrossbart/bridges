@@ -29,8 +29,6 @@
 @private
     int _tag;
     LayerMgr *_manager;
-    
-    CCSprite *_playerSprite;
     b2Body *_spriteBody;
     CCAction *_walkAction;
     CCAction *_moveAction;
