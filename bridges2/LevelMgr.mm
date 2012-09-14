@@ -160,13 +160,8 @@
     b2World *world = new b2World(gravity);
     world->SetAllowSleeping(doSleep);
     
-    // Enable debug draw
-    GLESDebugDraw *debugDraw = new GLESDebugDraw( PTM_RATIO );
-    world->SetDebugDraw(debugDraw);
-    
     uint32 flags = 0;
     flags += b2Draw::e_shapeBit;
-    debugDraw->SetFlags(flags);
     
     // Create our sprite sheet and frame cache
     CCSpriteBatchNode *spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprite.png"
@@ -233,7 +228,6 @@
     
     delete world;
     world = nil;
-    delete debugDraw;
     
     [spriteSheet release];
     [scene dealloc];
