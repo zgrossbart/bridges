@@ -22,7 +22,7 @@
         <key>dataFormat</key>
         <string>cocos2d</string>
         <key>textureFileName</key>
-        <filename>bridgesprites.pvr.gz</filename>
+        <filename>../bridges2/bridgesprites.pvr.gz</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -105,7 +105,7 @@
             <enum type="AndEngine::MagFilter">MagLinear</enum>
         </struct>
         <key>dataFileName</key>
-        <filename>bridgesprites.plist</filename>
+        <filename>../bridges2/bridgesprites.plist</filename>
         <key>mainExtension</key>
         <string></string>
         <key>forceIdenticalLayout</key>
