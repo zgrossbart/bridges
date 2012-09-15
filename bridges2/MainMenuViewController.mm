@@ -79,53 +79,47 @@
     if (_hasLoadedPicker) {
         [self.buttons removeAllObjects];
     }
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    if([paths count] > 0) {
-        NSString *documentsDirectory = [paths objectAtIndex:0];
+    for (int i = 0; i < [LevelMgr getLevelMgr].levelIds.count; i++) {
+        NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:i];
+        Level *level = [[LevelMgr getLevelMgr].levels objectForKey:levelId];
+        UIImage *image = level.screenshot;
         
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.buttons addObject:button];
+        [button setBackgroundImage:image forState:UIControlStateNormal];
+        [button setTitle:level.name forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button.layer setCornerRadius:8.0f];
+        [button.layer setMasksToBounds:YES];
+        [button.layer setBorderWidth:1.0f];
+        [button.layer setBorderColor:[[UIColor colorWithRed:(1.0 * 233) / 255 green:(1.0 * 233) / 255 blue:(1.0 * 233) / 255 alpha:1] CGColor]];
         
-        for (int i = 0; i < [LevelMgr getLevelMgr].levelIds.count; i++) {
-            NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:i];
-            Level *level = [[LevelMgr getLevelMgr].levels objectForKey:levelId];
-            UIImage *image = [UIImage imageWithContentsOfFile:[documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", levelId]]];
+        [button setTitle:level.name forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        button.titleLabel.backgroundColor = [UIColor whiteColor];
+        
+        [button addTarget:self
+                   action:@selector(levelSelected:)
+         forControlEvents:UIControlEventTouchUpInside];
+        button.tag = i;
+        
+        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", levelId]]) {
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:_checkImage];
+            imageView.contentMode = UIViewContentModeCenter;
+            imageView.backgroundColor = [UIColor clearColor];
+            imageView.frame = CGRectMake(205, 5, 20, 20);
             
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            [self.buttons addObject:button];
-            [button setBackgroundImage:image forState:UIControlStateNormal];
-            [button setTitle:level.name forState:UIControlStateNormal];
-            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [button.layer setCornerRadius:8.0f];
-            [button.layer setMasksToBounds:YES];
-            [button.layer setBorderWidth:1.0f];
-            [button.layer setBorderColor:[[UIColor colorWithRed:(1.0 * 233) / 255 green:(1.0 * 233) / 255 blue:(1.0 * 233) / 255 alpha:1] CGColor]];
+            [button addSubview:imageView];
+            [_scrollView addSubview:button];
             
-            [button setTitle:level.name forState:UIControlStateNormal];
-            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            button.titleLabel.backgroundColor = [UIColor whiteColor];
-            
-            [button addTarget:self
-                       action:@selector(levelSelected:)
-             forControlEvents:UIControlEventTouchUpInside];
-            button.tag = i;
-            
-            if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", levelId]]) {
-                UIImageView *imageView = [[UIImageView alloc] initWithImage:_checkImage];
-                imageView.contentMode = UIViewContentModeCenter;
-                imageView.backgroundColor = [UIColor clearColor];
-                imageView.frame = CGRectMake(205, 5, 20, 20);
-                
-                [button addSubview:imageView];
-                [_scrollView addSubview:button];
-                
-                [imageView release];
-            } else {
-                [_scrollView addSubview:button];
-            }
-            
-            button.titleLabel.frame = CGRectMake(2, 2, button.titleLabel.frame.size.width, button.titleLabel.frame.size.height);
+            [imageView release];
+        } else {
+            [_scrollView addSubview:button];
         }
+        
+        button.titleLabel.frame = CGRectMake(2, 2, button.titleLabel.frame.size.width, button.titleLabel.frame.size.height);
     }
     
     _hasLoadedPicker = true;
@@ -275,6 +269,8 @@
             column++;
         }
     }
+    
+    row++;
     
     //_scrollView.frame = self.view.frame;
     CGSize size = _scrollView.contentSize;
