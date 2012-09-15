@@ -232,7 +232,7 @@
     [spriteSheet release];
     [scene dealloc];
     
-    layerMgr.addBoxes = true;
+    [layerMgr release];
     
 }
 
