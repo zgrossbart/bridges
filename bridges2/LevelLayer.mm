@@ -217,17 +217,25 @@
 }
 
 -(void)drawGrid {
-
-    ccDrawColor4F(0, 128, 128, 128);
     
     
     CGSize s = [[CCDirector sharedDirector] winSize];
     
     for (int i = 0; i < s.width; i += _layerMgr.tileSize.width) {
+        if (i % 5 == 0) {
+            ccDrawColor4F(0, 0, 128, 256);
+        } else {
+            ccDrawColor4F(0, 128, 128, 128);
+        }
         ccDrawLine(ccp(i, 0), ccp(i, s.height));
     }
     
     for (int i = 0; i < s.height; i += _layerMgr.tileSize.height) {
+        if (i % 5 == 0) {
+            ccDrawColor4F(0, 0, 128, 256);
+        } else {
+            ccDrawColor4F(0, 128, 128, 128);
+        }
         ccDrawLine(ccp(0, i), ccp(s.width, i));
     }
     

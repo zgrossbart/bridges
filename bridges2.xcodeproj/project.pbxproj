@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1477DB1604C32100C054B2 /* level0.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1477DA1604C32100C054B2 /* level0.json */; };
 		CE31DCD11601E3790084C38B /* level18.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD01601E3790084C38B /* level18.json */; };
 		CE31DCD31601EBDD0084C38B /* level24.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD21601EBDD0084C38B /* level24.json */; };
 		CE39AC8D15FB9E67005607B0 /* bridgesprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC8B15FB9E67005607B0 /* bridgesprite.plist */; };
@@ -233,6 +234,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE1477DA1604C32100C054B2 /* level0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level0.json; sourceTree = "<group>"; };
 		CE31DCD01601E3790084C38B /* level18.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level18.json; sourceTree = "<group>"; };
 		CE31DCD21601EBDD0084C38B /* level24.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level24.json; sourceTree = "<group>"; };
 		CE39AC8B15FB9E67005607B0 /* bridgesprite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bridgesprite.plist; sourceTree = "<group>"; };
@@ -1266,6 +1268,7 @@
 		CECE256C15F2869200517973 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				CE1477DA1604C32100C054B2 /* level0.json */,
 				CEF064A415F521AF0061C872 /* level1.json */,
 				CECE688F15F752780042A7DF /* level2.json */,
 				CECE688C15F750F70042A7DF /* level3.json */,
@@ -1454,6 +1457,7 @@
 				CEC88287160276B1007DC0EA /* level11.json in Resources */,
 				CEDED3E81604904E0022ABA7 /* level13.json in Resources */,
 				CEDED3EB160496650022ABA7 /* level14.json in Resources */,
+				CE1477DB1604C32100C054B2 /* level0.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
