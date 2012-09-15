@@ -170,7 +170,7 @@
 
 -(void)dealloc {
     
-    [_layer dealloc];
+    [_layer release];
     [_undoBtn release];
     [_coinLabel release];
     [_coinImage release];
