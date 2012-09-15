@@ -204,7 +204,7 @@
 		CECE688D15F750F70042A7DF /* level3.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE688C15F750F70042A7DF /* level3.json */; };
 		CECE689015F752780042A7DF /* level2.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE688F15F752780042A7DF /* level2.json */; };
 		CECE689215F754BA0042A7DF /* level4.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689115F754BA0042A7DF /* level4.json */; };
-		CECE689415F75AE60042A7DF /* level17.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689315F75AE60042A7DF /* level17.json */; };
+		CECE689415F75AE60042A7DF /* level12.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689315F75AE60042A7DF /* level12.json */; };
 		CECE689B15F76A510042A7DF /* Bridge4Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE689A15F76A510042A7DF /* Bridge4Node.mm */; };
 		CECE689D15F76E120042A7DF /* level20.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689C15F76E120042A7DF /* level20.json */; };
 		CECFA63115F36AEF00FF1E8D /* Undoable.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFA63015F36AEE00FF1E8D /* Undoable.m */; };
@@ -621,7 +621,7 @@
 		CECE688C15F750F70042A7DF /* level3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level3.json; sourceTree = "<group>"; };
 		CECE688F15F752780042A7DF /* level2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level2.json; sourceTree = "<group>"; };
 		CECE689115F754BA0042A7DF /* level4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level4.json; sourceTree = "<group>"; };
-		CECE689315F75AE60042A7DF /* level17.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level17.json; sourceTree = "<group>"; };
+		CECE689315F75AE60042A7DF /* level12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level12.json; sourceTree = "<group>"; };
 		CECE689915F76A510042A7DF /* Bridge4Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge4Node.h; sourceTree = "<group>"; };
 		CECE689A15F76A510042A7DF /* Bridge4Node.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Bridge4Node.mm; sourceTree = "<group>"; };
 		CECE689C15F76E120042A7DF /* level20.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level20.json; sourceTree = "<group>"; };
@@ -1273,8 +1273,8 @@
 				CED0302F15FB724A008E7EA4 /* level9.json */,
 				CEC8828316027431007DC0EA /* level10.json */,
 				CEC88286160276B1007DC0EA /* level11.json */,
+				CECE689315F75AE60042A7DF /* level12.json */,
 				CED0704315FF7A5E0050CA9D /* level16.json */,
-				CECE689315F75AE60042A7DF /* level17.json */,
 				CE31DCD01601E3790084C38B /* level18.json */,
 				CECE689C15F76E120042A7DF /* level20.json */,
 				CE31DCD21601EBDD0084C38B /* level24.json */,
@@ -1429,7 +1429,7 @@
 				CECE688D15F750F70042A7DF /* level3.json in Resources */,
 				CECE689015F752780042A7DF /* level2.json in Resources */,
 				CECE689215F754BA0042A7DF /* level4.json in Resources */,
-				CECE689415F75AE60042A7DF /* level17.json in Resources */,
+				CECE689415F75AE60042A7DF /* level12.json in Resources */,
 				CECE689D15F76E120042A7DF /* level20.json in Resources */,
 				CED0303015FB724A008E7EA4 /* level9.json in Resources */,
 				CED45E8315FB81EF0066F0FE /* coins.png in Resources */,
