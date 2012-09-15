@@ -163,7 +163,7 @@
     
     // Create our sprite sheet and frame cache
     CCSpriteBatchNode *spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprite.png"
-                                                                  capacity:2] retain];
+                                                                  capacity:150] retain];
     [[CCSpriteFrameCache sharedSpriteFrameCache]
      addSpriteFramesWithFile:@"bridgesprite.plist"];
     
