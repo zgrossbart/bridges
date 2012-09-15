@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE6D65D015EAC5FB00C7EDD7"
-               BuildableName = "bridges2.app"
+               BuildableName = "7Bridges.app"
                BlueprintName = "bridges2"
                ReferencedContainer = "container:bridges2.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE6D65D015EAC5FB00C7EDD7"
-            BuildableName = "bridges2.app"
+            BuildableName = "7Bridges.app"
             BlueprintName = "bridges2"
             ReferencedContainer = "container:bridges2.xcodeproj">
          </BuildableReference>
@@ -47,12 +47,13 @@
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      enableOpenGLFrameCaptureMode = "0"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE6D65D015EAC5FB00C7EDD7"
-            BuildableName = "bridges2.app"
+            BuildableName = "7Bridges.app"
             BlueprintName = "bridges2"
             ReferencedContainer = "container:bridges2.xcodeproj">
          </BuildableReference>
@@ -70,7 +71,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE6D65D015EAC5FB00C7EDD7"
-            BuildableName = "bridges2.app"
+            BuildableName = "7Bridges.app"
             BlueprintName = "bridges2"
             ReferencedContainer = "container:bridges2.xcodeproj">
          </BuildableReference>
