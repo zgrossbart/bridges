@@ -72,6 +72,7 @@
 -(void)playerMoveEnded {
     [_player stopAction:_walkAction];
     _moving = FALSE;
+    [self updateColor:self.color];
     
     /*
      * If this move caused us to collide with something (like crossing 
