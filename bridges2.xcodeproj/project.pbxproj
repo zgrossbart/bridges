@@ -10,8 +10,6 @@
 		CE1477DB1604C32100C054B2 /* level0.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1477DA1604C32100C054B2 /* level0.json */; };
 		CE31DCD11601E3790084C38B /* level18.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD01601E3790084C38B /* level18.json */; };
 		CE31DCD31601EBDD0084C38B /* level24.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD21601EBDD0084C38B /* level24.json */; };
-		CE39AC8D15FB9E67005607B0 /* bridgesprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC8B15FB9E67005607B0 /* bridgesprite.plist */; };
-		CE39AC8E15FB9E67005607B0 /* bridgesprite.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC8C15FB9E67005607B0 /* bridgesprite.png */; };
 		CE39AC9315FBA146005607B0 /* RootMenuViewControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC9115FBA145005607B0 /* RootMenuViewControlleriPad.xib */; };
 		CE453BC715F174A900053407 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CE453BC615F174A900053407 /* JSONKit.m */; };
 		CE6D65D615EAC5FB00C7EDD7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6D65D515EAC5FB00C7EDD7 /* QuartzCore.framework */; };
@@ -186,8 +184,10 @@
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
 		CEA3D478160120610060F511 /* AboutViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA3D477160120610060F511 /* AboutViewiPad.xib */; };
 		CEAE47F815F3894400898698 /* level7.json in Resources */ = {isa = PBXBuildFile; fileRef = CEAE47F715F3894400898698 /* level7.json */; };
-		CEBB883E160501EC00538464 /* bridgesprite-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBB883C160501EC00538464 /* bridgesprite-hd.plist */; };
-		CEBB883F160501EC00538464 /* bridgesprite-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBB883D160501EC00538464 /* bridgesprite-hd.png */; };
+		CEBB885D160514B700538464 /* bridgesprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBB885B160514B700538464 /* bridgesprites.plist */; };
+		CEBB885E160514B700538464 /* bridgesprites.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = CEBB885C160514B700538464 /* bridgesprites.pvr.gz */; };
+		CEBB8861160514D200538464 /* bridgesprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBB885F160514D200538464 /* bridgesprites-hd.plist */; };
+		CEBB8862160514D200538464 /* bridgesprites-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = CEBB8860160514D200538464 /* bridgesprites-hd.pvr.gz */; };
 		CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */; };
 		CEBD81F215EACA9D00EE27CF /* MainMenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */; };
 		CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */; };
@@ -239,8 +239,6 @@
 		CE1477DA1604C32100C054B2 /* level0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level0.json; sourceTree = "<group>"; };
 		CE31DCD01601E3790084C38B /* level18.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level18.json; sourceTree = "<group>"; };
 		CE31DCD21601EBDD0084C38B /* level24.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level24.json; sourceTree = "<group>"; };
-		CE39AC8B15FB9E67005607B0 /* bridgesprite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bridgesprite.plist; sourceTree = "<group>"; };
-		CE39AC8C15FB9E67005607B0 /* bridgesprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridgesprite.png; sourceTree = "<group>"; };
 		CE39AC9115FBA145005607B0 /* RootMenuViewControlleriPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootMenuViewControlleriPad.xib; sourceTree = "<group>"; };
 		CE453BC515F174A900053407 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		CE453BC615F174A900053407 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
@@ -600,8 +598,10 @@
 		CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		CEA3D477160120610060F511 /* AboutViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewiPad.xib; sourceTree = "<group>"; };
 		CEAE47F715F3894400898698 /* level7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level7.json; sourceTree = "<group>"; };
-		CEBB883C160501EC00538464 /* bridgesprite-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "bridgesprite-hd.plist"; sourceTree = "<group>"; };
-		CEBB883D160501EC00538464 /* bridgesprite-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridgesprite-hd.png"; sourceTree = "<group>"; };
+		CEBB885B160514B700538464 /* bridgesprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bridgesprites.plist; sourceTree = "<group>"; };
+		CEBB885C160514B700538464 /* bridgesprites.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = bridgesprites.pvr.gz; sourceTree = "<group>"; };
+		CEBB885F160514D200538464 /* bridgesprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "bridgesprites-hd.plist"; sourceTree = "<group>"; };
+		CEBB8860160514D200538464 /* bridgesprites-hd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "bridgesprites-hd.pvr.gz"; sourceTree = "<group>"; };
 		CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainMenuViewController.mm; sourceTree = "<group>"; };
@@ -740,10 +740,10 @@
 		CE6D65E815EAC5FB00C7EDD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CEBB883C160501EC00538464 /* bridgesprite-hd.plist */,
-				CEBB883D160501EC00538464 /* bridgesprite-hd.png */,
-				CE39AC8B15FB9E67005607B0 /* bridgesprite.plist */,
-				CE39AC8C15FB9E67005607B0 /* bridgesprite.png */,
+				CEBB885B160514B700538464 /* bridgesprites.plist */,
+				CEBB885C160514B700538464 /* bridgesprites.pvr.gz */,
+				CEBB885F160514D200538464 /* bridgesprites-hd.plist */,
+				CEBB8860160514D200538464 /* bridgesprites-hd.pvr.gz */,
 				CED45E8215FB81EF0066F0FE /* coins.png */,
 				CECDC54715F6C54000D266FD /* green_check.png */,
 				CEF0649A15F51B0B0061C872 /* left_arrow_d.png */,
@@ -1448,8 +1448,6 @@
 				CECE689D15F76E120042A7DF /* level20.json in Resources */,
 				CED0303015FB724A008E7EA4 /* level9.json in Resources */,
 				CED45E8315FB81EF0066F0FE /* coins.png in Resources */,
-				CE39AC8D15FB9E67005607B0 /* bridgesprite.plist in Resources */,
-				CE39AC8E15FB9E67005607B0 /* bridgesprite.png in Resources */,
 				CE39AC9315FBA146005607B0 /* RootMenuViewControlleriPad.xib in Resources */,
 				CEE7AF0915FBD12F00DC0B7F /* YouWonViewController.xib in Resources */,
 				CEE7AF0C15FBDD0F00DC0B7F /* YouWonViewiPad.xib in Resources */,
@@ -1464,8 +1462,10 @@
 				CEDED3E81604904E0022ABA7 /* level13.json in Resources */,
 				CEDED3EB160496650022ABA7 /* level14.json in Resources */,
 				CE1477DB1604C32100C054B2 /* level0.json in Resources */,
-				CEBB883E160501EC00538464 /* bridgesprite-hd.plist in Resources */,
-				CEBB883F160501EC00538464 /* bridgesprite-hd.png in Resources */,
+				CEBB885D160514B700538464 /* bridgesprites.plist in Resources */,
+				CEBB885E160514B700538464 /* bridgesprites.pvr.gz in Resources */,
+				CEBB8861160514D200538464 /* bridgesprites-hd.plist in Resources */,
+				CEBB8862160514D200538464 /* bridgesprites-hd.pvr.gz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,8 +18,14 @@
 
 #import "LayerMgr.h"
 
+@interface LayerMgr()
+@property (readwrite, retain) CCSpriteBatchNode *sheet;
+@end
+
+
 @implementation LayerMgr {
-    CCSpriteBatchNode *_sheet;
+
+    
 }
 
 +(CGFloat) distanceBetweenTwoPoints: (CGPoint) point1: (CGPoint) point2 {
@@ -31,7 +37,7 @@
 
 
 -(id) initWithSpriteSheet:(CCSpriteBatchNode*) spriteSheet:(b2World*) world {
-    _sheet = spriteSheet;
+    self.sheet = spriteSheet;
     _world = world;
     self.addBoxes = true;
     return self;
@@ -49,7 +55,7 @@
         body = [self addBoxBodyForSprite:sprite:YES];
     }
     
-    [_sheet addChild:sprite];
+    [self.sheet addChild:sprite];
     
     return body;
 }
@@ -90,8 +96,8 @@
 }
 
 -(void)removeAll {
-    for (int i = _sheet.children.count - 1; i >= 0; i--) {
-        [self spriteDone:[_sheet.children objectAtIndex:i]];
+    for (int i = self.sheet.children.count - 1; i >= 0; i--) {
+        [self spriteDone:[self.sheet.children objectAtIndex:i]];
     }
     
 //    NSLog(@"children.count: %i", _sheet.children.count);
@@ -115,7 +121,7 @@
         _world->DestroyBody(spriteBody);
     }
     
-    [_sheet removeChild:sprite cleanup:NO];
+    [self.sheet removeChild:sprite cleanup:NO];
     
 }
 
@@ -130,7 +136,7 @@
 
 -(void)dealloc {
     
-    [_sheet release];
+    [self.sheet release];
     [super dealloc];
 }
 

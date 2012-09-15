@@ -161,11 +161,12 @@
     uint32 flags = 0;
     flags += b2Draw::e_shapeBit;
     
-    // Create our sprite sheet and frame cache
-    CCSpriteBatchNode *spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprite.png"
-                                                                  capacity:150] retain];
     [[CCSpriteFrameCache sharedSpriteFrameCache]
-     addSpriteFramesWithFile:@"bridgesprite.plist"];
+     addSpriteFramesWithFile:@"bridgesprites.plist"];
+    
+    // Create our sprite sheet and frame cache
+    CCSpriteBatchNode *spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprites.pvr.gz"
+                                                                  capacity:150] retain];
     
     LayerMgr *layerMgr = [[LayerMgr alloc] initWithSpriteSheet:spriteSheet:world];
     layerMgr.addBoxes = false;
@@ -173,6 +174,7 @@
     CCRenderTexture *renderer	= [CCRenderTexture renderTextureWithWidth:bounds.size.width height:bounds.size.height];
     
     ScreenShotLayer *scene = [[ScreenShotLayer alloc] init];
+    
     [scene addChild:spriteSheet];
     
     CGSize s = CGSizeMake(96, 64);
