@@ -316,13 +316,31 @@
         [y2 appendString:y1];
     }
     
-    float xi1 = [self parseInt:x1];
-    float yi1 = [self parseInt:y1];
+    /*
+     * At this point we have a rectangle defined by the points (x1, y1)
+     * and (x2, y2).  We want to fill that rectangle using rivers.  
+     * However, the coordintes of this rectangle are defined in
+     * tiles and we want to show them in points.  We also need to handle
+     * the fact that tile sizes are variable based on the device and if 
+     * they are specified in the level, but river sizes are fixed.  
+     * That means we'll need a variable number of rivers based on the 
+     * size of the tiles.
+     */
     
-    float xi2 = [self parseInt:x2];
-    float yi2 = [self parseInt:y2];
+    float xi1 = [self parseInt:x1] * self.layerMgr.tileSize.width;
+    float yi1 = [self parseInt:y1] * self.layerMgr.tileSize.height;
+    
+    float xi2 = [self parseInt:x2] * self.layerMgr.tileSize.width;
+    float yi2 = [self parseInt:y2] * self.layerMgr.tileSize.height;
     
     NSMutableArray *rivers = [NSMutableArray arrayWithCapacity:10];
+    
+    CCSprite *rSprite;
+    if (vert) {
+        rSprite = [CCSprite spriteWithSpriteFrameName:@"river_v.png"];
+    } else {
+        rSprite = [CCSprite spriteWithSpriteFrameName:@"river_h.png"];
+    }
     
     /*
      * Now we have two ranges specified by the
@@ -331,13 +349,14 @@
      * simple, but we can still handle it like
      * a range.
      */
-    for (float i = xi1; i <= xi2; i++) {
-        for (float j = yi1; j <= yi2; j++) {
+    for (float i = xi1; i <= xi2; i += rSprite.contentSize.width) {
+        for (float j = yi1; j <= yi2; j += rSprite.contentSize.height) {
             [rivers addObject:[self addRiver:i:j:vert]];
             
         }
     }
     
+//    [rSprite release];
     CGPoint start = [self tileToPoint:xi1 :yi1];
     CGPoint end = [self tileToPoint:xi2 :yi2];
     
@@ -390,9 +409,8 @@
     } else {
         river = [CCSprite spriteWithSpriteFrameName:@"river_h.png"];
     }
-    
-    [self resizeSprite:river:1:vert];
-    CGPoint startPos = [self tileToPoint:x:y];
+
+    CGPoint startPos = ccp(x, y); //[self tileToPoint:x:y];
     
 //    printf("addingRiverTo (%f, %f)\n", startPos.x, startPos.y);
     
