@@ -195,9 +195,7 @@
     
     [super draw];
     
-    CGSize s = [[CCDirector sharedDirector] winSize];
-    
-    ccDrawSolidRect( ccp(0, 0), ccp(s.width, s.height), ccc4f(255, 255, 255, 255) );
+    //ccDrawSolidRect( ccp(0, 0), ccp(s.width, s.height), ccc4f(255, 255, 255, 255) );
     
     if (!_hasInit) {
         /*
@@ -214,6 +212,25 @@
     }
     
 //    _world->DrawDebugData();
+    
+    [self drawGrid];
+}
+
+-(void)drawGrid {
+
+    ccDrawColor4F(0, 128, 128, 128);
+    
+    
+    CGSize s = [[CCDirector sharedDirector] winSize];
+    
+    for (int i = 0; i < s.width; i += _layerMgr.tileSize.width) {
+        ccDrawLine(ccp(i, 0), ccp(i, s.height));
+    }
+    
+    for (int i = 0; i < s.height; i += _layerMgr.tileSize.height) {
+        ccDrawLine(ccp(0, i), ccp(s.width, i));
+    }
+    
 }
 
 -(void)updateAllBoxBodies {
