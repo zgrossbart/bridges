@@ -43,7 +43,9 @@
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_blue.png"]];
         } else if (color == GREEN) {
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_green.png"]];
-        } else if (color == BLACK) {
+        } else if (color == ORANGE) {
+            [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_orange.png"]];
+        } else {
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1.png"]];
         }
         

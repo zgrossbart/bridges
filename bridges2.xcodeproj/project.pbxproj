@@ -226,6 +226,7 @@
 		CEDBC2EC15EB8C8200094695 /* BridgeNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */; };
 		CEDED3E81604904E0022ABA7 /* level13.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3E71604904E0022ABA7 /* level13.json */; };
 		CEDED3EB160496650022ABA7 /* level14.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3EA160496650022ABA7 /* level14.json */; };
+		CEE0277416067FE5007C4CDD /* level30.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE0277316067FE5007C4CDD /* level30.json */; };
 		CEE7AF0815FBD12F00DC0B7F /* YouWonViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */; };
 		CEE7AF0915FBD12F00DC0B7F /* YouWonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */; };
 		CEE7AF0C15FBDD0F00DC0B7F /* YouWonViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7AF0B15FBDD0F00DC0B7F /* YouWonViewiPad.xib */; };
@@ -660,6 +661,7 @@
 		CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BridgeNode.mm; sourceTree = "<group>"; };
 		CEDED3E71604904E0022ABA7 /* level13.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level13.json; sourceTree = "<group>"; };
 		CEDED3EA160496650022ABA7 /* level14.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level14.json; sourceTree = "<group>"; };
+		CEE0277316067FE5007C4CDD /* level30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level30.json; sourceTree = "<group>"; };
 		CEE7AF0515FBD12F00DC0B7F /* YouWonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouWonViewController.h; sourceTree = "<group>"; };
 		CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = YouWonViewController.mm; sourceTree = "<group>"; };
 		CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouWonViewController.xib; sourceTree = "<group>"; };
@@ -1302,6 +1304,7 @@
 				CE53D25D160612510064F167 /* level21.json */,
 				CE31DCD21601EBDD0084C38B /* level24.json */,
 				CE53D25F160616070064F167 /* level25.json */,
+				CEE0277316067FE5007C4CDD /* level30.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1478,6 +1481,7 @@
 				CE53D25B16060D090064F167 /* level15.json in Resources */,
 				CE53D25E160612510064F167 /* level21.json in Resources */,
 				CE53D260160616070064F167 /* level25.json in Resources */,
+				CEE0277416067FE5007C4CDD /* level30.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

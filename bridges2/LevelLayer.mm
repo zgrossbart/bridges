@@ -129,6 +129,8 @@
     [_player dealloc];
     _player = nil;
     
+    _canVisit = true;
+    
     _reportedWon = false;
 }
 
