@@ -1,0 +1,107 @@
+{
+    "level": {
+        "id": "21",
+        "name": "House of another color",
+        "rivers": [
+            {
+                "x": "18",
+                "y": "b-t",
+                "orient": "v"
+            },
+            {
+                "x": "l-32",
+                "y": "18",
+                "orient": "h"
+            },
+            {
+                "x": "18-32",
+                "y": "6",
+                "orient": "h"
+            },
+            {
+                "x": "32",
+                "y": "6-t",
+                "orient": "v",
+				"side": "right"
+            }
+        ],
+        "bridges": [
+            {
+                "x": "2",
+                "y": "18",
+                "orient": "v"
+            },
+            {
+                "x": "8",
+                "y": "18",
+                "orient": "v"
+            },
+            {
+                "x": "14",
+                "y": "18",
+                "orient": "v"
+            },
+            {
+                "x": "26",
+                "y": "18",
+                "orient": "v"
+            },
+            {
+                "x": "18",
+                "y": "26",
+                "orient": "h",
+				"color": "blue"
+            },
+            {
+                "x": "18",
+                "y": "22",
+                "orient": "h",
+				"color": "orange"
+            },
+            {
+                "x": "18",
+                "y": "14",
+                "orient": "h",
+				"color": "green"
+            },
+            {
+                "x": "18",
+                "y": "10",
+                "orient": "h",
+				"color": "red"
+            },
+            {
+                "x": "18",
+                "y": "2",
+                "orient": "h"
+            },
+            {
+                "x": "32",
+                "y": "24",
+                "orient": "h"
+            }
+        ],
+        "houses": [
+	        {
+	            "x": "8",
+	            "y": "24",
+	            "color": "green"
+	        },
+	        {
+	            "x": "8",
+	            "y": "8",
+	            "color": "orange"
+	        },
+	        {
+	            "x": "26",
+	            "y": "24",
+	            "color": "red"
+	        },
+	        {
+	            "x": "26",
+	            "y": "12",
+	            "color": "blue"
+	        }
+        ]
+    }
+}
