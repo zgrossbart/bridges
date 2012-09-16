@@ -56,3 +56,5 @@ static int const DOWN = 4;
  * The playable level is 42 tiles wide and 28 tiles tall.
  */
 static int const TILE_COUNT = 28;
+
+static bool const DEBUG_DRAW = false;

@@ -211,9 +211,10 @@
         _hasInit = true;
     }
     
-//    _world->DrawDebugData();
-    
-    [self drawGrid];
+    if (DEBUG_DRAW) {
+        _world->DrawDebugData();
+        [self drawGrid];
+    }
 }
 
 -(void)drawGrid {
