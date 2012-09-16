@@ -367,6 +367,13 @@
         }
     }
     
+    /* 
+     * At this point we've drawn the river, but we want to support
+     * a special sprite for the end of the river so that we can give 
+     * it a rounded corner.  For that we look to see if the river
+     * specified a side and substitute the right sprites for the top
+     * most and bottom most sections of the river.
+     */
     if (vert && side != NONE) {
         if (yi1 != 0) {
             CCSprite *riverEnd;
