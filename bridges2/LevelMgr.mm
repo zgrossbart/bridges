@@ -166,7 +166,7 @@
             NSError *error;
             
             if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-                NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[path stringByAppendingPathComponent:path] error:&error];
+                NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:&error];
                 NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
                 
                 if ([level.date compare:fileDate] == NSOrderedDescending) {
