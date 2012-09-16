@@ -677,8 +677,17 @@ CGFloat CGPointToDegree(CGPoint point) {
     }
     
     if ([LayerMgr distanceBetweenTwoPoints:p1 :p2] < _layerMgr.tileSize.width) {
-        x3 = p2.x + distance * cos(rads);
-        y3 = p2.y - distance * sin(rads);
+        /*
+         * If the player is really close to the object they bumped into
+         * then bumping them back along the line they approached from 
+         * doesn't move them far enough away from the object and they
+         * end up on top of the object where they get stuck.  
+         *
+         * In that case we need to move them back a little bit more so
+         * they end up off the object.
+         */
+        x3 = p2.x - ((distance * cos(rads)) * 1.5);
+        y3 = p2.y - ((distance * sin(rads)) * 1.5);
     }
     
     return ccp(x3, y3);

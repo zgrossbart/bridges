@@ -20,6 +20,8 @@
  ******************************************************************************/
 
 #import "MyContactListener.h"
+#import "cocos2d.h"
+#import "BridgeColors.h"
 
 MyContactListener::MyContactListener() : _contacts() {
 }
@@ -29,11 +31,16 @@ MyContactListener::~MyContactListener() {
 
 void MyContactListener::BeginContact(b2Contact* contact) {
     MyContact myContact = { contact->GetFixtureA(), contact->GetFixtureB() };
-    _contacts.push_back(myContact);
+    CCSprite *spriteA = (CCSprite *) contact->GetFixtureA()->GetBody()->GetUserData();
+    CCSprite *spriteB = (CCSprite *) contact->GetFixtureB()->GetBody()->GetUserData();
+    if (spriteA.tag == PLAYER || spriteB.tag == PLAYER) {
+        _contacts.push_back(myContact);
+    }
 }
 
 void MyContactListener::EndContact(b2Contact* contact) {
     MyContact myContact = { contact->GetFixtureA(), contact->GetFixtureB() };
+    
     std::vector<MyContact>::iterator pos;
     pos = std::find(_contacts.begin(), _contacts.end(), myContact);
     if (pos != _contacts.end()) {
