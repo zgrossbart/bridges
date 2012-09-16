@@ -197,6 +197,10 @@
             <filename>octopus5.png</filename>
             <filename>river_h.png</filename>
             <filename>river_v.png</filename>
+            <filename>river_v_bl.png</filename>
+            <filename>river_v_br.png</filename>
+            <filename>river_v_tl.png</filename>
+            <filename>river_v_ur.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
