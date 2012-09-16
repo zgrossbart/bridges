@@ -95,8 +95,9 @@
         NSString *x = [r objectForKey:@"x"];
         NSString *y = [r objectForKey:@"y"];
         NSString *dir = [r objectForKey:@"orient"];
+        NSString *side = [r objectForKey:@"side"];
         
-        [self addRivers:x:y:[dir isEqualToString:@"v"]];
+        [self addRivers:x:y:[dir isEqualToString:@"v"]:[self getSide:side]];
     }
     
     /*
@@ -156,6 +157,16 @@
             
             [self addLabel:[self parseInt:x]:[self parseInt:y]:[self parseInt:w]:[self parseInt:h]:text];
         }
+    }
+}
+
+-(int)getSide:(NSString*) side {
+    if ([@"left" isEqualToString:side]) {
+        return LEFT;
+    } else if ([@"right" isEqualToString:side]) {
+        return RIGHT;
+    } else {
+        return NONE;
     }
 }
 
@@ -260,7 +271,7 @@
     }
 }
 
--(void)addRivers:(NSString*) xSpec:(NSString*) ySpec:(BOOL) vert {
+-(void)addRivers:(NSString*) xSpec:(NSString*) ySpec:(BOOL) vert: (int) side {
     /*
      * There are a few ways to define a tile coordinate.
      * You can define a simple number like 5 or 12, you 
@@ -349,11 +360,42 @@
      * simple, but we can still handle it like
      * a range.
      */
-    for (float i = xi1; i <= xi2; i += rSprite.contentSize.width) {
-        for (float j = yi1; j <= yi2; j += rSprite.contentSize.height) {
+    for (float i = xi1; i <= xi2; i += rSprite.contentSize.width - 1) {
+        for (float j = yi1; j <= yi2; j += rSprite.contentSize.height - 1) {
             [rivers addObject:[self addRiver:i:j:vert]];
             
         }
+    }
+    
+    if (vert && side != NONE) {
+        if (yi1 != 0) {
+            CCSprite *riverEnd;
+            if (side == RIGHT) {
+                riverEnd = [CCSprite spriteWithSpriteFrameName:@"river_v_br.png"];
+            } else {
+                riverEnd =  [CCSprite spriteWithSpriteFrameName:@"river_v_bl.png"];
+            }
+            riverEnd.position = ccp(xi1, yi1);
+            riverEnd.tag = RIVER;
+            [rivers removeObjectAtIndex:0];
+            [rivers insertObject:riverEnd atIndex:0];
+        }
+        
+        if (yi2 < [self getWinSize].height - _layerMgr.tileSize.height) {
+            CCSprite *riverEnd2;
+            if (side == RIGHT) {
+                riverEnd2 = [CCSprite spriteWithSpriteFrameName:@"river_v_ur.png"];
+            } else {
+                riverEnd2 = [CCSprite spriteWithSpriteFrameName:@"river_v_tl.png"];
+            }
+            riverEnd2.position = ccp(xi2, yi2);
+            riverEnd2.tag = RIVER;
+            //[rivers removeLastObject];
+            [rivers addObject:riverEnd2];
+        }
+        
+    } else {
+        [rivers removeObjectAtIndex:0];
     }
     
 //    [rSprite release];

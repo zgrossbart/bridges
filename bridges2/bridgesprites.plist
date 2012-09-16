@@ -566,7 +566,7 @@
             <key>house.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{24,341},{20,19}}</string>
+                <string>{{24,431},{20,19}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -579,7 +579,7 @@
             <key>house_blue.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{24,365},{20,19}}</string>
+                <string>{{24,409},{20,19}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -592,7 +592,7 @@
             <key>house_gray.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{23,475},{20,19}}</string>
+                <string>{{24,387},{20,19}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -605,7 +605,7 @@
             <key>house_green.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{23,453},{20,19}}</string>
+                <string>{{24,365},{20,19}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -618,7 +618,7 @@
             <key>house_orange.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,475},{20,19}}</string>
+                <string>{{23,475},{20,19}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -631,7 +631,7 @@
             <key>house_red.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,453},{20,19}}</string>
+                <string>{{2,475},{20,19}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -644,7 +644,7 @@
             <key>octopus1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,431},{20,20}}</string>
+                <string>{{2,453},{20,20}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -657,7 +657,7 @@
             <key>octopus1_blue.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,409},{20,20}}</string>
+                <string>{{2,431},{20,20}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -670,7 +670,7 @@
             <key>octopus1_green.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,387},{20,20}}</string>
+                <string>{{2,409},{20,20}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -683,7 +683,7 @@
             <key>octopus1_orange.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,341},{20,20}}</string>
+                <string>{{2,387},{20,20}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -722,7 +722,7 @@
             <key>octopus3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{24,409},{18,20}}</string>
+                <string>{{44,453},{18,20}}</string>
                 <key>offset</key>
                 <string>{1,0}</string>
                 <key>rotated</key>
@@ -748,7 +748,7 @@
             <key>octopus5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{24,387},{18,20}}</string>
+                <string>{{24,453},{18,20}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -761,13 +761,13 @@
             <key>river_h.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{240,338},{15,13}}</string>
+                <string>{{44,492},{15,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,1},{15,13}}</string>
+                <string>{{0,0},{15,15}}</string>
                 <key>sourceSize</key>
                 <string>{15,15}</string>
             </dict>
@@ -784,6 +784,58 @@
                 <key>sourceSize</key>
                 <string>{15,15}</string>
             </dict>
+            <key>river_v_bl.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{44,475},{15,15}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{15,15}}</string>
+                <key>sourceSize</key>
+                <string>{15,15}</string>
+            </dict>
+            <key>river_v_br.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{36,348},{15,15}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{15,15}}</string>
+                <key>sourceSize</key>
+                <string>{15,15}</string>
+            </dict>
+            <key>river_v_tl.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{19,348},{15,15}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{15,15}}</string>
+                <key>sourceSize</key>
+                <string>{15,15}</string>
+            </dict>
+            <key>river_v_ur.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,348},{15,15}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{15,15}}</string>
+                <key>sourceSize</key>
+                <string>{15,15}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -794,7 +846,7 @@
             <key>size</key>
             <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:f4e259e37d63568b55932c2d187537d1$</string>
+            <string>$TexturePacker:SmartUpdate:f4d9e79017fee6eb506c3b74e2cc7352$</string>
             <key>textureFileName</key>
             <string>bridgesprites.pvr.gz</string>
         </dict>
