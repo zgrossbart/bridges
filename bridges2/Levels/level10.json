@@ -11,7 +11,8 @@
             {
                 "x": "8",
                 "y": "b-22",
-                "orient": "v"
+                "orient": "v",
+                "side": "left"
             },
             {
                 "x": "16-r",
@@ -21,7 +22,8 @@
             {
                 "x": "16",
                 "y": "b-m",
-                "orient": "v"
+                "orient": "v",
+                "side": "left"
             },
             {
                 "x": "24",
