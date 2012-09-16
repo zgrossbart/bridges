@@ -14,6 +14,7 @@
 		CE453BC715F174A900053407 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CE453BC615F174A900053407 /* JSONKit.m */; };
 		CE53D25B16060D090064F167 /* level15.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25A16060D090064F167 /* level15.json */; };
 		CE53D25E160612510064F167 /* level21.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25D160612510064F167 /* level21.json */; };
+		CE53D260160616070064F167 /* level25.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25F160616070064F167 /* level25.json */; };
 		CE6D65D615EAC5FB00C7EDD7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6D65D515EAC5FB00C7EDD7 /* QuartzCore.framework */; };
 		CE6D65D815EAC5FB00C7EDD7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6D65D715EAC5FB00C7EDD7 /* OpenGLES.framework */; };
 		CE6D65DA15EAC5FB00C7EDD7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6D65D915EAC5FB00C7EDD7 /* OpenAL.framework */; };
@@ -246,6 +247,7 @@
 		CE453BC615F174A900053407 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		CE53D25A16060D090064F167 /* level15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level15.json; sourceTree = "<group>"; };
 		CE53D25D160612510064F167 /* level21.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level21.json; sourceTree = "<group>"; };
+		CE53D25F160616070064F167 /* level25.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level25.json; sourceTree = "<group>"; };
 		CE6D65D115EAC5FB00C7EDD7 /* 7 Bridges.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "7 Bridges.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6D65D515EAC5FB00C7EDD7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE6D65D715EAC5FB00C7EDD7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1296,9 +1298,10 @@
 				CE53D25A16060D090064F167 /* level15.json */,
 				CED0704315FF7A5E0050CA9D /* level16.json */,
 				CE31DCD01601E3790084C38B /* level18.json */,
-				CE53D25D160612510064F167 /* level21.json */,
 				CECE689C15F76E120042A7DF /* level20.json */,
+				CE53D25D160612510064F167 /* level21.json */,
 				CE31DCD21601EBDD0084C38B /* level24.json */,
+				CE53D25F160616070064F167 /* level25.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1474,6 +1477,7 @@
 				CEBB8862160514D200538464 /* bridgesprites-hd.pvr.gz in Resources */,
 				CE53D25B16060D090064F167 /* level15.json in Resources */,
 				CE53D25E160612510064F167 /* level21.json in Resources */,
+				CE53D260160616070064F167 /* level25.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
