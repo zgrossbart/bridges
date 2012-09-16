@@ -4,6 +4,12 @@
         "name": "The classic",
         "rivers": [
             {
+                "x": "8",
+                "y": "12-22",
+                "orient": "v",
+				"side": "left"
+            },
+            {
                 "x": "l-34",
                 "y": "12",
                 "orient": "h"
@@ -14,11 +20,6 @@
                 "orient": "h"
             },
             {
-                "x": "8",
-                "y": "12-22",
-                "orient": "v"
-            },
-            {
                 "x": "28",
                 "y": "12-22",
                 "orient": "v"
@@ -26,7 +27,8 @@
             {
                 "x": "34",
                 "y": "b-12",
-                "orient": "v"
+                "orient": "v",
+				"side": "right"
             }
         ],
         "bridges": [

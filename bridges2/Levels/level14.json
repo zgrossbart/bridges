@@ -16,12 +16,14 @@
             {
                 "x": "17",
                 "y": "12-18",
-                "orient": "v"
+                "orient": "v",
+				"side": "left"
             },
             {
                 "x": "23",
                 "y": "12-18",
-                "orient": "v"
+                "orient": "v",
+				"side": "right"
             },
             {
                 "x": "11-29",
@@ -36,12 +38,14 @@
             {
                 "x": "11",
                 "y": "6-24",
-                "orient": "v"
+                "orient": "v",
+				"side": "left"
             },
             {
                 "x": "29",
                 "y": "6-24",
-                "orient": "v"
+                "orient": "v",
+				"side": "right"
             },
             {
                 "x": "c",

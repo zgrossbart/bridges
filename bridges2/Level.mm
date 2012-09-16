@@ -393,8 +393,16 @@
             //[rivers removeLastObject];
             [rivers addObject:riverEnd2];
         }
-        
-    } else {
+    }
+    
+    if (vert && yi2 == [self getWinSize].height) {
+        CCSprite *river = [CCSprite spriteWithSpriteFrameName:@"river_v.png"];
+        river.position = ccp(xi2, yi2);
+        river.tag = RIVER;
+        [rivers addObject:river];
+    }
+    
+    if (!vert && xi1 > 0) {
         [rivers removeObjectAtIndex:0];
     }
     
