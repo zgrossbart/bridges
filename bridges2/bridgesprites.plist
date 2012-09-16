@@ -761,13 +761,13 @@
             <key>river_h.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{44,492},{15,15}}</string>
+                <string>{{240,338},{15,13}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{15,15}}</string>
+                <string>{{0,1},{15,13}}</string>
                 <key>sourceSize</key>
                 <string>{15,15}</string>
             </dict>
@@ -846,7 +846,7 @@
             <key>size</key>
             <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:f4d9e79017fee6eb506c3b74e2cc7352$</string>
+            <string>$TexturePacker:SmartUpdate:5053ea0691dbdc4d238ae0f7f720174b$</string>
             <key>textureFileName</key>
             <string>bridgesprites.pvr.gz</string>
         </dict>
