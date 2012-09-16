@@ -153,13 +153,49 @@
 -(void)drawLevels:(CGRect) bounds {
     [self setupCocos2D:bounds];
     
+    NSMutableArray *levels = [NSMutableArray arrayWithCapacity:20];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    if([paths count] > 0) {
+        for (NSString* levelId in self.levelIds) {
+            Level *level = (Level*) [self.levels objectForKey:levelId];
+            
+            NSString *documentsDirectory = [paths objectAtIndex:0];
+            
+            NSString *path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", level.levelId]];
+            
+            NSError *error;
+            
+            if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+                NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[path stringByAppendingPathComponent:path] error:&error];
+                NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
+                
+                if ([level.date compare:fileDate] == NSOrderedDescending) {
+                    [levels addObject:level];
+                } else {
+                    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+                    
+                    dispatch_async(queue, ^{
+                        level.screenshot = [UIImage imageWithContentsOfFile:path];
+                    });
+                }
+            } else {
+                [levels addObject:level];
+            }
+        }
+    }
+    
+    if ([levels count] == 0) {
+        /*
+         * Then all the levels were up to date
+         */
+        return;
+    }
+            
+    
     b2Vec2 gravity = b2Vec2(0.0f, 0.0f);
     bool doSleep = false;
     b2World *world = new b2World(gravity);
     world->SetAllowSleeping(doSleep);
-    
-    uint32 flags = 0;
-    flags += b2Draw::e_shapeBit;
     
     [[CCSpriteFrameCache sharedSpriteFrameCache]
      addSpriteFramesWithFile:@"bridgesprites.plist"];
@@ -183,31 +219,12 @@
         s = CGSizeMake(216, 144);
     }
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    for (NSString* levelId in self.levelIds) {
-        
-        Level *level = (Level*) [self.levels objectForKey:levelId];
+    for (Level* level in levels) {
         layerMgr.tileSize = CGSizeMake(bounds.size.height / level.tileCount, bounds.size.height / level.tileCount);
-        if([paths count] > 0) {
-            NSString *documentsDirectory = [paths objectAtIndex:0];
-            
-            NSString *path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", level.levelId]];
-            
-            NSError *error;
-            
-            if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-                NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[path stringByAppendingPathComponent:path] error:&error];
-                NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
-                
-                if ([fileDate compare:level.date] == NSOrderedDescending) {
-                    /*
-                     * Then the image is more recent than the file
-                     * and there's no need to regenerate it.
-                     */
-                    continue;
-                }
-            }
-        }
+        
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        
+        NSString *path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", level.levelId]];
         
         [level addSprites:layerMgr:nil];
         
@@ -215,13 +232,11 @@
         [scene visit];
         [renderer end];
         
-        NSString *fileName = [NSString stringWithFormat:@"level%@.png", level.levelId];
-        
         UIImage *image = [renderer getUIImage];
         [image imageByScalingAndCroppingForSize:s];
-        [UIImagePNGRepresentation(image) writeToFile:fileName atomically:YES];
+        [UIImagePNGRepresentation(image) writeToFile:path atomically:YES];
         level.screenshot = image;
-                
+        
         [layerMgr removeAll];
         
     }
