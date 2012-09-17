@@ -292,7 +292,7 @@
 -(IBAction)aboutTapped:(id)sender {
     [[NSBundle mainBundle] loadNibNamed:@"AboutViewiPad" owner:self options:nil];
     
-    NSString *urlAddress = @"http://www.google.com";
+    NSString *urlAddress = @"https://github.com/zgrossbart/bridges/blob/master/README.md#the-seven-bridges-of-k%C3%B6nigsberg";
     NSURL *url = [NSURL URLWithString:urlAddress];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:requestObj];
@@ -323,7 +323,7 @@
 -(IBAction)creditsTapped:(id)sender {
     [[NSBundle mainBundle] loadNibNamed:@"AboutViewiPad" owner:self options:nil];
     
-    NSString *urlAddress = @"http://www.google.com";
+    NSString *urlAddress = @"https://github.com/zgrossbart/bridges/commits/master";
     NSURL *url = [NSURL URLWithString:urlAddress];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:requestObj];
