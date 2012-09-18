@@ -99,12 +99,12 @@
 /** 
  * The display name for this level
  */
-@property (readonly) NSString *name;
+@property (readonly, retain) NSString *name;
 
 /** 
  * The last modified date for this level
  */
-@property (readonly) NSDate *date;
+@property (readonly, retain) NSDate *date;
 
 /**
  * The tile count for this level.  The default is 28
@@ -114,7 +114,7 @@
 /** 
  * The unique id for this level
  */
-@property (readonly) NSString *levelId;
+@property (readonly, retain) NSString *levelId;
 
 /** 
  * The current player position in the level

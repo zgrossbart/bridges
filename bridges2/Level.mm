@@ -33,9 +33,9 @@
 @property (readwrite, retain) LayerMgr *layerMgr;
 @property (readwrite, copy) NSDictionary *levelData;
 
-@property (readwrite) NSString *name;
-@property (readwrite) NSDate *date;
-@property (readwrite) NSString *levelId;
+@property (readwrite, retain) NSString *name;
+@property (readwrite, retain) NSDate *date;
+@property (readwrite, retain) NSString *levelId;
 @property (readwrite) CGPoint playerPos;
 @property (readwrite) int tileCount;
 @end
