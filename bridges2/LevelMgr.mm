@@ -184,13 +184,19 @@
         }
     }
     
-    if ([levels count] == 0) {
+    if ([levels count] > 0) {
         /*
-         * Then all the levels were up to date
+         * Then we have some levels that still need screenshots.  We'll draw
+         * them in a different thread so we don't slow down the UI.
          */
-        return;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self doDrawLevels:bounds:levels];
+        });
     }
-            
+}
+
+-(void)doDrawLevels:(CGRect) bounds: (NSMutableArray*) levels {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);        
     
     b2Vec2 gravity = b2Vec2(0.0f, 0.0f);
     bool doSleep = false;
