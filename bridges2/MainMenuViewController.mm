@@ -26,7 +26,7 @@
 }
 
 @property (readwrite, retain) NSMutableArray *buttons;
-@property (retain) UIImage *checkImage;
+@property (readwrite, retain) UIImage *checkImage;
 
 @end
 
