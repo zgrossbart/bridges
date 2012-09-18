@@ -49,14 +49,9 @@
     
     [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
     [self viewDidLoad];
-    
-    
-    //    [super awakeFromNib];
-    //    [self addSubview:self.view];
 }
 
--(void)viewDidLoad
-{
+-(void)viewDidLoad {
     [super viewDidLoad];
     if (_checkImage == nil) {
         _checkImage = [UIImage imageNamed:@"green_check.png"];
