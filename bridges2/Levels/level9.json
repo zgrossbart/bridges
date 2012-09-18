@@ -1,68 +1,42 @@
 {
     "level": {
         "id": "9",
-        "name": "Level 9",
+        "name": "Visit again",
+        "labels": [
+            {
+                "x": "22",
+                "y": "27",
+                "w": "16",
+                "h": "10",
+                "text": "You have to cross a bridge between each visit to a house."
+            }
+        ],
         "rivers": [
             {
-                "x": "c",
+                "x": "14",
                 "y": "b-t",
                 "orient": "v"
-            },
-            {
-                "x": "l-c",
-                "y": "18",
-                "orient": "h"
-            },
-            {
-                "x": "c-r",
-                "y": "8",
-                "orient": "h"
             }
         ],
         "bridges": [
             {
-                "x": "c",
-                "y": "m",
-                "orient": "h",
-                "color": "red",
-                "dir": "right"
-            },
-            {
-                "x": "c",
-                "y": "22",
-                "orient": "h",
-                "color": "green",
-                "dir": "left"
-            },
-            {
-                "x": "6",
+                "x": "14",
                 "y": "18",
-                "orient": "v",
-                "color": "black"
-            },
-            {
-                "x": "30",
-                "y": "8",
-                "orient": "v",
-                "color": "black"
-            },
-            {
-                "x": "c",
-                "y": "4",
                 "orient": "h",
-                "color": "black"
+                "coins": "3"
             }
         ],
         "houses": [
             {
-                "x": "10",
-                "y": "24",
-                "color": "green"
+                "x": "4",
+                "y": "18",
+                "color": "black",
+                "coins": "2"
             },
             {
-                "x": "30",
-                "y": "14",
-                "color": "red"
+                "x": "28",
+                "y": "10",
+                "coins": "1"
             }
         ]
     }
