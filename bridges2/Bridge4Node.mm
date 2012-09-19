@@ -93,16 +93,16 @@
     self.crossed = true;
 }
 
--(void)enterBridge:(int)dir {
+-(void)enterBridge:(BridgeDir)dir {
     if (!self.isCrossed) {
         CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
         CCSpriteFrame* frame;
         
-        if (dir == UP) {
+        if (dir == dUp) {
             frame = [cache spriteFrameByName:@"bridge_4_up.png"];
-        } else if (dir == DOWN) {
+        } else if (dir == dDown) {
             frame = [cache spriteFrameByName:@"bridge_4_down.png"];
-        } else if (dir == RIGHT) {
+        } else if (dir == dRight) {
             frame = [cache spriteFrameByName:@"bridge_4_right.png"];
         } else {
             frame = [cache spriteFrameByName:@"bridge_4_left.png"];

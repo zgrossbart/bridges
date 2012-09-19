@@ -48,7 +48,7 @@
  * @param color the color constant for this bridge
  * @param layerMgr the layer manager instance to add sprites to
  */
--(id)initWithOrientAndDir: (bool)vertical:(int)dir: (BridgeColor) color:(LayerMgr*) layerMgr;
+-(id)initWithOrientAndDir: (bool) vertical:(BridgeDir) dir: (BridgeColor) color:(LayerMgr*) layerMgr;
 
 /**
  * Create a new bridge node
@@ -59,7 +59,7 @@
  * @param layerMgr the layer manager instance to add sprites to
  * @param coins the number of coins it costs to completely cross this bridge
  */
--(id)initWithOrientAndDirAndCoins: (bool)vertical:(int)dir: (BridgeColor) color:(LayerMgr*) layerMgr:(int)coins;
+-(id)initWithOrientAndDirAndCoins: (bool) vertical:(BridgeDir) dir: (BridgeColor) color:(LayerMgr*) layerMgr:(int) coins;
 
 /**
  * Cross this bridge.  This will decrement the coin count or disable the bridge if there

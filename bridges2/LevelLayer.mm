@@ -377,7 +377,7 @@
     }
     
     if (_canVisit && ![node isVisited]) {
-        if (node.color == NONE || _player.color == node.color) {
+        if (node.color == cNone || _player.color == node.color) {
             [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins]];
             _undoBtn.enabled = YES;
             if (node.coins > 0) {
@@ -439,13 +439,13 @@
     CGFloat angle = CGPointToDegree(pnormal);
     
     if (angle > 45 && angle < 135) {
-        exitDir = RIGHT;
+        exitDir = dRight;
     } else if ((angle > 135 && angle < 180) || (angle < -135 && angle > -180)) {
-        exitDir = DOWN;
+        exitDir = dDown;
     } else if (angle < -45 && angle > -135) {
-        exitDir = LEFT;
+        exitDir = dLeft;
     } else {
-        exitDir = UP;
+        exitDir = dUp;
     }
     
     if (exitDir == _bridgeEntry) {
@@ -459,13 +459,13 @@
     
     //    printf("current bridge (%f, %f)\n", _currentBridge.bridge.position.x, _currentBridge.bridge.position.y);
     
-    if (exitDir == RIGHT) {
+    if (exitDir == dRight) {
         location = ccp(_currentBridge.bridge.position.x + (_currentBridge.bridge.contentSize.width / 2) + (_player.player.contentSize.width), _currentBridge.bridge.position.y);
-    } else if (exitDir == LEFT) {
+    } else if (exitDir == dLeft) {
         location = ccp((_currentBridge.bridge.position.x -(_currentBridge.bridge.contentSize.width / 2)) -(_player.player.contentSize.width), _currentBridge.bridge.position.y);
-    } else if (exitDir == UP) {
+    } else if (exitDir == dUp) {
         location = ccp(_currentBridge.bridge.position.x, _currentBridge.bridge.position.y + (_currentBridge.bridge.contentSize.height / 2) + (_player.player.contentSize.height));
-    } else if (exitDir == DOWN) {
+    } else if (exitDir == dDown) {
         location = ccp(_currentBridge.bridge.position.x, (_currentBridge.bridge.position.y -(_currentBridge.bridge.contentSize.height / 2)) -(_player.player.contentSize.height));
     }
     
@@ -499,13 +499,13 @@ CGFloat CGPointToDegree(CGPoint point) {
     int padding = bridge.bridge.contentSize.width / 2;
     
     if (player.position.x < bridge.bridge.position.x - padding) {
-        _bridgeEntry = LEFT;
+        _bridgeEntry = dLeft;
     } else if (player.position.x > bridge.bridge.position.x + padding) {
-        _bridgeEntry = RIGHT;
+        _bridgeEntry = dRight;
     } else if (player.position.y < bridge.bridge.position.y - padding) {
-        _bridgeEntry = DOWN;
+        _bridgeEntry = dDown;
     } else if (player.position.y > bridge.bridge.position.y - padding) {
-        _bridgeEntry = UP;
+        _bridgeEntry = dUp;
     }
     
     _currentBridge = bridge;
@@ -525,7 +525,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     [bridge enterBridge:_bridgeEntry];
     
-    if (bridge.color != NONE) {
+    if (bridge.color != cNone) {
         [_player updateColor:bridge.color];
     }
 }
@@ -546,7 +546,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     if (bridge.vertical) {
         if (_playerStart.y + player.contentSize.height < object.position.y + padding) {
             // Then the player is below the bridge
-            if (bridge.direction != UP && bridge.direction != NONE) {
+            if (bridge.direction != dUp && bridge.direction != dNone) {
                 _inMove = false;
                 [self bumpObject:player :bridge.bridge];
                 return;
@@ -556,7 +556,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             location = ccp(x, object.position.y + object.contentSize.height + 5);
         } else if (_playerStart.y > (object.position.y + object.contentSize.height) - padding) {
             // Then the player is above the bridge
-            if (bridge.direction != DOWN && bridge.direction != NONE) {
+            if (bridge.direction != dDown && bridge.direction != dNone) {
                 _inMove = false;
                 [self bumpObject:player :bridge.bridge];
                 return;
@@ -568,7 +568,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     } else {
         if (_playerStart.x > (object.position.x + object.contentSize.width) - padding) {
             // Then the player is to the right of the bridge
-            if (bridge.direction != LEFT && bridge.direction != NONE) {
+            if (bridge.direction != dLeft && bridge.direction != dNone) {
                 _inMove = false;
                 [self bumpObject:player: bridge.bridge];
                 return;
@@ -578,7 +578,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             location = ccp((object.position.x - 5) -(player.contentSize.width), y);
         } else if (_playerStart.x + player.contentSize.width < object.position.x + padding) {
             // Then the player is to the left of the bridge
-            if (bridge.direction != RIGHT && bridge.direction != NONE) {
+            if (bridge.direction != dRight && bridge.direction != dNone) {
                 _inMove = false;
                 [self bumpObject:player :bridge.bridge];
                 return;
@@ -614,7 +614,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     [bridge cross];
     _canVisit = true;
     
-    if (bridge.color != NONE) {
+    if (bridge.color != cNone) {
         [_player updateColor:bridge.color];
     }
     

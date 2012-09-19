@@ -160,27 +160,27 @@
     }
 }
 
--(int)getSide:(NSString*) side {
+-(BridgeDir)getSide:(NSString*) side {
     if ([@"left" isEqualToString:side]) {
-        return LEFT;
+        return dLeft;
     } else if ([@"right" isEqualToString:side]) {
-        return RIGHT;
+        return dRight;
     } else {
-        return NONE;
+        return dNone;
     }
 }
 
--(int)getDir:(NSString*) dir {
+-(BridgeDir)getDir:(NSString*) dir {
     if ([@"left" isEqualToString:dir]) {
-        return LEFT;
+        return dLeft;
     } else if ([@"right" isEqualToString:dir]) {
-        return RIGHT;
+        return dRight;
     } else if ([@"up" isEqualToString:dir]) {
-        return UP;
+        return dUp;
     } else if ([@"down" isEqualToString:dir]) {
-        return DOWN;
+        return dDown;
     } else {
-        return NONE;
+        return dNone;
     }
 }
 
@@ -374,10 +374,10 @@
      * specified a side and substitute the right sprites for the top
      * most and bottom most sections of the river.
      */
-    if (vert && side != NONE) {
+    if (vert && side != dNone) {
         if (yi1 != 0) {
             CCSprite *riverEnd;
-            if (side == RIGHT) {
+            if (side == dRight) {
                 riverEnd = [CCSprite spriteWithSpriteFrameName:@"river_v_br.png"];
             } else {
                 riverEnd =  [CCSprite spriteWithSpriteFrameName:@"river_v_bl.png"];
@@ -390,7 +390,7 @@
         
         if (yi2 < [self getWinSize].height - _layerMgr.tileSize.height) {
             CCSprite *riverEnd2;
-            if (side == RIGHT) {
+            if (side == dRight) {
                 riverEnd2 = [CCSprite spriteWithSpriteFrameName:@"river_v_ur.png"];
             } else {
                 riverEnd2 = [CCSprite spriteWithSpriteFrameName:@"river_v_tl.png"];
@@ -493,7 +493,7 @@
     
 }
 
--(BridgeNode*)addBridge:(float) x:(float) y:(bool) vertical:(float) dir: (BridgeColor) color: (NSString*) coins {
+-(BridgeNode*)addBridge:(float) x:(float) y:(bool) vertical:(BridgeDir) dir: (BridgeColor) color: (NSString*) coins {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     

@@ -29,7 +29,7 @@ static int const BRIDGE4 = 4;
 static int const HOUSE = 5;
 static int const LEVEL = 6;
 
-static int const NONE = -1;
+//static int const NONE = -1;
 
 /*
  * The support object colors in the game.
@@ -46,16 +46,12 @@ typedef enum {
  * These are the supported directions for things 
  * like bridges.
  */
-static int const LEFT = 1;
-static int const RIGHT = 2;
-static int const UP = 3;
-static int const DOWN = 4;
-
 typedef enum {
-    left = 1,
-    right = 2,
-    up = 3,
-    down = 4} BridgeDir;
+    dNone = -1,
+    dLeft = 1,
+    dRight = 2,
+    dUp = 3,
+    dDown = 4} BridgeDir;
 
 /*
  * The tile count represents the number of playable 

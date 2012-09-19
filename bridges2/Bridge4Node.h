@@ -51,7 +51,7 @@
  *
  * @param dir the direction the player enterred from
  */
--(void)enterBridge:(int)dir;
+-(void)enterBridge:(BridgeDir)dir;
 
 /**
  * True if this bridge is crossed and false otherwise
