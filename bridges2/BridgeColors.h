@@ -29,10 +29,9 @@ static int const BRIDGE4 = 4;
 static int const HOUSE = 5;
 static int const LEVEL = 6;
 
-//static int const NONE = -1;
-
-/*
- * The support object colors in the game.
+/**
+ * This enum defines the different colors for houses,
+ * bridges, and the player in the game.
  */
 typedef enum {
     cNone = -1,
@@ -42,9 +41,9 @@ typedef enum {
     cOrange = 3,
     cBlack = 4} BridgeColor;
 
-/*
- * These are the supported directions for things 
- * like bridges.
+/**
+ * This enum defines the different directions bridges 
+ * can point and the player can travel in the game.
  */
 typedef enum {
     dNone = -1,
@@ -66,4 +65,4 @@ static int const TILE_COUNT = 28;
  * This variable controls debug drawing.  Change it to true
  * to see the tile grid and the boxes for each sprite.
  */
-static bool const DEBUG_DRAW = true;
+static bool const DEBUG_DRAW = false;
