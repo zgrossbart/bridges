@@ -20,6 +20,7 @@
 #import "cocos2d.h"
 #import "LayerMgr.h"
 #import "GameNode.h"
+#import "BridgeColors.h"
 
 /**
  * This node represents a 4-way bridge.  The player can enter in one direction
@@ -36,7 +37,7 @@
  * color the color of this bridge
  * the layer manager for use with this node
  */
--(id)initWithTagAndColor: (int)color: (LayerMgr*)layerMgr;
+-(id)initWithTagAndColor: (BridgeColor)color: (LayerMgr*)layerMgr;
 
 /**
  * Called to finish crossing the bridge after enterring and choosing an exit direction

@@ -257,17 +257,17 @@
 
 -(BridgeColor)getColor:(NSString*) color {
     if ([color isEqualToString:@"red"]) {
-        return red;
+        return cRed;
     } else if ([color isEqualToString:@"green"]) {
-        return green;
+        return cGreen;
     } else if ([color isEqualToString:@"orange"]) {
-        return orange;
+        return cOrange;
     } else if ([color isEqualToString:@"blue"]) {
-        return blue;
+        return cBlue;
     } else if ([color isEqualToString:@"black"]) {
-        return black;
+        return cBlack;
     } else {
-        return none;
+        return cNone;
     }
 }
 
@@ -478,7 +478,7 @@
     
 }
 
--(Bridge4Node*)addBridge4:(float) x:(float) y:(float) color {
+-(Bridge4Node*)addBridge4:(float) x:(float) y:(BridgeColor) color {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     

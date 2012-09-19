@@ -66,13 +66,13 @@
 }
 
 -(NSString*)getSpriteName {
-    if (self.color == red) {
+    if (self.color == cRed) {
         return @"house_red.png";
-    } else if (self.color == blue) {
+    } else if (self.color == cBlue) {
         return @"house_blue.png";
-    } else if (self.color == green) {
+    } else if (self.color == cGreen) {
         return @"house_green.png";
-    } else if (self.color == orange) {
+    } else if (self.color == cOrange) {
         return @"house_orange.png";
     } else {
         return @"house.png";

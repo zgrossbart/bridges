@@ -37,13 +37,13 @@
         _manager = layerMgr;
         _tag = PLAYER;
         self.color = color;
-        if (color == red) {
+        if (color == cRed) {
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_red.png"]];
-        } else if (color == blue) {
+        } else if (color == cBlue) {
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_blue.png"]];
-        } else if (color == green) {
+        } else if (color == cGreen) {
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_green.png"]];
-        } else if (color == orange) {
+        } else if (color == cOrange) {
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_orange.png"]];
         } else {
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1.png"]];
@@ -92,13 +92,13 @@
     CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
     CCSpriteFrame* frame;
     
-    if (color == red) {
+    if (color == cRed) {
         frame = [cache spriteFrameByName:@"octopus1_red.png"];
-    } else if (color == blue) {
+    } else if (color == cBlue) {
         frame = [cache spriteFrameByName:@"octopus1_blue.png"];
-    } else if (color == green) {
+    } else if (color == cGreen) {
         frame = [cache spriteFrameByName:@"octopus1_green.png"];
-    } else if (color == orange) {
+    } else if (color == cOrange) {
         frame = [cache spriteFrameByName:@"octopus1_orange.png"];
     } else {
         frame = [cache spriteFrameByName:@"octopus1.png"];

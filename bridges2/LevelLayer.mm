@@ -714,7 +714,7 @@ CGFloat CGPointToDegree(CGPoint point) {
 
 -(void)spawnPlayer:(int) x: (int) y {
     
-    _player = [[PlayerNode alloc] initWithColor:black:_layerMgr];
+    _player = [[PlayerNode alloc] initWithColor:cBlack:_layerMgr];
     _player.player.position = ccp(x, y);
 }
 

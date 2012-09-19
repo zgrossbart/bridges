@@ -71,13 +71,13 @@
 }
 
 -(NSString*)getSpriteName {
-    if (self.color == red) {
+    if (self.color == cRed) {
         return @"bridge_4_red.png";
-    } else if (self.color == blue) {
+    } else if (self.color == cBlue) {
         return @"bridge_4_blue.png";
-    } else if (self.color == green) {
+    } else if (self.color == cGreen) {
         return @"bridge_4_green.png";
-    } else if (self.color == orange) {
+    } else if (self.color == cOrange) {
         return @"bridge_4_orange.png";
     } else {
         return @"bridge_4.png";

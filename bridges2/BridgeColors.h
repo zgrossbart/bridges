@@ -35,12 +35,12 @@ static int const NONE = -1;
  * The support object colors in the game.
  */
 typedef enum {
-    none = -1,
-    red = 0,
-    blue = 1,
-    green = 2,
-    orange = 3,
-    black = 4} BridgeColor;
+    cNone = -1,
+    cRed = 0,
+    cBlue = 1,
+    cGreen = 2,
+    cOrange = 3,
+    cBlack = 4} BridgeColor;
 
 /*
  * These are the supported directions for things 
@@ -50,6 +50,12 @@ static int const LEFT = 1;
 static int const RIGHT = 2;
 static int const UP = 3;
 static int const DOWN = 4;
+
+typedef enum {
+    left = 1,
+    right = 2,
+    up = 3,
+    down = 4} BridgeDir;
 
 /*
  * The tile count represents the number of playable 

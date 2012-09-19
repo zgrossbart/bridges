@@ -110,7 +110,7 @@
 
 -(NSString*)getSpriteName {
     if (self.vertical) {
-        if (self.color == red) {
+        if (self.color == cRed) {
             if (self.direction == UP) {
                 return @"bridge_red_up.png";
             } else if (self.direction == DOWN) {
@@ -118,7 +118,7 @@
             } else {
                 return @"bridge_v_red.png";
             }
-        } else if (self.color == blue) {
+        } else if (self.color == cBlue) {
             if (self.direction == UP) {
                 return @"bridge_blue_up.png";
             } else if (self.direction == DOWN) {
@@ -126,7 +126,7 @@
             } else {
                 return @"bridge_v_blue.png";
             }
-        } else if (self.color == green) {
+        } else if (self.color == cGreen) {
             if (self.direction == UP) {
                 return @"bridge_green_up.png";
             } else if (self.direction == DOWN) {
@@ -134,7 +134,7 @@
             } else {
                 return @"bridge_v_green.png";
             }
-        } else if (self.color == orange) {
+        } else if (self.color == cOrange) {
             if (self.direction == UP) {
                 return @"bridge_orange_up.png";
             } else if (self.direction == DOWN) {
@@ -152,7 +152,7 @@
             }
         }
     } else {
-        if (self.color == red) {
+        if (self.color == cRed) {
             if (self.direction == LEFT) {
                 return @"bridge_red_left.png";
             } else if (self.direction == RIGHT) {
@@ -160,7 +160,7 @@
             } else {
                 return @"bridge_h_red.png";
             }
-        } else if (self.color == blue) {
+        } else if (self.color == cBlue) {
             if (self.direction == LEFT) {
                 return @"bridge_blue_left.png";
             } else if (self.direction == RIGHT) {
@@ -168,7 +168,7 @@
             } else {
                 return @"bridge_h_blue.png";
             }
-        } else if (self.color == green) {
+        } else if (self.color == cGreen) {
             if (self.direction == LEFT) {
                 return @"bridge_green_left.png";
             } else if (self.direction == RIGHT) {
@@ -176,7 +176,7 @@
             } else {
                 return @"bridge_h_green.png";
             }
-        } else if (self.color == orange) {
+        } else if (self.color == cOrange) {
             if (self.direction == LEFT) {
                 return @"bridge_orange_left.png";
             } else if (self.direction == RIGHT) {
