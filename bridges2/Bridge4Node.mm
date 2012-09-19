@@ -22,7 +22,7 @@
 @interface Bridge4Node()
 @property (readwrite, retain) CCSprite *bridge;
 @property (nonatomic, assign, getter=isCrossed, readwrite) bool crossed;
-@property (nonatomic, assign, readwrite) int color;
+@property (nonatomic, assign, readwrite) BridgeColor color;
 @property (readwrite, assign) LayerMgr *layerMgr;
 @property (nonatomic, assign, readwrite) int tag;
 @property (nonatomic, assign, readwrite) int coins;
@@ -30,7 +30,7 @@
 
 @implementation Bridge4Node
 
--(id) initWithTagAndColor:(int)color :(LayerMgr *)layerMgr {
+-(id) initWithTagAndColor:(BridgeColor) color :(LayerMgr *) layerMgr {
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;
         self.tag = BRIDGE4;
@@ -71,13 +71,13 @@
 }
 
 -(NSString*)getSpriteName {
-    if (self.color == RED) {
+    if (self.color == red) {
         return @"bridge_4_red.png";
-    } else if (self.color == BLUE) {
+    } else if (self.color == blue) {
         return @"bridge_4_blue.png";
-    } else if (self.color == GREEN) {
+    } else if (self.color == green) {
         return @"bridge_4_green.png";
-    } else if (self.color == ORANGE) {
+    } else if (self.color == orange) {
         return @"bridge_4_orange.png";
     } else {
         return @"bridge_4.png";

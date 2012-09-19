@@ -18,6 +18,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GameNode.h"
+#import "BridgeColors.h"
 
 /** 
  * Undoables represent a game action which the user can undo.
@@ -34,7 +35,7 @@
  * @param color the previous color of the player
  * @param coins the previous coin count of the player
  */
--(id) initWithPosAndNode:(CGPoint) pos:(id<GameNode>) node: (int) color: (int) coins;
+-(id) initWithPosAndNode:(CGPoint) pos:(id<GameNode>) node: (BridgeColor) color: (int) coins;
 
 /** 
  * The previous player position
@@ -49,7 +50,7 @@
 /** 
  * The previous player color
  */
-@property (readonly) int color;
+@property (readonly) BridgeColor color;
 
 /** 
  * The previous coin count of the player

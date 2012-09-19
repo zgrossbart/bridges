@@ -20,6 +20,7 @@
 #import "cocos2d.h"
 #import "LayerMgr.h"
 #import "GameNode.h"
+#import "BridgeColors.h"
 
 /**
  * A bridge node represents a single two-way bridge in the game
@@ -37,7 +38,7 @@
  * @param color the color constant for this bridge
  * @param layerMgr the layer manager instance to add sprites to
  */
--(id)initWithOrient: (bool) vertical :(int) color :(LayerMgr*) layerMgr;
+-(id)initWithOrient: (bool) vertical :(BridgeColor) color :(LayerMgr*) layerMgr;
 
 /**
  * Create a new bridge node
@@ -47,7 +48,7 @@
  * @param color the color constant for this bridge
  * @param layerMgr the layer manager instance to add sprites to
  */
--(id)initWithOrientAndDir: (bool)vertical:(int)dir: (int) color:(LayerMgr*) layerMgr;
+-(id)initWithOrientAndDir: (bool)vertical:(int)dir: (BridgeColor) color:(LayerMgr*) layerMgr;
 
 /**
  * Create a new bridge node
@@ -58,7 +59,7 @@
  * @param layerMgr the layer manager instance to add sprites to
  * @param coins the number of coins it costs to completely cross this bridge
  */
--(id)initWithOrientAndDirAndCoins: (bool)vertical:(int)dir: (int) color:(LayerMgr*) layerMgr:(int)coins;
+-(id)initWithOrientAndDirAndCoins: (bool)vertical:(int)dir: (BridgeColor) color:(LayerMgr*) layerMgr:(int)coins;
 
 /**
  * Cross this bridge.  This will decrement the coin count or disable the bridge if there

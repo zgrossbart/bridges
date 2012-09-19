@@ -23,7 +23,7 @@
 @property (readwrite) bool vertical;
 @property (readwrite, retain) CCSprite *bridge;
 @property (nonatomic, assign, getter=isCrossed, readwrite) bool crossed;
-@property (nonatomic, assign, readwrite) int color;
+@property (nonatomic, assign, readwrite) BridgeColor color;
 @property (assign, readwrite) LayerMgr *layerMgr;
 @property (readwrite, retain) UILabel *label;
 @property (nonatomic, assign, readwrite) int tag;
@@ -33,17 +33,17 @@
 
 @implementation BridgeNode
 
--(id) initWithOrient:(bool) vertical:(int) color:(LayerMgr*) layerMgr {
+-(id) initWithOrient:(bool) vertical:(BridgeColor) color:(LayerMgr*) layerMgr {
     self=[super init];
     return [self initWithOrientAndDir:vertical:NONE:color:layerMgr];
 }
 
--(id)initWithOrientAndDir: (bool)vertical:(int)dir: (int) color:(LayerMgr*) layerMgr {
+-(id)initWithOrientAndDir: (bool)vertical:(int)dir: (BridgeColor) color:(LayerMgr*) layerMgr {
     self=[super init];
     return [self initWithOrientAndDirAndCoins:vertical:NONE:color:layerMgr:0];
 }
 
--(id)initWithOrientAndDirAndCoins: (bool)vertical:(int)dir:(int) color:(LayerMgr*) layerMgr:(int)coins {
+-(id)initWithOrientAndDirAndCoins: (bool)vertical:(int)dir:(BridgeColor) color:(LayerMgr*) layerMgr:(int)coins {
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;
         self.tag = BRIDGE;
@@ -110,7 +110,7 @@
 
 -(NSString*)getSpriteName {
     if (self.vertical) {
-        if (self.color == RED) {
+        if (self.color == red) {
             if (self.direction == UP) {
                 return @"bridge_red_up.png";
             } else if (self.direction == DOWN) {
@@ -118,7 +118,7 @@
             } else {
                 return @"bridge_v_red.png";
             }
-        } else if (self.color == BLUE) {
+        } else if (self.color == blue) {
             if (self.direction == UP) {
                 return @"bridge_blue_up.png";
             } else if (self.direction == DOWN) {
@@ -126,7 +126,7 @@
             } else {
                 return @"bridge_v_blue.png";
             }
-        } else if (self.color == GREEN) {
+        } else if (self.color == green) {
             if (self.direction == UP) {
                 return @"bridge_green_up.png";
             } else if (self.direction == DOWN) {
@@ -134,7 +134,7 @@
             } else {
                 return @"bridge_v_green.png";
             }
-        } else if (self.color == ORANGE) {
+        } else if (self.color == orange) {
             if (self.direction == UP) {
                 return @"bridge_orange_up.png";
             } else if (self.direction == DOWN) {
@@ -152,7 +152,7 @@
             }
         }
     } else {
-        if (self.color == RED) {
+        if (self.color == red) {
             if (self.direction == LEFT) {
                 return @"bridge_red_left.png";
             } else if (self.direction == RIGHT) {
@@ -160,7 +160,7 @@
             } else {
                 return @"bridge_h_red.png";
             }
-        } else if (self.color == BLUE) {
+        } else if (self.color == blue) {
             if (self.direction == LEFT) {
                 return @"bridge_blue_left.png";
             } else if (self.direction == RIGHT) {
@@ -168,7 +168,7 @@
             } else {
                 return @"bridge_h_blue.png";
             }
-        } else if (self.color == GREEN) {
+        } else if (self.color == green) {
             if (self.direction == LEFT) {
                 return @"bridge_green_left.png";
             } else if (self.direction == RIGHT) {
@@ -176,7 +176,7 @@
             } else {
                 return @"bridge_h_green.png";
             }
-        } else if (self.color == ORANGE) {
+        } else if (self.color == orange) {
             if (self.direction == LEFT) {
                 return @"bridge_orange_left.png";
             } else if (self.direction == RIGHT) {

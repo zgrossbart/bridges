@@ -22,7 +22,7 @@
 @interface HouseNode()
 @property (readwrite, retain) CCSprite *house;
 @property (nonatomic, assign, getter=isVisited, readwrite) bool visited;
-@property (nonatomic, assign, readwrite) int color;
+@property (nonatomic, assign, readwrite) BridgeColor color;
 @property (readwrite, assign) LayerMgr *layerMgr;
 @property (readwrite, retain) UILabel *label;
 @property (nonatomic, assign, readwrite) int tag;
@@ -31,12 +31,12 @@
 
 @implementation HouseNode
 
--(id)initWithColor:(int) color:(LayerMgr*) layerMgr {
+-(id)initWithColor:(BridgeColor) color:(LayerMgr*) layerMgr {
     self = [super init];
     return [self initWithColorAndCoins: color :layerMgr :0];
 }
     
--(id)initWithColorAndCoins:(int) color:(LayerMgr*) layerMgr: (int) coins {
+-(id)initWithColorAndCoins:(BridgeColor) color:(LayerMgr*) layerMgr: (int) coins {
     
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;
@@ -66,13 +66,13 @@
 }
 
 -(NSString*)getSpriteName {
-    if (self.color == RED) {
+    if (self.color == red) {
         return @"house_red.png";
-    } else if (self.color == BLUE) {
+    } else if (self.color == blue) {
         return @"house_blue.png";
-    } else if (self.color == GREEN) {
+    } else if (self.color == green) {
         return @"house_green.png";
-    } else if (self.color == ORANGE) {
+    } else if (self.color == orange) {
         return @"house_orange.png";
     } else {
         return @"house.png";

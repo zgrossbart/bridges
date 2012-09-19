@@ -20,6 +20,7 @@
 #import "cocos2d.h"
 #import "LayerMgr.h"
 #import "GameNode.h"
+#import "BridgeColors.h"
 
 /**
  * A house node represents a house with a specific color that the player must visit
@@ -35,7 +36,7 @@
  * @param color the color of this house
  * @param layerMgr the layer manager to use for this house instance
  */
--(id)initWithColor:(int) color:(LayerMgr*) layerMgr;
+-(id)initWithColor:(BridgeColor) color:(LayerMgr*) layerMgr;
 
 /**
  * Create a new house with the specified color
@@ -44,7 +45,7 @@
  * @param layerMgr the layer manager to use for this house instance
  * @param coins the number of coins this house can provide
  */
--(id)initWithColorAndCoins:(int) color:(LayerMgr*) layerMgr: (int) coins;
+-(id)initWithColorAndCoins:(BridgeColor) color:(LayerMgr*) layerMgr: (int) coins;
 
 /**
  * Visit this house and subtract one coin.

@@ -20,14 +20,14 @@
 
 @interface Undoable()
 @property (readwrite) CGPoint pos;
-@property (readwrite) int color;
+@property (readwrite) BridgeColor color;
 @property (readwrite, assign) id<GameNode> node;
 @property (nonatomic, assign, readwrite) int coins;
 @end
 
 @implementation Undoable
 
--(id) initWithPosAndNode:(CGPoint) pos:(id<GameNode>) node: (int) color: (int) coins {
+-(id) initWithPosAndNode:(CGPoint) pos:(id<GameNode>) node: (BridgeColor) color: (int) coins {
     if( (self=[super init] )) {
         self.pos = pos;
         self.node = node;

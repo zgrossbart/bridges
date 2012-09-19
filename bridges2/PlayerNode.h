@@ -19,6 +19,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "LayerMgr.h"
+#import "BridgeColors.h"
 
 /** 
  * The player node is a special game node which represents the 
@@ -42,7 +43,7 @@
  * @param color the color for this player
  * @param layerMgr the layer manager used to handle the player sprites
  */
--(id)initWithColor:(int) color:(LayerMgr*) layerMgr;
+-(id)initWithColor:(BridgeColor) color:(LayerMgr*) layerMgr;
 
 /** 
  * The player can change color by walking over colored bridges.  This
@@ -50,7 +51,7 @@
  *
  * @param color the new color
  */
--(void)updateColor:(int)color;
+-(void)updateColor:(BridgeColor)color;
 
 /** 
  * Gets the tag for this node.  It is always PLAYER
@@ -92,7 +93,7 @@
 /** 
  * The current color of this player.
  */
-@property (nonatomic, assign, readonly) int color;
+@property (nonatomic, assign, readonly) BridgeColor color;
 
 /** 
  * The number of coins the player currently has.

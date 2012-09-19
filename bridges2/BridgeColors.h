@@ -29,15 +29,18 @@ static int const BRIDGE4 = 4;
 static int const HOUSE = 5;
 static int const LEVEL = 6;
 
+static int const NONE = -1;
+
 /*
  * The support object colors in the game.
  */
-static int const NONE = -1;
-static int const RED = 0;
-static int const BLUE = 1;
-static int const GREEN = 2;
-static int const ORANGE = 3;
-static int const BLACK = 4;
+typedef enum {
+    none = -1,
+    red = 0,
+    blue = 1,
+    green = 2,
+    orange = 3,
+    black = 4} BridgeColor;
 
 /*
  * These are the supported directions for things 

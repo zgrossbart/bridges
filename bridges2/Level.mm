@@ -255,19 +255,19 @@
     
 }
 
--(int)getColor:(NSString*) color {
+-(BridgeColor)getColor:(NSString*) color {
     if ([color isEqualToString:@"red"]) {
-        return RED;
+        return red;
     } else if ([color isEqualToString:@"green"]) {
-        return GREEN;
+        return green;
     } else if ([color isEqualToString:@"orange"]) {
-        return ORANGE;
+        return orange;
     } else if ([color isEqualToString:@"blue"]) {
-        return BLUE;
+        return blue;
     } else if ([color isEqualToString:@"black"]) {
-        return BLACK;
+        return black;
     } else {
-        return NONE;
+        return none;
     }
 }
 
@@ -493,7 +493,7 @@
     
 }
 
--(BridgeNode*)addBridge:(float) x:(float) y:(bool) vertical:(float) dir: (float) color: (NSString*) coins {
+-(BridgeNode*)addBridge:(float) x:(float) y:(bool) vertical:(float) dir: (BridgeColor) color: (NSString*) coins {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
@@ -579,7 +579,7 @@
     }
 }
 
--(HouseNode*)addHouse:(float) x:(float) y:(float) color:(NSString*) coins {
+-(HouseNode*)addHouse:(float) x:(float) y:(BridgeColor) color:(NSString*) coins {
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     

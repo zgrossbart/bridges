@@ -16,6 +16,8 @@
  *
  ******************************************************************************/
 
+#import "BridgeColors.h"
+
 /**
  * A game node represents an object on the game board the user can interact 
  * with like a bridge or a house.
@@ -53,6 +55,6 @@
 /**
  * The color of this node
  */
-@property (nonatomic, assign, readonly) int color;
+@property (nonatomic, assign, readonly) BridgeColor color;
 
 @end

@@ -21,7 +21,7 @@
 
 @interface PlayerNode()
 @property (readwrite, retain) CCSprite *player;
-@property (nonatomic, assign, readwrite) int color;
+@property (nonatomic, assign, readwrite) BridgeColor color;
 @property (nonatomic, retain) CCAction *walkAction;
 @property (nonatomic, retain) CCAction *moveAction;
 @end
@@ -32,18 +32,18 @@
 @synthesize moveAction = _moveAction;
 @synthesize walkAction = _walkAction;
 
--(id)initWithColor:(int) color:(LayerMgr*) layerMgr {
+-(id)initWithColor:(BridgeColor) color:(LayerMgr*) layerMgr {
     if( (self=[super init] )) {
         _manager = layerMgr;
         _tag = PLAYER;
         self.color = color;
-        if (color == RED) {
+        if (color == red) {
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_red.png"]];
-        } else if (color == BLUE) {
+        } else if (color == blue) {
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_blue.png"]];
-        } else if (color == GREEN) {
+        } else if (color == green) {
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_green.png"]];
-        } else if (color == ORANGE) {
+        } else if (color == orange) {
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_orange.png"]];
         } else {
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1.png"]];
@@ -86,19 +86,19 @@
     _spriteBody->SetTransform(b2Vec2(self.player.position.x,self.player.position.y), _spriteBody->GetAngle());
 }
 
--(void)updateColor:(int)color {
+-(void)updateColor:(BridgeColor)color {
     self.color = color;
     
     CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
     CCSpriteFrame* frame;
     
-    if (color == RED) {
+    if (color == red) {
         frame = [cache spriteFrameByName:@"octopus1_red.png"];
-    } else if (color == BLUE) {
+    } else if (color == blue) {
         frame = [cache spriteFrameByName:@"octopus1_blue.png"];
-    } else if (color == GREEN) {
+    } else if (color == green) {
         frame = [cache spriteFrameByName:@"octopus1_green.png"];
-    } else if (color == ORANGE) {
+    } else if (color == orange) {
         frame = [cache spriteFrameByName:@"octopus1_orange.png"];
     } else {
         frame = [cache spriteFrameByName:@"octopus1.png"];
