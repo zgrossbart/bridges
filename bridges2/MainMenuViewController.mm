@@ -186,7 +186,7 @@
         
         UIImageView *imageView = [[UIImageView alloc] initWithImage:_checkImage];
         cell.accessoryView = imageView;
-        //[imageView release];
+        [imageView release];
     }
 
     cell.imageView.image = ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).screenshot;

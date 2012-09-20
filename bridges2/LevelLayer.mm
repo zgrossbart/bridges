@@ -806,8 +806,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     [_undoStack release];
     _undoStack = nil;
-    
-    [self.currentLevel release];
+
     [self.undoBtn release];
     [self.coinLbl release];
     [self.coinImage release];
