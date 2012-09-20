@@ -38,12 +38,12 @@
     return [self initWithOrientAndDir:vertical:dNone:color:layerMgr];
 }
 
--(id)initWithOrientAndDir: (bool)vertical:(int)dir: (BridgeColor) color:(LayerMgr*) layerMgr {
+-(id)initWithOrientAndDir: (bool)vertical:(BridgeDir)dir: (BridgeColor) color:(LayerMgr*) layerMgr {
     self=[super init];
     return [self initWithOrientAndDirAndCoins:vertical:dNone:color:layerMgr:0];
 }
 
--(id)initWithOrientAndDirAndCoins: (bool)vertical:(int)dir:(BridgeColor) color:(LayerMgr*) layerMgr:(int)coins {
+-(id)initWithOrientAndDirAndCoins: (bool)vertical:(BridgeDir)dir:(BridgeColor) color:(LayerMgr*) layerMgr:(int)coins {
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;
         self.tag = BRIDGE;
