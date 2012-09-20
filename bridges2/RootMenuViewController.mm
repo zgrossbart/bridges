@@ -54,8 +54,8 @@
     navController_ = [[UINavigationController alloc] initWithRootViewController:director];
     navController_.navigationBarHidden = YES;
     
+    
     // set the Navigation Controller as the root view controller
-    //	[window_ addSubview:navController_.view];	// Generates flicker.
     [window_ setRootViewController:navController_];
     
     // make main window visible
@@ -152,9 +152,11 @@
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-//    return (interfaceOrientation == UIInterfaceOrientationLandscape);
-//    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft);
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+}
+
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 -(void) won {
