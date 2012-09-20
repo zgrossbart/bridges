@@ -201,6 +201,7 @@
             <filename>river_v_br.png</filename>
             <filename>river_v_tl.png</filename>
             <filename>river_v_ur.png</filename>
+            <filename>x.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
