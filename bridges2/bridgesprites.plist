@@ -787,7 +787,7 @@
             <key>river_v_bl.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{44,475},{15,15}}</string>
+                <string>{{44,493},{15,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -836,6 +836,19 @@
                 <key>sourceSize</key>
                 <string>{15,15}</string>
             </dict>
+            <key>x.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{44,475},{16,16}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{2,2},{16,16}}</string>
+                <key>sourceSize</key>
+                <string>{20,20}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -846,7 +859,7 @@
             <key>size</key>
             <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:5053ea0691dbdc4d238ae0f7f720174b$</string>
+            <string>$TexturePacker:SmartUpdate:0a2587982a113aeab0699302b734d315$</string>
             <key>textureFileName</key>
             <string>bridgesprites.pvr.gz</string>
         </dict>

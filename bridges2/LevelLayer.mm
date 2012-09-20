@@ -732,8 +732,10 @@ CGFloat CGPointToDegree(CGPoint point) {
     }
     
     for (RiverNode *n in self.currentLevel.rivers) {
-        if (CGRectContainsPoint(n.frame, p)) {
-            return true;
+        for (CCSprite *r in n.rivers) {
+            if (CGRectContainsPoint([r boundingBox], p)) {
+                return true;
+            }
         }
     }
     
@@ -747,7 +749,21 @@ CGFloat CGPointToDegree(CGPoint point) {
     
 }
 
--(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+-(void)showNoTapSprite: (CGPoint) p {
+    CCSprite *x = [CCSprite spriteWithSpriteFrameName:@"x.png"];
+    [_layerMgr addChildToSheet:x];
+    
+    x.position = p;
+    
+    
+    id scaleUpAction =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.25 scaleX:1.25 scaleY:1.25] rate:0.5];
+    id scaleDownAction = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.25 scaleX:0.75 scaleY:0.75] rate:0.5];
+    CCSequence *scaleSeq = [CCSequence actions:scaleUpAction, scaleDownAction, [CCHide action], nil];
+    
+    [x runAction:scaleSeq];
+}
+
+-(void)ccTouchesEnded:(NSSet*) touches withEvent:(UIEvent*) event {
     
     // Choose one of the touches to work with
     UITouch *touch = [touches anyObject];
@@ -764,6 +780,8 @@ CGFloat CGPointToDegree(CGPoint point) {
     if (_player == nil) {
         if (![self inObject:location]) {
             [self spawnPlayer:location.x: location.y];
+        } else {
+            [self showNoTapSprite:location];
         }
     } else {
         _inCross = false;
