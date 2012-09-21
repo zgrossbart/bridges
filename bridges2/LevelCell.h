@@ -10,8 +10,8 @@
 
 @interface LevelCell : UICollectionViewCell
 
-@property (retain, nonatomic) IBOutlet UILabel *titleLabel;
-@property (retain, nonatomic) IBOutlet UIImageView *screenshot;
-@property (retain, nonatomic) IBOutlet UIImageView *checkMark;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *screenshot;
+@property (strong, nonatomic) IBOutlet UIImageView *checkMark;
 
 @end

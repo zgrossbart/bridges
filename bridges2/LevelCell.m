@@ -11,11 +11,15 @@
 @implementation LevelCell
 
 @synthesize titleLabel = _titleLabel;
+@synthesize screenshot = _screenshot;
+@synthesize checkMark = _checkMark;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
+        //[[NSBundle mainBundle] loadNibNamed:@"LevelCell" owner:self options:nil];
         
         // Initialization code
         NSArray *arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"LevelCell" owner:self options:nil];
@@ -28,7 +32,15 @@
             return nil;
         }
         
-        self = [arrayOfViews objectAtIndex:0];
+        /*id *newView = [[arrayOfViews objectAtIndex:0] retain];
+        [newView setFrame:paramFrame];
+        
+        [self release];
+        self = newView;*/
+        
+        //[self addSubview:[arrayOfViews objectAtIndex:0] retain];
+        
+        self = [[arrayOfViews objectAtIndex:0] retain];
         
     }
     
@@ -47,8 +59,6 @@
 
 
 - (void)dealloc {
-    [_screenshot release];
-    [_checkMark release];
     [super dealloc];
 }
 @end

@@ -34,7 +34,7 @@
 }
 
 @property (retain) RootMenuViewController *rootMenuViewController;
-@property (retain, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic) int curIndex;
 

@@ -75,56 +75,6 @@
 
 }
 
--(void)loadLevelPicker {
-    if (_hasLoadedPicker) {
-        [self.buttons removeAllObjects];
-    }
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    for (int i = 0; i < [LevelMgr getLevelMgr].levelIds.count; i++) {
-        NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:i];
-        Level *level = [[LevelMgr getLevelMgr].levels objectForKey:levelId];
-        UIImage *image = level.screenshot;
-        
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.buttons addObject:button];
-        [button setBackgroundImage:image forState:UIControlStateNormal];
-        [button setTitle:level.name forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button.layer setCornerRadius:8.0f];
-        [button.layer setMasksToBounds:YES];
-        [button.layer setBorderWidth:1.0f];
-        [button.layer setBorderColor:[[UIColor colorWithRed:(1.0 * 233) / 255 green:(1.0 * 233) / 255 blue:(1.0 * 233) / 255 alpha:1] CGColor]];
-        
-        [button setTitle:level.name forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        button.titleLabel.backgroundColor = [UIColor whiteColor];
-        
-        [button addTarget:self
-                   action:@selector(levelSelected:)
-         forControlEvents:UIControlEventTouchUpInside];
-        button.tag = i;
-        
-        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", levelId]]) {
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:_checkImage];
-            imageView.contentMode = UIViewContentModeCenter;
-            imageView.backgroundColor = [UIColor clearColor];
-            imageView.frame = CGRectMake(205, 5, 20, 20);
-            
-            [button addSubview:imageView];
-            [_scrollView addSubview:button];
-            
-            [imageView release];
-        } else {
-            [_scrollView addSubview:button];
-        }
-        
-        button.titleLabel.frame = CGRectMake(2, 2, button.titleLabel.frame.size.width, button.titleLabel.frame.size.height);
-    }
-    
-    _hasLoadedPicker = true;
-}
-
 -(void)levelSelected:(id)sender {
     UIButton *button = (UIButton *)sender;
 	int tag = button.tag;
@@ -238,47 +188,8 @@
     
 }
 
--(void)arrangeButtons {
-    
-    int row = 0;
-    int column = 0;
-    CGSize s = CGSizeMake(216, 144);
-    int cols = 3;
-    
-    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait ||
-        [[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown) {
-        cols = 2;
-    }
-    
-    for (UIButton *button in self.buttons) {
-        button.frame = CGRectMake(column*(s.width + 30)+24, row*(s.height + 20)+10, s.width + 15, s.height);
-        
-        if (column == cols) {
-            column = 0;
-            row++;
-        } else {
-            column++;
-        }
-    }
-    
-    row++;
-    
-    //_scrollView.frame = self.view.frame;
-    CGSize size = _scrollView.contentSize;
-    size.width = CGRectGetWidth(_scrollView.frame);
-    _scrollView.contentSize = size;
-    _scrollView.alwaysBounceHorizontal = NO;
-    
-    _scrollView.contentSize = CGSizeMake(self.view.frame.size.width - 25, row*(s.height + 20)+10);
-    
-    [_scrollView setNeedsDisplay];
-    
-}
-
 -(void) detectOrientation {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [self arrangeButtons];
-    }
+
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -312,19 +223,10 @@
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewController" owner:self options:nil];
     }
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [self loadLevelPicker];
-        [self arrangeButtons];
-    }
-    
     _navItem.title = @"Select a level";
 }
 
 -(void)loadLevelPickerView {
-    if (_hasLoadedPicker) {
-        return;
-    }
-    
     [self.collectionView registerClass:[LevelCell class] forCellWithReuseIdentifier:@"levelCell"];
     
     // Configure layout
@@ -334,8 +236,6 @@
     [self.collectionView setCollectionViewLayout:flowLayout];
     
     [self.collectionView reloadData];
-    
-    _hasLoadedPicker = true;
 }
 
 -(IBAction)backToMainTapped:(id)sender {
@@ -366,9 +266,7 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    // Setup cell identifier
-    static NSString *cellIdentifier = @"levelCell";
+    NSString *cellIdentifier = @"levelCell";
     
     LevelCell *cell = (LevelCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
