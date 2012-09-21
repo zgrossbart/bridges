@@ -7,6 +7,7 @@
 //
 
 #import "LevelCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation LevelCell
 
@@ -28,8 +29,12 @@
         if (![[arrayOfViews objectAtIndex:0] isKindOfClass:[UICollectionViewCell class]]) {
             return nil;
         }
-        
         self = [[arrayOfViews objectAtIndex:0] retain];
+        
+        [self.screenshot.layer setCornerRadius:8.0f];
+        [self.screenshot.layer setMasksToBounds:YES];
+        self.screenshot.layer.borderColor = [UIColor colorWithRed:(1.0 * 170) / 255 green:(1.0 * 170) / 255 blue:(1.0 * 170) / 255 alpha:0.5].CGColor;
+        self.screenshot.layer.borderWidth = 1.0f;
     }
     
     return self;
