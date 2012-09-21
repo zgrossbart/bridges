@@ -12,5 +12,6 @@
 
 @property (retain, nonatomic) IBOutlet UILabel *titleLabel;
 @property (retain, nonatomic) IBOutlet UIImageView *screenshot;
+@property (retain, nonatomic) IBOutlet UIImageView *checkMark;
 
 @end

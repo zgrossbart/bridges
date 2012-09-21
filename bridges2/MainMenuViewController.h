@@ -31,10 +31,10 @@
     IBOutlet UIScrollView *_scrollView;
     IBOutlet UIBarButtonItem *_resetBtn;
     IBOutlet UIWebView *_webView;
-    IBOutlet UICollectionView *_collectionView;
 }
 
 @property (retain) RootMenuViewController *rootMenuViewController;
+@property (retain, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic) int curIndex;
 

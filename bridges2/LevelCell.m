@@ -48,6 +48,7 @@
 
 - (void)dealloc {
     [_screenshot release];
+    [_checkMark release];
     [super dealloc];
 }
 @end

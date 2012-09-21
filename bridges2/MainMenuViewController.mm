@@ -307,15 +307,15 @@
 -(IBAction)playTapped:(id)sender {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuCollectionView" owner:self options:nil];
-        [_collectionView registerClass:[LevelCell class] forCellWithReuseIdentifier:@"levelCell"];
+        [self.collectionView registerClass:[LevelCell class] forCellWithReuseIdentifier:@"levelCell"];
         
         // Configure layout
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         [flowLayout setItemSize:CGSizeMake(216, 144)];
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-        [_collectionView setCollectionViewLayout:flowLayout];
+        [self.collectionView setCollectionViewLayout:flowLayout];
         
-        [_collectionView reloadData];
+        [self.collectionView reloadData];
         
     } else {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewController" owner:self options:nil];
@@ -369,22 +369,39 @@
     if (index >= [[LevelMgr getLevelMgr].levelIds count]) {
         [cell.titleLabel setText:@""];
         [cell.screenshot setImage:nil];
+        [cell.checkMark setImage:nil];
     } else {
         NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:index];
         
-        NSLog(@"level.name: %@", ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).name);
         NSMutableString *name = [NSMutableString stringWithCapacity:10];
         [name appendString:levelId];
         [name appendString:@". "];
         [name appendString:((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).name];
         [cell.titleLabel setText:name];
         [cell.screenshot setImage:((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).screenshot];
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", levelId]]) {
+            [cell.checkMark setImage:_checkImage];
+        } else {
+            [cell.checkMark setImage:nil];
+        }
     }
     /* end of subclass-based cells block */
     
     // Return the cell
     return cell;
     
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+    
+    if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+        _noOfSection = 4;
+    } else {
+        _noOfSection = 3;
+    }
+    [self.collectionView reloadData];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -408,7 +425,6 @@
     [_resetBtn release];
     [_webView release];
     [_aboutNavItem release];
-    [_collectionView release];
     [super dealloc];
 }
 
