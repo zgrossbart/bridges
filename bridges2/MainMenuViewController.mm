@@ -97,8 +97,6 @@
 -(void)viewDidUnload {
     [_navItem release];
     _navItem = nil;
-    [_scrollView release];
-    _scrollView = nil;
     [_mainTable release];
     _mainTable = nil;
     [_resetBtn release];
@@ -239,7 +237,7 @@
     
     // Configure layout
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    [flowLayout setItemSize:CGSizeMake(216, 144)];
+    [flowLayout setItemSize:CGSizeMake(246, 164)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     [self.collectionView setCollectionViewLayout:flowLayout];
     
@@ -342,7 +340,6 @@
     
     //    [_view release];
     [_navItem release];
-    [_scrollView release];
     [_mainTable release];
     [_resetBtn release];
     [_webView release];

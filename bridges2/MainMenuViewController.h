@@ -28,7 +28,6 @@
     IBOutlet UITableView *_mainTable;
     IBOutlet UINavigationItem *_navItem;
     IBOutlet UINavigationItem *_aboutNavItem;
-    IBOutlet UIScrollView *_scrollView;
     IBOutlet UIBarButtonItem *_resetBtn;
     IBOutlet UIWebView *_webView;
 }

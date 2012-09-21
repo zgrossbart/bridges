@@ -204,7 +204,6 @@
 		CEC65C1115F4D0320010EAC3 /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */; };
 		CEC8828416027431007DC0EA /* level10.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC8828316027431007DC0EA /* level10.json */; };
 		CEC88287160276B1007DC0EA /* level11.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC88286160276B1007DC0EA /* level11.json */; };
-		CECA1DFA15FCC37A0052A58E /* MainMenuViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA1DF915FCC37A0052A58E /* MainMenuViewiPad.xib */; };
 		CECA1E0315FD21240052A58E /* RiverNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CECA1E0215FD21240052A58E /* RiverNode.m */; };
 		CECDC54815F6C54000D266FD /* green_check.png in Resources */ = {isa = PBXBuildFile; fileRef = CECDC54715F6C54000D266FD /* green_check.png */; };
 		CECE255B15F21FDB00517973 /* Level.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE255A15F21FDB00517973 /* Level.mm */; };
@@ -631,7 +630,6 @@
 		CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtras.m; sourceTree = "<group>"; };
 		CEC8828316027431007DC0EA /* level10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level10.json; sourceTree = "<group>"; };
 		CEC88286160276B1007DC0EA /* level11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level11.json; sourceTree = "<group>"; };
-		CECA1DF915FCC37A0052A58E /* MainMenuViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewiPad.xib; sourceTree = "<group>"; };
 		CECA1E0115FD21240052A58E /* RiverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiverNode.h; sourceTree = "<group>"; };
 		CECA1E0215FD21240052A58E /* RiverNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiverNode.m; sourceTree = "<group>"; };
 		CECDC54715F6C54000D266FD /* green_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_check.png; sourceTree = "<group>"; };
@@ -1375,7 +1373,6 @@
 				CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */,
 				CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */,
 				CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */,
-				CECA1DF915FCC37A0052A58E /* MainMenuViewiPad.xib */,
 				CED31C74160247510010A1E6 /* MainView.xib */,
 				CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */,
 				CEBD81FA15EACDC100EE27CF /* RootMenuViewController.h */,
@@ -1477,7 +1474,6 @@
 				CE39AC9315FBA146005607B0 /* RootMenuViewControlleriPad.xib in Resources */,
 				CEE7AF0915FBD12F00DC0B7F /* YouWonViewController.xib in Resources */,
 				CEE7AF0C15FBDD0F00DC0B7F /* YouWonViewiPad.xib in Resources */,
-				CECA1DFA15FCC37A0052A58E /* MainMenuViewiPad.xib in Resources */,
 				CED0704415FF7A5E0050CA9D /* level16.json in Resources */,
 				CEA3D478160120610060F511 /* AboutViewiPad.xib in Resources */,
 				CE31DCD11601E3790084C38B /* level18.json in Resources */,
