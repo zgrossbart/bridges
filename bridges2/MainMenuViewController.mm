@@ -307,16 +307,7 @@
 -(IBAction)playTapped:(id)sender {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuCollectionView" owner:self options:nil];
-        [self.collectionView registerClass:[LevelCell class] forCellWithReuseIdentifier:@"levelCell"];
-        
-        // Configure layout
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        [flowLayout setItemSize:CGSizeMake(216, 144)];
-        [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-        [self.collectionView setCollectionViewLayout:flowLayout];
-        
-        [self.collectionView reloadData];
-        
+        [self loadLevelPickerView];
     } else {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewController" owner:self options:nil];
     }
@@ -327,6 +318,24 @@
     }
     
     _navItem.title = @"Select a level";
+}
+
+-(void)loadLevelPickerView {
+    if (_hasLoadedPicker) {
+        return;
+    }
+    
+    [self.collectionView registerClass:[LevelCell class] forCellWithReuseIdentifier:@"levelCell"];
+    
+    // Configure layout
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [flowLayout setItemSize:CGSizeMake(216, 144)];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [self.collectionView setCollectionViewLayout:flowLayout];
+    
+    [self.collectionView reloadData];
+    
+    _hasLoadedPicker = true;
 }
 
 -(IBAction)backToMainTapped:(id)sender {
@@ -361,7 +370,6 @@
     // Setup cell identifier
     static NSString *cellIdentifier = @"levelCell";
     
-    /* Uncomment this block to use subclass-based cells */
     LevelCell *cell = (LevelCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
     int index = indexPath.section * _noOfSection + indexPath.row;
@@ -387,7 +395,6 @@
             [cell.checkMark setImage:nil];
         }
     }
-    /* end of subclass-based cells block */
     
     // Return the cell
     return cell;
