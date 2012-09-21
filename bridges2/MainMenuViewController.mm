@@ -284,6 +284,7 @@
         [cell.titleLabel setText:@""];
         [cell.screenshot setImage:nil];
         [cell.checkMark setImage:nil];
+        [cell setBorderVisible:false];
     } else {
         NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:index];
         
@@ -300,6 +301,7 @@
         } else {
             [cell.checkMark setImage:nil];
         }
+        [cell setBorderVisible:true];
     }
     
     // Return the cell
@@ -323,7 +325,9 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     int index = indexPath.section * _noOfSection + indexPath.row;
-    [self selectLevel:[[LevelMgr getLevelMgr].levelIds objectAtIndex:index]];
+    if (index < [[LevelMgr getLevelMgr].levelIds count]) {
+        [self selectLevel:[[LevelMgr getLevelMgr].levelIds objectAtIndex:index]];
+    }
 }
 
 -(void)dealloc

@@ -15,8 +15,7 @@
 @synthesize screenshot = _screenshot;
 @synthesize checkMark = _checkMark;
 
-- (id)initWithFrame:(CGRect)frame
-{
+-(id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         
@@ -30,17 +29,23 @@
             return nil;
         }
         self = [[arrayOfViews objectAtIndex:0] retain];
-        
-        [self.screenshot.layer setCornerRadius:8.0f];
-        [self.screenshot.layer setMasksToBounds:YES];
-        self.screenshot.layer.borderColor = [UIColor colorWithRed:(1.0 * 170) / 255 green:(1.0 * 170) / 255 blue:(1.0 * 170) / 255 alpha:0.5].CGColor;
-        self.screenshot.layer.borderWidth = 1.0f;
     }
     
     return self;
 }
 
-- (void)dealloc {
+-(void)setBorderVisible:(bool) visible {
+    if (visible) {
+        [self.screenshot.layer setCornerRadius:8.0f];
+        [self.screenshot.layer setMasksToBounds:YES];
+        self.screenshot.layer.borderColor = [UIColor colorWithRed:(1.0 * 170) / 255 green:(1.0 * 170) / 255 blue:(1.0 * 170) / 255 alpha:0.5].CGColor;
+        self.screenshot.layer.borderWidth = 1.0f;
+    } else {
+        self.screenshot.layer.borderColor = [[UIColor clearColor] CGColor];
+    }
+}
+
+-(void)dealloc {
     [super dealloc];
 }
 @end
