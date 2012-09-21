@@ -1722,6 +1722,7 @@
 				GCC_PREFIX_HEADER = bridges2/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"bridges2/libs/kazmath/include\"";
 				INFOPLIST_FILE = bridges2/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -1748,6 +1749,7 @@
 				GCC_PREFIX_HEADER = bridges2/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"bridges2/libs/kazmath/include\"";
 				INFOPLIST_FILE = bridges2/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"-lz",

@@ -109,8 +109,8 @@
     UIViewController *viewController = [[UIViewController alloc] init];
     [viewController setModalPresentationStyle:UIModalPresentationCurrentContext];
     viewController.view.frame = CGRectZero;
-    [self presentModalViewController:viewController animated:NO];
-    [self dismissModalViewControllerAnimated:NO];
+    //[self presentModalViewController:viewController animated:NO];
+    //[self dismissModalViewControllerAnimated:NO];
     [viewController release];
     
     _levelTitle.backgroundColor = [UIColor colorWithRed:(1.0 * 0) / 255 green:(1.0 * 0) / 255 blue:(1.0 * 0) / 255 alpha:0.8];

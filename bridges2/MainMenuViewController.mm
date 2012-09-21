@@ -163,9 +163,9 @@
     return TRUE;//UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
--(NSUInteger)supportedInterfaceOrientations{
-    return UIInterfaceOrientationMaskAll;
-}
+/*-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscapeLeft;
+}*/
 
 // Customize the number of sections in the table view.
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

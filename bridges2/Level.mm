@@ -531,7 +531,7 @@
     [button.layer setBorderWidth:1.0f];
     [button.layer setBorderColor:[[UIColor clearColor] CGColor]];
     button.backgroundColor = [UIColor colorWithRed:(1.0 * 224) / 255 green:(1.0 * 203) / 255 blue:(1.0 * 97) / 255 alpha:0.7];
-    button.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     button.titleLabel.font = [UIFont fontWithName:@"Lucida Grande" size: 14.0];
     button.titleEdgeInsets = UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0);
 //    button.titleLabel.textAlignment = UITextAlignmentCenter;

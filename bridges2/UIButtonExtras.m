@@ -26,13 +26,13 @@
 
 -(CGSize)sizeThatFits:(CGSize)size {
     
-    self.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     CGSize tempSize = CGSizeMake(size.width - 24, 1000);
     
     CGSize stringSize = [self.titleLabel.text
                          sizeWithFont:self.titleLabel.font
                          constrainedToSize:tempSize
-                         lineBreakMode:UILineBreakModeWordWrap];
+                         lineBreakMode:NSLineBreakByWordWrapping];
     
     return CGSizeMake(size.width - 24, stringSize.height);
 }
