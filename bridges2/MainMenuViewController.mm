@@ -19,9 +19,11 @@
 #import "MainMenuViewController.h"
 #import "LevelMgr.h"
 #import "UIImageExtras.h"
+#import "LevelCell.h"
 
 @interface MainMenuViewController() {
     bool _hasLoadedPicker;
+    int _noOfSection;
     
 }
 
@@ -57,6 +59,8 @@
         _checkImage = [UIImage imageNamed:@"green_check.png"];
     }
     
+    _noOfSection = 3;
+    
     self.buttons = [NSMutableArray arrayWithCapacity:25];
     
     [LevelMgr getLevelMgr];
@@ -68,6 +72,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
     
     //    [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
+
 }
 
 -(void)loadLevelPicker {
@@ -301,7 +306,16 @@
 
 -(IBAction)playTapped:(id)sender {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewiPad" owner:self options:nil];
+        [[NSBundle mainBundle] loadNibNamed:@"MainMenuCollectionView" owner:self options:nil];
+        [_collectionView registerClass:[LevelCell class] forCellWithReuseIdentifier:@"levelCell"];
+        
+        // Configure layout
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        [flowLayout setItemSize:CGSizeMake(216, 144)];
+        [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+        [_collectionView setCollectionViewLayout:flowLayout];
+        
+        [_collectionView reloadData];
         
     } else {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewController" owner:self options:nil];
@@ -330,6 +344,53 @@
     _aboutNavItem.title = @"The Seven Bridges of Königsberg";
 }
 
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    if ([[LevelMgr getLevelMgr].levelIds count] % _noOfSection == 0) {
+        return [[LevelMgr getLevelMgr].levelIds count] / _noOfSection;
+    } else {
+        return ([[LevelMgr getLevelMgr].levelIds count] / _noOfSection) + 1;
+    }
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return _noOfSection;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Setup cell identifier
+    static NSString *cellIdentifier = @"levelCell";
+    
+    /* Uncomment this block to use subclass-based cells */
+    LevelCell *cell = (LevelCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    int index = indexPath.section * _noOfSection + indexPath.row;
+    
+    if (index >= [[LevelMgr getLevelMgr].levelIds count]) {
+        [cell.titleLabel setText:@""];
+        [cell.screenshot setImage:nil];
+    } else {
+        NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:index];
+        
+        NSLog(@"level.name: %@", ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).name);
+        NSMutableString *name = [NSMutableString stringWithCapacity:10];
+        [name appendString:levelId];
+        [name appendString:@". "];
+        [name appendString:((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).name];
+        [cell.titleLabel setText:name];
+        [cell.screenshot setImage:((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).screenshot];
+    }
+    /* end of subclass-based cells block */
+    
+    // Return the cell
+    return cell;
+    
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"didSelectItemAtIndexPath(%@)", indexPath);
+}
+
 -(void)dealloc
 {
     [_rootMenuViewController release];
@@ -347,6 +408,7 @@
     [_resetBtn release];
     [_webView release];
     [_aboutNavItem release];
+    [_collectionView release];
     [super dealloc];
 }
 

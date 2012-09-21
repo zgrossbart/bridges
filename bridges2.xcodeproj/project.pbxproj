@@ -16,6 +16,9 @@
 		CE53D25B16060D090064F167 /* level15.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25A16060D090064F167 /* level15.json */; };
 		CE53D25E160612510064F167 /* level21.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25D160612510064F167 /* level21.json */; };
 		CE53D260160616070064F167 /* level25.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25F160616070064F167 /* level25.json */; };
+		CE6BFB96160CADBD0037CFE4 /* MainMenuCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6BFB95160CADBD0037CFE4 /* MainMenuCollectionView.xib */; };
+		CE6BFB9A160CAFAD0037CFE4 /* LevelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BFB99160CAFAD0037CFE4 /* LevelCell.m */; };
+		CE6BFB9C160CB03B0037CFE4 /* LevelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6BFB9B160CB03B0037CFE4 /* LevelCell.xib */; };
 		CE6D65D615EAC5FB00C7EDD7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6D65D515EAC5FB00C7EDD7 /* QuartzCore.framework */; };
 		CE6D65D815EAC5FB00C7EDD7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6D65D715EAC5FB00C7EDD7 /* OpenGLES.framework */; };
 		CE6D65DA15EAC5FB00C7EDD7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6D65D915EAC5FB00C7EDD7 /* OpenAL.framework */; };
@@ -251,6 +254,10 @@
 		CE53D25A16060D090064F167 /* level15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level15.json; sourceTree = "<group>"; };
 		CE53D25D160612510064F167 /* level21.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level21.json; sourceTree = "<group>"; };
 		CE53D25F160616070064F167 /* level25.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level25.json; sourceTree = "<group>"; };
+		CE6BFB95160CADBD0037CFE4 /* MainMenuCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuCollectionView.xib; sourceTree = "<group>"; };
+		CE6BFB98160CAFAD0037CFE4 /* LevelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCell.h; sourceTree = "<group>"; };
+		CE6BFB99160CAFAD0037CFE4 /* LevelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCell.m; sourceTree = "<group>"; };
+		CE6BFB9B160CB03B0037CFE4 /* LevelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelCell.xib; sourceTree = "<group>"; };
 		CE6D65D115EAC5FB00C7EDD7 /* 7 Bridges.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "7 Bridges.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6D65D515EAC5FB00C7EDD7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE6D65D715EAC5FB00C7EDD7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1361,6 +1368,10 @@
 			children = (
 				CEA3D477160120610060F511 /* AboutViewiPad.xib */,
 				CEE7AF0A15FBD48600DC0B7F /* LevelController.h */,
+				CE6BFB98160CAFAD0037CFE4 /* LevelCell.h */,
+				CE6BFB99160CAFAD0037CFE4 /* LevelCell.m */,
+				CE6BFB9B160CB03B0037CFE4 /* LevelCell.xib */,
+				CE6BFB95160CADBD0037CFE4 /* MainMenuCollectionView.xib */,
 				CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */,
 				CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */,
 				CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */,
@@ -1486,6 +1497,8 @@
 				CE53D260160616070064F167 /* level25.json in Resources */,
 				CEE0277416067FE5007C4CDD /* level30.json in Resources */,
 				CE303A85160B3D5000F1D3CD /* Default-568h@2x.png in Resources */,
+				CE6BFB96160CADBD0037CFE4 /* MainMenuCollectionView.xib in Resources */,
+				CE6BFB9C160CB03B0037CFE4 /* LevelCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1661,6 +1674,7 @@
 				CED45E8115FB7D7D0066F0FE /* UIButtonExtras.m in Sources */,
 				CEE7AF0815FBD12F00DC0B7F /* YouWonViewController.mm in Sources */,
 				CECA1E0315FD21240052A58E /* RiverNode.m in Sources */,
+				CE6BFB9A160CAFAD0037CFE4 /* LevelCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

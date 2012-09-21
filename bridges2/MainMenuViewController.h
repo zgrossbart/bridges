@@ -19,7 +19,7 @@
 #import <UIKit/UIKit.h>
 #import "RootMenuViewController.h"
 
-@interface MainMenuViewController : UIViewController <UIAlertViewDelegate> {
+@interface MainMenuViewController : UIViewController <UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     RootMenuViewController *_rootMenuViewController;
     
 //    IBOutlet UITableView *_view;
@@ -31,6 +31,7 @@
     IBOutlet UIScrollView *_scrollView;
     IBOutlet UIBarButtonItem *_resetBtn;
     IBOutlet UIWebView *_webView;
+    IBOutlet UICollectionView *_collectionView;
 }
 
 @property (retain) RootMenuViewController *rootMenuViewController;
