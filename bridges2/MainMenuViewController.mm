@@ -229,6 +229,14 @@
 -(void)loadLevelPickerView {
     [self.collectionView registerClass:[LevelCell class] forCellWithReuseIdentifier:@"levelCell"];
     
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    
+    if (orientation == 0 || orientation == UIInterfaceOrientationPortrait) {
+        _noOfSection = 3;
+    } else {
+        _noOfSection = 4;
+    }
+    
     // Configure layout
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(216, 144)];
@@ -310,7 +318,8 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didSelectItemAtIndexPath(%@)", indexPath);
+    int index = indexPath.section * _noOfSection + indexPath.row;
+    [self selectLevel:[[LevelMgr getLevelMgr].levelIds objectAtIndex:index]];
 }
 
 -(void)dealloc
