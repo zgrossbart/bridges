@@ -219,10 +219,10 @@
     
     [scene addChild:spriteSheet];
     
-    CGSize s = CGSizeMake(96, 64);
+    CGSize s = CGSizeMake(IPHONE_LEVEL_IMAGE_W, IPHONE_LEVEL_IMAGE_H);
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        s = CGSizeMake(216, 144);
+        s = CGSizeMake(IPAD_LEVEL_IMAGE_W, IPAD_LEVEL_IMAGE_H);
     }
     
     for (Level* level in levels) {

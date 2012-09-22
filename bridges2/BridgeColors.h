@@ -66,3 +66,9 @@ static int const TILE_COUNT = 28;
  * to see the tile grid and the boxes for each sprite.
  */
 static bool const DEBUG_DRAW = false;
+
+static int const IPHONE_LEVEL_IMAGE_W = 96;
+static int const IPHONE_LEVEL_IMAGE_H = 64;
+
+static int const IPAD_LEVEL_IMAGE_W = 216;
+static int const IPAD_LEVEL_IMAGE_H = 144;
