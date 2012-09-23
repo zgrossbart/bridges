@@ -17,7 +17,7 @@
  ******************************************************************************/
 
 
-/*
+/**
  * These are used as tags for identifying items
  * after collision detection.
  */
@@ -52,7 +52,7 @@ typedef enum {
     dUp = 3,
     dDown = 4} BridgeDir;
 
-/*
+/**
  * The tile count represents the number of playable 
  * tiles in a give board.  All level object positions
  * are specified in tiles.  
@@ -61,14 +61,20 @@ typedef enum {
  */
 static int const TILE_COUNT = 28;
 
-/*
+/**
  * This variable controls debug drawing.  Change it to true
  * to see the tile grid and the boxes for each sprite.
  */
 static bool const DEBUG_DRAW = false;
 
+/**
+ * The size of the screen shot icon on iPhone
+ */
 static int const IPHONE_LEVEL_IMAGE_W = 96;
 static int const IPHONE_LEVEL_IMAGE_H = 64;
 
+/**
+ * The size of the screen shot icon on iPad
+ */
 static int const IPAD_LEVEL_IMAGE_W = 216;
 static int const IPAD_LEVEL_IMAGE_H = 144;
