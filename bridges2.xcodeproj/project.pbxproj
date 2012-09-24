@@ -11,7 +11,7 @@
 		CE303A85160B3D5000F1D3CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE303A84160B3D5000F1D3CD /* Default-568h@2x.png */; };
 		CE31DCD11601E3790084C38B /* level18.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD01601E3790084C38B /* level18.json */; };
 		CE31DCD31601EBDD0084C38B /* level24.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD21601EBDD0084C38B /* level24.json */; };
-		CE39AC9315FBA146005607B0 /* RootMenuViewControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC9115FBA145005607B0 /* RootMenuViewControlleriPad.xib */; };
+		CE39AC9315FBA146005607B0 /* GameSceneViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC9115FBA145005607B0 /* GameSceneViewiPad.xib */; };
 		CE453BC715F174A900053407 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CE453BC615F174A900053407 /* JSONKit.m */; };
 		CE53D25B16060D090064F167 /* level15.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25A16060D090064F167 /* level15.json */; };
 		CE53D25E160612510064F167 /* level21.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25D160612510064F167 /* level21.json */; };
@@ -198,8 +198,8 @@
 		CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */; };
 		CEBD81F215EACA9D00EE27CF /* MainMenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */; };
 		CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */; };
-		CEBD81FD15EACDC100EE27CF /* RootMenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */; };
-		CEBD81FE15EACDC100EE27CF /* RootMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */; };
+		CEBD81FD15EACDC100EE27CF /* GameSceneViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81FB15EACDC100EE27CF /* GameSceneViewController.mm */; };
+		CEBD81FE15EACDC100EE27CF /* GameSceneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81FC15EACDC100EE27CF /* GameSceneView.xib */; };
 		CEC65C0515F4C1CD0010EAC3 /* ScreenShotLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */; };
 		CEC65C1115F4D0320010EAC3 /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */; };
 		CEC8828416027431007DC0EA /* level10.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC8828316027431007DC0EA /* level10.json */; };
@@ -247,7 +247,7 @@
 		CE303A84160B3D5000F1D3CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		CE31DCD01601E3790084C38B /* level18.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level18.json; sourceTree = "<group>"; };
 		CE31DCD21601EBDD0084C38B /* level24.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level24.json; sourceTree = "<group>"; };
-		CE39AC9115FBA145005607B0 /* RootMenuViewControlleriPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootMenuViewControlleriPad.xib; sourceTree = "<group>"; };
+		CE39AC9115FBA145005607B0 /* GameSceneViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameSceneViewiPad.xib; sourceTree = "<group>"; };
 		CE453BC515F174A900053407 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		CE453BC615F174A900053407 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		CE53D25A16060D090064F167 /* level15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level15.json; sourceTree = "<group>"; };
@@ -621,9 +621,9 @@
 		CEBD81EF15EACA9D00EE27CF /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainMenuViewController.mm; sourceTree = "<group>"; };
 		CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
-		CEBD81FA15EACDC100EE27CF /* RootMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootMenuViewController.h; sourceTree = "<group>"; };
-		CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootMenuViewController.mm; sourceTree = "<group>"; };
-		CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootMenuViewController.xib; sourceTree = "<group>"; };
+		CEBD81FA15EACDC100EE27CF /* GameSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSceneViewController.h; sourceTree = "<group>"; };
+		CEBD81FB15EACDC100EE27CF /* GameSceneViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameSceneViewController.mm; sourceTree = "<group>"; };
+		CEBD81FC15EACDC100EE27CF /* GameSceneView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameSceneView.xib; sourceTree = "<group>"; };
 		CEC65C0315F4C1CD0010EAC3 /* ScreenShotLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenShotLayer.h; sourceTree = "<group>"; };
 		CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScreenShotLayer.mm; sourceTree = "<group>"; };
 		CEC65C0F15F4D0320010EAC3 /* UIImageExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtras.h; sourceTree = "<group>"; };
@@ -1375,10 +1375,10 @@
 				CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */,
 				CED31C74160247510010A1E6 /* MainView.xib */,
 				CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */,
-				CEBD81FA15EACDC100EE27CF /* RootMenuViewController.h */,
-				CEBD81FB15EACDC100EE27CF /* RootMenuViewController.mm */,
-				CEBD81FC15EACDC100EE27CF /* RootMenuViewController.xib */,
-				CE39AC9115FBA145005607B0 /* RootMenuViewControlleriPad.xib */,
+				CEBD81FA15EACDC100EE27CF /* GameSceneViewController.h */,
+				CEBD81FB15EACDC100EE27CF /* GameSceneViewController.mm */,
+				CEBD81FC15EACDC100EE27CF /* GameSceneView.xib */,
+				CE39AC9115FBA145005607B0 /* GameSceneViewiPad.xib */,
 				CEE7AF0515FBD12F00DC0B7F /* YouWonViewController.h */,
 				CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */,
 				CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */,
@@ -1452,7 +1452,7 @@
 				CE6D673F15EAC5FC00C7EDD7 /* ChangeLog in Resources */,
 				CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */,
 				CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */,
-				CEBD81FE15EACDC100EE27CF /* RootMenuViewController.xib in Resources */,
+				CEBD81FE15EACDC100EE27CF /* GameSceneView.xib in Resources */,
 				CECE256F15F2869300517973 /* level5.json in Resources */,
 				CECE257015F2869300517973 /* level6.json in Resources */,
 				CEAE47F815F3894400898698 /* level7.json in Resources */,
@@ -1471,7 +1471,7 @@
 				CECE689D15F76E120042A7DF /* level20.json in Resources */,
 				CED0303015FB724A008E7EA4 /* level9.json in Resources */,
 				CED45E8315FB81EF0066F0FE /* coins.png in Resources */,
-				CE39AC9315FBA146005607B0 /* RootMenuViewControlleriPad.xib in Resources */,
+				CE39AC9315FBA146005607B0 /* GameSceneViewiPad.xib in Resources */,
 				CEE7AF0915FBD12F00DC0B7F /* YouWonViewController.xib in Resources */,
 				CEE7AF0C15FBDD0F00DC0B7F /* YouWonViewiPad.xib in Resources */,
 				CED0704415FF7A5E0050CA9D /* level16.json in Resources */,
@@ -1654,7 +1654,7 @@
 				CE6D67F715EAC5FD00C7EDD7 /* LevelLayer.mm in Sources */,
 				CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */,
 				CEBD81F215EACA9D00EE27CF /* MainMenuViewController.mm in Sources */,
-				CEBD81FD15EACDC100EE27CF /* RootMenuViewController.mm in Sources */,
+				CEBD81FD15EACDC100EE27CF /* GameSceneViewController.mm in Sources */,
 				CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */,
 				CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */,
 				CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */,

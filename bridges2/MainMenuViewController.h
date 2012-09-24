@@ -17,10 +17,10 @@
  ******************************************************************************/
 
 #import <UIKit/UIKit.h>
-#import "RootMenuViewController.h"
+#import "GameSceneViewController.h"
 
 @interface MainMenuViewController : UIViewController <UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
-    RootMenuViewController *_rootMenuViewController;
+    GameSceneViewController *_GameSceneViewController;
     
 //    IBOutlet UITableView *_view;
     CGFloat  mFontSize;
@@ -32,7 +32,7 @@
     IBOutlet UIWebView *_webView;
 }
 
-@property (retain) RootMenuViewController *rootMenuViewController;
+@property (retain) GameSceneViewController *GameSceneViewController;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic) int curIndex;

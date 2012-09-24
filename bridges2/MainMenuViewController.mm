@@ -34,7 +34,7 @@
 
 @implementation MainMenuViewController
 
-@synthesize rootMenuViewController = _rootMenuViewController;
+@synthesize GameSceneViewController = _GameSceneViewController;
 @synthesize checkImage = _checkImage;
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -85,12 +85,12 @@
 }
 
 -(void)selectLevel:(NSString*) key {
-    if (_rootMenuViewController == nil) {
-        self.rootMenuViewController = [[[RootMenuViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+    if (_GameSceneViewController == nil) {
+        self.GameSceneViewController = [[[GameSceneViewController alloc] initWithNibName:nil bundle:nil] autorelease];
     }
     
-    [self.rootMenuViewController showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
-    [self.navigationController pushViewController:_rootMenuViewController animated:YES];
+    [self.GameSceneViewController showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
+    [self.navigationController pushViewController:_GameSceneViewController animated:YES];
     
 }
 
@@ -338,8 +338,8 @@
 
 -(void)dealloc
 {
-    [_rootMenuViewController release];
-    _rootMenuViewController = nil;
+    [_GameSceneViewController release];
+    _GameSceneViewController = nil;
     
 //    [self.buttons release];
     self.buttons = nil;
