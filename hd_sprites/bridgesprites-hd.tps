@@ -137,11 +137,6 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>bridge_3_left.png</filename>
-            <filename>bridge_3_right.png</filename>
-            <filename>bridge_3_up.png</filename>
-            <filename>bridge_3_x.png</filename>
-            <filename>bridge_3.png</filename>
             <filename>bridge_4_down.png</filename>
             <filename>bridge_4_left.png</filename>
             <filename>bridge_4_right.png</filename>
