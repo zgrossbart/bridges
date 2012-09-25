@@ -71,8 +71,48 @@
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
     
+    [self checkRate];
+    
     //    [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
 
+}
+
+-(void)checkRate {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    bool hasRated = [prefs boolForKey:@"hasRated"];
+    
+    if (hasRated) {
+        return;
+    }
+    
+    NSInteger launchCount = [prefs integerForKey:@"launchCount"];
+    if (launchCount == 20) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Like 7 Bridges?"
+                                                        message:@"Please rate it on the App Store"
+                                                       delegate:self
+                                              cancelButtonTitle:@"No Thanks"
+                                              otherButtonTitles:@"Rate it on the App Store", nil];
+        [alert addButtonWithTitle:@"Not Now"];
+        [alert show];
+        [alert release];
+    }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    if (buttonIndex == 1) {
+        [self rateGame];
+    } else if (buttonIndex == 2) {
+        [prefs setInteger:0 forKey:@"launchCount"];
+    } else if (buttonIndex == 3) {
+        [prefs setBool:true forKey:@"hasRated"];
+    }
+}
+
+-(IBAction)rateGame {
+    [[UIApplication sharedApplication]
+     openURL:[NSURL URLWithString:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=409954448"]];
 }
 
 -(void)levelSelected:(id)sender {
