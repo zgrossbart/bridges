@@ -227,6 +227,7 @@
 		CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E315EB8AF600094695 /* PlayerNode.mm */; };
 		CEDBC2E715EB8B5300094695 /* MyContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E615EB8B5300094695 /* MyContactListener.mm */; };
 		CEDBC2EC15EB8C8200094695 /* BridgeNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */; };
+		CEDBF23D161253C2000E85D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDBF23C161253C2000E85D3 /* AppDelegate.m */; };
 		CEDED3E81604904E0022ABA7 /* level13.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3E71604904E0022ABA7 /* level13.json */; };
 		CEDED3EB160496650022ABA7 /* level14.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3EA160496650022ABA7 /* level14.json */; };
 		CEE0277416067FE5007C4CDD /* level30.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE0277316067FE5007C4CDD /* level30.json */; };
@@ -666,6 +667,8 @@
 		CEDBC2E615EB8B5300094695 /* MyContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyContactListener.mm; sourceTree = "<group>"; };
 		CEDBC2EA15EB8C8200094695 /* BridgeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeNode.h; sourceTree = "<group>"; };
 		CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BridgeNode.mm; sourceTree = "<group>"; };
+		CEDBF23B161253C2000E85D3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CEDBF23C161253C2000E85D3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CEDED3E71604904E0022ABA7 /* level13.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level13.json; sourceTree = "<group>"; };
 		CEDED3EA160496650022ABA7 /* level14.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level14.json; sourceTree = "<group>"; };
 		CEE0277316067FE5007C4CDD /* level30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level30.json; sourceTree = "<group>"; };
@@ -1365,6 +1368,8 @@
 			isa = PBXGroup;
 			children = (
 				CEA3D477160120610060F511 /* AboutViewiPad.xib */,
+				CEDBF23B161253C2000E85D3 /* AppDelegate.h */,
+				CEDBF23C161253C2000E85D3 /* AppDelegate.m */,
 				CEBD81FA15EACDC100EE27CF /* GameSceneViewController.h */,
 				CEBD81FB15EACDC100EE27CF /* GameSceneViewController.mm */,
 				CEBD81FC15EACDC100EE27CF /* GameSceneView.xib */,
@@ -1671,6 +1676,7 @@
 				CEE7AF0815FBD12F00DC0B7F /* YouWonViewController.mm in Sources */,
 				CECA1E0315FD21240052A58E /* RiverNode.m in Sources */,
 				CE6BFB9A160CAFAD0037CFE4 /* LevelCell.m in Sources */,
+				CEDBF23D161253C2000E85D3 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
