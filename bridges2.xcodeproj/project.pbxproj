@@ -1365,6 +1365,10 @@
 			isa = PBXGroup;
 			children = (
 				CEA3D477160120610060F511 /* AboutViewiPad.xib */,
+				CEBD81FA15EACDC100EE27CF /* GameSceneViewController.h */,
+				CEBD81FB15EACDC100EE27CF /* GameSceneViewController.mm */,
+				CEBD81FC15EACDC100EE27CF /* GameSceneView.xib */,
+				CE39AC9115FBA145005607B0 /* GameSceneViewiPad.xib */,
 				CEE7AF0A15FBD48600DC0B7F /* LevelController.h */,
 				CE6BFB98160CAFAD0037CFE4 /* LevelCell.h */,
 				CE6BFB99160CAFAD0037CFE4 /* LevelCell.m */,
@@ -1375,10 +1379,6 @@
 				CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */,
 				CED31C74160247510010A1E6 /* MainView.xib */,
 				CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */,
-				CEBD81FA15EACDC100EE27CF /* GameSceneViewController.h */,
-				CEBD81FB15EACDC100EE27CF /* GameSceneViewController.mm */,
-				CEBD81FC15EACDC100EE27CF /* GameSceneView.xib */,
-				CE39AC9115FBA145005607B0 /* GameSceneViewiPad.xib */,
 				CEE7AF0515FBD12F00DC0B7F /* YouWonViewController.h */,
 				CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */,
 				CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */,
