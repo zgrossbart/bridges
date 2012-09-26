@@ -129,9 +129,4 @@
  */
 @property (readwrite, retain) id<LevelController> controller;
 
-@property (nonatomic,retain) CCParticleSystem *emitter;
-
-
-
-
 @end

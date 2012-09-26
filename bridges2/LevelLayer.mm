@@ -33,12 +33,15 @@
 }
 @property (readwrite, retain) NSMutableArray *undoStack;
 @property (nonatomic, retain) PlayerNode *player;
+
+/**
+ * We use this emitter to show the confetti stars animation when you win
+ * a level.
+ */
+@property (nonatomic, retain) CCParticleSystem *emitter;
 @end
 
 @implementation LevelLayer
-
-@synthesize emitter;
-
 
 + (id)scene {
     
@@ -49,7 +52,6 @@
     return scene;
     
 }
-
 
 -(id)init {
     
@@ -80,7 +82,7 @@
         
         // Create our sprite sheet and frame cache
         _spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprites.pvr.gz"
-                                                    capacity:150] retain];
+                         capacity:150] retain];
         [[CCSpriteFrameCache sharedSpriteFrameCache]
          addSpriteFramesWithFile:@"bridgesprites.plist"];
         [self addChild:_spriteSheet];
@@ -90,19 +92,11 @@
         
         _layerMgr = [[LayerMgr alloc] initWithSpriteSheet:_spriteSheet:_world];
         
-        //        [self spawnPlayer];
-        
         self.isTouchEnabled = YES;
         
-        emitter = [[CCParticleSnow alloc] init];
-        emitter.position = ccp(100,100);
-        [emitter setScaleX:0.5];
-        [emitter setScaleY:0.5];
-        //[self addChild:emitter];
-        emitter.autoRemoveOnFinish = YES;
-        
-       // [emitter setGravity:ccp(0,-90)];
-        //[self schedule:@selector(step:)];
+        self.emitter = [[CCParticleSnow alloc] init];
+        [self.emitter setScaleX:0.5];
+        [self.emitter setScaleY:0.5];
 
     }
     return self;
@@ -721,75 +715,71 @@ CGFloat CGPointToDegree(CGPoint point) {
 
 -(void) createExplosion: (float) x : (float) y
 {
-    [emitter resetSystem];
-    //	ParticleSystem *emitter = [RockExplosion node];
-    //self.emitter = [[QuadParticleSystem alloc] initWithTotalParticles:30];
-    //emitter.texture = [[TextureMgr sharedTextureMgr] addImage: @"coins.png"];
-    emitter.texture = [[CCTextureCache sharedTextureCache] addImage:@"coins.png"];
+    [self.emitter resetSystem];
+    self.emitter.texture = [[CCTextureCache sharedTextureCache] addImage:@"confetti.png"];
     
-    // duration
-    //	emitter.duration = -1; //continuous effect
-    emitter.duration = 3;
+    self.emitter.duration = 2;
     
     // gravity
-    emitter.gravity = CGPointZero;
+    self.emitter.gravity = ccp(self.player.player.position.x, 90);
     
     // angle
-    emitter.angle = 90;
-    emitter.angleVar = 360;
+    self.emitter.angle = 90;
+    self.emitter.angleVar = 360;
     
     // speed of particles
-    emitter.speed = 160;
-    emitter.speedVar = 20;
+    self.emitter.speed = 160;
+    self.emitter.speedVar = 20;
     
     // radial
-    emitter.radialAccel = -120;
-    emitter.radialAccelVar = 0;
+    self.emitter.radialAccel = -120;
+    self.emitter.radialAccelVar = 0;
     
     // tagential
-    emitter.tangentialAccel = 30;
-    emitter.tangentialAccelVar = 0;
+    self.emitter.tangentialAccel = 30;
+    self.emitter.tangentialAccelVar = 60;
     
     // life of particles
-    emitter.life = 1;
-    emitter.lifeVar = 1;
+    self.emitter.life = 1;
+    self.emitter.lifeVar = 3;
     
     // spin of particles
-    emitter.startSpin = 0;
-    emitter.startSpinVar = 0;
-    emitter.endSpin = 0;
-    emitter.endSpinVar = 0;
+    self.emitter.startSpin = 15;
+    self.emitter.startSpinVar = 5;
+    self.emitter.endSpin = 15;
+    self.emitter.endSpinVar = 5;
     
     // color of particles
     ccColor4F startColor = {255.0f, 128.0f, 128.0f, 1.0f};
-    emitter.startColor = startColor;
+    self.emitter.startColor = startColor;
     ccColor4F startColorVar = {128.0f, 255.0f, 128.0f, 1.0f};
-    emitter.startColorVar = startColorVar;
-    ccColor4F endColor = {255.0f, 128.0f, 255.0f, 1.0f};
-    emitter.endColor = endColor;
-    ccColor4F endColorVar = {255.0f, 128.f, 255.0f, 1.0f};
-    emitter.endColorVar = endColorVar;
+    self.emitter.startColorVar = startColorVar;
+    ccColor4F endColor = {255.0f, 128.0f, 128.0f, 1.0f};
+    self.emitter.endColor = endColor;
+    ccColor4F endColorVar = {128.0f, 128.f, 255.0f, 1.0f};
+    self.emitter.endColorVar = endColorVar;
     
     // size, in pixels
-    emitter.startSize = 20.0f;
-    emitter.startSizeVar = 10.0f;
-    emitter.endSize = kParticleStartSizeEqualToEndSize;
+    self.emitter.startSize = 40.0f;
+    self.emitter.startSizeVar = 5.0f;
+    self.emitter.endSize = kParticleStartSizeEqualToEndSize;
     // emits per second
-    emitter.emissionRate = emitter.totalParticles/emitter.life;
-    // additive
-    //emitter.blendAdditive = YES;
-    emitter.position = ccp(x,y);  // setting emitter position
-    [self addChild: emitter z:10]; // adding the emitter
-    emitter.autoRemoveOnFinish = YES; // this removes/deallocs the emitter after its animation
+    self.emitter.totalParticles = 300;
+    self.emitter.emissionRate = self.emitter.totalParticles/self.emitter.life;
     
-    [self scheduleOnce:@selector(doWon) delay:3];
+    self.emitter.blendAdditive = NO;
+    
+    self.emitter.position = ccp(x,y);
+    [self addChild: self.emitter z:10];
+    self.emitter.autoRemoveOnFinish = YES;
+    
+    [self scheduleOnce:@selector(doWon) delay:2];
 }
 
 -(void) doWon {
-    [self removeChild:self.emitter cleanup:false];
+    [self removeChild:self.self.emitter cleanup:false];
     [self.controller won];
 }
-
 
 -(void)spawnPlayer:(int) x: (int) y {
     
@@ -885,6 +875,9 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     [_undoStack release];
     _undoStack = nil;
+    
+    [self.emitter release];
+    self.emitter = nil;
 
     [self.undoBtn release];
     [self.coinLbl release];

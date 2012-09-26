@@ -13,6 +13,7 @@
 		CE31DCD31601EBDD0084C38B /* level24.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD21601EBDD0084C38B /* level24.json */; };
 		CE39AC9315FBA146005607B0 /* GameSceneViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC9115FBA145005607B0 /* GameSceneViewiPad.xib */; };
 		CE453BC715F174A900053407 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CE453BC615F174A900053407 /* JSONKit.m */; };
+		CE50FFB316137A8A00235E87 /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50FFB216137A8A00235E87 /* confetti.png */; };
 		CE53D25B16060D090064F167 /* level15.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25A16060D090064F167 /* level15.json */; };
 		CE53D25E160612510064F167 /* level21.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25D160612510064F167 /* level21.json */; };
 		CE53D260160616070064F167 /* level25.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25F160616070064F167 /* level25.json */; };
@@ -251,6 +252,7 @@
 		CE39AC9115FBA145005607B0 /* GameSceneViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameSceneViewiPad.xib; sourceTree = "<group>"; };
 		CE453BC515F174A900053407 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		CE453BC615F174A900053407 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		CE50FFB216137A8A00235E87 /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
 		CE53D25A16060D090064F167 /* level15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level15.json; sourceTree = "<group>"; };
 		CE53D25D160612510064F167 /* level21.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level21.json; sourceTree = "<group>"; };
 		CE53D25F160616070064F167 /* level25.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level25.json; sourceTree = "<group>"; };
@@ -762,6 +764,7 @@
 				CEBB885C160514B700538464 /* bridgesprites.pvr.gz */,
 				CEBB885F160514D200538464 /* bridgesprites-hd.plist */,
 				CEBB8860160514D200538464 /* bridgesprites-hd.pvr.gz */,
+				CE50FFB216137A8A00235E87 /* confetti.png */,
 				CE303A84160B3D5000F1D3CD /* Default-568h@2x.png */,
 				CED45E8215FB81EF0066F0FE /* coins.png */,
 				CECDC54715F6C54000D266FD /* green_check.png */,
@@ -1500,6 +1503,7 @@
 				CE303A85160B3D5000F1D3CD /* Default-568h@2x.png in Resources */,
 				CE6BFB96160CADBD0037CFE4 /* MainMenuCollectionView.xib in Resources */,
 				CE6BFB9C160CB03B0037CFE4 /* LevelCell.xib in Resources */,
+				CE50FFB316137A8A00235E87 /* confetti.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
