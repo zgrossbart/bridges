@@ -37,6 +37,8 @@
 
 @implementation LevelLayer
 
+@synthesize emitter;
+
 
 + (id)scene {
     
@@ -91,6 +93,17 @@
         //        [self spawnPlayer];
         
         self.isTouchEnabled = YES;
+        
+        emitter = [[CCParticleSnow alloc] init];
+        emitter.position = ccp(100,100);
+        [emitter setScaleX:0.5];
+        [emitter setScaleY:0.5];
+        //[self addChild:emitter];
+        emitter.autoRemoveOnFinish = YES;
+        
+       // [emitter setGravity:ccp(0,-90)];
+        //[self schedule:@selector(step:)];
+
     }
     return self;
     
@@ -701,16 +714,82 @@ CGFloat CGPointToDegree(CGPoint point) {
         [defaults setBool:TRUE forKey:[NSString stringWithFormat:@"%@-won", self.currentLevel.levelId]];
         [defaults synchronize];
         
-        /*
-         * TODO - We should do something cute here when
-         * you win a level.  Right now the you won screen
-         * comes a little too fast.
-         */
-        
-        [self.controller won];
+        [self createExplosion:self.player.player.position.x:self.player.player.position.y];
     }
     
 }
+
+-(void) createExplosion: (float) x : (float) y
+{
+    [emitter resetSystem];
+    //	ParticleSystem *emitter = [RockExplosion node];
+    //self.emitter = [[QuadParticleSystem alloc] initWithTotalParticles:30];
+    //emitter.texture = [[TextureMgr sharedTextureMgr] addImage: @"coins.png"];
+    emitter.texture = [[CCTextureCache sharedTextureCache] addImage:@"coins.png"];
+    
+    // duration
+    //	emitter.duration = -1; //continuous effect
+    emitter.duration = 3;
+    
+    // gravity
+    emitter.gravity = CGPointZero;
+    
+    // angle
+    emitter.angle = 90;
+    emitter.angleVar = 360;
+    
+    // speed of particles
+    emitter.speed = 160;
+    emitter.speedVar = 20;
+    
+    // radial
+    emitter.radialAccel = -120;
+    emitter.radialAccelVar = 0;
+    
+    // tagential
+    emitter.tangentialAccel = 30;
+    emitter.tangentialAccelVar = 0;
+    
+    // life of particles
+    emitter.life = 1;
+    emitter.lifeVar = 1;
+    
+    // spin of particles
+    emitter.startSpin = 0;
+    emitter.startSpinVar = 0;
+    emitter.endSpin = 0;
+    emitter.endSpinVar = 0;
+    
+    // color of particles
+    ccColor4F startColor = {255.0f, 128.0f, 128.0f, 1.0f};
+    emitter.startColor = startColor;
+    ccColor4F startColorVar = {128.0f, 255.0f, 128.0f, 1.0f};
+    emitter.startColorVar = startColorVar;
+    ccColor4F endColor = {255.0f, 128.0f, 255.0f, 1.0f};
+    emitter.endColor = endColor;
+    ccColor4F endColorVar = {255.0f, 128.f, 255.0f, 1.0f};
+    emitter.endColorVar = endColorVar;
+    
+    // size, in pixels
+    emitter.startSize = 20.0f;
+    emitter.startSizeVar = 10.0f;
+    emitter.endSize = kParticleStartSizeEqualToEndSize;
+    // emits per second
+    emitter.emissionRate = emitter.totalParticles/emitter.life;
+    // additive
+    //emitter.blendAdditive = YES;
+    emitter.position = ccp(x,y);  // setting emitter position
+    [self addChild: emitter z:10]; // adding the emitter
+    emitter.autoRemoveOnFinish = YES; // this removes/deallocs the emitter after its animation
+    
+    [self scheduleOnce:@selector(doWon) delay:3];
+}
+
+-(void) doWon {
+    [self removeChild:self.emitter cleanup:false];
+    [self.controller won];
+}
+
 
 -(void)spawnPlayer:(int) x: (int) y {
     
