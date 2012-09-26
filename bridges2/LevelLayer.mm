@@ -91,7 +91,7 @@
         
         self.isTouchEnabled = YES;
         
-        self.emitter = [[CCParticleSnow alloc] init];
+        self.emitter = [[CCParticleRain alloc] init];
         [self.emitter setScaleX:0.5];
         [self.emitter setScaleY:0.5];
 
