@@ -68,7 +68,6 @@
         
         [self schedule:@selector(tick:)];
         
-        // Enable debug draw
         _debugDraw = new GLESDebugDraw( PTM_RATIO );
         _world->SetDebugDraw(_debugDraw);
         
@@ -76,11 +75,9 @@
         flags += b2Draw::e_shapeBit;
         _debugDraw->SetFlags(flags);
         
-        // Create contact listener
         _contactListener = new MyContactListener();
         _world->SetContactListener(_contactListener);
         
-        // Create our sprite sheet and frame cache
         _spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprites.pvr.gz"
                          capacity:150] retain];
         [[CCSpriteFrameCache sharedSpriteFrameCache]
@@ -104,8 +101,6 @@
 }
 
 -(void)readLevel {
-    //   [level.rivers makeObjectsPerformSelector:@selector(addSprite:)];
-    
     CGSize s = [[CCDirector sharedDirector] winSize];
     _layerMgr.tileSize = CGSizeMake(s.height / self.currentLevel.tileCount, s.height / self.currentLevel.tileCount);
     
