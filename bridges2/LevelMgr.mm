@@ -133,6 +133,12 @@
     _hasInit = true;
 }
 
+/**
+ * This method looks for the images for each level.  If the image is there and up to date
+ * then we load the icon and set it as a field in the level.  If the image isn't there or 
+ * is out of date then we add it to the array of level images to load and call the doDrawLevels
+ * method.
+ */
 -(void)drawLevels:(CGRect) bounds {
     [self setupCocos2D:bounds];
     
@@ -178,6 +184,10 @@
     }
 }
 
+/**
+ * This method actually draws the screen shots for each level as needed so it
+ * can load show them in the menu screens.
+ */
 -(void)doDrawLevels:(CGRect) bounds: (NSMutableArray*) levels {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);        
     
