@@ -693,7 +693,18 @@ CGFloat CGPointToDegree(CGPoint point) {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     
-    _player.player.position = [self pointOnLine: _playerStart: _player.player.position: _layerMgr.tileSize.width * 1.6];
+    float step = 1.5;
+    
+    if (object.tag == SUBWAY) {
+        /*
+         * We jump right into the middle of subways so they
+         * need a larger space to make sure we move off of 
+         * the sprite.
+         */
+        step = 2.5;
+    }
+    
+    _player.player.position = [self pointOnLine: _playerStart: _player.player.position: _layerMgr.tileSize.width * step];
     
     [_player playerMoveEnded];
     
