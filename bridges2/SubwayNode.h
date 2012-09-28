@@ -36,6 +36,11 @@
  */
 -(id)initWithColor: (BridgeColor) color :(LayerMgr*) layerMgr;
 
+/**
+ * Ride the subway starting from the entry sprite.
+ *
+ * @return The sprite representing the other half of this subway
+ */
 -(CCSprite*)ride: (CCSprite*) entry;
 
 @property (readonly, retain) CCSprite *subway1;
