@@ -191,6 +191,7 @@
 		CE6D67F115EAC5FD00C7EDD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F015EAC5FD00C7EDD7 /* main.m */; };
 		CE6D67F715EAC5FD00C7EDD7 /* LevelLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */; };
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
+		CE7F8328161600920012A4FA /* level17.json in Resources */ = {isa = PBXBuildFile; fileRef = CE7F8327161600920012A4FA /* level17.json */; };
 		CEA3D478160120610060F511 /* AboutViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA3D477160120610060F511 /* AboutViewiPad.xib */; };
 		CEAE47F815F3894400898698 /* level7.json in Resources */ = {isa = PBXBuildFile; fileRef = CEAE47F715F3894400898698 /* level7.json */; };
 		CEBB885D160514B700538464 /* bridgesprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBB885B160514B700538464 /* bridgesprites.plist */; };
@@ -618,6 +619,7 @@
 		CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelLayer.mm; sourceTree = "<group>"; };
 		CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
+		CE7F8327161600920012A4FA /* level17.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level17.json; sourceTree = "<group>"; };
 		CEA3D477160120610060F511 /* AboutViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewiPad.xib; sourceTree = "<group>"; };
 		CEAE47F715F3894400898698 /* level7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level7.json; sourceTree = "<group>"; };
 		CEBB885B160514B700538464 /* bridgesprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bridgesprites.plist; sourceTree = "<group>"; };
@@ -1321,6 +1323,7 @@
 				CEDED3EA160496650022ABA7 /* level14.json */,
 				CE53D25A16060D090064F167 /* level15.json */,
 				CED0704315FF7A5E0050CA9D /* level16.json */,
+				CE7F8327161600920012A4FA /* level17.json */,
 				CE31DCD01601E3790084C38B /* level18.json */,
 				CECE689C15F76E120042A7DF /* level20.json */,
 				CE53D25D160612510064F167 /* level21.json */,
@@ -1517,6 +1520,7 @@
 				CE50FFB316137A8A00235E87 /* confetti.png in Resources */,
 				CE50FFB81613932400235E87 /* fire.png in Resources */,
 				CECCE9821615389A0091707C /* level35.json in Resources */,
+				CE7F8328161600920012A4FA /* level17.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

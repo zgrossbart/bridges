@@ -66,7 +66,7 @@ static int const TILE_COUNT = 28;
  * This variable controls debug drawing.  Change it to true
  * to see the tile grid and the boxes for each sprite.
  */
-static bool const DEBUG_DRAW = false;
+static bool const DEBUG_DRAW = true;
 
 /**
  * The size of the screen shot icon on iPhone
