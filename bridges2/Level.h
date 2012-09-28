@@ -91,6 +91,12 @@
  */
 @property (readonly, retain) NSMutableArray *houses;
 
+/**
+ * The list of subway nodes for this level
+ */
+@property (readonly, retain) NSMutableArray *subways;
+
+
 /** 
  * The list of labels for this level
  */

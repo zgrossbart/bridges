@@ -207,6 +207,8 @@
 		CEC8828416027431007DC0EA /* level10.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC8828316027431007DC0EA /* level10.json */; };
 		CEC88287160276B1007DC0EA /* level11.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC88286160276B1007DC0EA /* level11.json */; };
 		CECA1E0315FD21240052A58E /* RiverNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CECA1E0215FD21240052A58E /* RiverNode.m */; };
+		CECCE97F161530760091707C /* SubwayNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECCE97E161530760091707C /* SubwayNode.mm */; };
+		CECCE9821615389A0091707C /* level35.json in Resources */ = {isa = PBXBuildFile; fileRef = CECCE9811615389A0091707C /* level35.json */; };
 		CECDC54815F6C54000D266FD /* green_check.png in Resources */ = {isa = PBXBuildFile; fileRef = CECDC54715F6C54000D266FD /* green_check.png */; };
 		CECE255B15F21FDB00517973 /* Level.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE255A15F21FDB00517973 /* Level.mm */; };
 		CECE256815F2819200517973 /* LevelMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE256715F2819200517973 /* LevelMgr.mm */; };
@@ -637,6 +639,9 @@
 		CEC88286160276B1007DC0EA /* level11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level11.json; sourceTree = "<group>"; };
 		CECA1E0115FD21240052A58E /* RiverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiverNode.h; sourceTree = "<group>"; };
 		CECA1E0215FD21240052A58E /* RiverNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiverNode.m; sourceTree = "<group>"; };
+		CECCE97D161530760091707C /* SubwayNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubwayNode.h; sourceTree = "<group>"; };
+		CECCE97E161530760091707C /* SubwayNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SubwayNode.mm; sourceTree = "<group>"; };
+		CECCE9811615389A0091707C /* level35.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level35.json; sourceTree = "<group>"; };
 		CECDC54715F6C54000D266FD /* green_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_check.png; sourceTree = "<group>"; };
 		CECE255915F21FDB00517973 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		CECE255A15F21FDB00517973 /* Level.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level.mm; sourceTree = "<group>"; };
@@ -1322,6 +1327,7 @@
 				CE31DCD21601EBDD0084C38B /* level24.json */,
 				CE53D25F160616070064F167 /* level25.json */,
 				CEE0277316067FE5007C4CDD /* level30.json */,
+				CECCE9811615389A0091707C /* level35.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1364,6 +1370,8 @@
 				CECA1E0215FD21240052A58E /* RiverNode.m */,
 				CEC65C0315F4C1CD0010EAC3 /* ScreenShotLayer.h */,
 				CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */,
+				CECCE97D161530760091707C /* SubwayNode.h */,
+				CECCE97E161530760091707C /* SubwayNode.mm */,
 				CECFA62F15F36AEE00FF1E8D /* Undoable.h */,
 				CECFA63015F36AEE00FF1E8D /* Undoable.m */,
 			);
@@ -1508,6 +1516,7 @@
 				CE6BFB9C160CB03B0037CFE4 /* LevelCell.xib in Resources */,
 				CE50FFB316137A8A00235E87 /* confetti.png in Resources */,
 				CE50FFB81613932400235E87 /* fire.png in Resources */,
+				CECCE9821615389A0091707C /* level35.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1685,6 +1694,7 @@
 				CECA1E0315FD21240052A58E /* RiverNode.m in Sources */,
 				CE6BFB9A160CAFAD0037CFE4 /* LevelCell.m in Sources */,
 				CEDBF23D161253C2000E85D3 /* AppDelegate.m in Sources */,
+				CECCE97F161530760091707C /* SubwayNode.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,6 +23,7 @@
 #import "HouseNode.h"
 #import "RiverNode.h"
 #import "JSONKit.h"
+#import "SubwayNode.h"
 
 @interface Level()
 @property (readwrite, retain) NSMutableArray *rivers;
@@ -30,6 +31,7 @@
 @property (readwrite, retain) NSMutableArray *bridge4s;
 @property (readwrite, retain) NSMutableArray *houses;
 @property (readwrite, retain) NSMutableArray *labels;
+@property (readwrite, retain) NSMutableArray *subways;
 @property (readwrite, retain) LayerMgr *layerMgr;
 @property (readwrite, copy) NSDictionary *levelData;
 
@@ -49,6 +51,7 @@
         self.bridge4s = [NSMutableArray arrayWithCapacity:3];
         self.rivers = [NSMutableArray arrayWithCapacity:25];
         self.houses = [NSMutableArray arrayWithCapacity:10];
+        self.subways = [NSMutableArray arrayWithCapacity:5];
         self.labels = [NSMutableArray arrayWithCapacity:5];
         self.date = date;
         
@@ -144,6 +147,22 @@
     }
     
     /*
+     * Add the subways
+     */
+    if ([_levelData objectForKey:@"subways"] != nil) {
+        NSArray *subways = [_levelData objectForKey:@"subways"];
+        for (NSDictionary *h in subways) {
+            NSString *x1 = [h objectForKey:@"x1"];
+            NSString *y1 = [h objectForKey:@"y1"];
+            NSString *x2 = [h objectForKey:@"x2"];
+            NSString *y2 = [h objectForKey:@"y2"];
+            NSString *color = [h objectForKey:@"color"];
+            
+            [self addSubway:[self parseInt:x1]:[self parseInt:y1]:[self parseInt:x2]:[self parseInt:y2]:[self getColor:color]];
+        }
+    }
+    
+    /*
      * Add the labels
      */
     if ([_levelData objectForKey:@"labels"] != nil) {
@@ -206,6 +225,7 @@
     [self.bridges removeAllObjects];
     [self.bridge4s removeAllObjects];
     [self.houses removeAllObjects];
+    [self.subways removeAllObjects];
     
     
 }
@@ -251,6 +271,13 @@
             [view addSubview:c];
         }
         [h addSprite];
+    }
+    
+    for (SubwayNode *s in self.subways) {
+        for (UIControl *c in [s controls]) {
+            [view addSubview:c];
+        }
+        [s addSprite];
     }
     
 }
@@ -593,6 +620,21 @@
     
 }
 
+-(SubwayNode*)addSubway:(float) x1:(float) y1:(float) x2:(float) y2:(BridgeColor) color {
+    
+    //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
+    
+    SubwayNode *subwayNode = [[SubwayNode alloc] initWithColor:color:self.layerMgr];
+    
+    subwayNode.subway1.position = [self tileToPoint:x1:y1];
+    subwayNode.subway2.position = [self tileToPoint:x2:y2];
+    
+    [self.subways addObject:subwayNode];
+    
+    return subwayNode;
+    
+}
+
 /**
  * Gets the dimensions of the current screen
  */
@@ -696,6 +738,9 @@
     
     [_houses release];
     _houses = nil;
+    
+    [_subways release];
+    _subways = nil;
     
     [_labels release];
     _labels = nil;

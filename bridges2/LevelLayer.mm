@@ -22,6 +22,7 @@
 #import "HouseNode.h"
 #import "BridgeColors.h"
 #import "RiverNode.h"
+#import "SubwayNode.h"
 #import "Level.h"
 #import "Undoable.h"
 
@@ -328,6 +329,10 @@
                 [self visitHouse:spriteB:spriteA];
             } else if (spriteA.tag == PLAYER && spriteB.tag == HOUSE) {
                 [self visitHouse:spriteA:spriteB];
+            } else if (spriteA.tag == SUBWAY && spriteB.tag == PLAYER) {
+                [self rideSubway:spriteB:spriteA];
+            } else if (spriteA.tag == SUBWAY && spriteB.tag == HOUSE) {
+                [self rideSubway:spriteA:spriteB];
             }
         }
     }
@@ -336,6 +341,17 @@
 -(BridgeNode*)findBridge:(CCSprite*) bridge {
     for (BridgeNode *n in self.currentLevel.bridges) {
         if (n.bridge == bridge) {
+            return n;
+        }
+    }
+    
+    return nil;
+}
+
+-(SubwayNode*)findSubway:(CCSprite*) subway {
+    for (SubwayNode *n in self.currentLevel.subways) {
+        if (n.subway1 == subway ||
+            n.subway2 == subway) {
             return n;
         }
     }
@@ -392,6 +408,32 @@
     }
     
     [self bumpObject:player:house];
+    
+}
+
+-(void)rideSubway:(CCSprite *) player:(CCSprite*) subway {
+    /*
+     * The player has run into a subway.  We need to ride the subway
+     * if the player is the right color and bump it if it isn't
+     */
+    SubwayNode *node = [self findSubway:subway];
+    
+    if (_player.coins > 0 &&
+        (node.color == cNone || _player.color == node.color)) {
+        [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins]];
+        _undoBtn.enabled = YES;
+        
+        _player.coins--;
+        self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
+        
+        CCSprite *exit = [node ride:subway];
+        
+        _player.player.position = exit.position;
+        [self bumpObject:player :exit];
+    } else {
+        [self bumpObject:player:subway];
+        
+    }
     
 }
 
