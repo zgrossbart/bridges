@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE1477DB1604C32100C054B2 /* level0.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1477DA1604C32100C054B2 /* level0.json */; };
 		CE1BB78A16160ED900EBB61E /* level19.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78916160ED900EBB61E /* level19.json */; };
+		CE1BB78D1616189F00EBB61E /* level22.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78C1616189F00EBB61E /* level22.json */; };
 		CE303A85160B3D5000F1D3CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE303A84160B3D5000F1D3CD /* Default-568h@2x.png */; };
 		CE31DCD11601E3790084C38B /* level18.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD01601E3790084C38B /* level18.json */; };
 		CE31DCD31601EBDD0084C38B /* level24.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD21601EBDD0084C38B /* level24.json */; };
@@ -252,6 +253,7 @@
 /* Begin PBXFileReference section */
 		CE1477DA1604C32100C054B2 /* level0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level0.json; sourceTree = "<group>"; };
 		CE1BB78916160ED900EBB61E /* level19.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level19.json; sourceTree = "<group>"; };
+		CE1BB78C1616189F00EBB61E /* level22.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level22.json; sourceTree = "<group>"; };
 		CE303A84160B3D5000F1D3CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		CE31DCD01601E3790084C38B /* level18.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level18.json; sourceTree = "<group>"; };
 		CE31DCD21601EBDD0084C38B /* level24.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level24.json; sourceTree = "<group>"; };
@@ -1330,6 +1332,7 @@
 				CE1BB78916160ED900EBB61E /* level19.json */,
 				CECE689C15F76E120042A7DF /* level20.json */,
 				CE53D25D160612510064F167 /* level21.json */,
+				CE1BB78C1616189F00EBB61E /* level22.json */,
 				CE31DCD21601EBDD0084C38B /* level24.json */,
 				CE53D25F160616070064F167 /* level25.json */,
 				CEE0277316067FE5007C4CDD /* level30.json */,
@@ -1525,6 +1528,7 @@
 				CECCE9821615389A0091707C /* level35.json in Resources */,
 				CE7F8328161600920012A4FA /* level17.json in Resources */,
 				CE1BB78A16160ED900EBB61E /* level19.json in Resources */,
+				CE1BB78D1616189F00EBB61E /* level22.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
