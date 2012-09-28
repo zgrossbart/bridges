@@ -428,8 +428,11 @@
         
         CCSprite *exit = [node ride:subway];
         
-        _player.player.position = exit.position;
-        [self bumpObject:player :exit];
+        CGSize s = [[CCDirector sharedDirector] winSize];
+        _playerStart = ccp(s.width / 2, s.height / 2);
+        
+        _player.player.position = ccp(exit.position.x, exit.position.y);
+        [self bumpObject:player:exit];
     } else {
         [self bumpObject:player:subway];
         
@@ -690,7 +693,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     
-    _player.player.position = [self pointOnLine: _playerStart: _player.player.position: _layerMgr.tileSize.width * 1.5];
+    _player.player.position = [self pointOnLine: _playerStart: _player.player.position: _layerMgr.tileSize.width * 1.6];
     
     [_player playerMoveEnded];
     
