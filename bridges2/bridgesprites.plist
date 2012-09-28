@@ -696,7 +696,7 @@
             <key>river_h.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{64,291},{15,13}}</string>
+                <string>{{2,312},{15,13}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -709,7 +709,7 @@
             <key>river_v.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{46,292},{13,15}}</string>
+                <string>{{2,327},{13,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -722,7 +722,7 @@
             <key>river_v_bl.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{115,274},{15,15}}</string>
+                <string>{{20,311},{15,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -735,7 +735,7 @@
             <key>river_v_br.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{98,274},{15,15}}</string>
+                <string>{{37,306},{15,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -748,7 +748,7 @@
             <key>river_v_tl.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{81,274},{15,15}}</string>
+                <string>{{68,290},{15,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -761,7 +761,7 @@
             <key>river_v_ur.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{64,274},{15,15}}</string>
+                <string>{{20,294},{15,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -771,10 +771,75 @@
                 <key>sourceSize</key>
                 <string>{15,15}</string>
             </dict>
+            <key>subway.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{46,290},{14,20}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{14,20}}</string>
+                <key>sourceSize</key>
+                <string>{14,20}</string>
+            </dict>
+            <key>subway_blue.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,274},{14,20}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{14,20}}</string>
+                <key>sourceSize</key>
+                <string>{14,20}</string>
+            </dict>
+            <key>subway_green.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{90,274},{14,20}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{14,20}}</string>
+                <key>sourceSize</key>
+                <string>{14,20}</string>
+            </dict>
+            <key>subway_orange.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{68,274},{14,20}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{14,20}}</string>
+                <key>sourceSize</key>
+                <string>{14,20}</string>
+            </dict>
+            <key>subway_red.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{46,274},{14,20}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{14,20}}</string>
+                <key>sourceSize</key>
+                <string>{14,20}</string>
+            </dict>
             <key>x.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{46,274},{16,16}}</string>
+                <string>{{2,294},{16,16}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -794,7 +859,7 @@
             <key>size</key>
             <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:df5b6ba644df5da363d82d87da351932$</string>
+            <string>$TexturePacker:SmartUpdate:9fd0d69ee6393dbcf1a610c1652a238b$</string>
             <key>textureFileName</key>
             <string>bridgesprites.pvr.gz</string>
         </dict>

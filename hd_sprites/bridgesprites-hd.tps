@@ -197,6 +197,11 @@
             <filename>river_v_tl.png</filename>
             <filename>river_v_ur.png</filename>
             <filename>x.png</filename>
+            <filename>../sprites/subway_blue.png</filename>
+            <filename>../sprites/subway_green.png</filename>
+            <filename>../sprites/subway_orange.png</filename>
+            <filename>../sprites/subway_red.png</filename>
+            <filename>../sprites/subway.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
