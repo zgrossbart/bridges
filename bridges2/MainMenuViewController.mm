@@ -22,12 +22,9 @@
 #import "LevelCell.h"
 
 @interface MainMenuViewController() {
-    bool _hasLoadedPicker;
     int _noOfSection;
     
 }
-
-@property (readwrite, retain) NSMutableArray *buttons;
 @property (readwrite, retain) UIImage *checkImage;
 
 @end
@@ -40,8 +37,6 @@
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     if (self) {
-        
-        self.buttons = [NSMutableArray array];
         
     }
     return self;
@@ -61,8 +56,6 @@
     
     _noOfSection = 3;
     
-    self.buttons = [NSMutableArray arrayWithCapacity:25];
-    
     [LevelMgr getLevelMgr];
     
     [self generateLevelImages];
@@ -77,6 +70,10 @@
 
 }
 
+/**
+ * Check to see if the user has rated the app in the app store.  If they haven't then
+ * we show the dialog reminding them every 20 times they run the game.
+ */
 -(void)checkRate {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     bool hasRated = [prefs boolForKey:@"hasRated"];
@@ -98,7 +95,10 @@
     }
 }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+/**
+ * This method responds to the button clicks on the rate this app dialog
+ */
+-(void)alertView:(UIAlertView*) alertView clickedButtonAtIndex:(NSInteger) buttonIndex {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
     if (buttonIndex == 1) {
@@ -113,15 +113,6 @@
 -(IBAction)rateGame {
     [[UIApplication sharedApplication]
      openURL:[NSURL URLWithString:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=409954448"]];
-}
-
--(void)levelSelected:(id)sender {
-    UIButton *button = (UIButton *)sender;
-	int tag = button.tag;
-    
-    NSString* key = [[LevelMgr getLevelMgr].levelIds objectAtIndex:tag];
-    [self selectLevel:key];
-    
 }
 
 -(void)selectLevel:(NSString*) key {
@@ -142,9 +133,6 @@
     [_resetBtn release];
     _resetBtn = nil;
     
-//    [self.buttons release];
-    self.buttons = nil;
-    
     [_webView release];
     _webView = nil;
     [_aboutNavItem release];
@@ -153,27 +141,22 @@
 }
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return TRUE;//UIInterfaceOrientationIsLandscape(interfaceOrientation);
+    return TRUE;
 }
 
 -(NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
 
-// Customize the number of sections in the table view.
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-
-// Customize the number of rows in the table view.
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+-(NSInteger)tableView:(UITableView*) tableView numberOfRowsInSection:(NSInteger) section {
     return [LevelMgr getLevelMgr].levels.count;
 }
 
-
-// Customize the appearance of table view cells.
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell*)tableView:(UITableView*) tableView cellForRowAtIndexPath:(NSIndexPath*) indexPath {
     static NSString *CellIdentifier = @"Cell";
     
     NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
@@ -201,7 +184,7 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+-(void)tableView:(UITableView*) tableView didSelectRowAtIndexPath:(NSIndexPath*) indexPath {
     self.curIndex = indexPath.row;
     
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:false];
@@ -275,7 +258,6 @@
         _noOfSection = 4;
     }
     
-    // Configure layout
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     
     CGSize s = CGSizeMake(IPAD_LEVEL_IMAGE_W + 30, IPAD_LEVEL_IMAGE_H + 20);
@@ -303,7 +285,7 @@
     _aboutNavItem.title = @"The Seven Bridges of Königsberg";
 }
 
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*) collectionView {
     if ([[LevelMgr getLevelMgr].levelIds count] % _noOfSection == 0) {
         return [[LevelMgr getLevelMgr].levelIds count] / _noOfSection;
     } else {
@@ -315,7 +297,10 @@
     return _noOfSection;
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+/**
+ * Create each cell in the collection view that we use to select levels on the iPad
+ */
+-(UICollectionViewCell*) collectionView:(UICollectionView*) collectionView cellForItemAtIndexPath:(NSIndexPath*) indexPath {
     NSString *cellIdentifier = @"levelCell";
     
     LevelCell *cell = (LevelCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -351,14 +336,18 @@
     
 }
 
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+-(CGSize)collectionView:(UICollectionView *) collectionView layout:(UICollectionViewLayout*) collectionViewLayout referenceSizeForHeaderInSection:(NSInteger) section {
     return CGSizeMake(0, 0);
 }
 
--(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+-(UIEdgeInsets)collectionView:(UICollectionView*) collectionView layout:(UICollectionViewLayout*) collectionViewLayout insetForSectionAtIndex:(NSInteger) section {
     return UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0);
 }
 
+/**
+ * This method gets called when the device roates.  We aren't using this right now since
+ * we're only supporting landscape orientation.
+ */
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
     
     if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
@@ -369,7 +358,10 @@
     [self.collectionView reloadData];
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+/**
+ * This method gets called when the user taps on a cell in the collection view.
+ */
+- (void)collectionView:(UICollectionView*) collectionView didSelectItemAtIndexPath:(NSIndexPath*) indexPath {
     int index = indexPath.section * _noOfSection + indexPath.row;
     if (index < [[LevelMgr getLevelMgr].levelIds count]) {
         [self selectLevel:[[LevelMgr getLevelMgr].levelIds objectAtIndex:index]];
@@ -381,12 +373,8 @@
     [_GameSceneViewController release];
     _GameSceneViewController = nil;
     
-//    [self.buttons release];
-    self.buttons = nil;
-    
     [_checkImage release];
-    
-    //    [_view release];
+
     [_navItem release];
     [_mainTable release];
     [_resetBtn release];

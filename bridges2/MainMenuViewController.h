@@ -21,10 +21,7 @@
 
 @interface MainMenuViewController : UIViewController <UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     GameSceneViewController *_GameSceneViewController;
-    
-//    IBOutlet UITableView *_view;
-    CGFloat  mFontSize;
-    NSArray* mFontNames;
+
     IBOutlet UITableView *_mainTable;
     IBOutlet UINavigationItem *_navItem;
     IBOutlet UINavigationItem *_aboutNavItem;
