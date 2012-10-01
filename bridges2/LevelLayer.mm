@@ -561,10 +561,6 @@ CGFloat CGPointToDegree(CGPoint point) {
     [mgr removeAllActionsFromTarget:player];
     [mgr resumeTarget:player];
     
-    //    printf("Moving to (%f, %f)\n", location.x, location.y);
-    //    location.y += 5;
-    //    _player.position = location;
-    
     [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color: _player.coins]];
     _undoBtn.enabled = YES;
     
@@ -577,7 +573,14 @@ CGFloat CGPointToDegree(CGPoint point) {
     }
 }
 
--(void)doCross:(CCSprite *) player:(BridgeNode*) bridge:(CCSprite*) object {
+/**
+ * Handle the player crossing a bridge.
+ *
+ * @param player the player sprite
+ * @param bridge the bridge node the player is crossing
+ * @param object the sprite corresponding to the bridge the player is crossing
+ */
+-(void)doCross:(CCSprite*) player:(BridgeNode*) bridge:(CCSprite*) object {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     _inMove = true;
@@ -636,18 +639,9 @@ CGFloat CGPointToDegree(CGPoint point) {
         }
     }
     
-    /*if (location == NULL) {
-     printf("player (%f, %f)\n", player.position.x, player.position.y);
-     printf("river (%f, %f)\n", object.position.x, object.position.y);
-     printf("This should never happen\n");
-     }*/
-    
     [mgr removeAllActionsFromTarget:player];
     [mgr resumeTarget:player];
     
-    //    printf("Moving to (%f, %f)\n", location.x, location.y);
-    //    location.y += 5;
-    //    _player.position = location;
     
     [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color: _player.coins]];
     _undoBtn.enabled = YES;
@@ -759,12 +753,16 @@ CGFloat CGPointToDegree(CGPoint point) {
         [defaults setBool:TRUE forKey:[NSString stringWithFormat:@"%@-won", self.currentLevel.levelId]];
         [defaults synchronize];
         
-        [self createExplosion:self.player.player.position.x:self.player.player.position.y];
+        [self showConfetti:self.player.player.position.x:self.player.player.position.y];
     }
     
 }
 
--(void) createExplosion: (float) x : (float) y
+/**
+ * When the player wins a level we show a small animation of stars to celebrate.
+ * We show this animation with a particle emitter.
+ */
+-(void) showConfetti: (float) x: (float) y
 {
     [self.emitter resetSystem];
     self.emitter.texture = [[CCTextureCache sharedTextureCache] addImage:@"confetti.png"];
@@ -838,6 +836,10 @@ CGFloat CGPointToDegree(CGPoint point) {
     _player.player.position = ccp(x, y);
 }
 
+/**
+ * Determine if the point is in an object.  Returns true if the point is inside
+ * an object and false otherwise.
+ */
 -(bool)inObject:(CGPoint) p {
     for (BridgeNode *n in self.currentLevel.bridges) {
         if (CGRectContainsPoint([n.bridge boundingBox], p)) {
@@ -869,6 +871,11 @@ CGFloat CGPointToDegree(CGPoint point) {
     
 }
 
+/**
+ * The user taps to place the player at the start of many of the levels.  If the
+ * user tries to place the player on an existing object like a river or a bridge
+ * then we show the X icon with a little pulse animation.
+ */
 -(void)showNoTapSprite: (CGPoint) p {
     CCSprite *x = [CCSprite spriteWithSpriteFrameName:@"x.png"];
     [_layerMgr addChildToSheet:x];
@@ -885,7 +892,6 @@ CGFloat CGPointToDegree(CGPoint point) {
 
 -(void)ccTouchesEnded:(NSSet*) touches withEvent:(UIEvent*) event {
     
-    // Choose one of the touches to work with
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:[touch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
@@ -909,8 +915,6 @@ CGFloat CGPointToDegree(CGPoint point) {
         
         _playerStart = _player.player.position;
         [_player moveTo:location];
-        //        [_player.player runAction:
-        //         [CCMoveTo actionWithDuration:distance/velocity position:ccp(location.x,location.y)]];
     }
     
 }
@@ -935,8 +939,6 @@ CGFloat CGPointToDegree(CGPoint point) {
     [self.coinImage release];
     [self.view release];
     [self.controller release];
-    
-    //    [self.currentLevel dealloc];
     
     [super dealloc];
 }
