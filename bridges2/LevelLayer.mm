@@ -468,7 +468,11 @@
      */
     BridgeNode *node = [self findBridge:bridge];
     
-    if ([node isCrossed] || (node.coins > 0 && _player.coins < 1)) {
+    if ([node isCrossed]) {
+        [self showNoTapSprite:self.player.player.position];
+        [self bumpObject:player:bridge];
+        [self.controller showMessage:@"You already crossed this bridge"];        
+    } else if (node.coins > 0 && _player.coins < 1) {
         [self showNoTapSprite:self.player.player.position];
         [self bumpObject:player:bridge];
         [self.controller showMessage:@"You need more coins to cross"];
