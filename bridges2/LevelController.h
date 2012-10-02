@@ -24,4 +24,6 @@
 @required
 -(void) won;
 
+-(void) showMessage: (NSString*) msg;
+
 @end

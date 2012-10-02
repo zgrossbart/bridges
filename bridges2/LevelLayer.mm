@@ -394,8 +394,7 @@
         return;
     }
     
-    if ([self canVisit] && ![node isVisited] &&
-        (node.color == cNone || _player.color == node.color)) {
+    if ([self canVisit] && ![node isVisited] && [self colorMatches:node]) {
         [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins]];
         _undoBtn.enabled = YES;
         if (node.coins > 0) {
@@ -412,8 +411,22 @@
     
 }
 
+-(bool)colorMatches: (HouseNode*) node {
+    if (node.color == cNone || _player.color == node.color) {
+        return true;
+    } else {
+        [self.controller showMessage:@"Change color to visit this house"];
+        return false;
+    }
+}
+
 -(bool)canVisit {
-    return !self.currentLevel.hasCoins || _canVisit;
+    if (!self.currentLevel.hasCoins || _canVisit) {
+        return true;
+    } else {
+        [self.controller showMessage:@"Visit another island first"];
+        return false;
+    }
 }
 
 -(void)rideSubway:(CCSprite *) player:(CCSprite*) subway {
@@ -440,6 +453,7 @@
         [self bumpObject:player:exit];
         _canVisit = true;
     } else {
+        [self.controller showMessage:@"You need more coins to ride"];
         [self showNoTapSprite:self.player.player.position];
         [self bumpObject:player:subway];
         
@@ -457,6 +471,7 @@
     if ([node isCrossed] || (node.coins > 0 && _player.coins < 1)) {
         [self showNoTapSprite:self.player.player.position];
         [self bumpObject:player:bridge];
+        [self.controller showMessage:@"You need more coins to cross"];
     } else {
         _inCross = true;
         [self doCross:player:node:bridge];

@@ -86,19 +86,21 @@
     }
     
     [_layer setLevel:level];
-    _levelTitle.text = level.name;
+    [self showMessage:level.name];
+}
+
+-(void) showMessage: (NSString*) msg {
+    _levelTitle.text = msg;
     
     [_levelTitle setAlpha:1.0];
     
     [UIView animateWithDuration:3
-                          delay:3
+                          delay:1
                         options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
                          [_levelTitle setAlpha:0.0];
                      }
                      completion:nil];
-    
-//    [UIView animateWithDuration:3.3f delay:0.5f animations:^{_levelTitle.alpha = 0.f;}];
 }
 
 -(void) viewWillAppear:(BOOL)animated
