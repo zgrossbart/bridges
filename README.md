@@ -12,25 +12,30 @@ Level 1: Hello Bridges
 
 ![Hello Bridges Level](/zgrossbart/bridges/raw/master/screenshots/hellobridges.png)
 
-Level 8: Economics
+Level 9: Economics
 --------------------------------------
 
 ![Economics Level](/zgrossbart/bridges/raw/master/screenshots/economics.png)
 
-Level 16: A House of Another Color
+Level 17: A House of Another Color
 --------------------------------------
 
 ![House of Another Color Level](/zgrossbart/bridges/raw/master/screenshots/different_color.png)
 
-Level 24: Color Diamonds
+Level 25: Color Diamonds
 --------------------------------------
 
 ![Color Diamonds Level](/zgrossbart/bridges/raw/master/screenshots/colored_diamonds.png)
 
-Level 30: Subways
+Level 31: Subways
 --------------------------------------
 
 ![Subway Level](/zgrossbart/bridges/raw/master/screenshots/subway.png)
+
+Level 39: Spend It Wisely
+--------------------------------------
+
+![Spend It Wisely Level](/zgrossbart/bridges/raw/master/screenshots/spenditwisely.png)
 
 
 This game is currently under development and not ready to play yet.  When it's done I'll release it in the App store.
