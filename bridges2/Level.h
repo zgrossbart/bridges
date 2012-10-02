@@ -107,6 +107,11 @@
  */
 @property (readonly, retain) NSString *name;
 
+/**
+ * The number of coins the user starts the level with
+ */
+@property (readonly) int coins;
+
 /** 
  * The last modified date for this level
  */

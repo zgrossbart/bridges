@@ -112,7 +112,7 @@
     }
     
     if ([self.currentLevel hasCoins]) {
-        self.coinLbl.text = [NSString stringWithFormat:@"%i", 0];
+        self.coinLbl.text = [NSString stringWithFormat:@"%i", self.currentLevel.coins];
         self.coinImage.hidden = NO;
     } else {
         self.coinLbl.text = @"";
@@ -433,6 +433,7 @@
         
         _player.player.position = ccp(exit.position.x, exit.position.y);
         [self bumpObject:player:exit];
+        _canVisit = true;
     } else {
         [self bumpObject:player:subway];
         
@@ -834,6 +835,10 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     _player = [[PlayerNode alloc] initWithColor:cBlack:_layerMgr];
     _player.player.position = ccp(x, y);
+    
+    if ([self.currentLevel hasCoins]) {
+        self.player.coins = self.currentLevel.coins;
+    }
 }
 
 /**

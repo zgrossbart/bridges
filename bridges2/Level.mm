@@ -36,6 +36,7 @@
 @property (readwrite, copy) NSDictionary *levelData;
 
 @property (readwrite, retain) NSString *name;
+@property (readwrite) int coins;
 @property (readwrite, retain) NSDate *date;
 @property (readwrite, retain) NSString *levelId;
 @property (readwrite) CGPoint playerPos;
@@ -72,6 +73,11 @@
     
     _levelId = [self.levelData objectForKey:@"id"];
     _name = [self.levelData objectForKey:@"name"];
+    if ([self.levelData objectForKey:@"coins"] != nil) {
+        _coins = (int) [self parseInt:[self.levelData objectForKey:@"coins"]];
+    } else {
+        _coins = 0;
+    }
 }
 
 -(void)loadSprites {
