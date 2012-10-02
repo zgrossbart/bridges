@@ -1,86 +1,56 @@
 {
     "level": {
         "id": "11",
-        "name": "In the middle",
+        "name": "Islands",
         "rivers": [
             {
-                "x": "8",
-                "y": "b-t",
-                "orient": "v"
-            },
-            {
-                "x": "8-24",
-                "y": "8",
-                "orient": "h"
-            },
-            {
-                "x": "16-30",
-                "y": "18",
-                "orient": "h"
-            },
-            {
-                "x": "16",
-                "y": "8-18",
-                "orient": "v",
-                "side": "left"
-            },
-            {
-                "x": "25",
-                "y": "8-18",
-                "orient": "v"
-            },
-            {
-                "x": "l-30",
-                "y": "8",
-                "orient": "h"
-            },
-            {
-                "x": "30",
-                "y": "8-t",
-                "orient": "v",
-                "side": "right"
-            }
-        ],
-        "bridges": [
-            {
-                "x": "8",
-                "y": "4",
-                "orient": "h"
-            },
-            {
-                "x": "30",
-                "y": "m",
-                "orient": "h"
-            },
-            {
-                "x": "30",
-                "y": "24",
-                "orient": "h"
-            },
-            {
-                "x": "8",
+                "x": "8-r",
                 "y": "22",
                 "orient": "h"
             },
             {
                 "x": "8",
-                "y": "12",
+                "y": "b-22",
+                "orient": "v",
+                "side": "left"
+            },
+            {
+                "x": "16-r",
+                "y": "m",
                 "orient": "h"
             },
             {
-                "x": "4",
-                "y": "8",
+                "x": "16",
+                "y": "b-m",
+                "orient": "v",
+                "side": "left"
+            },
+            {
+                "x": "24",
+                "y": "b-m",
+                "orient": "v"
+            }
+        ],
+        "bridges": [
+            {
+                "x": "c",
+                "y": "22",
                 "orient": "v"
             },
             {
-                "x": "c",
-                "y": "8",
+                "x": "30",
+                "y": "m",
                 "orient": "v"
             },
             {
-                "x": "c",
+                "x": "8",
                 "y": "18",
-                "orient": "v"
+                "orient": "h"
+            },
+            {
+                "x": "16",
+                "y": "8",
+                "orient": "h"
             }
         ],
         "houses": [

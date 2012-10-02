@@ -1,172 +1,107 @@
 {
     "level": {
         "id": "22",
-        "name": "Square colors together",
+        "name": "House of another color",
         "rivers": [
             {
-                "x": "5-35",
-                "y": "5",
-                "orient": "h"
-            },
-            {
-                "x": "l-r",
-                "y": "15",
-                "orient": "h"
-            },
-            {
-                "x": "5-35",
-                "y": "24",
-                "orient": "h"
-            },
-            {
-                "x": "5",
-                "y": "5-24",
-                "orient": "v",
-                "side": "left"
-            },
-            {
-                "x": "35",
-                "y": "5-24",
-                "orient": "v",
-                "side": "right"
-            },
-            {
-                "x": "15",
-                "y": "5-24",
+                "x": "18",
+                "y": "b-t",
                 "orient": "v"
             },
             {
-                "x": "24",
-                "y": "5-24",
-                "orient": "v"
+                "x": "l-32",
+                "y": "18",
+                "orient": "h"
+            },
+            {
+                "x": "18-32",
+                "y": "6",
+                "orient": "h"
+            },
+            {
+                "x": "32",
+                "y": "6-t",
+                "orient": "v",
+				"side": "right"
             }
         ],
         "bridges": [
             {
-                "x": "7",
-                "y": "24",
-                "orient": "v",
-				"coins": "1"
-            },
-            {
-                "x": "12",
-                "y": "24",
+                "x": "2",
+                "y": "18",
                 "orient": "v"
             },
             {
-                "x": "7",
-                "y": "5",
-                "orient": "v",
-				"color": "green",
-				"coins": "2"
-            },
-            {
-                "x": "12",
-                "y": "5",
+                "x": "8",
+                "y": "18",
                 "orient": "v"
             },
             {
-                "x": "20",
-                "y": "5",
+                "x": "14",
+                "y": "18",
                 "orient": "v"
             },
             {
-                "x": "20",
-                "y": "15",
-                "orient": "v",
-				"color": "red",
-				"coins": "3"
+                "x": "26",
+                "y": "18",
+                "orient": "v"
             },
             {
-                "x": "5",
-                "y": "19",
-                "orient": "h"
-            },
-            {
-                "x": "15",
-                "y": "19",
+                "x": "18",
+                "y": "26",
                 "orient": "h",
-				"color": "red",
-				"coins": "2"
+				"color": "blue"
             },
             {
-                "x": "24",
-                "y": "19",
-                "orient": "h"
-            },
-            {
-                "x": "35",
-                "y": "19",
+                "x": "18",
+                "y": "22",
                 "orient": "h",
-				"coins": "1"
+				"color": "orange"
             },
             {
-                "x": "27",
-                "y": "24",
-                "orient": "v",
+                "x": "18",
+                "y": "14",
+                "orient": "h",
 				"color": "green"
             },
             {
-                "x": "32",
-                "y": "24",
-                "orient": "v",
-				"color": "green"
-            },
-            {
-                "x": "27",
-                "y": "5",
-                "orient": "v",
-				"coins": "2"
-            },
-            {
-                "x": "32",
-                "y": "5",
-                "orient": "v",
+                "x": "18",
+                "y": "10",
+                "orient": "h",
 				"color": "red"
             },
             {
-                "x": "24",
-                "y": "10",
+                "x": "18",
+                "y": "2",
                 "orient": "h"
             },
             {
-                "x": "15",
-                "y": "10",
-                "orient": "h",
-				"color": "green",
-				"coins": "3"
-            },
-            {
-                "x": "35",
-                "y": "10",
+                "x": "32",
+                "y": "24",
                 "orient": "h"
             }
         ],
         "houses": [
-			{
-				"x": "10",
-				"y": "17",
-				"color": "green",
-				"coins": "4"
-			},
-			{
-				"x": "7",
-				"y": "10",
-				"color": "red",
-				"coins": "5"
-			},
-			{
-				"x": "30",
-				"y": "17",
-				"color": "red",
-				"coins": "3"
-			},
-			{
-				"x": "30",
-				"y": "12",
-				"color": "green",
-				"coins": "2"
-			}
-		]
+	        {
+	            "x": "8",
+	            "y": "24",
+	            "color": "green"
+	        },
+	        {
+	            "x": "8",
+	            "y": "8",
+	            "color": "orange"
+	        },
+	        {
+	            "x": "26",
+	            "y": "24",
+	            "color": "red"
+	        },
+	        {
+	            "x": "26",
+	            "y": "12",
+	            "color": "blue"
+	        }
+        ]
     }
 }

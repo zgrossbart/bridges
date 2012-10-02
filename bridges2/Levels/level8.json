@@ -1,56 +1,39 @@
 {
     "level": {
         "id": "8",
-        "name": "Economics",
+        "name": "Tolls",
+        "player": {
+            "x": "8",
+            "y": "18"
+        },
         "labels": [
             {
                 "x": "22",
                 "y": "27",
                 "w": "16",
                 "h": "10",
-                "text": "You can cross some toll bridges more than once."
+                "text": "Some bridges aren't free.\n\nCollect money at houses to pay the tolls."
             }
         ],
         "rivers": [
             {
-                "x": "14",
+                "x": "18",
                 "y": "b-t",
                 "orient": "v"
             }
         ],
         "bridges": [
             {
-                "x": "14",
-                "y": "18",
-                "orient": "h",
-                "color": "red",
-                "coins": "2"
-            },
-            {
-                "x": "14",
+                "x": "18",
                 "y": "8",
                 "orient": "h",
-                "color": "green",
                 "coins": "1"
             }
         ],
         "houses": [
             {
-                "x": "4",
-                "y": "18",
-                "color": "black",
-                "coins": "1"
-            },
-            {
-                "x": "4",
+                "x": "8",
                 "y": "8",
-                "color": "green",
-                "coins": "1"
-            },
-            {
-                "x": "28",
-                "y": "10",
-                "color": "red",
                 "coins": "1"
             }
         ]

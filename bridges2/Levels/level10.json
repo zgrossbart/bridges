@@ -1,59 +1,43 @@
 {
     "level": {
         "id": "10",
-        "name": "Islands",
+        "name": "Visit again",
+        "labels": [
+            {
+                "x": "22",
+                "y": "27",
+                "w": "16",
+                "h": "10",
+                "text": "You have to cross a bridge between each visit to a house."
+            }
+        ],
         "rivers": [
             {
-                "x": "8-r",
-                "y": "22",
-                "orient": "h"
-            },
-            {
-                "x": "8",
-                "y": "b-22",
-                "orient": "v",
-                "side": "left"
-            },
-            {
-                "x": "16-r",
-                "y": "m",
-                "orient": "h"
-            },
-            {
-                "x": "16",
-                "y": "b-m",
-                "orient": "v",
-                "side": "left"
-            },
-            {
-                "x": "24",
-                "y": "b-m",
+                "x": "14",
+                "y": "b-t",
                 "orient": "v"
             }
         ],
         "bridges": [
             {
-                "x": "c",
-                "y": "22",
-                "orient": "v"
-            },
-            {
-                "x": "30",
-                "y": "m",
-                "orient": "v"
-            },
-            {
-                "x": "8",
+                "x": "14",
                 "y": "18",
-                "orient": "h"
-            },
-            {
-                "x": "16",
-                "y": "8",
-                "orient": "h"
+                "orient": "h",
+                "coins": "3"
             }
         ],
         "houses": [
+            {
+                "x": "4",
+                "y": "18",
+                "color": "black",
+                "coins": "2"
+            },
+            {
+                "x": "28",
+                "y": "10",
+                "coins": "1"
+            }
         ]
     }
 }

@@ -1,14 +1,14 @@
 {
     "level": {
         "id": "9",
-        "name": "Visit again",
+        "name": "Economics",
         "labels": [
             {
                 "x": "22",
                 "y": "27",
                 "w": "16",
                 "h": "10",
-                "text": "You have to cross a bridge between each visit to a house."
+                "text": "You can cross some toll bridges more than once."
             }
         ],
         "rivers": [
@@ -23,7 +23,15 @@
                 "x": "14",
                 "y": "18",
                 "orient": "h",
-                "coins": "3"
+                "color": "red",
+                "coins": "2"
+            },
+            {
+                "x": "14",
+                "y": "8",
+                "orient": "h",
+                "color": "green",
+                "coins": "1"
             }
         ],
         "houses": [
@@ -31,11 +39,18 @@
                 "x": "4",
                 "y": "18",
                 "color": "black",
-                "coins": "2"
+                "coins": "1"
+            },
+            {
+                "x": "4",
+                "y": "8",
+                "color": "green",
+                "coins": "1"
             },
             {
                 "x": "28",
                 "y": "10",
+                "color": "red",
                 "coins": "1"
             }
         ]

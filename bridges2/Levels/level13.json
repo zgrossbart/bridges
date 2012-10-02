@@ -1,112 +1,79 @@
 {
     "level": {
         "id": "13",
-        "name": "Classic colors",
+        "name": "The classic",
         "rivers": [
-	        {
-	            "x": "8",
-	            "y": "12-22",
-	            "orient": "v",
+            {
+                "x": "8",
+                "y": "12-22",
+                "orient": "v",
 				"side": "left"
-	        },
-	        {
-	            "x": "l-34",
-	            "y": "12",
-	            "orient": "h"
-	        },
-	        {
-	            "x": "8-r",
-	            "y": "22",
-	            "orient": "h"
-	        },
-	        {
-	            "x": "28",
-	            "y": "12-22",
-	            "orient": "v"
-	        },
-	        {
-	            "x": "34",
-	            "y": "b-12",
-	            "orient": "v",
+            },
+            {
+                "x": "l-34",
+                "y": "12",
+                "orient": "h"
+            },
+            {
+                "x": "8-r",
+                "y": "22",
+                "orient": "h"
+            },
+            {
+                "x": "28",
+                "y": "12-22",
+                "orient": "v"
+            },
+            {
+                "x": "34",
+                "y": "b-12",
+                "orient": "v",
 				"side": "right"
-	        }    
+            }
         ],
         "bridges": [
             {
                 "x": "8",
                 "y": "17",
-                "orient": "h",
-				"color": "green"
+                "orient": "h"
             },
             {
                 "x": "28",
                 "y": "17",
-                "orient": "h",
-				"color": "green"
+                "orient": "h"
             },
             {
                 "x": "34",
                 "y": "8",
-                "orient": "h",
-				"color": "red"
+                "orient": "h"
             },
             {
                 "x": "12",
                 "y": "12",
-                "orient": "v",
-				"color": "orange"
+                "orient": "v"
             },
             {
                 "x": "24",
                 "y": "12",
-                "orient": "v",
-				"color": "red"
+                "orient": "v"
             },
             {
                 "x": "14",
                 "y": "22",
-                "orient": "v",
-				"color": "blue"
+                "orient": "v"
             },
             {
                 "x": "22",
                 "y": "22",
-                "orient": "v",
-				"color": "orange"
+                "orient": "v"
             },
             {
                 "x": "34",
                 "y": "22",
-                "orient": "v",
-				"color": "blue"
+                "orient": "v"
             }
         ],
         "houses": [
-	        {
-	            "x": "32",
-	            "y": "26",
-	            "color": "orange"
-	        },
-	        {
-	            "x": "38",
-	            "y": "20",
-	            "color": "blue"
-	        },
-	        {
-	            "x": "30",
-	            "y": "14",
-	            "color": "red"
-	        },
-	        {
-	            "x": "20",
-	            "y": "14",
-	            "color": "red"
-	        },
-	        {
-	            "x": "12",
-	            "y": "18",
-	            "color": "green"
-	        }
         ]
     }
 }
