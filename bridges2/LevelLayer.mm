@@ -394,17 +394,18 @@
         return;
     }
     
-    if ([self canVisit] && ![node isVisited]) {
-        if (node.color == cNone || _player.color == node.color) {
-            [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins]];
-            _undoBtn.enabled = YES;
-            if (node.coins > 0) {
-                _player.coins++;
-                self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
-            }
-            [node visit];
-            _canVisit = false;
+    if ([self canVisit] && ![node isVisited] &&
+        (node.color == cNone || _player.color == node.color)) {
+        [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins]];
+        _undoBtn.enabled = YES;
+        if (node.coins > 0) {
+            _player.coins++;
+            self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
         }
+        [node visit];
+        _canVisit = false;
+    } else {
+        [self showNoTapSprite:self.player.player.position];
     }
     
     [self bumpObject:player:house];
@@ -439,6 +440,7 @@
         [self bumpObject:player:exit];
         _canVisit = true;
     } else {
+        [self showNoTapSprite:self.player.player.position];
         [self bumpObject:player:subway];
         
     }
@@ -453,6 +455,7 @@
     BridgeNode *node = [self findBridge:bridge];
     
     if ([node isCrossed] || (node.coins > 0 && _player.coins < 1)) {
+        [self showNoTapSprite:self.player.player.position];
         [self bumpObject:player:bridge];
     } else {
         _inCross = true;
