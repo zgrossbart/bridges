@@ -1,40 +1,51 @@
 {
     "level": {
         "id": "7",
-        "name": "Tolls",
-        "player": {
-            "x": "8",
-            "y": "18"
-        },
-        "labels": [
-            {
-                "x": "22",
-                "y": "27",
-                "w": "16",
-                "h": "10",
-                "text": "Some bridges aren't free.\n\nCollect money at houses to pay the tolls."
-            }
-        ],
+        "name": "No color house",
+		"labels": [
+        	{
+            	"x": "22",
+				"y": "27",
+				"w": "16",
+				"h": "14",
+				"text": "You can always visit black houses"
+			}
+        ],        
         "rivers": [
             {
-                "x": "18",
-                "y": "b-t",
-                "orient": "v"
+                "x": "l-r",
+                "y": "10",
+                "orient": "h"
             }
         ],
         "bridges": [
             {
-                "x": "18",
-                "y": "8",
-                "orient": "h",
-                "coins": "1"
+                "x": "10",
+                "y": "10",
+                "orient": "v",
+                "color": "red"
+            },
+            {
+                "x": "20",
+                "y": "10",
+                "orient": "v",
+                "color": "green"
             }
         ],
         "houses": [
             {
                 "x": "8",
-                "y": "8",
-                "coins": "1"
+                "y": "4",
+                "color": "green"
+            },
+            {
+                "x": "20",
+                "y": "20",
+                "color": "red"
+            },
+            {
+                "x": "5",
+                "y": "20"
             }
         ]
     }

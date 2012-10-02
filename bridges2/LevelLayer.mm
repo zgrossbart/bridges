@@ -394,7 +394,7 @@
         return;
     }
     
-    if (_canVisit && ![node isVisited]) {
+    if ([self canVisit] && ![node isVisited]) {
         if (node.color == cNone || _player.color == node.color) {
             [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins]];
             _undoBtn.enabled = YES;
@@ -409,6 +409,10 @@
     
     [self bumpObject:player:house];
     
+}
+
+-(bool)canVisit {
+    return !self.currentLevel.hasCoins || _canVisit;
 }
 
 -(void)rideSubway:(CCSprite *) player:(CCSprite*) subway {
