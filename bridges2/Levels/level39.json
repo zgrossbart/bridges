@@ -2,7 +2,7 @@
     "level": {
         "id": "39",
         "name": "Back and forth",
-		"coins": "3",
+		"coins": "4",
         "rivers": [
             {
                 "x": "l-10",
@@ -43,9 +43,7 @@
             {
                 "x": "10",
                 "y": "26",
-                "orient": "h",
-				"coins": "5",
-				"color": "green"
+                "orient": "h"
             },
             {
                 "x": "25",
@@ -128,19 +126,19 @@
             {
                 "x": "35",
                 "y": "26",
-                "coins": "8",
+                "coins": "3",
 				"color": "red"
-            },
-            {
-                "x": "35",
-                "y": "17",
-                "coins": "4",
-				"color": "green"
             },
             {
                 "x": "25",
                 "y": "1",
-                "coins": "6",
+                "coins": "5",
+				"color": "blue"
+            },
+            {
+                "x": "1",
+                "y": "13",
+                "coins": "4",
 				"color": "blue"
             }
         ],
