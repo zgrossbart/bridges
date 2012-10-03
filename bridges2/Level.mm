@@ -394,9 +394,15 @@
      * a range.
      */
     if (vert) {
+        for (float j = yi1; j <= yi2; j += rSprite.contentSize.height) {
+            [rivers addObject:[self addRiver:xi1:j:vert:1]];
+        }
+        
         for (float j = yi1; j <= yi2;) {
+            // getRiverRange returns 1, 3, 5 or 11; the width in tiles of the next segment
             int range = [self getRiverRange:j:yi2];
-            if (range * (rSprite.contentSize.height) > yi2) {
+            if (j + (range * (rSprite.contentSize.height / 2)) > yi2 ||
+                j - (range * (rSprite.contentSize.height / 2)) < yi1) {
                 range = 1;
             }
             
@@ -406,10 +412,15 @@
             
         }
     } else {
+        for (float i = xi1; i <= xi2; i += rSprite.contentSize.width) {
+            [rivers addObject:[self addRiver:i:yi1:vert:1]];
+        }
+        
         for (float i = xi1; i <= xi2;) {
             int range = [self getRiverRange:i:xi2];
             
-            if (range * (rSprite.contentSize.width) > xi2) {
+            if (i + (range * (rSprite.contentSize.width / 2)) > xi2 ||
+                i - (range * (rSprite.contentSize.width / 2)) < xi1) {
                 range = 1;
             }
             
@@ -550,7 +561,8 @@
             river = [CCSprite spriteWithSpriteFrameName:@"river_v.png"];
         }
         
-        y += river.contentSize.height / 2;
+        printf("addRiver: river.contentSize.height is %f", river.contentSize.height);
+        //y += river.contentSize.height / 2;
         
         
     } else {
@@ -564,7 +576,7 @@
             river = [CCSprite spriteWithSpriteFrameName:@"river_h.png"];
         }
         
-        x += river.contentSize.width / 2;
+        //x += river.contentSize.width / 2;
     }
 
     CGPoint startPos = ccp(x, y); //[self tileToPoint:x:y];
