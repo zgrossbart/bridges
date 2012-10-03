@@ -80,7 +80,7 @@
         _world->SetContactListener(_contactListener);
         
         _spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprites.pvr.gz"
-                         capacity:150] retain];
+                         capacity:200] retain];
         [[CCSpriteFrameCache sharedSpriteFrameCache]
          addSpriteFramesWithFile:@"bridgesprites.plist"];
         [self addChild:_spriteSheet];
