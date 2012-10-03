@@ -137,6 +137,12 @@
         </struct>
         <key>fileList</key>
         <array>
+            <filename>boat.png</filename>
+            <filename>bridge_3_left.png</filename>
+            <filename>bridge_3_right.png</filename>
+            <filename>bridge_3_up.png</filename>
+            <filename>bridge_3_x.png</filename>
+            <filename>bridge_3.png</filename>
             <filename>bridge_4_down.png</filename>
             <filename>bridge_4_left.png</filename>
             <filename>bridge_4_right.png</filename>
@@ -190,18 +196,24 @@
             <filename>octopus3.png</filename>
             <filename>octopus4.png</filename>
             <filename>octopus5.png</filename>
+            <filename>river_h_3.png</filename>
+            <filename>river_h_5.png</filename>
+            <filename>river_h_11.png</filename>
             <filename>river_h.png</filename>
-            <filename>river_v.png</filename>
+            <filename>river_v_3.png</filename>
+            <filename>river_v_5.png</filename>
+            <filename>river_v_11.png</filename>
             <filename>river_v_bl.png</filename>
             <filename>river_v_br.png</filename>
             <filename>river_v_tl.png</filename>
             <filename>river_v_ur.png</filename>
+            <filename>river_v.png</filename>
+            <filename>subway_blue.png</filename>
+            <filename>subway_green.png</filename>
+            <filename>subway_orange.png</filename>
+            <filename>subway_red.png</filename>
+            <filename>subway.png</filename>
             <filename>x.png</filename>
-            <filename>../sprites/subway_blue.png</filename>
-            <filename>../sprites/subway_green.png</filename>
-            <filename>../sprites/subway_orange.png</filename>
-            <filename>../sprites/subway_red.png</filename>
-            <filename>../sprites/subway.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
