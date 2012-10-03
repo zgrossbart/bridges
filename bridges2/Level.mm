@@ -387,11 +387,9 @@
     }
     
     /*
-     * Now we have two ranges specified by the
-     * point x1, y1 and x2, y2.  The two points
-     * might be the same if the coordinate was
-     * simple, but we can still handle it like
-     * a range.
+     * Now we have two ranges specified by the point x1, y1 and x2, y2.  
+     * The two points might be the same if the coordinate was simple, but 
+     * we can still handle it like a range.
      */
     if (vert) {
         for (float j = yi1; j <= yi2; j += rSprite.contentSize.height) {
@@ -560,11 +558,6 @@
         } else {
             river = [CCSprite spriteWithSpriteFrameName:@"river_v.png"];
         }
-        
-        printf("addRiver: river.contentSize.height is %f", river.contentSize.height);
-        //y += river.contentSize.height / 2;
-        
-        
     } else {
         if (range == 3) {
             river = [CCSprite spriteWithSpriteFrameName:@"river_h_3.png"];
@@ -575,8 +568,6 @@
         } else {
             river = [CCSprite spriteWithSpriteFrameName:@"river_h.png"];
         }
-        
-        //x += river.contentSize.width / 2;
     }
 
     CGPoint startPos = ccp(x, y); //[self tileToPoint:x:y];

@@ -3,7 +3,7 @@
         "id": "0",
         "name": "Tile test",
         "rivers": [
-            	{
+            {
 	            "x": "17-23",
 	            "y": "18",
 	            "orient": "h"
