@@ -393,10 +393,29 @@
      * simple, but we can still handle it like
      * a range.
      */
-    for (float i = xi1; i <= xi2; i += rSprite.contentSize.width - 1) {
-        for (float j = yi1; j <= yi2; j += rSprite.contentSize.height - 1) {
-            [rivers addObject:[self addRiver:i:j:vert]];
+    if (vert) {
+        for (float j = yi1; j <= yi2;) {
+            int range = [self getRiverRange:j:yi2];
+            if (range * (rSprite.contentSize.height) > yi2) {
+                range = 1;
+            }
             
+            [rivers addObject:[self addRiver:xi1:j:vert:range]];
+            
+            j += range * (rSprite.contentSize.height);
+            
+        }
+    } else {
+        for (float i = xi1; i <= xi2;) {
+            int range = [self getRiverRange:i:xi2];
+            
+            if (range * (rSprite.contentSize.width) > xi2) {
+                range = 1;
+            }
+            
+            [rivers addObject:[self addRiver:i:yi1:vert:range]];
+            
+            i += range * (rSprite.contentSize.width);
         }
     }
     
@@ -491,13 +510,61 @@
     }
 }
 
--(CCSprite*)addRiver:(float) x:(float) y:(BOOL) vert {
+-(int) rand_lim: (int) limit {
+    int divisor = RAND_MAX/(limit+1);
+    int retval;
+    
+    do {
+        retval = rand() / divisor;
+    } while (retval > limit);
+    
+    return retval;
+}
+
+-(float)getRiverRange: (float) index: (float) size {
+    
+    int r = [self rand_lim:4];
+    
+    if (r == 1) {
+        return 3;
+    } else if (r == 2) {
+        return 5;
+    } else if (r == 3) {
+        return 11;
+    } else {
+        return 1;
+    }    
+}
+
+-(CCSprite*)addRiver:(float) x:(float) y:(BOOL) vert: (int) range {
     
     CCSprite *river;
     if (vert) {
-        river = [CCSprite spriteWithSpriteFrameName:@"river_v.png"];
+        if (range == 3) {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_v_3.png"];
+        } else if (range == 5) {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_v_5.png"];
+        } else if (range == 11) {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_v_11.png"];
+        } else {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_v.png"];
+        }
+        
+        y += river.contentSize.height / 2;
+        
+        
     } else {
-        river = [CCSprite spriteWithSpriteFrameName:@"river_h.png"];
+        if (range == 3) {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_h_3.png"];
+        } else if (range == 5) {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_h_5.png"];
+        } else if (range == 11) {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_h_11.png"];
+        } else {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_h.png"];
+        }
+        
+        x += river.contentSize.width / 2;
     }
 
     CGPoint startPos = ccp(x, y); //[self tileToPoint:x:y];
@@ -506,6 +573,7 @@
     
     river.position = startPos;
     river.tag = RIVER;
+    
     
     return river;
     

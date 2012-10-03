@@ -201,7 +201,7 @@
     
     // Create our sprite sheet and frame cache
     CCSpriteBatchNode *spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprites.pvr.gz"
-                                                                  capacity:150] retain];
+                                       capacity:150] retain];
     
     LayerMgr *layerMgr = [[LayerMgr alloc] initWithSpriteSheet:spriteSheet:world];
     layerMgr.addBoxes = false;
