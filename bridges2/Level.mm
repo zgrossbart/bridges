@@ -390,6 +390,10 @@
      * Now we have two ranges specified by the point x1, y1 and x2, y2.  
      * The two points might be the same if the coordinate was simple, but 
      * we can still handle it like a range.
+     *
+     * Drawing long ranges of river is kind of boring if we have to repeat
+     * the same tile over and over again.  Instead we overlay some longer
+     * tiles at a random interval to make the river a little more interesting.
      */
     if (vert) {
         for (float j = yi1; j <= yi2; j += rSprite.contentSize.height) {
