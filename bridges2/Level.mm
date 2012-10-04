@@ -400,7 +400,16 @@
             [rivers addObject:[self addRiver:xi1:j:vert:1]];
         }
         
-        for (float j = yi1; j <= yi2;) {
+        if (side != dNone) {
+            /*
+             * If this is a side then we'll pop off the 
+             * first river since we're replacing them
+             * with the corner sprites.
+             */
+            [rivers removeObjectAtIndex:0];
+        }
+        
+        for (float j = yi1 + rSprite.contentSize.height; j <= yi2 - rSprite.contentSize.height;) {
             // getRiverRange returns 1, 3, 5 or 11; the width in tiles of the next segment
             int range = [self getRiverRange:j:yi2];
             if (j + (range * (rSprite.contentSize.height / 2)) > yi2 ||
@@ -418,7 +427,7 @@
             [rivers addObject:[self addRiver:i:yi1:vert:1]];
         }
         
-        for (float i = xi1; i <= xi2;) {
+        for (float i = xi1 + rSprite.contentSize.width; i <= xi2 - rSprite.contentSize.width;) {
             int range = [self getRiverRange:i:xi2];
             
             if (i + (range * (rSprite.contentSize.width / 2)) > xi2 ||
@@ -449,7 +458,6 @@
             }
             riverEnd.position = ccp(xi1, yi1);
             riverEnd.tag = RIVER;
-            [rivers removeObjectAtIndex:0];
             [rivers insertObject:riverEnd atIndex:0];
         }
         
