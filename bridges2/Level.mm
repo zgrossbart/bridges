@@ -400,7 +400,7 @@
             [rivers addObject:[self addRiver:xi1:j:vert:1]];
         }
         
-        if (side != dNone) {
+        if (side != dNone && yi1 > rSprite.contentSize.height * 2) {
             /*
              * If this is a side then we'll pop off the 
              * first river since we're replacing them
@@ -417,7 +417,9 @@
                 range = 1;
             }
             
-            [rivers addObject:[self addRiver:xi1:j:vert:range]];
+            if (range > 1) {
+                [rivers addObject:[self addRiver:xi1:j:vert:range]];
+            }
             
             j += range * (rSprite.contentSize.height);
             
@@ -435,7 +437,9 @@
                 range = 1;
             }
             
-            [rivers addObject:[self addRiver:i:yi1:vert:range]];
+            if (range > 1) {
+                [rivers addObject:[self addRiver:i:yi1:vert:range]];
+            }
             
             i += range * (rSprite.contentSize.width);
         }
