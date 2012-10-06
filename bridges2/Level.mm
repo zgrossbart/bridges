@@ -396,7 +396,7 @@
      * tiles at a random interval to make the river a little more interesting.
      */
     if (vert) {
-        for (float j = yi1; j <= yi2; j += rSprite.contentSize.height) {
+        for (float j = yi1; j <= yi2; j += rSprite.contentSize.height - 1) {
             [rivers addObject:[self addRiver:xi1:j:vert:1]];
         }
         
@@ -425,7 +425,7 @@
             
         }
     } else {
-        for (float i = xi1; i <= xi2; i += rSprite.contentSize.width) {
+        for (float i = xi1; i <= xi2; i += rSprite.contentSize.width - 1) {
             [rivers addObject:[self addRiver:i:yi1:vert:1]];
         }
         
