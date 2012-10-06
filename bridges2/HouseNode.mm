@@ -120,13 +120,18 @@
         
         self.visited = true;
         
-        id scaleDownAction = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.25 scaleX:0.75 scaleY:0.75] rate:0.5];
-        id scaleUpAction =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.25 scaleX:1 scaleY:1] rate:0.5];
+        /*
+         * If this is the last visit to a house then we want to show
+         * a small animation to call your attention to it.  This 
+         * animation rotates it horizontally while it changes the sprite.
+         */
+        CCEaseExponentialIn* flipHalf = [CCEaseExponentialIn actionWithAction:[CCActionTween actionWithDuration:0.25 key:@"scaleX" from:-1.0 to:0.0]];
+        CCEaseExponentialOut* flipRemainingHalf = [CCEaseExponentialOut actionWithAction:[CCActionTween actionWithDuration:0.25 key:@"scaleX" from:0.0 to:1.0]];
         
-        CCSequence *scaleSeq = [CCSequence actions:scaleDownAction, scaleUpAction,
-                                [CCCallFunc actionWithTarget:self selector:@selector(visitEnded)], nil];
-        
-        [self.house runAction:scaleSeq];
+        CCSequence* seq = [CCSequence actions:flipHalf,
+                           [CCCallFunc actionWithTarget:self selector:@selector(visitEnded)],
+                           flipRemainingHalf, nil];
+        [self.house runAction:seq];
     }
     
 }
