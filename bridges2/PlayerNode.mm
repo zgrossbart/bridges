@@ -84,6 +84,8 @@
      * properly instead of just repositioning the box.
      */
     _spriteBody->SetTransform(b2Vec2(self.player.position.x,self.player.position.y), _spriteBody->GetAngle());
+    
+    NSLog(@"Move ended at: %f, %f", self.player.position.x, self.player.position.y);
 }
 
 -(void)updateColor:(BridgeColor)color {
@@ -128,6 +130,9 @@
          */
         return;
     }
+    
+    NSLog(@"from: %f, %f", self.player.position.x, self.player.position.y);
+    NSLog(@"moveTo: %f, %f", p.x, p.y);
     
     [_player runAction:_walkAction];
     

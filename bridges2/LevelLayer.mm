@@ -644,7 +644,7 @@ CGFloat CGPointToDegree(CGPoint point) {
                 return;
             }
             int x = (object.position.x + (object.contentSize.width / 2)) - (player.contentSize.width / 2);
-            location = ccp(x, (object.position.y - 5) -(player.contentSize.height * 2));
+            location = ccp(x, (object.position.y) - (player.contentSize.height + 5));
         }
     } else {
         if (_playerStart.x > (object.position.x + object.contentSize.width) - padding) {
@@ -720,7 +720,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     
-    float step = 1.5;
+    float step = object.contentSize.width;
     
     if (object.tag == SUBWAY) {
         /*
@@ -731,7 +731,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         step = 2.5;
     }
     
-    _player.player.position = [self pointOnLine: _playerStart: _player.player.position: _layerMgr.tileSize.width * step];
+    _player.player.position = [self pointOnLine: _playerStart: _player.player.position: step];
     
     [_player playerMoveEnded];
     
@@ -758,6 +758,8 @@ CGFloat CGPointToDegree(CGPoint point) {
     double y3 = p2.y - distance * sin(rads);
     
     if ([LayerMgr distanceBetweenTwoPoints:p1 :p2] == 0) {
+        return p1;
+    } else if ([LayerMgr distanceBetweenTwoPoints:p1 :p2] < distance) {
         return p1;
     }
     

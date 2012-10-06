@@ -83,6 +83,9 @@
  */
 -(void)playerMoveEnded;
 
+/**
+ * Get the Box2d body for the player for managing collision detection.
+ */
 -(b2Body*)getSpriteBody;
 
 /** 
