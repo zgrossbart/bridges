@@ -85,7 +85,7 @@
          addSpriteFramesWithFile:@"bridgesprites.plist"];
         [self addChild:_spriteSheet];
         
-        self.undoStack = [NSMutableArray arrayWithCapacity:10];
+        self.undoStack = [NSMutableArray arrayWithCapacity:20];
         _canVisit = true;
         
         _layerMgr = [[LayerMgr alloc] initWithSpriteSheet:_spriteSheet:_world];
@@ -453,7 +453,11 @@
         [self bumpObject:player:exit];
         _canVisit = true;
     } else {
-        [self.controller showMessage:@"You need more coins to ride"];
+        if (node.color != cNone || _player.color != node.color) {
+            [self.controller showMessage:@"Change color ro ride this subway"];
+        } else {
+            [self.controller showMessage:@"You need more coins to ride"];
+        }
         [self showNoTapSprite:self.player.player.position];
         [self bumpObject:player:subway];
         
@@ -471,7 +475,7 @@
     if ([node isCrossed]) {
         [self showNoTapSprite:self.player.player.position];
         [self bumpObject:player:bridge];
-        [self.controller showMessage:@"You already crossed this bridge"];        
+        [self.controller showMessage:@"You already crossed this bridge"];
     } else if (node.coins > 0 && _player.coins < 1) {
         [self showNoTapSprite:self.player.player.position];
         [self bumpObject:player:bridge];
@@ -625,6 +629,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             // Then the player is below the bridge
             if (bridge.direction != dUp && bridge.direction != dNone) {
                 _inMove = false;
+                [self.controller showMessage:@"Cross this bridge from the other side"];
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
@@ -635,6 +640,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             // Then the player is above the bridge
             if (bridge.direction != dDown && bridge.direction != dNone) {
                 _inMove = false;
+                [self.controller showMessage:@"Cross this bridge from the other side"];
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
@@ -647,6 +653,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             // Then the player is to the right of the bridge
             if (bridge.direction != dLeft && bridge.direction != dNone) {
                 _inMove = false;
+                [self.controller showMessage:@"Cross this bridge from the other side"];
                 [self bumpObject:player: bridge.bridge];
                 return;
             }
@@ -657,6 +664,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             // Then the player is to the left of the bridge
             if (bridge.direction != dRight && bridge.direction != dNone) {
                 _inMove = false;
+                [self.controller showMessage:@"Cross this bridge from the other side"];
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
