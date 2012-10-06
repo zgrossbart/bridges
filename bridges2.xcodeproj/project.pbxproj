@@ -198,6 +198,7 @@
 		CE6D67F115EAC5FD00C7EDD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F015EAC5FD00C7EDD7 /* main.m */; };
 		CE6D67F715EAC5FD00C7EDD7 /* LevelLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */; };
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
+		CE736B171620F1E80085172D /* level42.json in Resources */ = {isa = PBXBuildFile; fileRef = CE736B161620F1E80085172D /* level42.json */; };
 		CE7F8328161600920012A4FA /* level18.json in Resources */ = {isa = PBXBuildFile; fileRef = CE7F8327161600920012A4FA /* level18.json */; };
 		CEA3D478160120610060F511 /* AboutViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA3D477160120610060F511 /* AboutViewiPad.xib */; };
 		CEAE47F815F3894400898698 /* level8.json in Resources */ = {isa = PBXBuildFile; fileRef = CEAE47F715F3894400898698 /* level8.json */; };
@@ -636,6 +637,7 @@
 		CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelLayer.mm; sourceTree = "<group>"; };
 		CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
+		CE736B161620F1E80085172D /* level42.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level42.json; sourceTree = "<group>"; };
 		CE7F8327161600920012A4FA /* level18.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level18.json; sourceTree = "<group>"; };
 		CEA3D477160120610060F511 /* AboutViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewiPad.xib; sourceTree = "<group>"; };
 		CEAE47F715F3894400898698 /* level8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level8.json; sourceTree = "<group>"; };
@@ -1361,6 +1363,7 @@
 				CE33A6D3161B2F6200C4AD0B /* level39.json */,
 				CEF00C0A16205B0D00905473 /* level40.json */,
 				CEF00C0D162061AC00905473 /* level41.json */,
+				CE736B161620F1E80085172D /* level42.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1561,6 +1564,7 @@
 				CE33A6D6161B53F600C4AD0B /* level7.json in Resources */,
 				CEF00C0B16205B0D00905473 /* level40.json in Resources */,
 				CEF00C0E162061AC00905473 /* level41.json in Resources */,
+				CE736B171620F1E80085172D /* level42.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

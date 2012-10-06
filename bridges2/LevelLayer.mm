@@ -454,7 +454,7 @@
         _canVisit = true;
     } else {
         if (node.color != cNone || _player.color != node.color) {
-            [self.controller showMessage:@"Change color ro ride this subway"];
+            [self.controller showMessage:@"Change color to ride this subway"];
         } else {
             [self.controller showMessage:@"You need more coins to ride"];
         }
@@ -728,7 +728,7 @@ CGFloat CGPointToDegree(CGPoint point) {
          * need a larger space to make sure we move off of 
          * the sprite.
          */
-        step = 2.5;
+        step = object.contentSize.width * 1.8;
     }
     
     _player.player.position = [self pointOnLine: _playerStart: _player.player.position: step];
