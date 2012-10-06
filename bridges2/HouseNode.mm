@@ -103,6 +103,13 @@
     self.house.tag = [self tag];
 }
 
+-(void)visitEnded {
+    CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
+    CCSpriteFrame* frame;
+    frame = [cache spriteFrameByName:@"house_gray.png"];
+    [self.house setDisplayFrame:frame];
+}
+
 -(void)visit {
     if (self.coins > 0) {
         self.coins--;
@@ -110,11 +117,16 @@
     }
     
     if (self.coins == 0 && !self.visited) {
-        CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
-        CCSpriteFrame* frame;
-        frame = [cache spriteFrameByName:@"house_gray.png"];
-        [self.house setDisplayFrame:frame];
+        
         self.visited = true;
+        
+        id scaleDownAction = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.25 scaleX:0.75 scaleY:0.75] rate:0.5];
+        id scaleUpAction =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.25 scaleX:1 scaleY:1] rate:0.5];
+        
+        CCSequence *scaleSeq = [CCSequence actions:scaleDownAction, scaleUpAction,
+                                [CCCallFunc actionWithTarget:self selector:@selector(visitEnded)], nil];
+        
+        [self.house runAction:scaleSeq];
     }
     
 }
