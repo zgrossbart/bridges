@@ -633,8 +633,7 @@ CGFloat CGPointToDegree(CGPoint point) {
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
-            int x = (object.position.x + (object.contentSize.width / 3)) -
-            (player.contentSize.width);
+            int x = (object.position.x + (object.contentSize.width / 2)) - (player.contentSize.width / 2);
             location = ccp(x, object.position.y + object.contentSize.height + 5);
         } else if (_playerStart.y > (object.position.y + object.contentSize.height) - padding) {
             // Then the player is above the bridge
@@ -644,8 +643,7 @@ CGFloat CGPointToDegree(CGPoint point) {
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
-            int x = (object.position.x + (object.contentSize.width / 3)) -
-            (player.contentSize.width);
+            int x = (object.position.x + (object.contentSize.width / 2)) - (player.contentSize.width / 2);
             location = ccp(x, (object.position.y - 5) -(player.contentSize.height * 2));
         }
     } else {
