@@ -69,6 +69,20 @@ static int const TILE_COUNT = 28;
 static bool const DEBUG_DRAW = false;
 
 /**
+ * Each river is drawn with a set of one tile sprites that we
+ * repeat to fill up the length of the river.  It makes the 
+ * rivers look a little repetative so we add some longer sections
+ * at random intervals to give them some variety and make the 
+ * rivers look a little more natural.  
+ *
+ * Change this constant to false to turn off the random river 
+ * overlays.  This is sometimes useful for debugging.
+ *
+ * This variable is used in Level.mm.
+ */
+static bool const DRAW_RANDOM_RIVERS = true;
+
+/**
  * The size of the screen shot icon on iPhone
  */
 static int const IPHONE_LEVEL_IMAGE_W = 96;
