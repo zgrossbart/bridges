@@ -27,6 +27,12 @@ Level 25: Color Diamonds
 
 ![Color Diamonds Level](/zgrossbart/bridges/raw/master/screenshots/colored_diamonds.png)
 
+Level 27: Full of Islands
+--------------------------------------
+
+![Full of Islands Level](/zgrossbart/bridges/raw/master/screenshots/fullofislands.png)
+
+
 Level 31: Subways
 --------------------------------------
 
@@ -36,6 +42,16 @@ Level 39: Spend It Wisely
 --------------------------------------
 
 ![Spend It Wisely Level](/zgrossbart/bridges/raw/master/screenshots/spenditwisely.png)
+
+Level 40: Corridors
+--------------------------------------
+
+![Corridors Level](/zgrossbart/bridges/raw/master/screenshots/corridors.png)
+
+Level 43: Hopscotch Subway
+--------------------------------------
+
+![Hopscotch Subway Level](/zgrossbart/bridges/raw/master/screenshots/hopscotch_subway.png)
 
 
 This game is currently under development and not ready to play yet.  When it's done I'll release it in the App store.
