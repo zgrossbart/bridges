@@ -252,6 +252,11 @@
 		CEE7AF0815FBD12F00DC0B7F /* YouWonViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */; };
 		CEE7AF0915FBD12F00DC0B7F /* YouWonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */; };
 		CEE7AF0C15FBDD0F00DC0B7F /* YouWonViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7AF0B15FBDD0F00DC0B7F /* YouWonViewiPad.xib */; };
+		CEEE7DEC162211BD00B84A96 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = CEEE7DEA162211BD00B84A96 /* about.html */; };
+		CEEE7DED162211BD00B84A96 /* bridges.css in Resources */ = {isa = PBXBuildFile; fileRef = CEEE7DEB162211BD00B84A96 /* bridges.css */; };
+		CEEE7DEF1622148200B84A96 /* konigsberg_bridges.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEE7DEE1622148200B84A96 /* konigsberg_bridges.png */; };
+		CEEE7DF1162219FE00B84A96 /* anothercolor.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEE7DF0162219FE00B84A96 /* anothercolor.png */; };
+		CEEE7DF316221A0E00B84A96 /* tictactoe.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEE7DF216221A0E00B84A96 /* tictactoe.png */; };
 		CEEFF6F215F3A9CB0095649C /* level9.json in Resources */ = {isa = PBXBuildFile; fileRef = CEEFF6F115F3A9CB0095649C /* level9.json */; };
 		CEF00C0B16205B0D00905473 /* level40.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF00C0A16205B0D00905473 /* level40.json */; };
 		CEF00C0E162061AC00905473 /* level41.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF00C0D162061AC00905473 /* level41.json */; };
@@ -716,6 +721,11 @@
 		CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouWonViewController.xib; sourceTree = "<group>"; };
 		CEE7AF0A15FBD48600DC0B7F /* LevelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelController.h; sourceTree = "<group>"; };
 		CEE7AF0B15FBDD0F00DC0B7F /* YouWonViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouWonViewiPad.xib; sourceTree = "<group>"; };
+		CEEE7DEA162211BD00B84A96 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		CEEE7DEB162211BD00B84A96 /* bridges.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bridges.css; sourceTree = "<group>"; };
+		CEEE7DEE1622148200B84A96 /* konigsberg_bridges.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = konigsberg_bridges.png; sourceTree = "<group>"; };
+		CEEE7DF0162219FE00B84A96 /* anothercolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anothercolor.png; sourceTree = "<group>"; };
+		CEEE7DF216221A0E00B84A96 /* tictactoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tictactoe.png; sourceTree = "<group>"; };
 		CEEFF6F115F3A9CB0095649C /* level9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level9.json; sourceTree = "<group>"; };
 		CEF00C0A16205B0D00905473 /* level40.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level40.json; sourceTree = "<group>"; };
 		CEF00C0D162061AC00905473 /* level41.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level41.json; sourceTree = "<group>"; };
@@ -753,6 +763,7 @@
 				CE6D65E715EAC5FB00C7EDD7 /* bridges2 */,
 				CE6D65D415EAC5FB00C7EDD7 /* Frameworks */,
 				CE6D65D215EAC5FB00C7EDD7 /* Products */,
+				CEEE7DE8162211A000B84A96 /* www */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1454,6 +1465,19 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		CEEE7DE8162211A000B84A96 /* www */ = {
+			isa = PBXGroup;
+			children = (
+				CEEE7DEA162211BD00B84A96 /* about.html */,
+				CEEE7DF0162219FE00B84A96 /* anothercolor.png */,
+				CEEE7DEB162211BD00B84A96 /* bridges.css */,
+				CEEE7DEE1622148200B84A96 /* konigsberg_bridges.png */,
+				CEEE7DF216221A0E00B84A96 /* tictactoe.png */,
+			);
+			name = www;
+			path = bridges2;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1581,6 +1605,11 @@
 				CEDCDAA21621ABA100E1F07F /* level28.json in Resources */,
 				CEDCDAA41621B13400E1F07F /* level31.json in Resources */,
 				CEDCDAA61621B46200E1F07F /* level43.json in Resources */,
+				CEEE7DEC162211BD00B84A96 /* about.html in Resources */,
+				CEEE7DED162211BD00B84A96 /* bridges.css in Resources */,
+				CEEE7DEF1622148200B84A96 /* konigsberg_bridges.png in Resources */,
+				CEEE7DF1162219FE00B84A96 /* anothercolor.png in Resources */,
+				CEEE7DF316221A0E00B84A96 /* tictactoe.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
