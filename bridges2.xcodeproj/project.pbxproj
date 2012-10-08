@@ -248,6 +248,7 @@
 		CEDCDAA61621B46200E1F07F /* level43.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDAA51621B46200E1F07F /* level43.json */; };
 		CEDED3E81604904E0022ABA7 /* level14.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3E71604904E0022ABA7 /* level14.json */; };
 		CEDED3EB160496650022ABA7 /* level15.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3EA160496650022ABA7 /* level15.json */; };
+		CEDF5E6D1622EACD003D89FA /* level29.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDF5E6C1622EACD003D89FA /* level29.json */; };
 		CEE0277416067FE5007C4CDD /* level30.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE0277316067FE5007C4CDD /* level30.json */; };
 		CEE7AF0815FBD12F00DC0B7F /* YouWonViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */; };
 		CEE7AF0915FBD12F00DC0B7F /* YouWonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */; };
@@ -715,6 +716,7 @@
 		CEDCDAA51621B46200E1F07F /* level43.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level43.json; sourceTree = "<group>"; };
 		CEDED3E71604904E0022ABA7 /* level14.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level14.json; sourceTree = "<group>"; };
 		CEDED3EA160496650022ABA7 /* level15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level15.json; sourceTree = "<group>"; };
+		CEDF5E6C1622EACD003D89FA /* level29.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level29.json; sourceTree = "<group>"; };
 		CEE0277316067FE5007C4CDD /* level30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level30.json; sourceTree = "<group>"; };
 		CEE7AF0515FBD12F00DC0B7F /* YouWonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouWonViewController.h; sourceTree = "<group>"; };
 		CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = YouWonViewController.mm; sourceTree = "<group>"; };
@@ -1376,6 +1378,7 @@
 				CE53D25F160616070064F167 /* level26.json */,
 				CEDCDA9E1621A1B000E1F07F /* level27.json */,
 				CEDCDAA11621ABA100E1F07F /* level28.json */,
+				CEDF5E6C1622EACD003D89FA /* level29.json */,
 				CEE0277316067FE5007C4CDD /* level30.json */,
 				CEDCDAA31621B13400E1F07F /* level31.json */,
 				CECCE9811615389A0091707C /* level35.json */,
@@ -1610,6 +1613,7 @@
 				CEEE7DF1162219FE00B84A96 /* anothercolor.png in Resources */,
 				CEEE7DF316221A0E00B84A96 /* tictactoe.png in Resources */,
 				CEEE7DF516221D9A00B84A96 /* konigsberg_1910.jpg in Resources */,
+				CEDF5E6D1622EACD003D89FA /* level29.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
