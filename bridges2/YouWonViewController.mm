@@ -41,13 +41,21 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    int i = [[LevelMgr getLevelMgr].levelIds indexOfObject:self.currentLevel.levelId];
+    
+    if (i == [[LevelMgr getLevelMgr].levelIds count] - 1) {
+        /*
+         * Then we're at the end and we hide the next button.  We should probably
+         * put up some type of more levels coming soon method.
+         */
+        _nextButton.hidden = YES;
+    } else {
+        _nextButton.hidden = NO;
+    }
 }
 
 -(void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -104,4 +112,8 @@
 }
 
 
+- (void)dealloc {
+    [_nextButton release];
+    [super dealloc];
+}
 @end

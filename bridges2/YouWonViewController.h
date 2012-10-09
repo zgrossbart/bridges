@@ -20,7 +20,10 @@
 #import "Level.h"
 #import "LevelLayer.h"
 
-@interface YouWonViewController : UIViewController
+@interface YouWonViewController : UIViewController {
+    @private
+    IBOutlet UIButton *_nextButton;
+}
 
 -(IBAction)replayTapped:(id)sender;
 -(IBAction)nextTapped:(id)sender;
