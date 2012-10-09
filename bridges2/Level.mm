@@ -804,6 +804,10 @@
 }
 
 -(bool)hasCoins {
+    if (self.coins > 0) {
+        return true;
+    }
+    
     for (BridgeNode *b in self.bridges) {
         if (b.coins > 0) {
             return true;
