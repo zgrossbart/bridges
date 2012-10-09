@@ -479,7 +479,6 @@
             }
             riverEnd2.position = ccp(xi2, yi2);
             riverEnd2.tag = RIVER;
-            //[rivers removeLastObject];
             [rivers addObject:riverEnd2];
         }
     }
@@ -491,11 +490,10 @@
         [rivers addObject:river];
     }
     
-    if (!vert && xi1 > 0) {
+    if (!vert && xi1 > 0 && [rivers count] > 1) {
         [rivers removeObjectAtIndex:0];
     }
     
-//    [rSprite release];
     CGPoint start = [self tileToPoint:xi1 :yi1];
     CGPoint end = [self tileToPoint:xi2 :yi2];
     
@@ -807,7 +805,6 @@
     if (self.coins > 0) {
         return true;
     }
-    
     for (BridgeNode *b in self.bridges) {
         if (b.coins > 0) {
             return true;

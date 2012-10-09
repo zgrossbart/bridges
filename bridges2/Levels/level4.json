@@ -25,7 +25,7 @@
             {
                 "x": "14",
                 "y": "14",
-                "orient": "v",
+                "orient": "h",
 				"border": "none"
             }
         ],
