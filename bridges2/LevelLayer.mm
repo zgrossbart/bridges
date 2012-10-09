@@ -175,6 +175,7 @@
         self.player.coins = undo.coins;
         self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
     }
+    _canVisit = undo.canVisit;
     
     [self.undoStack removeLastObject];
     
@@ -395,7 +396,7 @@
     }
     
     if ([self canVisit] && ![node isVisited] && [self colorMatches:node]) {
-        [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins]];
+        [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins: _canVisit]];
         _undoBtn.enabled = YES;
         if (node.coins > 0) {
             _player.coins++;
@@ -438,7 +439,7 @@
     
     if (_player.coins > 0 &&
         (node.color == cNone || _player.color == node.color)) {
-        [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins]];
+        [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins: _canVisit]];
         _undoBtn.enabled = YES;
         
         _player.coins--;
@@ -592,7 +593,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     [mgr removeAllActionsFromTarget:player];
     [mgr resumeTarget:player];
     
-    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color: _player.coins]];
+    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color: _player.coins: _canVisit]];
     _undoBtn.enabled = YES;
     
     [_player moveTo: ccp(location.x, location.y):true];
@@ -676,7 +677,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     [mgr resumeTarget:player];
     
     
-    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color: _player.coins]];
+    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color: _player.coins: _canVisit]];
     _undoBtn.enabled = YES;
     
     [_player moveTo: ccp(location.x, location.y):true];

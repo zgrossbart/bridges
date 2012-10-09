@@ -34,8 +34,9 @@
  * @param node the node the player interacted with to cause this undoable event
  * @param color the previous color of the player
  * @param coins the previous coin count of the player
+ * @param canVisit if the user can visit houses or not
  */
--(id) initWithPosAndNode:(CGPoint) pos:(id<GameNode>) node: (BridgeColor) color: (int) coins;
+-(id) initWithPosAndNode:(CGPoint) pos:(id<GameNode>) node: (BridgeColor) color: (int) coins: (bool) canVisit;
 
 /** 
  * The previous player position
@@ -56,5 +57,13 @@
  * The previous coin count of the player
  */
 @property (nonatomic, assign, readonly) int coins;
+
+/**
+ * If the player visits a house they must leave the current island
+ * before they can visit another one.  This property holds the value
+ * that controls if the user can visit more houses.
+ */
+@property (nonatomic, assign, readonly) bool canVisit;
+
 
 @end
