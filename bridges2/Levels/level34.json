@@ -1,0 +1,112 @@
+{
+    "level": {
+        "id": "34",
+        "name": "Color box",
+        "rivers": [
+            {
+                "x": "10",
+                "y": "b-t",
+                "orient": "v"
+            },
+            {
+                "x": "10-r",
+                "y": "10",
+                "orient": "h"
+            },
+            {
+                "x": "10-r",
+                "y": "20",
+                "orient": "h"
+            },
+            {
+                "x": "25",
+                "y": "10-20",
+                "orient": "v"
+            }
+			
+        ],
+        "bridges": [
+            {
+                "x": "10",
+                "y": "25",
+                "orient": "h",
+				"dir": "left",
+				"color": "red"
+            },
+            {
+                "x": "10",
+                "y": "5",
+                "orient": "h",
+				"color": "blue",
+				"coins": "1"
+            },
+            {
+                "x": "25",
+                "y": "15",
+                "orient": "h",
+				"coins": "1"
+            },
+            {
+                "x": "17.5",
+                "y": "20",
+                "orient": "v",
+				"color": "orange"
+            },
+            {
+                "x": "17.5",
+                "y": "10",
+                "orient": "v",
+				"coins": "1"
+            },
+            {
+                "x": "30",
+                "y": "20",
+                "orient": "v",
+				"coins": "1"
+            },
+            {
+                "x": "30",
+                "y": "10",
+                "orient": "v",
+				"coins": "1"
+            },
+            {
+                "x": "35",
+                "y": "20",
+                "orient": "v",
+				"dir": "down"
+            },
+            {
+                "x": "35",
+                "y": "10",
+                "orient": "v"
+            }
+        ],
+        "houses": [
+            {
+                "x": "1",
+                "y": "2",
+                "color": "red",
+				"coins": "1"
+            },
+            {
+                "x": "38",
+                "y": "2",
+                "color": "blue",
+				"coins": "2"
+            },
+            {
+                "x": "38",
+                "y": "26",
+                "color": "orange",
+				"coins": "1"
+            },
+            {
+                "x": "12",
+                "y": "15",
+                "color": "blue",
+				"coins": "1"
+            }
+        ]
+    }
+}
