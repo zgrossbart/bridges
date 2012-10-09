@@ -219,6 +219,7 @@
 		CECCE97F161530760091707C /* SubwayNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECCE97E161530760091707C /* SubwayNode.mm */; };
 		CECCE9821615389A0091707C /* level35.json in Resources */ = {isa = PBXBuildFile; fileRef = CECCE9811615389A0091707C /* level35.json */; };
 		CECD016316248C0F008F7536 /* level45.json in Resources */ = {isa = PBXBuildFile; fileRef = CECD016216248C0F008F7536 /* level45.json */; };
+		CECD01661624951F008F7536 /* level46.json in Resources */ = {isa = PBXBuildFile; fileRef = CECD01651624951F008F7536 /* level46.json */; };
 		CECDC54815F6C54000D266FD /* green_check.png in Resources */ = {isa = PBXBuildFile; fileRef = CECDC54715F6C54000D266FD /* green_check.png */; };
 		CECE255B15F21FDB00517973 /* Level.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE255A15F21FDB00517973 /* Level.mm */; };
 		CECE256815F2819200517973 /* LevelMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE256715F2819200517973 /* LevelMgr.mm */; };
@@ -679,6 +680,7 @@
 		CECCE97E161530760091707C /* SubwayNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SubwayNode.mm; sourceTree = "<group>"; };
 		CECCE9811615389A0091707C /* level35.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level35.json; sourceTree = "<group>"; };
 		CECD016216248C0F008F7536 /* level45.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level45.json; sourceTree = "<group>"; };
+		CECD01651624951F008F7536 /* level46.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level46.json; sourceTree = "<group>"; };
 		CECDC54715F6C54000D266FD /* green_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_check.png; sourceTree = "<group>"; };
 		CECE255915F21FDB00517973 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		CECE255A15F21FDB00517973 /* Level.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level.mm; sourceTree = "<group>"; };
@@ -1405,6 +1407,7 @@
 				CEDCDAA51621B46200E1F07F /* level43.json */,
 				CEE967FD162462EF001A9F4C /* level44.json */,
 				CECD016216248C0F008F7536 /* level45.json */,
+				CECD01651624951F008F7536 /* level46.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1634,6 +1637,7 @@
 				CEE967FC16245CEF001A9F4C /* level34.json in Resources */,
 				CEE967FE162462EF001A9F4C /* level44.json in Resources */,
 				CECD016316248C0F008F7536 /* level45.json in Resources */,
+				CECD01661624951F008F7536 /* level46.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
