@@ -1,0 +1,130 @@
+{
+    "level": {
+        "id": "44",
+		"coins": "3",
+        "name": "Subway box",
+        "rivers": [
+            {
+                "x": "10",
+                "y": "b-t",
+                "orient": "v"
+            },
+            {
+                "x": "10-r",
+                "y": "10",
+                "orient": "h"
+            },
+            {
+                "x": "10-r",
+                "y": "20",
+                "orient": "h"
+            },
+            {
+                "x": "25",
+                "y": "10-20",
+                "orient": "v"
+            }
+			
+        ],
+        "bridges": [
+            {
+                "x": "10",
+                "y": "25",
+                "orient": "h",
+				"dir": "left",
+				"color": "red"
+            },
+            {
+                "x": "10",
+                "y": "5",
+                "orient": "h",
+				"color": "blue",
+				"coins": "1"
+            },
+            {
+                "x": "25",
+                "y": "15",
+                "orient": "h",
+				"coins": "1",
+				"color": "green"
+            },
+            {
+                "x": "17.5",
+                "y": "20",
+                "orient": "v",
+				"color": "orange"
+            },
+            {
+                "x": "17.5",
+                "y": "10",
+                "orient": "v",
+				"coins": "1"
+            },
+            {
+                "x": "30",
+                "y": "20",
+                "orient": "v",
+				"coins": "1"
+            },
+            {
+                "x": "28",
+                "y": "10",
+                "orient": "v"
+            },
+            {
+                "x": "35",
+                "y": "20",
+                "orient": "v",
+				"dir": "down"
+            },
+            {
+                "x": "38",
+                "y": "10",
+                "orient": "v",
+				"color": "red"
+            }
+        ],
+        "houses": [
+            {
+                "x": "1",
+                "y": "2",
+                "color": "red",
+				"coins": "1"
+            },
+            {
+                "x": "38",
+                "y": "2",
+                "color": "blue",
+				"coins": "2"
+            },
+            {
+                "x": "38",
+                "y": "26",
+                "color": "orange",
+				"coins": "1"
+            },
+            {
+                "x": "12",
+                "y": "15",
+                "color": "green",
+				"coins": "1"
+            }
+        ],
+        "subways": [
+            {
+                "x1": "1",
+                "y1": "15",
+                "x2": "38",
+                "y2": "15",
+				"color": "red"
+            },
+            {
+                "x1": "1",
+                "y1": "26",
+                "x2": "20",
+                "y2": "2",
+				"color": "blue"
+            }
+        ]
+    }
+}
