@@ -214,6 +214,8 @@
             <filename>subway_red.png</filename>
             <filename>subway.png</filename>
             <filename>x.png</filename>
+            <filename>river_v_nb.png</filename>
+            <filename>river_h_nb.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
