@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0298C11624B4300028274B /* level47.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0298C01624B4300028274B /* level47.json */; };
 		CE1477DB1604C32100C054B2 /* level0.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1477DA1604C32100C054B2 /* level0.json */; };
 		CE1BB78A16160ED900EBB61E /* level20.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78916160ED900EBB61E /* level20.json */; };
 		CE1BB78D1616189F00EBB61E /* level23.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78C1616189F00EBB61E /* level23.json */; };
@@ -276,6 +277,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE0298C01624B4300028274B /* level47.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level47.json; sourceTree = "<group>"; };
 		CE1477DA1604C32100C054B2 /* level0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level0.json; sourceTree = "<group>"; };
 		CE1BB78916160ED900EBB61E /* level20.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level20.json; sourceTree = "<group>"; };
 		CE1BB78C1616189F00EBB61E /* level23.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level23.json; sourceTree = "<group>"; };
@@ -1408,6 +1410,7 @@
 				CEE967FD162462EF001A9F4C /* level44.json */,
 				CECD016216248C0F008F7536 /* level45.json */,
 				CECD01651624951F008F7536 /* level46.json */,
+				CE0298C01624B4300028274B /* level47.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1638,6 +1641,7 @@
 				CEE967FE162462EF001A9F4C /* level44.json in Resources */,
 				CECD016316248C0F008F7536 /* level45.json in Resources */,
 				CECD01661624951F008F7536 /* level46.json in Resources */,
+				CE0298C11624B4300028274B /* level47.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
