@@ -105,8 +105,9 @@
         NSString *y = [r objectForKey:@"y"];
         NSString *dir = [r objectForKey:@"orient"];
         NSString *side = [r objectForKey:@"side"];
+        NSString *border = [r objectForKey:@"border"];
         
-        [self addRivers:x:y:[dir isEqualToString:@"v"]:[self getSide:side]];
+        [self addRivers:x:y:[dir isEqualToString:@"v"]:[self getSide:side]:border];
     }
     
     /*
@@ -304,7 +305,7 @@
     }
 }
 
--(void)addRivers:(NSString*) xSpec:(NSString*) ySpec:(BOOL) vert: (int) side {
+-(void)addRivers:(NSString*) xSpec:(NSString*) ySpec:(BOOL) vert: (int) side: (NSString*) border {
     /*
      * There are a few ways to define a tile coordinate.
      * You can define a simple number like 5 or 12, you 
@@ -397,7 +398,7 @@
      */
     if (vert) {
         for (float j = yi1; j <= yi2; j += rSprite.contentSize.height - 1) {
-            [rivers addObject:[self addRiver:xi1:j:vert:1]];
+            [rivers addObject:[self addRiver:xi1:j:vert:1:border]];
         }
         
         if (side != dNone && yi1 > rSprite.contentSize.height * 2) {
@@ -419,7 +420,7 @@
                 }
                 
                 if (range > 1) {
-                    [rivers addObject:[self addRiver:xi1:j:vert:range]];
+                    [rivers addObject:[self addRiver:xi1:j:vert:range:border]];
                 }
                 
                 j += range * (rSprite.contentSize.height);
@@ -428,7 +429,7 @@
         }
     } else {
         for (float i = xi1; i <= xi2; i += rSprite.contentSize.width - 1) {
-            [rivers addObject:[self addRiver:i:yi1:vert:1]];
+            [rivers addObject:[self addRiver:i:yi1:vert:1:border]];
         }
         
         if (DRAW_RANDOM_RIVERS) {
@@ -441,7 +442,7 @@
                 }
                 
                 if (range > 1) {
-                    [rivers addObject:[self addRiver:i:yi1:vert:range]];
+                    [rivers addObject:[self addRiver:i:yi1:vert:range:border]];
                 }
                 
                 i += range * (rSprite.contentSize.width);
@@ -565,11 +566,13 @@
     }    
 }
 
--(CCSprite*)addRiver:(float) x:(float) y:(BOOL) vert: (int) range {
+-(CCSprite*)addRiver:(float) x:(float) y:(BOOL) vert: (int) range: (NSString*) border {
     
     CCSprite *river;
     if (vert) {
-        if (range == 3) {
+        if (border != nil) {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_v_nb.png"];
+        } else if (range == 3) {
             river = [CCSprite spriteWithSpriteFrameName:@"river_v_3.png"];
         } else if (range == 5) {
             river = [CCSprite spriteWithSpriteFrameName:@"river_v_5.png"];
@@ -579,7 +582,9 @@
             river = [CCSprite spriteWithSpriteFrameName:@"river_v.png"];
         }
     } else {
-        if (range == 3) {
+        if (border != nil) {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_h_nb.png"];
+        } else if (range == 3) {
             river = [CCSprite spriteWithSpriteFrameName:@"river_h_3.png"];
         } else if (range == 5) {
             river = [CCSprite spriteWithSpriteFrameName:@"river_h_5.png"];
@@ -590,9 +595,7 @@
         }
     }
 
-    CGPoint startPos = ccp(x, y); //[self tileToPoint:x:y];
-    
-//    printf("addingRiverTo (%f, %f)\n", startPos.x, startPos.y);
+    CGPoint startPos = ccp(x, y);
     
     river.position = startPos;
     river.tag = RIVER;
