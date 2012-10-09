@@ -568,7 +568,11 @@
     
     CCSprite *river;
     if (vert) {
-        if (border != nil) {
+        if ([border isEqualToString:@"left"]) {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_v_l.png"];
+        } else if ([border isEqualToString:@"right"]) {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_v_r.png"];
+        } else if ([border isEqualToString:@"none"]) {
             river = [CCSprite spriteWithSpriteFrameName:@"river_v_nb.png"];
         } else if (range == 3) {
             river = [CCSprite spriteWithSpriteFrameName:@"river_v_3.png"];
@@ -580,7 +584,11 @@
             river = [CCSprite spriteWithSpriteFrameName:@"river_v.png"];
         }
     } else {
-        if (border != nil) {
+        if ([border isEqualToString:@"top"]) {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_h_t.png"];
+        } else if ([border isEqualToString:@"bottom"]) {
+            river = [CCSprite spriteWithSpriteFrameName:@"river_h_b.png"];
+        } else if ([border isEqualToString:@"none"]) {
             river = [CCSprite spriteWithSpriteFrameName:@"river_h_nb.png"];
         } else if (range == 3) {
             river = [CCSprite spriteWithSpriteFrameName:@"river_h_3.png"];

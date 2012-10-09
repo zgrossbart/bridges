@@ -199,12 +199,18 @@
             <filename>river_h_3.png</filename>
             <filename>river_h_5.png</filename>
             <filename>river_h_11.png</filename>
+            <filename>river_h_b.png</filename>
+            <filename>river_h_nb.png</filename>
+            <filename>river_h_t.png</filename>
             <filename>river_h.png</filename>
             <filename>river_v_3.png</filename>
             <filename>river_v_5.png</filename>
             <filename>river_v_11.png</filename>
             <filename>river_v_bl.png</filename>
             <filename>river_v_br.png</filename>
+            <filename>river_v_l.png</filename>
+            <filename>river_v_nb.png</filename>
+            <filename>river_v_r.png</filename>
             <filename>river_v_tl.png</filename>
             <filename>river_v_ur.png</filename>
             <filename>river_v.png</filename>
@@ -214,8 +220,6 @@
             <filename>subway_red.png</filename>
             <filename>subway.png</filename>
             <filename>x.png</filename>
-            <filename>river_v_nb.png</filename>
-            <filename>river_h_nb.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

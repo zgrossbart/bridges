@@ -774,7 +774,7 @@
             <key>river_h.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{278,602},{30,28}}</string>
+                <string>{{472,788},{30,28}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -823,7 +823,33 @@
                 <key>sourceSize</key>
                 <string>{150,30}</string>
             </dict>
+            <key>river_h_b.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{278,632},{30,28}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,1},{30,28}}</string>
+                <key>sourceSize</key>
+                <string>{30,30}</string>
+            </dict>
             <key>river_h_nb.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{278,602},{30,28}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,1},{30,28}}</string>
+                <key>sourceSize</key>
+                <string>{30,30}</string>
+            </dict>
+            <key>river_h_t.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{278,572},{30,28}}</string>
@@ -839,7 +865,7 @@
             <key>river_v.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{304,819},{28,30}}</string>
+                <string>{{410,849},{28,30}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -891,7 +917,7 @@
             <key>river_v_bl.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{346,810},{28,30}}</string>
+                <string>{{336,840},{28,30}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -904,7 +930,20 @@
             <key>river_v_br.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{430,819},{28,30}}</string>
+                <string>{{378,835},{28,30}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1,0},{28,30}}</string>
+                <key>sourceSize</key>
+                <string>{30,30}</string>
+            </dict>
+            <key>river_v_l.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{462,848},{28,30}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -917,7 +956,20 @@
             <key>river_v_nb.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{472,818},{28,30}}</string>
+                <string>{{304,819},{28,30}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1,0},{28,30}}</string>
+                <key>sourceSize</key>
+                <string>{30,30}</string>
+            </dict>
+            <key>river_v_r.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{346,810},{28,30}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -930,7 +982,7 @@
             <key>river_v_tl.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{472,788},{28,30}}</string>
+                <string>{{430,819},{28,30}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -943,7 +995,7 @@
             <key>river_v_ur.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{278,632},{28,30}}</string>
+                <string>{{472,818},{28,30}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1041,7 +1093,7 @@
             <key>size</key>
             <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:acc23961add5933623c2d356ff1b1afb$</string>
+            <string>$TexturePacker:SmartUpdate:c79b0376de5565a8d08ba799386dd2ab$</string>
             <key>textureFileName</key>
             <string>bridgesprites-hd.pvr.gz</string>
         </dict>

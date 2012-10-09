@@ -29,6 +29,12 @@
                 "x": "24",
                 "y": "b-m",
                 "orient": "v"
+            },
+            {
+                "x": "24",
+                "y": "m",
+                "orient": "h",
+				"border": "top"
             }
         ],
         "bridges": [
