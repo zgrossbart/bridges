@@ -8,7 +8,7 @@
                 "y": "27",
                 "w": "16",
                 "h": "10",
-                "text": "Ride the subways as much as you want, but every ride costs one coin."
+                "text": "Ride the subways as much as you want, but every ride costs a coin."
             }
         ],
 		"player": {
@@ -45,7 +45,7 @@
 			{
 				"x1": "4",
 				"y1": "10",
-				"x2": "24",
+				"x2": "35",
 				"y2": "10"
 			}
         ]
