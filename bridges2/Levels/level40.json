@@ -1,153 +1,94 @@
 {
     "level": {
         "id": "40",
-        "name": "Back and forth",
-		"coins": "4",
+        "name": "Spend it wisely",
+		"coins": "3",
         "rivers": [
             {
-                "x": "l-10",
-                "y": "18",
-                "orient": "h"
-            },
-            {
-                "x": "10",
-                "y": "18-t",
-                "orient": "v",
-				"side": "right"
-            },
-            {
                 "x": "l-r",
-                "y": "10",
+                "y": "m",
                 "orient": "h"
             },
-			{
-               "x": "25",
-               "y": "10-t",
-               "orient": "v"
-           }
+            {
+                "x": "20",
+                "y": "b-t",
+                "orient": "v"
+            }
         ],
         "bridges": [
             {
                 "x": "5",
-                "y": "18",
+                "y": "m",
                 "orient": "v",
-				"coins": "2"
-            },
-            {
-                "x": "10",
-                "y": "21",
-                "orient": "h",
-				"color": "orange",
-				"coins": "1"
-            },
-            {
-                "x": "10",
-                "y": "26",
-                "orient": "h"
-            },
-            {
-                "x": "25",
-                "y": "26",
-                "orient": "h",
+                "color": "red",
 				"coins": "4"
             },
             {
-                "x": "25",
-                "y": "22",
-                "orient": "h",
-				"coins": "3",
-				"color": "blue"
-            },
-            {
-                "x": "25",
-                "y": "18",
-                "orient": "h"
-            },
-            {
-                "x": "25",
-                "y": "13",
-                "orient": "h",
-				"coins": "2",
-				"color": "red"
-            },
-            {
-                "x": "5",
-                "y": "10",
-                "orient": "v"
-            },
-            {
                 "x": "10",
-                "y": "10",
-                "orient": "v"
+                "y": "m",
+                "orient": "v",
+                "color": "orange",
+				"coins": "3"
             },
             {
                 "x": "15",
-                "y": "10",
+                "y": "m",
                 "orient": "v",
-				"color": "red",
+                "color": "green",
 				"coins": "4"
-            },
-            {
-                "x": "20",
-                "y": "10",
-                "orient": "v"
-            },
-            {
-                "x": "29",
-                "y": "10",
-                "orient": "v"
-            },
-            {
-                "x": "34",
-                "y": "10",
-                "orient": "v",
-				"coins": "2",
-				"color": "purple"
-            },
-            {
-                "x": "38",
-                "y": "10",
-                "orient": "v"
             }
         ],
         "houses": [
             {
                 "x": "2",
                 "y": "20",
-                "coins": "2",
-				"color": "red"
+                "coins": "3"
             },
             {
-                "x": "17",
-                "y": "26",
-                "coins": "2",
-				"color": "orange"
+                "x": "15",
+                "y": "25",
+				"color": "orange",
+                "coins": "3"
             },
             {
-                "x": "35",
-                "y": "26",
-                "coins": "3",
-				"color": "red"
+                "x": "30",
+                "y": "25",
+				"color": "red",
+                "coins": "4"
             },
             {
-                "x": "25",
+                "x": "30",
+                "y": "10",
+				"color": "green",
+                "coins": "5"
+            },
+            {
+                "x": "18",
                 "y": "1",
-                "coins": "5",
-				"color": "blue"
+				"color": "green",
+                "coins": "6"
             },
             {
-                "x": "1",
-                "y": "13",
-                "coins": "4",
-				"color": "blue"
+                "x": "18",
+                "y": "8",
+				"color": "red",
+                "coins": "5"
             }
         ],
         "subways": [
             {
-                "x1": "5",
-                "y1": "1",
-                "x2": "2",
-                "y2": "26"
+                "x1": "1",
+                "y1": "2",
+                "x2": "35",
+                "y2": "20",
+				"color": "red"
+            },
+            {
+                "x1": "1",
+                "y1": "7",
+                "x2": "35",
+                "y2": "5",
+				"color": "green"
             }
         ]
     }

@@ -1,149 +1,53 @@
 {
     "level": {
         "id": "37",
-        "name": "Corner jumper",
+        "name": "Subways",
+        "labels": [
+            {
+                "x": "22",
+                "y": "27",
+                "w": "16",
+                "h": "10",
+                "text": "Ride the subways as much as you want, but every ride costs a coin."
+            }
+        ],
+		"player": {
+			"x": "4",
+			"y": "16"
+		},
         "rivers": [
             {
-                "x": "l-8",
-                "y": "20",
-                "orient": "h"
-            },
-            {
                 "x": "8",
-                "y": "20-t",
-                "orient": "v",
-                "side": "right"
+                "y": "b-t",
+                "orient": "v"
             },
             {
-                "x": "l-8",
-                "y": "10",
-                "orient": "h"
-            },
-            {
-                "x": "8",
-                "y": "b-10",
-                "orient": "v",
-                "side": "right"
-            },
-            {
-                "x": "32-r",
-                "y": "20",
-                "orient": "h"
-            },
-            {
-                "x": "32",
-                "y": "20-t",
-                "orient": "v",
-                "side": "left"
-            },
-            {
-                "x": "32-r",
-                "y": "10",
-                "orient": "h"
-            },
-            {
-                "x": "32",
-                "y": "b-10",
-                "orient": "v",
-                "side": "left"
+                "x": "18",
+                "y": "b-t",
+                "orient": "v"
             }
         ],
         "bridges": [
             {
-                "x": "8",
-                "y": "26",
-                "orient": "h",
-                "color": "green"
-            },
-            {
-                "x": "8",
-                "y": "22",
+                "x": "18",
+                "y": "8",
                 "orient": "h"
-            },
-            {
-                "x": "4",
-                "y": "20",
-                "orient": "v"
-            },
-            {
-                "x": "32",
-                "y": "26",
-                "orient": "h"
-            },
-            {
-                "x": "32",
-                "y": "22",
-                "orient": "h",
-                "color": "green"
-            },
-            {
-                "x": "36",
-                "y": "20",
-                "orient": "v"
-            },
-            {
-                "x": "8",
-                "y": "2",
-                "orient": "h"
-            },
-            {
-                "x": "8",
-                "y": "6",
-                "orient": "h",
-                "color": "red"
-            },
-            {
-                "x": "4",
-                "y": "10",
-                "orient": "v"
-            },
-            {
-                "x": "32",
-                "y": "2",
-                "orient": "h",
-                "color": "green"
-            },
-            {
-                "x": "32",
-                "y": "6",
-                "orient": "h"
-            },
-            {
-                "x": "36",
-                "y": "10",
-                "orient": "v",
-                "color": "green"
             }
         ],
         "houses": [
-            {
-                "x": "15",
-                "y": "15",
-				"color": "green",
-                "coins": "3"
-            },
-            {
-                "x": "25",
-                "y": "15",
-				"color": "red",
-                "coins": "2"
-            }
-        ],
+			{
+	            "x": "4",
+	            "y": "24",
+	            "coins": "1"
+	        }
+		],
         "subways": [
-            {
-                "x1": "2",
-                "y1": "26",
-                "x2": "38",
-                "y2": "2",
-				"color": "red"
-            },
-            {
-                "x1": "2",
-                "y1": "2",
-                "x2": "38",
-                "y2": "26",
-				"color": "green"
-            }
+			{
+				"x1": "4",
+				"y1": "10",
+				"x2": "35",
+				"y2": "10"
+			}
         ]
     }
 }

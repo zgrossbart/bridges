@@ -1,107 +1,78 @@
 {
     "level": {
         "id": "24",
-        "name": "House of another color",
+        "name": "Simple box",
         "rivers": [
             {
-                "x": "18",
+                "x": "10",
                 "y": "b-t",
                 "orient": "v"
             },
             {
-                "x": "l-32",
-                "y": "18",
+                "x": "10-r",
+                "y": "10",
                 "orient": "h"
             },
             {
-                "x": "18-32",
-                "y": "6",
+                "x": "10-r",
+                "y": "20",
                 "orient": "h"
             },
             {
-                "x": "32",
-                "y": "6-t",
-                "orient": "v",
-				"side": "right"
+                "x": "25",
+                "y": "10-20",
+                "orient": "v"
             }
+			
         ],
         "bridges": [
             {
-                "x": "2",
-                "y": "18",
-                "orient": "v"
-            },
-            {
-                "x": "8",
-                "y": "18",
-                "orient": "v"
-            },
-            {
-                "x": "14",
-                "y": "18",
-                "orient": "v"
-            },
-            {
-                "x": "26",
-                "y": "18",
-                "orient": "v"
-            },
-            {
-                "x": "18",
-                "y": "26",
+                "x": "10",
+                "y": "25",
                 "orient": "h",
-				"color": "blue"
+				"dir": "left"
             },
             {
-                "x": "18",
-                "y": "22",
-                "orient": "h",
-				"color": "orange"
+                "x": "10",
+                "y": "5",
+                "orient": "h"
             },
             {
-                "x": "18",
-                "y": "14",
-                "orient": "h",
-				"color": "green"
+                "x": "25",
+                "y": "15",
+                "orient": "h"
             },
             {
-                "x": "18",
+                "x": "17.5",
+                "y": "20",
+                "orient": "v"
+            },
+            {
+                "x": "17.5",
                 "y": "10",
-                "orient": "h",
-				"color": "red"
+                "orient": "v"
             },
             {
-                "x": "18",
-                "y": "2",
-                "orient": "h"
+                "x": "30",
+                "y": "20",
+                "orient": "v"
             },
             {
-                "x": "32",
-                "y": "24",
-                "orient": "h"
+                "x": "30",
+                "y": "10",
+                "orient": "v"
+            },
+            {
+                "x": "35",
+                "y": "20",
+                "orient": "v",
+				"dir": "down"
+            },
+            {
+                "x": "35",
+                "y": "10",
+                "orient": "v"
             }
-        ],
-        "houses": [
-	        {
-	            "x": "8",
-	            "y": "24",
-	            "color": "green"
-	        },
-	        {
-	            "x": "8",
-	            "y": "8",
-	            "color": "orange"
-	        },
-	        {
-	            "x": "26",
-	            "y": "24",
-	            "color": "red"
-	        },
-	        {
-	            "x": "26",
-	            "y": "12",
-	            "color": "blue"
-	        }
         ]
     }
 }
