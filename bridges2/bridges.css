@@ -15,7 +15,7 @@ h1 {
 
 a, a:link, a:visited {
     text-decoration: none;
-    color: blue;
+    color: rgb(0, 131, 192);
 }
 
 a:hover {
@@ -120,4 +120,28 @@ span.level span {
     top: 0.5em;
     left: 0.5em;
     font-size: 24px;
+}
+
+#credits {
+position: relative;
+    
+padding: 25px;
+background: white;
+	
+}
+
+div.left {
+	display: inline-block;
+	width: 48%;
+}
+
+div.right {
+	float: right;
+	width: 40%;
+}
+
+h2 {
+	font-size: 24px;
+	margin-bottom: 0.5em;
+	margin-top: 0px;
 }

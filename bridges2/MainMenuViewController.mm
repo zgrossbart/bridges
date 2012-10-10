@@ -236,7 +236,7 @@
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:requestObj];*/
     
-    _aboutNavItem.title = @"The Seven Bridges of Königsberg";
+    _aboutNavItem.title = @"About Seven Bridges";
 }
 
 -(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
@@ -289,12 +289,10 @@
 -(IBAction)creditsTapped:(id)sender {
     [[NSBundle mainBundle] loadNibNamed:@"AboutViewiPad" owner:self options:nil];
     
-    NSString *urlAddress = @"https://github.com/zgrossbart/bridges/commits/master";
-    NSURL *url = [NSURL URLWithString:urlAddress];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [_webView loadRequest:requestObj];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"credits" withExtension:@".html"];
+    [_webView loadRequest:[NSURLRequest requestWithURL:url]];
     
-    _aboutNavItem.title = @"The Seven Bridges of Königsberg";
+    _aboutNavItem.title = @"The Credits";
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*) collectionView {
