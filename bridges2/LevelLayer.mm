@@ -907,6 +907,13 @@ CGFloat CGPointToDegree(CGPoint point) {
         }
     }
     
+    for (SubwayNode *s in self.currentLevel.subways) {
+        if (CGRectContainsPoint([s.subway1 boundingBox], p) ||
+            CGRectContainsPoint([s.subway2 boundingBox], p)) {
+            return true;
+        }
+    }
+    
     return false;
     
 }
