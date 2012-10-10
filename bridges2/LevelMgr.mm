@@ -240,6 +240,7 @@
         
     }
     
+    [[CCSpriteFrameCache sharedSpriteFrameCache] removeSpriteFrames];
     delete world;
     world = nil;
     
