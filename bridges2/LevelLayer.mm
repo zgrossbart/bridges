@@ -454,10 +454,10 @@
         [self bumpObject:player:exit];
         _canVisit = true;
     } else {
-        if (node.color != cNone || _player.color != node.color) {
-            [self.controller showMessage:@"Change color to ride this subway"];
-        } else {
+        if (_player.coins == 0) {
             [self.controller showMessage:@"You need more coins to ride"];
+        } else {
+            [self.controller showMessage:@"Change color to ride this subway"];
         }
         [self showNoTapSprite:self.player.player.position];
         [self bumpObject:player:subway];
