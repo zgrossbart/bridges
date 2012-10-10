@@ -256,6 +256,7 @@
 		CEE0277416067FE5007C4CDD /* level30.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE0277316067FE5007C4CDD /* level30.json */; };
 		CEE1450216258945007BD1B3 /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CEE1450116258945007BD1B3 /* credits.html */; };
 		CEE145051625A54B007BD1B3 /* level48.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145041625A54B007BD1B3 /* level48.json */; };
+		CEE145071625AE7A007BD1B3 /* level49.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145061625AE7A007BD1B3 /* level49.json */; };
 		CEE7AF0815FBD12F00DC0B7F /* YouWonViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */; };
 		CEE7AF0915FBD12F00DC0B7F /* YouWonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */; };
 		CEE7AF0C15FBDD0F00DC0B7F /* YouWonViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7AF0B15FBDD0F00DC0B7F /* YouWonViewiPad.xib */; };
@@ -733,6 +734,7 @@
 		CEE0277316067FE5007C4CDD /* level30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level30.json; sourceTree = "<group>"; };
 		CEE1450116258945007BD1B3 /* credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = credits.html; sourceTree = "<group>"; };
 		CEE145041625A54B007BD1B3 /* level48.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level48.json; sourceTree = "<group>"; };
+		CEE145061625AE7A007BD1B3 /* level49.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level49.json; sourceTree = "<group>"; };
 		CEE7AF0515FBD12F00DC0B7F /* YouWonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouWonViewController.h; sourceTree = "<group>"; };
 		CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = YouWonViewController.mm; sourceTree = "<group>"; };
 		CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouWonViewController.xib; sourceTree = "<group>"; };
@@ -1416,6 +1418,7 @@
 				CECD01651624951F008F7536 /* level46.json */,
 				CE0298C01624B4300028274B /* level47.json */,
 				CEE145041625A54B007BD1B3 /* level48.json */,
+				CEE145061625AE7A007BD1B3 /* level49.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1650,6 +1653,7 @@
 				CE0298C11624B4300028274B /* level47.json in Resources */,
 				CEE1450216258945007BD1B3 /* credits.html in Resources */,
 				CEE145051625A54B007BD1B3 /* level48.json in Resources */,
+				CEE145071625AE7A007BD1B3 /* level49.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
