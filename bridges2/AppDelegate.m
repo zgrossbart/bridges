@@ -17,12 +17,11 @@
  ******************************************************************************/
 
 #import "AppDelegate.h"
+#import "cocos2d.h"
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSInteger launchCount = [prefs integerForKey:@"launchCount"];
     launchCount++;
@@ -31,29 +30,29 @@
     return NO;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
+- (void)applicationWillResignActive:(UIApplication *)application {
     // no-op
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
+- (void)applicationDidEnterBackground:(UIApplication *)application {
     // no-op
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
+- (void)applicationWillEnterForeground:(UIApplication *)application {
     // no-op
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
+- (void)applicationDidBecomeActive:(UIApplication *)application {
     // no-op
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application
-{
+- (void)applicationWillTerminate:(UIApplication *)application {
     // no-op
 }
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    [[CCSpriteFrameCache sharedSpriteFrameCache] removeSpriteFrames];    
+}
+
 
 @end
