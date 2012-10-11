@@ -23,12 +23,13 @@
  */
 static int const PLAYER = 0;
 static int const RIVER = 1;
-static int const BRIDGE = 2;
-static int const BRIDGE3 = 3;
-static int const BRIDGE4 = 4;
-static int const HOUSE = 5;
-static int const SUBWAY = 6;
-static int const LEVEL = 7;
+static int const RIVEROVERLAY = 2;
+static int const BRIDGE = 3;
+static int const BRIDGE3 = 4;
+static int const BRIDGE4 = 5;
+static int const HOUSE = 6;
+static int const SUBWAY = 7;
+static int const LEVEL = 8;
 
 /**
  * This enum defines the different colors for houses,

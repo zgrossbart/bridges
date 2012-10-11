@@ -52,7 +52,7 @@
     
     b2Body *body = nil;
     
-    if (self.addBoxes) {
+    if (self.addBoxes && sprite.tag != RIVEROVERLAY) {
         body = [self addBoxBodyForSprite:sprite:YES];
     }
     
@@ -63,7 +63,7 @@
 
 -(b2Body*)addChildToSheetParent:(CCSprite*) sprite {
     b2Body *body = nil;
-    if (self.addBoxes) {
+    if (self.addBoxes && sprite.tag != RIVEROVERLAY) {
         body = [self addBoxBodyForSprite:sprite:NO];
     }
     

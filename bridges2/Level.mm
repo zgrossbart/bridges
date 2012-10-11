@@ -438,10 +438,6 @@
      * tiles at a random interval to make the river a little more interesting.
      */
     if (vert) {
-        /*for (float j = yi1; j <= yi2; j += rSprite.contentSize.height - 1) {
-            [rivers addObject:[self addRiver:xi1:j:vert:1:border]];
-        }*/
-        
         CCSprite *river = [self addRiver:xi1:yi1:vert:1:border];
         
         if (border == nil) {
@@ -459,7 +455,6 @@
              */
             float height = ((yi2 - yi1) + 2) - river.contentSize.height;
             [river setScaleY: height/river.contentSize.height];
-            //river.position = ccp(river.position.x, river.position.y - (river.contentSize.height / 2));
         }
         
         [rivers addObject:river];
@@ -474,7 +469,9 @@
                 }
                 
                 if (range > 1) {
-                    [rivers addObject:[self addRiver:xi1:j:vert:range:border]];
+                    CCSprite *r = [self addRiver:xi1:j:vert:range:border];
+                    r.tag = RIVEROVERLAY;
+                    [rivers addObject:r];
                 }
                 
                 j += range * (rSprite.contentSize.height);
@@ -482,13 +479,9 @@
             }
         }
     } else {
-        /*for (float i = xi1; i <= xi2; i += rSprite.contentSize.width - 1) {
-            [rivers addObject:[self addRiver:i:yi1:vert:1:border]];
-        }*/
         CCSprite *river = [self addRiver:xi1:yi1:vert:1:border];
         
         if (border == nil) {
-            //[river setScaleX: xi2 - xi1/river.contentSize.width];
             float width = (xi2 - xi1) + 2;
             [river setScaleX: width/river.contentSize.width];
             river.position = ccp(river.position.x + (width / 2), river.position.y);
@@ -506,7 +499,9 @@
                 }
                 
                 if (range > 1) {
-                    [rivers addObject:[self addRiver:i:yi1:vert:range:border]];
+                    CCSprite *r = [self addRiver:i:yi1:vert:range:border];
+                    r.tag = RIVEROVERLAY;
+                    [rivers addObject:r];
                 }
                 
                 i += range * (rSprite.contentSize.width);
