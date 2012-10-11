@@ -179,7 +179,12 @@
         ((UIImageView*) cell.accessoryView).image = nil;
     }
     
-    cell.textLabel.text = ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).name;
+    NSMutableString *name = [NSMutableString stringWithCapacity:10];
+    [name appendString:levelId];
+    [name appendString:@". "];
+    [name appendString:((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).name];
+    
+    cell.textLabel.text = name;
     
     return cell;
 }
