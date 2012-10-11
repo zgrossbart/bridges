@@ -296,7 +296,7 @@
     
     for (RiverNode *r in self.rivers) {
         for (CCSprite *s in r.rivers) {
-            [self.layerMgr addChildToSheetParent:s];
+            [self.layerMgr addChildToSheet:s];
         }
     }
     
@@ -438,9 +438,18 @@
      * tiles at a random interval to make the river a little more interesting.
      */
     if (vert) {
-        for (float j = yi1; j <= yi2; j += rSprite.contentSize.height - 1) {
+        /*for (float j = yi1; j <= yi2; j += rSprite.contentSize.height - 1) {
             [rivers addObject:[self addRiver:xi1:j:vert:1:border]];
+        }*/
+        
+        CCSprite *river = [self addRiver:xi1:yi1:vert:1:border];
+        
+        if (border == nil) {
+            float height = (yi2 - yi1) + 2;
+            [river setScaleY: height/river.contentSize.height];
+            river.position = ccp(river.position.x, river.position.y + (height / 2));
         }
+        
         
         if (side != dNone && yi1 > rSprite.contentSize.height * 2) {
             /*
@@ -448,8 +457,12 @@
              * first river since we're replacing them
              * with the corner sprites.
              */
-            [rivers removeObjectAtIndex:0];
+            float height = ((yi2 - yi1) + 2) - river.contentSize.height;
+            [river setScaleY: height/river.contentSize.height];
+            //river.position = ccp(river.position.x, river.position.y - (river.contentSize.height / 2));
         }
+        
+        [rivers addObject:river];
         
         if (DRAW_RANDOM_RIVERS) {
             for (float j = yi1 + rSprite.contentSize.height; j <= yi2 - rSprite.contentSize.height;) {
@@ -461,7 +474,7 @@
                 }
                 
                 if (range > 1) {
-                    [rivers insertObject:[self addRiver:xi1:j:vert:range:border] atIndex:[rivers count] - 1];
+                    [rivers addObject:[self addRiver:xi1:j:vert:range:border]];
                 }
                 
                 j += range * (rSprite.contentSize.height);
@@ -469,9 +482,19 @@
             }
         }
     } else {
-        for (float i = xi1; i <= xi2; i += rSprite.contentSize.width - 1) {
+        /*for (float i = xi1; i <= xi2; i += rSprite.contentSize.width - 1) {
             [rivers addObject:[self addRiver:i:yi1:vert:1:border]];
+        }*/
+        CCSprite *river = [self addRiver:xi1:yi1:vert:1:border];
+        
+        if (border == nil) {
+            //[river setScaleX: xi2 - xi1/river.contentSize.width];
+            float width = (xi2 - xi1) + 2;
+            [river setScaleX: width/river.contentSize.width];
+            river.position = ccp(river.position.x + (width / 2), river.position.y);
+            
         }
+        [rivers addObject:river];
         
         if (DRAW_RANDOM_RIVERS) {
             for (float i = xi1 + rSprite.contentSize.width; i <= xi2 - rSprite.contentSize.width;) {
@@ -483,7 +506,7 @@
                 }
                 
                 if (range > 1) {
-                    [rivers insertObject:[self addRiver:i:yi1:vert:range:border] atIndex:[rivers count] - 1];
+                    [rivers addObject:[self addRiver:i:yi1:vert:range:border]];
                 }
                 
                 i += range * (rSprite.contentSize.width);
@@ -531,9 +554,9 @@
         [rivers addObject:river];
     }
     
-    if (!vert && xi1 > 0 && [rivers count] > 1) {
+    /*if (!vert && xi1 > 0 && [rivers count] > 1) {
         [rivers removeObjectAtIndex:0];
-    }
+    }*/
     
     CCSprite *river1 = (CCSprite*) [rivers objectAtIndex:0];
     CCSprite *river2 = (CCSprite*) [rivers lastObject];

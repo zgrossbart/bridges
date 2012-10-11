@@ -94,8 +94,8 @@
     b2Body *spriteBody = _world->CreateBody(&spriteBodyDef);
     
     b2PolygonShape spriteShape;
-    spriteShape.SetAsBox(sprite.contentSize.width/PTM_RATIO/2,
-                         sprite.contentSize.height/PTM_RATIO/2);
+    spriteShape.SetAsBox((sprite.contentSize.width * sprite.scaleX)/PTM_RATIO/2,
+                         (sprite.contentSize.height * sprite.scaleY)/PTM_RATIO/2);
     b2FixtureDef spriteShapeDef;
     spriteShapeDef.shape = &spriteShape;
     spriteShapeDef.density = 100;

@@ -39,7 +39,7 @@
         self.rivers = rivers;
         self.vert = vert;
         
-        [self createRiverImage:side];
+        //[self createRiverImage:side];
     }
     
     return self;

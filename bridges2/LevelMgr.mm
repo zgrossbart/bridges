@@ -236,7 +236,7 @@
         
     }
     
-    [[CCSpriteFrameCache sharedSpriteFrameCache] removeSpriteFrames];
+    [CCSpriteFrameCache purgeSharedSpriteFrameCache];
     
     [spriteSheet release];
     [scene dealloc];
