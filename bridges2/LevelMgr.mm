@@ -201,7 +201,7 @@
     LayerMgr *layerMgr = [[LayerMgr alloc] initWithSpriteSheet:spriteSheet:nil];
     layerMgr.addBoxes = false;
     
-    CCRenderTexture *renderer	= [CCRenderTexture renderTextureWithWidth:bounds.size.width height:bounds.size.height];
+    CCRenderTexture *renderer = [CCRenderTexture renderTextureWithWidth:bounds.size.width height:bounds.size.height];
     
     ScreenShotLayer *scene = [[ScreenShotLayer alloc] init];
     

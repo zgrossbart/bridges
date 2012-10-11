@@ -216,7 +216,7 @@
 		CEC65C1115F4D0320010EAC3 /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */; };
 		CEC8828416027431007DC0EA /* level11.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC8828316027431007DC0EA /* level11.json */; };
 		CEC88287160276B1007DC0EA /* level12.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC88286160276B1007DC0EA /* level12.json */; };
-		CECA1E0315FD21240052A58E /* RiverNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CECA1E0215FD21240052A58E /* RiverNode.m */; };
+		CECA1E0315FD21240052A58E /* RiverNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECA1E0215FD21240052A58E /* RiverNode.mm */; };
 		CECCE97F161530760091707C /* SubwayNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECCE97E161530760091707C /* SubwayNode.mm */; };
 		CECCE9821615389A0091707C /* level35.json in Resources */ = {isa = PBXBuildFile; fileRef = CECCE9811615389A0091707C /* level35.json */; };
 		CECD016316248C0F008F7536 /* level45.json in Resources */ = {isa = PBXBuildFile; fileRef = CECD016216248C0F008F7536 /* level45.json */; };
@@ -681,7 +681,7 @@
 		CEC8828316027431007DC0EA /* level11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level11.json; sourceTree = "<group>"; };
 		CEC88286160276B1007DC0EA /* level12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level12.json; sourceTree = "<group>"; };
 		CECA1E0115FD21240052A58E /* RiverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiverNode.h; sourceTree = "<group>"; };
-		CECA1E0215FD21240052A58E /* RiverNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiverNode.m; sourceTree = "<group>"; };
+		CECA1E0215FD21240052A58E /* RiverNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RiverNode.mm; sourceTree = "<group>"; };
 		CECCE97D161530760091707C /* SubwayNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubwayNode.h; sourceTree = "<group>"; };
 		CECCE97E161530760091707C /* SubwayNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SubwayNode.mm; sourceTree = "<group>"; };
 		CECCE9811615389A0091707C /* level35.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level35.json; sourceTree = "<group>"; };
@@ -1461,7 +1461,7 @@
 				CEDBC2E215EB8AF600094695 /* PlayerNode.h */,
 				CEDBC2E315EB8AF600094695 /* PlayerNode.mm */,
 				CECA1E0115FD21240052A58E /* RiverNode.h */,
-				CECA1E0215FD21240052A58E /* RiverNode.m */,
+				CECA1E0215FD21240052A58E /* RiverNode.mm */,
 				CEC65C0315F4C1CD0010EAC3 /* ScreenShotLayer.h */,
 				CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */,
 				CECCE97D161530760091707C /* SubwayNode.h */,
@@ -1832,7 +1832,7 @@
 				CECE689B15F76A510042A7DF /* Bridge4Node.mm in Sources */,
 				CED45E8115FB7D7D0066F0FE /* UIButtonExtras.m in Sources */,
 				CEE7AF0815FBD12F00DC0B7F /* YouWonViewController.mm in Sources */,
-				CECA1E0315FD21240052A58E /* RiverNode.m in Sources */,
+				CECA1E0315FD21240052A58E /* RiverNode.mm in Sources */,
 				CE6BFB9A160CAFAD0037CFE4 /* LevelCell.m in Sources */,
 				CEDBF23D161253C2000E85D3 /* AppDelegate.m in Sources */,
 				CECCE97F161530760091707C /* SubwayNode.mm in Sources */,

@@ -61,6 +61,8 @@
  */
 -(b2Body*)addChildToSheet:(CCSprite*) sprite;
 
+-(b2Body*)addChildToSheetParent:(CCSprite*) sprite;
+
 /**
  * Add a sprite to the sprite sheet for display
  *

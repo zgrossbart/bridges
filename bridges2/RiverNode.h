@@ -27,7 +27,7 @@
 /**
  * Create a new RiverNode with the specified frame and set of sprites.
  */
--(id)initWithFrame: (CGRect) frame: (NSArray*) rivers;
+-(id)initWithFrame: (CGRect) frame: (NSMutableArray*) rivers: (BOOL) vert;
 
 /**
  * Returns true if this specific sprite is contained in this node and false
@@ -43,7 +43,7 @@
 /**
  * The river sprites contained in this river node
  */
-@property (readonly, copy) NSArray *rivers;
+@property (readonly, retain) NSMutableArray *rivers;
 
 
 @end

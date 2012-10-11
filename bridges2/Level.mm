@@ -296,7 +296,7 @@
     
     for (RiverNode *r in self.rivers) {
         for (CCSprite *s in r.rivers) {
-            [self.layerMgr addChildToSheet:s];
+            [self.layerMgr addChildToSheetParent:s];
         }
     }
     
@@ -535,10 +535,18 @@
         [rivers removeObjectAtIndex:0];
     }
     
-    CGPoint start = [self tileToPoint:xi1 :yi1];
-    CGPoint end = [self tileToPoint:xi2 :yi2];
+    CGPoint start = ccp(xi1, yi1);
+    CGPoint end = ccp(xi2, yi2);
     
-    RiverNode *node = [[RiverNode alloc] initWithFrame:CGRectMake(start.x, start.y, end.x - start.x, end.y - start.y): rivers];
+    CGRect frame;
+    
+    if (vert) {
+        frame = CGRectMake(start.x, start.y, rSprite.contentSize.width - 1, end.y - start.y);
+    } else {
+        frame = CGRectMake(start.x, start.y, end.x - start.x, rSprite.contentSize.height - 1);
+    }
+    
+    RiverNode *node = [[RiverNode alloc] initWithFrame:frame: rivers: vert];
     
     [self.rivers addObject:node];
     

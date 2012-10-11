@@ -60,6 +60,18 @@
     return body;
 }
 
+-(b2Body*)addChildToSheetParent:(CCSprite*) sprite {
+    b2Body *body = nil;
+    if (self.addBoxes) {
+        body = [self addBoxBodyForSprite:sprite:YES];
+    }
+    
+    [self.sheet.parent addChild:sprite];
+    [self.sheet.parent reorderChild:self.sheet z:self.sheet.zOrder + 1];
+    
+    return body;
+}
+
 -(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite {
     return [self addBoxBodyForSprite:sprite:NO];
 }
