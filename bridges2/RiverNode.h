@@ -24,10 +24,13 @@
  */
 @interface RiverNode : NSObject
 
-+(NSString*)getFullRiverFileName: (BOOL) vert: (int) side: (float) width: (float) height: (NSDate*) date;
-
 /**
  * Create a new RiverNode with the specified frame and set of sprites.
+ *
+ * @param frame the rectangle defining the total bounds of this river
+ * @param rivers the array of CCSprites that make up this river
+ * @param vert true if this river is vertical and false otherwise
+ * @param the side of this river as defined in BridgeColors.h
  */
 -(id)initWithFrame: (CGRect) frame: (NSMutableArray*) rivers: (BOOL) vert: (int) side;
 
