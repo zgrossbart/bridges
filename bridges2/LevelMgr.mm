@@ -178,9 +178,7 @@
          * Then we have some levels that still need screenshots.  We'll draw
          * them in a different thread so we don't slow down the UI.
          */
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self doDrawLevels:bounds:levels];
-        });
+        [self doDrawLevels:bounds:levels];
     }
 }
 
@@ -189,6 +187,7 @@
  * can load show them in the menu screens.
  */
 -(void)doDrawLevels:(CGRect) bounds: (NSMutableArray*) levels {
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);        
     
     [[CCSpriteFrameCache sharedSpriteFrameCache]
@@ -228,21 +227,19 @@
         
         UIImage *image = [renderer getUIImage];
         [image imageByScalingAndCroppingForSize:s];
-        [UIImagePNGRepresentation(image) writeToFile:path atomically:YES];
+        [UIImagePNGRepresentation(image) writeToFile:path atomically:NO];
         level.screenshot = image;
         
         [level unloadSprites];
 //        [layerMgr removeAll];
         
     }
-    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] removeSpriteFrames];
     [CCSpriteFrameCache purgeSharedSpriteFrameCache];
     
     [spriteSheet release];
-    [scene dealloc];
-    
     [layerMgr release];
-    
+    [scene dealloc];
 }
 
 -(void)dealloc {

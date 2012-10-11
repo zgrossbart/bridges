@@ -231,7 +231,7 @@
         [_label dealloc];
     }
     
-    [_bridge dealloc];
+    [_bridge release];
     [super dealloc];
 }
 

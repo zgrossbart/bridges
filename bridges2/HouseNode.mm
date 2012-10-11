@@ -160,7 +160,7 @@
         [_label dealloc];
     }
     
-    [_house dealloc];
+    [_house release];
     [super dealloc];
 }
 

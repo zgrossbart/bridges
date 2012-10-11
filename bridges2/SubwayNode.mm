@@ -96,8 +96,8 @@
 
 -(void)dealloc {
     
-    [self.subway1 dealloc];
-    [self.subway2 dealloc];
+    [self.subway1 release];
+    [self.subway2 release];
     [super dealloc];
 }
 

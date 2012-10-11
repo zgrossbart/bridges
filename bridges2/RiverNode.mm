@@ -142,4 +142,11 @@
     return [self.rivers containsObject:river];
 }
 
+-(void)dealloc {
+    
+    self.rivers = nil;
+    
+    [super dealloc];
+}
+
 @end

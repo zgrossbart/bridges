@@ -66,7 +66,7 @@ static int const TILE_COUNT = 28;
  * This variable controls debug drawing.  Change it to true
  * to see the tile grid and the boxes for each sprite.
  */
-static bool const DEBUG_DRAW = true;
+static bool const DEBUG_DRAW = false;
 
 /**
  * Each river is drawn with a set of one tile sprites that we
@@ -80,7 +80,7 @@ static bool const DEBUG_DRAW = true;
  *
  * This variable is used in Level.mm.
  */
-static bool const DRAW_RANDOM_RIVERS = true;
+static bool const DRAW_RANDOM_RIVERS = false;
 
 /**
  * The size of the screen shot icon on iPhone

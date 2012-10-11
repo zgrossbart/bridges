@@ -574,10 +574,8 @@
         frame = CGRectMake(start.x, start.y, end.x - start.x, rSprite.contentSize.height - 1);
     }
     
-    RiverNode *node = [[RiverNode alloc] initWithFrame:frame: rivers: vert: side];
-    
+    RiverNode *node = [[[RiverNode alloc] initWithFrame:frame: rivers: vert: side] autorelease];
     [self.rivers addObject:node];
-    
 }
 
 /**
@@ -692,7 +690,8 @@
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
-    Bridge4Node *bridgeNode = [[Bridge4Node alloc] initWithTagAndColor:color:self.layerMgr];
+    Bridge4Node *bridgeNode = [[[Bridge4Node alloc] initWithTagAndColor:color:self.layerMgr] autorelease];
+
     CGPoint startPos = [self tileToPoint:x:y];
     
     [bridgeNode setBridgePosition:startPos];
@@ -707,7 +706,7 @@
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
-    BridgeNode *bridgeNode = [[BridgeNode alloc] initWithOrientAndDirAndCoins:vertical:dir:color:self.layerMgr: [self coins:coins]];
+    BridgeNode *bridgeNode = [[[BridgeNode alloc] initWithOrientAndDirAndCoins:vertical:dir:color:self.layerMgr: [self coins:coins]] autorelease];
     CGPoint startPos = [self tileToPoint:x:y];
     
     [bridgeNode setBridgePosition:startPos];
@@ -792,7 +791,7 @@
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
-    HouseNode *houseNode = [[HouseNode alloc] initWithColorAndCoins:color:self.layerMgr:[self coins:coins]];
+    HouseNode *houseNode = [[[HouseNode alloc] initWithColorAndCoins:color:self.layerMgr:[self coins:coins]] autorelease];
     CGPoint startPos = [self tileToPoint:x:y];
     
     [houseNode setHousePosition:startPos];
@@ -807,7 +806,7 @@
     
     //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
-    SubwayNode *subwayNode = [[SubwayNode alloc] initWithColor:color:self.layerMgr];
+    SubwayNode *subwayNode = [[[SubwayNode alloc] initWithColor:color:self.layerMgr] autorelease];
     
     subwayNode.subway1.position = [self tileToPoint:x1:y1];
     subwayNode.subway2.position = [self tileToPoint:x2:y2];
