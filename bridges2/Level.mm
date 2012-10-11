@@ -535,8 +535,13 @@
         [rivers removeObjectAtIndex:0];
     }
     
-    CGPoint start = ccp(xi1, yi1);
-    CGPoint end = ccp(xi2, yi2);
+    CCSprite *river1 = (CCSprite*) [rivers objectAtIndex:0];
+    CCSprite *river2 = (CCSprite*) [rivers lastObject];
+    
+    CGPoint start = ccp(river1.position.x - (river1.contentSize.width / 2),
+                        river1.position.y - (river1.contentSize.height / 2));
+    CGPoint end = ccp(river2.position.x + (river2.contentSize.width / 2),
+                      river2.position.y + (river2.contentSize.height / 2));
     
     CGRect frame;
     
@@ -546,7 +551,7 @@
         frame = CGRectMake(start.x, start.y, end.x - start.x, rSprite.contentSize.height - 1);
     }
     
-    RiverNode *node = [[RiverNode alloc] initWithFrame:frame: rivers: vert];
+    RiverNode *node = [[RiverNode alloc] initWithFrame:frame: rivers: vert: side];
     
     [self.rivers addObject:node];
     

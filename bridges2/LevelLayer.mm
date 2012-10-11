@@ -124,7 +124,7 @@
 
 -(void)reset {
     [_layerMgr removeAll];
-    //[self.currentLevel removeSprites: _layerMgr: self.view];
+    [self.currentLevel removeSprites: _layerMgr: self.view];
     [self.currentLevel unloadSprites];
     
     [self.undoStack removeAllObjects];

@@ -24,10 +24,12 @@
  */
 @interface RiverNode : NSObject
 
++(NSString*)getFullRiverFileName: (BOOL) vert: (int) side: (float) width: (float) height: (NSDate*) date;
+
 /**
  * Create a new RiverNode with the specified frame and set of sprites.
  */
--(id)initWithFrame: (CGRect) frame: (NSMutableArray*) rivers: (BOOL) vert;
+-(id)initWithFrame: (CGRect) frame: (NSMutableArray*) rivers: (BOOL) vert: (int) side;
 
 /**
  * Returns true if this specific sprite is contained in this node and false

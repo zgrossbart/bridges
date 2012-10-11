@@ -16,6 +16,7 @@
  *
  ******************************************************************************/
 
+#import "BridgeColors.h"
 #import "LayerMgr.h"
 
 @interface LayerMgr()
@@ -63,7 +64,7 @@
 -(b2Body*)addChildToSheetParent:(CCSprite*) sprite {
     b2Body *body = nil;
     if (self.addBoxes) {
-        body = [self addBoxBodyForSprite:sprite:YES];
+        body = [self addBoxBodyForSprite:sprite:NO];
     }
     
     [self.sheet.parent addChild:sprite];
@@ -112,6 +113,13 @@
         [self spriteDone:[self.sheet.children objectAtIndex:i]];
     }
     
+    for (int i = self.sheet.parent.children.count - 1; i >= 0; i--) {
+        CCSprite *sprite = (CCSprite*) [self.sheet.parent.children objectAtIndex:i];
+        if (sprite.tag == RIVER) {
+            [self spriteDone:sprite];
+        }
+    }
+    
 //    NSLog(@"children.count: %i", _sheet.children.count);
 }
 
@@ -133,7 +141,11 @@
         _world->DestroyBody(spriteBody);
     }
     
-    [self.sheet removeChild:sprite cleanup:NO];
+    if (sprite.parent == self.sheet) {
+        [self.sheet removeChild:sprite cleanup:YES];
+    } else {
+        [self.sheet.parent removeChild:sprite cleanup:YES];
+    }
     
 }
 

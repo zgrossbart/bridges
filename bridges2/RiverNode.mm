@@ -16,6 +16,7 @@
  *
  ******************************************************************************/
 
+#import "BridgeColors.h"
 #import "RiverNode.h"
 #import "ScreenShotLayer.h"
 #import "LayerMgr.h"
@@ -31,20 +32,47 @@
 
 @implementation RiverNode
 
--(id)initWithFrame: (CGRect) frame: (NSMutableArray*) rivers: (BOOL) vert {
+-(id)initWithFrame: (CGRect) frame: (NSMutableArray*) rivers: (BOOL) vert: (int) side {
 
     if ((self=[super init] )) {
         self.frame = frame;
         self.rivers = rivers;
         self.vert = vert;
         
-        [self createRiverImage];
+        [self createRiverImage:side];
     }
     
     return self;
 }
 
--(void)createRiverImage {
++(NSString*)getFullRiverFileName: (BOOL) vert: (int) side: (float) width: (float) height: (NSDate*) date {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:[RiverNode getRiverFileName:vert:side:width:height]];
+    NSError *error;
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:&error];
+        NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
+        
+        if ([date compare:fileDate] == NSOrderedDescending) {
+            return path;
+        } else {
+            return nil;
+        }
+    } else {
+        return path;
+    }
+    
+}
+
++(NSString*)getRiverFileName: (BOOL) vert: (int) side: (float) width: (float) height {
+    return [NSString stringWithFormat:@"river_%@_%d_%f_%f.png", vert ? @"v" : @"h",
+            side, width, height];
+    
+}
+
+-(void)createRiverImage: (int) side {
     if ([self.rivers count] < 2) {
         /*
          * If there's only one sprite then there's nothing
@@ -58,21 +86,22 @@
     LayerMgr *layerMgr = [[LayerMgr alloc] initWithSpriteSheet:spriteSheet:nil];
     layerMgr.addBoxes = false;
     
-    CCRenderTexture *renderer	= [CCRenderTexture renderTextureWithWidth:self.frame.size.width height:self.frame.size.height];
+    CCRenderTexture *renderer = [CCRenderTexture renderTextureWithWidth:self.frame.size.width height:self.frame.size.height];
     
     ScreenShotLayer *scene = [[ScreenShotLayer alloc] init];
     
     [scene addChild:spriteSheet];
     
     CGPoint pos = ((CCSprite*) [self.rivers objectAtIndex:0]).position;
+    CGSize size = ((CCSprite*) [self.rivers objectAtIndex:0]).contentSize;
     
     for (CCSprite *river in self.rivers) {
         [layerMgr addChildToSheet:river];
         
         if (self.vert) {
-            river.position = ccp((river.contentSize.width / 2) - 0.5, river.position.y + 1);
+            river.position = ccp((river.contentSize.width / 2) - 0.5, (river.position.y - pos.y) + (river.contentSize.height / 2));
         } else {
-            river.position = ccp(river.position.x + 1, (river.contentSize.height / 2) - 0.5);
+            river.position = ccp((river.position.x - pos.x) + (river.contentSize.width / 2), (river.contentSize.height / 2) - 0.5);
         }
     }
     
@@ -85,9 +114,7 @@
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"river_%@_%f_%f.png",
-                                                                         self.vert ? @"v" : @"h",
-                                                                         self.frame.size.width, self.frame.size.height]];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:[RiverNode getRiverFileName:self.vert:side:self.frame.size.width:self.frame.size.height]];
     
     //NSLog(@"path: %@", path);
     
@@ -101,10 +128,11 @@
     [self.rivers removeAllObjects];
     
     CCSprite *sprite = [CCSprite spriteWithFile:path];
+    sprite.tag = RIVER;
     if (self.vert) {
-        sprite.position = ccp(pos.x, pos.y + (sprite.contentSize.height / 2));
+        sprite.position = ccp(pos.x, (pos.y + (sprite.contentSize.height / 2)) - (size.height / 2));
     } else {
-        sprite.position = ccp(pos.x + (sprite.contentSize.width / 2), pos.y);
+        sprite.position = ccp((pos.x + (sprite.contentSize.width / 2)) - (size.width / 2), pos.y);
     }
     
     [self.rivers addObject:sprite];
