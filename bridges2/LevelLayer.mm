@@ -103,7 +103,11 @@
 
 -(void)readLevel {
     CGSize s = [[CCDirector sharedDirector] winSize];
-    _layerMgr.tileSize = CGSizeMake(s.height / self.currentLevel.tileCount, s.height / self.currentLevel.tileCount);
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        _layerMgr.tileSize = CGSizeMake((s.height - 75) / self.currentLevel.tileCount, s.height / self.currentLevel.tileCount);
+    } else {
+        _layerMgr.tileSize = CGSizeMake(s.height / self.currentLevel.tileCount, s.height / self.currentLevel.tileCount);
+    }
     
     [self.currentLevel addSprites:_layerMgr:self.view];
     
