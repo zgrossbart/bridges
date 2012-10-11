@@ -25,7 +25,9 @@
 #import "JSONKit.h"
 #import "SubwayNode.h"
 
-@interface Level()
+@interface Level() {
+    int _riverCount;
+}
 @property (readwrite, retain) NSMutableArray *rivers;
 @property (readwrite, retain) NSMutableArray *bridges;
 @property (readwrite, retain) NSMutableArray *bridge4s;
@@ -59,6 +61,7 @@
         self.tileCount = TILE_COUNT;
         
         [self parseLevel:jsonString];
+        _riverCount = 0;
     }
     
     return self;    
@@ -132,7 +135,6 @@
     }
     
     NSArray *rivers = [_levelData objectForKey:@"rivers"];
-//    NSLog(@"rivers.count: %i", rivers.count);
     
     /*
      * Add the rivers
@@ -146,6 +148,8 @@
         
         [self addRivers:x:y:[dir isEqualToString:@"v"]:[self getSide:side]:border];
     }
+    
+    NSLog(@"_riverCount: %d", _riverCount);
     
     /*
      * Add the bridges
@@ -602,7 +606,7 @@
 }
 
 -(CCSprite*)addRiver:(float) x:(float) y:(BOOL) vert: (int) range: (NSString*) border {
-    
+    _riverCount++;
     CCSprite *river;
     if (vert) {
         if ([border isEqualToString:@"left"]) {

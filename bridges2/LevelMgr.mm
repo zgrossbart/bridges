@@ -191,11 +191,6 @@
 -(void)doDrawLevels:(CGRect) bounds: (NSMutableArray*) levels {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);        
     
-    b2Vec2 gravity = b2Vec2(0.0f, 0.0f);
-    bool doSleep = false;
-    b2World *world = new b2World(gravity);
-    world->SetAllowSleeping(doSleep);
-    
     [[CCSpriteFrameCache sharedSpriteFrameCache]
      addSpriteFramesWithFile:@"bridgesprites.plist"];
     
@@ -203,7 +198,7 @@
     CCSpriteBatchNode *spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprites.pvr.gz"
                                        capacity:200] retain];
     
-    LayerMgr *layerMgr = [[LayerMgr alloc] initWithSpriteSheet:spriteSheet:world];
+    LayerMgr *layerMgr = [[LayerMgr alloc] initWithSpriteSheet:spriteSheet:nil];
     layerMgr.addBoxes = false;
     
     CCRenderTexture *renderer	= [CCRenderTexture renderTextureWithWidth:bounds.size.width height:bounds.size.height];
@@ -242,8 +237,6 @@
     }
     
     [[CCSpriteFrameCache sharedSpriteFrameCache] removeSpriteFrames];
-    delete world;
-    world = nil;
     
     [spriteSheet release];
     [scene dealloc];
