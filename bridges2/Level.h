@@ -59,6 +59,12 @@
 -(void) removeSprites:(LayerMgr*) layerMgr: (UIView*) view;
 
 /**
+ * Unload all of the sprites loaded by this level.  This level removes
+ * the sprites from memory and not just from the current view
+ */
+-(void)unloadSprites;
+
+/**
  * Determines if the player has won the level.  Returns true
  * if the level is won and false otherwise.
  */

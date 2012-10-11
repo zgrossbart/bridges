@@ -236,7 +236,8 @@
         [UIImagePNGRepresentation(image) writeToFile:path atomically:YES];
         level.screenshot = image;
         
-        [layerMgr removeAll];
+        [level unloadSprites];
+//        [layerMgr removeAll];
         
     }
     

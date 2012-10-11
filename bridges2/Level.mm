@@ -80,6 +80,43 @@
     }
 }
 
+-(void)unloadSprites {
+    for (BridgeNode *node in self.bridges) {
+        [node.bridge removeFromParentAndCleanup:TRUE];
+    }
+    [self.bridges removeAllObjects];
+    
+    for (Bridge4Node *node in self.bridge4s) {
+        [node.bridge removeFromParentAndCleanup:TRUE];
+    }
+    [self.bridge4s removeAllObjects];
+    
+    for (HouseNode *node in self.houses) {
+        [node.house removeFromParentAndCleanup:TRUE];
+    }
+    [self.houses removeAllObjects];
+    
+    for (SubwayNode *node in self.subways) {
+        [node.subway1 removeFromParentAndCleanup:TRUE];
+        [node.subway2 removeFromParentAndCleanup:TRUE];
+    }
+    [self.subways removeAllObjects];
+    
+    for (UILabel *lbl in self.labels) {
+        [lbl removeFromSuperview];
+    }
+    [self.labels removeAllObjects];
+    
+    for (RiverNode *node in self.rivers) {
+        for (CCSprite *river in node.rivers) {
+            [river removeFromParentAndCleanup:TRUE];
+        }
+    }
+    [self.rivers removeAllObjects];
+    
+   // [[CCSpriteFrameCache sharedSpriteFrameCache] removeUnusedSpriteFrames];
+}
+
 -(void)loadSprites {
     
     

@@ -51,7 +51,7 @@
 }
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
-    [[CCSpriteFrameCache sharedSpriteFrameCache] removeSpriteFrames];    
+    [[CCSpriteFrameCache sharedSpriteFrameCache] removeSpriteFrames];
 }
 
 
