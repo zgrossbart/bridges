@@ -226,7 +226,7 @@
         [renderer end];
         
         UIImage *image = [renderer getUIImage];
-        [image imageByScalingAndCroppingForSize:s];
+        image = [image imageByScalingAndCroppingForSize:s];
         [UIImagePNGRepresentation(image) writeToFile:path atomically:NO];
         level.screenshot = image;
         
