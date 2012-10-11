@@ -626,7 +626,12 @@
 
 -(float)getRiverRange: (float) index: (float) size {
     
-    int r = [self rand_lim:4];
+    int r;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        r = [self rand_lim:36];
+    } else {
+        r = [self rand_lim:6];
+    }
     
     if (r == 1) {
         return 3;
