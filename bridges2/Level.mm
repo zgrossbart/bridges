@@ -461,7 +461,7 @@
                 }
                 
                 if (range > 1) {
-                    [rivers addObject:[self addRiver:xi1:j:vert:range:border]];
+                    [rivers insertObject:[self addRiver:xi1:j:vert:range:border] atIndex:[rivers count] - 1];
                 }
                 
                 j += range * (rSprite.contentSize.height);
@@ -483,7 +483,7 @@
                 }
                 
                 if (range > 1) {
-                    [rivers addObject:[self addRiver:i:yi1:vert:range:border]];
+                    [rivers insertObject:[self addRiver:i:yi1:vert:range:border] atIndex:[rivers count] - 1];
                 }
                 
                 i += range * (rSprite.contentSize.width);

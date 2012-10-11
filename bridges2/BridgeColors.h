@@ -80,7 +80,7 @@ static bool const DEBUG_DRAW = true;
  *
  * This variable is used in Level.mm.
  */
-static bool const DRAW_RANDOM_RIVERS = false;
+static bool const DRAW_RANDOM_RIVERS = true;
 
 /**
  * The size of the screen shot icon on iPhone
