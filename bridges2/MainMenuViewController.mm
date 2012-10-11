@@ -43,8 +43,11 @@
 }
 
 -(void) awakeFromNib {
-    
-    [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [[NSBundle mainBundle] loadNibNamed:@"MainViewiPad" owner:self options:nil];
+    } else {
+        [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
+    }
     [self viewDidLoad];
 }
 
@@ -227,7 +230,11 @@
 }
 
 -(IBAction)backToGameTapped:(id)sender {
-    [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [[NSBundle mainBundle] loadNibNamed:@"MainViewiPad" owner:self options:nil];
+    } else {
+        [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
+    }
 }
 
 -(IBAction)aboutTapped:(id)sender {
@@ -288,7 +295,11 @@
 }
 
 -(IBAction)backToMainTapped:(id)sender {
-    [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [[NSBundle mainBundle] loadNibNamed:@"MainViewiPad" owner:self options:nil];
+    } else {
+        [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
+    }
 }
 
 -(IBAction)creditsTapped:(id)sender {

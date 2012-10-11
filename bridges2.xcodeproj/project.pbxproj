@@ -239,6 +239,7 @@
 		CED45E8115FB7D7D0066F0FE /* UIButtonExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */; };
 		CED45E8315FB81EF0066F0FE /* coins.png in Resources */ = {isa = PBXBuildFile; fileRef = CED45E8215FB81EF0066F0FE /* coins.png */; };
 		CED88B371616559000837558 /* level37.json in Resources */ = {isa = PBXBuildFile; fileRef = CED88B361616559000837558 /* level37.json */; };
+		CED983DC16275B590003D4B0 /* MainViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED983DB16275B590003D4B0 /* MainViewiPad.xib */; };
 		CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */; };
 		CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E015EB8A8400094695 /* HouseNode.mm */; };
 		CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E315EB8AF600094695 /* PlayerNode.mm */; };
@@ -711,6 +712,7 @@
 		CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonExtras.m; sourceTree = "<group>"; };
 		CED45E8215FB81EF0066F0FE /* coins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coins.png; sourceTree = "<group>"; };
 		CED88B361616559000837558 /* level37.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level37.json; sourceTree = "<group>"; };
+		CED983DB16275B590003D4B0 /* MainViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewiPad.xib; sourceTree = "<group>"; };
 		CEDBC2DA15EB89DA00094695 /* BridgeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeColors.h; sourceTree = "<group>"; };
 		CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerMgr.h; sourceTree = "<group>"; };
 		CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LayerMgr.mm; sourceTree = "<group>"; };
@@ -1491,6 +1493,7 @@
 				CEBD81F015EACA9D00EE27CF /* MainMenuViewController.mm */,
 				CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */,
 				CED31C74160247510010A1E6 /* MainView.xib */,
+				CED983DB16275B590003D4B0 /* MainViewiPad.xib */,
 				CEBD81EC15EAC92D00EE27CF /* MainWindow.xib */,
 				CEE7AF0515FBD12F00DC0B7F /* YouWonViewController.h */,
 				CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */,
@@ -1658,6 +1661,7 @@
 				CEE145051625A54B007BD1B3 /* level48.json in Resources */,
 				CEE145071625AE7A007BD1B3 /* level49.json in Resources */,
 				CEE145091625B307007BD1B3 /* level50.json in Resources */,
+				CED983DC16275B590003D4B0 /* MainViewiPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
