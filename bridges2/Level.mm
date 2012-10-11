@@ -464,7 +464,7 @@
         
         [rivers addObject:river];
         
-        if (DRAW_RANDOM_RIVERS) {
+        if (DRAW_RIVER_OVERLAY) {
             for (float j = yi1 + rSprite.contentSize.height; j <= yi2 - rSprite.contentSize.height;) {
                 // getRiverRange returns 1, 3, 5 or 11; the width in tiles of the next segment
                 int range = [self getRiverRange:j:yi2];
@@ -496,7 +496,7 @@
         }
         [rivers addObject:river];
         
-        if (DRAW_RANDOM_RIVERS) {
+        if (DRAW_RIVER_OVERLAY) {
             for (float i = xi1 + rSprite.contentSize.width; i <= xi2 - rSprite.contentSize.width;) {
                 int range = [self getRiverRange:i:xi2];
                 
