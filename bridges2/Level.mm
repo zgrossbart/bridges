@@ -453,8 +453,15 @@
              * first river since we're replacing them
              * with the corner sprites.
              */
-            float height = ((yi2 - yi1) + 2) - river.contentSize.height;
+            float height = ((yi2 - yi1) + 2) - (river.contentSize.height / 4);
             [river setScaleY: height/river.contentSize.height];
+            river.position = ccp(river.position.x, river.position.y + (river.contentSize.height / 4));
+        }
+        
+        if (yi2 < [self getWinSize].height - _layerMgr.tileSize.height) {
+            float height = ((yi2 - yi1) + 2) - (river.contentSize.height / 4);
+            [river setScaleY: height/river.contentSize.height];
+            river.position = ccp(river.position.x, river.position.y - (river.contentSize.height / 4));
         }
         
         [rivers addObject:river];
@@ -482,9 +489,9 @@
         CCSprite *river = [self addRiver:xi1:yi1:vert:1:border];
         
         if (border == nil) {
-            float width = (xi2 - xi1) + 2;
+            float width = (xi2 - xi1) - (river.contentSize.width / 3);
             [river setScaleX: width/river.contentSize.width];
-            river.position = ccp(river.position.x + (width / 2), river.position.y);
+            river.position = ccp(river.position.x + (width / 2) + (river.contentSize.width / 3), river.position.y);
             
         }
         [rivers addObject:river];
@@ -526,7 +533,7 @@
             }
             riverEnd.position = ccp(xi1, yi1);
             riverEnd.tag = RIVER;
-            [rivers insertObject:riverEnd atIndex:0];
+            [rivers addObject:riverEnd];
         }
         
         if (yi2 < [self getWinSize].height - _layerMgr.tileSize.height) {
@@ -539,6 +546,7 @@
             riverEnd2.position = ccp(xi2, yi2);
             riverEnd2.tag = RIVER;
             [rivers addObject:riverEnd2];
+            
         }
     }
     
