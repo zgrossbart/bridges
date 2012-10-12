@@ -26,8 +26,9 @@
 #import "SubwayNode.h"
 
 @interface Level() {
-    int _riverCount;
+
 }
+
 @property (readwrite, retain) NSMutableArray *rivers;
 @property (readwrite, retain) NSMutableArray *bridges;
 @property (readwrite, retain) NSMutableArray *bridge4s;
@@ -61,7 +62,6 @@
         self.tileCount = TILE_COUNT;
         
         [self parseLevel:jsonString];
-        _riverCount = 0;
     }
     
     return self;    
@@ -83,6 +83,10 @@
     }
 }
 
+/**
+ * This method unloads the sprites for the current level from memory.  This is important
+ * to make sure that we don't leak memory when loading levels.
+ */
 -(void)unloadSprites {
     for (BridgeNode *node in self.bridges) {
         [node.bridge removeFromParentAndCleanup:TRUE];
@@ -116,8 +120,6 @@
         }
     }
     [self.rivers removeAllObjects];
-    
-   // [[CCSpriteFrameCache sharedSpriteFrameCache] removeUnusedSpriteFrames];
 }
 
 -(void)loadSprites {
@@ -148,8 +150,6 @@
         
         [self addRivers:x:y:[dir isEqualToString:@"v"]:[self getSide:side]:border];
     }
-    
-    NSLog(@"_riverCount: %d", _riverCount);
     
     /*
      * Add the bridges
@@ -227,6 +227,9 @@
     }
 }
 
+/**
+ * Get the side from the BridgeDir enum for the specified string.
+ */
 -(BridgeDir)getSide:(NSString*) side {
     if ([@"left" isEqualToString:side]) {
         return dLeft;
@@ -237,6 +240,9 @@
     }
 }
 
+/**
+ * Get the direction from the BridgeDir enum for the specified string.
+ */
 -(BridgeDir)getDir:(NSString*) dir {
     if ([@"left" isEqualToString:dir]) {
         return dLeft;
@@ -251,6 +257,9 @@
     }
 }
 
+/**
+ * Remove the sprites and controls for this level from the game scene
+ */
 -(void)removeSprites:(LayerMgr*) layerMgr: (UIView*) view {
     self.layerMgr = layerMgr;
     
@@ -278,6 +287,10 @@
     
 }
 
+/**
+ * Add the sprites and controls from this level to the game.  This will
+ * create the sprite objects if they don't exist yet.
+ */
 -(void)addSprites: (LayerMgr*) layerMgr: (UIView*) view {
     
     self.layerMgr = layerMgr;
@@ -330,6 +343,9 @@
     
 }
 
+/**
+ * Get the BridgeColor for the specified string.
+ */
 -(BridgeColor)getColor:(NSString*) color {
     if ([color isEqualToString:@"red"]) {
         return cRed;
@@ -346,6 +362,22 @@
     }
 }
 
+/**
+ * Adding rivers is on of the most complex pieces of the game.  A river is a set of sprites
+ * that range between two points.  They also have extra sprites for rounded corners, overlay 
+ * images to add texture, and special joint sprites to make the borders line up.  
+ *
+ * There's a single river sprite and we scale it either vertically or horizontally to fill the
+ * required space.  Then we add the extra sprites to clean up the river.
+ *
+ * @param xSpec the specification of the x coordinate of the river.  This could be a single coordinate 
+ *              or a range.
+ * @param ySpec the specification of the y coordinate of the river.  This could be a single coordinate
+ *              or a range.
+ * @param vert true if this is a vertical river and false if it's horizontal.
+ * @param side the side of this river.  This variable controls adding rounded corners to the ends of the river
+ * @param border the option border specifiers.  This value is used for river joints.
+ */
 -(void)addRivers:(NSString*) xSpec:(NSString*) ySpec:(BOOL) vert: (int) side: (NSString*) border {
     /*
      * There are a few ways to define a tile coordinate.
@@ -616,6 +648,9 @@
     }
 }
 
+/**
+ * A little utility method to generate a random number inside a specific range.
+ */
 -(int) rand_lim: (int) limit {
     int divisor = RAND_MAX/(limit+1);
     int retval;
@@ -627,6 +662,12 @@
     return retval;
 }
 
+/**
+ * This method generates a random range of the river overlay image.
+ *
+ * @param index the index of the point in the river array.
+ * @param size the total length of the river array.
+ */
 -(float)getRiverRange: (float) index: (float) size {
     
     int r;
@@ -647,8 +688,16 @@
     }    
 }
 
+/**
+ * Add an individual river sprite to the level.
+ *
+ * @param x the x coordinate of the river sprite
+ * @param y the y coordinate of the river sprite
+ * @param vert true if this river is vertical and false otherwise
+ * @param range the range of the sprite.  This controls which image we use
+ * @param border the border of the sprite.  This also controls part of which image we use
+ */
 -(CCSprite*)addRiver:(float) x:(float) y:(BOOL) vert: (int) range: (NSString*) border {
-    _riverCount++;
     CCSprite *river;
     if (vert) {
         if ([border isEqualToString:@"left"]) {
@@ -694,9 +743,14 @@
     
 }
 
+/**
+ * Add a 4way bridge node to the level
+ *
+ * @param x the x coordinate of the bridge node
+ * @param y the y coordinate of the bridge node
+ * @param color the color of the bridge.  Right now we just support none of 4 way bridges
+ */
 -(Bridge4Node*)addBridge4:(float) x:(float) y:(BridgeColor) color {
-    
-    //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
     Bridge4Node *bridgeNode = [[[Bridge4Node alloc] initWithTagAndColor:color:self.layerMgr] autorelease];
 
@@ -710,9 +764,17 @@
     
 }
 
+/**
+ * Add a bridge to this river
+ *
+ * @param x the x coordinate of this bridge
+ * @param y the y coordinate of this bridge
+ * @param vertical true if this bridge is vertical and false otherwise
+ * @param dir the direction you must cross this bridge
+ * @param color the color of the bridge
+ * @param coins the number of coins it takes to fully cross this bridge
+ */
 -(BridgeNode*)addBridge:(float) x:(float) y:(bool) vertical:(BridgeDir) dir: (BridgeColor) color: (NSString*) coins {
-    
-    //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
     BridgeNode *bridgeNode = [[[BridgeNode alloc] initWithOrientAndDirAndCoins:vertical:dir:color:self.layerMgr: [self coins:coins]] autorelease];
     CGPoint startPos = [self tileToPoint:x:y];
@@ -725,6 +787,14 @@
     
 }
 
+/**
+ * Add a label to this level
+ *
+ * @param x the x coordinate of this label
+ * @param y the y coordinate of this label
+ * @param w the width of this label
+ * @param h the minimum height of this label.  The height will grow to support more text.
+ */
 -(UIButton*)addLabel:(float) x:(float) y:(float) w:(float) h:(NSString*) text {
 
     /*
@@ -764,6 +834,10 @@
     
 }
 
+/**
+ * Determine if the player has won this level.  Returns true if the player has won and
+ * false otherwise.
+ */
 -(bool)hasWon {
     for (BridgeNode *n in _bridges) {
         if (!n.isCrossed) {
@@ -787,6 +861,9 @@
     
 }
 
+/**
+ * Get the number of coins the player starts with on this level
+ */
 -(int)coins:(NSString*)coins {
     if (coins) {
         return [coins integerValue];
@@ -795,9 +872,15 @@
     }
 }
 
+/**
+ * Add a house to this level
+ *
+ * @param x the x coordinate of this house
+ * @param y the y coordinate of this house
+ * @param color the color of this house
+ * @param coins the number of coins available at this house
+ */
 -(HouseNode*)addHouse:(float) x:(float) y:(BridgeColor) color:(NSString*) coins {
-    
-    //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
     HouseNode *houseNode = [[[HouseNode alloc] initWithColorAndCoins:color:self.layerMgr:[self coins:coins]] autorelease];
     CGPoint startPos = [self tileToPoint:x:y];
@@ -810,9 +893,16 @@
     
 }
 
+/**
+ * Add a subway pair to this level
+ *
+ * @param x1 the x coordinate of the first subway
+ * @param y1 the y coordinate of the first subway
+ * @param x2 the x coordinate of the second subway
+ * @param y2 the y coordinate of the second subway
+ * @param color the color of the subway
+ */
 -(SubwayNode*)addSubway:(float) x1:(float) y1:(float) x2:(float) y2:(BridgeColor) color {
-    
-    //   CCSprite *bridge = [CCSprite spriteWithSpriteFrameName:@"bridge_v.png"];
     
     SubwayNode *subwayNode = [[[SubwayNode alloc] initWithColor:color:self.layerMgr] autorelease];
     
@@ -829,20 +919,7 @@
  * Gets the dimensions of the current screen
  */
 -(CGSize)getWinSize {
-    //CGRect r = [[UIScreen mainScreen] bounds];
-    //return r.size;
     return [[CCDirector sharedDirector] winSize];
-}
-
--(void)resizeSprite:(CCSprite*) sprite: (float) tiles: (bool) vert {
-    if (vert) {
-        sprite.scaleY = self.layerMgr.tileSize.width/sprite.contentSize.width;
-        sprite.contentSize = CGSizeMake(sprite.contentSize.width, self.layerMgr.tileSize.height);
-    } else {
-        sprite.scaleX = self.layerMgr.tileSize.width/sprite.contentSize.width;
-        sprite.contentSize = CGSizeMake(self.layerMgr.tileSize.width, sprite.contentSize.height);
-    }
-    
 }
 
 /**
@@ -859,12 +936,13 @@
  * Convert a position in tiles to a point on the screen
  */
 -(CGPoint)tileToPoint:(float) x: (float)y {
-//    printf("tileToPoint (%i, %i)\n", x, y);
-//    printf("tileSize (%f, %f)\n", self.layerMgr.tileSize.width, self.layerMgr.tileSize.height);
     return CGPointMake(x * self.layerMgr.tileSize.width,
                        y * self.layerMgr.tileSize.height);
 }
 
+/**
+ * Get an array containing all of the UIKit controls in this level
+ */
 -(NSArray*) controls {
     NSMutableArray *controls = [NSMutableArray arrayWithCapacity:10];
     
@@ -893,6 +971,10 @@
     return controls;
 }
 
+/**
+ * Determines if this levels uses coins or not.  This controls the visibility of the 
+ * coins label in the toolbar on the right side.
+ */
 -(bool)hasCoins {
     if (self.coins > 0) {
         return true;

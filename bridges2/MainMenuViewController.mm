@@ -67,17 +67,14 @@
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
     
-    [self checkRate];
-    
-    //    [self.navigationBar pushNavigationItem:self.navigationItem animated:NO];
-
+    [self checkForAppRating];
 }
 
 /**
  * Check to see if the user has rated the app in the app store.  If they haven't then
  * we show the dialog reminding them every 20 times they run the game.
  */
--(void)checkRate {
+-(void)checkForAppRating {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     bool hasRated = [prefs boolForKey:@"hasRated"];
     
@@ -113,6 +110,9 @@
     }
 }
 
+/**
+ * Take the user to our page in the App store so they can rate the game.
+ */
 -(IBAction)rateGame {
     [[UIApplication sharedApplication]
      openURL:[NSURL URLWithString:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=409954448"]];

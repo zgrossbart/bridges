@@ -43,7 +43,14 @@
  */
 -(CCSprite*)ride: (CCSprite*) entry;
 
+/**
+ * The sprite of the first subway in this pair
+ */
 @property (readonly, retain) CCSprite *subway1;
+
+/**
+ * The sprite of the second subway in this pair
+ */
 @property (readonly, retain) CCSprite *subway2;
 
 @end
