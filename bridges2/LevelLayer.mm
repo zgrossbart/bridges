@@ -101,6 +101,9 @@
     
 }
 
+/**
+ * Read in the current level and load all of the nodes into the game scene.
+ */
 -(void)readLevel {
     CGSize s = [[CCDirector sharedDirector] winSize];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -126,6 +129,9 @@
     [self updateAllBoxBodies];
 }
 
+/**
+ * Reset the all of the moves in this level.
+ */
 -(void)reset {
     [_layerMgr removeAll];
     [self.currentLevel removeSprites: _layerMgr: self.view];
@@ -198,8 +204,6 @@
     self.currentLevel = nil;
     
     [self setLevel:level];
-    
-    
 }
 
 -(void)draw {
@@ -228,8 +232,11 @@
     }
 }
 
+/**
+ * Draw the tile grid.  This is used for debug drawing so we can see the 
+ * grid and plan out level coordinates.
+ */
 -(void)drawGrid {
-    
     
     CGSize s = [[CCDirector sharedDirector] winSize];
     
@@ -250,9 +257,12 @@
         }
         ccDrawLine(ccp(0, i), ccp(s.width, i));
     }
-    
 }
 
+/**
+ * This method finds all of the box bodies and updates them to match the positions
+ * of all the sprites in the game scene.
+ */
 -(void)updateAllBoxBodies {
     
     for(b2Body *b = _world->GetBodyList(); b; b=b->GetNext()) {
@@ -306,8 +316,6 @@
         }
     }
     
-    
-    //    std::vector<b2Body *>toDestroy;
     std::vector<MyContact>::iterator pos;
     for(pos = _contactListener->_contacts.begin();
         pos != _contactListener->_contacts.end(); ++pos) {
@@ -795,8 +803,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         [defaults synchronize];
         
         [self showConfetti:self.player.player.position.x:self.player.player.position.y];
-    }
-    
+    }    
 }
 
 /**
