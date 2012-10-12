@@ -19,6 +19,12 @@
 #import <UIKit/UIKit.h>
 #import "GameSceneViewController.h"
 
+/**
+ * The MainMenuViewController handles most of the user interactions.  It manages
+ * the menu interactions for the iPhone and the iPad, handles the main window view, 
+ * and transitions to the you won page.
+ *
+ */
 @interface MainMenuViewController : UIViewController <UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     GameSceneViewController *_GameSceneViewController;
 
@@ -34,13 +40,26 @@
 
 @property (nonatomic) int curIndex;
 
+/**
+ * Tapping the about button sends the user to the HTML view of the about screen loaded
+ * from about.html.
+ */
 -(IBAction)aboutTapped:(id)sender;
 
+/**
+ * These two methods send the user back to the main view from the about and config screens.
+ */
 -(IBAction)backToGameTapped:(id)sender;
-
 -(IBAction)backToMainTapped:(id)sender;
 
+/**
+ * Tapping the play button sends the user to the menu where they can choose a level to play.
+ */
 -(IBAction)playTapped:(id)sender;
+
+/**
+ * Send the user to the credits screen defined in credits.html.
+ */
 -(IBAction)creditsTapped:(id)sender;
 
 

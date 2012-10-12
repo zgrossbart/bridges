@@ -22,8 +22,18 @@
  */
 @protocol LevelController <NSObject>
 @required
+
+/**
+ * Called when the user has won the level.  This method hides the level
+ * scene and takes the user to the you won view.
+ */
 -(void) won;
 
+/**
+ * Shows a message at the bottom of the screen.  These messages are mostly 
+ * used for warnings when you try to interact with an object in a way that's
+ * against the rules.
+ */
 -(void) showMessage: (NSString*) msg;
 
 @end

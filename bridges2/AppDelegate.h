@@ -18,6 +18,11 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * Our AppDelegate has two main jobs.  It clears out the sprite cache when we're 
+ * low on memory and counts each time the application runs so we can prompt people
+ * to rate the application after playing 20 times.
+ */
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

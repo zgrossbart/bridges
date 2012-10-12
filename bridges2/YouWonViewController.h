@@ -20,16 +20,38 @@
 #import "Level.h"
 #import "LevelLayer.h"
 
+/**
+ * The You Won screen shots up when you beat a level.  It gives you the chance to replay,
+ * move to the next level, or jump back to the menu.
+ */
 @interface YouWonViewController : UIViewController {
     @private
     IBOutlet UIButton *_nextButton;
 }
 
+/**
+ * Replay the current level
+ */
 -(IBAction)replayTapped:(id)sender;
+
+/**
+ * Jump to the next level
+ */
 -(IBAction)nextTapped:(id)sender;
+
+/**
+ * Go back to the menu to choose a different level
+ */
 -(IBAction)menuTapped:(id)sender;
 
+/**
+ * The current level the user just won.
+ */
 @property (nonatomic, retain) Level *currentLevel;
+
+/**
+ * The level layer gets messages to restart the level.
+ */
 @property (nonatomic, retain) LevelLayer *layer;
 
 @end

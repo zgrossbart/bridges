@@ -22,6 +22,11 @@
 #import "YouWonViewController.h"
 #import "LevelController.h"
 
+/**
+ * The GameSceneViewController handles the main view of the game.  It has a button bar
+ * on the right with a few navigation buttons and passes most of the game playing off to
+ * the game scenes.
+ */
 @interface GameSceneViewController : UIViewController<CCDirectorDelegate,LevelController> {
     UIWindow *window_;
 	UINavigationController *navController_;
@@ -39,10 +44,27 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (retain) YouWonViewController *youWonController;
 
+/**
+ * Show the specified level and make it playable.
+ */
 -(void)showLevel:(Level*) level;
 
+/**
+ * Tapping the home button sends the user back to the menu screen to 
+ * choose a new level
+ */
 -(IBAction)goHomeTapped:(id)sender;
+
+/**
+ * Tapping the undo button undoes the last move the player made in 
+ * the game scene.
+ */
 -(IBAction)undoTapped:(id)sender;
+
+/**
+ * Tapping the refresh button completely reloads the level and resets
+ * it to the same state as when you just loaded it.
+ */
 -(IBAction)refreshTapped:(id)sender;
 
 
