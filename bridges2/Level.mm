@@ -523,7 +523,7 @@
         if (border == nil) {
             float width = (xi2 - xi1) - (river.contentSize.width / 3);
             [river setScaleX: width/river.contentSize.width];
-            river.position = ccp(river.position.x + (width / 2) + (river.contentSize.width / 3), river.position.y);
+            river.position = ccp(river.position.x + (width / 2), river.position.y);
             
         }
         [rivers addObject:river];
