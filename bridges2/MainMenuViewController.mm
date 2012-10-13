@@ -20,6 +20,7 @@
 #import "LevelMgr.h"
 #import "UIImageExtras.h"
 #import "LevelCell.h"
+#import "StyleUtil.h"
 
 @interface MainMenuViewController() {
     int _noOfSection;
@@ -49,6 +50,14 @@
         [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
     }
     [self viewDidLoad];
+    
+    [self styleButtons];
+}
+
+-(void)styleButtons {
+    [StyleUtil styleMenuButton:_playBtn];
+    [StyleUtil styleMenuButton:_aboutBtn];
+    [StyleUtil styleMenuButton:_creditsBtn];
 }
 
 -(void)viewDidLoad {
@@ -235,6 +244,8 @@
     } else {
         [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
     }
+    
+    [self styleButtons];
 }
 
 -(IBAction)aboutTapped:(id)sender {
@@ -300,6 +311,8 @@
     } else {
         [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
     }
+    
+    [self styleButtons];
 }
 
 -(IBAction)creditsTapped:(id)sender {
@@ -406,6 +419,9 @@
     [_resetBtn release];
     [_webView release];
     [_aboutNavItem release];
+    [_playBtn release];
+    [_aboutBtn release];
+    [_creditsBtn release];
     [super dealloc];
 }
 

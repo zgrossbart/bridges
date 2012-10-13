@@ -26,6 +26,8 @@
  */
 @interface YouWonViewController : UIViewController {
     @private
+    IBOutlet UIButton *_menuButton;
+    IBOutlet UIButton *_replayButton;
     IBOutlet UIButton *_nextButton;
 }
 

@@ -25,5 +25,6 @@
 @interface StyleUtil : NSObject
 
 +(void)styleButton:(UIButton*) button;
++(void)styleMenuButton:(UIButton*) button;
 
 @end

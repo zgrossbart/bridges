@@ -18,6 +18,7 @@
 
 #import "YouWonViewController.h"
 #import "LevelMgr.h"
+#import "StyleUtil.h"
 
 @interface YouWonViewController ()
 
@@ -43,6 +44,8 @@
     [super viewDidLoad];
     int i = [[LevelMgr getLevelMgr].levelIds indexOfObject:self.currentLevel.levelId];
     
+    [self styleButtons];
+    
     if (i == [[LevelMgr getLevelMgr].levelIds count] - 1) {
         /*
          * Then we're at the end and we hide the next button.  We should probably
@@ -53,6 +56,13 @@
         _nextButton.hidden = NO;
     }
 }
+
+-(void)styleButtons {
+    [StyleUtil styleMenuButton:_nextButton];
+    [StyleUtil styleMenuButton:_menuButton];
+    [StyleUtil styleMenuButton:_replayButton];
+}
+
 
 -(void)viewDidUnload {
     [super viewDidUnload];
@@ -114,6 +124,8 @@
 
 - (void)dealloc {
     [_nextButton release];
+    [_replayButton release];
+    [_menuButton release];
     [super dealloc];
 }
 @end

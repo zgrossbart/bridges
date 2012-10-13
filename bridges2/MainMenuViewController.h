@@ -33,6 +33,10 @@
     IBOutlet UINavigationItem *_aboutNavItem;
     IBOutlet UIBarButtonItem *_resetBtn;
     IBOutlet UIWebView *_webView;
+    
+    IBOutlet UIButton *_playBtn;
+    IBOutlet UIButton *_aboutBtn;
+    IBOutlet UIButton *_creditsBtn;
 }
 
 @property (retain) GameSceneViewController *GameSceneViewController;

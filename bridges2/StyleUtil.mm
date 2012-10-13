@@ -23,10 +23,16 @@
 @implementation StyleUtil
 
 +(void)styleButton:(UIButton*) button {
+    
+    if (button == nil) {
+        return;
+    }
+    
     button.titleLabel.opaque = NO;
     button.titleLabel.backgroundColor = [UIColor clearColor];
     button.titleLabel.font = [UIFont boldSystemFontOfSize:17];
     button.titleLabel.textColor = [UIColor whiteColor];
+    [button setTitleColor:[UIColor whiteColor] forState: UIControlStateNormal];
     button.titleLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.5];
     button.titleLabel.shadowOffset = CGSizeMake(0, -1);
     button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -38,6 +44,16 @@
     [button.layer setBorderColor:[[UIColor blackColor] CGColor]];
     
     button.frame = CGRectMake(button.frame.origin.x, button.frame.origin.y, button.frame.size.width + 6, button.frame.size.height + 3);
+}
+
++(void)styleMenuButton:(UIButton*) button {
+    
+    if (button == nil) {
+        return;
+    }
+    
+    [StyleUtil styleButton:button];
+    [button setTitleColor:[UIColor yellowColor] forState: UIControlStateHighlighted];
 }
 
 @end
