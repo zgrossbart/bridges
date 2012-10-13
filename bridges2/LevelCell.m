@@ -49,7 +49,7 @@
         [self.screenshot.layer setCornerRadius:8.0f];
         [self.screenshot.layer setMasksToBounds:YES];
         self.screenshot.layer.borderColor = [UIColor colorWithRed:(1.0 * 170) / 255 green:(1.0 * 170) / 255 blue:(1.0 * 170) / 255 alpha:0.5].CGColor;
-        self.screenshot.layer.borderWidth = 1.0f;
+        self.screenshot.layer.borderWidth = 2.0f;
     } else {
         self.screenshot.layer.borderColor = [[UIColor clearColor] CGColor];
     }
