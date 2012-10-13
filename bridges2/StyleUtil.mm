@@ -53,7 +53,7 @@
     }
     
     [StyleUtil styleButton:button];
-    [button setTitleColor:[UIColor yellowColor] forState: UIControlStateHighlighted];
+    [button setTitleColor:[UIColor colorWithRed:(1.0 * 255) / 255 green:(1.0 * 241) / 255 blue:(1.0 * 70) / 255 alpha:0.9] forState: UIControlStateHighlighted];
 }
 
 @end
