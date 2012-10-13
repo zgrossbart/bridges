@@ -36,7 +36,7 @@
     
     IBOutlet UIButton *_playBtn;
     IBOutlet UIButton *_aboutBtn;
-    IBOutlet UIButton *_creditsBtn;
+    IBOutlet UIButton *_backBtn;
 }
 
 @property (retain) GameSceneViewController *GameSceneViewController;

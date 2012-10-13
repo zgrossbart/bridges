@@ -57,7 +57,7 @@
 -(void)styleButtons {
     [StyleUtil styleMenuButton:_playBtn];
     [StyleUtil styleMenuButton:_aboutBtn];
-    [StyleUtil styleMenuButton:_creditsBtn];
+    [StyleUtil styleMenuButton:_backBtn];
 }
 
 -(void)viewDidLoad {
@@ -260,6 +260,8 @@
     [_webView loadRequest:requestObj];*/
     
     _aboutNavItem.title = @"About Seven Bridges";
+    
+    [self styleButtons];
 }
 
 -(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
@@ -421,7 +423,7 @@
     [_aboutNavItem release];
     [_playBtn release];
     [_aboutBtn release];
-    [_creditsBtn release];
+    [_backBtn release];
     [super dealloc];
 }
 

@@ -256,7 +256,6 @@
 		CEDF5E6D1622EACD003D89FA /* level29.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDF5E6C1622EACD003D89FA /* level29.json */; };
 		CEDF5E711622F13C003D89FA /* level32.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDF5E701622F13C003D89FA /* level32.json */; };
 		CEE0277416067FE5007C4CDD /* level30.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE0277316067FE5007C4CDD /* level30.json */; };
-		CEE1450216258945007BD1B3 /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CEE1450116258945007BD1B3 /* credits.html */; };
 		CEE145051625A54B007BD1B3 /* level48.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145041625A54B007BD1B3 /* level48.json */; };
 		CEE145071625AE7A007BD1B3 /* level49.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145061625AE7A007BD1B3 /* level49.json */; };
 		CEE145091625B307007BD1B3 /* level50.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145081625B307007BD1B3 /* level50.json */; };
@@ -738,7 +737,6 @@
 		CEDF5E6C1622EACD003D89FA /* level29.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level29.json; sourceTree = "<group>"; };
 		CEDF5E701622F13C003D89FA /* level32.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level32.json; sourceTree = "<group>"; };
 		CEE0277316067FE5007C4CDD /* level30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level30.json; sourceTree = "<group>"; };
-		CEE1450116258945007BD1B3 /* credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = credits.html; sourceTree = "<group>"; };
 		CEE145041625A54B007BD1B3 /* level48.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level48.json; sourceTree = "<group>"; };
 		CEE145061625AE7A007BD1B3 /* level49.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level49.json; sourceTree = "<group>"; };
 		CEE145081625B307007BD1B3 /* level50.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level50.json; sourceTree = "<group>"; };
@@ -1512,7 +1510,6 @@
 			isa = PBXGroup;
 			children = (
 				CEEE7DEA162211BD00B84A96 /* about.html */,
-				CEE1450116258945007BD1B3 /* credits.html */,
 				CEEE7DF0162219FE00B84A96 /* anothercolor.png */,
 				CEEE7DEB162211BD00B84A96 /* bridges.css */,
 				CEEE7DF416221D9A00B84A96 /* konigsberg_1910.jpg */,
@@ -1662,7 +1659,6 @@
 				CECD016316248C0F008F7536 /* level45.json in Resources */,
 				CECD01661624951F008F7536 /* level46.json in Resources */,
 				CE0298C11624B4300028274B /* level47.json in Resources */,
-				CEE1450216258945007BD1B3 /* credits.html in Resources */,
 				CEE145051625A54B007BD1B3 /* level48.json in Resources */,
 				CEE145071625AE7A007BD1B3 /* level49.json in Resources */,
 				CEE145091625B307007BD1B3 /* level50.json in Resources */,
