@@ -56,7 +56,7 @@
 
 -(id)init {
     
-    if( (self=[super initWithColor:ccc4(249, 242, 224, 255)] )) {
+    if( (self=[super initWithColor:ccc4(240, 225, 199, 255)] )) {
         
         director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
         
