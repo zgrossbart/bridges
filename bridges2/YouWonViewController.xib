@@ -82,7 +82,6 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">Replay</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="686035357">
 							<int key="NSColorSpace">3</int>
@@ -118,7 +117,6 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">Next</string>
 						<reference key="IBUIHighlightedTitleColor" ref="686035357"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
@@ -140,7 +138,6 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">Menu</string>
 						<reference key="IBUIHighlightedTitleColor" ref="686035357"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
