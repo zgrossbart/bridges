@@ -9,20 +9,15 @@
                 "orient": "h"
             },
             {
-                "x": "l-15",
-                "y": "15",
-                "orient": "h"
+                "x": "10",
+                "y": "b-15",
+                "orient": "v"
             },
             {
                 "x": "15",
                 "y": "10-25",
                 "orient": "v",
                 "side": "right"
-            },
-            {
-                "x": "10",
-                "y": "b-15",
-                "orient": "v"
             },
             {
                 "x": "10-25",
@@ -46,15 +41,68 @@
                 "orient": "h"
             },
             {
+                "x": "25",
+                "y": "10-20",
+                "orient": "v",
+                "side": "right"
+            },
+            {
                 "x": "15-25",
                 "y": "20",
                 "orient": "h"
             },
             {
-                "x": "25",
-                "y": "10-20",
+                "x": "l-15",
+                "y": "15",
+                "orient": "h"
+            },
+            {
+                "x": "5",
+                "y": "15",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "10",
+                "y": "15",
+                "orient": "h",
+				"border": "top"
+            },
+            {
+                "x": "15",
+                "y": "10",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "15",
+                "y": "20",
                 "orient": "v",
-                "side": "right"
+				"border": "left"
+            },
+            {
+                "x": "10",
+                "y": "5",
+                "orient": "v",
+				"border": "right"
+            },
+            {
+                "x": "20",
+                "y": "10",
+                "orient": "h",
+				"border": "top"
+            },
+            {
+                "x": "10",
+                "y": "15",
+                "orient": "h",
+				"border": "top"
+            },
+            {
+                "x": "10",
+                "y": "10",
+                "orient": "v",
+				"border": "left"
             }
         ],
         "bridges": [

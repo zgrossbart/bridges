@@ -52,7 +52,7 @@
     
     b2Body *body = nil;
     
-    if (self.addBoxes && sprite.tag != RIVEROVERLAY) {
+    if (self.addBoxes) {
         body = [self addBoxBodyForSprite:sprite:YES];
     }
     
@@ -63,7 +63,7 @@
 
 -(b2Body*)addChildToSheetParent:(CCSprite*) sprite {
     b2Body *body = nil;
-    if (self.addBoxes && sprite.tag != RIVEROVERLAY) {
+    if (self.addBoxes) {
         body = [self addBoxBodyForSprite:sprite:NO];
     }
     
@@ -78,6 +78,17 @@
 }
 
 -(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite: (bool) bullet {
+    
+    if (sprite.tag == RIVEROVERLAY ||
+        sprite.tag == RIVERJOINT) {
+        /*
+         * River overlays and joints sit over existing river
+         * sprites to make them look nicer.  The player will 
+         * bump into the box of the underlying river sprite
+         * so we don't need extra boxes.
+         */
+        return nil;
+    }
     
     b2BodyDef spriteBodyDef;
     spriteBodyDef.bullet = bullet;

@@ -490,7 +490,7 @@
             river.position = ccp(river.position.x, river.position.y + (river.contentSize.height / 4));
         }
         
-        if (yi2 < [self getWinSize].height - _layerMgr.tileSize.height) {
+        if (side != dNone && yi2 < [self getWinSize].height - _layerMgr.tileSize.height) {
             float height = ((yi2 - yi1) + 2) - (river.contentSize.height / 4);
             [river setScaleY: height/river.contentSize.height];
             river.position = ccp(river.position.x, river.position.y - (river.contentSize.height / 4));
@@ -736,7 +736,12 @@
     CGPoint startPos = ccp(x, y);
     
     river.position = startPos;
-    river.tag = RIVER;
+    
+    if (border != nil) {
+        river.tag = RIVERJOINT;
+    } else {
+        river.tag = RIVER;
+    }
     
     
     return river;
