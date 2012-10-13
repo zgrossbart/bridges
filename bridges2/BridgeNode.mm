@@ -228,7 +228,7 @@
 -(void)dealloc {
     
     if (_label != nil) {
-        [_label dealloc];
+        [_label release];
     }
     
     [_bridge release];
