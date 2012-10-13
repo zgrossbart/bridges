@@ -14,6 +14,12 @@
                 "orient": "h"
             },
             {
+                "x": "15",
+                "y": "10-25",
+                "orient": "v",
+                "side": "right"
+            },
+            {
                 "x": "10",
                 "y": "b-15",
                 "orient": "v"
@@ -32,12 +38,7 @@
                 "x": "5",
                 "y": "15-25",
                 "orient": "v",
-				"side": "left"
-            },
-            {
-                "x": "15",
-                "y": "10-25",
-                "orient": "v"
+                "side": "left"
             },
             {
                 "x": "5-15",
@@ -53,7 +54,7 @@
                 "x": "25",
                 "y": "10-20",
                 "orient": "v",
-				"side": "right"
+                "side": "right"
             }
         ],
         "bridges": [
@@ -61,13 +62,13 @@
                 "x": "12.5",
                 "y": "15",
                 "orient": "v",
-				"color": "orange"
+                "color": "orange"
             },
             {
                 "x": "12.5",
                 "y": "10",
                 "orient": "v",
-				"color": "blue"
+                "color": "blue"
             },
             {
                 "x": "10",
@@ -93,7 +94,7 @@
                 "x": "2.5",
                 "y": "5",
                 "orient": "v",
-				"color": "red"
+                "color": "red"
             },
             {
                 "x": "7.5",
@@ -119,7 +120,7 @@
                 "x": "20",
                 "y": "7.5",
                 "orient": "h",
-				"color": "green"
+                "color": "green"
             },
             {
                 "x": "25",
