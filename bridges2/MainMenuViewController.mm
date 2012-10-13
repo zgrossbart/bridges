@@ -77,6 +77,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
     
     [self checkForAppRating];
+    
+    _xOfY.text = [self getXofY];
 }
 
 /**
@@ -272,6 +274,21 @@
         _navItem.title = @"Select a level";
     }
     [self styleButtons];
+    _xOfY.text = [self getXofY];
+}
+
+-(NSString*)getXofY {
+    int x = 0;
+    int y = [[LevelMgr getLevelMgr].levelIds count];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    for (NSString *levelId in [LevelMgr getLevelMgr].levelIds) {
+        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", levelId]]) {
+            x ++;
+        }
+    }
+    
+    return [NSString stringWithFormat:@"%d of %d", x, y];
 }
 
 -(void)loadLevelPickerView {
@@ -404,6 +421,7 @@
     [_playBtn release];
     [_aboutBtn release];
     [_backBtn release];
+    [_xOfY release];
     [super dealloc];
 }
 
