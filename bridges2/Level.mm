@@ -812,15 +812,19 @@
     
     button.frame = CGRectMake(s.x, s.y, w * _layerMgr.tileSize.width, h * _layerMgr.tileSize.height);
     [button setTitle:text forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    button.titleLabel.opaque = NO;
+    button.titleLabel.backgroundColor = [UIColor clearColor];
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:17];
+    button.titleLabel.textColor = [UIColor whiteColor];
+    button.titleLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.5];
+    button.titleLabel.shadowOffset = CGSizeMake(0, -1);
+    button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     [button.layer setCornerRadius:8.0f];
     [button.layer setMasksToBounds:YES];
-    [button.layer setBorderWidth:1.0f];
-    [button.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
-    button.backgroundColor = [UIColor colorWithRed:(1.0 * 255) / 255 green:(1.0 * 255) / 255 blue:(1.0 * 153) / 255 alpha:0.7];
-    button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    button.titleLabel.font = [UIFont fontWithName:@"Verdana" size: 14.0];
+    button.backgroundColor = [UIColor colorWithRed:(1.0 * 45) / 255 green:(1.0 * 43) / 255 blue:(1.0 * 40) / 255 alpha:0.9];
     button.titleEdgeInsets = UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0);
+    [button.layer setBorderWidth:1.0f];
+    [button.layer setBorderColor:[[UIColor blackColor] CGColor]];
     
     [button sizeThatFits:CGSizeMake(w, 0)];
     
