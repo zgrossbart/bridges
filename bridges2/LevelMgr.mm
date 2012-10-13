@@ -239,7 +239,7 @@
     
     [spriteSheet release];
     [layerMgr release];
-    [scene dealloc];
+    [scene release];
 }
 
 -(void)dealloc {
