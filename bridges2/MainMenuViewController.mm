@@ -317,15 +317,6 @@
     [self styleButtons];
 }
 
--(IBAction)creditsTapped:(id)sender {
-    [[NSBundle mainBundle] loadNibNamed:@"AboutViewiPad" owner:self options:nil];
-    
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"credits" withExtension:@".html"];
-    [_webView loadRequest:[NSURLRequest requestWithURL:url]];
-    
-    _aboutNavItem.title = @"The Credits";
-}
-
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*) collectionView {
     if ([[LevelMgr getLevelMgr].levelIds count] % _noOfSection == 0) {
         return [[LevelMgr getLevelMgr].levelIds count] / _noOfSection;
