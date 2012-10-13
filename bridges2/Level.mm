@@ -452,6 +452,14 @@
     float xi2 = [self parseInt:x2] * self.layerMgr.tileSize.width;
     float yi2 = [self parseInt:y2] * self.layerMgr.tileSize.height;
     
+    if (xi1 > xi2) {
+        [NSException raise:@"Invalid level definition" format:@"The level definition %@ is invalid.  Rivers must start before they end and this one starts at %f and ends at %f", self.name, xi1, xi2];
+    }
+    
+    if (yi1 > yi2) {
+        [NSException raise:@"Invalid level definition" format:@"The level definition %@ is invalid.  Rivers must start before they end and this one starts at %f and ends at %f", self.name, yi1, yi2];
+    }
+    
     NSMutableArray *rivers = [NSMutableArray arrayWithCapacity:10];
     
     CCSprite *rSprite;

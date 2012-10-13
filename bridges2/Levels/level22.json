@@ -1,7 +1,7 @@
 {
     "level": {
         "id": "22",
-        "name": "4-way bridge",
+        "name": "Around again",
 		"rivers": [
 	        {
 	            "x": "l-28",
@@ -15,20 +15,14 @@
 	        },
 	        {
 	            "x": "23.5",
-	            "y": "15-20",
+	            "y": "11.5-20",
 	            "orient": "v",
 				"side": "left"
 	        },
 	        {
 	            "x": "16",
-	            "y": "16.5-t",
-	            "orient": "v",
-				"side": "left"
-	        },
-	        {
-	            "x": "16-20",
-	            "y": "16.5",
-	            "orient": "h"
+	            "y": "11.5-t",
+	            "orient": "v"
 	        },
 	        {
 	            "x": "28",
@@ -98,12 +92,6 @@
 				"dir": "left"
 		    }
 		],
-        "bridge4s": [
-            {
-                "x": "21",
-                "y": "m"
-            }
-        ],
         "houses": [
         ]
     }

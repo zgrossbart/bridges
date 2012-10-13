@@ -30,7 +30,6 @@
 
     IBOutlet UITableView *_mainTable;
     IBOutlet UINavigationItem *_navItem;
-    IBOutlet UINavigationItem *_aboutNavItem;
     IBOutlet UIBarButtonItem *_resetBtn;
     IBOutlet UIWebView *_webView;
     

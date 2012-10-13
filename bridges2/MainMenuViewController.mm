@@ -147,8 +147,6 @@
     
     [_webView release];
     _webView = nil;
-    [_aboutNavItem release];
-    _aboutNavItem = nil;
     [super viewDidUnload];
 }
 
@@ -253,14 +251,6 @@
     
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@".html"];
     [_webView loadRequest:[NSURLRequest requestWithURL:url]];
-    
-    /*NSString *urlAddress = @"https://github.com/zgrossbart/bridges/blob/master/README.md#the-seven-bridges-of-k%C3%B6nigsberg";
-    NSURL *url = [NSURL URLWithString:urlAddress];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [_webView loadRequest:requestObj];*/
-    
-    _aboutNavItem.title = @"About Seven Bridges";
-    
     [self styleButtons];
 }
 
@@ -411,7 +401,6 @@
     [_mainTable release];
     [_resetBtn release];
     [_webView release];
-    [_aboutNavItem release];
     [_playBtn release];
     [_aboutBtn release];
     [_backBtn release];
