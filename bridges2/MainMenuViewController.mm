@@ -279,9 +279,9 @@
         [self loadLevelPickerView];
     } else {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewController" owner:self options:nil];
+        _navItem.title = @"Select a level";
     }
-    
-    _navItem.title = @"Select a level";
+    [self styleButtons];
 }
 
 -(void)loadLevelPickerView {
@@ -292,7 +292,7 @@
     if (orientation == 0 || orientation == UIInterfaceOrientationPortrait) {
         _noOfSection = 3;
     } else {
-        _noOfSection = 4;
+        _noOfSection = 3;
     }
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -392,7 +392,7 @@
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
     
     if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-        _noOfSection = 4;
+        _noOfSection = 3;
     } else {
         _noOfSection = 3;
     }
