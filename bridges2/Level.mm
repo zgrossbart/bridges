@@ -486,13 +486,13 @@
              * first river since we're replacing them
              * with the corner sprites.
              */
-            float height = ((yi2 - yi1) + 2) - (river.contentSize.height / 4);
+            float height = ((yi2 - yi1) - 2) - (river.contentSize.height / 4);
             [river setScaleY: height/river.contentSize.height];
             river.position = ccp(river.position.x, river.position.y + (river.contentSize.height / 4));
         }
         
         if (side != dNone && yi2 < [self getWinSize].height - _layerMgr.tileSize.height) {
-            float height = ((yi2 - yi1) + 2) - (river.contentSize.height / 4);
+            float height = ((yi2 - yi1) - 2) - (river.contentSize.height / 4);
             [river setScaleY: height/river.contentSize.height];
             river.position = ccp(river.position.x, river.position.y - (river.contentSize.height / 4));
         }
@@ -526,6 +526,9 @@
             [river setScaleX: width/river.contentSize.width];
             river.position = ccp(river.position.x + (width / 2), river.position.y);
             
+            if (xi1 > 0) {
+                river.position = ccp(river.position.x + 2, river.position.y);
+            }
         }
         [rivers addObject:river];
         
