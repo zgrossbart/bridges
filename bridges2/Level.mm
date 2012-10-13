@@ -24,6 +24,7 @@
 #import "RiverNode.h"
 #import "JSONKit.h"
 #import "SubwayNode.h"
+#import "StyleUtil.h"
 
 @interface Level() {
 
@@ -806,7 +807,7 @@
      * We make all labels buttons so the button consumes taps and the player
      * doesn't get lost under the labels.
      */
-    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     CGPoint s = [self tileToPoint:x:y];
     
     s = ccp(s.x, [LayerMgr normalizeYForControl:s.y]);
@@ -816,20 +817,9 @@
     }
     
     button.frame = CGRectMake(s.x, s.y, w * _layerMgr.tileSize.width, h * _layerMgr.tileSize.height);
+    
     [button setTitle:text forState:UIControlStateNormal];
-    button.titleLabel.opaque = NO;
-    button.titleLabel.backgroundColor = [UIColor clearColor];
-    button.titleLabel.font = [UIFont boldSystemFontOfSize:17];
-    button.titleLabel.textColor = [UIColor whiteColor];
-    button.titleLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.5];
-    button.titleLabel.shadowOffset = CGSizeMake(0, -1);
-    button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    [button.layer setCornerRadius:8.0f];
-    [button.layer setMasksToBounds:YES];
-    button.backgroundColor = [UIColor colorWithRed:(1.0 * 45) / 255 green:(1.0 * 43) / 255 blue:(1.0 * 40) / 255 alpha:0.9];
-    button.titleEdgeInsets = UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0);
-    [button.layer setBorderWidth:1.0f];
-    [button.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [StyleUtil styleButton:button];
     
     [button sizeThatFits:CGSizeMake(w, 0)];
     
