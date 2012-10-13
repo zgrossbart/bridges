@@ -236,6 +236,7 @@
     [super viewWillAppear:animated];
     
     [_mainTable reloadData];
+    _xOfY.text = [self getXofY];
 }
 
 -(IBAction)backToGameTapped:(id)sender {
