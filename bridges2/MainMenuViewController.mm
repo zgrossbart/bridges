@@ -197,6 +197,7 @@
     [name appendString:((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).name];
     
     cell.textLabel.text = name;
+    cell.textLabel.font = [UIFont fontWithName:@"Avenir Book" size:16];
     
     return cell;
 }

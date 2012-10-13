@@ -42,6 +42,7 @@
     button.titleEdgeInsets = UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0);
     [button.layer setBorderWidth:1.0f];
     [button.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    button.titleLabel.font = [UIFont fontWithName:@"Avenir Book" size:16];
     
     button.frame = CGRectMake(button.frame.origin.x, button.frame.origin.y, button.frame.size.width + 6, button.frame.size.height + 3);
 }

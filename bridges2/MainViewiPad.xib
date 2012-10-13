@@ -78,7 +78,6 @@
 						<string key="NSFrame">{{405, 523}, {215, 75}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -121,11 +120,13 @@
 						<int key="IBUIBaselineAdjustment">0</int>
 						<int key="IBUITextAlignment">1</int>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
-							<int key="type">1</int>
+							<string key="name">Avenir-Medium</string>
+							<string key="family">Avenir</string>
+							<int key="traits">0</int>
 							<double key="pointSize">47</double>
 						</object>
 						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Helvetica</string>
+							<string key="NSName">Avenir-Medium</string>
 							<double key="NSSize">47</double>
 							<int key="NSfFlags">16</int>
 						</object>
@@ -562,7 +563,6 @@
 						<string key="aboutTapped:">id</string>
 						<string key="backToGameTapped:">id</string>
 						<string key="backToMainTapped:">id</string>
-						<string key="creditsTapped:">id</string>
 						<string key="playTapped:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
@@ -578,10 +578,6 @@
 							<string key="name">backToMainTapped:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="creditsTapped:">
-							<string key="name">creditsTapped:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="playTapped:">
 							<string key="name">playTapped:</string>
 							<string key="candidateClassName">id</string>
@@ -589,23 +585,19 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="_aboutBtn">UIButton</string>
-						<string key="_aboutNavItem">UINavigationItem</string>
 						<string key="_backBtn">UIButton</string>
 						<string key="_mainTable">UITableView</string>
 						<string key="_navItem">UINavigationItem</string>
 						<string key="_playBtn">UIButton</string>
 						<string key="_resetBtn">UIBarButtonItem</string>
 						<string key="_webView">UIWebView</string>
+						<string key="_xOfY">UILabel</string>
 						<string key="collectionView">UICollectionView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="_aboutBtn">
 							<string key="name">_aboutBtn</string>
 							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="_aboutNavItem">
-							<string key="name">_aboutNavItem</string>
-							<string key="candidateClassName">UINavigationItem</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="_backBtn">
 							<string key="name">_backBtn</string>
@@ -630,6 +622,10 @@
 						<object class="IBToOneOutletInfo" key="_webView">
 							<string key="name">_webView</string>
 							<string key="candidateClassName">UIWebView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="_xOfY">
+							<string key="name">_xOfY</string>
+							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="collectionView">
 							<string key="name">collectionView</string>

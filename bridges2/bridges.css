@@ -10,7 +10,7 @@ h1 {
     font-weight: normal;
     font-size: 24px;
     line-height: 36px;
-    font-family: Verdana,Arial,Sans-serif;
+    font-family: Avenir,Arial,Sans-serif;
 }
 
 a, a:link, a:visited {
@@ -144,7 +144,7 @@ h2 {
 	font-size: 24px;
 	margin-bottom: 0.5em;
 	margin-top: 1em;
-    font-family: Verdana,Arial,Sans-serif;
+    font-family: Avenir,Arial,Sans-serif;
 }
 
 #bridges {

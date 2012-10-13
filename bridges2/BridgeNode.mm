@@ -61,7 +61,7 @@
             _label.textColor = [UIColor blackColor];
             _label.backgroundColor = [UIColor colorWithRed:(1.0 * 170) / 255 green:(1.0 * 170) / 255 blue:(1.0 * 170) / 255 alpha:0.5];
             _label.layer.cornerRadius = 6;
-            _label.font = [UIFont fontWithName:@"Verdana" size: 11.0];
+            _label.font = [UIFont fontWithName:@"Avenir" size: 11.0];
             _label.textAlignment = NSTextAlignmentCenter;
             [_label sizeToFit];
             
