@@ -1,7 +1,8 @@
 {
     "level": {
-        "id": "44",
-        "name": "Overlapping tolls",
+        "id": "53",
+        "name": "Overlapping subways",
+		"coins": "1",
 		"rivers": [
 	        {
 	            "x": "l-15",
@@ -84,8 +85,7 @@
 	    	{
 		        "x": "25",
 		        "y": "17.5",
-		        "orient": "h",
-                "color": "blue"
+		        "orient": "h"
 		    },
 	    	{
 		        "x": "30",
@@ -144,8 +144,7 @@
 		        "x": "20",
 		        "y": "5",
 		        "orient": "v",
-				"color": "blue",
-				"coins": "1"
+				"color": "blue"
 		    },
 	    	{
 		        "x": "25",
@@ -156,28 +155,37 @@
 		],
         "houses": [
             {
-                "x": "1",
-                "y": "2",
+                "x": "5",
+                "y": "1",
                 "color": "red",
                 "coins": "2"
             },
             {
                 "x": "1",
-                "y": "26",
+                "y": "22.5",
                 "color": "blue",
                 "coins": "2"
             },
             {
-                "x": "38",
-                "y": "2",
+                "x": "35",
+                "y": "1",
                 "color": "orange",
                 "coins": "2"
             },
             {
                 "x": "38",
-                "y": "26",
+                "y": "22.5",
                 "color": "green",
                 "coins": "1"
+            }
+        ],
+        "subways": [
+            {
+                "x1": "7.5",
+                "y1": "27",
+                "x2": "38",
+                "y2": "7.5",
+				"color": "blue"
             }
         ]
     }

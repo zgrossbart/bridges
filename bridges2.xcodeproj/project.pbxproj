@@ -251,6 +251,7 @@
 		CEDCDAA21621ABA100E1F07F /* level28.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDAA11621ABA100E1F07F /* level28.json */; };
 		CEDCDAA41621B13400E1F07F /* level31.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDAA31621B13400E1F07F /* level31.json */; };
 		CEDCDAA61621B46200E1F07F /* level43.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDAA51621B46200E1F07F /* level43.json */; };
+		CEDE3171162B3E54007BABEC /* level53.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDE3170162B3E54007BABEC /* level53.json */; };
 		CEDED3E81604904E0022ABA7 /* level14.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3E71604904E0022ABA7 /* level14.json */; };
 		CEDED3EB160496650022ABA7 /* level15.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3EA160496650022ABA7 /* level15.json */; };
 		CEDF5E6D1622EACD003D89FA /* level29.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDF5E6C1622EACD003D89FA /* level29.json */; };
@@ -734,6 +735,7 @@
 		CEDCDAA11621ABA100E1F07F /* level28.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level28.json; sourceTree = "<group>"; };
 		CEDCDAA31621B13400E1F07F /* level31.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level31.json; sourceTree = "<group>"; };
 		CEDCDAA51621B46200E1F07F /* level43.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level43.json; sourceTree = "<group>"; };
+		CEDE3170162B3E54007BABEC /* level53.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level53.json; sourceTree = "<group>"; };
 		CEDED3E71604904E0022ABA7 /* level14.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level14.json; sourceTree = "<group>"; };
 		CEDED3EA160496650022ABA7 /* level15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level15.json; sourceTree = "<group>"; };
 		CEDF5E6C1622EACD003D89FA /* level29.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level29.json; sourceTree = "<group>"; };
@@ -1431,6 +1433,7 @@
 				CEE145081625B307007BD1B3 /* level50.json */,
 				CEE5122C162B1D1E0059D6E1 /* level51.json */,
 				CEE5122E162B285A0059D6E1 /* level52.json */,
+				CEDE3170162B3E54007BABEC /* level53.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1671,6 +1674,7 @@
 				CED983DC16275B590003D4B0 /* MainViewiPad.xib in Resources */,
 				CEE5122D162B1D1E0059D6E1 /* level51.json in Resources */,
 				CEE5122F162B285A0059D6E1 /* level52.json in Resources */,
+				CEDE3171162B3E54007BABEC /* level53.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
