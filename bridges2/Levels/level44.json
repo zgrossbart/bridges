@@ -1,207 +1,153 @@
 {
     "level": {
         "id": "44",
-        "name": "Overlapping tolls",
-		"rivers": [
-	        {
-	            "x": "l-15",
-	            "y": "15",
-	            "orient": "h"
-	        },
-	        {
-	            "x": "15",
-	            "y": "15-t",
-	            "orient": "v",
+        "name": "Back and forth",
+		"coins": "4",
+        "rivers": [
+            {
+                "x": "l-10",
+                "y": "18",
+                "orient": "h"
+            },
+            {
+                "x": "10",
+                "y": "18-t",
+                "orient": "v",
 				"side": "right"
-	        },
-	        {
-	            "x": "10-30",
-	            "y": "20",
-	            "orient": "h"
-	        },
-	        {
-	            "x": "10-30",
-	            "y": "5",
-	            "orient": "h"
-	        },
-	        {
-	            "x": "10",
-	            "y": "5-20",
-	            "orient": "v",
-				"side": "left"
-	        },
-	        {
-	            "x": "30",
-	            "y": "5-20",
-	            "orient": "v",
-				"side": "right"
-	        },
-	        {
-	            "x": "25-r",
-	            "y": "15",
-	            "orient": "h"
-	        },
-	        {
-	            "x": "25",
-	            "y": "15-t",
-	            "orient": "v",
-				"side": "left"
-	        },
-	        {
-	            "x": "10",
-	            "y": "15",
-	            "orient": "v",
-				"border": "none"
-	        },
-	        {
-	            "x": "15",
-	            "y": "20",
-	            "orient": "h",
-				"border": "none"
-	        },
-	        {
-	            "x": "30",
-	            "y": "15",
-	            "orient": "h",
-				"border": "none"
-	        },
-	        {
-	            "x": "25",
-	            "y": "20",
-	            "orient": "v",
-				"border": "none"
-	        }
+            },
+            {
+                "x": "l-r",
+                "y": "10",
+                "orient": "h"
+            },
+			{
+               "x": "25",
+               "y": "10-t",
+               "orient": "v"
+           }
         ],
-		"bridges": [
-	    	{
-		        "x": "12.5",
-		        "y": "20",
-		        "orient": "v",
-				"color": "green"
-		    },
-	    	{
-		        "x": "12.5",
-		        "y": "15",
-		        "orient": "v"
-		    },
-	    	{
-		        "x": "27.5",
-		        "y": "20",
-		        "orient": "v",
+        "bridges": [
+            {
+                "x": "5",
+                "y": "18",
+                "orient": "v",
+				"coins": "2"
+            },
+            {
+                "x": "10",
+                "y": "21",
+                "orient": "h",
+				"color": "orange",
 				"coins": "1"
-		    },
-	    	{
-		        "x": "27.5",
-		        "y": "15",
-		        "orient": "v"
-		    },
-	    	{
-		        "x": "10",
-		        "y": "17.5",
-		        "orient": "h"
-		    },
-	    	{
-		        "x": "15",
-		        "y": "17.5",
-		        "orient": "h"
-		    },
-	    	{
-		        "x": "25",
-		        "y": "17.5",
-		        "orient": "h",
-                "color": "blue"
-		    },
-	    	{
-		        "x": "30",
-		        "y": "17.5",
-		        "orient": "h"
-		    },
-	    	{
-		        "x": "15",
-		        "y": "25",
-		        "orient": "h",
-				"coins": "1"
-		    },
-	    	{
-		        "x": "25",
-		        "y": "25",
-		        "orient": "h",
-				"color": "green",
-				"coins": "1"
-		    },
-	    	{
-		        "x": "5",
-		        "y": "15",
-		        "orient": "v",
-				"coins": "1",
+            },
+            {
+                "x": "10",
+                "y": "26",
+                "orient": "h"
+            },
+            {
+                "x": "25",
+                "y": "26",
+                "orient": "h",
+				"coins": "4"
+            },
+            {
+                "x": "25",
+                "y": "22",
+                "orient": "h",
+				"coins": "3",
+				"color": "blue"
+            },
+            {
+                "x": "25",
+                "y": "18",
+                "orient": "h"
+            },
+            {
+                "x": "25",
+                "y": "13",
+                "orient": "h",
+				"coins": "2",
 				"color": "red"
-		    },
-	    	{
-		        "x": "20",
-		        "y": "20",
-		        "orient": "v"
-		    },
-	    	{
-		        "x": "35",
-		        "y": "15",
-		        "orient": "v"
-		    },
-	    	{
-		        "x": "10",
-		        "y": "10",
-		        "orient": "h",
-				"coins": "1"
-		    },
-	    	{
-		        "x": "30",
-		        "y": "10",
-		        "orient": "h"
-		    },
-	    	{
-		        "x": "15",
-		        "y": "5",
-		        "orient": "v",
+            },
+            {
+                "x": "5",
+                "y": "10",
+                "orient": "v"
+            },
+            {
+                "x": "10",
+                "y": "10",
+                "orient": "v"
+            },
+            {
+                "x": "15",
+                "y": "10",
+                "orient": "v",
 				"color": "red",
-				"coins": "1"
-		    },
-	    	{
-		        "x": "20",
-		        "y": "5",
-		        "orient": "v",
-				"color": "blue",
-				"coins": "1"
-		    },
-	    	{
-		        "x": "25",
-		        "y": "5",
-		        "orient": "v",
-				"color": "orange"
-		    }
-		],
+				"coins": "4"
+            },
+            {
+                "x": "20",
+                "y": "10",
+                "orient": "v"
+            },
+            {
+                "x": "29",
+                "y": "10",
+                "orient": "v"
+            },
+            {
+                "x": "34",
+                "y": "10",
+                "orient": "v",
+				"coins": "2",
+				"color": "purple"
+            },
+            {
+                "x": "38",
+                "y": "10",
+                "orient": "v"
+            }
+        ],
         "houses": [
             {
-                "x": "1",
-                "y": "2",
-                "color": "red",
-                "coins": "2"
+                "x": "2",
+                "y": "20",
+                "coins": "2",
+				"color": "red"
             },
             {
-                "x": "1",
+                "x": "17",
                 "y": "26",
-                "color": "blue",
-                "coins": "2"
+                "coins": "2",
+				"color": "orange"
             },
             {
-                "x": "38",
-                "y": "2",
-                "color": "orange",
-                "coins": "2"
-            },
-            {
-                "x": "38",
+                "x": "35",
                 "y": "26",
-                "color": "green",
-                "coins": "1"
+                "coins": "3",
+				"color": "red"
+            },
+            {
+                "x": "25",
+                "y": "1",
+                "coins": "5",
+				"color": "blue"
+            },
+            {
+                "x": "1",
+                "y": "13",
+                "coins": "4",
+				"color": "blue"
+            }
+        ],
+        "subways": [
+            {
+                "x1": "5",
+                "y1": "1",
+                "x2": "2",
+                "y2": "26"
             }
         ]
     }
