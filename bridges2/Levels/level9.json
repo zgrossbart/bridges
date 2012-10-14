@@ -8,7 +8,7 @@
                 "y": "27",
                 "w": "16",
                 "h": "10",
-                "text": "You can cross some toll bridges more than once."
+                "text": "Keep crossing the bridges until the counter gets to zero."
             }
         ],
         "rivers": [
