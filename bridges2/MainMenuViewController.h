@@ -60,5 +60,6 @@
  */
 -(IBAction)playTapped:(id)sender;
 
+- (IBAction)handleSwipe:(id)sender;
 
 @end

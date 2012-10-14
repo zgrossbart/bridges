@@ -279,6 +279,13 @@
     _xOfY.text = [self getXofY];
 }
 
+- (IBAction)handleSwipe:(UISwipeGestureRecognizer *)recognizer {
+    
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionRight) {
+        [self backToMainTapped:nil];
+    }
+}
+
 -(NSString*)getXofY {
     int x = 0;
     int y = [[LevelMgr getLevelMgr].levelIds count];
