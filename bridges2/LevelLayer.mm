@@ -91,11 +91,6 @@
         _layerMgr = [[LayerMgr alloc] initWithSpriteSheet:_spriteSheet:_world];
         
         self.isTouchEnabled = YES;
-        
-        self.emitter = [[CCParticleSnow alloc] init];
-        [self.emitter setScaleX:0.5];
-        [self.emitter setScaleY:0.5];
-
     }
     return self;
     
@@ -812,6 +807,10 @@ CGFloat CGPointToDegree(CGPoint point) {
  */
 -(void) showConfetti: (float) x: (float) y
 {
+    self.emitter = [[CCParticleSnow alloc] init];
+    [self.emitter setScaleX:0.5];
+    [self.emitter setScaleY:0.5];
+    
     [self.emitter resetSystem];
     self.emitter.texture = [[CCTextureCache sharedTextureCache] addImage:@"confetti.png"];
     
@@ -877,7 +876,9 @@ CGFloat CGPointToDegree(CGPoint point) {
 }
 
 -(void) doWon {
-    [self removeChild:self.self.emitter cleanup:false];
+    [self removeChild:self.emitter cleanup:NO];
+    [self.emitter release];
+    self.emitter = nil;
     [self.controller won];
 }
 
@@ -992,9 +993,6 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     [_undoStack release];
     _undoStack = nil;
-    
-    [self.emitter release];
-    self.emitter = nil;
 
     [self.undoBtn release];
     [self.coinLbl release];
