@@ -876,7 +876,7 @@ CGFloat CGPointToDegree(CGPoint point) {
 }
 
 -(void) doWon {
-    [self removeChild:self.emitter cleanup:NO];
+    [self removeChild:self.emitter cleanup:YES];
     [self.emitter release];
     self.emitter = nil;
     [self.controller won];
