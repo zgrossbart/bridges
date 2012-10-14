@@ -92,7 +92,7 @@
         
         self.isTouchEnabled = YES;
         
-        self.emitter = [[CCParticleRain alloc] init];
+        self.emitter = [[CCParticleSnow alloc] init];
         [self.emitter setScaleX:0.5];
         [self.emitter setScaleY:0.5];
 
@@ -830,15 +830,15 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     // radial
     self.emitter.radialAccel = -120;
-    self.emitter.radialAccelVar = 0;
+    self.emitter.radialAccelVar = 120;
     
     // tagential
     self.emitter.tangentialAccel = 30;
-    self.emitter.tangentialAccelVar = 60;
+    self.emitter.tangentialAccelVar = 90;
     
     // life of particles
     self.emitter.life = 1;
-    self.emitter.lifeVar = 3;
+    self.emitter.lifeVar = 4;
     
     // spin of particles
     self.emitter.startSpin = 15;
@@ -847,22 +847,25 @@ CGFloat CGPointToDegree(CGPoint point) {
     self.emitter.endSpinVar = 5;
     
     // color of particles
-    ccColor4F startColor = {255.0f, 128.0f, 128.0f, 1.0f};
+    ccColor4F startColor = {243.0f, 162.f, 162.0f, 1.0f};
     self.emitter.startColor = startColor;
-    ccColor4F startColorVar = {128.0f, 255.0f, 128.0f, 1.0f};
+    ccColor4F startColorVar = {74.0f, 204.0f, 236.0f, 1.0f};
     self.emitter.startColorVar = startColorVar;
-    ccColor4F endColor = {255.0f, 128.0f, 128.0f, 1.0f};
+    ccColor4F endColor = {243.0f, 27.0f, 38.0f, 1.0f};
     self.emitter.endColor = endColor;
-    ccColor4F endColorVar = {128.0f, 128.f, 255.0f, 1.0f};
+    ccColor4F endColorVar = {255.0f, 195.0f, 16.0f, 1.0f};
     self.emitter.endColorVar = endColorVar;
     
+    
     // size, in pixels
-    self.emitter.startSize = 40.0f;
+    self.emitter.startSize = 50.0f;
     self.emitter.startSizeVar = 5.0f;
     self.emitter.endSize = kParticleStartSizeEqualToEndSize;
     // emits per second
-    self.emitter.totalParticles = 300;
+    self.emitter.totalParticles = 350;
     self.emitter.emissionRate = self.emitter.totalParticles/self.emitter.life;
+    
+    self.emitter.posVar = ccp(x + 20, y - 20);
     
     self.emitter.blendAdditive = NO;
     
