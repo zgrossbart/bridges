@@ -4,7 +4,7 @@
         "name": "Hello Bridges!",
         "labels": [
             {
-                "x": "2",
+                "x": "1.5",
                 "y": "27",
                 "w": "10",
                 "h": "4",
@@ -15,7 +15,7 @@
                 "y": "27",
                 "w": "20",
                 "h": "10",
-                "text": "You can't cross rivers.\n\nCross every bridge to win."
+                "text": "Cross every bridge to win, but don't jump in the river."
             }
         ],
 		"player": {
