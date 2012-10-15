@@ -231,9 +231,16 @@
         level.screenshot = image;
         
         [level unloadSprites];
+        [renderer removeAllChildrenWithCleanup:YES];
+        [[CCTextureCache sharedTextureCache] removeUnusedTextures];
+        
+        [[CCDirector sharedDirector] purgeCachedData];
 //        [layerMgr removeAll];
         
     }
+    
+    [CCTextureCache purgeSharedTextureCache];
+    
     [[CCSpriteFrameCache sharedSpriteFrameCache] removeSpriteFrames];
     [CCSpriteFrameCache purgeSharedSpriteFrameCache];
     
