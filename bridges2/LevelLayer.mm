@@ -951,6 +951,8 @@ CGFloat CGPointToDegree(CGPoint point) {
     CCSequence *scaleSeq = [CCSequence actions:scaleUpAction, scaleDownAction, [CCHide action], nil];
     
     [x runAction:scaleSeq];
+    
+    [self.controller showMessage:@"You have to start in an open space"];
 }
 
 -(void)ccTouchesEnded:(NSSet*) touches withEvent:(UIEvent*) event {
