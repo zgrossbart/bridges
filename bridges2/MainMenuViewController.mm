@@ -237,6 +237,7 @@
     [super viewWillAppear:animated];
     
     [_mainTable reloadData];
+    [_collectionView reloadData];
     _xOfY.text = [self getXofY];
 }
 
