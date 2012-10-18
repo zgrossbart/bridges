@@ -178,7 +178,10 @@
          * Then we have some levels that still need screenshots.  We'll draw
          * them in a different thread so we don't slow down the UI.
          */
-        [self doDrawLevels:bounds:levels];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self doDrawLevels:bounds:levels];
+        });
+        
     }
 }
 
@@ -200,12 +203,6 @@
     LayerMgr *layerMgr = [[LayerMgr alloc] initWithSpriteSheet:spriteSheet:nil];
     layerMgr.addBoxes = false;
     
-    CCRenderTexture *renderer = [CCRenderTexture renderTextureWithWidth:bounds.size.width height:bounds.size.height];
-    
-    ScreenShotLayer *scene = [[ScreenShotLayer alloc] init];
-    
-    [scene addChild:spriteSheet];
-    
     CGSize s = CGSizeMake(IPHONE_LEVEL_IMAGE_W, IPHONE_LEVEL_IMAGE_H);
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -213,30 +210,44 @@
     }
     
     for (Level* level in levels) {
+        ScreenShotLayer *scene = [[ScreenShotLayer alloc] init];
+        
+        [scene addChild:spriteSheet];
+        
         layerMgr.tileSize = CGSizeMake(bounds.size.height / level.tileCount, bounds.size.height / level.tileCount);
         
         NSString *documentsDirectory = [paths objectAtIndex:0];
         
         NSString *path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", level.levelId]];
         
+        /*
+         * This is the place where we actually render the image using the screen shot
+         * layer.  We need to be really careful here because there's a memory leak in
+         * CCRenderTexture.  It should be releasing the memory after we're done with it,
+         * but it never does.  This means we need to create a CCRenderTexture with the 
+         * smallest bounds we can.  
+         *
+         * To make that work we create a renderable area the size of the thumbnail we
+         * want to create and then we scale our scene down so that it fits that image.
+         *
+         * Bug 1439 has been logged for this memory leak: 
+         * http://code.google.com/p/cocos2d-iphone/issues/detail?id=1439
+         */
         [level addSprites:layerMgr:nil];
+        scene.scale = s.width/bounds.size.width;
+        scene.position = ccp(0,0);
+        scene.anchorPoint = ccp(0, 0);
         
-        [renderer begin];
-        [scene visit];
-        [renderer end];
-        
-        UIImage *image = [renderer getUIImage];
-        image = [image imageByScalingAndCroppingForSize:s];
-        [UIImagePNGRepresentation(image) writeToFile:path atomically:NO];
-        level.screenshot = image;
+        UIImage *image = [self grabSpriteToImage:scene :s];
+        level.screenshot = image;//[image imageByScalingAndCroppingForSize:s];
+        [UIImagePNGRepresentation(level.screenshot) writeToFile:path atomically:NO];
         
         [level unloadSprites];
-        [renderer removeAllChildrenWithCleanup:YES];
         [[CCTextureCache sharedTextureCache] removeUnusedTextures];
         
         [[CCDirector sharedDirector] purgeCachedData];
-//        [layerMgr removeAll];
         
+        [scene release];
     }
     
     [CCTextureCache purgeSharedTextureCache];
@@ -246,7 +257,16 @@
     
     [spriteSheet release];
     [layerMgr release];
-    [scene release];
+}
+
+- (UIImage *) grabSpriteToImage:(CCNode *)node: (CGSize) bounds {
+	CCRenderTexture *renderer = [CCRenderTexture renderTextureWithWidth:bounds.width height:bounds.height];
+    
+	[renderer begin];
+	[node visit];
+	[renderer end];
+    
+	return [renderer getUIImage];
 }
 
 -(void)dealloc {

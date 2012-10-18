@@ -123,7 +123,7 @@
     
     [self updateAllBoxBodies];
     
-    [self.controller checkForAppRating];    
+    [self.controller checkForAppRating];
 }
 
 /**
