@@ -22,11 +22,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    NSInteger launchCount = [prefs integerForKey:@"launchCount"];
-    launchCount++;
-    [prefs setInteger:launchCount  forKey:@"launchCount"];
-
     return NO;
 }
 

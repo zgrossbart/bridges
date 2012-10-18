@@ -76,57 +76,7 @@
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
     
-    [self checkForAppRating];
-    
     _xOfY.text = [self getXofY];
-}
-
-/**
- * Check to see if the user has rated the app in the app store.  If they haven't then
- * we show the dialog reminding them every 20 times they run the game.
- */
--(void)checkForAppRating {
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    bool hasRated = [prefs boolForKey:@"hasRated"];
-    
-    if (hasRated) {
-        return;
-    }
-    
-    NSInteger launchCount = [prefs integerForKey:@"launchCount"];
-    if (launchCount == 20) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Like 7 Bridges?"
-                                                        message:@"Please rate it on the App Store"
-                                                       delegate:self
-                                              cancelButtonTitle:@"No Thanks"
-                                              otherButtonTitles:@"Rate it on the App Store", nil];
-        [alert addButtonWithTitle:@"Not Now"];
-        [alert show];
-        [alert release];
-    }
-}
-
-/**
- * This method responds to the button clicks on the rate this app dialog
- */
--(void)alertView:(UIAlertView*) alertView clickedButtonAtIndex:(NSInteger) buttonIndex {
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    
-    if (buttonIndex == 1) {
-        [self rateGame];
-    } else if (buttonIndex == 2) {
-        [prefs setInteger:0 forKey:@"launchCount"];
-    } else if (buttonIndex == 3) {
-        [prefs setBool:true forKey:@"hasRated"];
-    }
-}
-
-/**
- * Take the user to our page in the App store so they can rate the game.
- */
--(IBAction)rateGame {
-    [[UIApplication sharedApplication]
-     openURL:[NSURL URLWithString:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=409954448"]];
 }
 
 -(void)selectLevel:(NSString*) key {
@@ -136,7 +86,6 @@
     
     [self.GameSceneViewController showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
     [self.navigationController pushViewController:_GameSceneViewController animated:YES];
-    
 }
 
 -(void)viewDidUnload {

@@ -122,6 +122,8 @@
     }
     
     [self updateAllBoxBodies];
+    
+    [self.controller checkForAppRating];    
 }
 
 /**

@@ -36,4 +36,6 @@
  */
 -(void) showMessage: (NSString*) msg;
 
+-(void)checkForAppRating;
+
 @end
