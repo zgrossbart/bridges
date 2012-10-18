@@ -18,7 +18,6 @@
 
 #import "MainMenuViewController.h"
 #import "LevelMgr.h"
-#import "UIImageExtras.h"
 #import "LevelCell.h"
 #import "StyleUtil.h"
 

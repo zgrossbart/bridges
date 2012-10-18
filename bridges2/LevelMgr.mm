@@ -23,7 +23,6 @@
 #import "LayerMgr.h"
 #import "ScreenShotLayer.h"
 #import "BridgeColors.h"
-#import "UIImageExtras.h"
 
 #define PTM_RATIO 32.0
 
@@ -238,8 +237,8 @@
         scene.position = ccp(0,0);
         scene.anchorPoint = ccp(0, 0);
         
-        UIImage *image = [self grabSpriteToImage:scene :s];
-        level.screenshot = image;//[image imageByScalingAndCroppingForSize:s];
+        UIImage *image = [self generateImageFromScene:scene :s];
+        level.screenshot = image;
         [UIImagePNGRepresentation(level.screenshot) writeToFile:path atomically:NO];
         
         [level unloadSprites];
@@ -259,7 +258,7 @@
     [layerMgr release];
 }
 
-- (UIImage *) grabSpriteToImage:(CCNode *)node: (CGSize) bounds {
+- (UIImage*) generateImageFromScene:(CCNode *)node: (CGSize) bounds {
 	CCRenderTexture *renderer = [CCRenderTexture renderTextureWithWidth:bounds.width height:bounds.height];
     
 	[renderer begin];

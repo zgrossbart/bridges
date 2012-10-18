@@ -20,7 +20,6 @@
 #import "RiverNode.h"
 #import "ScreenShotLayer.h"
 #import "LayerMgr.h"
-#import "UIImageExtras.h"
 
 @interface RiverNode()
 

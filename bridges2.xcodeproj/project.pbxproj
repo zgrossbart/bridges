@@ -213,7 +213,6 @@
 		CEBD81FD15EACDC100EE27CF /* GameSceneViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81FB15EACDC100EE27CF /* GameSceneViewController.mm */; };
 		CEBD81FE15EACDC100EE27CF /* GameSceneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81FC15EACDC100EE27CF /* GameSceneView.xib */; };
 		CEC65C0515F4C1CD0010EAC3 /* ScreenShotLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */; };
-		CEC65C1115F4D0320010EAC3 /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */; };
 		CEC8828416027431007DC0EA /* level11.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC8828316027431007DC0EA /* level11.json */; };
 		CEC88287160276B1007DC0EA /* level12.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC88286160276B1007DC0EA /* level12.json */; };
 		CECA1E0315FD21240052A58E /* RiverNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECA1E0215FD21240052A58E /* RiverNode.mm */; };
@@ -682,8 +681,6 @@
 		CEBD81FC15EACDC100EE27CF /* GameSceneView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameSceneView.xib; sourceTree = "<group>"; };
 		CEC65C0315F4C1CD0010EAC3 /* ScreenShotLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenShotLayer.h; sourceTree = "<group>"; };
 		CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScreenShotLayer.mm; sourceTree = "<group>"; };
-		CEC65C0F15F4D0320010EAC3 /* UIImageExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtras.h; sourceTree = "<group>"; };
-		CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtras.m; sourceTree = "<group>"; };
 		CEC8828316027431007DC0EA /* level11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level11.json; sourceTree = "<group>"; };
 		CEC88286160276B1007DC0EA /* level12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level12.json; sourceTree = "<group>"; };
 		CECA1E0115FD21240052A58E /* RiverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiverNode.h; sourceTree = "<group>"; };
@@ -1449,8 +1446,6 @@
 			children = (
 				CED45E7F15FB7D7D0066F0FE /* UIButtonExtras.h */,
 				CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */,
-				CEC65C0F15F4D0320010EAC3 /* UIImageExtras.h */,
-				CEC65C1015F4D0320010EAC3 /* UIImageExtras.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1853,7 +1848,6 @@
 				CECE256815F2819200517973 /* LevelMgr.mm in Sources */,
 				CECFA63115F36AEF00FF1E8D /* Undoable.m in Sources */,
 				CEC65C0515F4C1CD0010EAC3 /* ScreenShotLayer.mm in Sources */,
-				CEC65C1115F4D0320010EAC3 /* UIImageExtras.m in Sources */,
 				CECE689B15F76A510042A7DF /* Bridge4Node.mm in Sources */,
 				CED45E8115FB7D7D0066F0FE /* UIButtonExtras.m in Sources */,
 				CEE7AF0815FBD12F00DC0B7F /* YouWonViewController.mm in Sources */,
