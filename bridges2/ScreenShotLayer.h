@@ -22,10 +22,10 @@
 
 /** 
  * The screen shot layer is a simple scene used when drawing
- * layer screen shots.  It's primary functions is to draw the
- * white background for the layer.
+ * layer screen shots.  It's primary functions is to make sure 
+ * our scene has a clear background.
  */
-@interface ScreenShotLayer : CCLayerColor {
+@interface ScreenShotLayer : CCNode {
     
 @private
     

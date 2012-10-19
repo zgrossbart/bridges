@@ -22,7 +22,7 @@
 
 -(id)init {
     
-    if( (self=[super initWithColor:ccc4(255,255,255,255)] )) {
+    if( (self=[super init])) {
     }
     
     return self;
@@ -30,8 +30,10 @@
 
 -(void)draw {
     
-    [super draw];
+    glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    ccDrawSolidRect( ccp(0, 0), ccp(self.bounds.size.width, self.bounds.size.height), ccc4f(255, 255, 255, 255) );
+    [super draw];
 }
 @end
