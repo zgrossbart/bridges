@@ -57,4 +57,16 @@
     [button setTitleColor:[UIColor colorWithRed:(1.0 * 255) / 255 green:(1.0 * 241) / 255 blue:(1.0 * 70) / 255 alpha:0.9] forState: UIControlStateHighlighted];
 }
 
++(void)styleNodeLabel:(UILabel*) label {
+    label.textColor = [UIColor blackColor];
+    
+    label.backgroundColor = [UIColor colorWithRed:(1.0 * 170) / 255 green:(1.0 * 170) / 255 blue:(1.0 * 170) / 255 alpha:0.5];
+    label.layer.cornerRadius = 6;
+    label.font = [UIFont fontWithName:@"Avenir" size: 11.0];
+    label.textAlignment = NSTextAlignmentCenter;
+    [label sizeToFit];
+    
+    label.frame = CGRectMake(0, 0, label.frame.size.width + 6, label.frame.size.height + 3);
+}
+
 @end

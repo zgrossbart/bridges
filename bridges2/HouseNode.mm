@@ -18,6 +18,7 @@
 
 #import "HouseNode.h"
 #import "BridgeColors.h"
+#import "StyleUtil.h"
 
 @interface HouseNode()
 @property (readwrite, retain) CCSprite *house;
@@ -50,15 +51,7 @@
         if (self.coins > 0) {
             _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 16, 16)];
             _label.text = [NSString stringWithFormat:@"%i", self.coins];
-            _label.textColor = [UIColor blackColor];
-            
-            _label.backgroundColor = [UIColor colorWithRed:(1.0 * 170) / 255 green:(1.0 * 170) / 255 blue:(1.0 * 170) / 255 alpha:0.5];
-            _label.layer.cornerRadius = 6;
-            _label.font = [UIFont fontWithName:@"Avenir" size: 11.0];
-            _label.textAlignment = NSTextAlignmentCenter;
-            [_label sizeToFit];
-            
-            _label.frame = CGRectMake(0, 0, _label.frame.size.width + 6, _label.frame.size.height + 3);
+            [StyleUtil styleNodeLabel:_label];
         }
     }
     

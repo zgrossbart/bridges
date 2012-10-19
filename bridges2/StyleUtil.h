@@ -24,7 +24,26 @@
  */
 @interface StyleUtil : NSObject
 
+/**
+ * Style a button in the application.
+ *
+ * @param button the button to style
+ */
 +(void)styleButton:(UIButton*) button;
+
+/**
+ * Style a button in the application that's used as a navigation button
+ * on one of the main game screens.
+ *
+ * @param button the button to style
+ */
 +(void)styleMenuButton:(UIButton*) button;
+
+/**
+ * Style a label that shows extra information about a node.
+ *
+ * @param label the label to style
+ */
++(void)styleNodeLabel:(UILabel*) label;
 
 @end
