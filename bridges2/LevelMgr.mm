@@ -208,6 +208,8 @@
         s = CGSizeMake(IPAD_LEVEL_IMAGE_W, IPAD_LEVEL_IMAGE_H);
     }
     
+    CCRenderTexture *renderer = [CCRenderTexture renderTextureWithWidth:s.width height:s.height];
+    
     for (Level* level in levels) {
         ScreenShotLayer *scene = [[ScreenShotLayer alloc] init];
         
@@ -237,7 +239,11 @@
         scene.position = ccp(0,0);
         scene.anchorPoint = ccp(0, 0);
         
-        UIImage *image = [self generateImageFromScene:scene :s];
+        [renderer beginWithClear:0 g:0 b:0 a:0];
+        [scene visit];
+        [renderer end];
+        
+        UIImage *image = [renderer getUIImage];
         level.screenshot = image;
         [UIImagePNGRepresentation(level.screenshot) writeToFile:path atomically:NO];
         
@@ -256,16 +262,6 @@
     
     [spriteSheet release];
     [layerMgr release];
-}
-
-- (UIImage*) generateImageFromScene:(CCNode *)node: (CGSize) bounds {
-	CCRenderTexture *renderer = [CCRenderTexture renderTextureWithWidth:bounds.width height:bounds.height];
-    
-	[renderer begin];
-	[node visit];
-	[renderer end];
-    
-	return [renderer getUIImage];
 }
 
 -(void)dealloc {
