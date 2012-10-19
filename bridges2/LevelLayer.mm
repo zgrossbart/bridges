@@ -953,8 +953,6 @@ CGFloat CGPointToDegree(CGPoint point) {
     CCSequence *scaleSeq = [CCSequence actions:scaleUpAction, scaleDownAction, [CCHide action], nil];
     
     [x runAction:scaleSeq];
-    
-    [self.controller showMessage:@"You have to start in an open space"];
 }
 
 -(void)ccTouchesEnded:(NSSet*) touches withEvent:(UIEvent*) event {
@@ -975,6 +973,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             [self spawnPlayer:location.x: location.y];
         } else {
             [self showNoTapSprite:location];
+            [self.controller showMessage:@"You have to start in an open space"];
         }
     } else {
         _inCross = false;
