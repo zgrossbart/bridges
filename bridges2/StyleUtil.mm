@@ -60,7 +60,7 @@
 +(void)styleNodeLabel:(UILabel*) label {
     label.textColor = [UIColor blackColor];
     
-    label.backgroundColor = [UIColor colorWithRed:(1.0 * 170) / 255 green:(1.0 * 170) / 255 blue:(1.0 * 170) / 255 alpha:0.5];
+    label.backgroundColor = [UIColor colorWithRed:(1.0 * 170) / 255 green:(1.0 * 170) / 255 blue:(1.0 * 170) / 255 alpha:0.2];
     label.layer.cornerRadius = 6;
     label.font = [UIFont fontWithName:@"Avenir" size: 11.0];
     label.textAlignment = NSTextAlignmentCenter;
