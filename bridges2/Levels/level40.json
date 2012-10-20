@@ -1,53 +1,93 @@
 {
     "level": {
         "id": "40",
-        "name": "Subways",
-        "labels": [
-            {
-                "x": "22",
-                "y": "27",
-                "w": "16",
-                "h": "10",
-                "text": "Ride the subways as much as you want, but every ride costs a coin."
-            }
-        ],
-		"player": {
-			"x": "4",
-			"y": "16"
-		},
+        "name": "Frequent visitor",
         "rivers": [
             {
-                "x": "8",
-                "y": "b-t",
-                "orient": "v"
+                "x": "l-r",
+                "y": "20",
+                "orient": "h"
             },
             {
-                "x": "18",
-                "y": "b-t",
+                "x": "l-25",
+                "y": "10",
+                "orient": "h"
+            },
+            {
+                "x": "25",
+                "y": "b-20",
                 "orient": "v"
             }
         ],
         "bridges": [
             {
-                "x": "18",
-                "y": "8",
+                "x": "5",
+                "y": "10",
+                "orient": "v",
+				"coins": "3"
+            },
+            {
+                "x": "10",
+                "y": "10",
+                "orient": "v"
+            },
+            {
+                "x": "15",
+                "y": "10",
+                "orient": "v",
+				"coins": "4"
+            },
+            {
+                "x": "10",
+                "y": "20",
+                "orient": "v",
+				"coins": "2"
+            },
+            {
+                "x": "15",
+                "y": "20",
+                "orient": "v",
+				"coins": "1"
+            },
+            {
+                "x": "30",
+                "y": "20",
+                "orient": "v",
+				"coins": "1"
+            },
+            {
+                "x": "25",
+                "y": "5",
                 "orient": "h"
+            },
+            {
+                "x": "25",
+                "y": "15",
+                "orient": "h",
+				"coins": "2"
             }
         ],
         "houses": [
 			{
-	            "x": "4",
-	            "y": "24",
-	            "coins": "1"
-	        }
-		],
-        "subways": [
+	            "x": "38",
+	            "y": "10",
+	            "coins": "2"
+	        },
 			{
-				"x1": "4",
-				"y1": "10",
-				"x2": "35",
-				"y2": "10"
-			}
-        ]
+	            "x": "2",
+	            "y": "3",
+	            "coins": "3"
+	        },
+			{
+	            "x": "2",
+	            "y": "15",
+	            "coins": "6"
+	        },
+			{
+	            "x": "2",
+	            "y": "25",
+	            "coins": "2"
+	        }
+		]
     }
 }

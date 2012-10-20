@@ -1,58 +1,171 @@
 {
     "level": {
         "id": "56",
-        "name": "Three rivers",
+        "name": "Free swim",
         "rivers": [
             {
-                "x": "10",
-                "y": "b-t",
+                "x": "8",
+                "y": "5-24",
+                "orient": "v",
+				"side": "left"
+            },
+            {
+                "x": "16",
+                "y": "5-24",
                 "orient": "v"
             },
             {
-                "x": "20",
-                "y": "b-t",
+                "x": "24",
+                "y": "5-24",
                 "orient": "v"
             },
             {
-                "x": "30",
-                "y": "b-t",
-                "orient": "v"
+                "x": "32",
+                "y": "5-24",
+                "orient": "v",
+				"side": "right"
+            },
+            {
+                "x": "8-32",
+                "y": "5",
+                "orient": "h"
+            },
+            {
+                "x": "8-32",
+                "y": "24",
+                "orient": "h"
             }
         ],
         "bridges": [
             {
-                "x": "10",
+                "x": "8",
                 "y": "10",
                 "orient": "h"
             },
             {
-                "x": "10",
+                "x": "8",
+                "y": "15",
+                "orient": "h",
+				"color": "orange"
+            },
+            {
+                "x": "8",
                 "y": "20",
                 "orient": "h"
+            },
+            {
+                "x": "16",
+                "y": "10",
+                "orient": "h",
+				"color": "blue"
+            },
+            {
+                "x": "16",
+                "y": "15",
+                "orient": "h",
+				"color": "red"
+            },
+            {
+                "x": "16",
+                "y": "20",
+                "orient": "h",
+				"color": "green"
+            },
+            {
+                "x": "24",
+                "y": "10",
+                "orient": "h"
+            },
+            {
+                "x": "24",
+                "y": "15",
+                "orient": "h",
+				"color": "green"
+            },
+            {
+                "x": "24",
+                "y": "20",
+                "orient": "h"
+            },
+            {
+                "x": "32",
+                "y": "10",
+                "orient": "h",
+				"color": "orange"
+            },
+            {
+                "x": "32",
+                "y": "15",
+                "orient": "h",
+				"color": "blue"
+            },
+            {
+                "x": "32",
+                "y": "20",
+                "orient": "h",
+				"color": "red"
+            },
+            {
+                "x": "12",
+                "y": "5",
+                "orient": "v",
+				"coins": "1"
             },
             {
                 "x": "20",
-                "y": "10",
-                "orient": "h"
+                "y": "5",
+                "orient": "v",
+				"coins": "1"
+            },
+            {
+                "x": "28",
+                "y": "5",
+                "orient": "v",
+				"coins": "1"
+            },
+            {
+                "x": "12",
+                "y": "24",
+                "orient": "v",
+				"coins": "1"
             },
             {
                 "x": "20",
-                "y": "20",
-                "orient": "h"
+                "y": "24",
+                "orient": "v",
+				"coins": "1"
             },
             {
-                "x": "30",
-                "y": "10",
-                "orient": "h"
-            },
-            {
-                "x": "30",
-                "y": "20",
-                "orient": "h"
+                "x": "28",
+                "y": "24",
+                "orient": "v"
             }
         ],
         "houses": [
-        	
+            {
+                "x": "1",
+                "y": "26",
+                "color": "red",
+				"coins": "2"
+            },
+            {
+                "x": "38",
+                "y": "2",
+                "color": "blue",
+				"coins": "2"
+            },
+            {
+                "x": "38",
+                "y": "26",
+                "color": "orange",
+				"coins": "1"
+            },
+            {
+                "x": "2",
+                "y": "2",
+                "color": "green",
+				"coins": "1"
+            }
         ]
     }
 }

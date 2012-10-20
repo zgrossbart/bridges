@@ -1,208 +1,53 @@
 {
     "level": {
         "id": "45",
-        "name": "Overlapping tolls",
-		"rivers": [
-	        {
-	            "x": "l-15",
-	            "y": "15",
-	            "orient": "h"
-	        },
-	        {
-	            "x": "15",
-	            "y": "15-t",
-	            "orient": "v",
-				"side": "right"
-	        },
-	        {
-	            "x": "10-30",
-	            "y": "20",
-	            "orient": "h"
-	        },
-	        {
-	            "x": "10-30",
-	            "y": "5",
-	            "orient": "h"
-	        },
-	        {
-	            "x": "10",
-	            "y": "5-20",
-	            "orient": "v",
-				"side": "left"
-	        },
-	        {
-	            "x": "30",
-	            "y": "5-20",
-	            "orient": "v",
-				"side": "right"
-	        },
-	        {
-	            "x": "25-r",
-	            "y": "15",
-	            "orient": "h"
-	        },
-	        {
-	            "x": "25",
-	            "y": "15-t",
-	            "orient": "v",
-				"side": "left"
-	        },
-	        {
-	            "x": "10",
-	            "y": "15",
-	            "orient": "v",
-				"border": "none"
-	        },
-	        {
-	            "x": "15",
-	            "y": "20",
-	            "orient": "h",
-				"border": "none"
-	        },
-	        {
-	            "x": "30",
-	            "y": "15",
-	            "orient": "h",
-				"border": "none"
-	        },
-	        {
-	            "x": "25",
-	            "y": "20",
-	            "orient": "v",
-				"border": "none"
-	        }
-        ],
-		"bridges": [
-	    	{
-		        "x": "12.5",
-		        "y": "20",
-		        "orient": "v",
-				"color": "green"
-		    },
-	    	{
-		        "x": "12.5",
-		        "y": "15",
-		        "orient": "v"
-		    },
-	    	{
-		        "x": "27.5",
-		        "y": "20",
-		        "orient": "v",
-				"coins": "1"
-		    },
-	    	{
-		        "x": "27.5",
-		        "y": "15",
-		        "orient": "v"
-		    },
-	    	{
-		        "x": "10",
-		        "y": "17.5",
-		        "orient": "h"
-		    },
-	    	{
-		        "x": "15",
-		        "y": "17.5",
-		        "orient": "h"
-		    },
-	    	{
-		        "x": "25",
-		        "y": "17.5",
-		        "orient": "h",
-                "color": "blue"
-		    },
-	    	{
-		        "x": "30",
-		        "y": "17.5",
-		        "orient": "h"
-		    },
-	    	{
-		        "x": "15",
-		        "y": "25",
-		        "orient": "h",
-				"coins": "1"
-		    },
-	    	{
-		        "x": "25",
-		        "y": "25",
-		        "orient": "h",
-				"color": "green",
-				"coins": "1"
-		    },
-	    	{
-		        "x": "5",
-		        "y": "15",
-		        "orient": "v",
-				"coins": "1",
-				"color": "red"
-		    },
-	    	{
-		        "x": "20",
-		        "y": "20",
-		        "orient": "v"
-		    },
-	    	{
-		        "x": "35",
-		        "y": "15",
-		        "orient": "v"
-		    },
-	    	{
-		        "x": "10",
-		        "y": "10",
-		        "orient": "h",
-				"coins": "1"
-		    },
-	    	{
-		        "x": "30",
-		        "y": "10",
-		        "orient": "h"
-		    },
-	    	{
-		        "x": "15",
-		        "y": "5",
-		        "orient": "v",
-				"color": "red",
-				"coins": "1"
-		    },
-	    	{
-		        "x": "20",
-		        "y": "5",
-		        "orient": "v",
-				"color": "blue",
-				"coins": "1"
-		    },
-	    	{
-		        "x": "25",
-		        "y": "5",
-		        "orient": "v",
-				"color": "orange"
-		    }
-		],
-        "houses": [
+        "name": "Subways",
+        "labels": [
             {
-                "x": "1",
-                "y": "2",
-                "color": "red",
-                "coins": "2"
-            },
-            {
-                "x": "1",
-                "y": "26",
-                "color": "blue",
-                "coins": "2"
-            },
-            {
-                "x": "38",
-                "y": "2",
-                "color": "orange",
-                "coins": "2"
-            },
-            {
-                "x": "38",
-                "y": "26",
-                "color": "green",
-                "coins": "1"
+                "x": "22",
+                "y": "27",
+                "w": "16",
+                "h": "10",
+                "text": "Ride the subways as much as you want, but every ride costs a coin."
             }
+        ],
+		"player": {
+			"x": "4",
+			"y": "16"
+		},
+        "rivers": [
+            {
+                "x": "8",
+                "y": "b-t",
+                "orient": "v"
+            },
+            {
+                "x": "18",
+                "y": "b-t",
+                "orient": "v"
+            }
+        ],
+        "bridges": [
+            {
+                "x": "18",
+                "y": "8",
+                "orient": "h"
+            }
+        ],
+        "houses": [
+			{
+	            "x": "4",
+	            "y": "24",
+	            "coins": "1"
+	        }
+		],
+        "subways": [
+			{
+				"x1": "4",
+				"y1": "10",
+				"x2": "35",
+				"y2": "10"
+			}
         ]
     }
 }
