@@ -1,33 +1,39 @@
 {
     "level": {
         "id": "57",
-        "name": "Three rivers",
+        "name": "Twice around",
         "rivers": [
-            {
-                "x": "10",
-                "y": "b-t",
-                "orient": "v"
-            },
             {
                 "x": "20",
                 "y": "b-t",
                 "orient": "v"
             },
             {
-                "x": "30",
-                "y": "b-t",
-                "orient": "v"
+                "x": "l-r",
+                "y": "14",
+                "orient": "h"
+            },
+            {
+                "x": "20",
+                "y": "14",
+                "orient": "h",
+				"border": "none"
             }
         ],
         "bridges": [
             {
-                "x": "10",
-                "y": "10",
+                "x": "20",
+                "y": "20",
                 "orient": "h"
             },
             {
-                "x": "10",
-                "y": "20",
+                "x": "20",
+                "y": "25",
+                "orient": "h"
+            },
+            {
+                "x": "20",
+                "y": "5",
                 "orient": "h"
             },
             {
@@ -36,19 +42,24 @@
                 "orient": "h"
             },
             {
-                "x": "20",
-                "y": "20",
-                "orient": "h"
+                "x": "5",
+                "y": "14",
+                "orient": "v"
+            },
+            {
+                "x": "10",
+                "y": "14",
+                "orient": "v"
+            },
+            {
+                "x": "25",
+                "y": "14",
+                "orient": "v"
             },
             {
                 "x": "30",
-                "y": "10",
-                "orient": "h"
-            },
-            {
-                "x": "30",
-                "y": "20",
-                "orient": "h"
+                "y": "14",
+                "orient": "v"
             }
         ],
         "houses": [

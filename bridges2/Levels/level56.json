@@ -1,39 +1,33 @@
 {
     "level": {
         "id": "56",
-        "name": "Twice around",
+        "name": "Three rivers",
         "rivers": [
+            {
+                "x": "10",
+                "y": "b-t",
+                "orient": "v"
+            },
             {
                 "x": "20",
                 "y": "b-t",
                 "orient": "v"
             },
             {
-                "x": "l-r",
-                "y": "14",
-                "orient": "h"
-            },
-            {
-                "x": "20",
-                "y": "14",
-                "orient": "h",
-				"border": "none"
+                "x": "30",
+                "y": "b-t",
+                "orient": "v"
             }
         ],
         "bridges": [
             {
-                "x": "20",
+                "x": "10",
+                "y": "10",
+                "orient": "h"
+            },
+            {
+                "x": "10",
                 "y": "20",
-                "orient": "h"
-            },
-            {
-                "x": "20",
-                "y": "25",
-                "orient": "h"
-            },
-            {
-                "x": "20",
-                "y": "5",
                 "orient": "h"
             },
             {
@@ -42,24 +36,19 @@
                 "orient": "h"
             },
             {
-                "x": "5",
-                "y": "14",
-                "orient": "v"
-            },
-            {
-                "x": "10",
-                "y": "14",
-                "orient": "v"
-            },
-            {
-                "x": "25",
-                "y": "14",
-                "orient": "v"
+                "x": "20",
+                "y": "20",
+                "orient": "h"
             },
             {
                 "x": "30",
-                "y": "14",
-                "orient": "v"
+                "y": "10",
+                "orient": "h"
+            },
+            {
+                "x": "30",
+                "y": "20",
+                "orient": "h"
             }
         ],
         "houses": [

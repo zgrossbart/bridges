@@ -237,6 +237,9 @@
 		CED31C76160247510010A1E6 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED31C74160247510010A1E6 /* MainView.xib */; };
 		CED45E8115FB7D7D0066F0FE /* UIButtonExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */; };
 		CED45E8315FB81EF0066F0FE /* coins.png in Resources */ = {isa = PBXBuildFile; fileRef = CED45E8215FB81EF0066F0FE /* coins.png */; };
+		CED53AA81632BA1D0072DF54 /* level58.json in Resources */ = {isa = PBXBuildFile; fileRef = CED53AA71632BA1D0072DF54 /* level58.json */; };
+		CED53AAB1632BBEA0072DF54 /* level59.json in Resources */ = {isa = PBXBuildFile; fileRef = CED53AAA1632BBEA0072DF54 /* level59.json */; };
+		CED53AAD1632BD980072DF54 /* level60.json in Resources */ = {isa = PBXBuildFile; fileRef = CED53AAC1632BD980072DF54 /* level60.json */; };
 		CED71AD6162999E900EF521F /* StyleUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = CED71AD5162999E800EF521F /* StyleUtil.mm */; };
 		CED88B371616559000837558 /* level37.json in Resources */ = {isa = PBXBuildFile; fileRef = CED88B361616559000837558 /* level37.json */; };
 		CED983DC16275B590003D4B0 /* MainViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED983DB16275B590003D4B0 /* MainViewiPad.xib */; };
@@ -715,6 +718,9 @@
 		CED45E7F15FB7D7D0066F0FE /* UIButtonExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonExtras.h; sourceTree = "<group>"; };
 		CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonExtras.m; sourceTree = "<group>"; };
 		CED45E8215FB81EF0066F0FE /* coins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coins.png; sourceTree = "<group>"; };
+		CED53AA71632BA1D0072DF54 /* level58.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level58.json; sourceTree = "<group>"; };
+		CED53AAA1632BBEA0072DF54 /* level59.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level59.json; sourceTree = "<group>"; };
+		CED53AAC1632BD980072DF54 /* level60.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level60.json; sourceTree = "<group>"; };
 		CED71AD4162999E800EF521F /* StyleUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleUtil.h; sourceTree = "<group>"; };
 		CED71AD5162999E800EF521F /* StyleUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StyleUtil.mm; sourceTree = "<group>"; };
 		CED88B361616559000837558 /* level37.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level37.json; sourceTree = "<group>"; };
@@ -1443,6 +1449,9 @@
 				CEE5DE29162B850D0095A3B8 /* level55.json */,
 				CEDA5A021632B765004A30A5 /* level56.json */,
 				CEDA5A051632B8BC004A30A5 /* level57.json */,
+				CED53AA71632BA1D0072DF54 /* level58.json */,
+				CED53AAA1632BBEA0072DF54 /* level59.json */,
+				CED53AAC1632BD980072DF54 /* level60.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1686,6 +1695,9 @@
 				CEE5DE2A162B850D0095A3B8 /* level55.json in Resources */,
 				CEDA5A031632B765004A30A5 /* level56.json in Resources */,
 				CEDA5A061632B8BC004A30A5 /* level57.json in Resources */,
+				CED53AA81632BA1D0072DF54 /* level58.json in Resources */,
+				CED53AAB1632BBEA0072DF54 /* level59.json in Resources */,
+				CED53AAD1632BD980072DF54 /* level60.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
