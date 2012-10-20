@@ -240,6 +240,8 @@
 		CED71AD6162999E900EF521F /* StyleUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = CED71AD5162999E800EF521F /* StyleUtil.mm */; };
 		CED88B371616559000837558 /* level37.json in Resources */ = {isa = PBXBuildFile; fileRef = CED88B361616559000837558 /* level37.json */; };
 		CED983DC16275B590003D4B0 /* MainViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED983DB16275B590003D4B0 /* MainViewiPad.xib */; };
+		CEDA5A031632B765004A30A5 /* level56.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDA5A021632B765004A30A5 /* level56.json */; };
+		CEDA5A061632B8BC004A30A5 /* level57.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDA5A051632B8BC004A30A5 /* level57.json */; };
 		CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */; };
 		CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E015EB8A8400094695 /* HouseNode.mm */; };
 		CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E315EB8AF600094695 /* PlayerNode.mm */; };
@@ -717,6 +719,8 @@
 		CED71AD5162999E800EF521F /* StyleUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StyleUtil.mm; sourceTree = "<group>"; };
 		CED88B361616559000837558 /* level37.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level37.json; sourceTree = "<group>"; };
 		CED983DB16275B590003D4B0 /* MainViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewiPad.xib; sourceTree = "<group>"; };
+		CEDA5A021632B765004A30A5 /* level56.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level56.json; sourceTree = "<group>"; };
+		CEDA5A051632B8BC004A30A5 /* level57.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level57.json; sourceTree = "<group>"; };
 		CEDBC2DA15EB89DA00094695 /* BridgeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeColors.h; sourceTree = "<group>"; };
 		CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerMgr.h; sourceTree = "<group>"; };
 		CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LayerMgr.mm; sourceTree = "<group>"; };
@@ -1437,6 +1441,8 @@
 				CEDE3170162B3E54007BABEC /* level53.json */,
 				CEE5DE26162B7F090095A3B8 /* level54.json */,
 				CEE5DE29162B850D0095A3B8 /* level55.json */,
+				CEDA5A021632B765004A30A5 /* level56.json */,
+				CEDA5A051632B8BC004A30A5 /* level57.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1678,6 +1684,8 @@
 				CEDE3171162B3E54007BABEC /* level53.json in Resources */,
 				CEE5DE27162B7F090095A3B8 /* level54.json in Resources */,
 				CEE5DE2A162B850D0095A3B8 /* level55.json in Resources */,
+				CEDA5A031632B765004A30A5 /* level56.json in Resources */,
+				CEDA5A061632B8BC004A30A5 /* level57.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
