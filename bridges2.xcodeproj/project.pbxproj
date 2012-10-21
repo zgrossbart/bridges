@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE0298C11624B4300028274B /* level47.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0298C01624B4300028274B /* level47.json */; };
-		CE1477DB1604C32100C054B2 /* level0.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1477DA1604C32100C054B2 /* level0.json */; };
-		CE1BB78A16160ED900EBB61E /* level20.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78916160ED900EBB61E /* level20.json */; };
-		CE1BB78D1616189F00EBB61E /* level23.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78C1616189F00EBB61E /* level23.json */; };
-		CE1BB78F16161D0700EBB61E /* level36.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78E16161D0600EBB61E /* level36.json */; };
+		CE0298C11624B4300028274B /* tic_tac_toe_two.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0298C01624B4300028274B /* tic_tac_toe_two.json */; };
+		CE1477DB1604C32100C054B2 /* tile_test.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1477DA1604C32100C054B2 /* tile_test.json */; };
+		CE1BB78A16160ED900EBB61E /* classic_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78916160ED900EBB61E /* classic_colors.json */; };
+		CE1BB78D1616189F00EBB61E /* square_plus_one.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78C1616189F00EBB61E /* square_plus_one.json */; };
+		CE1BB78F16161D0700EBB61E /* square_color_together.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78E16161D0600EBB61E /* square_color_together.json */; };
 		CE303A85160B3D5000F1D3CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE303A84160B3D5000F1D3CD /* Default-568h@2x.png */; };
-		CE31DCD11601E3790084C38B /* level19.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD01601E3790084C38B /* level19.json */; };
-		CE31DCD31601EBDD0084C38B /* level25.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD21601EBDD0084C38B /* level25.json */; };
-		CE33A6CE161B1F1800C4AD0B /* level24.json in Resources */ = {isa = PBXBuildFile; fileRef = CE33A6CD161B1F1800C4AD0B /* level24.json */; };
-		CE33A6D1161B26FC00C4AD0B /* level38.json in Resources */ = {isa = PBXBuildFile; fileRef = CE33A6D0161B26FC00C4AD0B /* level38.json */; };
-		CE33A6D4161B2F6200C4AD0B /* level39.json in Resources */ = {isa = PBXBuildFile; fileRef = CE33A6D3161B2F6200C4AD0B /* level39.json */; };
-		CE33A6D6161B53F600C4AD0B /* level7.json in Resources */ = {isa = PBXBuildFile; fileRef = CE33A6D5161B53F500C4AD0B /* level7.json */; };
+		CE31DCD11601E3790084C38B /* swim_lanes.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD01601E3790084C38B /* swim_lanes.json */; };
+		CE31DCD31601EBDD0084C38B /* diamond.json in Resources */ = {isa = PBXBuildFile; fileRef = CE31DCD21601EBDD0084C38B /* diamond.json */; };
+		CE33A6CE161B1F1800C4AD0B /* square_around.json in Resources */ = {isa = PBXBuildFile; fileRef = CE33A6CD161B1F1800C4AD0B /* square_around.json */; };
+		CE33A6D1161B26FC00C4AD0B /* overlap.json in Resources */ = {isa = PBXBuildFile; fileRef = CE33A6D0161B26FC00C4AD0B /* overlap.json */; };
+		CE33A6D4161B2F6200C4AD0B /* full_of_bridges.json in Resources */ = {isa = PBXBuildFile; fileRef = CE33A6D3161B2F6200C4AD0B /* full_of_bridges.json */; };
+		CE33A6D6161B53F600C4AD0B /* no_color.json in Resources */ = {isa = PBXBuildFile; fileRef = CE33A6D5161B53F500C4AD0B /* no_color.json */; };
 		CE39AC9315FBA146005607B0 /* GameSceneViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC9115FBA145005607B0 /* GameSceneViewiPad.xib */; };
 		CE453BC715F174A900053407 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CE453BC615F174A900053407 /* JSONKit.m */; };
 		CE50FFB316137A8A00235E87 /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50FFB216137A8A00235E87 /* confetti.png */; };
 		CE50FFB81613932400235E87 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50FFB71613932400235E87 /* fire.png */; };
-		CE53D25B16060D090064F167 /* level16.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25A16060D090064F167 /* level16.json */; };
-		CE53D25E160612510064F167 /* level22.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25D160612510064F167 /* level22.json */; };
-		CE53D260160616070064F167 /* level26.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25F160616070064F167 /* level26.json */; };
+		CE53D25B16060D090064F167 /* islands.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25A16060D090064F167 /* islands.json */; };
+		CE53D25E160612510064F167 /* squares.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25D160612510064F167 /* squares.json */; };
+		CE53D260160616070064F167 /* square_together.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25F160616070064F167 /* square_together.json */; };
 		CE6BFB96160CADBD0037CFE4 /* MainMenuCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6BFB95160CADBD0037CFE4 /* MainMenuCollectionView.xib */; };
 		CE6BFB9A160CAFAD0037CFE4 /* LevelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BFB99160CAFAD0037CFE4 /* LevelCell.m */; };
 		CE6BFB9C160CB03B0037CFE4 /* LevelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6BFB9B160CB03B0037CFE4 /* LevelCell.xib */; };
@@ -199,10 +199,10 @@
 		CE6D67F115EAC5FD00C7EDD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F015EAC5FD00C7EDD7 /* main.m */; };
 		CE6D67F715EAC5FD00C7EDD7 /* LevelLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */; };
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
-		CE736B171620F1E80085172D /* level42.json in Resources */ = {isa = PBXBuildFile; fileRef = CE736B161620F1E80085172D /* level42.json */; };
-		CE7F8328161600920012A4FA /* level18.json in Resources */ = {isa = PBXBuildFile; fileRef = CE7F8327161600920012A4FA /* level18.json */; };
+		CE736B171620F1E80085172D /* hopscotch_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CE736B161620F1E80085172D /* hopscotch_colors.json */; };
+		CE7F8328161600920012A4FA /* classic.json in Resources */ = {isa = PBXBuildFile; fileRef = CE7F8327161600920012A4FA /* classic.json */; };
 		CEA3D478160120610060F511 /* AboutViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA3D477160120610060F511 /* AboutViewiPad.xib */; };
-		CEAE47F815F3894400898698 /* level8.json in Resources */ = {isa = PBXBuildFile; fileRef = CEAE47F715F3894400898698 /* level8.json */; };
+		CEAE47F815F3894400898698 /* tolls.json in Resources */ = {isa = PBXBuildFile; fileRef = CEAE47F715F3894400898698 /* tolls.json */; };
 		CEBB885D160514B700538464 /* bridgesprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBB885B160514B700538464 /* bridgesprites.plist */; };
 		CEBB885E160514B700538464 /* bridgesprites.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = CEBB885C160514B700538464 /* bridgesprites.pvr.gz */; };
 		CEBB8861160514D200538464 /* bridgesprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBB885F160514D200538464 /* bridgesprites-hd.plist */; };
@@ -213,104 +213,104 @@
 		CEBD81FD15EACDC100EE27CF /* GameSceneViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81FB15EACDC100EE27CF /* GameSceneViewController.mm */; };
 		CEBD81FE15EACDC100EE27CF /* GameSceneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81FC15EACDC100EE27CF /* GameSceneView.xib */; };
 		CEC65C0515F4C1CD0010EAC3 /* ScreenShotLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */; };
-		CEC8828416027431007DC0EA /* level11.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC8828316027431007DC0EA /* level11.json */; };
-		CEC88287160276B1007DC0EA /* level12.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC88286160276B1007DC0EA /* level12.json */; };
+		CEC8828416027431007DC0EA /* three_rivers.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC8828316027431007DC0EA /* three_rivers.json */; };
+		CEC88287160276B1007DC0EA /* twice_around.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC88286160276B1007DC0EA /* twice_around.json */; };
 		CECA1E0315FD21240052A58E /* RiverNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECA1E0215FD21240052A58E /* RiverNode.mm */; };
 		CECCE97F161530760091707C /* SubwayNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECCE97E161530760091707C /* SubwayNode.mm */; };
-		CECCE9821615389A0091707C /* level35.json in Resources */ = {isa = PBXBuildFile; fileRef = CECCE9811615389A0091707C /* level35.json */; };
-		CECD016316248C0F008F7536 /* level45.json in Resources */ = {isa = PBXBuildFile; fileRef = CECD016216248C0F008F7536 /* level45.json */; };
-		CECD01661624951F008F7536 /* level46.json in Resources */ = {isa = PBXBuildFile; fileRef = CECD01651624951F008F7536 /* level46.json */; };
+		CECCE9821615389A0091707C /* quilt.json in Resources */ = {isa = PBXBuildFile; fileRef = CECCE9811615389A0091707C /* quilt.json */; };
+		CECD016316248C0F008F7536 /* subways.json in Resources */ = {isa = PBXBuildFile; fileRef = CECD016216248C0F008F7536 /* subways.json */; };
+		CECD01661624951F008F7536 /* corner_jumper.json in Resources */ = {isa = PBXBuildFile; fileRef = CECD01651624951F008F7536 /* corner_jumper.json */; };
 		CECDC54815F6C54000D266FD /* green_check.png in Resources */ = {isa = PBXBuildFile; fileRef = CECDC54715F6C54000D266FD /* green_check.png */; };
 		CECE255B15F21FDB00517973 /* Level.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE255A15F21FDB00517973 /* Level.mm */; };
 		CECE256815F2819200517973 /* LevelMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE256715F2819200517973 /* LevelMgr.mm */; };
-		CECE256F15F2869300517973 /* level5.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256D15F2869300517973 /* level5.json */; };
-		CECE257015F2869300517973 /* level6.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256E15F2869300517973 /* level6.json */; };
-		CECE688D15F750F70042A7DF /* level3.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE688C15F750F70042A7DF /* level3.json */; };
-		CECE689015F752780042A7DF /* level2.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE688F15F752780042A7DF /* level2.json */; };
-		CECE689215F754BA0042A7DF /* level4.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689115F754BA0042A7DF /* level4.json */; };
-		CECE689415F75AE60042A7DF /* level13.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689315F75AE60042A7DF /* level13.json */; };
+		CECE256F15F2869300517973 /* one_way.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256D15F2869300517973 /* one_way.json */; };
+		CECE257015F2869300517973 /* change_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256E15F2869300517973 /* change_colors.json */; };
+		CECE688D15F750F70042A7DF /* house_by_river.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE688C15F750F70042A7DF /* house_by_river.json */; };
+		CECE689015F752780042A7DF /* two_bridges.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE688F15F752780042A7DF /* two_bridges.json */; };
+		CECE689215F754BA0042A7DF /* start_anywhere.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689115F754BA0042A7DF /* start_anywhere.json */; };
+		CECE689415F75AE60042A7DF /* corners.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689315F75AE60042A7DF /* corners.json */; };
 		CECE689B15F76A510042A7DF /* Bridge4Node.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE689A15F76A510042A7DF /* Bridge4Node.mm */; };
-		CECE689D15F76E120042A7DF /* level21.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689C15F76E120042A7DF /* level21.json */; };
+		CECE689D15F76E120042A7DF /* bullseye.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689C15F76E120042A7DF /* bullseye.json */; };
 		CECFA63115F36AEF00FF1E8D /* Undoable.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFA63015F36AEE00FF1E8D /* Undoable.m */; };
-		CED0303015FB724A008E7EA4 /* level10.json in Resources */ = {isa = PBXBuildFile; fileRef = CED0302F15FB724A008E7EA4 /* level10.json */; };
-		CED0704415FF7A5E0050CA9D /* level17.json in Resources */ = {isa = PBXBuildFile; fileRef = CED0704315FF7A5E0050CA9D /* level17.json */; };
+		CED0303015FB724A008E7EA4 /* visit_again.json in Resources */ = {isa = PBXBuildFile; fileRef = CED0302F15FB724A008E7EA4 /* visit_again.json */; };
+		CED0704415FF7A5E0050CA9D /* in_the_middle.json in Resources */ = {isa = PBXBuildFile; fileRef = CED0704315FF7A5E0050CA9D /* in_the_middle.json */; };
 		CED31C76160247510010A1E6 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED31C74160247510010A1E6 /* MainView.xib */; };
 		CED45E8115FB7D7D0066F0FE /* UIButtonExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */; };
 		CED45E8315FB81EF0066F0FE /* coins.png in Resources */ = {isa = PBXBuildFile; fileRef = CED45E8215FB81EF0066F0FE /* coins.png */; };
-		CED53AA81632BA1D0072DF54 /* level58.json in Resources */ = {isa = PBXBuildFile; fileRef = CED53AA71632BA1D0072DF54 /* level58.json */; };
-		CED53AAB1632BBEA0072DF54 /* level59.json in Resources */ = {isa = PBXBuildFile; fileRef = CED53AAA1632BBEA0072DF54 /* level59.json */; };
-		CED53AAD1632BD980072DF54 /* level60.json in Resources */ = {isa = PBXBuildFile; fileRef = CED53AAC1632BD980072DF54 /* level60.json */; };
+		CED53AA81632BA1D0072DF54 /* tolls_off_center.json in Resources */ = {isa = PBXBuildFile; fileRef = CED53AA71632BA1D0072DF54 /* tolls_off_center.json */; };
+		CED53AAB1632BBEA0072DF54 /* overlapping_subways.json in Resources */ = {isa = PBXBuildFile; fileRef = CED53AAA1632BBEA0072DF54 /* overlapping_subways.json */; };
+		CED53AAD1632BD980072DF54 /* spiral_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CED53AAC1632BD980072DF54 /* spiral_colors.json */; };
 		CED71AD6162999E900EF521F /* StyleUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = CED71AD5162999E800EF521F /* StyleUtil.mm */; };
-		CED88B371616559000837558 /* level37.json in Resources */ = {isa = PBXBuildFile; fileRef = CED88B361616559000837558 /* level37.json */; };
+		CED88B371616559000837558 /* spiral.json in Resources */ = {isa = PBXBuildFile; fileRef = CED88B361616559000837558 /* spiral.json */; };
 		CED983DC16275B590003D4B0 /* MainViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED983DB16275B590003D4B0 /* MainViewiPad.xib */; };
-		CEDA5A031632B765004A30A5 /* level56.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDA5A021632B765004A30A5 /* level56.json */; };
-		CEDA5A061632B8BC004A30A5 /* level57.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDA5A051632B8BC004A30A5 /* level57.json */; };
+		CEDA5A031632B765004A30A5 /* free_swim.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDA5A021632B765004A30A5 /* free_swim.json */; };
+		CEDA5A061632B8BC004A30A5 /* keep_riding.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDA5A051632B8BC004A30A5 /* keep_riding.json */; };
 		CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */; };
 		CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E015EB8A8400094695 /* HouseNode.mm */; };
 		CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E315EB8AF600094695 /* PlayerNode.mm */; };
 		CEDBC2E715EB8B5300094695 /* MyContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E615EB8B5300094695 /* MyContactListener.mm */; };
 		CEDBC2EC15EB8C8200094695 /* BridgeNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */; };
 		CEDBF23D161253C2000E85D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDBF23C161253C2000E85D3 /* AppDelegate.m */; };
-		CEDCDA9F1621A1B000E1F07F /* level27.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDA9E1621A1B000E1F07F /* level27.json */; };
-		CEDCDAA21621ABA100E1F07F /* level28.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDAA11621ABA100E1F07F /* level28.json */; };
-		CEDCDAA41621B13400E1F07F /* level31.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDAA31621B13400E1F07F /* level31.json */; };
-		CEDCDAA61621B46200E1F07F /* level43.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDAA51621B46200E1F07F /* level43.json */; };
-		CEDE3171162B3E54007BABEC /* level53.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDE3170162B3E54007BABEC /* level53.json */; };
-		CEDED3E81604904E0022ABA7 /* level14.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3E71604904E0022ABA7 /* level14.json */; };
-		CEDED3EB160496650022ABA7 /* level15.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3EA160496650022ABA7 /* level15.json */; };
-		CEDF5E6D1622EACD003D89FA /* level29.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDF5E6C1622EACD003D89FA /* level29.json */; };
-		CEDF5E711622F13C003D89FA /* level32.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDF5E701622F13C003D89FA /* level32.json */; };
-		CEE0277416067FE5007C4CDD /* level30.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE0277316067FE5007C4CDD /* level30.json */; };
-		CEE145051625A54B007BD1B3 /* level48.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145041625A54B007BD1B3 /* level48.json */; };
-		CEE145071625AE7A007BD1B3 /* level49.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145061625AE7A007BD1B3 /* level49.json */; };
-		CEE145091625B307007BD1B3 /* level50.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145081625B307007BD1B3 /* level50.json */; };
-		CEE5122D162B1D1E0059D6E1 /* level51.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5122C162B1D1E0059D6E1 /* level51.json */; };
-		CEE5122F162B285A0059D6E1 /* level52.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5122E162B285A0059D6E1 /* level52.json */; };
-		CEE5DE27162B7F090095A3B8 /* level54.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5DE26162B7F090095A3B8 /* level54.json */; };
-		CEE5DE2A162B850D0095A3B8 /* level55.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5DE29162B850D0095A3B8 /* level55.json */; };
+		CEDCDA9F1621A1B000E1F07F /* around_again.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDA9E1621A1B000E1F07F /* around_again.json */; };
+		CEDCDAA21621ABA100E1F07F /* off_center.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDAA11621ABA100E1F07F /* off_center.json */; };
+		CEDCDAA41621B13400E1F07F /* hopscotch.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDAA31621B13400E1F07F /* hopscotch.json */; };
+		CEDCDAA61621B46200E1F07F /* color_quilt.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDAA51621B46200E1F07F /* color_quilt.json */; };
+		CEDE3171162B3E54007BABEC /* triangles.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDE3170162B3E54007BABEC /* triangles.json */; };
+		CEDED3E81604904E0022ABA7 /* up_and_down.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3E71604904E0022ABA7 /* up_and_down.json */; };
+		CEDED3EB160496650022ABA7 /* peninsulas.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3EA160496650022ABA7 /* peninsulas.json */; };
+		CEDF5E6D1622EACD003D89FA /* simple_box.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDF5E6C1622EACD003D89FA /* simple_box.json */; };
+		CEDF5E711622F13C003D89FA /* tic_tac_toe.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDF5E701622F13C003D89FA /* tic_tac_toe.json */; };
+		CEE0277416067FE5007C4CDD /* another_color.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE0277316067FE5007C4CDD /* another_color.json */; };
+		CEE145051625A54B007BD1B3 /* spend_it_wisely.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145041625A54B007BD1B3 /* spend_it_wisely.json */; };
+		CEE145071625AE7A007BD1B3 /* back_and_forth.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145061625AE7A007BD1B3 /* back_and_forth.json */; };
+		CEE145091625B307007BD1B3 /* overlapping_tolls.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145081625B307007BD1B3 /* overlapping_tolls.json */; };
+		CEE5122D162B1D1E0059D6E1 /* corridors.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5122C162B1D1E0059D6E1 /* corridors.json */; };
+		CEE5122F162B285A0059D6E1 /* jumpy.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5122E162B285A0059D6E1 /* jumpy.json */; };
+		CEE5DE27162B7F090095A3B8 /* hopscotch_subway.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5DE26162B7F090095A3B8 /* hopscotch_subway.json */; };
+		CEE5DE2A162B850D0095A3B8 /* subway_box.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5DE29162B850D0095A3B8 /* subway_box.json */; };
 		CEE7AF0815FBD12F00DC0B7F /* YouWonViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */; };
 		CEE7AF0915FBD12F00DC0B7F /* YouWonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */; };
 		CEE7AF0C15FBDD0F00DC0B7F /* YouWonViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE7AF0B15FBDD0F00DC0B7F /* YouWonViewiPad.xib */; };
-		CEE967F91624587F001A9F4C /* level33.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE967F81624587F001A9F4C /* level33.json */; };
-		CEE967FC16245CEF001A9F4C /* level34.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE967FB16245CEF001A9F4C /* level34.json */; };
-		CEE967FE162462EF001A9F4C /* level44.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE967FD162462EF001A9F4C /* level44.json */; };
+		CEE967F91624587F001A9F4C /* color_diamond.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE967F81624587F001A9F4C /* color_diamond.json */; };
+		CEE967FC16245CEF001A9F4C /* square_plus_four.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE967FB16245CEF001A9F4C /* square_plus_four.json */; };
+		CEE967FE162462EF001A9F4C /* color_box.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE967FD162462EF001A9F4C /* color_box.json */; };
 		CEEE7DEC162211BD00B84A96 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = CEEE7DEA162211BD00B84A96 /* about.html */; };
 		CEEE7DED162211BD00B84A96 /* bridges.css in Resources */ = {isa = PBXBuildFile; fileRef = CEEE7DEB162211BD00B84A96 /* bridges.css */; };
 		CEEE7DF1162219FE00B84A96 /* anothercolor.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEE7DF0162219FE00B84A96 /* anothercolor.png */; };
 		CEEE7DF316221A0E00B84A96 /* tictactoe.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEE7DF216221A0E00B84A96 /* tictactoe.png */; };
 		CEEE7DF516221D9A00B84A96 /* konigsberg_1910.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEEE7DF416221D9A00B84A96 /* konigsberg_1910.jpg */; };
-		CEEFF6F215F3A9CB0095649C /* level9.json in Resources */ = {isa = PBXBuildFile; fileRef = CEEFF6F115F3A9CB0095649C /* level9.json */; };
-		CEF00C0B16205B0D00905473 /* level40.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF00C0A16205B0D00905473 /* level40.json */; };
-		CEF00C0E162061AC00905473 /* level41.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF00C0D162061AC00905473 /* level41.json */; };
+		CEEFF6F215F3A9CB0095649C /* economics.json in Resources */ = {isa = PBXBuildFile; fileRef = CEEFF6F115F3A9CB0095649C /* economics.json */; };
+		CEF00C0B16205B0D00905473 /* frequent_visitor.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF00C0A16205B0D00905473 /* frequent_visitor.json */; };
+		CEF00C0E162061AC00905473 /* colors_off_center.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF00C0D162061AC00905473 /* colors_off_center.json */; };
 		CEF0649D15F51B0B0061C872 /* left_arrow_d.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF0649A15F51B0B0061C872 /* left_arrow_d.png */; };
 		CEF0649E15F51B0B0061C872 /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF0649B15F51B0B0061C872 /* left_arrow.png */; };
 		CEF0649F15F51B0B0061C872 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF0649C15F51B0B0061C872 /* menu.png */; };
 		CEF064A215F51B180061C872 /* refresh_d.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A015F51B180061C872 /* refresh_d.png */; };
 		CEF064A315F51B180061C872 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A115F51B180061C872 /* refresh.png */; };
-		CEF064A515F521AF0061C872 /* level1.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A415F521AF0061C872 /* level1.json */; };
+		CEF064A515F521AF0061C872 /* hello_bridges.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A415F521AF0061C872 /* hello_bridges.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE0298C01624B4300028274B /* level47.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level47.json; sourceTree = "<group>"; };
-		CE1477DA1604C32100C054B2 /* level0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level0.json; sourceTree = "<group>"; };
-		CE1BB78916160ED900EBB61E /* level20.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level20.json; sourceTree = "<group>"; };
-		CE1BB78C1616189F00EBB61E /* level23.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level23.json; sourceTree = "<group>"; };
-		CE1BB78E16161D0600EBB61E /* level36.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level36.json; sourceTree = "<group>"; };
+		CE0298C01624B4300028274B /* tic_tac_toe_two.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tic_tac_toe_two.json; sourceTree = "<group>"; };
+		CE1477DA1604C32100C054B2 /* tile_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tile_test.json; sourceTree = "<group>"; };
+		CE1BB78916160ED900EBB61E /* classic_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = classic_colors.json; sourceTree = "<group>"; };
+		CE1BB78C1616189F00EBB61E /* square_plus_one.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square_plus_one.json; sourceTree = "<group>"; };
+		CE1BB78E16161D0600EBB61E /* square_color_together.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square_color_together.json; sourceTree = "<group>"; };
 		CE303A84160B3D5000F1D3CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
-		CE31DCD01601E3790084C38B /* level19.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level19.json; sourceTree = "<group>"; };
-		CE31DCD21601EBDD0084C38B /* level25.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level25.json; sourceTree = "<group>"; };
-		CE33A6CD161B1F1800C4AD0B /* level24.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level24.json; sourceTree = "<group>"; };
-		CE33A6D0161B26FC00C4AD0B /* level38.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level38.json; sourceTree = "<group>"; };
-		CE33A6D3161B2F6200C4AD0B /* level39.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level39.json; sourceTree = "<group>"; };
-		CE33A6D5161B53F500C4AD0B /* level7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level7.json; sourceTree = "<group>"; };
+		CE31DCD01601E3790084C38B /* swim_lanes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swim_lanes.json; sourceTree = "<group>"; };
+		CE31DCD21601EBDD0084C38B /* diamond.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = diamond.json; sourceTree = "<group>"; };
+		CE33A6CD161B1F1800C4AD0B /* square_around.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square_around.json; sourceTree = "<group>"; };
+		CE33A6D0161B26FC00C4AD0B /* overlap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = overlap.json; sourceTree = "<group>"; };
+		CE33A6D3161B2F6200C4AD0B /* full_of_bridges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = full_of_bridges.json; sourceTree = "<group>"; };
+		CE33A6D5161B53F500C4AD0B /* no_color.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_color.json; sourceTree = "<group>"; };
 		CE39AC9115FBA145005607B0 /* GameSceneViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameSceneViewiPad.xib; sourceTree = "<group>"; };
 		CE453BC515F174A900053407 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		CE453BC615F174A900053407 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		CE50FFB216137A8A00235E87 /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
 		CE50FFB71613932400235E87 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
-		CE53D25A16060D090064F167 /* level16.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level16.json; sourceTree = "<group>"; };
-		CE53D25D160612510064F167 /* level22.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level22.json; sourceTree = "<group>"; };
-		CE53D25F160616070064F167 /* level26.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level26.json; sourceTree = "<group>"; };
+		CE53D25A16060D090064F167 /* islands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = islands.json; sourceTree = "<group>"; };
+		CE53D25D160612510064F167 /* squares.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = squares.json; sourceTree = "<group>"; };
+		CE53D25F160616070064F167 /* square_together.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square_together.json; sourceTree = "<group>"; };
 		CE6BFB95160CADBD0037CFE4 /* MainMenuCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuCollectionView.xib; sourceTree = "<group>"; };
 		CE6BFB98160CAFAD0037CFE4 /* LevelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCell.h; sourceTree = "<group>"; };
 		CE6BFB99160CAFAD0037CFE4 /* LevelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCell.m; sourceTree = "<group>"; };
@@ -669,10 +669,10 @@
 		CE6D67F615EAC5FD00C7EDD7 /* LevelLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelLayer.mm; sourceTree = "<group>"; };
 		CE6D67FB15EAC5FD00C7EDD7 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
-		CE736B161620F1E80085172D /* level42.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level42.json; sourceTree = "<group>"; };
-		CE7F8327161600920012A4FA /* level18.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level18.json; sourceTree = "<group>"; };
+		CE736B161620F1E80085172D /* hopscotch_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hopscotch_colors.json; sourceTree = "<group>"; };
+		CE7F8327161600920012A4FA /* classic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = classic.json; sourceTree = "<group>"; };
 		CEA3D477160120610060F511 /* AboutViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewiPad.xib; sourceTree = "<group>"; };
-		CEAE47F715F3894400898698 /* level8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level8.json; sourceTree = "<group>"; };
+		CEAE47F715F3894400898698 /* tolls.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tolls.json; sourceTree = "<group>"; };
 		CEBB885B160514B700538464 /* bridgesprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bridgesprites.plist; sourceTree = "<group>"; };
 		CEBB885C160514B700538464 /* bridgesprites.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = bridgesprites.pvr.gz; sourceTree = "<group>"; };
 		CEBB885F160514D200538464 /* bridgesprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "bridgesprites-hd.plist"; sourceTree = "<group>"; };
@@ -686,47 +686,47 @@
 		CEBD81FC15EACDC100EE27CF /* GameSceneView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameSceneView.xib; sourceTree = "<group>"; };
 		CEC65C0315F4C1CD0010EAC3 /* ScreenShotLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenShotLayer.h; sourceTree = "<group>"; };
 		CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScreenShotLayer.mm; sourceTree = "<group>"; };
-		CEC8828316027431007DC0EA /* level11.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level11.json; sourceTree = "<group>"; };
-		CEC88286160276B1007DC0EA /* level12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level12.json; sourceTree = "<group>"; };
+		CEC8828316027431007DC0EA /* three_rivers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = three_rivers.json; sourceTree = "<group>"; };
+		CEC88286160276B1007DC0EA /* twice_around.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = twice_around.json; sourceTree = "<group>"; };
 		CECA1E0115FD21240052A58E /* RiverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiverNode.h; sourceTree = "<group>"; };
 		CECA1E0215FD21240052A58E /* RiverNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RiverNode.mm; sourceTree = "<group>"; };
 		CECCE97D161530760091707C /* SubwayNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubwayNode.h; sourceTree = "<group>"; };
 		CECCE97E161530760091707C /* SubwayNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SubwayNode.mm; sourceTree = "<group>"; };
-		CECCE9811615389A0091707C /* level35.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level35.json; sourceTree = "<group>"; };
-		CECD016216248C0F008F7536 /* level45.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level45.json; sourceTree = "<group>"; };
-		CECD01651624951F008F7536 /* level46.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level46.json; sourceTree = "<group>"; };
+		CECCE9811615389A0091707C /* quilt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quilt.json; sourceTree = "<group>"; };
+		CECD016216248C0F008F7536 /* subways.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = subways.json; sourceTree = "<group>"; };
+		CECD01651624951F008F7536 /* corner_jumper.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = corner_jumper.json; sourceTree = "<group>"; };
 		CECDC54715F6C54000D266FD /* green_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_check.png; sourceTree = "<group>"; };
 		CECE255915F21FDB00517973 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		CECE255A15F21FDB00517973 /* Level.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level.mm; sourceTree = "<group>"; };
 		CECE255D15F227D200517973 /* GameNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameNode.h; sourceTree = "<group>"; };
 		CECE256615F2819200517973 /* LevelMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMgr.h; sourceTree = "<group>"; };
 		CECE256715F2819200517973 /* LevelMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelMgr.mm; sourceTree = "<group>"; };
-		CECE256D15F2869300517973 /* level5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level5.json; sourceTree = "<group>"; };
-		CECE256E15F2869300517973 /* level6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level6.json; sourceTree = "<group>"; };
-		CECE688C15F750F70042A7DF /* level3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level3.json; sourceTree = "<group>"; };
-		CECE688F15F752780042A7DF /* level2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level2.json; sourceTree = "<group>"; };
-		CECE689115F754BA0042A7DF /* level4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level4.json; sourceTree = "<group>"; };
-		CECE689315F75AE60042A7DF /* level13.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level13.json; sourceTree = "<group>"; };
+		CECE256D15F2869300517973 /* one_way.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = one_way.json; sourceTree = "<group>"; };
+		CECE256E15F2869300517973 /* change_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = change_colors.json; sourceTree = "<group>"; };
+		CECE688C15F750F70042A7DF /* house_by_river.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = house_by_river.json; sourceTree = "<group>"; };
+		CECE688F15F752780042A7DF /* two_bridges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = two_bridges.json; sourceTree = "<group>"; };
+		CECE689115F754BA0042A7DF /* start_anywhere.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = start_anywhere.json; sourceTree = "<group>"; };
+		CECE689315F75AE60042A7DF /* corners.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = corners.json; sourceTree = "<group>"; };
 		CECE689915F76A510042A7DF /* Bridge4Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge4Node.h; sourceTree = "<group>"; };
 		CECE689A15F76A510042A7DF /* Bridge4Node.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Bridge4Node.mm; sourceTree = "<group>"; };
-		CECE689C15F76E120042A7DF /* level21.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level21.json; sourceTree = "<group>"; };
+		CECE689C15F76E120042A7DF /* bullseye.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bullseye.json; sourceTree = "<group>"; };
 		CECFA62F15F36AEE00FF1E8D /* Undoable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Undoable.h; sourceTree = "<group>"; };
 		CECFA63015F36AEE00FF1E8D /* Undoable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Undoable.m; sourceTree = "<group>"; };
-		CED0302F15FB724A008E7EA4 /* level10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level10.json; sourceTree = "<group>"; };
-		CED0704315FF7A5E0050CA9D /* level17.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level17.json; sourceTree = "<group>"; };
+		CED0302F15FB724A008E7EA4 /* visit_again.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = visit_again.json; sourceTree = "<group>"; };
+		CED0704315FF7A5E0050CA9D /* in_the_middle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = in_the_middle.json; sourceTree = "<group>"; };
 		CED31C74160247510010A1E6 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		CED45E7F15FB7D7D0066F0FE /* UIButtonExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonExtras.h; sourceTree = "<group>"; };
 		CED45E8015FB7D7D0066F0FE /* UIButtonExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonExtras.m; sourceTree = "<group>"; };
 		CED45E8215FB81EF0066F0FE /* coins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coins.png; sourceTree = "<group>"; };
-		CED53AA71632BA1D0072DF54 /* level58.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level58.json; sourceTree = "<group>"; };
-		CED53AAA1632BBEA0072DF54 /* level59.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level59.json; sourceTree = "<group>"; };
-		CED53AAC1632BD980072DF54 /* level60.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level60.json; sourceTree = "<group>"; };
+		CED53AA71632BA1D0072DF54 /* tolls_off_center.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tolls_off_center.json; sourceTree = "<group>"; };
+		CED53AAA1632BBEA0072DF54 /* overlapping_subways.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = overlapping_subways.json; sourceTree = "<group>"; };
+		CED53AAC1632BD980072DF54 /* spiral_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spiral_colors.json; sourceTree = "<group>"; };
 		CED71AD4162999E800EF521F /* StyleUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleUtil.h; sourceTree = "<group>"; };
 		CED71AD5162999E800EF521F /* StyleUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StyleUtil.mm; sourceTree = "<group>"; };
-		CED88B361616559000837558 /* level37.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level37.json; sourceTree = "<group>"; };
+		CED88B361616559000837558 /* spiral.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spiral.json; sourceTree = "<group>"; };
 		CED983DB16275B590003D4B0 /* MainViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewiPad.xib; sourceTree = "<group>"; };
-		CEDA5A021632B765004A30A5 /* level56.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level56.json; sourceTree = "<group>"; };
-		CEDA5A051632B8BC004A30A5 /* level57.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level57.json; sourceTree = "<group>"; };
+		CEDA5A021632B765004A30A5 /* free_swim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = free_swim.json; sourceTree = "<group>"; };
+		CEDA5A051632B8BC004A30A5 /* keep_riding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keep_riding.json; sourceTree = "<group>"; };
 		CEDBC2DA15EB89DA00094695 /* BridgeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeColors.h; sourceTree = "<group>"; };
 		CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerMgr.h; sourceTree = "<group>"; };
 		CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LayerMgr.mm; sourceTree = "<group>"; };
@@ -740,45 +740,45 @@
 		CEDBC2EB15EB8C8200094695 /* BridgeNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BridgeNode.mm; sourceTree = "<group>"; };
 		CEDBF23B161253C2000E85D3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEDBF23C161253C2000E85D3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CEDCDA9E1621A1B000E1F07F /* level27.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level27.json; sourceTree = "<group>"; };
-		CEDCDAA11621ABA100E1F07F /* level28.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level28.json; sourceTree = "<group>"; };
-		CEDCDAA31621B13400E1F07F /* level31.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level31.json; sourceTree = "<group>"; };
-		CEDCDAA51621B46200E1F07F /* level43.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level43.json; sourceTree = "<group>"; };
-		CEDE3170162B3E54007BABEC /* level53.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level53.json; sourceTree = "<group>"; };
-		CEDED3E71604904E0022ABA7 /* level14.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level14.json; sourceTree = "<group>"; };
-		CEDED3EA160496650022ABA7 /* level15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level15.json; sourceTree = "<group>"; };
-		CEDF5E6C1622EACD003D89FA /* level29.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level29.json; sourceTree = "<group>"; };
-		CEDF5E701622F13C003D89FA /* level32.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level32.json; sourceTree = "<group>"; };
-		CEE0277316067FE5007C4CDD /* level30.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level30.json; sourceTree = "<group>"; };
-		CEE145041625A54B007BD1B3 /* level48.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level48.json; sourceTree = "<group>"; };
-		CEE145061625AE7A007BD1B3 /* level49.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level49.json; sourceTree = "<group>"; };
-		CEE145081625B307007BD1B3 /* level50.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level50.json; sourceTree = "<group>"; };
-		CEE5122C162B1D1E0059D6E1 /* level51.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level51.json; sourceTree = "<group>"; };
-		CEE5122E162B285A0059D6E1 /* level52.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level52.json; sourceTree = "<group>"; };
-		CEE5DE26162B7F090095A3B8 /* level54.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level54.json; sourceTree = "<group>"; };
-		CEE5DE29162B850D0095A3B8 /* level55.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level55.json; sourceTree = "<group>"; };
+		CEDCDA9E1621A1B000E1F07F /* around_again.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = around_again.json; sourceTree = "<group>"; };
+		CEDCDAA11621ABA100E1F07F /* off_center.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = off_center.json; sourceTree = "<group>"; };
+		CEDCDAA31621B13400E1F07F /* hopscotch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hopscotch.json; sourceTree = "<group>"; };
+		CEDCDAA51621B46200E1F07F /* color_quilt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_quilt.json; sourceTree = "<group>"; };
+		CEDE3170162B3E54007BABEC /* triangles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangles.json; sourceTree = "<group>"; };
+		CEDED3E71604904E0022ABA7 /* up_and_down.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = up_and_down.json; sourceTree = "<group>"; };
+		CEDED3EA160496650022ABA7 /* peninsulas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = peninsulas.json; sourceTree = "<group>"; };
+		CEDF5E6C1622EACD003D89FA /* simple_box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple_box.json; sourceTree = "<group>"; };
+		CEDF5E701622F13C003D89FA /* tic_tac_toe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tic_tac_toe.json; sourceTree = "<group>"; };
+		CEE0277316067FE5007C4CDD /* another_color.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = another_color.json; sourceTree = "<group>"; };
+		CEE145041625A54B007BD1B3 /* spend_it_wisely.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spend_it_wisely.json; sourceTree = "<group>"; };
+		CEE145061625AE7A007BD1B3 /* back_and_forth.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = back_and_forth.json; sourceTree = "<group>"; };
+		CEE145081625B307007BD1B3 /* overlapping_tolls.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = overlapping_tolls.json; sourceTree = "<group>"; };
+		CEE5122C162B1D1E0059D6E1 /* corridors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = corridors.json; sourceTree = "<group>"; };
+		CEE5122E162B285A0059D6E1 /* jumpy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jumpy.json; sourceTree = "<group>"; };
+		CEE5DE26162B7F090095A3B8 /* hopscotch_subway.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hopscotch_subway.json; sourceTree = "<group>"; };
+		CEE5DE29162B850D0095A3B8 /* subway_box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = subway_box.json; sourceTree = "<group>"; };
 		CEE7AF0515FBD12F00DC0B7F /* YouWonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouWonViewController.h; sourceTree = "<group>"; };
 		CEE7AF0615FBD12F00DC0B7F /* YouWonViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = YouWonViewController.mm; sourceTree = "<group>"; };
 		CEE7AF0715FBD12F00DC0B7F /* YouWonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouWonViewController.xib; sourceTree = "<group>"; };
 		CEE7AF0A15FBD48600DC0B7F /* LevelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelController.h; sourceTree = "<group>"; };
 		CEE7AF0B15FBDD0F00DC0B7F /* YouWonViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouWonViewiPad.xib; sourceTree = "<group>"; };
-		CEE967F81624587F001A9F4C /* level33.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level33.json; sourceTree = "<group>"; };
-		CEE967FB16245CEF001A9F4C /* level34.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level34.json; sourceTree = "<group>"; };
-		CEE967FD162462EF001A9F4C /* level44.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level44.json; sourceTree = "<group>"; };
+		CEE967F81624587F001A9F4C /* color_diamond.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_diamond.json; sourceTree = "<group>"; };
+		CEE967FB16245CEF001A9F4C /* square_plus_four.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square_plus_four.json; sourceTree = "<group>"; };
+		CEE967FD162462EF001A9F4C /* color_box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_box.json; sourceTree = "<group>"; };
 		CEEE7DEA162211BD00B84A96 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		CEEE7DEB162211BD00B84A96 /* bridges.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bridges.css; sourceTree = "<group>"; };
 		CEEE7DF0162219FE00B84A96 /* anothercolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anothercolor.png; sourceTree = "<group>"; };
 		CEEE7DF216221A0E00B84A96 /* tictactoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tictactoe.png; sourceTree = "<group>"; };
 		CEEE7DF416221D9A00B84A96 /* konigsberg_1910.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = konigsberg_1910.jpg; sourceTree = "<group>"; };
-		CEEFF6F115F3A9CB0095649C /* level9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level9.json; sourceTree = "<group>"; };
-		CEF00C0A16205B0D00905473 /* level40.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level40.json; sourceTree = "<group>"; };
-		CEF00C0D162061AC00905473 /* level41.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level41.json; sourceTree = "<group>"; };
+		CEEFF6F115F3A9CB0095649C /* economics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = economics.json; sourceTree = "<group>"; };
+		CEF00C0A16205B0D00905473 /* frequent_visitor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = frequent_visitor.json; sourceTree = "<group>"; };
+		CEF00C0D162061AC00905473 /* colors_off_center.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = colors_off_center.json; sourceTree = "<group>"; };
 		CEF0649A15F51B0B0061C872 /* left_arrow_d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow_d.png; sourceTree = "<group>"; };
 		CEF0649B15F51B0B0061C872 /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
 		CEF0649C15F51B0B0061C872 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		CEF064A015F51B180061C872 /* refresh_d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh_d.png; sourceTree = "<group>"; };
 		CEF064A115F51B180061C872 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
-		CEF064A415F521AF0061C872 /* level1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level1.json; sourceTree = "<group>"; };
+		CEF064A415F521AF0061C872 /* hello_bridges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hello_bridges.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1391,67 +1391,67 @@
 		CECE256C15F2869200517973 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				CE1477DA1604C32100C054B2 /* level0.json */,
-				CEF064A415F521AF0061C872 /* level1.json */,
-				CECE688F15F752780042A7DF /* level2.json */,
-				CECE688C15F750F70042A7DF /* level3.json */,
-				CECE689115F754BA0042A7DF /* level4.json */,
-				CECE256D15F2869300517973 /* level5.json */,
-				CECE256E15F2869300517973 /* level6.json */,
-				CE33A6D5161B53F500C4AD0B /* level7.json */,
-				CEAE47F715F3894400898698 /* level8.json */,
-				CEEFF6F115F3A9CB0095649C /* level9.json */,
-				CED0302F15FB724A008E7EA4 /* level10.json */,
-				CEC8828316027431007DC0EA /* level11.json */,
-				CEC88286160276B1007DC0EA /* level12.json */,
-				CECE689315F75AE60042A7DF /* level13.json */,
-				CEDED3E71604904E0022ABA7 /* level14.json */,
-				CEDED3EA160496650022ABA7 /* level15.json */,
-				CE53D25A16060D090064F167 /* level16.json */,
-				CED0704315FF7A5E0050CA9D /* level17.json */,
-				CE7F8327161600920012A4FA /* level18.json */,
-				CE31DCD01601E3790084C38B /* level19.json */,
-				CE1BB78916160ED900EBB61E /* level20.json */,
-				CECE689C15F76E120042A7DF /* level21.json */,
-				CE53D25D160612510064F167 /* level22.json */,
-				CE1BB78C1616189F00EBB61E /* level23.json */,
-				CE33A6CD161B1F1800C4AD0B /* level24.json */,
-				CE31DCD21601EBDD0084C38B /* level25.json */,
-				CE53D25F160616070064F167 /* level26.json */,
-				CEDCDA9E1621A1B000E1F07F /* level27.json */,
-				CEDCDAA11621ABA100E1F07F /* level28.json */,
-				CEDF5E6C1622EACD003D89FA /* level29.json */,
-				CEE0277316067FE5007C4CDD /* level30.json */,
-				CEDCDAA31621B13400E1F07F /* level31.json */,
-				CEDF5E701622F13C003D89FA /* level32.json */,
-				CEE967F81624587F001A9F4C /* level33.json */,
-				CEE967FB16245CEF001A9F4C /* level34.json */,
-				CECCE9811615389A0091707C /* level35.json */,
-				CE1BB78E16161D0600EBB61E /* level36.json */,
-				CED88B361616559000837558 /* level37.json */,
-				CE33A6D0161B26FC00C4AD0B /* level38.json */,
-				CE33A6D3161B2F6200C4AD0B /* level39.json */,
-				CEF00C0A16205B0D00905473 /* level40.json */,
-				CEF00C0D162061AC00905473 /* level41.json */,
-				CE736B161620F1E80085172D /* level42.json */,
-				CEDCDAA51621B46200E1F07F /* level43.json */,
-				CEE967FD162462EF001A9F4C /* level44.json */,
-				CECD016216248C0F008F7536 /* level45.json */,
-				CECD01651624951F008F7536 /* level46.json */,
-				CE0298C01624B4300028274B /* level47.json */,
-				CEE145041625A54B007BD1B3 /* level48.json */,
-				CEE145061625AE7A007BD1B3 /* level49.json */,
-				CEE145081625B307007BD1B3 /* level50.json */,
-				CEE5122C162B1D1E0059D6E1 /* level51.json */,
-				CEE5122E162B285A0059D6E1 /* level52.json */,
-				CEDE3170162B3E54007BABEC /* level53.json */,
-				CEE5DE26162B7F090095A3B8 /* level54.json */,
-				CEE5DE29162B850D0095A3B8 /* level55.json */,
-				CEDA5A021632B765004A30A5 /* level56.json */,
-				CEDA5A051632B8BC004A30A5 /* level57.json */,
-				CED53AA71632BA1D0072DF54 /* level58.json */,
-				CED53AAA1632BBEA0072DF54 /* level59.json */,
-				CED53AAC1632BD980072DF54 /* level60.json */,
+				CE1477DA1604C32100C054B2 /* tile_test.json */,
+				CEF064A415F521AF0061C872 /* hello_bridges.json */,
+				CECE688F15F752780042A7DF /* two_bridges.json */,
+				CECE688C15F750F70042A7DF /* house_by_river.json */,
+				CECE689115F754BA0042A7DF /* start_anywhere.json */,
+				CECE256D15F2869300517973 /* one_way.json */,
+				CECE256E15F2869300517973 /* change_colors.json */,
+				CE33A6D5161B53F500C4AD0B /* no_color.json */,
+				CEAE47F715F3894400898698 /* tolls.json */,
+				CEEFF6F115F3A9CB0095649C /* economics.json */,
+				CED0302F15FB724A008E7EA4 /* visit_again.json */,
+				CEC8828316027431007DC0EA /* three_rivers.json */,
+				CEC88286160276B1007DC0EA /* twice_around.json */,
+				CECE689315F75AE60042A7DF /* corners.json */,
+				CEDED3E71604904E0022ABA7 /* up_and_down.json */,
+				CEDED3EA160496650022ABA7 /* peninsulas.json */,
+				CE53D25A16060D090064F167 /* islands.json */,
+				CED0704315FF7A5E0050CA9D /* in_the_middle.json */,
+				CE7F8327161600920012A4FA /* classic.json */,
+				CE31DCD01601E3790084C38B /* swim_lanes.json */,
+				CE1BB78916160ED900EBB61E /* classic_colors.json */,
+				CECE689C15F76E120042A7DF /* bullseye.json */,
+				CE53D25D160612510064F167 /* squares.json */,
+				CE1BB78C1616189F00EBB61E /* square_plus_one.json */,
+				CE33A6CD161B1F1800C4AD0B /* square_around.json */,
+				CE31DCD21601EBDD0084C38B /* diamond.json */,
+				CE53D25F160616070064F167 /* square_together.json */,
+				CEDCDA9E1621A1B000E1F07F /* around_again.json */,
+				CEDCDAA11621ABA100E1F07F /* off_center.json */,
+				CEDF5E6C1622EACD003D89FA /* simple_box.json */,
+				CEE0277316067FE5007C4CDD /* another_color.json */,
+				CEDCDAA31621B13400E1F07F /* hopscotch.json */,
+				CEDF5E701622F13C003D89FA /* tic_tac_toe.json */,
+				CEE967F81624587F001A9F4C /* color_diamond.json */,
+				CEE967FB16245CEF001A9F4C /* square_plus_four.json */,
+				CECCE9811615389A0091707C /* quilt.json */,
+				CE1BB78E16161D0600EBB61E /* square_color_together.json */,
+				CED88B361616559000837558 /* spiral.json */,
+				CE33A6D0161B26FC00C4AD0B /* overlap.json */,
+				CE33A6D3161B2F6200C4AD0B /* full_of_bridges.json */,
+				CEF00C0A16205B0D00905473 /* frequent_visitor.json */,
+				CEF00C0D162061AC00905473 /* colors_off_center.json */,
+				CE736B161620F1E80085172D /* hopscotch_colors.json */,
+				CEDCDAA51621B46200E1F07F /* color_quilt.json */,
+				CEE967FD162462EF001A9F4C /* color_box.json */,
+				CECD016216248C0F008F7536 /* subways.json */,
+				CECD01651624951F008F7536 /* corner_jumper.json */,
+				CE0298C01624B4300028274B /* tic_tac_toe_two.json */,
+				CEE145041625A54B007BD1B3 /* spend_it_wisely.json */,
+				CEE145061625AE7A007BD1B3 /* back_and_forth.json */,
+				CEE145081625B307007BD1B3 /* overlapping_tolls.json */,
+				CEE5122C162B1D1E0059D6E1 /* corridors.json */,
+				CEE5122E162B285A0059D6E1 /* jumpy.json */,
+				CEDE3170162B3E54007BABEC /* triangles.json */,
+				CEE5DE26162B7F090095A3B8 /* hopscotch_subway.json */,
+				CEE5DE29162B850D0095A3B8 /* subway_box.json */,
+				CEDA5A021632B765004A30A5 /* free_swim.json */,
+				CEDA5A051632B8BC004A30A5 /* keep_riding.json */,
+				CED53AA71632BA1D0072DF54 /* tolls_off_center.json */,
+				CED53AAA1632BBEA0072DF54 /* overlapping_subways.json */,
+				CED53AAC1632BD980072DF54 /* spiral_colors.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1610,94 +1610,94 @@
 				CEBD81ED15EAC92D00EE27CF /* MainWindow.xib in Resources */,
 				CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */,
 				CEBD81FE15EACDC100EE27CF /* GameSceneView.xib in Resources */,
-				CECE256F15F2869300517973 /* level5.json in Resources */,
-				CECE257015F2869300517973 /* level6.json in Resources */,
-				CEAE47F815F3894400898698 /* level8.json in Resources */,
-				CEEFF6F215F3A9CB0095649C /* level9.json in Resources */,
+				CECE256F15F2869300517973 /* one_way.json in Resources */,
+				CECE257015F2869300517973 /* change_colors.json in Resources */,
+				CEAE47F815F3894400898698 /* tolls.json in Resources */,
+				CEEFF6F215F3A9CB0095649C /* economics.json in Resources */,
 				CEF0649D15F51B0B0061C872 /* left_arrow_d.png in Resources */,
 				CEF0649E15F51B0B0061C872 /* left_arrow.png in Resources */,
 				CEF0649F15F51B0B0061C872 /* menu.png in Resources */,
 				CEF064A215F51B180061C872 /* refresh_d.png in Resources */,
 				CEF064A315F51B180061C872 /* refresh.png in Resources */,
-				CEF064A515F521AF0061C872 /* level1.json in Resources */,
+				CEF064A515F521AF0061C872 /* hello_bridges.json in Resources */,
 				CECDC54815F6C54000D266FD /* green_check.png in Resources */,
-				CECE688D15F750F70042A7DF /* level3.json in Resources */,
-				CECE689015F752780042A7DF /* level2.json in Resources */,
-				CECE689215F754BA0042A7DF /* level4.json in Resources */,
-				CECE689415F75AE60042A7DF /* level13.json in Resources */,
-				CECE689D15F76E120042A7DF /* level21.json in Resources */,
-				CED0303015FB724A008E7EA4 /* level10.json in Resources */,
+				CECE688D15F750F70042A7DF /* house_by_river.json in Resources */,
+				CECE689015F752780042A7DF /* two_bridges.json in Resources */,
+				CECE689215F754BA0042A7DF /* start_anywhere.json in Resources */,
+				CECE689415F75AE60042A7DF /* corners.json in Resources */,
+				CECE689D15F76E120042A7DF /* bullseye.json in Resources */,
+				CED0303015FB724A008E7EA4 /* visit_again.json in Resources */,
 				CED45E8315FB81EF0066F0FE /* coins.png in Resources */,
 				CE39AC9315FBA146005607B0 /* GameSceneViewiPad.xib in Resources */,
 				CEE7AF0915FBD12F00DC0B7F /* YouWonViewController.xib in Resources */,
 				CEE7AF0C15FBDD0F00DC0B7F /* YouWonViewiPad.xib in Resources */,
-				CED0704415FF7A5E0050CA9D /* level17.json in Resources */,
+				CED0704415FF7A5E0050CA9D /* in_the_middle.json in Resources */,
 				CEA3D478160120610060F511 /* AboutViewiPad.xib in Resources */,
-				CE31DCD11601E3790084C38B /* level19.json in Resources */,
-				CE31DCD31601EBDD0084C38B /* level25.json in Resources */,
+				CE31DCD11601E3790084C38B /* swim_lanes.json in Resources */,
+				CE31DCD31601EBDD0084C38B /* diamond.json in Resources */,
 				CED31C76160247510010A1E6 /* MainView.xib in Resources */,
-				CEC8828416027431007DC0EA /* level11.json in Resources */,
-				CEC88287160276B1007DC0EA /* level12.json in Resources */,
-				CEDED3E81604904E0022ABA7 /* level14.json in Resources */,
-				CEDED3EB160496650022ABA7 /* level15.json in Resources */,
-				CE1477DB1604C32100C054B2 /* level0.json in Resources */,
+				CEC8828416027431007DC0EA /* three_rivers.json in Resources */,
+				CEC88287160276B1007DC0EA /* twice_around.json in Resources */,
+				CEDED3E81604904E0022ABA7 /* up_and_down.json in Resources */,
+				CEDED3EB160496650022ABA7 /* peninsulas.json in Resources */,
+				CE1477DB1604C32100C054B2 /* tile_test.json in Resources */,
 				CEBB885D160514B700538464 /* bridgesprites.plist in Resources */,
 				CEBB885E160514B700538464 /* bridgesprites.pvr.gz in Resources */,
 				CEBB8861160514D200538464 /* bridgesprites-hd.plist in Resources */,
 				CEBB8862160514D200538464 /* bridgesprites-hd.pvr.gz in Resources */,
-				CE53D25B16060D090064F167 /* level16.json in Resources */,
-				CE53D25E160612510064F167 /* level22.json in Resources */,
-				CE53D260160616070064F167 /* level26.json in Resources */,
-				CEE0277416067FE5007C4CDD /* level30.json in Resources */,
+				CE53D25B16060D090064F167 /* islands.json in Resources */,
+				CE53D25E160612510064F167 /* squares.json in Resources */,
+				CE53D260160616070064F167 /* square_together.json in Resources */,
+				CEE0277416067FE5007C4CDD /* another_color.json in Resources */,
 				CE303A85160B3D5000F1D3CD /* Default-568h@2x.png in Resources */,
 				CE6BFB96160CADBD0037CFE4 /* MainMenuCollectionView.xib in Resources */,
 				CE6BFB9C160CB03B0037CFE4 /* LevelCell.xib in Resources */,
 				CE50FFB316137A8A00235E87 /* confetti.png in Resources */,
 				CE50FFB81613932400235E87 /* fire.png in Resources */,
-				CECCE9821615389A0091707C /* level35.json in Resources */,
-				CE7F8328161600920012A4FA /* level18.json in Resources */,
-				CE1BB78A16160ED900EBB61E /* level20.json in Resources */,
-				CE1BB78D1616189F00EBB61E /* level23.json in Resources */,
-				CE1BB78F16161D0700EBB61E /* level36.json in Resources */,
-				CED88B371616559000837558 /* level37.json in Resources */,
-				CE33A6CE161B1F1800C4AD0B /* level24.json in Resources */,
-				CE33A6D1161B26FC00C4AD0B /* level38.json in Resources */,
-				CE33A6D4161B2F6200C4AD0B /* level39.json in Resources */,
-				CE33A6D6161B53F600C4AD0B /* level7.json in Resources */,
-				CEF00C0B16205B0D00905473 /* level40.json in Resources */,
-				CEF00C0E162061AC00905473 /* level41.json in Resources */,
-				CE736B171620F1E80085172D /* level42.json in Resources */,
-				CEDCDA9F1621A1B000E1F07F /* level27.json in Resources */,
-				CEDCDAA21621ABA100E1F07F /* level28.json in Resources */,
-				CEDCDAA41621B13400E1F07F /* level31.json in Resources */,
-				CEDCDAA61621B46200E1F07F /* level43.json in Resources */,
+				CECCE9821615389A0091707C /* quilt.json in Resources */,
+				CE7F8328161600920012A4FA /* classic.json in Resources */,
+				CE1BB78A16160ED900EBB61E /* classic_colors.json in Resources */,
+				CE1BB78D1616189F00EBB61E /* square_plus_one.json in Resources */,
+				CE1BB78F16161D0700EBB61E /* square_color_together.json in Resources */,
+				CED88B371616559000837558 /* spiral.json in Resources */,
+				CE33A6CE161B1F1800C4AD0B /* square_around.json in Resources */,
+				CE33A6D1161B26FC00C4AD0B /* overlap.json in Resources */,
+				CE33A6D4161B2F6200C4AD0B /* full_of_bridges.json in Resources */,
+				CE33A6D6161B53F600C4AD0B /* no_color.json in Resources */,
+				CEF00C0B16205B0D00905473 /* frequent_visitor.json in Resources */,
+				CEF00C0E162061AC00905473 /* colors_off_center.json in Resources */,
+				CE736B171620F1E80085172D /* hopscotch_colors.json in Resources */,
+				CEDCDA9F1621A1B000E1F07F /* around_again.json in Resources */,
+				CEDCDAA21621ABA100E1F07F /* off_center.json in Resources */,
+				CEDCDAA41621B13400E1F07F /* hopscotch.json in Resources */,
+				CEDCDAA61621B46200E1F07F /* color_quilt.json in Resources */,
 				CEEE7DEC162211BD00B84A96 /* about.html in Resources */,
 				CEEE7DED162211BD00B84A96 /* bridges.css in Resources */,
 				CEEE7DF1162219FE00B84A96 /* anothercolor.png in Resources */,
 				CEEE7DF316221A0E00B84A96 /* tictactoe.png in Resources */,
 				CEEE7DF516221D9A00B84A96 /* konigsberg_1910.jpg in Resources */,
-				CEDF5E6D1622EACD003D89FA /* level29.json in Resources */,
-				CEDF5E711622F13C003D89FA /* level32.json in Resources */,
-				CEE967F91624587F001A9F4C /* level33.json in Resources */,
-				CEE967FC16245CEF001A9F4C /* level34.json in Resources */,
-				CEE967FE162462EF001A9F4C /* level44.json in Resources */,
-				CECD016316248C0F008F7536 /* level45.json in Resources */,
-				CECD01661624951F008F7536 /* level46.json in Resources */,
-				CE0298C11624B4300028274B /* level47.json in Resources */,
-				CEE145051625A54B007BD1B3 /* level48.json in Resources */,
-				CEE145071625AE7A007BD1B3 /* level49.json in Resources */,
-				CEE145091625B307007BD1B3 /* level50.json in Resources */,
+				CEDF5E6D1622EACD003D89FA /* simple_box.json in Resources */,
+				CEDF5E711622F13C003D89FA /* tic_tac_toe.json in Resources */,
+				CEE967F91624587F001A9F4C /* color_diamond.json in Resources */,
+				CEE967FC16245CEF001A9F4C /* square_plus_four.json in Resources */,
+				CEE967FE162462EF001A9F4C /* color_box.json in Resources */,
+				CECD016316248C0F008F7536 /* subways.json in Resources */,
+				CECD01661624951F008F7536 /* corner_jumper.json in Resources */,
+				CE0298C11624B4300028274B /* tic_tac_toe_two.json in Resources */,
+				CEE145051625A54B007BD1B3 /* spend_it_wisely.json in Resources */,
+				CEE145071625AE7A007BD1B3 /* back_and_forth.json in Resources */,
+				CEE145091625B307007BD1B3 /* overlapping_tolls.json in Resources */,
 				CED983DC16275B590003D4B0 /* MainViewiPad.xib in Resources */,
-				CEE5122D162B1D1E0059D6E1 /* level51.json in Resources */,
-				CEE5122F162B285A0059D6E1 /* level52.json in Resources */,
-				CEDE3171162B3E54007BABEC /* level53.json in Resources */,
-				CEE5DE27162B7F090095A3B8 /* level54.json in Resources */,
-				CEE5DE2A162B850D0095A3B8 /* level55.json in Resources */,
-				CEDA5A031632B765004A30A5 /* level56.json in Resources */,
-				CEDA5A061632B8BC004A30A5 /* level57.json in Resources */,
-				CED53AA81632BA1D0072DF54 /* level58.json in Resources */,
-				CED53AAB1632BBEA0072DF54 /* level59.json in Resources */,
-				CED53AAD1632BD980072DF54 /* level60.json in Resources */,
+				CEE5122D162B1D1E0059D6E1 /* corridors.json in Resources */,
+				CEE5122F162B285A0059D6E1 /* jumpy.json in Resources */,
+				CEDE3171162B3E54007BABEC /* triangles.json in Resources */,
+				CEE5DE27162B7F090095A3B8 /* hopscotch_subway.json in Resources */,
+				CEE5DE2A162B850D0095A3B8 /* subway_box.json in Resources */,
+				CEDA5A031632B765004A30A5 /* free_swim.json in Resources */,
+				CEDA5A061632B8BC004A30A5 /* keep_riding.json in Resources */,
+				CED53AA81632BA1D0072DF54 /* tolls_off_center.json in Resources */,
+				CED53AAB1632BBEA0072DF54 /* overlapping_subways.json in Resources */,
+				CED53AAD1632BD980072DF54 /* spiral_colors.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

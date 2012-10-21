@@ -38,7 +38,7 @@
  * @param jsonString the string of JSON data for this level
  * @param date the date this level was last modified.
  */
--(id) initWithJson:(NSString*) jsonString: (NSDate*) date;
+-(id) initWithJson:(NSString*) jsonString: (NSString*) fileName: (NSDate*) date;
 
 /**
  * Add the sprites from this level to the specified layer 
@@ -112,6 +112,12 @@
  * The display name for this level
  */
 @property (readonly, retain) NSString *name;
+
+/**
+ * The filename name for this level
+ */
+@property (readonly, retain) NSString *fileName;
+
 
 /**
  * The number of coins the user starts the level with

@@ -40,6 +40,7 @@
 @property (readwrite, copy) NSDictionary *levelData;
 
 @property (readwrite, retain) NSString *name;
+@property (readwrite, retain) NSString *fileName;
 @property (readwrite) int coins;
 @property (readwrite, retain) NSDate *date;
 @property (readwrite, retain) NSString *levelId;
@@ -49,7 +50,7 @@
 
 @implementation Level
 
--(id) initWithJson:(NSString*) jsonString: (NSDate*) date;
+-(id) initWithJson:(NSString*) jsonString: (NSString*) fileName: (NSDate*) date;
 {
     if( (self=[super init] )) {
         self.bridges = [NSMutableArray arrayWithCapacity:10];
@@ -59,6 +60,7 @@
         self.subways = [NSMutableArray arrayWithCapacity:5];
         self.labels = [NSMutableArray arrayWithCapacity:5];
         self.date = date;
+        self.fileName = fileName;
         
         self.tileCount = TILE_COUNT;
         

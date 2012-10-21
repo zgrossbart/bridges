@@ -63,7 +63,7 @@
             NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[path stringByAppendingPathComponent:file] error:&error];
             NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
             
-            Level *level = [[Level alloc] initWithJson:jsonString: fileDate];
+            Level *level = [[Level alloc] initWithJson:jsonString: file: fileDate];
             [self.levels setObject:level forKey:level.levelId];
         }
     }
@@ -219,7 +219,7 @@
         
         NSString *documentsDirectory = [paths objectAtIndex:0];
         
-        NSString *path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", level.levelId]];
+        NSString *path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", level.fileName]];
         
         /*
          * This is the place where we actually render the image using the screen shot
