@@ -82,7 +82,10 @@
         [[CCSpriteFrameCache sharedSpriteFrameCache]
          addSpriteFramesWithFile:@"bridgesprites.plist"];
         
-        [self addChild:[self generateBackground]];
+        if (!DEBUG_DRAW) {
+            [self addChild:[self generateBackground]];
+        }
+        
         _spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprites.pvr.gz"
                          capacity:200] retain];
         

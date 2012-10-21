@@ -257,6 +257,7 @@
 		CEDCDAA61621B46200E1F07F /* color_quilt.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDAA51621B46200E1F07F /* color_quilt.json */; };
 		CEDE3171162B3E54007BABEC /* triangles.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDE3170162B3E54007BABEC /* triangles.json */; };
 		CEDEA36B16344F3E00E564A5 /* levels.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDEA36A16344F3C00E564A5 /* levels.json */; };
+		CEDEA36D16345E8500E564A5 /* pay_as_you_go.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDEA36C16345E8300E564A5 /* pay_as_you_go.json */; };
 		CEDED3E81604904E0022ABA7 /* up_and_down.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3E71604904E0022ABA7 /* up_and_down.json */; };
 		CEDED3EB160496650022ABA7 /* peninsulas.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3EA160496650022ABA7 /* peninsulas.json */; };
 		CEDF5E6D1622EACD003D89FA /* simple_box.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDF5E6C1622EACD003D89FA /* simple_box.json */; };
@@ -747,6 +748,7 @@
 		CEDCDAA51621B46200E1F07F /* color_quilt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_quilt.json; sourceTree = "<group>"; };
 		CEDE3170162B3E54007BABEC /* triangles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangles.json; sourceTree = "<group>"; };
 		CEDEA36A16344F3C00E564A5 /* levels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = levels.json; sourceTree = "<group>"; };
+		CEDEA36C16345E8300E564A5 /* pay_as_you_go.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pay_as_you_go.json; sourceTree = "<group>"; };
 		CEDED3E71604904E0022ABA7 /* up_and_down.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = up_and_down.json; sourceTree = "<group>"; };
 		CEDED3EA160496650022ABA7 /* peninsulas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = peninsulas.json; sourceTree = "<group>"; };
 		CEDF5E6C1622EACD003D89FA /* simple_box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple_box.json; sourceTree = "<group>"; };
@@ -1428,6 +1430,7 @@
 				CE33A6D0161B26FC00C4AD0B /* overlap.json */,
 				CED53AAA1632BBEA0072DF54 /* overlapping_subways.json */,
 				CEE145081625B307007BD1B3 /* overlapping_tolls.json */,
+				CEDEA36C16345E8300E564A5 /* pay_as_you_go.json */,
 				CEDED3EA160496650022ABA7 /* peninsulas.json */,
 				CECCE9811615389A0091707C /* quilt.json */,
 				CEDF5E6C1622EACD003D89FA /* simple_box.json */,
@@ -1702,6 +1705,7 @@
 				CED53AAB1632BBEA0072DF54 /* overlapping_subways.json in Resources */,
 				CED53AAD1632BD980072DF54 /* spiral_colors.json in Resources */,
 				CEDEA36B16344F3E00E564A5 /* levels.json in Resources */,
+				CEDEA36D16345E8500E564A5 /* pay_as_you_go.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
