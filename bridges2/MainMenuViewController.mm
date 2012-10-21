@@ -132,7 +132,7 @@
     cell.imageView.image = ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).screenshot;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", levelId]]) {
+    if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).fileName]]) {
         
         [((UIImageView*) cell.accessoryView) setImage:_checkImage];
     } else {
@@ -241,7 +241,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     for (NSString *levelId in [LevelMgr getLevelMgr].levelIds) {
-        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", levelId]]) {
+        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).fileName]]) {
             x ++;
         }
     }
@@ -320,7 +320,7 @@
         [cell.screenshot setImage:((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).screenshot];
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", levelId]]) {
+        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).fileName]]) {
             [cell.checkMark setImage:_checkImage];
         } else {
             [cell.checkMark setImage:nil];

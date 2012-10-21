@@ -821,7 +821,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         _reportedWon = true;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
-        [defaults setBool:TRUE forKey:[NSString stringWithFormat:@"%@-won", self.currentLevel.levelId]];
+        [defaults setBool:TRUE forKey:[NSString stringWithFormat:@"%@-won", self.currentLevel.fileName]];
         [defaults synchronize];
         
         [self showConfetti:self.player.player.position.x:self.player.player.position.y];
