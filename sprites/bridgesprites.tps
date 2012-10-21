@@ -220,6 +220,7 @@
             <filename>subway_red.png</filename>
             <filename>subway.png</filename>
             <filename>x.png</filename>
+            <filename>background_1024_768_River.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

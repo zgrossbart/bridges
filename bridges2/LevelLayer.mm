@@ -56,7 +56,7 @@
 
 -(id)init {
     
-    if( (self=[super initWithColor:ccc4(244, 243, 240, 255)] )) {
+    if( (self=[super initWithColor:ccc4(250, 250, 240, 255)] )) {
         
         director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
         
@@ -79,10 +79,13 @@
         _contactListener = new MyContactListener();
         _world->SetContactListener(_contactListener);
         
-        _spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprites.pvr.gz"
-                         capacity:200] retain];
         [[CCSpriteFrameCache sharedSpriteFrameCache]
          addSpriteFramesWithFile:@"bridgesprites.plist"];
+        
+        [self addChild:[self generateBackground]];
+        _spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprites.pvr.gz"
+                         capacity:200] retain];
+        
         [self addChild:_spriteSheet];
         
         self.undoStack = [NSMutableArray arrayWithCapacity:20];
@@ -124,6 +127,28 @@
     [self updateAllBoxBodies];
     
     [self.controller checkForAppRating];
+}
+
+-(CCSprite*)generateBackground {
+    CCSprite *s = [CCSprite spriteWithSpriteFrameName:@"background_1024_768_River.png"];
+    
+    s.anchorPoint = CGPointZero;
+    CCRenderTexture *r = [CCRenderTexture renderTextureWithWidth:[s boundingBox].size.width
+                                                          height:[s boundingBox].size.height];
+    
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    [r begin];
+    [s visit];
+    [r end];
+    
+    CCSprite *back = [CCSprite spriteWithTexture:[r.sprite texture]];
+    [back setTextureRect:CGRectMake(0.0f, 0.0f, winSize.width, winSize.height)];
+    ccTexParams params = {GL_LINEAR,GL_LINEAR,GL_REPEAT,GL_REPEAT};
+    [[back texture] setTexParameters:&params];
+    
+    back.position = CGPointZero;
+    back.anchorPoint = CGPointZero;
+    return back;
 }
 
 /**
