@@ -17,6 +17,7 @@
 
 - (id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView;
 
+@property (retain, nonatomic) IBOutlet UIButton *backBtn;
 - (IBAction)pageChanged:(id)sender;
 - (IBAction)backToMainTapped:(id)sender;
 

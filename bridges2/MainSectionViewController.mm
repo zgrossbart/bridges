@@ -8,6 +8,7 @@
 
 #import "MainSectionViewController.h"
 #import "MainMenuViewController.h"
+#import "StyleUtil.h"
 
 @interface MainSectionViewController ()
 
@@ -30,17 +31,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [StyleUtil styleMenuButton:self.playBtn];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)dealloc {
     [_label release];
     [self.menuView release];
+    [_playBtn release];
     [super dealloc];
 }
 

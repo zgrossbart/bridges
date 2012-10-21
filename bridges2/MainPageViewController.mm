@@ -9,6 +9,7 @@
 #import "MainPageViewController.h"
 #import "MainSectionViewController.h"
 #import "LevelMgr.h"
+#import "StyleUtil.h"
 
 @interface MainPageViewController () {
     bool _pageControlUsed;
@@ -34,6 +35,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [StyleUtil styleMenuButton:self.backBtn];
+    
 	_scrollView.pagingEnabled = YES;
     _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * [[LevelMgr getLevelMgr].levelSets count], _scrollView.frame.size.height);
     _scrollView.showsHorizontalScrollIndicator = NO;
@@ -139,6 +143,7 @@
     [self.views release];
     [_pageControl release];
     [self.menuView release];
+    [_backBtn release];
     [super dealloc];
 }
 
