@@ -2,6 +2,7 @@
     "level": {
         "id": "36",
         "name": "Square colors together",
+		"coins": "5",
         "rivers": [
             {
                 "x": "5-35",
@@ -45,8 +46,7 @@
             {
                 "x": "7",
                 "y": "24",
-                "orient": "v",
-				"coins": "1"
+                "orient": "v"
             },
             {
                 "x": "12",
@@ -86,7 +86,7 @@
                 "x": "15",
                 "y": "19",
                 "orient": "h",
-				"color": "red",
+				"color": "green",
 				"coins": "2"
             },
             {
@@ -103,14 +103,13 @@
             {
                 "x": "27",
                 "y": "24",
-                "orient": "v",
-				"color": "green"
+                "orient": "v"
             },
             {
                 "x": "32",
                 "y": "24",
                 "orient": "v",
-				"color": "green"
+				"color": "red"
             },
             {
                 "x": "27",
@@ -133,7 +132,7 @@
                 "x": "15",
                 "y": "10",
                 "orient": "h",
-				"color": "green",
+				"color": "red",
 				"coins": "3"
             },
             {
@@ -147,19 +146,19 @@
 				"x": "10",
 				"y": "17",
 				"color": "green",
-				"coins": "4"
+				"coins": "3"
 			},
 			{
 				"x": "7",
 				"y": "10",
 				"color": "red",
-				"coins": "5"
+				"coins": "3"
 			},
 			{
 				"x": "30",
 				"y": "17",
 				"color": "red",
-				"coins": "3"
+				"coins": "1"
 			},
 			{
 				"x": "30",
