@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainMenuViewController.h"
 
 @interface MainPageViewController : UIViewController <UIScrollViewDelegate> {
     
     IBOutlet UIScrollView *_scrollView;
     IBOutlet UIPageControl *_pageControl;
 }
+
+- (id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView;
+
 - (IBAction)pageChanged:(id)sender;
+- (IBAction)backToMainTapped:(id)sender;
 
 @end

@@ -55,10 +55,14 @@
  */
 -(IBAction)backToMainTapped:(id)sender;
 
+-(IBAction)backToPageViewTapped:(id)sender;
+
 /**
  * Tapping the play button sends the user to the menu where they can choose a level to play.
  */
 -(IBAction)playTapped:(id)sender;
+
+-(void)showLevels: (int)page;
 
 - (IBAction)handleSwipe:(id)sender;
 

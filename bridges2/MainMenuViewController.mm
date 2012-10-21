@@ -27,6 +27,7 @@
     
 }
 @property (readwrite, retain) UIImage *checkImage;
+@property (readwrite, retain) MainPageViewController *pageViewController;
 
 @end
 
@@ -200,6 +201,10 @@
     [self styleButtons];
 }
 
+-(IBAction)backToPageViewTapped:(id)sender {
+    [self playTapped:sender];
+}
+
 -(IBAction)aboutTapped:(id)sender {
     [[NSBundle mainBundle] loadNibNamed:@"AboutViewiPad" owner:self options:nil];
     
@@ -218,12 +223,17 @@
 }
 
 -(IBAction)playTapped:(id)sender {
+    if (self.pageViewController == nil) {
+        self.pageViewController = [[[MainPageViewController alloc] initWithNibNameAndMenuView:nil bundle:nil menu:self] autorelease];
+    }
     
-    MainPageViewController *mpvc = [[[MainPageViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+    [self.navigationController pushViewController:self.pageViewController animated:YES];
+}
+
+-(void)showLevels: (int)page {
+    [self.navigationController popViewControllerAnimated:YES];
     
-    [self.navigationController pushViewController:mpvc animated:YES];
-    
-    /*if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuCollectionView" owner:self options:nil];
         [self loadLevelPickerView];
     } else {
@@ -231,13 +241,14 @@
         _navItem.title = @"Select a level";
     }
     [self styleButtons];
-    _xOfY.text = [self getXofY];*/
+    _xOfY.text = [self getXofY];
+    
 }
 
 - (IBAction)handleSwipe:(UISwipeGestureRecognizer *)recognizer {
     
     if (recognizer.direction == UISwipeGestureRecognizerDirectionRight) {
-        [self backToMainTapped:nil];
+        [self backToPageViewTapped:nil];
     }
 }
 
@@ -279,6 +290,9 @@
 }
 
 -(IBAction)backToMainTapped:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [[NSBundle mainBundle] loadNibNamed:@"MainViewiPad" owner:self options:nil];
     } else {
@@ -375,6 +389,7 @@
 {
     [_GameSceneViewController release];
     _GameSceneViewController = nil;
+    [self.pageViewController release];
     
     [_checkImage release];
 
