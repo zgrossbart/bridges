@@ -79,12 +79,13 @@
     _hasInit = true;
 }
 
--(void)showLevel:(Level*) level {
+-(void)showLevel:(int) set: (Level*) level {
     
     if (!_hasInit) {
         [self setupCocos2D];
     }
     
+    self.set = set;
     [_layer setLevel:level];
     [self showMessage:level.name];
 }
@@ -218,6 +219,7 @@
     }
     
     self.youWonController.currentLevel = _layer.currentLevel;
+    self.youWonController.currentSet = self.set;
     self.youWonController.layer = _layer;
     [self.navigationController pushViewController:self.youWonController animated:NO];
     

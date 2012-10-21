@@ -12,15 +12,17 @@
 @interface MainSectionViewController ()
 
 @property (readwrite, retain) MainMenuViewController *menuView;
+@property (readwrite) int index;
 
 @end
 
 @implementation MainSectionViewController
 
-- (id)initWithNibAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*)menuView {
+- (id)initWithNibAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*)menuView index:(int)index {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.menuView = menuView;
+        self.index = index;
     }
     return self;
 }
@@ -43,7 +45,7 @@
 }
 
 - (IBAction)playTapped:(id)sender {
-    [self.menuView showLevels:-1];
+    [self.menuView showLevels:self.index];
     
 }
 

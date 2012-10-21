@@ -43,11 +43,12 @@
 @property (readonly) CCDirectorIOS *director;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (retain) YouWonViewController *youWonController;
+@property (readwrite) int set;
 
 /**
  * Show the specified level and make it playable.
  */
--(void)showLevel:(Level*) level;
+-(void)showLevel:(int) set: (Level*) level;
 
 /**
  * Tapping the home button sends the user back to the menu screen to 

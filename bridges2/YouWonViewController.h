@@ -56,4 +56,6 @@
  */
 @property (nonatomic, retain) LevelLayer *layer;
 
+@property (readwrite) int currentSet;
+
 @end

@@ -18,6 +18,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Level.h"
+#import "LevelSet.h"
 
 /** 
  * The LevelMgr manages the list of levels, generates the level 
@@ -36,6 +37,10 @@
  */
 +(LevelMgr *)getLevelMgr;
 
++(LevelSet*)getLevelSet: (int) index;
+
++(Level*)getLevel: (int) set: (NSString*) levelId;
+
 /** 
  * Generate a set of images of each level in the documents directory.
  *
@@ -46,12 +51,17 @@
 /** 
  * The loaded levels for this game.
  */
-@property (readonly, retain) NSMutableDictionary *levels;
+//@property (readonly, retain) NSMutableDictionary *levels;
 
 /** 
  * The array of sorted level IDs.
  */
-@property (readonly,copy) NSArray *levelIds;
+//@property (readonly,copy) NSArray *levelIds;
+
+/**
+ * The array of sorted level sets.
+ */
+@property (readonly,copy) NSArray *levelSets;
 
 /** 
  * The graphics view used to add the Cocos2d view into the UIKit stack

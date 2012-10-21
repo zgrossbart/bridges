@@ -27,6 +27,7 @@
     
 }
 @property (readwrite, retain) UIImage *checkImage;
+@property (readwrite) int currentSet;
 @property (readwrite, retain) MainPageViewController *pageViewController;
 
 @end
@@ -85,7 +86,7 @@
         self.GameSceneViewController = [[[GameSceneViewController alloc] initWithNibName:nil bundle:nil] autorelease];
     }
     
-    [self.GameSceneViewController showLevel:[[LevelMgr getLevelMgr].levels objectForKey:key]];
+    [self.GameSceneViewController showLevel:self.currentSet: [LevelMgr getLevel:self.currentSet :key]];
     [self.navigationController pushViewController:_GameSceneViewController animated:YES];
 }
 
@@ -115,13 +116,13 @@
 }
 
 -(NSInteger)tableView:(UITableView*) tableView numberOfRowsInSection:(NSInteger) section {
-    return [LevelMgr getLevelMgr].levels.count;
+    return [LevelMgr getLevelSet:self.currentSet].levels.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView*) tableView cellForRowAtIndexPath:(NSIndexPath*) indexPath {
     static NSString *CellIdentifier = @"Cell";
     
-    NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
+    NSString *levelId = [[LevelMgr getLevelSet:self.currentSet].levelIds objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
@@ -131,10 +132,10 @@
         [imageView release];
     }
 
-    cell.imageView.image = ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).screenshot;
+    cell.imageView.image = [LevelMgr getLevel:self.currentSet :levelId].screenshot;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).fileName]]) {
+    if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", [LevelMgr getLevel:self.currentSet :levelId].fileName]]) {
         
         [((UIImageView*) cell.accessoryView) setImage:_checkImage];
     } else {
@@ -144,7 +145,7 @@
     NSMutableString *name = [NSMutableString stringWithCapacity:10];
     [name appendString:levelId];
     [name appendString:@". "];
-    [name appendString:((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).name];
+    [name appendString:[LevelMgr getLevel:self.currentSet :levelId].name];
     
     cell.textLabel.text = name;
     cell.textLabel.font = [UIFont fontWithName:@"Avenir Book" size:16];
@@ -157,7 +158,7 @@
     
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:false];
     
-    NSString* key = [[LevelMgr getLevelMgr].levelIds objectAtIndex:indexPath.row];
+    NSString* key = [[LevelMgr getLevelSet:self.currentSet].levelIds objectAtIndex:indexPath.row];
     [self selectLevel:key];
 }
 
@@ -231,6 +232,7 @@
 }
 
 -(void)showLevels: (int)page {
+    self.currentSet = page;
     [self.navigationController popViewControllerAnimated:YES];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -254,11 +256,11 @@
 
 -(NSString*)getXofY {
     int x = 0;
-    int y = [[LevelMgr getLevelMgr].levelIds count];
+    int y = [[LevelMgr getLevelSet:self.currentSet].levelIds count];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    for (NSString *levelId in [LevelMgr getLevelMgr].levelIds) {
-        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).fileName]]) {
+    for (NSString *levelId in [LevelMgr getLevelSet:self.currentSet].levelIds) {
+        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", [LevelMgr getLevel:self.currentSet :levelId].fileName]]) {
             x ++;
         }
     }
@@ -303,10 +305,10 @@
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*) collectionView {
-    if ([[LevelMgr getLevelMgr].levelIds count] % _noOfSection == 0) {
-        return [[LevelMgr getLevelMgr].levelIds count] / _noOfSection;
+    if ([[LevelMgr getLevelSet:self.currentSet].levelIds count] % _noOfSection == 0) {
+        return [[LevelMgr getLevelSet:self.currentSet].levelIds count] / _noOfSection;
     } else {
-        return ([[LevelMgr getLevelMgr].levelIds count] / _noOfSection) + 1;
+        return ([[LevelMgr getLevelSet:self.currentSet].levelIds count] / _noOfSection) + 1;
     }
 }
 
@@ -324,23 +326,23 @@
     
     int index = indexPath.section * _noOfSection + indexPath.row;
     
-    if (index >= [[LevelMgr getLevelMgr].levelIds count]) {
+    if (index >= [[LevelMgr getLevelSet:self.currentSet].levelIds count]) {
         [cell.titleLabel setText:@""];
         [cell.screenshot setImage:nil];
         [cell.checkMark setImage:nil];
         [cell setBorderVisible:false];
     } else {
-        NSString *levelId = [[LevelMgr getLevelMgr].levelIds objectAtIndex:index];
+        NSString *levelId = [[LevelMgr getLevelSet:self.currentSet].levelIds objectAtIndex:index];
         
         NSMutableString *name = [NSMutableString stringWithCapacity:10];
         [name appendString:levelId];
         [name appendString:@". "];
-        [name appendString:((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).name];
+        [name appendString:[LevelMgr getLevel:self.currentSet :levelId].name];
         [cell.titleLabel setText:name];
-        [cell.screenshot setImage:((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).screenshot];
+        [cell.screenshot setImage:[LevelMgr getLevel:self.currentSet :levelId].screenshot];
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", ((Level*)[[LevelMgr getLevelMgr].levels objectForKey:levelId]).fileName]]) {
+        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", [LevelMgr getLevel:self.currentSet :levelId].fileName]]) {
             [cell.checkMark setImage:_checkImage];
         } else {
             [cell.checkMark setImage:nil];
@@ -380,8 +382,8 @@
  */
 - (void)collectionView:(UICollectionView*) collectionView didSelectItemAtIndexPath:(NSIndexPath*) indexPath {
     int index = indexPath.section * _noOfSection + indexPath.row;
-    if (index < [[LevelMgr getLevelMgr].levelIds count]) {
-        [self selectLevel:[[LevelMgr getLevelMgr].levelIds objectAtIndex:index]];
+    if (index < [[LevelMgr getLevelSet:self.currentSet].levelIds count]) {
+        [self selectLevel:[[LevelMgr getLevelSet:self.currentSet].levelIds objectAtIndex:index]];
     }
 }
 

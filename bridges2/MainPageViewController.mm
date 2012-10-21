@@ -8,6 +8,7 @@
 
 #import "MainPageViewController.h"
 #import "MainSectionViewController.h"
+#import "LevelMgr.h"
 
 @interface MainPageViewController () {
     bool _pageControlUsed;
@@ -23,7 +24,7 @@
 - (id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.views = [NSMutableArray arrayWithCapacity:5];
+        self.views = [NSMutableArray arrayWithCapacity:[[LevelMgr getLevelMgr].levelSets count]];
         _pageControlUsed = NO;
         self.menuView = menuView;
     }
@@ -34,13 +35,13 @@
 {
     [super viewDidLoad];
 	_scrollView.pagingEnabled = YES;
-    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * 5, _scrollView.frame.size.height);
+    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * [[LevelMgr getLevelMgr].levelSets count], _scrollView.frame.size.height);
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.scrollsToTop = NO;
     _scrollView.delegate = self;
     
-    _pageControl.numberOfPages = 5;
+    _pageControl.numberOfPages = [[LevelMgr getLevelMgr].levelSets count];
     _pageControl.currentPage = 0;
     
     [self loadScrollViewWithPage:0];
@@ -62,7 +63,7 @@
 
 - (void)loadScrollViewWithPage:(int)page {
     if (page < 0) return;
-    if (page >= 5) return;
+    if (page >= [[LevelMgr getLevelMgr].levelSets count]) return;
     
     if (_pageControlUsed) {
         // do nothing - the scroll was initiated from the page control, not the user dragging
@@ -75,7 +76,7 @@
     if (page < [self.views count]) {
         controller = [self.views objectAtIndex:page];
     } else {
-        controller = [[[MainSectionViewController alloc] initWithNibAndMenuView:nil bundle:nil menu:self.menuView] autorelease];
+        controller = [[[MainSectionViewController alloc] initWithNibAndMenuView:nil bundle:nil menu:self.menuView index:page] autorelease];
         CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
         CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
         CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
@@ -92,7 +93,7 @@
         frame.origin.y = 0;
         controller.view.frame = frame;
         [_scrollView addSubview:controller.view];
-        controller.label.text = [NSString stringWithFormat:@"Page %d", page];
+        controller.label.text = [LevelMgr getLevelSet:page].name;
     }
 }
 

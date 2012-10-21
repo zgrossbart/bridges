@@ -23,12 +23,12 @@
 #import "LayerMgr.h"
 #import "ScreenShotLayer.h"
 #import "BridgeColors.h"
+#import "LevelSet.h"
 
 #define PTM_RATIO 32.0
 
 @interface LevelMgr()
-@property (readwrite, retain) NSMutableDictionary *levels;
-@property (readwrite,copy) NSArray *levelIds;
+@property (readwrite,copy) NSArray *levelSets;
 @property (readwrite) CCGLView *glView;
 @end
 
@@ -41,13 +41,20 @@
     {
         if (!levelMgr) {
             levelMgr = [[LevelMgr alloc] init];
-            levelMgr.levels = [NSMutableDictionary dictionaryWithCapacity:25];
             
             [levelMgr loadLevels];
         }
         
         return levelMgr;
     }
+}
+
++(LevelSet*)getLevelSet: (int) index {
+    return [[LevelMgr getLevelMgr].levelSets objectAtIndex:index];
+}
+
++(Level*)getLevel: (int) set: (NSString*) levelId {
+    return [[LevelMgr getLevelSet:set].levels objectForKey:levelId];
 }
 
 -(void)loadLevels {
@@ -61,22 +68,46 @@
         [NSException raise:@"Invalid levels definition" format:@"The levels definition file levels.json is invalid JSON"];
     }
     
-    NSArray *set1 = [levels objectForKey:@"set1"];
-    for (int i = 0; i < [set1 count]; i++) {
-        NSString *file = [set1 objectAtIndex:i];
-        NSString *jsonString = [NSString stringWithContentsOfFile:[path stringByAppendingPathComponent:file] encoding:NSUTF8StringEncoding error:nil];
-        NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[path stringByAppendingPathComponent:file] error:&error];
-        NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
+    NSMutableArray *sets = [NSMutableArray arrayWithCapacity:[levels count]];
+    for(id key in levels) {
+        NSDictionary *set = [levels objectForKey:key];
+        NSArray *setLevels = [set objectForKey:@"levels"];
+        NSMutableArray *levelIds = [NSMutableArray arrayWithCapacity:[set count]];
+        NSMutableDictionary *levelObjs = [NSMutableDictionary dictionaryWithCapacity:[set count]];
+        for (int i = 0; i < [setLevels count]; i++) {
+            NSString *file = [setLevels objectAtIndex:i];
+            NSString *jsonString = [NSString stringWithContentsOfFile:[path stringByAppendingPathComponent:file] encoding:NSUTF8StringEncoding error:nil];
+            NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[path stringByAppendingPathComponent:file] error:&error];
+            NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
+            
+            Level *level = [[Level alloc] initWithJson:jsonString: file: fileDate: i];
+            [levelObjs setObject:level forKey:level.levelId];
+            [levelIds addObject:level.levelId];
+        }
         
-        Level *level = [[Level alloc] initWithJson:jsonString: file: fileDate: i];
-        [self.levels setObject:level forKey:level.levelId];
+        [sets addObject:[[LevelSet alloc] initWithNameAndLevels:[set objectForKey:@"name"] :
+                         [self sortLevelsInSet:levelIds] :levelObjs: [[set objectForKey:@"index"] intValue]]];
     }
     
-    self.levelIds = [self sortLevels];
+    self.levelSets = [self sortLevelSets:sets];
 }
 
--(NSArray *)sortLevels {
-    return [[self.levels allKeys] sortedArrayUsingComparator:(NSComparator)^(id obj1, id obj2){
+-(NSArray *)sortLevelSets: (NSArray*) sets {
+    return [sets sortedArrayUsingComparator:(NSComparator)^(id obj1, id obj2){
+        int i1 = ((LevelSet*)obj1).index;
+        int i2 = ((LevelSet*)obj2).index;
+        if (i1 > i2) {
+            return NSOrderedDescending;
+        } else if (i1 < i2) {
+            return NSOrderedAscending;
+        } else {
+            return NSOrderedSame;
+        }
+    }];
+}
+
+-(NSArray *)sortLevelsInSet: (NSArray*) levels {
+    return [levels sortedArrayUsingComparator:(NSComparator)^(id obj1, id obj2){
         int i1 = [obj1 integerValue];
         int i2 = [obj2 integerValue];
         if (i1 > i2) {
@@ -148,34 +179,36 @@
     NSMutableArray *levels = [NSMutableArray arrayWithCapacity:20];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     if([paths count] > 0) {
-        for (NSString* levelId in self.levelIds) {
-            Level *level = (Level*) [self.levels objectForKey:levelId];
-            
-            NSString *documentsDirectory = [paths objectAtIndex:0];
-            
-            NSString *path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", level.levelId]];
-            
-            NSError *error;
-            
-            if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-                NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:&error];
-                NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
+        for (LevelSet* set in self.levelSets) {
+            for (NSString* levelId in set.levelIds) {
+                Level *level = (Level*) [set.levels objectForKey:levelId];
                 
-                if ([level.date compare:fileDate] == NSOrderedDescending) {
-                    [levels addObject:level];
-                } else {
-                    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+                NSString *documentsDirectory = [paths objectAtIndex:0];
+                
+                NSString *path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"level%@.png", level.levelId]];
+                
+                NSError *error;
+                
+                if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+                    NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:&error];
+                    NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
                     
-                    dispatch_async(queue, ^{
-                        level.screenshot = [UIImage imageWithContentsOfFile:path];
-                    });
+                    if ([level.date compare:fileDate] == NSOrderedDescending) {
+                        [levels addObject:level];
+                    } else {
+                        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+                        
+                        dispatch_async(queue, ^{
+                            level.screenshot = [UIImage imageWithContentsOfFile:path];
+                        });
+                    }
+                } else {
+                    [levels addObject:level];
                 }
-            } else {
-                [levels addObject:level];
             }
         }
     }
-    
+
     if ([levels count] > 0) {
         /*
          * Then we have some levels that still need screenshots.  We'll draw
@@ -270,11 +303,8 @@
 
 -(void)dealloc {
     
-    [_levels release];
-    _levels = nil;
-    
-    [_levelIds release];
-    _levelIds = nil;
+    [self.levelSets release];
+    self.levelSets = nil;
     
     [super dealloc];
     
