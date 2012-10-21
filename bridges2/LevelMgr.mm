@@ -54,18 +54,22 @@
     NSString *path = [[NSBundle mainBundle] bundlePath];
     
     NSError *error;
-    NSArray *directoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&error];
     
-    for (NSString *file in directoryContents) {
-        if ([file hasPrefix:@"level"] &&
-            [file hasSuffix:@".json"]) {
-            NSString *jsonString = [NSString stringWithContentsOfFile:[path stringByAppendingPathComponent:file] encoding:NSUTF8StringEncoding error:nil];
-            NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[path stringByAppendingPathComponent:file] error:&error];
-            NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
-            
-            Level *level = [[Level alloc] initWithJson:jsonString: file: fileDate];
-            [self.levels setObject:level forKey:level.levelId];
-        }
+    NSDictionary *levels = [[NSString stringWithContentsOfFile:[path stringByAppendingPathComponent:@"levels.json"] encoding:NSUTF8StringEncoding error:nil] objectFromJSONString];
+    
+    if (levels == nil) {
+        [NSException raise:@"Invalid levels definition" format:@"The levels definition file levels.json is invalid JSON"];
+    }
+    
+    NSArray *set1 = [levels objectForKey:@"set1"];
+    for (int i = 0; i < [set1 count]; i++) {
+        NSString *file = [set1 objectAtIndex:i];
+        NSString *jsonString = [NSString stringWithContentsOfFile:[path stringByAppendingPathComponent:file] encoding:NSUTF8StringEncoding error:nil];
+        NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[path stringByAppendingPathComponent:file] error:&error];
+        NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
+        
+        Level *level = [[Level alloc] initWithJson:jsonString: file: fileDate: i];
+        [self.levels setObject:level forKey:level.levelId];
     }
     
     self.levelIds = [self sortLevels];

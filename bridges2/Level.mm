@@ -50,7 +50,7 @@
 
 @implementation Level
 
--(id) initWithJson:(NSString*) jsonString: (NSString*) fileName: (NSDate*) date;
+-(id) initWithJson:(NSString*) jsonString: (NSString*) fileName: (NSDate*) date: (NSInteger) levelId;
 {
     if( (self=[super init] )) {
         self.bridges = [NSMutableArray arrayWithCapacity:10];
@@ -63,6 +63,7 @@
         self.fileName = fileName;
         
         self.tileCount = TILE_COUNT;
+        self.levelId = [NSString stringWithFormat:@"%d", levelId];
         
         [self parseLevel:jsonString];
     }
@@ -77,7 +78,6 @@
         [NSException raise:@"Invalid level definition" format:@"The level definition %@ is invalid JSON", jsonString];
     }
     
-    _levelId = [self.levelData objectForKey:@"id"];
     _name = [self.levelData objectForKey:@"name"];
     if ([self.levelData objectForKey:@"coins"] != nil) {
         _coins = (int) [self parseInt:[self.levelData objectForKey:@"coins"]];

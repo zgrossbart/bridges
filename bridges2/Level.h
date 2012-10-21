@@ -38,7 +38,7 @@
  * @param jsonString the string of JSON data for this level
  * @param date the date this level was last modified.
  */
--(id) initWithJson:(NSString*) jsonString: (NSString*) fileName: (NSDate*) date;
+-(id) initWithJson:(NSString*) jsonString: (NSString*) fileName: (NSDate*) date: (NSInteger) levelId;
 
 /**
  * Add the sprites from this level to the specified layer 
