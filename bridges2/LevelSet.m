@@ -21,8 +21,6 @@
 
 -(id)initWithNameAndLevels: (NSString*) name: (NSArray*) levelIds: (NSDictionary*) levels: (int) index {
     if( (self=[super init] )) {
-        NSLog(@"Creating level set with %@, count: %d", name, [levelIds count]);
-        NSLog(@"[levels count] %d", [levels count]);
         self.name = name;
         self.levelIds = levelIds;
         self.levels = levels;
