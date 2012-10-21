@@ -142,10 +142,7 @@
         ((UIImageView*) cell.accessoryView).image = nil;
     }
     
-    NSMutableString *name = [NSMutableString stringWithCapacity:10];
-    [name appendString:levelId];
-    [name appendString:@". "];
-    [name appendString:[LevelMgr getLevel:self.currentSet :levelId].name];
+    NSMutableString *name = [NSString stringWithFormat:@"%d. %@", [levelId intValue] + 1, [LevelMgr getLevel:self.currentSet :levelId].name];
     
     cell.textLabel.text = name;
     cell.textLabel.font = [UIFont fontWithName:@"Avenir Book" size:16];
@@ -228,12 +225,12 @@
         self.pageViewController = [[[MainPageViewController alloc] initWithNibNameAndMenuView:nil bundle:nil menu:self] autorelease];
     }
     
-    [self.navigationController pushViewController:self.pageViewController animated:YES];
+    [self.navigationController pushViewController:self.pageViewController animated:NO];
 }
 
 -(void)showLevels: (int)page {
     self.currentSet = page;
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuCollectionView" owner:self options:nil];
@@ -334,10 +331,8 @@
     } else {
         NSString *levelId = [[LevelMgr getLevelSet:self.currentSet].levelIds objectAtIndex:index];
         
-        NSMutableString *name = [NSMutableString stringWithCapacity:10];
-        [name appendString:levelId];
-        [name appendString:@". "];
-        [name appendString:[LevelMgr getLevel:self.currentSet :levelId].name];
+        NSMutableString *name = [NSString stringWithFormat:@"%d. %@", [levelId intValue] + 1, [LevelMgr getLevel:self.currentSet :levelId].name];
+        
         [cell.titleLabel setText:name];
         [cell.screenshot setImage:[LevelMgr getLevel:self.currentSet :levelId].screenshot];
         

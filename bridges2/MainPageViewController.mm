@@ -45,6 +45,13 @@
     _pageControl.currentPage = 0;
     
     [self loadScrollViewWithPage:0];
+    
+    self.view.alpha = 0;
+    
+    [UIView beginAnimations:@"fade in" context:nil];
+    [UIView setAnimationDuration:0.5];
+    self.view.alpha = 1;
+    [UIView commitAnimations];
 
 }
 
