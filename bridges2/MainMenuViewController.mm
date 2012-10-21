@@ -20,6 +20,7 @@
 #import "LevelMgr.h"
 #import "LevelCell.h"
 #import "StyleUtil.h"
+#import "MainPageViewController.h"
 
 @interface MainMenuViewController() {
     int _noOfSection;
@@ -217,7 +218,12 @@
 }
 
 -(IBAction)playTapped:(id)sender {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    
+    MainPageViewController *mpvc = [[[MainPageViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+    
+    [self.navigationController pushViewController:mpvc animated:YES];
+    
+    /*if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuCollectionView" owner:self options:nil];
         [self loadLevelPickerView];
     } else {
@@ -225,7 +231,7 @@
         _navItem.title = @"Select a level";
     }
     [self styleButtons];
-    _xOfY.text = [self getXofY];
+    _xOfY.text = [self getXofY];*/
 }
 
 - (IBAction)handleSwipe:(UISwipeGestureRecognizer *)recognizer {
