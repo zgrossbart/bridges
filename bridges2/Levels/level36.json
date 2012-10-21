@@ -2,7 +2,7 @@
     "level": {
         "id": "36",
         "name": "Square colors together",
-		"coins": "5",
+		"coins": "4",
         "rivers": [
             {
                 "x": "5-35",
@@ -158,7 +158,7 @@
 				"x": "30",
 				"y": "17",
 				"color": "red",
-				"coins": "1"
+				"coins": "2"
 			},
 			{
 				"x": "30",
