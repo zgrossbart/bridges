@@ -19,6 +19,7 @@
 #import "MainSectionCollectionViewController.h"
 #import "LevelCell.h"
 #import "LevelMgr.h"
+#import "Level.h"
 #import "LevelSet.h"
 #import "BridgeColors.h"
 #import "StyleUtil.h"
@@ -109,6 +110,7 @@
         [cell setBorderVisible:false];
         cell.screenshot.backgroundColor = [UIColor clearColor];
         cell.titleLabel.backgroundColor = [UIColor clearColor];
+        [cell.checkMark setImage:nil];
     } else {
         LevelSet *set = [LevelMgr getLevelSet:index];
         
@@ -116,12 +118,31 @@
         [cell.screenshot setImage:[UIImage imageNamed: set.imageName]];
         [cell setBorderVisible:true];
         
+        if ([self hasWon:set]) {
+            [cell.checkMark setImage:[UIImage imageNamed:@"green_check.png"]];
+        } else {
+            [cell.checkMark setImage:nil];
+        }
+        
         cell.screenshot.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
         cell.titleLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
     }
     
     return cell;
     
+}
+
+-(bool)hasWon: (LevelSet*) set {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    for (NSString *levelId in set.levels) {
+        Level *level = [set.levels objectForKey:levelId];
+        if (![defaults boolForKey:[NSString stringWithFormat:@"%@-won", level.fileName]]) {
+            return false;
+        }
+    }
+    
+    return true;
 }
 
 -(CGSize)collectionView:(UICollectionView *) collectionView layout:(UICollectionViewLayout*) collectionViewLayout referenceSizeForHeaderInSection:(NSInteger) section {

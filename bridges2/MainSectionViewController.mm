@@ -60,6 +60,7 @@
     [_label release];
     [self.menuView release];
     [_playBtn release];
+    [_checkMark release];
     [super dealloc];
 }
 

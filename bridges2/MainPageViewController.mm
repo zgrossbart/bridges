@@ -82,7 +82,6 @@
         [self.views addObject:controller];
     }    
 	
-    // add the controller's view to the scroll view
     if (nil == controller.view.superview) {
         CGRect frame = _scrollView.frame;
         frame.origin.x = frame.size.width * page;
@@ -90,6 +89,9 @@
         controller.view.frame = frame;
         [_scrollView addSubview:controller.view];
         controller.label.text = [LevelMgr getLevelSet:page].name;
+        if ([self hasWon:[LevelMgr getLevelSet:page]]) {
+            [controller.checkMark setImage:[UIImage imageNamed:@"green_check.png"]];
+        }
         [controller.playBtn setImage:[UIImage imageNamed: [LevelMgr getLevelSet:page].imageName] forState:UIControlStateNormal];
     }
 }
@@ -97,6 +99,20 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
 }
+
+-(bool)hasWon: (LevelSet*) set {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    for (NSString *levelId in set.levels) {
+        Level *level = [set.levels objectForKey:levelId];
+        if (![defaults boolForKey:[NSString stringWithFormat:@"%@-won", level.fileName]]) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
 
 - (IBAction)pageChanged:(id)sender {
     int page = _pageControl.currentPage;
