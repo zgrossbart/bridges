@@ -15,7 +15,8 @@
             "up_and_down.json",
             "peninsulas.json",
             "islands.json",
-            "in_the_middle.json"
+            "in_the_middle.json",
+            "classic.json"
 		]
 	},
     "set2": {
@@ -23,7 +24,6 @@
         "index": "2",
         "image": "green_check.png",
         "levels": [
-            "classic.json",
             "swim_lanes.json",
             "bullseye.json",
             "squares.json",
