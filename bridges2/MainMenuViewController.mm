@@ -247,7 +247,7 @@
         [self loadLevelPickerView];
     } else {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewController" owner:self options:nil];
-        _navItem.title = @"Select a level";
+        _navItem.title = [LevelMgr getLevelSet:page].name;
     }
     [self styleButtons];
     _xOfY.text = [self getXofY];
