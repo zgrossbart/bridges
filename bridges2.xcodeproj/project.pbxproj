@@ -216,6 +216,8 @@
 		CEC8828416027431007DC0EA /* three_rivers.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC8828316027431007DC0EA /* three_rivers.json */; };
 		CEC88287160276B1007DC0EA /* twice_around.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC88286160276B1007DC0EA /* twice_around.json */; };
 		CECA1E0315FD21240052A58E /* RiverNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECA1E0215FD21240052A58E /* RiverNode.mm */; };
+		CECCC7DE1635B36A00098E85 /* suburbs.json in Resources */ = {isa = PBXBuildFile; fileRef = CECCC7DD1635B36A00098E85 /* suburbs.json */; };
+		CECCC7E11635B45C00098E85 /* suburb_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CECCC7E01635B45C00098E85 /* suburb_colors.json */; };
 		CECCE97F161530760091707C /* SubwayNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECCE97E161530760091707C /* SubwayNode.mm */; };
 		CECCE9821615389A0091707C /* quilt.json in Resources */ = {isa = PBXBuildFile; fileRef = CECCE9811615389A0091707C /* quilt.json */; };
 		CECD016316248C0F008F7536 /* subways.json in Resources */ = {isa = PBXBuildFile; fileRef = CECD016216248C0F008F7536 /* subways.json */; };
@@ -701,6 +703,8 @@
 		CEC88286160276B1007DC0EA /* twice_around.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = twice_around.json; sourceTree = "<group>"; };
 		CECA1E0115FD21240052A58E /* RiverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiverNode.h; sourceTree = "<group>"; };
 		CECA1E0215FD21240052A58E /* RiverNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RiverNode.mm; sourceTree = "<group>"; };
+		CECCC7DD1635B36A00098E85 /* suburbs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = suburbs.json; sourceTree = "<group>"; };
+		CECCC7E01635B45C00098E85 /* suburb_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = suburb_colors.json; sourceTree = "<group>"; };
 		CECCE97D161530760091707C /* SubwayNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubwayNode.h; sourceTree = "<group>"; };
 		CECCE97E161530760091707C /* SubwayNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SubwayNode.mm; sourceTree = "<group>"; };
 		CECCE9811615389A0091707C /* quilt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quilt.json; sourceTree = "<group>"; };
@@ -1467,6 +1471,7 @@
 				CE53D25F160616070064F167 /* square_together.json */,
 				CE53D25D160612510064F167 /* squares.json */,
 				CECE689115F754BA0042A7DF /* start_anywhere.json */,
+				CECCC7DD1635B36A00098E85 /* suburbs.json */,
 				CEE5DE29162B850D0095A3B8 /* subway_box.json */,
 				CECD016216248C0F008F7536 /* subways.json */,
 				CE31DCD01601E3790084C38B /* swim_lanes.json */,
@@ -1482,6 +1487,7 @@
 				CEDED3E71604904E0022ABA7 /* up_and_down.json */,
 				CED0302F15FB724A008E7EA4 /* visit_again.json */,
 				CEE9ED10163578F900FF9FAC /* visiting.json */,
+				CECCC7E01635B45C00098E85 /* suburb_colors.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1746,6 +1752,8 @@
 				CEDBF08316352FD000E50F12 /* MainSectionCollectionViewController.xib in Resources */,
 				CEE9ED0E16356FE200FF9FAC /* background_1024_768_River.png in Resources */,
 				CEE9ED11163578F900FF9FAC /* visiting.json in Resources */,
+				CECCC7DE1635B36A00098E85 /* suburbs.json in Resources */,
+				CECCC7E11635B45C00098E85 /* suburb_colors.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -69,9 +69,11 @@
             "tolls.json",
             "economics.json",
             "visit_again.json",
-            "frequent_visitor.json",
 			"pay_as_you_go.json",
+			"suburbs.json",
             "free_swim.json",
+			"frequent_visitor.json",
+			"suburb_colors.json",
             "overlapping_tolls.json",
             "tolls_off_center.json",
             "spiral_colors.json"
