@@ -218,6 +218,7 @@
 		CECA1E0315FD21240052A58E /* RiverNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECA1E0215FD21240052A58E /* RiverNode.mm */; };
 		CECCC7DE1635B36A00098E85 /* suburbs.json in Resources */ = {isa = PBXBuildFile; fileRef = CECCC7DD1635B36A00098E85 /* suburbs.json */; };
 		CECCC7E11635B45C00098E85 /* suburb_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CECCC7E01635B45C00098E85 /* suburb_colors.json */; };
+		CECCC7E41635B91200098E85 /* tolls_plus.json in Resources */ = {isa = PBXBuildFile; fileRef = CECCC7E31635B91100098E85 /* tolls_plus.json */; };
 		CECCE97F161530760091707C /* SubwayNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECCE97E161530760091707C /* SubwayNode.mm */; };
 		CECCE9821615389A0091707C /* quilt.json in Resources */ = {isa = PBXBuildFile; fileRef = CECCE9811615389A0091707C /* quilt.json */; };
 		CECD016316248C0F008F7536 /* subways.json in Resources */ = {isa = PBXBuildFile; fileRef = CECD016216248C0F008F7536 /* subways.json */; };
@@ -705,6 +706,7 @@
 		CECA1E0215FD21240052A58E /* RiverNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RiverNode.mm; sourceTree = "<group>"; };
 		CECCC7DD1635B36A00098E85 /* suburbs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = suburbs.json; sourceTree = "<group>"; };
 		CECCC7E01635B45C00098E85 /* suburb_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = suburb_colors.json; sourceTree = "<group>"; };
+		CECCC7E31635B91100098E85 /* tolls_plus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tolls_plus.json; sourceTree = "<group>"; };
 		CECCE97D161530760091707C /* SubwayNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubwayNode.h; sourceTree = "<group>"; };
 		CECCE97E161530760091707C /* SubwayNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SubwayNode.mm; sourceTree = "<group>"; };
 		CECCE9811615389A0091707C /* quilt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quilt.json; sourceTree = "<group>"; };
@@ -1481,6 +1483,7 @@
 				CE1477DA1604C32100C054B2 /* tile_test.json */,
 				CEAE47F715F3894400898698 /* tolls.json */,
 				CED53AA71632BA1D0072DF54 /* tolls_off_center.json */,
+				CECCC7E31635B91100098E85 /* tolls_plus.json */,
 				CEDE3170162B3E54007BABEC /* triangles.json */,
 				CEC88286160276B1007DC0EA /* twice_around.json */,
 				CECE688F15F752780042A7DF /* two_bridges.json */,
@@ -1754,6 +1757,7 @@
 				CEE9ED11163578F900FF9FAC /* visiting.json in Resources */,
 				CECCC7DE1635B36A00098E85 /* suburbs.json in Resources */,
 				CECCC7E11635B45C00098E85 /* suburb_colors.json in Resources */,
+				CECCC7E41635B91200098E85 /* tolls_plus.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

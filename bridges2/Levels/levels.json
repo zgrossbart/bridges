@@ -70,6 +70,7 @@
             "economics.json",
             "visit_again.json",
 			"pay_as_you_go.json",
+			"tolls_plus.json",
 			"suburbs.json",
             "free_swim.json",
 			"frequent_visitor.json",
