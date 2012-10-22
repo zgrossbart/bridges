@@ -11,6 +11,7 @@
 @interface LevelSet()
 
 @property (readwrite, retain) NSString *name;
+@property (readwrite, retain) NSString *imageName;
 @property (readwrite) int index;
 @property (readwrite, retain) NSArray *levelIds;
 @property (readwrite, retain) NSDictionary *levels;
@@ -19,12 +20,13 @@
 
 @implementation LevelSet
 
--(id)initWithNameAndLevels: (NSString*) name: (NSArray*) levelIds: (NSDictionary*) levels: (int) index {
+-(id)initWithNameAndLevels: (NSString*) name levelIds:(NSArray*) levelIds levels:(NSDictionary*) levels index:(int) index imageName:(NSString*) imageName {
     if( (self=[super init] )) {
         self.name = name;
         self.levelIds = levelIds;
         self.levels = levels;
         self.index = index;
+        self.imageName = imageName;
     }
     
     return self;

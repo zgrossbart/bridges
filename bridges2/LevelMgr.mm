@@ -85,8 +85,11 @@
             [levelIds addObject:level.levelId];
         }
         
-        [sets addObject:[[LevelSet alloc] initWithNameAndLevels:[set objectForKey:@"name"] :
-                         [self sortLevelsInSet:levelIds] :levelObjs: [[set objectForKey:@"index"] intValue]]];
+        [sets addObject:[[LevelSet alloc] initWithNameAndLevels:[set objectForKey:@"name"]
+                                                       levelIds:[self sortLevelsInSet:levelIds]
+                                                         levels:levelObjs
+                                                          index:[[set objectForKey:@"index"] intValue]
+                                                      imageName:[set objectForKey:@"image"]]];
     }
     
     self.levelSets = [self sortLevelSets:sets];

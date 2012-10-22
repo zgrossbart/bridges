@@ -2,6 +2,7 @@
     "set1": {
         "name": "Set 1",
 		"index": "1",
+		"image": "confetti.png",
         "levels": [
             "tile_test.json",
             "hello_bridges.json",
@@ -19,6 +20,7 @@
     "set2": {
         "name": "Set 2",
 		"index": "2",
+		"image": "coins.png",
         "levels": [
             "three_rivers.json",
             "twice_around.json",
@@ -49,6 +51,7 @@
     "set3": {
         "name": "Set 3",
 		"index": "3",
+		"image": "menu.png",
         "levels": [
             "quilt.json",
             "square_color_together.json",

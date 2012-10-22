@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [StyleUtil styleMenuButton:self.playBtn];
+    //[StyleUtil styleMenuButton:self.playBtn];
 }
 
 - (void)didReceiveMemoryWarning

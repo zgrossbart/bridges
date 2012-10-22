@@ -10,9 +10,10 @@
 
 @interface LevelSet : NSObject
 
--(id)initWithNameAndLevels: (NSString*) name: (NSArray*) levelIds: (NSDictionary*) levels: (int) index;
+-(id)initWithNameAndLevels: (NSString*) name levelIds:(NSArray*) levelIds levels:(NSDictionary*) levels index:(int) index imageName:(NSString*) imageName;
 
 @property (readonly, retain) NSString *name;
+@property (readonly, retain) NSString *imageName;
 @property (readonly) int index;
 @property (readonly, retain) NSArray *levelIds;
 @property (readonly, retain) NSDictionary *levels;

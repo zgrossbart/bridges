@@ -105,6 +105,7 @@
         controller.view.frame = frame;
         [_scrollView addSubview:controller.view];
         controller.label.text = [LevelMgr getLevelSet:page].name;
+        [controller.playBtn setImage:[UIImage imageNamed: [LevelMgr getLevelSet:page].imageName] forState:UIControlStateNormal];
     }
 }
 
