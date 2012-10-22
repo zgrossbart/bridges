@@ -21,6 +21,7 @@
 #import "LevelCell.h"
 #import "StyleUtil.h"
 #import "MainPageViewController.h"
+#import "MainSectionCollectionViewController.h"
 
 @interface MainMenuViewController() {
     int _noOfSection;
@@ -29,6 +30,7 @@
 @property (readwrite, retain) UIImage *checkImage;
 @property (readwrite) int currentSet;
 @property (readwrite, retain) MainPageViewController *pageViewController;
+@property (readwrite, retain) MainSectionCollectionViewController *sectionViewController;
 
 @end
 
@@ -221,11 +223,19 @@
 }
 
 -(IBAction)playTapped:(id)sender {
-    if (self.pageViewController == nil) {
-        self.pageViewController = [[[MainPageViewController alloc] initWithNibNameAndMenuView:nil bundle:nil menu:self] autorelease];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        if (self.sectionViewController == nil) {
+            self.sectionViewController = [[[MainSectionCollectionViewController alloc] initWithNibNameAndMenuView:nil bundle:nil menu:self] autorelease];
+        }
+        
+        [self.navigationController pushViewController:self.sectionViewController animated:NO];
+    } else {
+        if (self.pageViewController == nil) {
+            self.pageViewController = [[[MainPageViewController alloc] initWithNibNameAndMenuView:nil bundle:nil menu:self] autorelease];
+        }
+        
+        [self.navigationController pushViewController:self.pageViewController animated:NO];
     }
-    
-    [self.navigationController pushViewController:self.pageViewController animated:NO];
 }
 
 -(void)showLevels: (int)page {
@@ -387,6 +397,7 @@
     [_GameSceneViewController release];
     _GameSceneViewController = nil;
     [self.pageViewController release];
+    [self.sectionViewController release];
     
     [_checkImage release];
 
