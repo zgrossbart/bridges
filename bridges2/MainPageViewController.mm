@@ -57,14 +57,6 @@
     _pageControl.currentPage = 0;
     
     [self loadScrollViewWithPage:0];
-    
-    self.view.alpha = 0;
-    
-    [UIView beginAnimations:@"fade in" context:nil];
-    [UIView setAnimationDuration:0.5];
-    self.view.alpha = 1;
-    [UIView commitAnimations];
-
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
@@ -117,7 +109,12 @@
     CGRect frame = _scrollView.frame;
     frame.origin.x = frame.size.width * page;
     frame.origin.y = 0;
-    [_scrollView scrollRectToVisible:frame animated:YES];
+    [_scrollView scrollRectToVisible:frame animated:NO];
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    [StyleUtil animateView:self.view];
+    
 }
 
 - (IBAction)backToMainTapped:(id)sender {

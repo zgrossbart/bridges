@@ -90,7 +90,7 @@
     }
     
     [self.GameSceneViewController showLevel:self.currentSet: [LevelMgr getLevel:self.currentSet :key]];
-    [self.navigationController pushViewController:_GameSceneViewController animated:YES];
+    [self.navigationController pushViewController:_GameSceneViewController animated:NO];
 }
 
 -(void)viewDidUnload {
@@ -190,6 +190,8 @@
     [_mainTable reloadData];
     [_collectionView reloadData];
     _xOfY.text = [self getXofY];
+    
+    [StyleUtil animateView:self.view];
 }
 
 -(IBAction)backToGameTapped:(id)sender {
@@ -301,7 +303,7 @@
 
 -(IBAction)backToMainTapped:(id)sender {
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [[NSBundle mainBundle] loadNibNamed:@"MainViewiPad" owner:self options:nil];

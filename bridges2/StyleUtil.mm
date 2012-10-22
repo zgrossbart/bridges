@@ -74,4 +74,13 @@
     label.font = [UIFont fontWithName:@"Avenir" size: 11.0];
 }
 
++(void)animateView:(UIView*) view {
+    view.alpha = 0;
+    [UIView beginAnimations:@"fade in" context:nil];
+    [UIView setAnimationDuration:0.5];
+    view.alpha = 1;
+    [UIView commitAnimations];
+    
+}
+
 @end

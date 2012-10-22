@@ -53,4 +53,9 @@
  */
 +(void)styleLabel:(UILabel*) label;
 
+/**
+ * Animate a view into the foreground with a fade effect
+ */
++(void)animateView:(UIView*) view;
+
 @end

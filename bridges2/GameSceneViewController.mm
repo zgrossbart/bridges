@@ -121,6 +121,8 @@
     [viewController release];
     
     _levelTitle.backgroundColor = [UIColor colorWithRed:(1.0 * 0) / 255 green:(1.0 * 0) / 255 blue:(1.0 * 0) / 255 alpha:0.8];
+    
+    [StyleUtil animateView:self.view];
 }
 
 -(void)viewDidLoad {
@@ -132,7 +134,7 @@
 }
 
 -(IBAction)goHomeTapped:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 -(IBAction)undoTapped:(id)sender {

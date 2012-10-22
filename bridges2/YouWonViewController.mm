@@ -86,8 +86,12 @@
     [UIView commitAnimations];
     */
     
-    self.view.alpha = 0;
+    [StyleUtil animateView:self.view];
     
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    self.view.alpha = 0;
     [UIView beginAnimations:@"fade in" context:nil];
     [UIView setAnimationDuration:0.5];
     self.view.alpha = 1;
@@ -95,9 +99,10 @@
     
 }
 
+
 -(IBAction)replayTapped:(id)sender {
     [self.layer refresh];
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
     
 }
 
@@ -108,11 +113,11 @@
         /* 
          * Then we're at the end and we just go back to the menu
          */
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:NO];
     } else {
         NSString *key = [[LevelMgr getLevelSet:self.currentSet].levelIds objectAtIndex:i + 1];
         [self.layer setLevel:[[LevelMgr getLevelSet:self.currentSet].levels objectForKey:key]];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:NO];
     }
     
 }

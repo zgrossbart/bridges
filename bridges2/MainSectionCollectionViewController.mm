@@ -88,6 +88,11 @@
     return _noOfSection;
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+    [StyleUtil animateView:self.view];
+    
+}
+
 /**
  * Create each cell in the collection view that we use to select levels on the iPad
  */
