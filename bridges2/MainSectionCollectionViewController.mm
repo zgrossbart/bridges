@@ -36,7 +36,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.menuView = menuView;
-        _noOfSection = 2;
+        _noOfSection = 3;
     }
     return self;
 }
@@ -106,6 +106,7 @@
         LevelSet *set = [LevelMgr getLevelSet:index];
         
         cell.titleLabel.text = set.name;
+        NSLog(@"index: %d", index);
         NSLog(@"set.name: %@", set.name);
         NSLog(@"set.imageName: %@", set.imageName);
         [cell.screenshot setImage:[UIImage imageNamed: set.imageName]];

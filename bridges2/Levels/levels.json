@@ -1,37 +1,30 @@
 {
     "set1": {
-        "name": "Set 1",
-		"index": "1",
-		"image": "confetti.png",
+        "name": "Simple Rivers",
+        "index": "1",
+        "image": "confetti.png",
         "levels": [
             "tile_test.json",
             "hello_bridges.json",
             "two_bridges.json",
-            "house_by_river.json",
             "start_anywhere.json",
             "one_way.json",
-            "change_colors.json",
-            "no_color.json",
-            "tolls.json",
-            "economics.json",
-            "visit_again.json"
-        ]
-    },
-    "set2": {
-        "name": "Set 2",
-		"index": "2",
-		"image": "coins.png",
-        "levels": [
             "three_rivers.json",
             "twice_around.json",
             "corners.json",
             "up_and_down.json",
             "peninsulas.json",
             "islands.json",
-            "in_the_middle.json",
+            "in_the_middle.json"
+		]
+	},
+    "set2": {
+        "name": "Complex Rivers",
+        "index": "2",
+        "image": "green_check.png",
+        "levels": [
             "classic.json",
             "swim_lanes.json",
-            "classic_colors.json",
             "bullseye.json",
             "squares.json",
             "square_plus_one.json",
@@ -41,51 +34,65 @@
             "around_again.json",
             "off_center.json",
             "simple_box.json",
-            "pay_as_you_go.json",
-            "another_color.json",
             "hopscotch.json",
             "tic_tac_toe.json",
-            "square_plus_four.json"
+            "quilt.json",
+            "spiral.json",
+            "overlap.json",
+            "full_of_bridges.json"
         ]
     },
     "set3": {
-        "name": "Set 3",
-		"index": "3",
-		"image": "menu.png",
+        "name": "Houses and Colors",
+        "index": "3",
+        "image": "coins.png",
         "levels": [
-            "quilt.json",
-            "square_color_together.json",
-            "spiral.json",
-            "overlap.json",
-            "full_of_bridges.json",
-            "frequent_visitor.json",
+            "house_by_river.json",
+            "change_colors.json",
+            "no_color.json",
+            "classic_colors.json",
+            "another_color.json",
             "colors_off_center.json",
             "hopscotch_colors.json",
             "color_quilt.json",
             "color_box.json",
+            "square_color_together.json",
+            "square_plus_four.json"
+        ]
+    },
+    "set4": {
+        "name": "Tolls",
+        "index": "4",
+        "image": "menu.png",
+        "levels": [
+            "tolls.json",
+            "economics.json",
+            "visit_again.json",
+            "frequent_visitor.json",
+			"pay_as_you_go.json",
+            "free_swim.json",
+            "overlapping_tolls.json",
+            "tolls_off_center.json",
+            "spiral_colors.json"
+        ]
+    },
+    "set5": {
+        "name": "Subways",
+        "index": "5",
+        "image": "refresh.png",
+        "levels": [
             "subways.json",
             "corner_jumper.json",
             "tic_tac_toe_two.json",
             "spend_it_wisely.json",
-            "back_and_forth.json"
-        ]
-    },
-    "set4": {
-        "name": "Set 4",
-		"index": "4",
-		"image": "refresh.png",
-        "levels": [
-            "overlapping_tolls.json",
+            "back_and_forth.json",
             "corridors.json",
             "jumpy.json",
             "triangles.json",
             "hopscotch_subway.json",
             "subway_box.json",
-            "free_swim.json",
             "keep_riding.json",
-            "tolls_off_center.json",
-            "overlapping_subways.json",
-            "spiral_colors.json"
+            "overlapping_subways.json"
         ]
     }
 }
