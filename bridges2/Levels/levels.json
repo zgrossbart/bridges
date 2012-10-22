@@ -67,7 +67,14 @@
             "corner_jumper.json",
             "tic_tac_toe_two.json",
             "spend_it_wisely.json",
-            "back_and_forth.json",
+            "back_and_forth.json"
+        ]
+    },
+    "set4": {
+        "name": "Set 4",
+		"index": "4",
+		"image": "refresh.png",
+        "levels": [
             "overlapping_tolls.json",
             "corridors.json",
             "jumpy.json",
