@@ -81,6 +81,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
     
     _xOfY.text = [self getXofY];
+    [StyleUtil styleLabel:_xOfY];
 }
 
 -(void)selectLevel:(NSString*) key {

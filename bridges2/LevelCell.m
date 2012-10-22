@@ -17,6 +17,7 @@
  ******************************************************************************/
 
 #import "LevelCell.h"
+#import "StyleUtil.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation LevelCell
@@ -39,6 +40,7 @@
             return nil;
         }
         self = [[arrayOfViews objectAtIndex:0] retain];
+        [StyleUtil styleLabel:self.titleLabel];
     }
     
     return self;

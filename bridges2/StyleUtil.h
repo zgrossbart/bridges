@@ -46,4 +46,11 @@
  */
 +(void)styleNodeLabel:(UILabel*) label;
 
+/**
+ * Style a label that shows up in a menu button
+ *
+ * @param label the label to style
+ */
++(void)styleLabel:(UILabel*) label;
+
 @end

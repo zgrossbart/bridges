@@ -69,4 +69,9 @@
     label.frame = CGRectMake(0, 0, label.frame.size.width + 6, label.frame.size.height + 3);
 }
 
++(void)styleLabel:(UILabel*) label {
+    label.textColor = [UIColor blackColor];
+    label.font = [UIFont fontWithName:@"Avenir" size: 11.0];
+}
+
 @end

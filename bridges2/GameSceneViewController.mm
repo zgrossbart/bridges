@@ -20,6 +20,7 @@
 #import "LevelLayer.h"
 #import "BridgeColors.h"
 #import "LevelMgr.h"
+#import "StyleUtil.h"
 
 @interface GameSceneViewController ()
 
@@ -38,6 +39,9 @@
     } else {
         self = [super initWithNibName:@"GameSceneView" bundle:nibBundleOrNil];
     }
+    
+    [StyleUtil styleLabel:_coinLabel];
+    [StyleUtil styleLabel:_levelTitle];
     
     if (self) {
         // Custom initialization
