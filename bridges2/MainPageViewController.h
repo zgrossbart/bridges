@@ -19,6 +19,10 @@
 #import <UIKit/UIKit.h>
 #import "MainMenuViewController.h"
 
+/**
+ * The MainPageViewController handles the scroll view and the page view we use
+ * to select the set of levels on iPhone.
+ */
 @interface MainPageViewController : UIViewController <UIScrollViewDelegate> {
     
     IBOutlet UIScrollView *_scrollView;
@@ -27,8 +31,19 @@
 
 - (id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView;
 
+/**
+ * The back button takes the user back to the main window
+ */
 @property (retain, nonatomic) IBOutlet UIButton *backBtn;
+
+/**
+ * This method is called whenever the player scrolls the page view
+ */
 - (IBAction)pageChanged:(id)sender;
+
+/**
+ * Take the user back to the main window
+ */
 - (IBAction)backToMainTapped:(id)sender;
 
 @end

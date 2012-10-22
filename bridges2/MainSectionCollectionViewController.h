@@ -19,6 +19,10 @@
 #import <UIKit/UIKit.h>
 #import "MainMenuViewController.h"
 
+/**
+ * This class handles the collection view we use to show the level groups in the 
+ * iPad menu.
+ */
 @interface MainSectionCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 - (id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView;

@@ -19,6 +19,10 @@
 #import <UIKit/UIKit.h>
 #import "MainMenuViewController.h"
 
+/**
+ * This class handles the sections or pages in the iPhone view of the level set
+ * menu.  It's used by MainPageViewController.
+ */
 @interface MainSectionViewController : UIViewController {
     
 }

@@ -37,8 +37,17 @@
  */
 +(LevelMgr *)getLevelMgr;
 
+/**
+ * Get the set of the levels for the specified level set index.
+ */
 +(LevelSet*)getLevelSet: (int) index;
 
+/**
+ * This is a helper method to get a specific level.
+ *
+ * @param set the index of the set containing this level
+ * @param levelId the ID of the level to find
+ */
 +(Level*)getLevel: (int) set: (NSString*) levelId;
 
 /** 

@@ -22,7 +22,6 @@
 #import "StyleUtil.h"
 
 @interface MainPageViewController () {
-    bool _pageControlUsed;
 }
 
 @property (nonatomic, retain, readwrite) NSMutableArray *views;
@@ -36,7 +35,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.views = [NSMutableArray arrayWithCapacity:[[LevelMgr getLevelMgr].levelSets count]];
-        _pageControlUsed = NO;
         self.menuView = menuView;
     }
     return self;
@@ -73,10 +71,6 @@
     CGFloat pageWidth = _scrollView.frame.size.width;
     int page = floor((_scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     _pageControl.currentPage = page;
-    
-    //NSLog(@"page: %d", page);
-    
-    //[self loadScrollViewWithPage:page - 1];
     [self loadScrollViewWithPage:page];
     [self loadScrollViewWithPage:page + 1];
     
@@ -86,11 +80,6 @@
     if (page < 0) return;
     if (page >= [[LevelMgr getLevelMgr].levelSets count]) return;
     
-    if (_pageControlUsed) {
-        // do nothing - the scroll was initiated from the page control, not the user dragging
-        //return;
-    }
-	
     // replace the placeholder if necessary
     MainSectionViewController *controller = nil;
     
@@ -114,12 +103,12 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    _pageControlUsed = NO;
+    
 }
 
 - (IBAction)pageChanged:(id)sender {
     int page = _pageControl.currentPage;
-    NSLog(@"page: %d", page);
+    
     // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
     [self loadScrollViewWithPage:page - 1];
     [self loadScrollViewWithPage:page];
@@ -129,8 +118,6 @@
     frame.origin.x = frame.size.width * page;
     frame.origin.y = 0;
     [_scrollView scrollRectToVisible:frame animated:YES];
-    // Set the boolean used when scrolls originate from the UIPageControl. See scrollViewDidScroll: above.
-    _pageControlUsed = YES;
 }
 
 - (IBAction)backToMainTapped:(id)sender {

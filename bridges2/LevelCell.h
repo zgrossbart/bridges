@@ -20,7 +20,7 @@
 
 /**
  * This class handles the UI for the cell for each level in the level
- * chooser we use for iPad.
+ * chooser and the cell for each layer set in the menus we use for iPad.
  */
 @interface LevelCell : UICollectionViewCell
 
