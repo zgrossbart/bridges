@@ -102,18 +102,19 @@
         [cell.screenshot setImage:nil];
         cell.titleLabel.text = @"";
         [cell setBorderVisible:false];
+        cell.screenshot.backgroundColor = [UIColor clearColor];
+        cell.titleLabel.backgroundColor = [UIColor clearColor];
     } else {
         LevelSet *set = [LevelMgr getLevelSet:index];
         
         cell.titleLabel.text = set.name;
-        NSLog(@"index: %d", index);
-        NSLog(@"set.name: %@", set.name);
-        NSLog(@"set.imageName: %@", set.imageName);
         [cell.screenshot setImage:[UIImage imageNamed: set.imageName]];
         [cell setBorderVisible:true];
+        
+        cell.screenshot.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
+        cell.titleLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
     }
     
-    // Return the cell
     return cell;
     
 }

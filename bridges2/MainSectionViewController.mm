@@ -43,6 +43,8 @@
     [super viewDidLoad];
     //[StyleUtil styleMenuButton:self.playBtn];
     
+    self.playBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
+    
     [self.playBtn.layer setCornerRadius:8.0f];
     [self.playBtn.layer setMasksToBounds:YES];
     self.playBtn.layer.borderColor = [UIColor colorWithRed:(1.0 * 170) / 255 green:(1.0 * 170) / 255 blue:(1.0 * 170) / 255 alpha:0.5].CGColor;

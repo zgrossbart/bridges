@@ -93,5 +93,5 @@ static int const IPHONE_LEVEL_IMAGE_H = 64;
 /**
  * The size of the screen shot icon on iPad
  */
-static int const IPAD_LEVEL_IMAGE_W = 216;
-static int const IPAD_LEVEL_IMAGE_H = 144;
+static int const IPAD_LEVEL_IMAGE_W = 198;
+static int const IPAD_LEVEL_IMAGE_H = 132;
