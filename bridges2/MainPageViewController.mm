@@ -68,7 +68,7 @@
 
 -(void)setScrollPage:(int)page {
     _pageControl.currentPage = page;
-    [self loadScrollViewWithPage:page];
+    [self pageChanged:nil];
 }
 
 -(void)loadScrollViewWithPage:(int)page {
@@ -143,7 +143,7 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     if ([LevelMgr getLevelMgr].currentSet > -1) {
-        [self loadScrollViewWithPage:[LevelMgr getLevelMgr].currentSet];
+        [self setScrollPage:[LevelMgr getLevelMgr].currentSet];
         [LevelMgr getLevelMgr].currentSet = -1;
     } else {
         [self loadScrollViewWithPage:0];
