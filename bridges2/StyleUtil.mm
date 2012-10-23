@@ -71,7 +71,7 @@
 
 +(void)styleLabel:(UILabel*) label {
     label.textColor = [UIColor blackColor];
-    label.font = [UIFont fontWithName:@"Avenir" size: 11.0];
+    label.font = [UIFont fontWithName:@"Avenir" size: 18.0];
 }
 
 +(void)animateView:(UIView*) view {
