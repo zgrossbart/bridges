@@ -19,6 +19,7 @@
 #import "MainSectionViewController.h"
 #import "MainMenuViewController.h"
 #import "StyleUtil.h"
+#import "LevelMgr.h"
 
 @interface MainSectionViewController ()
 
@@ -29,7 +30,7 @@
 
 @implementation MainSectionViewController
 
-- (id)initWithNibAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*)menuView index:(int)index {
+-(id)initWithNibAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*)menuView index:(int)index {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.menuView = menuView;
@@ -38,7 +39,7 @@
     return self;
 }
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [super viewDidLoad];
     
@@ -51,12 +52,12 @@
     self.playBtn.layer.borderWidth = 2.0f;
 }
 
-- (void)didReceiveMemoryWarning
+-(void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
 
-- (void)dealloc {
+-(void)dealloc {
     [_label release];
     [self.menuView release];
     [_playBtn release];
@@ -64,9 +65,10 @@
     [super dealloc];
 }
 
-- (IBAction)playTapped:(id)sender {
-    [self.menuView showLevels:self.index];
-    
+-(IBAction)playTapped:(id)sender {
+    if (self.index < [[LevelMgr getLevelMgr].levelSets count]) {
+        [self.menuView showLevels:self.index];
+    }    
 }
 
 @end

@@ -78,10 +78,10 @@
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*) collectionView {
-    if ([[LevelMgr getLevelMgr].levelSets count] % _noOfSection == 0) {
-        return [[LevelMgr getLevelMgr].levelSets count] / _noOfSection;
+    if ([[LevelMgr getLevelMgr].levelSets count] + 1 % _noOfSection == 0) {
+        return ([[LevelMgr getLevelMgr].levelSets count] + 1) / _noOfSection;
     } else {
-        return ([[LevelMgr getLevelMgr].levelSets count] / _noOfSection) + 1;
+        return (([[LevelMgr getLevelMgr].levelSets count] + 1) / _noOfSection) + 1;
     }
 }
 
@@ -105,15 +105,21 @@
     int index = indexPath.section * _noOfSection + indexPath.row;
     
     if (index >= [[LevelMgr getLevelMgr].levelSets count]) {
-        [cell.screenshot setImage:nil];
         cell.titleLabel.text = @"";
+        [cell.screenshot setImage:nil];
         [cell setBorderVisible:false];
         cell.screenshot.backgroundColor = [UIColor clearColor];
         cell.titleLabel.backgroundColor = [UIColor clearColor];
         [cell.checkMark setImage:nil];
+        
+        if (index == [[LevelMgr getLevelMgr].levelSets count]) {
+            cell.titleLabel.text = @"More coming soon";
+            [cell setBorderVisible:true];
+            cell.screenshot.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
+            cell.titleLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
+        }
     } else {
         LevelSet *set = [LevelMgr getLevelSet:index];
-        
         cell.titleLabel.text = set.name;
         [cell.screenshot setImage:[UIImage imageNamed: set.imageName]];
         [cell setBorderVisible:true];

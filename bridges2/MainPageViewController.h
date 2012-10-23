@@ -46,6 +46,6 @@
  */
 - (IBAction)backToMainTapped:(id)sender;
 
-- (void)loadScrollViewWithPage:(int)page;
+- (void)setScrollPage:(int)page;
 
 @end

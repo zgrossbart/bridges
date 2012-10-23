@@ -31,33 +31,33 @@
 
 @implementation MainPageViewController
 
-- (id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView {
+-(id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.views = [NSMutableArray arrayWithCapacity:[[LevelMgr getLevelMgr].levelSets count]];
+        self.views = [NSMutableArray arrayWithCapacity:[[LevelMgr getLevelMgr].levelSets count] + 1];
         self.menuView = menuView;
     }
     return self;
 }
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [super viewDidLoad];
     
     [StyleUtil styleMenuButton:self.backBtn];
     
 	_scrollView.pagingEnabled = YES;
-    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * [[LevelMgr getLevelMgr].levelSets count], _scrollView.frame.size.height);
+    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * ([[LevelMgr getLevelMgr].levelSets count] + 1), _scrollView.frame.size.height);
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.scrollsToTop = NO;
     _scrollView.delegate = self;
     
-    _pageControl.numberOfPages = [[LevelMgr getLevelMgr].levelSets count];
+    _pageControl.numberOfPages = [[LevelMgr getLevelMgr].levelSets count] + 1;
     _pageControl.currentPage = 0;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)sender {
+-(void)scrollViewDidScroll:(UIScrollView *)sender {
     CGFloat pageWidth = _scrollView.frame.size.width;
     int page = floor((_scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     _pageControl.currentPage = page;
@@ -66,13 +66,17 @@
     
 }
 
-- (void)loadScrollViewWithPage:(int)page {
-    if (page < 0) return;
-    if (page >= [[LevelMgr getLevelMgr].levelSets count]) return;
-    
+-(void)setScrollPage:(int)page {
     _pageControl.currentPage = page;
+    [self loadScrollViewWithPage:page];
+}
+
+-(void)loadScrollViewWithPage:(int)page {
+    if (page < 0 ||
+        page >= [[LevelMgr getLevelMgr].levelSets count] + 1) {
+        return;
+    }
     
-    // replace the placeholder if necessary
     MainSectionViewController *controller = nil;
     
     if (page < [self.views count]) {
@@ -88,16 +92,24 @@
         frame.origin.y = 0;
         controller.view.frame = frame;
         [_scrollView addSubview:controller.view];
-        controller.label.text = [LevelMgr getLevelSet:page].name;
-        NSLog(@"[LevelMgr getLevelSet:page].name: %@", [LevelMgr getLevelSet:page].name);
-        if ([self hasWon:[LevelMgr getLevelSet:page]]) {
-            [controller.checkMark setImage:[UIImage imageNamed:@"green_check.png"]];
-        }
-        [controller.playBtn setImage:[UIImage imageNamed: [LevelMgr getLevelSet:page].imageName] forState:UIControlStateNormal];
+        [self setViewDetails:controller page:page];
+        
     }
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+-(void)setViewDetails: (MainSectionViewController*) controller page:(int)page {
+    if ([[LevelMgr getLevelMgr].levelSets count] == page) {
+        controller.label.text = @"More levels are coming soon";
+    } else {
+        controller.label.text = [LevelMgr getLevelSet:page].name;
+        [controller.playBtn setImage:[UIImage imageNamed: [LevelMgr getLevelSet:page].imageName] forState:UIControlStateNormal];
+        if ([self hasWon:[LevelMgr getLevelSet:page]]) {
+            [controller.checkMark setImage:[UIImage imageNamed:@"green_check.png"]];
+        }
+    }
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
 }
 
@@ -115,7 +127,7 @@
 }
 
 
-- (IBAction)pageChanged:(id)sender {
+-(IBAction)pageChanged:(id)sender {
     int page = _pageControl.currentPage;
     
     // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
@@ -140,17 +152,17 @@
     [StyleUtil animateView:self.view];
 }
 
-- (IBAction)backToMainTapped:(id)sender {
+-(IBAction)backToMainTapped:(id)sender {
     [self.menuView backToMainTapped:sender];
 }
 
-- (void)didReceiveMemoryWarning
+-(void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)dealloc {
+-(void)dealloc {
     [_scrollView release];
     [self.views release];
     [_pageControl release];
