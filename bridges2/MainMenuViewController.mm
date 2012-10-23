@@ -191,6 +191,10 @@
     [_collectionView reloadData];
     _xOfY.text = [self getXofY];
     
+    if ([LevelMgr getLevelMgr].currentSet > -1) {
+        [self playTapped:nil];
+    }
+    
     [StyleUtil animateView:self.view];
 }
 

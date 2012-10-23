@@ -55,8 +55,6 @@
     
     _pageControl.numberOfPages = [[LevelMgr getLevelMgr].levelSets count];
     _pageControl.currentPage = 0;
-    
-    [self loadScrollViewWithPage:0];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
@@ -71,6 +69,8 @@
 - (void)loadScrollViewWithPage:(int)page {
     if (page < 0) return;
     if (page >= [[LevelMgr getLevelMgr].levelSets count]) return;
+    
+    _pageControl.currentPage = page;
     
     // replace the placeholder if necessary
     MainSectionViewController *controller = nil;
@@ -89,6 +89,7 @@
         controller.view.frame = frame;
         [_scrollView addSubview:controller.view];
         controller.label.text = [LevelMgr getLevelSet:page].name;
+        NSLog(@"[LevelMgr getLevelSet:page].name: %@", [LevelMgr getLevelSet:page].name);
         if ([self hasWon:[LevelMgr getLevelSet:page]]) {
             [controller.checkMark setImage:[UIImage imageNamed:@"green_check.png"]];
         }
@@ -129,8 +130,14 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
-    [StyleUtil animateView:self.view];
+    if ([LevelMgr getLevelMgr].currentSet > -1) {
+        [self loadScrollViewWithPage:[LevelMgr getLevelMgr].currentSet];
+        [LevelMgr getLevelMgr].currentSet = -1;
+    } else {
+        [self loadScrollViewWithPage:0];
+    }
     
+    [StyleUtil animateView:self.view];
 }
 
 - (IBAction)backToMainTapped:(id)sender {

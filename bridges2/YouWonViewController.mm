@@ -42,19 +42,7 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    int i = [[LevelMgr getLevelSet:self.currentSet].levelIds indexOfObject:self.currentLevel.levelId];
-    
     [self styleButtons];
-    
-    if (i == [[LevelMgr getLevelSet:self.currentSet].levelIds count] - 1) {
-        /*
-         * Then we're at the end and we hide the next button.  We should probably
-         * put up some type of more levels coming soon method.
-         */
-        _nextButton.hidden = YES;
-    } else {
-        _nextButton.hidden = NO;
-    }
 }
 
 -(void)styleButtons {
@@ -114,6 +102,7 @@
          * Then we're at the end and we just go back to the menu
          */
         [self.navigationController popToRootViewControllerAnimated:NO];
+        [LevelMgr getLevelMgr].currentSet = self.currentSet + 1;
     } else {
         NSString *key = [[LevelMgr getLevelSet:self.currentSet].levelIds objectAtIndex:i + 1];
         [self.layer setLevel:[[LevelMgr getLevelSet:self.currentSet].levels objectForKey:key]];
@@ -123,7 +112,7 @@
 }
 
 -(IBAction)menuTapped:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
 

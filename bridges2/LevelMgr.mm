@@ -43,6 +43,7 @@
             levelMgr = [[LevelMgr alloc] init];
             
             [levelMgr loadLevels];
+            levelMgr.currentSet = -1;
         }
         
         return levelMgr;

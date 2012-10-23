@@ -57,15 +57,7 @@
  */
 -(void)drawLevels:(CGRect) bounds;
 
-/** 
- * The loaded levels for this game.
- */
-//@property (readonly, retain) NSMutableDictionary *levels;
-
-/** 
- * The array of sorted level IDs.
- */
-//@property (readonly,copy) NSArray *levelIds;
+@property (readwrite) int currentSet;
 
 /**
  * The array of sorted level sets.
