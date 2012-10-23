@@ -1,6 +1,6 @@
 {
     "set1": {
-        "name": "Simple Rivers",
+        "name": "Bridges",
         "index": "1",
         "image": "confetti.png",
         "levels": [
@@ -20,7 +20,7 @@
 		]
 	},
     "set2": {
-        "name": "Complex Rivers",
+        "name": "Bridge-o-rama",
         "index": "2",
         "image": "green_check.png",
         "levels": [
