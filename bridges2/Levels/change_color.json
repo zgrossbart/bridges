@@ -1,0 +1,40 @@
+{
+    "level": {
+        "name": "Change colors",
+        "labels": [
+        	{
+            	"x": "22",
+				"y": "27",
+				"w": "16",
+				"h": "10",
+				"text": "Cross a color bridge and change to that color"
+			}
+        ],
+		"player": {
+			"x": "6",
+			"y": "m"
+		},
+        "rivers": [
+            {
+                "x": "14",
+                "y": "b-t",
+                "orient": "v"
+            }
+        ],
+        "bridges": [
+            {
+                "x": "14",
+                "y": "m",
+                "orient": "h",
+				"color": "green"
+            }
+        ],
+        "houses": [
+        	{
+            	"x": "24",
+           	 	"y": "6",
+				"color": "green"
+        	}
+        ]
+    }
+}

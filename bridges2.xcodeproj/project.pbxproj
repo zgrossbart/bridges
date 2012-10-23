@@ -26,6 +26,7 @@
 		CE53D25B16060D090064F167 /* islands.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25A16060D090064F167 /* islands.json */; };
 		CE53D25E160612510064F167 /* squares.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25D160612510064F167 /* squares.json */; };
 		CE53D260160616070064F167 /* square_together.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25F160616070064F167 /* square_together.json */; };
+		CE62D2FF1636B2FC00C33EB8 /* change_color.json in Resources */ = {isa = PBXBuildFile; fileRef = CE62D2FE1636B2FC00C33EB8 /* change_color.json */; };
 		CE6BFB96160CADBD0037CFE4 /* MainMenuCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6BFB95160CADBD0037CFE4 /* MainMenuCollectionView.xib */; };
 		CE6BFB9A160CAFAD0037CFE4 /* LevelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BFB99160CAFAD0037CFE4 /* LevelCell.m */; };
 		CE6BFB9C160CB03B0037CFE4 /* LevelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6BFB9B160CB03B0037CFE4 /* LevelCell.xib */; };
@@ -227,7 +228,7 @@
 		CECE255B15F21FDB00517973 /* Level.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE255A15F21FDB00517973 /* Level.mm */; };
 		CECE256815F2819200517973 /* LevelMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CECE256715F2819200517973 /* LevelMgr.mm */; };
 		CECE256F15F2869300517973 /* one_way.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256D15F2869300517973 /* one_way.json */; };
-		CECE257015F2869300517973 /* change_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256E15F2869300517973 /* change_colors.json */; };
+		CECE257015F2869300517973 /* color_houses.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE256E15F2869300517973 /* color_houses.json */; };
 		CECE688D15F750F70042A7DF /* house_by_river.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE688C15F750F70042A7DF /* house_by_river.json */; };
 		CECE689015F752780042A7DF /* two_bridges.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE688F15F752780042A7DF /* two_bridges.json */; };
 		CECE689215F754BA0042A7DF /* start_anywhere.json in Resources */ = {isa = PBXBuildFile; fileRef = CECE689115F754BA0042A7DF /* start_anywhere.json */; };
@@ -325,6 +326,7 @@
 		CE53D25A16060D090064F167 /* islands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = islands.json; sourceTree = "<group>"; };
 		CE53D25D160612510064F167 /* squares.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = squares.json; sourceTree = "<group>"; };
 		CE53D25F160616070064F167 /* square_together.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square_together.json; sourceTree = "<group>"; };
+		CE62D2FE1636B2FC00C33EB8 /* change_color.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = change_color.json; sourceTree = "<group>"; };
 		CE6BFB95160CADBD0037CFE4 /* MainMenuCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuCollectionView.xib; sourceTree = "<group>"; };
 		CE6BFB98160CAFAD0037CFE4 /* LevelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCell.h; sourceTree = "<group>"; };
 		CE6BFB99160CAFAD0037CFE4 /* LevelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCell.m; sourceTree = "<group>"; };
@@ -719,7 +721,7 @@
 		CECE256615F2819200517973 /* LevelMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMgr.h; sourceTree = "<group>"; };
 		CECE256715F2819200517973 /* LevelMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelMgr.mm; sourceTree = "<group>"; };
 		CECE256D15F2869300517973 /* one_way.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = one_way.json; sourceTree = "<group>"; };
-		CECE256E15F2869300517973 /* change_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = change_colors.json; sourceTree = "<group>"; };
+		CECE256E15F2869300517973 /* color_houses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_houses.json; sourceTree = "<group>"; };
 		CECE688C15F750F70042A7DF /* house_by_river.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = house_by_river.json; sourceTree = "<group>"; };
 		CECE688F15F752780042A7DF /* two_bridges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = two_bridges.json; sourceTree = "<group>"; };
 		CECE689115F754BA0042A7DF /* start_anywhere.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = start_anywhere.json; sourceTree = "<group>"; };
@@ -886,26 +888,21 @@
 		CE6D65E815EAC5FB00C7EDD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CEBB885B160514B700538464 /* bridgesprites.plist */,
 				CEE9ED0D16356FE200FF9FAC /* background_1024_768_River.png */,
-				CEBB885C160514B700538464 /* bridgesprites.pvr.gz */,
 				CEBB885F160514D200538464 /* bridgesprites-hd.plist */,
 				CEBB8860160514D200538464 /* bridgesprites-hd.pvr.gz */,
+				CEBB885B160514B700538464 /* bridgesprites.plist */,
+				CEBB885C160514B700538464 /* bridgesprites.pvr.gz */,
 				CED45E8215FB81EF0066F0FE /* coins.png */,
 				CE50FFB216137A8A00235E87 /* confetti.png */,
 				CE303A84160B3D5000F1D3CD /* Default-568h@2x.png */,
-				CE50FFB71613932400235E87 /* fire.png */,
-				CECDC54715F6C54000D266FD /* green_check.png */,
-				CEF0649B15F51B0B0061C872 /* left_arrow.png */,
-				CEF0649A15F51B0B0061C872 /* left_arrow_d.png */,
-				CEF0649C15F51B0B0061C872 /* menu.png */,
-				CEF064A015F51B180061C872 /* refresh_d.png */,
-				CEF064A115F51B180061C872 /* refresh.png */,
-				CE6D65E915EAC5FB00C7EDD7 /* Default.png */,
 				CE6D65EB15EAC5FB00C7EDD7 /* Default-Landscape~ipad.png */,
-				CE6D65ED15EAC5FB00C7EDD7 /* fps_images.png */,
+				CE6D65E915EAC5FB00C7EDD7 /* Default.png */,
+				CE50FFB71613932400235E87 /* fire.png */,
 				CE6D65EF15EAC5FB00C7EDD7 /* fps_images-hd.png */,
 				CE6D65F115EAC5FB00C7EDD7 /* fps_images-ipadhd.png */,
+				CE6D65ED15EAC5FB00C7EDD7 /* fps_images.png */,
+				CECDC54715F6C54000D266FD /* green_check.png */,
 				CE6D65F315EAC5FB00C7EDD7 /* Icon-72.png */,
 				CE6D65F515EAC5FB00C7EDD7 /* Icon-Small-50.png */,
 				CE6D65F715EAC5FB00C7EDD7 /* Icon-Small.png */,
@@ -914,6 +911,11 @@
 				CE6D65FD15EAC5FB00C7EDD7 /* Icon@2x.png */,
 				CE6D65FF15EAC5FB00C7EDD7 /* Info.plist */,
 				CE6D660015EAC5FB00C7EDD7 /* iTunesArtwork */,
+				CEF0649B15F51B0B0061C872 /* left_arrow.png */,
+				CEF0649A15F51B0B0061C872 /* left_arrow_d.png */,
+				CEF0649C15F51B0B0061C872 /* menu.png */,
+				CEF064A115F51B180061C872 /* refresh.png */,
+				CEF064A015F51B180061C872 /* refresh_d.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1429,7 +1431,8 @@
 				CEDCDA9E1621A1B000E1F07F /* around_again.json */,
 				CEE145061625AE7A007BD1B3 /* back_and_forth.json */,
 				CECE689C15F76E120042A7DF /* bullseye.json */,
-				CECE256E15F2869300517973 /* change_colors.json */,
+				CE62D2FE1636B2FC00C33EB8 /* change_color.json */,
+				CECE256E15F2869300517973 /* color_houses.json */,
 				CE7F8327161600920012A4FA /* classic.json */,
 				CE1BB78916160ED900EBB61E /* classic_colors.json */,
 				CEE967FD162462EF001A9F4C /* color_box.json */,
@@ -1661,7 +1664,7 @@
 				CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */,
 				CEBD81FE15EACDC100EE27CF /* GameSceneView.xib in Resources */,
 				CECE256F15F2869300517973 /* one_way.json in Resources */,
-				CECE257015F2869300517973 /* change_colors.json in Resources */,
+				CECE257015F2869300517973 /* color_houses.json in Resources */,
 				CEAE47F815F3894400898698 /* tolls.json in Resources */,
 				CEEFF6F215F3A9CB0095649C /* economics.json in Resources */,
 				CEF0649D15F51B0B0061C872 /* left_arrow_d.png in Resources */,
@@ -1758,6 +1761,7 @@
 				CECCC7DE1635B36A00098E85 /* suburbs.json in Resources */,
 				CECCC7E11635B45C00098E85 /* suburb_colors.json in Resources */,
 				CECCC7E41635B91200098E85 /* tolls_plus.json in Resources */,
+				CE62D2FF1636B2FC00C33EB8 /* change_color.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

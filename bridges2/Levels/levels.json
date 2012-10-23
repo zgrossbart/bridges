@@ -48,9 +48,10 @@
         "image": "coins.png",
         "levels": [
             "house_by_river.json",
-            "change_colors.json",
-            "no_color.json",
 			"visiting.json",
+            "change_color.json",
+            "color_houses.json",
+            "no_color.json",
             "classic_colors.json",
             "another_color.json",
             "colors_off_center.json",
