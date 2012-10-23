@@ -61,6 +61,13 @@
  */
 -(b2Body*)addChildToSheet:(CCSprite*) sprite;
 
+/**
+ * Add a sprite to the parent of the sprite sheet for display
+ *
+ * @param sprite the sprite to add
+ *
+ * @return the box2d body for this sprite
+ */
 -(b2Body*)addChildToSheetParent:(CCSprite*) sprite;
 
 /**

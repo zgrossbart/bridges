@@ -56,6 +56,9 @@
  */
 @property (nonatomic, retain) LevelLayer *layer;
 
+/**
+ * The index of the level set containing the level that was won.
+ */
 @property (readwrite) int currentSet;
 
 @end

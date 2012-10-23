@@ -29,7 +29,7 @@
     IBOutlet UIPageControl *_pageControl;
 }
 
-- (id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView;
+-(id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView;
 
 /**
  * The back button takes the user back to the main window
@@ -39,13 +39,18 @@
 /**
  * This method is called whenever the player scrolls the page view
  */
-- (IBAction)pageChanged:(id)sender;
+-(IBAction)pageChanged:(id)sender;
 
 /**
  * Take the user back to the main window
  */
-- (IBAction)backToMainTapped:(id)sender;
+-(IBAction)backToMainTapped:(id)sender;
 
-- (void)setScrollPage:(int)page;
+/**
+ * Scroll the page view to the specified page.
+ * 
+ * @param page the page to scroll to
+ */
+-(void)setScrollPage:(int)page;
 
 @end

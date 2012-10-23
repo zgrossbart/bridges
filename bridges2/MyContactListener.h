@@ -31,6 +31,10 @@ struct MyContact {
     }
 };
     
+/**
+ * The contact listener is called back when the player runs into
+ * an object in the game screen like a river or a bridge.
+ */    
 class MyContactListener : public b2ContactListener {
     
     public:

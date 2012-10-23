@@ -27,11 +27,33 @@
     
 }
 
-- (id)initWithNibAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*)menuView index:(int)index;
+/**
+ * Create a new section view 
+ *  
+ */
+-(id)initWithNibAndMenuView:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil menu:(MainMenuViewController*)menuView index:(int)index;
 
+/**
+ * The checkmark image shows up if the player has won all of
+ * the levels in the set.
+ */
 @property (retain, nonatomic) IBOutlet UIImageView *checkMark;
+
+/**
+ * The label with the name of the level set.
+ */
 @property (retain, nonatomic) IBOutlet UILabel *label;
+
+/**
+ * The play button shows the image for the level set and handles
+ * the tap when the user wants to play the set.
+ */
 @property (retain, nonatomic) IBOutlet UIButton *playBtn;
-- (IBAction)playTapped:(id)sender;
+
+/**
+ * The player taps the button to access the levels in the level
+ * set.
+ */
+-(IBAction)playTapped:(id)sender;
 
 @end

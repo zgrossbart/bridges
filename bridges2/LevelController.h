@@ -36,6 +36,10 @@
  */
 -(void) showMessage: (NSString*) msg;
 
+/**
+ * Check to see if the user should be prompted to rate the app.
+ * We prompt after the user plays 20 times.
+ */
 -(void)checkForAppRating;
 
 @end

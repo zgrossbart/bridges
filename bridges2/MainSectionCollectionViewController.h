@@ -25,10 +25,26 @@
  */
 @interface MainSectionCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
+/**
+ * Create a new main section
+ */
 - (id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView;
 
+/**
+ * The collection view contains all of the cells for this view.
+ */
 @property (retain, nonatomic) IBOutlet UICollectionView *collectionView;
+
+/**
+ * The back button takes the user back to the main screen with
+ * the play and about buttons.
+ */
 @property (retain, nonatomic) IBOutlet UIButton *backBtn;
+
+/**
+ * The user taps the back button takes the player back to the
+ * main page.
+ */
 - (IBAction)backBtnTapped:(id)sender;
 
 @end

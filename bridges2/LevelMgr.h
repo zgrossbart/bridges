@@ -57,6 +57,10 @@
  */
 -(void)drawLevels:(CGRect) bounds;
 
+/**
+ * This number holds the current level set index.  It's used for
+ * the page control.
+ */
 @property (readwrite) int currentSet;
 
 /**

@@ -39,10 +39,27 @@
     IBOutlet UILabel *_xOfY;
 }
 
+/**
+ * The game scene holds the playable LevelLayer which handles
+ * the game.
+ */
 @property (retain) GameSceneViewController *GameSceneViewController;
+
+/**
+ * The collection view shows the levels in a larger image in the
+ * iPad.
+ */
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+
+/**
+ * The image for the level set which lets the player know which
+ * set they've selected.
+ */
 @property (retain, nonatomic) IBOutlet UIImageView *levelSetImage;
 
+/**
+ *  The current index of the selected level set
+ */
 @property (nonatomic) int curIndex;
 
 /**
@@ -63,8 +80,14 @@
  */
 -(IBAction)playTapped:(id)sender;
 
+/**
+ * Show the levels in the specified set.
+ */
 -(void)showLevels: (int)page;
 
-- (IBAction)handleSwipe:(id)sender;
+/**
+ * The player can swipe to go to the back of the level set view
+ */
+-(IBAction)handleSwipe:(id)sender;
 
 @end

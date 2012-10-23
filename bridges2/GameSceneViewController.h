@@ -39,10 +39,30 @@
 
 }
 
+/**
+ * The navigation controller for the views.
+ */
 @property (readonly) UINavigationController *navController;
+
+/**
+ * The Cocos2d director handles drawig the scene.
+ */
 @property (readonly) CCDirectorIOS *director;
+
+/**
+ * The current window.
+ */
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+
+/**
+ * The You Won view shows up after the user has beaten a level.
+ */
 @property (retain) YouWonViewController *youWonController;
+
+/**
+ * This is the index of the level set containing the level
+ * that's being played.
+ */
 @property (readwrite) int set;
 
 /**
