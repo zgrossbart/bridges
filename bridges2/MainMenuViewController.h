@@ -41,6 +41,7 @@
 
 @property (retain) GameSceneViewController *GameSceneViewController;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (retain, nonatomic) IBOutlet UIImageView *levelSetImage;
 
 @property (nonatomic) int curIndex;
 

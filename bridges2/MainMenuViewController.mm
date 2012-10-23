@@ -247,6 +247,7 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuCollectionView" owner:self options:nil];
+        [self.levelSetImage setImage:[UIImage imageNamed: [LevelMgr getLevelSet:page].imageName]];
         [self loadLevelPickerView];
     } else {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewController" owner:self options:nil];
@@ -412,6 +413,7 @@
     [_aboutBtn release];
     [_backBtn release];
     [_xOfY release];
+    [_levelSetImage release];
     [super dealloc];
 }
 
