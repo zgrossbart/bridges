@@ -135,7 +135,8 @@
 @property (readonly) int tileCount;
 
 /** 
- * The unique id for this level
+ * The ID for this level.  The ID is unique to this level in this 
+ * level set, but they are reused across level sets.
  */
 @property (readonly, retain) NSString *levelId;
 

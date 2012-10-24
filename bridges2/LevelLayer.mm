@@ -113,6 +113,8 @@
         _layerMgr.tileSize = CGSizeMake(s.height / self.currentLevel.tileCount, s.height / self.currentLevel.tileCount);
     }
     
+    NSLog(@"Reading level %@", self.currentLevel.name);
+    
     [self.currentLevel addSprites:_layerMgr:self.view];
     
     if (self.currentLevel.playerPos.x > -1) {
@@ -174,7 +176,7 @@
 }
 
 -(void)setLevel:(Level*) level {
-    if (self.currentLevel && [level.levelId isEqualToString:self.currentLevel.levelId] && !self.currentLevel.hasWon) {
+    if (self.currentLevel && [level.fileName isEqualToString:self.currentLevel.fileName] && !self.currentLevel.hasWon) {
         /*
          * If we already have that layer we just ignore it
          */

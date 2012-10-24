@@ -21,6 +21,7 @@
 #import "BridgeColors.h"
 #import "LevelMgr.h"
 #import "StyleUtil.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface GameSceneViewController ()
 
