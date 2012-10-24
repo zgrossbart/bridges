@@ -20,6 +20,8 @@
 		CE33A6D4161B2F6200C4AD0B /* full_of_bridges.json in Resources */ = {isa = PBXBuildFile; fileRef = CE33A6D3161B2F6200C4AD0B /* full_of_bridges.json */; };
 		CE33A6D6161B53F600C4AD0B /* no_color.json in Resources */ = {isa = PBXBuildFile; fileRef = CE33A6D5161B53F500C4AD0B /* no_color.json */; };
 		CE39AC9315FBA146005607B0 /* GameSceneViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC9115FBA145005607B0 /* GameSceneViewiPad.xib */; };
+		CE424A28163898E200FE61CE /* three_rivers_subway.json in Resources */ = {isa = PBXBuildFile; fileRef = CE424A27163898E200FE61CE /* three_rivers_subway.json */; };
+		CE424A2B16389A5900FE61CE /* subway_color.json in Resources */ = {isa = PBXBuildFile; fileRef = CE424A2A16389A5900FE61CE /* subway_color.json */; };
 		CE453BC715F174A900053407 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CE453BC615F174A900053407 /* JSONKit.m */; };
 		CE50FFB316137A8A00235E87 /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50FFB216137A8A00235E87 /* confetti.png */; };
 		CE50FFB81613932400235E87 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50FFB71613932400235E87 /* fire.png */; };
@@ -319,6 +321,8 @@
 		CE33A6D3161B2F6200C4AD0B /* full_of_bridges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = full_of_bridges.json; sourceTree = "<group>"; };
 		CE33A6D5161B53F500C4AD0B /* no_color.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_color.json; sourceTree = "<group>"; };
 		CE39AC9115FBA145005607B0 /* GameSceneViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameSceneViewiPad.xib; sourceTree = "<group>"; };
+		CE424A27163898E200FE61CE /* three_rivers_subway.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = three_rivers_subway.json; sourceTree = "<group>"; };
+		CE424A2A16389A5900FE61CE /* subway_color.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = subway_color.json; sourceTree = "<group>"; };
 		CE453BC515F174A900053407 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		CE453BC615F174A900053407 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		CE50FFB216137A8A00235E87 /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
@@ -1494,6 +1498,8 @@
 				CED0302F15FB724A008E7EA4 /* visit_again.json */,
 				CEE9ED10163578F900FF9FAC /* visiting.json */,
 				CECCC7E01635B45C00098E85 /* suburb_colors.json */,
+				CE424A27163898E200FE61CE /* three_rivers_subway.json */,
+				CE424A2A16389A5900FE61CE /* subway_color.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1762,6 +1768,8 @@
 				CECCC7E11635B45C00098E85 /* suburb_colors.json in Resources */,
 				CECCC7E41635B91200098E85 /* tolls_plus.json in Resources */,
 				CE62D2FF1636B2FC00C33EB8 /* change_color.json in Resources */,
+				CE424A28163898E200FE61CE /* three_rivers_subway.json in Resources */,
+				CE424A2B16389A5900FE61CE /* subway_color.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

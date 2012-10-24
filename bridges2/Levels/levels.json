@@ -88,6 +88,8 @@
         "image": "refresh.png",
         "levels": [
             "subways.json",
+			"three_rivers_subway.json",
+			"subway_color.json",
             "corner_jumper.json",
             "tic_tac_toe_two.json",
             "spend_it_wisely.json",
