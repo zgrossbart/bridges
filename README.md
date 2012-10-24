@@ -5,53 +5,57 @@ The city of Königsberg in Prussia (now [Kaliningrad, Russia](https://maps.googl
 
 [Leonhard Euler](http://en.wikipedia.org/wiki/Euler) proved that it was impossible to cross all the bridges without repeating and laid the foundation for graph theory and modern topology at the same time.
 
-This project is an iPad and iPhone game based on those famous bridges.  Each level presents a puzzle with bridges to cross, houses to visit, and sometimes coins to collect.  Take a look at the [original design](http://www.zackgrossbart.com/extras/bridges) for an idea how to play and some sample levels
+This project is an iPad and iPhone game based on those famous bridges.  Each level presents a puzzle with bridges to cross, houses to visit, and sometimes coins to collect.  
 
-Level 1: Hello Bridges
+Here are some sample levels
+
+Hello Bridges
 --------------------------------------
 
 ![Hello Bridges Level](/zgrossbart/bridges/raw/master/screenshots/hellobridges.png)
 
-Level 9: Economics
+Economics
 --------------------------------------
 
 ![Economics Level](/zgrossbart/bridges/raw/master/screenshots/economics.png)
 
-Level 17: A House of Another Color
+A House of Another Color
 --------------------------------------
 
 ![House of Another Color Level](/zgrossbart/bridges/raw/master/screenshots/different_color.png)
 
-Level 25: Color Diamonds
+Color Diamonds
 --------------------------------------
 
 ![Color Diamonds Level](/zgrossbart/bridges/raw/master/screenshots/colored_diamonds.png)
 
-Level 27: Full of Islands
+Full of Islands
 --------------------------------------
 
 ![Full of Islands Level](/zgrossbart/bridges/raw/master/screenshots/fullofislands.png)
 
 
-Level 31: Subways
+Subways
 --------------------------------------
 
 ![Subway Level](/zgrossbart/bridges/raw/master/screenshots/subway.png)
 
-Level 39: Spend It Wisely
+Spend It Wisely
 --------------------------------------
 
 ![Spend It Wisely Level](/zgrossbart/bridges/raw/master/screenshots/spenditwisely.png)
 
-Level 40: Corridors
+Corridors
 --------------------------------------
 
 ![Corridors Level](/zgrossbart/bridges/raw/master/screenshots/corridors.png)
 
-Level 43: Hopscotch Subway
+Hopscotch Subway
 --------------------------------------
 
 ![Hopscotch Subway Level](/zgrossbart/bridges/raw/master/screenshots/hopscotch_subway.png)
+
+The real game has over 60 levels.
 
 
 This game is currently under development and not ready to play yet.  When it's done I'll release it in the App store.
