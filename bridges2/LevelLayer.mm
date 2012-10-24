@@ -470,7 +470,18 @@
     }
 }
 
+-(void)finishSubway {
+    _inMove = false;
+    [self bumpObject:self.player.player:_subwayEnd];
+    _canVisit = true;
+    CCSequence* seq = [CCSequence actions:[CCFadeIn actionWithDuration:0.25],nil];
+    [self.player.player runAction:seq];
+}
+
 -(void)rideSubway:(CCSprite *) player:(CCSprite*) subway {
+    if (_inMove) {
+        return;
+    }
     /*
      * The player has run into a subway.  We need to ride the subway
      * if the player is the right color and bump it if it isn't
@@ -490,9 +501,14 @@
         CGSize s = [[CCDirector sharedDirector] winSize];
         _playerStart = ccp(s.width / 2, s.height / 2);
         
-        _player.player.position = ccp(exit.position.x, exit.position.y);
-        [self bumpObject:player:exit];
-        _canVisit = true;
+        //_player.player.position = ccp(25, 25);
+        _inMove = true;
+        _subwayEnd = exit;
+        
+        CCSequence* seq = [CCSequence actions:[CCFadeTo actionWithDuration:0.25 opacity:0.0],
+                           [CCMoveTo actionWithDuration:0 position:ccp(exit.position.x, exit.position.y)],
+                           [CCCallFunc actionWithTarget:self selector:@selector(finishSubway)], nil];
+        [self.player.player runAction:seq];
     } else {
         if (_player.coins == 0) {
             [self.controller showMessage:@"You need more coins to ride"];

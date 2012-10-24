@@ -53,6 +53,7 @@
     bool _inCross;
     bool _inBridge;
     bool _inMove;
+    CCSprite *_subwayEnd;
     
     /*
      * After you visit a house you must cross a 
