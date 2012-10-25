@@ -108,8 +108,8 @@
         cell.titleLabel.text = @"";
         [cell.screenshot setImage:nil];
         [cell setBorderVisible:false];
-        cell.screenshot.backgroundColor = [UIColor clearColor];
-        cell.titleLabel.backgroundColor = [UIColor clearColor];
+        cell.screenshot.backgroundColor = [UIColor colorWithRed:(1.0 * 250) / 255 green:(1.0 * 250) / 255 blue:(1.0 * 240) / 255 alpha:1.0];
+        cell.titleLabel.backgroundColor = [UIColor colorWithRed:(1.0 * 250) / 255 green:(1.0 * 250) / 255 blue:(1.0 * 240) / 255 alpha:1.0];
         [cell.checkMark setImage:nil];
         
         if (index == [[LevelMgr getLevelMgr].levelSets count]) {
