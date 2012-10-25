@@ -348,8 +348,6 @@
         [cell.screenshot setImage:nil];
         [cell.checkMark setImage:nil];
         [cell setBorderVisible:false];
-        cell.screenshot.backgroundColor = [UIColor clearColor];
-        cell.titleLabel.backgroundColor = [UIColor clearColor];
     } else {
         NSString *levelId = [[LevelMgr getLevelSet:self.currentSet].levelIds objectAtIndex:index];
         
@@ -357,8 +355,6 @@
         
         [cell.titleLabel setText:name];
         [cell.screenshot setImage:[LevelMgr getLevel:self.currentSet :levelId].screenshot];
-        cell.screenshot.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
-        cell.titleLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", [LevelMgr getLevel:self.currentSet :levelId].fileName]]) {

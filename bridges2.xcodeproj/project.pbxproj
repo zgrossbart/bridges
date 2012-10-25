@@ -249,6 +249,8 @@
 		CED71AD6162999E900EF521F /* StyleUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = CED71AD5162999E800EF521F /* StyleUtil.mm */; };
 		CED807AE1639C2C6005F100A /* around_the_middle.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807AD1639C2C6005F100A /* around_the_middle.json */; };
 		CED807B11639C7B1005F100A /* tolls_middle.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807B01639C7B1005F100A /* tolls_middle.json */; };
+		CED807B31639CE2C005F100A /* side_by_side.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807B21639CE2C005F100A /* side_by_side.json */; };
+		CED807B51639D043005F100A /* out_and_in.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807B41639D043005F100A /* out_and_in.json */; };
 		CED88B371616559000837558 /* spiral.json in Resources */ = {isa = PBXBuildFile; fileRef = CED88B361616559000837558 /* spiral.json */; };
 		CED983DC16275B590003D4B0 /* MainViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED983DB16275B590003D4B0 /* MainViewiPad.xib */; };
 		CEDA5A031632B765004A30A5 /* free_swim.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDA5A021632B765004A30A5 /* free_swim.json */; };
@@ -750,6 +752,8 @@
 		CED71AD5162999E800EF521F /* StyleUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StyleUtil.mm; sourceTree = "<group>"; };
 		CED807AD1639C2C6005F100A /* around_the_middle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = around_the_middle.json; sourceTree = "<group>"; };
 		CED807B01639C7B1005F100A /* tolls_middle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tolls_middle.json; sourceTree = "<group>"; };
+		CED807B21639CE2C005F100A /* side_by_side.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = side_by_side.json; sourceTree = "<group>"; };
+		CED807B41639D043005F100A /* out_and_in.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = out_and_in.json; sourceTree = "<group>"; };
 		CED88B361616559000837558 /* spiral.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spiral.json; sourceTree = "<group>"; };
 		CED983DB16275B590003D4B0 /* MainViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewiPad.xib; sourceTree = "<group>"; };
 		CEDA5A021632B765004A30A5 /* free_swim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = free_swim.json; sourceTree = "<group>"; };
@@ -1506,6 +1510,8 @@
 				CE424A2A16389A5900FE61CE /* subway_color.json */,
 				CED807AD1639C2C6005F100A /* around_the_middle.json */,
 				CED807B01639C7B1005F100A /* tolls_middle.json */,
+				CED807B21639CE2C005F100A /* side_by_side.json */,
+				CED807B41639D043005F100A /* out_and_in.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1778,6 +1784,8 @@
 				CE424A2B16389A5900FE61CE /* subway_color.json in Resources */,
 				CED807AE1639C2C6005F100A /* around_the_middle.json in Resources */,
 				CED807B11639C7B1005F100A /* tolls_middle.json in Resources */,
+				CED807B31639CE2C005F100A /* side_by_side.json in Resources */,
+				CED807B51639D043005F100A /* out_and_in.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
