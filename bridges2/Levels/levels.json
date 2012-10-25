@@ -55,6 +55,8 @@
             "change_color.json",
             "color_houses.json",
             "no_color.json",
+			"color_in.json",
+			"sequential.json",
             "classic_colors.json",
             "another_color.json",
 			"color_diamond.json",
