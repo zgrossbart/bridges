@@ -501,10 +501,12 @@
         CGSize s = [[CCDirector sharedDirector] winSize];
         _playerStart = ccp(s.width / 2, s.height / 2);
         
-        //_player.player.position = ccp(25, 25);
         _inMove = true;
         _subwayEnd = exit;
-        
+        /*
+         * When the player rides a subway we use a fade out and fade in effect to make it
+         * easier to tell where the player is going.
+         */
         CCSequence* seq = [CCSequence actions:[CCFadeTo actionWithDuration:0.25 opacity:0.0],
                            [CCMoveTo actionWithDuration:0 position:ccp(exit.position.x, exit.position.y)],
                            [CCCallFunc actionWithTarget:self selector:@selector(finishSubway)], nil];
