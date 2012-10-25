@@ -253,6 +253,7 @@
 		CED807B51639D043005F100A /* out_and_in.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807B41639D043005F100A /* out_and_in.json */; };
 		CED807B71639D3D4005F100A /* color_in.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807B61639D3D4005F100A /* color_in.json */; };
 		CED807B91639D535005F100A /* sequential.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807B81639D535005F100A /* sequential.json */; };
+		CED807BB1639D6DE005F100A /* order_up.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807BA1639D6DE005F100A /* order_up.json */; };
 		CED88B371616559000837558 /* spiral.json in Resources */ = {isa = PBXBuildFile; fileRef = CED88B361616559000837558 /* spiral.json */; };
 		CED983DC16275B590003D4B0 /* MainViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED983DB16275B590003D4B0 /* MainViewiPad.xib */; };
 		CEDA5A031632B765004A30A5 /* free_swim.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDA5A021632B765004A30A5 /* free_swim.json */; };
@@ -758,6 +759,7 @@
 		CED807B41639D043005F100A /* out_and_in.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = out_and_in.json; sourceTree = "<group>"; };
 		CED807B61639D3D4005F100A /* color_in.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_in.json; sourceTree = "<group>"; };
 		CED807B81639D535005F100A /* sequential.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sequential.json; sourceTree = "<group>"; };
+		CED807BA1639D6DE005F100A /* order_up.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order_up.json; sourceTree = "<group>"; };
 		CED88B361616559000837558 /* spiral.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spiral.json; sourceTree = "<group>"; };
 		CED983DB16275B590003D4B0 /* MainViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewiPad.xib; sourceTree = "<group>"; };
 		CEDA5A021632B765004A30A5 /* free_swim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = free_swim.json; sourceTree = "<group>"; };
@@ -1442,17 +1444,18 @@
 		CECE256C15F2869200517973 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				CEDEA36A16344F3C00E564A5 /* levels.json */,
 				CEE0277316067FE5007C4CDD /* another_color.json */,
 				CEDCDA9E1621A1B000E1F07F /* around_again.json */,
+				CED807AD1639C2C6005F100A /* around_the_middle.json */,
 				CEE145061625AE7A007BD1B3 /* back_and_forth.json */,
 				CECE689C15F76E120042A7DF /* bullseye.json */,
 				CE62D2FE1636B2FC00C33EB8 /* change_color.json */,
-				CECE256E15F2869300517973 /* color_houses.json */,
 				CE7F8327161600920012A4FA /* classic.json */,
 				CE1BB78916160ED900EBB61E /* classic_colors.json */,
 				CEE967FD162462EF001A9F4C /* color_box.json */,
 				CEE967F81624587F001A9F4C /* color_diamond.json */,
+				CECE256E15F2869300517973 /* color_houses.json */,
+				CED807B61639D3D4005F100A /* color_in.json */,
 				CEDCDAA51621B46200E1F07F /* color_quilt.json */,
 				CEF00C0D162061AC00905473 /* colors_off_center.json */,
 				CECD01651624951F008F7536 /* corner_jumper.json */,
@@ -1472,15 +1475,20 @@
 				CE53D25A16060D090064F167 /* islands.json */,
 				CEE5122E162B285A0059D6E1 /* jumpy.json */,
 				CEDA5A051632B8BC004A30A5 /* keep_riding.json */,
+				CEDEA36A16344F3C00E564A5 /* levels.json */,
 				CE33A6D5161B53F500C4AD0B /* no_color.json */,
 				CEDCDAA11621ABA100E1F07F /* off_center.json */,
 				CECE256D15F2869300517973 /* one_way.json */,
+				CED807BA1639D6DE005F100A /* order_up.json */,
+				CED807B41639D043005F100A /* out_and_in.json */,
 				CE33A6D0161B26FC00C4AD0B /* overlap.json */,
 				CED53AAA1632BBEA0072DF54 /* overlapping_subways.json */,
 				CEE145081625B307007BD1B3 /* overlapping_tolls.json */,
 				CEDEA36C16345E8300E564A5 /* pay_as_you_go.json */,
 				CEDED3EA160496650022ABA7 /* peninsulas.json */,
 				CECCE9811615389A0091707C /* quilt.json */,
+				CED807B81639D535005F100A /* sequential.json */,
+				CED807B21639CE2C005F100A /* side_by_side.json */,
 				CEDF5E6C1622EACD003D89FA /* simple_box.json */,
 				CEE145041625A54B007BD1B3 /* spend_it_wisely.json */,
 				CED88B361616559000837558 /* spiral.json */,
@@ -1492,15 +1500,19 @@
 				CE53D25F160616070064F167 /* square_together.json */,
 				CE53D25D160612510064F167 /* squares.json */,
 				CECE689115F754BA0042A7DF /* start_anywhere.json */,
+				CECCC7E01635B45C00098E85 /* suburb_colors.json */,
 				CECCC7DD1635B36A00098E85 /* suburbs.json */,
 				CEE5DE29162B850D0095A3B8 /* subway_box.json */,
+				CE424A2A16389A5900FE61CE /* subway_color.json */,
 				CECD016216248C0F008F7536 /* subways.json */,
 				CE31DCD01601E3790084C38B /* swim_lanes.json */,
 				CEC8828316027431007DC0EA /* three_rivers.json */,
+				CE424A27163898E200FE61CE /* three_rivers_subway.json */,
 				CEDF5E701622F13C003D89FA /* tic_tac_toe.json */,
 				CE0298C01624B4300028274B /* tic_tac_toe_two.json */,
 				CE1477DA1604C32100C054B2 /* tile_test.json */,
 				CEAE47F715F3894400898698 /* tolls.json */,
+				CED807B01639C7B1005F100A /* tolls_middle.json */,
 				CED53AA71632BA1D0072DF54 /* tolls_off_center.json */,
 				CECCC7E31635B91100098E85 /* tolls_plus.json */,
 				CEDE3170162B3E54007BABEC /* triangles.json */,
@@ -1509,15 +1521,6 @@
 				CEDED3E71604904E0022ABA7 /* up_and_down.json */,
 				CED0302F15FB724A008E7EA4 /* visit_again.json */,
 				CEE9ED10163578F900FF9FAC /* visiting.json */,
-				CECCC7E01635B45C00098E85 /* suburb_colors.json */,
-				CE424A27163898E200FE61CE /* three_rivers_subway.json */,
-				CE424A2A16389A5900FE61CE /* subway_color.json */,
-				CED807AD1639C2C6005F100A /* around_the_middle.json */,
-				CED807B01639C7B1005F100A /* tolls_middle.json */,
-				CED807B21639CE2C005F100A /* side_by_side.json */,
-				CED807B41639D043005F100A /* out_and_in.json */,
-				CED807B61639D3D4005F100A /* color_in.json */,
-				CED807B81639D535005F100A /* sequential.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1794,6 +1797,7 @@
 				CED807B51639D043005F100A /* out_and_in.json in Resources */,
 				CED807B71639D3D4005F100A /* color_in.json in Resources */,
 				CED807B91639D535005F100A /* sequential.json in Resources */,
+				CED807BB1639D6DE005F100A /* order_up.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
