@@ -33,6 +33,7 @@
     IBOutlet UIBarButtonItem *_resetBtn;
     IBOutlet UIWebView *_webView;
     
+    IBOutlet UILabel *_levelSetLabel;
     IBOutlet UIButton *_playBtn;
     IBOutlet UIButton *_aboutBtn;
     IBOutlet UIButton *_backBtn;

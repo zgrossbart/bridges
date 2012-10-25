@@ -70,7 +70,7 @@
         _checkImage = [UIImage imageNamed:@"green_check.png"];
     }
     
-    _noOfSection = 3;
+    _noOfSection = 4;
     
     [LevelMgr getLevelMgr];
     
@@ -254,6 +254,7 @@
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuCollectionView" owner:self options:nil];
         [self.levelSetImage setImage:[UIImage imageNamed: [LevelMgr getLevelSet:page].imageName]];
         [self loadLevelPickerView];
+        _levelSetLabel.text = [LevelMgr getLevelSet:page].name;
     } else {
         [[NSBundle mainBundle] loadNibNamed:@"MainMenuViewController" owner:self options:nil];
         _navItem.title = [LevelMgr getLevelSet:page].name;
@@ -290,9 +291,9 @@
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     
     if (orientation == 0 || orientation == UIInterfaceOrientationPortrait) {
-        _noOfSection = 3;
+        _noOfSection = 4;
     } else {
-        _noOfSection = 3;
+        _noOfSection = 4;
     }
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -419,6 +420,7 @@
     [_backBtn release];
     [_xOfY release];
     [_levelSetImage release];
+    [_levelSetLabel release];
     [super dealloc];
 }
 
