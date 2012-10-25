@@ -945,35 +945,37 @@ CGFloat CGPointToDegree(CGPoint point) {
  * an object and false otherwise.
  */
 -(bool)inObject:(CGPoint) p {
+    CGRect pRect = CGRectMake(p.x - (15), p.y - (15), 30, 30);
+    
     for (BridgeNode *n in self.currentLevel.bridges) {
-        if (CGRectContainsPoint([n.bridge boundingBox], p)) {
+        if (CGRectIntersectsRect([n.bridge boundingBox], pRect)) {
             return true;
         }
     }
     
     for (Bridge4Node *n in self.currentLevel.bridge4s) {
-        if (CGRectContainsPoint([n.bridge boundingBox], p)) {
+        if (CGRectIntersectsRect([n.bridge boundingBox], pRect)) {
             return true;
         }
     }
     
     for (RiverNode *n in self.currentLevel.rivers) {
         for (CCSprite *r in n.rivers) {
-            if (CGRectContainsPoint([r boundingBox], p)) {
+            if (CGRectIntersectsRect([r boundingBox], pRect)) {
                 return true;
             }
         }
     }
     
     for (HouseNode *h in self.currentLevel.houses) {
-        if (CGRectContainsPoint([h.house boundingBox], p)) {
+        if (CGRectIntersectsRect([h.house boundingBox], pRect)) {
             return true;
         }
     }
     
     for (SubwayNode *s in self.currentLevel.subways) {
-        if (CGRectContainsPoint([s.subway1 boundingBox], p) ||
-            CGRectContainsPoint([s.subway2 boundingBox], p)) {
+        if (CGRectIntersectsRect([s.subway1 boundingBox], pRect) ||
+            CGRectIntersectsRect([s.subway2 boundingBox], pRect)) {
             return true;
         }
     }
