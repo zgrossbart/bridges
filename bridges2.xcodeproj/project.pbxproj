@@ -247,6 +247,8 @@
 		CED53AAB1632BBEA0072DF54 /* overlapping_subways.json in Resources */ = {isa = PBXBuildFile; fileRef = CED53AAA1632BBEA0072DF54 /* overlapping_subways.json */; };
 		CED53AAD1632BD980072DF54 /* spiral_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CED53AAC1632BD980072DF54 /* spiral_colors.json */; };
 		CED71AD6162999E900EF521F /* StyleUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = CED71AD5162999E800EF521F /* StyleUtil.mm */; };
+		CED807AE1639C2C6005F100A /* around_the_middle.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807AD1639C2C6005F100A /* around_the_middle.json */; };
+		CED807B11639C7B1005F100A /* tolls_middle.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807B01639C7B1005F100A /* tolls_middle.json */; };
 		CED88B371616559000837558 /* spiral.json in Resources */ = {isa = PBXBuildFile; fileRef = CED88B361616559000837558 /* spiral.json */; };
 		CED983DC16275B590003D4B0 /* MainViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED983DB16275B590003D4B0 /* MainViewiPad.xib */; };
 		CEDA5A031632B765004A30A5 /* free_swim.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDA5A021632B765004A30A5 /* free_swim.json */; };
@@ -746,6 +748,8 @@
 		CED53AAC1632BD980072DF54 /* spiral_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spiral_colors.json; sourceTree = "<group>"; };
 		CED71AD4162999E800EF521F /* StyleUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleUtil.h; sourceTree = "<group>"; };
 		CED71AD5162999E800EF521F /* StyleUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StyleUtil.mm; sourceTree = "<group>"; };
+		CED807AD1639C2C6005F100A /* around_the_middle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = around_the_middle.json; sourceTree = "<group>"; };
+		CED807B01639C7B1005F100A /* tolls_middle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tolls_middle.json; sourceTree = "<group>"; };
 		CED88B361616559000837558 /* spiral.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spiral.json; sourceTree = "<group>"; };
 		CED983DB16275B590003D4B0 /* MainViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewiPad.xib; sourceTree = "<group>"; };
 		CEDA5A021632B765004A30A5 /* free_swim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = free_swim.json; sourceTree = "<group>"; };
@@ -1500,6 +1504,8 @@
 				CECCC7E01635B45C00098E85 /* suburb_colors.json */,
 				CE424A27163898E200FE61CE /* three_rivers_subway.json */,
 				CE424A2A16389A5900FE61CE /* subway_color.json */,
+				CED807AD1639C2C6005F100A /* around_the_middle.json */,
+				CED807B01639C7B1005F100A /* tolls_middle.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1770,6 +1776,8 @@
 				CE62D2FF1636B2FC00C33EB8 /* change_color.json in Resources */,
 				CE424A28163898E200FE61CE /* three_rivers_subway.json in Resources */,
 				CE424A2B16389A5900FE61CE /* subway_color.json in Resources */,
+				CED807AE1639C2C6005F100A /* around_the_middle.json in Resources */,
+				CED807B11639C7B1005F100A /* tolls_middle.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

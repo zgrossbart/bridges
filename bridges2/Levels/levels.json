@@ -16,7 +16,8 @@
             "peninsulas.json",
             "islands.json",
             "in_the_middle.json",
-            "classic.json"
+            "classic.json",
+			"around_the_middle.json"
 		]
 	},
     "set2": {
@@ -74,6 +75,7 @@
 			"pay_as_you_go.json",
 			"tolls_plus.json",
 			"suburbs.json",
+			"tolls_middle.json",
             "free_swim.json",
 			"frequent_visitor.json",
 			"suburb_colors.json",
