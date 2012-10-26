@@ -39,6 +39,36 @@
                 "y": "8-t",
                 "orient": "v",
                 "side": "right"
+            },
+            {
+                "x": "8",
+                "y": "8",
+                "orient": "h",
+				"border": "none"
+            },
+            {
+                "x": "15",
+                "y": "8",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "25",
+                "y": "8",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "25",
+                "y": "18",
+                "orient": "h",
+				"border": "top"
+            },
+            {
+                "x": "30",
+                "y": "18",
+                "orient": "v",
+				"border": "right"
             }
         ],
         "bridges": [

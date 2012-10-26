@@ -41,6 +41,42 @@
                 "x": "30-r",
                 "y": "15",
                 "orient": "h"
+            },
+            {
+                "x": "10",
+                "y": "10",
+                "orient": "v",
+				"border": "left"
+            },
+            {
+                "x": "10",
+                "y": "20",
+                "orient": "v",
+				"border": "left"
+            },
+            {
+                "x": "30",
+                "y": "10",
+                "orient": "v",
+				"border": "right"
+            },
+            {
+                "x": "30",
+                "y": "20",
+                "orient": "v",
+				"border": "right"
+            },
+            {
+                "x": "20",
+                "y": "10",
+                "orient": "h",
+				"border": "top"
+            },
+            {
+                "x": "20",
+                "y": "20",
+                "orient": "h",
+				"border": "bottom"
             }
         ],
         "bridges": [
