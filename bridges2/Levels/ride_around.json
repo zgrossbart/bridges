@@ -1,13 +1,13 @@
 {
     "level": {
-        "name": "Subway colors",
+        "name": "Ride around",
         "labels": [
             {
                 "x": "22",
                 "y": "27",
                 "w": "16",
                 "h": "10",
-                "text": "Change colors to ride subways.  Just like houses visiting."
+                "text": "Subways go in both directions."
             }
         ],
 		"player": {
@@ -42,14 +42,22 @@
         ],
         "houses": [
 			{
-	            "x": "4",
-	            "y": "24",
+	            "x": "38",
+	            "y": "10",
+				"color": "red",
 	            "coins": "1"
 	        },
 			{
 	            "x": "22",
 	            "y": "10",
-	            "color": "red"
+	            "color": "red",
+				"coins": "1"
+	        },
+			{
+	            "x": "15",
+	            "y": "1",
+	            "color": "red",
+				"coins": "2"
 	        }
 		],
         "subways": [

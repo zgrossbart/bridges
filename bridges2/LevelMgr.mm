@@ -77,6 +77,9 @@
         NSMutableDictionary *levelObjs = [NSMutableDictionary dictionaryWithCapacity:[set count]];
         for (int i = 0; i < [setLevels count]; i++) {
             NSString *file = [setLevels objectAtIndex:i];
+            if (![[NSFileManager defaultManager] fileExistsAtPath:[path stringByAppendingPathComponent:file]]) {
+                [NSException raise:@"Invalid levels definition" format:@"The file %@ referenced from levels.json doesn't exist.", file];
+            }
             NSString *jsonString = [NSString stringWithContentsOfFile:[path stringByAppendingPathComponent:file] encoding:NSUTF8StringEncoding error:nil];
             NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[path stringByAppendingPathComponent:file] error:&error];
             NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
