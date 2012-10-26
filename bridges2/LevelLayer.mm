@@ -113,8 +113,6 @@
         _layerMgr.tileSize = CGSizeMake(s.height / self.currentLevel.tileCount, s.height / self.currentLevel.tileCount);
     }
     
-    NSLog(@"Reading level %@", self.currentLevel.name);
-    
     [self.currentLevel addSprites:_layerMgr:self.view];
     
     if (self.currentLevel.playerPos.x > -1) {

@@ -90,7 +90,6 @@
     }
     
     [self.GameSceneViewController showLevel:self.currentSet: [LevelMgr getLevel:self.currentSet :key]];
-    NSLog(@"Showing level %@", [LevelMgr getLevel:self.currentSet :key].name);
     [self.navigationController pushViewController:_GameSceneViewController animated:NO];
 }
 
