@@ -7,8 +7,8 @@
                 "x": "22",
                 "y": "27",
                 "w": "16",
-                "h": "10",
-                "text": "Keep crossing the bridges until the counter gets to zero."
+                "h": "14",
+                "text": "Keep crossing the bridges until the counter gets to zero.\n\nEach cross costs one coin."
             }
         ],
         "rivers": [
