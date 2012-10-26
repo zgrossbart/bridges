@@ -4,7 +4,6 @@
         "index": "1",
         "image": "confetti.png",
         "levels": [
-            "tile_test.json",
             "hello_bridges.json",
             "two_bridges.json",
             "start_anywhere.json",
