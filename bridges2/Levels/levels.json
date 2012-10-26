@@ -15,10 +15,10 @@
             "corners.json",
             "up_and_down.json",
             "peninsulas.json",
-			"out_and_in.json",
             "islands.json",
             "in_the_middle.json",
             "classic.json",
+			"out_and_in.json",
 			"around_the_middle.json"
 		]
 	},
@@ -80,6 +80,8 @@
 			"tolls_plus.json",
 			"suburbs.json",
 			"tolls_middle.json",
+			"island_tolls.json",
+			"tolls_by_side.json",
             "free_swim.json",
 			"frequent_visitor.json",
 			"suburb_colors.json",
