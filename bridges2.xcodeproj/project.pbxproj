@@ -262,6 +262,7 @@
 		CEDB4B44163A977600E34175 /* tolls_by_side.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDB4B43163A977600E34175 /* tolls_by_side.json */; };
 		CEDB4B46163A993200E34175 /* ride_around.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDB4B45163A993200E34175 /* ride_around.json */; };
 		CEDB4B48163A9E9E00E34175 /* classic_subways.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDB4B47163A9E9E00E34175 /* classic_subways.json */; };
+		CEDB4B4A163AA24800E34175 /* pop_in.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDB4B49163AA24800E34175 /* pop_in.json */; };
 		CEDBC2DE15EB8A3E00094695 /* LayerMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */; };
 		CEDBC2E115EB8A8400094695 /* HouseNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E015EB8A8400094695 /* HouseNode.mm */; };
 		CEDBC2E415EB8AF600094695 /* PlayerNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC2E315EB8AF600094695 /* PlayerNode.mm */; };
@@ -772,6 +773,7 @@
 		CEDB4B43163A977600E34175 /* tolls_by_side.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tolls_by_side.json; sourceTree = "<group>"; };
 		CEDB4B45163A993200E34175 /* ride_around.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ride_around.json; sourceTree = "<group>"; };
 		CEDB4B47163A9E9E00E34175 /* classic_subways.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = classic_subways.json; sourceTree = "<group>"; };
+		CEDB4B49163AA24800E34175 /* pop_in.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pop_in.json; sourceTree = "<group>"; };
 		CEDBC2DA15EB89DA00094695 /* BridgeColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeColors.h; sourceTree = "<group>"; };
 		CEDBC2DC15EB8A3E00094695 /* LayerMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerMgr.h; sourceTree = "<group>"; };
 		CEDBC2DD15EB8A3E00094695 /* LayerMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LayerMgr.mm; sourceTree = "<group>"; };
@@ -1533,6 +1535,7 @@
 				CEDB4B43163A977600E34175 /* tolls_by_side.json */,
 				CEDB4B45163A993200E34175 /* ride_around.json */,
 				CEDB4B47163A9E9E00E34175 /* classic_subways.json */,
+				CEDB4B49163AA24800E34175 /* pop_in.json */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -1814,6 +1817,7 @@
 				CEDB4B44163A977600E34175 /* tolls_by_side.json in Resources */,
 				CEDB4B46163A993200E34175 /* ride_around.json in Resources */,
 				CEDB4B48163A9E9E00E34175 /* classic_subways.json in Resources */,
+				CEDB4B4A163AA24800E34175 /* pop_in.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
