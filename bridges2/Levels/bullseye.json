@@ -66,6 +66,18 @@
                 "x": "29-r",
                 "y": "m",
                 "orient": "h"
+            },
+            {
+                "x": "c",
+                "y": "6",
+                "orient": "h",
+				"border": "top"
+            },
+            {
+                "x": "c",
+                "y": "24",
+                "orient": "h",
+				"border": "bottom"
             }
         ],
         "bridges": [

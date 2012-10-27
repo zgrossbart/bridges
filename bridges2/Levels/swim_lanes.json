@@ -34,6 +34,30 @@
                 "x": "8-32",
                 "y": "24",
                 "orient": "h"
+            },
+            {
+                "x": "16",
+                "y": "5",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "16",
+                "y": "24",
+                "orient": "h",
+				"border": "top"
+            },
+            {
+                "x": "24",
+                "y": "5",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "24",
+                "y": "24",
+                "orient": "h",
+				"border": "top"
             }
         ],
         "bridges": [
