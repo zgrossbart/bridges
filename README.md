@@ -7,12 +7,13 @@ The city of Königsberg in Prussia (now [Kaliningrad, Russia](https://maps.googl
 
 This project is an iPad and iPhone game based on those famous bridges.  Each level presents a puzzle with bridges to cross, houses to visit, and sometimes coins to collect.  
 
-Here are some sample levels
-
-Hello Bridges
---------------------------------------
+The basic rules of the game are simple.  
 
 ![Hello Bridges Level](/zgrossbart/bridges/raw/master/screenshots/hellobridges.png)
+
+![Two Bridges Level](/zgrossbart/bridges/raw/master/screenshots/twobridges.png)
+
+Here are some sample levels
 
 Economics
 --------------------------------------
