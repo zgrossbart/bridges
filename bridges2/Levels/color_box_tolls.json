@@ -1,6 +1,6 @@
 {
     "level": {
-        "name": "Color box",
+        "name": "Color box tolls",
         "rivers": [
             {
                 "x": "10",
@@ -36,12 +36,14 @@
                 "x": "10",
                 "y": "5",
                 "orient": "h",
-				"color": "blue"
+				"color": "blue",
+				"coins": "1"
             },
             {
                 "x": "25",
                 "y": "15",
-                "orient": "h"
+                "orient": "h",
+				"coins": "1"
             },
             {
                 "x": "17.5",
@@ -52,17 +54,20 @@
             {
                 "x": "17.5",
                 "y": "10",
-                "orient": "v"
+                "orient": "v",
+				"coins": "1"
             },
             {
                 "x": "30",
                 "y": "20",
-                "orient": "v"
+                "orient": "v",
+				"coins": "1"
             },
             {
                 "x": "30",
                 "y": "10",
-                "orient": "v"
+                "orient": "v",
+				"coins": "1"
             },
             {
                 "x": "35",
@@ -80,22 +85,26 @@
             {
                 "x": "1",
                 "y": "2",
-                "color": "red"
+                "color": "red",
+				"coins": "1"
             },
             {
                 "x": "38",
                 "y": "2",
-                "color": "blue"
+                "color": "blue",
+				"coins": "2"
             },
             {
                 "x": "38",
                 "y": "26",
-                "color": "orange"
+                "color": "orange",
+				"coins": "1"
             },
             {
                 "x": "12",
                 "y": "15",
-                "color": "blue"
+                "color": "blue",
+				"coins": "1"
             }
         ]
     }

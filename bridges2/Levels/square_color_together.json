@@ -2,7 +2,6 @@
     "level": {
         "id": "36",
         "name": "Square colors together",
-		"coins": "4",
         "rivers": [
             {
                 "x": "5-35",
@@ -57,8 +56,7 @@
                 "x": "7",
                 "y": "5",
                 "orient": "v",
-				"color": "green",
-				"coins": "2"
+				"color": "green"
             },
             {
                 "x": "12",
@@ -74,8 +72,7 @@
                 "x": "20",
                 "y": "15",
                 "orient": "v",
-				"color": "red",
-				"coins": "3"
+				"color": "red"
             },
             {
                 "x": "5",
@@ -86,8 +83,7 @@
                 "x": "15",
                 "y": "19",
                 "orient": "h",
-				"color": "green",
-				"coins": "2"
+				"color": "green"
             },
             {
                 "x": "24",
@@ -97,8 +93,7 @@
             {
                 "x": "35",
                 "y": "19",
-                "orient": "h",
-				"coins": "1"
+                "orient": "h"
             },
             {
                 "x": "27",
@@ -114,8 +109,7 @@
             {
                 "x": "27",
                 "y": "5",
-                "orient": "v",
-				"coins": "2"
+                "orient": "v"
             },
             {
                 "x": "32",
@@ -132,8 +126,7 @@
                 "x": "15",
                 "y": "10",
                 "orient": "h",
-				"color": "red",
-				"coins": "3"
+				"color": "red"
             },
             {
                 "x": "35",
@@ -145,26 +138,22 @@
 			{
 				"x": "10",
 				"y": "17",
-				"color": "green",
-				"coins": "3"
+				"color": "green"
 			},
 			{
 				"x": "7",
 				"y": "10",
-				"color": "red",
-				"coins": "3"
+				"color": "red"
 			},
 			{
 				"x": "30",
 				"y": "17",
-				"color": "red",
-				"coins": "2"
+				"color": "red"
 			},
 			{
 				"x": "30",
 				"y": "12",
-				"color": "green",
-				"coins": "2"
+				"color": "green"
 			}
 		]
     }
