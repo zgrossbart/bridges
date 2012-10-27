@@ -34,6 +34,10 @@ Full of Islands
 
 ![Full of Islands Level](/zgrossbart/bridges/raw/master/screenshots/fullofislands.png)
 
+Square together
+--------------------------------------
+
+![Square Together Level](/zgrossbart/bridges/raw/master/screenshots/squaretogether.png)
 
 Subways
 --------------------------------------
@@ -55,7 +59,7 @@ Hopscotch Subway
 
 ![Hopscotch Subway Level](/zgrossbart/bridges/raw/master/screenshots/hopscotch_subway.png)
 
-The real game has over 60 levels.
+The real game has 80 levels.
 
 
 This game is currently under development and not ready to play yet.  When it's done I'll release it in the App store.
