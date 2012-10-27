@@ -13,7 +13,7 @@ The basic rules of the game are simple.
 
 ![Two Bridges Level](/zgrossbart/bridges/raw/master/screenshots/twobridges.png)
 
-Here are some sample levels
+Here are some sample levels:
 
 Economics
 --------------------------------------
