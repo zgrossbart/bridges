@@ -116,13 +116,18 @@
         
         self.visited = true;
         
+        float scale = 1.0;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            scale = IPAD_SCALE_FACTOR;
+        }
+        
         /*
          * If this is the last visit to a house then we want to show
          * a small animation to call your attention to it.  This 
          * animation rotates it horizontally while it changes the sprite.
          */
-        CCEaseExponentialIn* flipHalf = [CCEaseExponentialIn actionWithAction:[CCActionTween actionWithDuration:0.25 key:@"scaleX" from:-1.0 to:0.0]];
-        CCEaseExponentialOut* flipRemainingHalf = [CCEaseExponentialOut actionWithAction:[CCActionTween actionWithDuration:0.25 key:@"scaleX" from:0.0 to:1.0]];
+        CCEaseExponentialIn* flipHalf = [CCEaseExponentialIn actionWithAction:[CCActionTween actionWithDuration:0.25 key:@"scaleX" from:-scale to:0.0]];
+        CCEaseExponentialOut* flipRemainingHalf = [CCEaseExponentialOut actionWithAction:[CCActionTween actionWithDuration:0.25 key:@"scaleX" from:0.0 to:scale]];
         
         CCSequence* seq = [CCSequence actions:flipHalf,
                            [CCCallFunc actionWithTarget:self selector:@selector(visitEnded)],
