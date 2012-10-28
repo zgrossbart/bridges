@@ -62,9 +62,9 @@
 			"color_diamond.json",
             "colors_off_center.json",
             "hopscotch_colors.json",
-            "color_quilt.json",
             "color_box.json",
             "square_color_together.json",
+			"color_quilt.json",
             "square_plus_four.json"
         ]
     },
