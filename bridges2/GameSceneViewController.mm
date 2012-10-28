@@ -41,11 +41,9 @@
         self = [super initWithNibName:@"GameSceneView" bundle:nibBundleOrNil];
     }
     
-    [StyleUtil styleLabel:_coinLabel];
-    [StyleUtil styleLabel:_levelTitle];
-    
     if (self) {
-        // Custom initialization
+        [StyleUtil styleLabel:_coinLabel];
+        [StyleUtil styleLabel:_levelTitle];
     }
     return self;
 }
