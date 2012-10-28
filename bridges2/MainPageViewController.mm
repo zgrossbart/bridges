@@ -100,6 +100,7 @@
 -(void)setViewDetails: (MainSectionViewController*) controller page:(int)page {
     if ([[LevelMgr getLevelMgr].levelSets count] == page) {
         controller.label.text = @"More levels are coming soon";
+        [controller.playBtn setImage:[UIImage imageNamed: @"more.png"] forState:UIControlStateNormal];
     } else {
         controller.label.text = [LevelMgr getLevelSet:page].name;
         [controller.playBtn setImage:[UIImage imageNamed: [LevelMgr getLevelSet:page].imageName] forState:UIControlStateNormal];

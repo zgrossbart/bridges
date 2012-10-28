@@ -115,6 +115,7 @@
         if (index == [[LevelMgr getLevelMgr].levelSets count]) {
             cell.titleLabel.text = @"More coming soon";
             [cell setBorderVisible:true];
+            [cell.screenshot setImage:[UIImage imageNamed: @"more.png"]];
             cell.screenshot.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
             cell.titleLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
         }
