@@ -68,7 +68,7 @@ static int const TILE_COUNT = 28;
  * This variable controls debug drawing.  Change it to true
  * to see the tile grid and the boxes for each sprite.
  */
-static bool const DEBUG_DRAW = false;
+static bool const DEBUG_DRAW = true;
 
 /**
  * Each river is drawn with a set of one tile sprites that we
@@ -82,7 +82,7 @@ static bool const DEBUG_DRAW = false;
  *
  * This variable is used in Level.mm.
  */
-static bool const DRAW_RIVER_OVERLAY = false;
+static bool const DRAW_RIVER_OVERLAY = true;
 
 /**
  * The size of the screen shot icon on iPhone
@@ -95,3 +95,11 @@ static int const IPHONE_LEVEL_IMAGE_H = 64;
  */
 static int const IPAD_LEVEL_IMAGE_W = 150;
 static int const IPAD_LEVEL_IMAGE_H = 100;
+
+/**
+ * We scale up the node sprites on iPad since we have more room and the
+ * larger sprites are a little easier to see.  We could just create a 
+ * second sprite sheet with the iPad sprites, but this is easier and makes
+ * the download size of the app smaller.
+ */
+static int const IPAD_SCALE_FACTOR = 2;

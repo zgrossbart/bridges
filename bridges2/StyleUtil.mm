@@ -62,7 +62,13 @@
     
     label.backgroundColor = [UIColor colorWithRed:(1.0 * 170) / 255 green:(1.0 * 170) / 255 blue:(1.0 * 170) / 255 alpha:0.2];
     label.layer.cornerRadius = 6;
-    label.font = [UIFont fontWithName:@"Avenir" size: 11.0];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        label.font = [UIFont fontWithName:@"Avenir" size: 18.0];
+    } else {
+        label.font = [UIFont fontWithName:@"Avenir" size: 11.0];
+    }
+    
     label.textAlignment = NSTextAlignmentCenter;
     [label sizeToFit];
     

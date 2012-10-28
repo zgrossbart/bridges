@@ -49,6 +49,10 @@
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1.png"]];
         }
         
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            self.player.scale = IPAD_SCALE_FACTOR;
+        }
+        
         NSMutableArray *walkAnimFrames = [NSMutableArray array];
         for(int i = 1; i <= 5; ++i) {
             [walkAnimFrames addObject:

@@ -53,6 +53,9 @@
         self.direction = dir;
         
         [self setBridgeSprite:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            self.bridge.scale = IPAD_SCALE_FACTOR;
+        }
         
         self.coins = coins;
         
@@ -79,7 +82,7 @@
 -(void)setBridgePosition:(CGPoint)p {
     self.bridge.position = ccp(p.x, p.y);
     if (_label != nil) {
-        _label.frame = CGRectMake((p.x + (self.bridge.contentSize.width / 2)) -(_label.frame.size.width / 2) + 5, [LayerMgr normalizeYForControl:p.y] -((self.bridge.contentSize.height / 2) + (_label.frame.size.height / 2)) - 3, _label.frame.size.width, _label.frame.size.height);
+        _label.frame = CGRectMake((p.x + ((self.bridge.contentSize.width * self.bridge.scale) / 2)) -(_label.frame.size.width / 2) + 5, [LayerMgr normalizeYForControl:p.y] -(((self.bridge.contentSize.height * self.bridge.scale) / 2) + (_label.frame.size.height / 2)) - 3, _label.frame.size.width, _label.frame.size.height);
     }
 }
 

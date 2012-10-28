@@ -45,6 +45,9 @@
         self.visited = false;
         self.color = color;
         [self setHouseSprite:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            self.house.scale = IPAD_SCALE_FACTOR;
+        }
         
         self.coins = coins;
         
@@ -132,7 +135,7 @@
 -(void)setHousePosition:(CGPoint)p {
     self.house.position = ccp(p.x, p.y);
     if (_label != nil) {
-        _label.frame = CGRectMake(p.x + 3, ([LayerMgr normalizeYForControl:p.y] - _label.frame.size.height) - 3, _label.frame.size.width, _label.frame.size.height);
+        _label.frame = CGRectMake(p.x + (self.house.scale * 3), ([LayerMgr normalizeYForControl:p.y] - _label.frame.size.height) - (self.house.scale * 3), _label.frame.size.width, _label.frame.size.height);
     }
 }
 

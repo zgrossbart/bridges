@@ -595,13 +595,13 @@
     //    printf("current bridge (%f, %f)\n", _currentBridge.bridge.position.x, _currentBridge.bridge.position.y);
     
     if (exitDir == dRight) {
-        location = ccp(_currentBridge.bridge.position.x + (_currentBridge.bridge.contentSize.width / 2) + (_player.player.contentSize.width), _currentBridge.bridge.position.y);
+        location = ccp(_currentBridge.bridge.position.x + ([_currentBridge.bridge boundingBox].size.width / 2) + ([_player.player boundingBox].size.width), _currentBridge.bridge.position.y);
     } else if (exitDir == dLeft) {
-        location = ccp((_currentBridge.bridge.position.x -(_currentBridge.bridge.contentSize.width / 2)) -(_player.player.contentSize.width), _currentBridge.bridge.position.y);
+        location = ccp((_currentBridge.bridge.position.x -([_currentBridge.bridge boundingBox].size.width / 2)) -([_player.player boundingBox].size.width), _currentBridge.bridge.position.y);
     } else if (exitDir == dUp) {
-        location = ccp(_currentBridge.bridge.position.x, _currentBridge.bridge.position.y + (_currentBridge.bridge.contentSize.height / 2) + (_player.player.contentSize.height));
+        location = ccp(_currentBridge.bridge.position.x, _currentBridge.bridge.position.y + ([_currentBridge.bridge boundingBox].size.height / 2) + ([_player.player boundingBox].size.height));
     } else if (exitDir == dDown) {
-        location = ccp(_currentBridge.bridge.position.x, (_currentBridge.bridge.position.y -(_currentBridge.bridge.contentSize.height / 2)) -(_player.player.contentSize.height));
+        location = ccp(_currentBridge.bridge.position.x, (_currentBridge.bridge.position.y -([_currentBridge.bridge boundingBox].size.height / 2)) -([_player.player boundingBox].size.height));
     }
     
     [_player moveTo: location:true];
@@ -631,7 +631,7 @@ CGFloat CGPointToDegree(CGPoint point) {
      */
     CGPoint location = ccp(bridge.bridge.position.x, bridge.bridge.position.y);
     
-    int padding = bridge.bridge.contentSize.width / 2;
+    int padding = [bridge.bridge boundingBox].size.width / 2;
     
     if (player.position.x < bridge.bridge.position.x - padding) {
         _bridgeEntry = dLeft;
@@ -675,14 +675,14 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     CGPoint location;
     
-    int padding = bridge.bridge.contentSize.width / 2;
+    int padding = [bridge.bridge boundingBox].size.width / 2;
     
     //    printf("player (%f, %f)\n", player.position.x, player.position.y);
     //    printf("bridge (%f, %f)\n", object.position.x, object.position.y);
     //    printf("vertical: %i\n", bridge.vertical);
     
     if (bridge.vertical) {
-        if (_playerStart.y + player.contentSize.height < object.position.y + padding) {
+        if (_playerStart.y + [player boundingBox].size.height < object.position.y + padding) {
             // Then the player is below the bridge
             if (bridge.direction != dUp && bridge.direction != dNone) {
                 _inMove = false;
@@ -690,9 +690,9 @@ CGFloat CGPointToDegree(CGPoint point) {
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
-            int x = (object.position.x + (object.contentSize.width / 2)) - (player.contentSize.width / 2);
-            location = ccp(x, object.position.y + object.contentSize.height + 5);
-        } else if (_playerStart.y > (object.position.y + object.contentSize.height) - padding) {
+            int x = (object.position.x + ([object boundingBox].size.width / 2)) - ([player boundingBox].size.width / 2);
+            location = ccp(x, object.position.y + [object boundingBox].size.height + 5);
+        } else if (_playerStart.y > (object.position.y + [object boundingBox].size.height) - padding) {
             // Then the player is above the bridge
             if (bridge.direction != dDown && bridge.direction != dNone) {
                 _inMove = false;
@@ -700,11 +700,11 @@ CGFloat CGPointToDegree(CGPoint point) {
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
-            int x = (object.position.x + (object.contentSize.width / 2)) - (player.contentSize.width / 2);
-            location = ccp(x, (object.position.y) - (player.contentSize.height + 5));
+            int x = (object.position.x + ([object boundingBox].size.width / 2)) - ([player boundingBox].size.width / 2);
+            location = ccp(x, (object.position.y) - ([player boundingBox].size.height + 5));
         }
     } else {
-        if (_playerStart.x > (object.position.x + object.contentSize.width) - padding) {
+        if (_playerStart.x > (object.position.x + [object boundingBox].size.width) - padding) {
             // Then the player is to the right of the bridge
             if (bridge.direction != dLeft && bridge.direction != dNone) {
                 _inMove = false;
@@ -712,10 +712,10 @@ CGFloat CGPointToDegree(CGPoint point) {
                 [self bumpObject:player: bridge.bridge];
                 return;
             }
-            int y = (object.position.y + (object.contentSize.height / 2)) -
-            (player.contentSize.height / 2);
-            location = ccp((object.position.x - 5) -(player.contentSize.width), y);
-        } else if (_playerStart.x + player.contentSize.width < object.position.x + padding) {
+            int y = (object.position.y + ([object boundingBox].size.height / 2)) -
+            ([player boundingBox].size.height / 2);
+            location = ccp((object.position.x - 5) -([player boundingBox].size.width), y);
+        } else if (_playerStart.x + [player boundingBox].size.width < object.position.x + padding) {
             // Then the player is to the left of the bridge
             if (bridge.direction != dRight && bridge.direction != dNone) {
                 _inMove = false;
@@ -723,9 +723,9 @@ CGFloat CGPointToDegree(CGPoint point) {
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
-            int y = (object.position.y + (object.contentSize.height / 2)) -
-            (player.contentSize.height / 2);
-            location = ccp(object.position.x + 5 + object.contentSize.width, y);
+            int y = (object.position.y + ([object boundingBox].size.height / 2)) -
+            ([player boundingBox].size.height / 2);
+            location = ccp(object.position.x + 5 + [object boundingBox].size.width, y);
         }
     }
     
@@ -777,7 +777,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     
-    float step = object.contentSize.width * 1.6;
+    float step = [player boundingBox].size.width * 1.6;
     
     if (object.tag == SUBWAY) {
         /*
@@ -785,7 +785,7 @@ CGFloat CGPointToDegree(CGPoint point) {
          * need a larger space to make sure we move off of 
          * the sprite.
          */
-        step = object.contentSize.width * 1.8;
+        step = [player boundingBox].size.width * 1.8;
     }
     
     _player.player.position = [self pointOnLine: _playerStart: _player.player.position: step];
