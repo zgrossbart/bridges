@@ -7,8 +7,8 @@
                 "x": "22",
                 "y": "27",
                 "w": "16",
-                "h": "10",
-                "text": "Cross each bridge only once."
+                "h": "8",
+                "text": "Cross each bridge once and only once."
             }
         ],
 		"player": {
