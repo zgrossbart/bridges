@@ -701,7 +701,7 @@ CGFloat CGPointToDegree(CGPoint point) {
                 return;
             }
             int x = (object.position.x + ([object boundingBox].size.width / 2)) - ([player boundingBox].size.width / 2);
-            location = ccp(x, (object.position.y) - ([player boundingBox].size.height + 5));
+            location = ccp(x, (object.position.y) - ([player boundingBox].size.height + 6));
         }
     } else {
         if (_playerStart.x > (object.position.x + [object boundingBox].size.width) - padding) {
@@ -714,7 +714,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             }
             int y = (object.position.y + ([object boundingBox].size.height / 2)) -
             ([player boundingBox].size.height / 2);
-            location = ccp((object.position.x - 5) -([player boundingBox].size.width), y);
+            location = ccp((object.position.x - 6) -([player boundingBox].size.width), y);
         } else if (_playerStart.x + [player boundingBox].size.width < object.position.x + padding) {
             // Then the player is to the left of the bridge
             if (bridge.direction != dRight && bridge.direction != dNone) {
