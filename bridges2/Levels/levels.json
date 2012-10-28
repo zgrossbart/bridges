@@ -2,7 +2,7 @@
     "set1": {
         "name": "Bridges",
         "index": "1",
-        "image": "confetti.png",
+        "image": "bridge.png",
         "levels": [
             "hello_bridges.json",
             "two_bridges.json",
@@ -25,7 +25,7 @@
     "set2": {
         "name": "Bridge-o-rama",
         "index": "2",
-        "image": "green_check.png",
+        "image": "bridge2.png",
         "levels": [
             "swim_lanes.json",
             "bullseye.json",
@@ -48,7 +48,7 @@
     "set3": {
         "name": "Houses and Colors",
         "index": "3",
-        "image": "coins.png",
+        "image": "house.png",
         "levels": [
             "house_by_river.json",
 			"visiting.json",
@@ -64,14 +64,14 @@
             "hopscotch_colors.json",
             "color_box.json",
             "square_color_together.json",
-			"color_quilt.json",
+				"color_quilt.json",
             "square_plus_four.json"
         ]
     },
     "set4": {
         "name": "Tolls",
         "index": "4",
-        "image": "menu.png",
+        "image": "tolls.png",
         "levels": [
             "tolls.json",
             "economics.json",
@@ -94,7 +94,7 @@
     "set5": {
         "name": "Subways",
         "index": "5",
-        "image": "refresh.png",
+        "image": "subway.png",
         "levels": [
             "subways.json",
 			"three_rivers_subway.json",

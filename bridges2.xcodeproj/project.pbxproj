@@ -305,6 +305,11 @@
 		CEE967FE162462EF001A9F4C /* color_box.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE967FD162462EF001A9F4C /* color_box.json */; };
 		CEE9ED0E16356FE200FF9FAC /* background_1024_768_River.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE9ED0D16356FE200FF9FAC /* background_1024_768_River.png */; };
 		CEE9ED11163578F900FF9FAC /* visiting.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE9ED10163578F900FF9FAC /* visiting.json */; };
+		CEEBCC2F163DCD3300FF3F8F /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEBCC2B163DCD3300FF3F8F /* house.png */; };
+		CEEBCC30163DCD3300FF3F8F /* subway.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEBCC2C163DCD3300FF3F8F /* subway.png */; };
+		CEEBCC31163DCD3300FF3F8F /* tolls.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEBCC2D163DCD3300FF3F8F /* tolls.png */; };
+		CEEBCC33163DCD3C00FF3F8F /* bridge.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEBCC32163DCD3C00FF3F8F /* bridge.png */; };
+		CEEBCC35163DCF2300FF3F8F /* bridge2.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEBCC34163DCF2300FF3F8F /* bridge2.png */; };
 		CEEE7DEC162211BD00B84A96 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = CEEE7DEA162211BD00B84A96 /* about.html */; };
 		CEEE7DED162211BD00B84A96 /* bridges.css in Resources */ = {isa = PBXBuildFile; fileRef = CEEE7DEB162211BD00B84A96 /* bridges.css */; };
 		CEEE7DF1162219FE00B84A96 /* anothercolor.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEE7DF0162219FE00B84A96 /* anothercolor.png */; };
@@ -831,6 +836,11 @@
 		CEE967FD162462EF001A9F4C /* color_box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_box.json; sourceTree = "<group>"; };
 		CEE9ED0D16356FE200FF9FAC /* background_1024_768_River.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_1024_768_River.png; sourceTree = "<group>"; };
 		CEE9ED10163578F900FF9FAC /* visiting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = visiting.json; sourceTree = "<group>"; };
+		CEEBCC2B163DCD3300FF3F8F /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
+		CEEBCC2C163DCD3300FF3F8F /* subway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = subway.png; sourceTree = "<group>"; };
+		CEEBCC2D163DCD3300FF3F8F /* tolls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tolls.png; sourceTree = "<group>"; };
+		CEEBCC32163DCD3C00FF3F8F /* bridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridge.png; sourceTree = "<group>"; };
+		CEEBCC34163DCF2300FF3F8F /* bridge2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bridge2.png; sourceTree = "<group>"; };
 		CEEE7DEA162211BD00B84A96 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		CEEE7DEB162211BD00B84A96 /* bridges.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bridges.css; sourceTree = "<group>"; };
 		CEEE7DF0162219FE00B84A96 /* anothercolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anothercolor.png; sourceTree = "<group>"; };
@@ -929,6 +939,7 @@
 		CE6D65E815EAC5FB00C7EDD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEEBCC28163DCC3C00FF3F8F /* Level Set Images */,
 				CEE9ED0D16356FE200FF9FAC /* background_1024_768_River.png */,
 				CEBB885F160514D200538464 /* bridgesprites-hd.plist */,
 				CEBB8860160514D200538464 /* bridgesprites-hd.pvr.gz */,
@@ -1640,6 +1651,18 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		CEEBCC28163DCC3C00FF3F8F /* Level Set Images */ = {
+			isa = PBXGroup;
+			children = (
+				CEEBCC34163DCF2300FF3F8F /* bridge2.png */,
+				CEEBCC32163DCD3C00FF3F8F /* bridge.png */,
+				CEEBCC2B163DCD3300FF3F8F /* house.png */,
+				CEEBCC2C163DCD3300FF3F8F /* subway.png */,
+				CEEBCC2D163DCD3300FF3F8F /* tolls.png */,
+			);
+			name = "Level Set Images";
+			sourceTree = "<group>";
+		};
 		CEEE7DE8162211A000B84A96 /* www */ = {
 			isa = PBXGroup;
 			children = (
@@ -1834,6 +1857,11 @@
 				CEDB4B4A163AA24800E34175 /* pop_in.json in Resources */,
 				CE8C31B5163BFFB100928DC1 /* color_box_tolls.json in Resources */,
 				CE8C31B8163C007300928DC1 /* square_toll_together.json in Resources */,
+				CEEBCC2F163DCD3300FF3F8F /* house.png in Resources */,
+				CEEBCC30163DCD3300FF3F8F /* subway.png in Resources */,
+				CEEBCC31163DCD3300FF3F8F /* tolls.png in Resources */,
+				CEEBCC33163DCD3C00FF3F8F /* bridge.png in Resources */,
+				CEEBCC35163DCF2300FF3F8F /* bridge2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

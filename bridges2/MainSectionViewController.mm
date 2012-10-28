@@ -50,6 +50,8 @@
     [self.playBtn.layer setMasksToBounds:YES];
     self.playBtn.layer.borderColor = [UIColor colorWithRed:(1.0 * 170) / 255 green:(1.0 * 170) / 255 blue:(1.0 * 170) / 255 alpha:0.5].CGColor;
     self.playBtn.layer.borderWidth = 2.0f;
+    
+    [self.playBtn setContentMode:UIViewContentModeCenter];
 }
 
 -(void)didReceiveMemoryWarning
