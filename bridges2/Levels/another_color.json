@@ -1,6 +1,5 @@
 {
     "level": {
-        "id": "30",
         "name": "House of another color",
         "rivers": [
             {
@@ -33,8 +32,8 @@
             {
                 "x": "18",
                 "y": "6",
-                "orient": "h",
-				"border": "bottom"
+                "orient": "v",
+				"border": "left"
             },
             {
                 "x": "32",

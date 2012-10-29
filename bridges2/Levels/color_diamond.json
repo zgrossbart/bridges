@@ -86,7 +86,7 @@
                 "x": "20",
                 "y": "25",
                 "orient": "h",
-				"border": "bottom"
+				"border": "top"
             }
         ],
         "bridges": [
