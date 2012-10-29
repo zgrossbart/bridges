@@ -13,6 +13,12 @@
                 "x": "20",
                 "y": "b-t",
                 "orient": "v"
+            },
+            {
+                "x": "20",
+                "y": "m",
+                "orient": "h",
+				"border": "none"
             }
         ],
         "bridges": [
