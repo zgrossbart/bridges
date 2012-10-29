@@ -746,6 +746,10 @@
             river = [CCSprite spriteWithSpriteFrameName:@"river_h.png"];
         }
     }
+    
+    if (DEBUG_DRAW && [border length] > 0) {
+        river.color = ccc3(255,172,112);
+    }
 
     CGPoint startPos = ccp(x, y);
     

@@ -41,25 +41,25 @@
                 "orient": "v"
             },
             {
-                "x": "15",
+                "x": "14",
                 "y": "5",
                 "orient": "h",
 				"border": "bottom"
             },
             {
-                "x": "25",
+                "x": "24",
                 "y": "5",
                 "orient": "h",
 				"border": "bottom"
             },
             {
-                "x": "15",
+                "x": "14",
                 "y": "24",
                 "orient": "h",
 				"border": "top"
             },
             {
-                "x": "25",
+                "x": "24",
                 "y": "24",
                 "orient": "h",
 				"border": "top"
@@ -77,13 +77,13 @@
 				"border": "right"
             },
             {
-                "x": "15",
+                "x": "14",
                 "y": "15",
                 "orient": "h",
 				"border": "none"
             },
             {
-                "x": "25",
+                "x": "24",
                 "y": "15",
                 "orient": "h",
 				"border": "none"
