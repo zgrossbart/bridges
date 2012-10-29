@@ -29,7 +29,25 @@
 	            "y": "b-12",
 	            "orient": "v",
 				"side": "right"
-	        }    
+	        },
+            {
+                "x": "8",
+                "y": "12",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "28",
+                "y": "12",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "28",
+                "y": "22",
+                "orient": "h",
+				"border": "top"
+            }
         ],
         "bridges": [
             {

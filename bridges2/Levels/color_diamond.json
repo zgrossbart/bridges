@@ -39,6 +39,54 @@
                 "y": "4-25",
                 "orient": "v",
 				"side": "right"
+            },
+            {
+                "x": "8",
+                "y": "18",
+                "orient": "h",
+				"border": "none"
+            },
+            {
+                "x": "20",
+                "y": "18",
+                "orient": "h",
+				"border": "none"
+            },
+            {
+                "x": "20",
+                "y": "11",
+                "orient": "h",
+				"border": "none"
+            },
+            {
+                "x": "8",
+                "y": "11",
+                "orient": "v",
+				"border": "left"
+            },
+            {
+                "x": "32",
+                "y": "11",
+                "orient": "v",
+				"border": "right"
+            },
+            {
+                "x": "32",
+                "y": "18",
+                "orient": "h",
+				"border": "none"
+            },
+            {
+                "x": "20",
+                "y": "4",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "20",
+                "y": "25",
+                "orient": "h",
+				"border": "bottom"
             }
         ],
         "bridges": [

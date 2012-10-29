@@ -23,6 +23,24 @@
                 "y": "6-t",
                 "orient": "v",
 				"side": "right"
+            },
+            {
+                "x": "18",
+                "y": "18",
+                "orient": "h",
+				"border": "none"
+            },
+            {
+                "x": "18",
+                "y": "6",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "32",
+                "y": "18",
+                "orient": "v",
+				"border": "right"
             }
         ],
         "bridges": [
