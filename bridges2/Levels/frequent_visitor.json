@@ -17,6 +17,18 @@
                 "x": "25",
                 "y": "b-20",
                 "orient": "v"
+            },
+            {
+                "x": "25",
+                "y": "10",
+                "orient": "v",
+				"border": "right"
+            },
+            {
+                "x": "25",
+                "y": "20",
+                "orient": "h",
+				"border": "top"
             }
         ],
         "bridges": [
