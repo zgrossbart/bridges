@@ -35,11 +35,11 @@
             "diamond.json",
             "square_together.json",
             "around_again.json",
-            "off_center.json",
             "simple_box.json",
             "hopscotch.json",
             "tic_tac_toe.json",
             "quilt.json",
+			"off_center.json",
             "spiral.json",
             "overlap.json",
             "full_of_bridges.json"
@@ -64,7 +64,7 @@
             "hopscotch_colors.json",
             "color_box.json",
             "square_color_together.json",
-				"color_quilt.json",
+            "color_quilt.json",
             "square_plus_four.json"
         ]
     },
