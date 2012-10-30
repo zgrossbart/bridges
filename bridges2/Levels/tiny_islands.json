@@ -1,0 +1,164 @@
+{
+    "level": {
+        "name": "Tiny islands",
+        "rivers": [
+            {
+	            "x": "5-10",
+	            "y": "5",
+	            "orient": "h"
+	        },
+	        {
+	            "x": "5-10",
+	            "y": "10",
+	            "orient": "h"
+	        },
+	        {
+	            "x": "5",
+	            "y": "5-10",
+	            "orient": "v",
+                "side": "left"
+	        },
+	        {
+	            "x": "10",
+	            "y": "5-10",
+	            "orient": "v",
+                "side": "right"
+	        },
+            {
+	            "x": "5-10",
+	            "y": "25",
+	            "orient": "h"
+	        },
+	        {
+	            "x": "5-10",
+	            "y": "20",
+	            "orient": "h"
+	        },
+	        {
+	            "x": "5",
+	            "y": "20-25",
+	            "orient": "v",
+                "side": "left"
+	        },
+	        {
+	            "x": "10",
+	            "y": "20-25",
+	            "orient": "v",
+                "side": "right"
+	        },
+            {
+	            "x": "30-35",
+	            "y": "5",
+	            "orient": "h"
+	        },
+	        {
+	            "x": "30-35",
+	            "y": "10",
+	            "orient": "h"
+	        },
+	        {
+	            "x": "30",
+	            "y": "5-10",
+	            "orient": "v",
+                "side": "left"
+	        },
+	        {
+	            "x": "35",
+	            "y": "5-10",
+	            "orient": "v",
+                "side": "right"
+	        },
+            {
+	            "x": "30-35",
+	            "y": "20",
+	            "orient": "h"
+	        },
+	        {
+	            "x": "30-35",
+	            "y": "25",
+	            "orient": "h"
+	        },
+	        {
+	            "x": "30",
+	            "y": "20-25",
+	            "orient": "v",
+                "side": "left"
+	        },
+	        {
+	            "x": "35",
+	            "y": "20-25",
+	            "orient": "v",
+                "side": "right"
+	        }
+        ],
+        "bridges": [
+		    {
+		        "x": "10",
+		        "y": "7.5",
+		        "orient": "h",
+				"color": "blue"
+		    },
+		    {
+		        "x": "10",
+		        "y": "22.5",
+		        "orient": "h",
+				"color": "red"
+		    },
+		    {
+		        "x": "30",
+		        "y": "7.5",
+		        "orient": "h",
+				"color": "green"
+		    },
+		    {
+		        "x": "30",
+		        "y": "22.5",
+		        "orient": "h",
+				"color": "orange"
+		    }
+            
+        ],
+        "houses": [
+			{
+	            "x": "35",
+	            "y": "15",
+	            "coins": "1",
+				"color": "green"
+	        },
+			{
+	            "x": "20",
+	            "y": "1",
+	            "coins": "1",
+				"color": "blue"
+	        },
+			{
+	            "x": "20",
+	            "y": "26",
+	            "coins": "1",
+				"color": "red"
+	        },
+			{
+	            "x": "5",
+	            "y": "15",
+				"color": "orange"
+	        }
+		],
+        "teleporters": [
+			{
+				"x": "25",
+				"y": "15",
+				"color": "green"
+			},
+			{
+				"x": "20",
+				"y": "15",
+				"color": "blue"
+			},
+			{
+				"x": "15",
+				"y": "15",
+				"color": "red"
+			}
+        ]
+    }
+}

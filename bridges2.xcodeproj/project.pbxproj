@@ -299,6 +299,7 @@
 		CEE1B2FB164045A900BC1972 /* teleporter.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE1B2FA164045A900BC1972 /* teleporter.png */; };
 		CEE1B2FE1640478F00BC1972 /* three_river_jump.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE1B2FD1640478F00BC1972 /* three_river_jump.json */; };
 		CEE1B30016404C0500BC1972 /* jumping_peninsulas.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE1B2FF16404C0500BC1972 /* jumping_peninsulas.json */; };
+		CEE1B30216404FE300BC1972 /* tiny_islands.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE1B30116404FE300BC1972 /* tiny_islands.json */; };
 		CEE5122D162B1D1E0059D6E1 /* corridors.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5122C162B1D1E0059D6E1 /* corridors.json */; };
 		CEE5122F162B285A0059D6E1 /* jumpy.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5122E162B285A0059D6E1 /* jumpy.json */; };
 		CEE5DE27162B7F090095A3B8 /* hopscotch_subway.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5DE26162B7F090095A3B8 /* hopscotch_subway.json */; };
@@ -841,6 +842,7 @@
 		CEE1B2FA164045A900BC1972 /* teleporter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teleporter.png; sourceTree = "<group>"; };
 		CEE1B2FD1640478F00BC1972 /* three_river_jump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = three_river_jump.json; sourceTree = "<group>"; };
 		CEE1B2FF16404C0500BC1972 /* jumping_peninsulas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jumping_peninsulas.json; sourceTree = "<group>"; };
+		CEE1B30116404FE300BC1972 /* tiny_islands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tiny_islands.json; sourceTree = "<group>"; };
 		CEE5122C162B1D1E0059D6E1 /* corridors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = corridors.json; sourceTree = "<group>"; };
 		CEE5122E162B285A0059D6E1 /* jumpy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jumpy.json; sourceTree = "<group>"; };
 		CEE5DE26162B7F090095A3B8 /* hopscotch_subway.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hopscotch_subway.json; sourceTree = "<group>"; };
@@ -910,6 +912,7 @@
 				CED9E641164006FD00B11616 /* teleporter.json */,
 				CEE1B2FD1640478F00BC1972 /* three_river_jump.json */,
 				CEE1B2FF16404C0500BC1972 /* jumping_peninsulas.json */,
+				CEE1B30116404FE300BC1972 /* tiny_islands.json */,
 			);
 			name = teleporters;
 			sourceTree = "<group>";
@@ -1911,6 +1914,7 @@
 				CEE1B2FB164045A900BC1972 /* teleporter.png in Resources */,
 				CEE1B2FE1640478F00BC1972 /* three_river_jump.json in Resources */,
 				CEE1B30016404C0500BC1972 /* jumping_peninsulas.json in Resources */,
+				CEE1B30216404FE300BC1972 /* tiny_islands.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
