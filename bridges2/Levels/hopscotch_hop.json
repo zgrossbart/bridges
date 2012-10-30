@@ -1,7 +1,6 @@
 {
     "level": {
-        "id": "31",
-        "name": "Hopscotch",
+        "name": "Hopscotch hop",
         "rivers": [
             {
                 "x": "l-20",
@@ -100,7 +99,9 @@
             {
                 "x": "10",
                 "y": "15",
-                "orient": "h"
+                "orient": "h",
+				"color": "blue",
+				"coins": "1"
             },
             {
                 "x": "15",
@@ -145,13 +146,62 @@
             {
                 "x": "30",
                 "y": "17.5",
-                "orient": "h"
+                "orient": "h",
+				"color": "green"
             },
             {
                 "x": "20",
                 "y": "12.5",
-                "orient": "h"
+                "orient": "h",
+				"color": "red"
+            },
+            {
+                "x": "25",
+                "y": "15",
+                "orient": "v",
+				"color": "orange"
             }
+        ],
+        "houses": [
+			{
+	            "x": "1",
+	            "y": "25",
+	            "color": "red",
+				"coins": "1"
+	        },
+			{
+	            "x": "1",
+	            "y": "5",
+	            "color": "green",
+				"coins": "1"
+	        },
+			{
+	            "x": "22",
+	            "y": "20",
+	            "color": "blue"
+	        },
+			{
+	            "x": "38",
+	            "y": "15",
+	            "color": "orange",
+				"coins": "1"
+	        }
+		],
+        "subways": [
+            {
+                "x1": "5",
+                "y1": "1",
+                "x2": "38",
+                "y2": "26",
+				"color": "red"
+            }
+        ],
+        "teleporters": [
+			{
+				"x": "38",
+				"y": "1",
+				"color": "blue"
+			}
         ]
     }
 }

@@ -54,6 +54,36 @@
                 "x": "30-r",
                 "y": "10",
                 "orient": "h"
+            },
+            {
+                "x": "10",
+                "y": "10",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "10",
+                "y": "20",
+                "orient": "h",
+				"border": "top"
+            },
+            {
+                "x": "20",
+                "y": "10",
+                "orient": "v",
+				"border": "right"
+            },
+            {
+                "x": "20",
+                "y": "15",
+                "orient": "v",
+				"border": "left"
+            },
+            {
+                "x": "20",
+                "y": "20",
+                "orient": "v",
+				"border": "right"
             }
         ],
         "bridges": [
