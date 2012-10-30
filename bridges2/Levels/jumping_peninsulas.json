@@ -1,0 +1,99 @@
+{
+    "level": {
+        "name": "Jumping peninsulas",
+        "rivers": [
+            {
+                "x": "l-15",
+                "y": "10",
+                "orient": "h"
+            },
+            {
+                "x": "l-15",
+                "y": "20",
+                "orient": "h"
+            },
+            {
+                "x": "15",
+                "y": "10-20",
+                "orient": "v",
+				"side": "right"
+            },
+            {
+                "x": "25-r",
+                "y": "10",
+                "orient": "h"
+            },
+            {
+                "x": "25-r",
+                "y": "20",
+                "orient": "h"
+            },
+            {
+                "x": "25",
+                "y": "10-20",
+                "orient": "v",
+				"side": "left"
+            },
+            {
+                "x": "20",
+                "y": "b-t",
+                "orient": "v"
+            }
+        ],
+        "bridges": [
+		    {
+                "x": "5",
+                "y": "20",
+                "orient": "v"
+            },
+            {
+                "x": "10",
+                "y": "20",
+                "orient": "v",
+				"color": "red"
+            },
+            {
+                "x": "30",
+                "y": "20",
+                "orient": "v",
+				"color": "blue"
+            },
+            {
+                "x": "35",
+                "y": "20",
+                "orient": "v"
+            }
+        ],
+        "houses": [
+			{
+	            "x": "2",
+	            "y": "2",
+				"color": "blue"
+	        },
+			{
+	            "x": "2",
+	            "y": "26",
+	            "coins": "1",
+				"color": "red"
+	        },
+			{
+				"x": "38",
+				"y": "26",
+				"color": "blue",
+				"coins": "1"
+			}
+		],
+        "teleporters": [
+			{
+				"x": "1",
+				"y": "15",
+				"color": "red"
+			},
+			{
+				"x": "38",
+				"y": "15",
+				"color": "blue"
+			}
+        ]
+    }
+}

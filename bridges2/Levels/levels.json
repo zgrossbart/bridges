@@ -4,7 +4,6 @@
         "index": "1",
         "image": "bridge.png",
         "levels": [
-		"teleporter.json",
             "hello_bridges.json",
             "two_bridges.json",
             "start_anywhere.json",
@@ -114,5 +113,17 @@
             "keep_riding.json",
             "overlapping_subways.json"
         ]
-    }
+    },
+    "set6": {
+        "name": "Teleporters",
+        "index": "6",
+        "image": "teleporter.png",
+        "levels": [
+			"teleporter.json",
+			"three_river_jump.json",
+			"jumping_peninsulas.json",
+			"color_box_tolls.json",
+			"square_toll_together.json"
+		]
+	}
 }

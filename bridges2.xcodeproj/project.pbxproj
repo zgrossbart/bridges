@@ -296,6 +296,9 @@
 		CEE145051625A54B007BD1B3 /* spend_it_wisely.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145041625A54B007BD1B3 /* spend_it_wisely.json */; };
 		CEE145071625AE7A007BD1B3 /* back_and_forth.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145061625AE7A007BD1B3 /* back_and_forth.json */; };
 		CEE145091625B307007BD1B3 /* overlapping_tolls.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145081625B307007BD1B3 /* overlapping_tolls.json */; };
+		CEE1B2FB164045A900BC1972 /* teleporter.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE1B2FA164045A900BC1972 /* teleporter.png */; };
+		CEE1B2FE1640478F00BC1972 /* three_river_jump.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE1B2FD1640478F00BC1972 /* three_river_jump.json */; };
+		CEE1B30016404C0500BC1972 /* jumping_peninsulas.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE1B2FF16404C0500BC1972 /* jumping_peninsulas.json */; };
 		CEE5122D162B1D1E0059D6E1 /* corridors.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5122C162B1D1E0059D6E1 /* corridors.json */; };
 		CEE5122F162B285A0059D6E1 /* jumpy.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5122E162B285A0059D6E1 /* jumpy.json */; };
 		CEE5DE27162B7F090095A3B8 /* hopscotch_subway.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE5DE26162B7F090095A3B8 /* hopscotch_subway.json */; };
@@ -835,6 +838,9 @@
 		CEE145041625A54B007BD1B3 /* spend_it_wisely.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spend_it_wisely.json; sourceTree = "<group>"; };
 		CEE145061625AE7A007BD1B3 /* back_and_forth.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = back_and_forth.json; sourceTree = "<group>"; };
 		CEE145081625B307007BD1B3 /* overlapping_tolls.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = overlapping_tolls.json; sourceTree = "<group>"; };
+		CEE1B2FA164045A900BC1972 /* teleporter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teleporter.png; sourceTree = "<group>"; };
+		CEE1B2FD1640478F00BC1972 /* three_river_jump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = three_river_jump.json; sourceTree = "<group>"; };
+		CEE1B2FF16404C0500BC1972 /* jumping_peninsulas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jumping_peninsulas.json; sourceTree = "<group>"; };
 		CEE5122C162B1D1E0059D6E1 /* corridors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = corridors.json; sourceTree = "<group>"; };
 		CEE5122E162B285A0059D6E1 /* jumpy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jumpy.json; sourceTree = "<group>"; };
 		CEE5DE26162B7F090095A3B8 /* hopscotch_subway.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hopscotch_subway.json; sourceTree = "<group>"; };
@@ -896,14 +902,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE654933163C3E0800169810 /* unused */ = {
+		CE654933163C3E0800169810 /* teleporters */ = {
 			isa = PBXGroup;
 			children = (
 				CE8C31B4163BFFB100928DC1 /* color_box_tolls.json */,
 				CE8C31B7163C007300928DC1 /* square_toll_together.json */,
 				CED9E641164006FD00B11616 /* teleporter.json */,
+				CEE1B2FD1640478F00BC1972 /* three_river_jump.json */,
+				CEE1B2FF16404C0500BC1972 /* jumping_peninsulas.json */,
 			);
-			name = unused;
+			name = teleporters;
 			sourceTree = "<group>";
 		};
 		CE6D65C615EAC5FB00C7EDD7 = {
@@ -1504,7 +1512,7 @@
 		CECE256C15F2869200517973 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				CE654933163C3E0800169810 /* unused */,
+				CE654933163C3E0800169810 /* teleporters */,
 				CEE0277316067FE5007C4CDD /* another_color.json */,
 				CEDCDA9E1621A1B000E1F07F /* around_again.json */,
 				CED807AD1639C2C6005F100A /* around_the_middle.json */,
@@ -1687,6 +1695,7 @@
 				CEEBCC2B163DCD3300FF3F8F /* house.png */,
 				CEEBCC36163DD15200FF3F8F /* more.png */,
 				CEEBCC2C163DCD3300FF3F8F /* subway.png */,
+				CEE1B2FA164045A900BC1972 /* teleporter.png */,
 				CEEBCC2D163DCD3300FF3F8F /* tolls.png */,
 			);
 			name = "Level Set Images";
@@ -1899,6 +1908,9 @@
 				CEEBCC45163DE9A300FF3F8F /* menu@2x.png in Resources */,
 				CED9E63C163FE40A00B11616 /* green_check@2x.png in Resources */,
 				CED9E642164006FD00B11616 /* teleporter.json in Resources */,
+				CEE1B2FB164045A900BC1972 /* teleporter.png in Resources */,
+				CEE1B2FE1640478F00BC1972 /* three_river_jump.json in Resources */,
+				CEE1B30016404C0500BC1972 /* jumping_peninsulas.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

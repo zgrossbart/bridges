@@ -588,8 +588,6 @@
     
     if (_player.coins > 0 && (node.color == cNone || _player.color == node.color)) {
         
-        NSLog(@"_player.coins: %d", _player.coins);
-        
         [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins: _canVisit]];
         _undoBtn.enabled = YES;
         self.undoBtn.enabled = NO;
