@@ -4,7 +4,6 @@
         "index": "1",
         "image": "bridge.png",
         "levels": [
-		"teleporter.json",
             "hello_bridges.json",
             "two_bridges.json",
             "start_anywhere.json",
