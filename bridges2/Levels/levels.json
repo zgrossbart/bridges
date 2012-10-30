@@ -9,7 +9,7 @@
             "start_anywhere.json",
             "one_way.json",
             "three_rivers.json",
-			"side_by_side.json",
+            "side_by_side.json",
             "twice_around.json",
             "corners.json",
             "up_and_down.json",
@@ -17,11 +17,11 @@
             "islands.json",
             "in_the_middle.json",
             "classic.json",
-			"pop_in.json",
-			"out_and_in.json",
-			"around_the_middle.json"
-		]
-	},
+            "pop_in.json",
+            "out_and_in.json",
+            "around_the_middle.json"
+        ]
+    },
     "set2": {
         "name": "Bridge-o-rama",
         "index": "2",
@@ -39,7 +39,7 @@
             "hopscotch.json",
             "tic_tac_toe.json",
             "quilt.json",
-			"off_center.json",
+            "off_center.json",
             "spiral.json",
             "overlap.json",
             "full_of_bridges.json"
@@ -51,15 +51,15 @@
         "image": "house.png",
         "levels": [
             "house_by_river.json",
-			"visiting.json",
+            "visiting.json",
             "change_color.json",
             "color_houses.json",
             "no_color.json",
-			"color_in.json",
-			"sequential.json",
+            "color_in.json",
+            "sequential.json",
             "classic_colors.json",
             "another_color.json",
-			"color_diamond.json",
+            "color_diamond.json",
             "colors_off_center.json",
             "hopscotch_colors.json",
             "color_box.json",
@@ -76,16 +76,16 @@
             "tolls.json",
             "economics.json",
             "visit_again.json",
-			"pay_as_you_go.json",
-			"tolls_plus.json",
-			"suburbs.json",
-			"tolls_middle.json",
-			"island_tolls.json",
-			"tolls_by_side.json",
+            "pay_as_you_go.json",
+            "tolls_plus.json",
+            "suburbs.json",
+            "tolls_middle.json",
+            "island_tolls.json",
+            "tolls_by_side.json",
             "free_swim.json",
-			"frequent_visitor.json",
-			"suburb_colors.json",
-			"order_up.json",
+            "frequent_visitor.json",
+            "suburb_colors.json",
+            "order_up.json",
             "overlapping_tolls.json",
             "tolls_off_center.json",
             "spiral_colors.json"
@@ -97,11 +97,11 @@
         "image": "subway.png",
         "levels": [
             "subways.json",
-			"three_rivers_subway.json",
-			"subway_color.json",
-			"ride_around.json",
+            "three_rivers_subway.json",
+            "subway_color.json",
+            "ride_around.json",
             "corner_jumper.json",
-			"classic_subways.json",
+            "classic_subways.json",
             "tic_tac_toe_two.json",
             "spend_it_wisely.json",
             "back_and_forth.json",
@@ -114,19 +114,20 @@
             "overlapping_subways.json"
         ]
     },
-	"set6": {
-	    "name": "Teleporters",
-	    "index": "6",
-	    "image": "teleporter.png",
-	    "levels": [
-	               "teleporter.json",
-	               "three_river_jump.json",
-	               "jumping_peninsulas.json",
-	               "tiny_islands.json",
-				   "hop_middle.json",
-	               "color_box_tolls.json",
-	               "square_toll_together.json",
-				   "hopscotch_hop.json"
-	               ]
-	}
+    "set6": {
+        "name": "Teleporters",
+        "index": "6",
+        "image": "teleporter.png",
+        "levels": [
+            "teleporter.json",
+            "three_river_jump.json",
+            "jumping_peninsulas.json",
+            "tiny_islands.json",
+            "hop_middle.json",
+            "color_box_tolls.json",
+            "hopping_corners.json",
+            "square_toll_together.json",
+            "hopscotch_hop.json"
+        ]
+    }
 }
