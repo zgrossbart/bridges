@@ -1,6 +1,15 @@
 {
     "level": {
         "name": "Teleporters",
+        "labels": [
+            {
+                "x": "22",
+                "y": "27",
+                "w": "16",
+                "h": "10",
+                "text": "Teleporters can jump you anywhere in the game, but each jump costs a coin."
+            }
+        ],
 		"player": {
 			"x": "4",
 			"y": "16"

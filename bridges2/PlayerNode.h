@@ -58,6 +58,14 @@
  */
 -(int)tag;
 
+/**
+ * Move the player to specified position with a jumping effect.  The player
+ * will jump over any objects in the way.
+ *
+ * @param p the new player position
+ */
+-(void)jumpTo:(CGPoint)p;
+
 /** 
  * Move the player to specified position.  The player will stop if it
  * collides with another object while moving to the specified point.

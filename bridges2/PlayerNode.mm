@@ -124,6 +124,28 @@
     [self moveTo:p];
 }
 
+-(void)jumpTo:(CGPoint)p {
+    if (_moving) {
+        /*
+         * If we're already moving then we just ignore
+         * new requests to move.
+         */
+        return;
+    }
+    
+    CGFloat distance = [LayerMgr distanceBetweenTwoPoints:_player.position: p];
+    float velocity = 240/1; // 240pixels/1sec
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        velocity = velocity * 2;
+    }
+    
+    _moving = TRUE;
+    CCSequence* seq = [CCSequence actions:[CCJumpTo actionWithDuration:distance/velocity position:p height:50 jumps:1],
+                       [CCCallFunc actionWithTarget:self selector:@selector(playerMoveEnded)], nil];
+    [self.player runAction:seq];
+}
+
 -(void)moveTo:(CGPoint)p {
     if (_moving) {
         /*

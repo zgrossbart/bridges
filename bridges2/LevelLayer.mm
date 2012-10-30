@@ -538,6 +538,36 @@
     
 }
 
+-(void)jumpOut: (CGPoint) location {
+    if (![self inObject:location]) {
+        _prevPlayerPos = _player.player.position;
+        _playerStart = _player.player.position;
+        
+        _player.player.position = location;
+        
+        [self.player jumpTo:location];
+        
+        [self.player.player runAction:[CCRotateBy actionWithDuration:0.5 angle:-360]];
+        [self.player.player runAction:[CCFadeIn actionWithDuration:0.25]];
+        
+        float scale = 1.0;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            scale = IPAD_SCALE_FACTOR;
+        }
+        
+        [self.player.player runAction:[CCScaleTo actionWithDuration:0.5 scale:scale]];
+        
+        [self.player playerMoveEnded];
+        
+        _inJump = false;
+        _inMove = false;
+    } else {
+        [self showNoTapSprite:location];
+        [self.controller showMessage:@"Jump to an open space"];
+    }
+}
+
+
 -(void)teleportJump:(CCSprite *) player:(CCSprite*) teleport {
     if (_inMove) {
         return;
@@ -564,8 +594,10 @@
          * When the player rides a subway we use a fade out and fade in effect to make it
          * easier to tell where the player is going.
          */
-        CCSequence* seq = [CCSequence actions:[CCFadeTo actionWithDuration:0.25 opacity:0.3], nil];
-        [self.player.player runAction:seq];
+        //CCSequence* seq = [CCSequence actions:[CCRotateBy actionWithDuration:0.25 opacity:0.3], nil];
+        [self.player.player runAction:[CCRotateBy actionWithDuration:0.5 angle:360]];
+        [self.player.player runAction:[CCFadeTo actionWithDuration:0.5 opacity:0.0]];
+        [self.player.player runAction:[CCScaleTo actionWithDuration:0.5 scale:0.25]];
         [self.controller showMessage:@"Tap to jump out of the teleporter"];
     } else {
         if (_player.coins == 0) {
@@ -1060,7 +1092,6 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     [x runAction:scaleSeq];
 }
-
 -(void)ccTouchesEnded:(NSSet*) touches withEvent:(UIEvent*) event {
     
     UITouch *touch = [touches anyObject];
@@ -1073,23 +1104,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         [self finishCross4:location];
         return;
     } else if (_inJump) {
-        if (![self inObject:location]) {
-            _prevPlayerPos = _player.player.position;
-            _playerStart = _player.player.position;
-            
-            _player.player.position = location;
-            
-            CCSequence* seq = [CCSequence actions:[CCFadeIn actionWithDuration:0.25],nil];
-            [self.player.player runAction:seq];
-            
-            [self.player playerMoveEnded];
-            
-            _inJump = false;
-            _inMove = false;
-        } else {
-            [self showNoTapSprite:location];
-            [self.controller showMessage:@"Jump to an open space"];
-        }
+        [self jumpOut:location];
     } else if (_player == nil) {
         if (![self inObject:location]) {
             [self spawnPlayer:location.x: location.y];
