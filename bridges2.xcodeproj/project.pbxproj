@@ -282,6 +282,7 @@
 		CEDCDAA61621B46200E1F07F /* color_quilt.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDCDAA51621B46200E1F07F /* color_quilt.json */; };
 		CEDE3171162B3E54007BABEC /* triangles.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDE3170162B3E54007BABEC /* triangles.json */; };
 		CEDE4AC416406E3A0024378F /* hopscotch_hop.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDE4AC316406E3A0024378F /* hopscotch_hop.json */; };
+		CEDE4AC7164077140024378F /* hop_middle.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDE4AC6164077130024378F /* hop_middle.json */; };
 		CEDEA36B16344F3E00E564A5 /* levels.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDEA36A16344F3C00E564A5 /* levels.json */; };
 		CEDEA36D16345E8500E564A5 /* pay_as_you_go.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDEA36C16345E8300E564A5 /* pay_as_you_go.json */; };
 		CEDEA3731634734000E564A5 /* MainPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDEA3721634734000E564A5 /* MainPageView.xib */; };
@@ -824,6 +825,7 @@
 		CEDCDAA51621B46200E1F07F /* color_quilt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_quilt.json; sourceTree = "<group>"; };
 		CEDE3170162B3E54007BABEC /* triangles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangles.json; sourceTree = "<group>"; };
 		CEDE4AC316406E3A0024378F /* hopscotch_hop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hopscotch_hop.json; sourceTree = "<group>"; };
+		CEDE4AC6164077130024378F /* hop_middle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hop_middle.json; sourceTree = "<group>"; };
 		CEDEA36A16344F3C00E564A5 /* levels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = levels.json; sourceTree = "<group>"; };
 		CEDEA36C16345E8300E564A5 /* pay_as_you_go.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pay_as_you_go.json; sourceTree = "<group>"; };
 		CEDEA3721634734000E564A5 /* MainPageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainPageView.xib; sourceTree = "<group>"; };
@@ -919,6 +921,7 @@
 				CEE1B2FD1640478F00BC1972 /* three_river_jump.json */,
 				CEE1B30116404FE300BC1972 /* tiny_islands.json */,
 				CEDE4AC316406E3A0024378F /* hopscotch_hop.json */,
+				CEDE4AC6164077130024378F /* hop_middle.json */,
 			);
 			name = teleporters;
 			sourceTree = "<group>";
@@ -1923,6 +1926,7 @@
 				CEE1B30216404FE300BC1972 /* tiny_islands.json in Resources */,
 				CEE1B304164059FF00BC1972 /* teleporter_levels.json in Resources */,
 				CEDE4AC416406E3A0024378F /* hopscotch_hop.json in Resources */,
+				CEDE4AC7164077140024378F /* hop_middle.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
