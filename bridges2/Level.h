@@ -27,6 +27,9 @@
  * level JSON definition.
  */
 @interface Level : NSObject {
+    
+    @private
+    bool _hasCoins;
 
     
 }

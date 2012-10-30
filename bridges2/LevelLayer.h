@@ -25,6 +25,7 @@
 #import "Bridge4Node.h"
 #import "LevelController.h"
 #import "BridgeColors.h"
+#import "TeleportNode.h"
 
 #define PTM_RATIO 32.0
 
@@ -63,6 +64,7 @@
     bool _canVisit;
     Bridge4Node *_currentBridge;
     BridgeDir _bridgeEntry;
+    TeleportNode *_teleporter;
     bool _hasInit;
     CGPoint _prevPlayerPos;
     

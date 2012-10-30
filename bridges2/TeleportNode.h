@@ -38,9 +38,14 @@
 -(id)initWithColor: (BridgeColor) color :(LayerMgr*) layerMgr;
 
 /**
- * Jump through this teleporter
+ * Jump into this teleporter
  */
--(void)jump;
+-(void)jumpIn;
+
+/**
+ * Jump out of this teleporter
+ */
+-(void)jumpOut;
 
 /**
  * The sprite of the teleporter

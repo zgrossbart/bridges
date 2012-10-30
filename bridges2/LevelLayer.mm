@@ -159,6 +159,7 @@
  * Reset the all of the moves in this level.
  */
 -(void)reset {
+    
     [_layerMgr removeAll];
     [self.currentLevel removeSprites: _layerMgr: self.view];
     [self.currentLevel unloadSprites];
@@ -168,6 +169,7 @@
     
     [_player dealloc];
     _player = nil;
+    _inJump = false;
     
     _canVisit = true;
     
@@ -539,6 +541,10 @@
 }
 
 -(void)jumpOut: (CGPoint) location {
+    if (!_inJump) {
+        return;
+    }
+
     if (![self inObject:location]) {
         _prevPlayerPos = _player.player.position;
         _playerStart = _player.player.position;
@@ -558,9 +564,12 @@
         [self.player.player runAction:[CCScaleTo actionWithDuration:0.5 scale:scale]];
         
         [self.player playerMoveEnded];
+        [_teleporter jumpOut];
+        _teleporter = nil;
         
         _inJump = false;
         _inMove = false;
+        self.undoBtn.enabled = YES;
     } else {
         [self showNoTapSprite:location];
         [self.controller showMessage:@"Jump to an open space"];
@@ -577,15 +586,19 @@
      */
     TeleportNode *node = [self findTeleport:teleport];
     
-    if (_player.coins > 0 &&
-        (node.color == cNone || _player.color == node.color)) {
+    if (_player.coins > 0 && (node.color == cNone || _player.color == node.color)) {
+        
+        NSLog(@"_player.coins: %d", _player.coins);
+        
         [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins: _canVisit]];
         _undoBtn.enabled = YES;
+        self.undoBtn.enabled = NO;
         
         _player.coins--;
         self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
         
-        [node jump];
+        [node jumpIn];
+        _teleporter = node;
         
         _inJump = true;
         _inMove = true;

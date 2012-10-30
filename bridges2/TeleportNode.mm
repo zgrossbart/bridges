@@ -46,7 +46,11 @@
     return self;
 }
 
--(void)jump {
+-(void)jumpIn {
+    // TODO
+}
+
+-(void)jumpOut {
     // TODO
 }
 

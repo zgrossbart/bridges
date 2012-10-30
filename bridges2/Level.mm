@@ -372,6 +372,8 @@
         [s addSprite];
     }
     
+    _hasCoins = [self startsWithCoins];
+    
 }
 
 /**
@@ -1039,6 +1041,10 @@
  * coins label in the toolbar on the right side.
  */
 -(bool)hasCoins {
+    return _hasCoins;
+}
+
+-(bool)startsWithCoins {
     if (self.coins > 0) {
         return true;
     }
