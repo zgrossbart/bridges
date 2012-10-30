@@ -917,6 +917,7 @@
 			children = (
 				CE8C31B4163BFFB100928DC1 /* color_box_tolls.json */,
 				CEDE4AC6164077130024378F /* hop_middle.json */,
+				CEDE4AC816407B900024378F /* hopping_corners.json */,
 				CEDE4AC316406E3A0024378F /* hopscotch_hop.json */,
 				CEE1B2FF16404C0500BC1972 /* jumping_peninsulas.json */,
 				CE8C31B7163C007300928DC1 /* square_toll_together.json */,
@@ -924,7 +925,6 @@
 				CEE1B303164059FF00BC1972 /* teleporter_levels.json */,
 				CEE1B2FD1640478F00BC1972 /* three_river_jump.json */,
 				CEE1B30116404FE300BC1972 /* tiny_islands.json */,
-				CEDE4AC816407B900024378F /* hopping_corners.json */,
 			);
 			name = teleporters;
 			sourceTree = "<group>";

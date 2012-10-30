@@ -1,14 +1,17 @@
 ,
-"set6": {
-    "name": "Teleporters",
-    "index": "6",
-    "image": "teleporter.png",
-    "levels": [
-               "teleporter.json",
-               "three_river_jump.json",
-               "jumping_peninsulas.json",
-               "tiny_islands.json",
-               "color_box_tolls.json",
-               "square_toll_together.json"
-               ]
-}
+    "set6": {
+        "name": "Teleporters",
+        "index": "6",
+        "image": "teleporter.png",
+        "levels": [
+            "teleporter.json",
+            "three_river_jump.json",
+            "jumping_peninsulas.json",
+            "tiny_islands.json",
+            "hop_middle.json",
+            "color_box_tolls.json",
+            "hopping_corners.json",
+            "square_toll_together.json",
+            "hopscotch_hop.json"
+        ]
+    }
