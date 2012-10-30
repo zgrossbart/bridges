@@ -24,6 +24,7 @@
 #import "RiverNode.h"
 #import "JSONKit.h"
 #import "SubwayNode.h"
+#import "TeleportNode.h"
 #import "StyleUtil.h"
 
 @interface Level() {
@@ -36,6 +37,7 @@
 @property (readwrite, retain) NSMutableArray *houses;
 @property (readwrite, retain) NSMutableArray *labels;
 @property (readwrite, retain) NSMutableArray *subways;
+@property (readwrite, retain) NSMutableArray *teleports;
 @property (readwrite, retain) LayerMgr *layerMgr;
 @property (readwrite, copy) NSDictionary *levelData;
 
@@ -58,6 +60,7 @@
         self.rivers = [NSMutableArray arrayWithCapacity:25];
         self.houses = [NSMutableArray arrayWithCapacity:10];
         self.subways = [NSMutableArray arrayWithCapacity:5];
+        self.teleports = [NSMutableArray arrayWithCapacity:5];
         self.labels = [NSMutableArray arrayWithCapacity:5];
         self.date = date;
         self.fileName = fileName;
@@ -111,6 +114,11 @@
         [node.subway2 removeFromParentAndCleanup:TRUE];
     }
     [self.subways removeAllObjects];
+    
+    for (TeleportNode *node in self.teleports) {
+        [node.teleporter removeFromParentAndCleanup:TRUE];
+    }
+    [self.teleports removeAllObjects];
     
     for (UILabel *lbl in self.labels) {
         [lbl removeFromSuperview];
@@ -214,6 +222,20 @@
     }
     
     /*
+     * Add the teleporters
+     */
+    if ([_levelData objectForKey:@"teleporters"] != nil) {
+        NSArray *subways = [_levelData objectForKey:@"teleporters"];
+        for (NSDictionary *h in subways) {
+            NSString *x = [h objectForKey:@"x"];
+            NSString *y = [h objectForKey:@"y"];
+            NSString *color = [h objectForKey:@"color"];
+            
+            [self addTeleport:[self parseInt:x]:[self parseInt:y]:[self getColor:color]];
+        }
+    }
+    
+    /*
      * Add the labels
      */
     if ([_levelData objectForKey:@"labels"] != nil) {
@@ -286,8 +308,7 @@
     [self.bridge4s removeAllObjects];
     [self.houses removeAllObjects];
     [self.subways removeAllObjects];
-    
-    
+    [self.teleports removeAllObjects];
 }
 
 /**
@@ -338,6 +359,13 @@
     }
     
     for (SubwayNode *s in self.subways) {
+        for (UIControl *c in [s controls]) {
+            [view addSubview:c];
+        }
+        [s addSprite];
+    }
+    
+    for (TeleportNode *s in self.teleports) {
         for (UIControl *c in [s controls]) {
             [view addSubview:c];
         }
@@ -932,6 +960,25 @@
 }
 
 /**
+ * Add a teleporter to this level
+ *
+ * @param x the x coordinate of the teleporter
+ * @param y the y coordinate of the teleporter
+ * @param color the color of the subway
+ */
+-(TeleportNode*)addTeleport:(float) x:(float) y:(BridgeColor) color {
+    
+    TeleportNode *teleportNode = [[[TeleportNode alloc] initWithColor:color:self.layerMgr] autorelease];
+    
+    teleportNode.teleporter.position = [self tileToPoint:x:y];
+    
+    [self.teleports addObject:teleportNode];
+    
+    return teleportNode;
+    
+}
+
+/**
  * Gets the dimensions of the current screen
  */
 -(CGSize)getWinSize {
@@ -1032,6 +1079,9 @@
     
     [_subways release];
     _subways = nil;
+    
+    [_teleports release];
+    _teleports = nil;
     
     [_labels release];
     _labels = nil;

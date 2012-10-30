@@ -30,7 +30,8 @@ static int const BRIDGE3 = 5;
 static int const BRIDGE4 = 6;
 static int const HOUSE = 7;
 static int const SUBWAY = 8;
-static int const LEVEL = 9;
+static int const TELEPORT = 9;
+static int const LEVEL = 10;
 
 /**
  * This enum defines the different colors for houses,

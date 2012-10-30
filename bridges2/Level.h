@@ -102,6 +102,11 @@
  */
 @property (readonly, retain) NSMutableArray *subways;
 
+/**
+ * The list of teleport nodes for this level
+ */
+@property (readonly, retain) NSMutableArray *teleports;
+
 
 /** 
  * The list of labels for this level

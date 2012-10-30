@@ -787,7 +787,7 @@
             <key>river_h.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{46,487},{15,13}}</string>
+                <string>{{80,487},{15,13}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -839,7 +839,7 @@
             <key>river_h_b.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{29,487},{15,13}}</string>
+                <string>{{63,487},{15,13}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -852,7 +852,7 @@
             <key>river_h_nb.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,382},{15,13}}</string>
+                <string>{{46,487},{15,13}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -865,7 +865,7 @@
             <key>river_h_t.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,367},{15,13}}</string>
+                <string>{{29,487},{15,13}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -878,7 +878,7 @@
             <key>river_v.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{199,481},{13,15}}</string>
+                <string>{{218,471},{13,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -930,7 +930,7 @@
             <key>river_v_bl.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,350},{15,15}}</string>
+                <string>{{233,465},{15,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -943,7 +943,7 @@
             <key>river_v_br.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,333},{15,15}}</string>
+                <string>{{233,448},{15,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -956,7 +956,7 @@
             <key>river_v_l.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{184,482},{13,15}}</string>
+                <string>{{218,454},{13,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -969,7 +969,7 @@
             <key>river_v_nb.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{214,190},{13,15}}</string>
+                <string>{{184,482},{13,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -995,7 +995,7 @@
             <key>river_v_tl.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,316},{15,15}}</string>
+                <string>{{199,481},{15,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1008,7 +1008,7 @@
             <key>river_v_ur.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,299},{15,15}}</string>
+                <string>{{210,379},{15,15}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1083,10 +1083,75 @@
                 <key>sourceSize</key>
                 <string>{14,20}</string>
             </dict>
+            <key>teleport.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{210,341},{18,14}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1,3},{18,14}}</string>
+                <key>sourceSize</key>
+                <string>{20,20}</string>
+            </dict>
+            <key>teleport_blue.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{210,321},{18,14}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1,3},{18,14}}</string>
+                <key>sourceSize</key>
+                <string>{20,20}</string>
+            </dict>
+            <key>teleport_green.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{210,301},{18,14}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1,3},{18,14}}</string>
+                <key>sourceSize</key>
+                <string>{20,20}</string>
+            </dict>
+            <key>teleport_orange.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{210,281},{18,14}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1,3},{18,14}}</string>
+                <key>sourceSize</key>
+                <string>{20,20}</string>
+            </dict>
+            <key>teleport_red.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{214,191},{18,14}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1,3},{18,14}}</string>
+                <key>sourceSize</key>
+                <string>{20,20}</string>
+            </dict>
             <key>x.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,281},{16,16}}</string>
+                <string>{{210,361},{16,16}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1106,7 +1171,7 @@
             <key>size</key>
             <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:dbd86cd6c807d32432ea9c353c666194$</string>
+            <string>$TexturePacker:SmartUpdate:5450f67cb5f6b3c9753dafee7064a55f$</string>
             <key>textureFileName</key>
             <string>bridgesprites.pvr.gz</string>
         </dict>

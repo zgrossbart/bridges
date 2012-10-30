@@ -23,6 +23,7 @@
 #import "BridgeColors.h"
 #import "RiverNode.h"
 #import "SubwayNode.h"
+#import "TeleportNode.h"
 #import "Level.h"
 #import "Undoable.h"
 
@@ -372,6 +373,10 @@
                 [self rideSubway:spriteB:spriteA];
             } else if (spriteA.tag == SUBWAY && spriteB.tag == HOUSE) {
                 [self rideSubway:spriteA:spriteB];
+            } else if (spriteA.tag == TELEPORT && spriteB.tag == PLAYER) {
+                [self teleportJump:spriteB:spriteA];
+            } else if (spriteA.tag == TELEPORT && spriteB.tag == HOUSE) {
+                [self teleportJump:spriteA:spriteB];
             }
         }
     }
@@ -397,6 +402,17 @@
     
     return nil;
 }
+
+-(TeleportNode*)findTeleport:(CCSprite*) teleport {
+    for (TeleportNode *n in self.currentLevel.teleports) {
+        if (n.teleporter == teleport) {
+            return n;
+        }
+    }
+    
+    return nil;
+}
+
 
 -(Bridge4Node*)findBridge4:(CCSprite*) bridge {
     for (Bridge4Node *n in self.currentLevel.bridge4s) {
@@ -517,6 +533,48 @@
         }
         [self showNoTapSprite:self.player.player.position];
         [self bumpObject:player:subway];
+        
+    }
+    
+}
+
+-(void)teleportJump:(CCSprite *) player:(CCSprite*) teleport {
+    if (_inMove) {
+        return;
+    }
+    /*
+     * The player has run into a teleporter.
+     */
+    TeleportNode *node = [self findTeleport:teleport];
+    
+    if (_player.coins > 0 &&
+        (node.color == cNone || _player.color == node.color)) {
+        [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins: _canVisit]];
+        _undoBtn.enabled = YES;
+        
+        _player.coins--;
+        self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
+        
+        [node jump];
+        
+        _inJump = true;
+        _inMove = true;
+        
+        /*
+         * When the player rides a subway we use a fade out and fade in effect to make it
+         * easier to tell where the player is going.
+         */
+        CCSequence* seq = [CCSequence actions:[CCFadeTo actionWithDuration:0.25 opacity:0.3], nil];
+        [self.player.player runAction:seq];
+        [self.controller showMessage:@"Tap to jump out of the teleporter"];
+    } else {
+        if (_player.coins == 0) {
+            [self.controller showMessage:@"You need more coins to jump"];
+        } else {
+            [self.controller showMessage:@"Change color to jump through this teleporter"];
+        }
+        [self showNoTapSprite:self.player.player.position];
+        [self bumpObject:player:teleport];
         
     }
     
@@ -1014,14 +1072,30 @@ CGFloat CGPointToDegree(CGPoint point) {
     if (_inBridge) {
         [self finishCross4:location];
         return;
-    }
-    
-    if (_player == nil) {
+    } else if (_inJump) {
+        if (![self inObject:location]) {
+            _prevPlayerPos = _player.player.position;
+            _playerStart = _player.player.position;
+            
+            _player.player.position = location;
+            
+            CCSequence* seq = [CCSequence actions:[CCFadeIn actionWithDuration:0.25],nil];
+            [self.player.player runAction:seq];
+            
+            [self.player playerMoveEnded];
+            
+            _inJump = false;
+            _inMove = false;
+        } else {
+            [self showNoTapSprite:location];
+            [self.controller showMessage:@"Jump to an open space"];
+        }
+    } else if (_player == nil) {
         if (![self inObject:location]) {
             [self spawnPlayer:location.x: location.y];
         } else {
             [self showNoTapSprite:location];
-            [self.controller showMessage:@"You have to start in an open space"];
+            [self.controller showMessage:@"Start in an open space"];
         }
     } else {
         _inCross = false;

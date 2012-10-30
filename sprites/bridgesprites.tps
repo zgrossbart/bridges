@@ -221,6 +221,11 @@
             <filename>subway.png</filename>
             <filename>x.png</filename>
             <filename>background_1024_768_River.png</filename>
+            <filename>teleport_blue.png</filename>
+            <filename>teleport_green.png</filename>
+            <filename>teleport_orange.png</filename>
+            <filename>teleport_red.png</filename>
+            <filename>teleport.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

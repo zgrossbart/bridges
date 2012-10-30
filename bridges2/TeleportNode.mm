@@ -16,83 +16,65 @@
  *
  ******************************************************************************/
 
-#import "SubwayNode.h"
+#import "TeleportNode.h"
 
-@interface SubwayNode()
+@interface TeleportNode()
 
 @property (nonatomic, assign, readwrite) BridgeColor color;
 @property (readwrite, assign) LayerMgr *layerMgr;
 @property (nonatomic, assign, readwrite) int tag;
 @property (nonatomic, assign, readwrite) int coins;
 
-@property (readwrite, retain) CCSprite *subway1;
-@property (readwrite, retain) CCSprite *subway2;
+@property (readwrite, retain) CCSprite *teleporter;
 @end
 
-@implementation SubwayNode
+@implementation TeleportNode
 
 -(id)initWithColor: (BridgeColor) color :(LayerMgr*) layerMgr {
-
+    
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;
-        self.tag = SUBWAY;
+        self.tag = TELEPORT;
         self.color = color;
-        [self setSubwaySprite1:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
-        [self setSubwaySprite2:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
+        [self setTeleportSprite:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            self.subway1.scale = IPAD_SCALE_FACTOR;
-            self.subway2.scale = IPAD_SCALE_FACTOR;
+            self.teleporter.scale = IPAD_SCALE_FACTOR;
         }
     }
     
     return self;
-
 }
 
--(void)setSubwaySprite1:(CCSprite*)subway {
-    self.subway1 = subway;
-    self.subway1.tag = [self tag];
+-(void)jump {
+    // TODO
 }
 
--(void)setSubwaySprite2:(CCSprite*)subway {
-    self.subway2 = subway;
-    self.subway2.tag = [self tag];
+-(void)setTeleportSprite:(CCSprite*)teleporter {
+    self.teleporter = teleporter;
+    self.teleporter.tag = [self tag];
 }
-
 
 -(NSString*)getSpriteName {
     if (self.color == cRed) {
-        return @"subway_red.png";
+        return @"teleport_red.png";
     } else if (self.color == cBlue) {
-        return @"subway_blue.png";
+        return @"teleport_blue.png";
     } else if (self.color == cGreen) {
-        return @"subway_green.png";
+        return @"teleport_green.png";
     } else if (self.color == cOrange) {
-        return @"subway_orange.png";
+        return @"teleport_orange.png";
     } else {
-        return @"subway.png";
+        return @"teleport.png";
     }
 }
 
 -(void) addSprite {
-    [self.layerMgr addChildToSheet:self.subway1];
-    [self.layerMgr addChildToSheet:self.subway2];
+    [self.layerMgr addChildToSheet:self.teleporter];
 }
 
 -(NSArray*) controls {
     return [NSMutableArray arrayWithCapacity:0];
-}
-
--(CCSprite*)ride: (CCSprite*) entry {
-    if (entry == self.subway1) {
-        return self.subway2;
-    } else if (entry == self.subway2) {
-        return self.subway1;
-    } else {
-        [NSException raise:@"Invalid subway entry" format:@"The sprite %@ wasn't either side of this subway", entry];
-        return nil;
-    }
 }
 
 -(void) undo {
@@ -102,9 +84,7 @@
 }
 
 -(void)dealloc {
-    
-    [self.subway1 release];
-    [self.subway2 release];
+    [self.teleporter release];
     [super dealloc];
 }
 

@@ -1,0 +1,41 @@
+{
+    "level": {
+        "name": "Teleporters",
+		"player": {
+			"x": "4",
+			"y": "16"
+		},
+        "rivers": [
+            {
+                "x": "8",
+                "y": "b-t",
+                "orient": "v"
+            },
+            {
+                "x": "18",
+                "y": "b-t",
+                "orient": "v"
+            }
+        ],
+        "bridges": [
+            {
+                "x": "18",
+                "y": "8",
+                "orient": "h"
+            }
+        ],
+        "houses": [
+			{
+	            "x": "4",
+	            "y": "24",
+	            "coins": "1"
+	        }
+		],
+        "teleporters": [
+			{
+				"x": "4",
+				"y": "10"
+			}
+        ]
+    }
+}

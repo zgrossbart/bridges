@@ -259,6 +259,8 @@
 		CED88B371616559000837558 /* spiral.json in Resources */ = {isa = PBXBuildFile; fileRef = CED88B361616559000837558 /* spiral.json */; };
 		CED983DC16275B590003D4B0 /* MainViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED983DB16275B590003D4B0 /* MainViewiPad.xib */; };
 		CED9E63C163FE40A00B11616 /* green_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CED9E63B163FE40A00B11616 /* green_check@2x.png */; };
+		CED9E640163FFBE900B11616 /* TeleportNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CED9E63F163FFBE900B11616 /* TeleportNode.mm */; };
+		CED9E642164006FD00B11616 /* teleporter.json in Resources */ = {isa = PBXBuildFile; fileRef = CED9E641164006FD00B11616 /* teleporter.json */; };
 		CEDA5A031632B765004A30A5 /* free_swim.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDA5A021632B765004A30A5 /* free_swim.json */; };
 		CEDA5A061632B8BC004A30A5 /* keep_riding.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDA5A051632B8BC004A30A5 /* keep_riding.json */; };
 		CEDB4B41163A94F100E34175 /* island_tolls.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDB4B40163A94F100E34175 /* island_tolls.json */; };
@@ -784,6 +786,9 @@
 		CED88B361616559000837558 /* spiral.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spiral.json; sourceTree = "<group>"; };
 		CED983DB16275B590003D4B0 /* MainViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewiPad.xib; sourceTree = "<group>"; };
 		CED9E63B163FE40A00B11616 /* green_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green_check@2x.png"; sourceTree = "<group>"; };
+		CED9E63E163FFBE900B11616 /* TeleportNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeleportNode.h; sourceTree = "<group>"; };
+		CED9E63F163FFBE900B11616 /* TeleportNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TeleportNode.mm; sourceTree = "<group>"; };
+		CED9E641164006FD00B11616 /* teleporter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = teleporter.json; sourceTree = "<group>"; };
 		CEDA5A021632B765004A30A5 /* free_swim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = free_swim.json; sourceTree = "<group>"; };
 		CEDA5A051632B8BC004A30A5 /* keep_riding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keep_riding.json; sourceTree = "<group>"; };
 		CEDB4B40163A94F100E34175 /* island_tolls.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = island_tolls.json; sourceTree = "<group>"; };
@@ -896,6 +901,7 @@
 			children = (
 				CE8C31B4163BFFB100928DC1 /* color_box_tolls.json */,
 				CE8C31B7163C007300928DC1 /* square_toll_together.json */,
+				CED9E641164006FD00B11616 /* teleporter.json */,
 			);
 			name = unused;
 			sourceTree = "<group>";
@@ -1627,6 +1633,8 @@
 				CED71AD5162999E800EF521F /* StyleUtil.mm */,
 				CECCE97D161530760091707C /* SubwayNode.h */,
 				CECCE97E161530760091707C /* SubwayNode.mm */,
+				CED9E63E163FFBE900B11616 /* TeleportNode.h */,
+				CED9E63F163FFBE900B11616 /* TeleportNode.mm */,
 				CECFA62F15F36AEE00FF1E8D /* Undoable.h */,
 				CECFA63015F36AEE00FF1E8D /* Undoable.m */,
 			);
@@ -1890,6 +1898,7 @@
 				CEEBCC3F163DE56800FF3F8F /* left_arrow@2x.png in Resources */,
 				CEEBCC45163DE9A300FF3F8F /* menu@2x.png in Resources */,
 				CED9E63C163FE40A00B11616 /* green_check@2x.png in Resources */,
+				CED9E642164006FD00B11616 /* teleporter.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2072,6 +2081,7 @@
 				CEDEA37C1634790B00E564A5 /* MainPageViewController.mm in Sources */,
 				CEDEA386163493DB00E564A5 /* LevelSet.m in Sources */,
 				CEDBF08216352FD000E50F12 /* MainSectionCollectionViewController.mm in Sources */,
+				CED9E640163FFBE900B11616 /* TeleportNode.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
