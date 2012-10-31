@@ -260,6 +260,8 @@
 		CED807B91639D535005F100A /* sequential.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807B81639D535005F100A /* sequential.json */; };
 		CED807BB1639D6DE005F100A /* order_up.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807BA1639D6DE005F100A /* order_up.json */; };
 		CED88B371616559000837558 /* spiral.json in Resources */ = {isa = PBXBuildFile; fileRef = CED88B361616559000837558 /* spiral.json */; };
+		CED948211641BC92002F1096 /* square_teleport.json in Resources */ = {isa = PBXBuildFile; fileRef = CED948201641BC92002F1096 /* square_teleport.json */; };
+		CED948241641C350002F1096 /* jump_around.json in Resources */ = {isa = PBXBuildFile; fileRef = CED948231641C350002F1096 /* jump_around.json */; };
 		CED983DC16275B590003D4B0 /* MainViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED983DB16275B590003D4B0 /* MainViewiPad.xib */; };
 		CED9E63C163FE40A00B11616 /* green_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CED9E63B163FE40A00B11616 /* green_check@2x.png */; };
 		CED9E640163FFBE900B11616 /* TeleportNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = CED9E63F163FFBE900B11616 /* TeleportNode.mm */; };
@@ -798,6 +800,8 @@
 		CED807B81639D535005F100A /* sequential.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sequential.json; sourceTree = "<group>"; };
 		CED807BA1639D6DE005F100A /* order_up.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order_up.json; sourceTree = "<group>"; };
 		CED88B361616559000837558 /* spiral.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spiral.json; sourceTree = "<group>"; };
+		CED948201641BC92002F1096 /* square_teleport.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square_teleport.json; sourceTree = "<group>"; };
+		CED948231641C350002F1096 /* jump_around.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jump_around.json; sourceTree = "<group>"; };
 		CED983DB16275B590003D4B0 /* MainViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewiPad.xib; sourceTree = "<group>"; };
 		CED9E63B163FE40A00B11616 /* green_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green_check@2x.png"; sourceTree = "<group>"; };
 		CED9E63E163FFBE900B11616 /* TeleportNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeleportNode.h; sourceTree = "<group>"; };
@@ -927,7 +931,9 @@
 				CEDE4AC6164077130024378F /* hop_middle.json */,
 				CEDE4AC816407B900024378F /* hopping_corners.json */,
 				CEDE4AC316406E3A0024378F /* hopscotch_hop.json */,
+				CED948231641C350002F1096 /* jump_around.json */,
 				CEE1B2FF16404C0500BC1972 /* jumping_peninsulas.json */,
+				CED948201641BC92002F1096 /* square_teleport.json */,
 				CE8C31B7163C007300928DC1 /* square_toll_together.json */,
 				CED9E641164006FD00B11616 /* teleporter.json */,
 				CEE1B303164059FF00BC1972 /* teleporter_levels.json */,
@@ -1943,6 +1949,8 @@
 				CE005330164134E300A99DFD /* hamilton.json in Resources */,
 				CE00533516413AA000A99DFD /* color_out.json in Resources */,
 				CE005337164148F800A99DFD /* triangle_jump.json in Resources */,
+				CED948211641BC92002F1096 /* square_teleport.json in Resources */,
+				CED948241641C350002F1096 /* jump_around.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,138 @@
+{
+    "level": {
+        "name": "Jump around",
+		"coins": "23",
+        "rivers": [
+            {
+                "x": "l-r",
+                "y": "20",
+                "orient": "h"
+            },
+            {
+                "x": "l-25",
+                "y": "10",
+                "orient": "h"
+            },
+            {
+                "x": "25",
+                "y": "b-20",
+                "orient": "v"
+            },
+            {
+                "x": "25",
+                "y": "10",
+                "orient": "v",
+				"border": "right"
+            },
+            {
+                "x": "25",
+                "y": "20",
+                "orient": "h",
+				"border": "top"
+            }
+        ],
+        "bridges": [
+            {
+                "x": "5",
+                "y": "10",
+                "orient": "v",
+				"coins": "3",
+				"color": "green"
+            },
+            {
+                "x": "10",
+                "y": "10",
+                "orient": "v",
+				"color": "red"
+            },
+            {
+                "x": "15",
+                "y": "10",
+                "orient": "v",
+				"coins": "4",
+				"color": "blue"
+            },
+            {
+                "x": "10",
+                "y": "20",
+                "orient": "v",
+				"coins": "2"
+            },
+            {
+                "x": "15",
+                "y": "20",
+                "orient": "v",
+				"coins": "1"
+            },
+            {
+                "x": "30",
+                "y": "20",
+                "orient": "v",
+				"coins": "1"
+            },
+            {
+                "x": "25",
+                "y": "5",
+                "orient": "h",
+				"color": "blue"
+            },
+            {
+                "x": "25",
+                "y": "15",
+                "orient": "h"
+            }
+        ],
+        "houses": [
+			{
+	            "x": "38",
+	            "y": "10",
+	            "coins": "5",
+				"color": "red"
+	        },
+			{
+	            "x": "38",
+	            "y": "5",
+	            "coins": "6",
+				"color": "green"
+	        },
+			{
+	            "x": "38",
+	            "y": "15",
+	            "coins": "3",
+				"color": "blue"
+	        }
+		],
+        "teleporters": [
+			{
+				"x": "1",
+				"y": "5",
+				"color": "red"
+			},
+			{
+				"x": "1",
+				"y": "15",
+				"color": "blue"
+			},
+			{
+				"x": "1",
+				"y": "25",
+				"color": "green"
+			},
+			{
+				"x": "28",
+				"y": "1",
+				"color": "red"
+			},
+			{
+				"x": "33",
+				"y": "1",
+				"color": "blue"
+			},
+			{
+				"x": "38",
+				"y": "1",
+				"color": "green"
+			}
+		]
+    }
+}
