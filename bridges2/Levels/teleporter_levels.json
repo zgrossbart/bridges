@@ -12,6 +12,9 @@
             "color_box_tolls.json",
             "hopping_corners.json",
             "square_toll_together.json",
-            "hopscotch_hop.json"
+			"color_out.json",
+            "hopscotch_hop.json",
+			"hamilton.json",
+			"triangle_jump.json"
         ]
     }
