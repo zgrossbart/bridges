@@ -129,7 +129,8 @@
             "square_toll_together.json",
 			"color_out.json",
             "hopscotch_hop.json",
-			"hamilton.json"
+			"hamilton.json",
+			"triangle_jump.json"
         ]
     }
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE005330164134E300A99DFD /* hamilton.json in Resources */ = {isa = PBXBuildFile; fileRef = CE00532F164134E300A99DFD /* hamilton.json */; };
 		CE00533516413AA000A99DFD /* color_out.json in Resources */ = {isa = PBXBuildFile; fileRef = CE00533416413AA000A99DFD /* color_out.json */; };
+		CE005337164148F800A99DFD /* triangle_jump.json in Resources */ = {isa = PBXBuildFile; fileRef = CE005336164148F800A99DFD /* triangle_jump.json */; };
 		CE0298C11624B4300028274B /* tic_tac_toe_two.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0298C01624B4300028274B /* tic_tac_toe_two.json */; };
 		CE1477DB1604C32100C054B2 /* tile_test.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1477DA1604C32100C054B2 /* tile_test.json */; };
 		CE1BB78A16160ED900EBB61E /* classic_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78916160ED900EBB61E /* classic_colors.json */; };
@@ -348,6 +349,7 @@
 /* Begin PBXFileReference section */
 		CE00532F164134E300A99DFD /* hamilton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hamilton.json; sourceTree = "<group>"; };
 		CE00533416413AA000A99DFD /* color_out.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_out.json; sourceTree = "<group>"; };
+		CE005336164148F800A99DFD /* triangle_jump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle_jump.json; sourceTree = "<group>"; };
 		CE0298C01624B4300028274B /* tic_tac_toe_two.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tic_tac_toe_two.json; sourceTree = "<group>"; };
 		CE1477DA1604C32100C054B2 /* tile_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tile_test.json; sourceTree = "<group>"; };
 		CE1BB78916160ED900EBB61E /* classic_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = classic_colors.json; sourceTree = "<group>"; };
@@ -931,6 +933,7 @@
 				CEE1B303164059FF00BC1972 /* teleporter_levels.json */,
 				CEE1B2FD1640478F00BC1972 /* three_river_jump.json */,
 				CEE1B30116404FE300BC1972 /* tiny_islands.json */,
+				CE005336164148F800A99DFD /* triangle_jump.json */,
 			);
 			name = teleporters;
 			sourceTree = "<group>";
@@ -1939,6 +1942,7 @@
 				CEDE4AC916407B900024378F /* hopping_corners.json in Resources */,
 				CE005330164134E300A99DFD /* hamilton.json in Resources */,
 				CE00533516413AA000A99DFD /* color_out.json in Resources */,
+				CE005337164148F800A99DFD /* triangle_jump.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
