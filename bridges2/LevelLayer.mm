@@ -572,6 +572,8 @@
         self.undoBtn.enabled = YES;
         _canVisit = true;
     } else {
+        _inJump = true;
+        _inMove = true;
         [self showNoTapSprite:location];
         [self.controller showMessage:@"Jump to an open space"];
     }
