@@ -279,7 +279,7 @@
          * http://code.google.com/p/cocos2d-iphone/issues/detail?id=1439
          */
         [level addSprites:layerMgr:nil];
-        scene.scale = s.width/bounds.size.width;
+        scene.scale = s.height/bounds.size.height;
         scene.position = ccp(0,0);
         scene.anchorPoint = ccp(0, 0);
         
