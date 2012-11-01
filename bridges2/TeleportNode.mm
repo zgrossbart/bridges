@@ -47,11 +47,26 @@
 }
 
 -(void)jumpIn {
-    // TODO
+    /*
+     * When the player jumps into a teleporter we change to a 
+     * highlight sprite to show which teleporter the player is 
+     * inside.
+     */
+    CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
+    CCSpriteFrame* frame;
+    frame = [cache spriteFrameByName:[self getHighlightSpriteName]];
+    [self.teleporter setDisplayFrame:frame];
 }
 
 -(void)jumpOut {
-    // TODO
+    /*
+     * When the player jumps out of the teleporter we set back to 
+     * the previous sprite without the highlight.
+     */
+    CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
+    CCSpriteFrame* frame;
+    frame = [cache spriteFrameByName:[self getSpriteName]];
+    [self.teleporter setDisplayFrame:frame];
 }
 
 -(void)setTeleportSprite:(CCSprite*)teleporter {
@@ -72,6 +87,21 @@
         return @"teleport.png";
     }
 }
+
+-(NSString*)getHighlightSpriteName {
+    if (self.color == cRed) {
+        return @"teleport_red_highlight.png";
+    } else if (self.color == cBlue) {
+        return @"teleport_blue_highlight.png";
+    } else if (self.color == cGreen) {
+        return @"teleport_green_highlight.png";
+    } else if (self.color == cOrange) {
+        return @"teleport_orange_highlight.png";
+    } else {
+        return @"teleport_highlight.png";
+    }
+}
+
 
 -(void) addSprite {
     [self.layerMgr addChildToSheet:self.teleporter];

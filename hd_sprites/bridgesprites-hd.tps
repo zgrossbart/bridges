@@ -226,6 +226,11 @@
             <filename>teleport_orange.png</filename>
             <filename>teleport_red.png</filename>
             <filename>teleport.png</filename>
+            <filename>teleport_blue_highlight.png</filename>
+            <filename>teleport_green_highlight.png</filename>
+            <filename>teleport_highlight.png</filename>
+            <filename>teleport_orange_highlight.png</filename>
+            <filename>teleport_red_highlight.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
