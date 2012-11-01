@@ -207,6 +207,7 @@
 		CE6D67FD15EAC5FD00C7EDD7 /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */; };
 		CE736B171620F1E80085172D /* hopscotch_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CE736B161620F1E80085172D /* hopscotch_colors.json */; };
 		CE7F8328161600920012A4FA /* classic.json in Resources */ = {isa = PBXBuildFile; fileRef = CE7F8327161600920012A4FA /* classic.json */; };
+		CE814FC11642A26E0071ABE5 /* teleport_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CE814FC01642A26E0071ABE5 /* teleport_colors.json */; };
 		CE8C31B5163BFFB100928DC1 /* color_box_tolls.json in Resources */ = {isa = PBXBuildFile; fileRef = CE8C31B4163BFFB100928DC1 /* color_box_tolls.json */; };
 		CE8C31B8163C007300928DC1 /* square_toll_together.json in Resources */ = {isa = PBXBuildFile; fileRef = CE8C31B7163C007300928DC1 /* square_toll_together.json */; };
 		CEA3D478160120610060F511 /* AboutViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA3D477160120610060F511 /* AboutViewiPad.xib */; };
@@ -735,6 +736,7 @@
 		CE6D67FC15EAC5FD00C7EDD7 /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
 		CE736B161620F1E80085172D /* hopscotch_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hopscotch_colors.json; sourceTree = "<group>"; };
 		CE7F8327161600920012A4FA /* classic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = classic.json; sourceTree = "<group>"; };
+		CE814FC01642A26E0071ABE5 /* teleport_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = teleport_colors.json; sourceTree = "<group>"; };
 		CE8C31B4163BFFB100928DC1 /* color_box_tolls.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_box_tolls.json; sourceTree = "<group>"; };
 		CE8C31B7163C007300928DC1 /* square_toll_together.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square_toll_together.json; sourceTree = "<group>"; };
 		CEA3D477160120610060F511 /* AboutViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewiPad.xib; sourceTree = "<group>"; };
@@ -936,6 +938,7 @@
 				CED948201641BC92002F1096 /* square_teleport.json */,
 				CE8C31B7163C007300928DC1 /* square_toll_together.json */,
 				CED9E641164006FD00B11616 /* teleporter.json */,
+				CE814FC01642A26E0071ABE5 /* teleport_colors.json */,
 				CEE1B303164059FF00BC1972 /* teleporter_levels.json */,
 				CEE1B2FD1640478F00BC1972 /* three_river_jump.json */,
 				CEE1B30116404FE300BC1972 /* tiny_islands.json */,
@@ -1951,6 +1954,7 @@
 				CE005337164148F800A99DFD /* triangle_jump.json in Resources */,
 				CED948211641BC92002F1096 /* square_teleport.json in Resources */,
 				CED948241641C350002F1096 /* jump_around.json in Resources */,
+				CE814FC11642A26E0071ABE5 /* teleport_colors.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
