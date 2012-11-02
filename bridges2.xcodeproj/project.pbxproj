@@ -302,6 +302,7 @@
 		CEDF5E6D1622EACD003D89FA /* simple_box.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDF5E6C1622EACD003D89FA /* simple_box.json */; };
 		CEDF5E711622F13C003D89FA /* tic_tac_toe.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDF5E701622F13C003D89FA /* tic_tac_toe.json */; };
 		CEE0277416067FE5007C4CDD /* another_color.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE0277316067FE5007C4CDD /* another_color.json */; };
+		CEE097CA16447C8100C8EC41 /* quilted_squares.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE097C916447C8100C8EC41 /* quilted_squares.json */; };
 		CEE145051625A54B007BD1B3 /* spend_it_wisely.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145041625A54B007BD1B3 /* spend_it_wisely.json */; };
 		CEE145071625AE7A007BD1B3 /* back_and_forth.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145061625AE7A007BD1B3 /* back_and_forth.json */; };
 		CEE145091625B307007BD1B3 /* overlapping_tolls.json in Resources */ = {isa = PBXBuildFile; fileRef = CEE145081625B307007BD1B3 /* overlapping_tolls.json */; };
@@ -855,6 +856,7 @@
 		CEDF5E6C1622EACD003D89FA /* simple_box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple_box.json; sourceTree = "<group>"; };
 		CEDF5E701622F13C003D89FA /* tic_tac_toe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tic_tac_toe.json; sourceTree = "<group>"; };
 		CEE0277316067FE5007C4CDD /* another_color.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = another_color.json; sourceTree = "<group>"; };
+		CEE097C916447C8100C8EC41 /* quilted_squares.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quilted_squares.json; sourceTree = "<group>"; };
 		CEE145041625A54B007BD1B3 /* spend_it_wisely.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spend_it_wisely.json; sourceTree = "<group>"; };
 		CEE145061625AE7A007BD1B3 /* back_and_forth.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = back_and_forth.json; sourceTree = "<group>"; };
 		CEE145081625B307007BD1B3 /* overlapping_tolls.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = overlapping_tolls.json; sourceTree = "<group>"; };
@@ -943,6 +945,7 @@
 				CEE1B2FD1640478F00BC1972 /* three_river_jump.json */,
 				CEE1B30116404FE300BC1972 /* tiny_islands.json */,
 				CE005336164148F800A99DFD /* triangle_jump.json */,
+				CEE097C916447C8100C8EC41 /* quilted_squares.json */,
 			);
 			name = teleporters;
 			sourceTree = "<group>";
@@ -1955,6 +1958,7 @@
 				CED948211641BC92002F1096 /* square_teleport.json in Resources */,
 				CED948241641C350002F1096 /* jump_around.json in Resources */,
 				CE814FC11642A26E0071ABE5 /* teleport_colors.json in Resources */,
+				CEE097CA16447C8100C8EC41 /* quilted_squares.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

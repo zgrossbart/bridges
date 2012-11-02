@@ -1,0 +1,338 @@
+{
+    "level": {
+        "name": "Quilted squares",
+        "rivers": [
+            {
+                "x": "l-14",
+                "y": "7",
+                "orient": "h"
+            },
+            {
+                "x": "7",
+                "y": "b-7",
+                "orient": "v"
+            },
+            {
+                "x": "14",
+                "y": "b-14",
+                "orient": "v"
+            },
+            {
+                "x": "l-21",
+                "y": "14",
+                "orient": "h"
+            },
+            {
+                "x": "21",
+                "y": "b-21",
+                "orient": "v"
+            },
+            {
+                "x": "7",
+                "y": "14-t",
+                "orient": "v"
+            },
+            {
+                "x": "7-28",
+                "y": "21",
+                "orient": "h"
+            },
+            {
+                "x": "14",
+                "y": "21-t",
+                "orient": "v"
+            },
+            {
+                "x": "21-r",
+                "y": "7",
+                "orient": "h"
+            },
+            {
+                "x": "28",
+                "y": "7-t",
+                "orient": "v"
+            },
+            {
+                "x": "28-r",
+                "y": "14",
+                "orient": "h"
+            },
+            {
+                "x": "28-r",
+                "y": "21",
+                "orient": "h"
+            },
+            {
+                "x": "7",
+                "y": "7",
+                "orient": "h",
+				"border": "top"
+            },
+            {
+                "x": "14",
+                "y": "7",
+                "orient": "v",
+				"border": "right"
+            },
+            {
+                "x": "7",
+                "y": "14",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "7",
+                "y": "21",
+                "orient": "v",
+				"border": "left"
+            },
+            {
+                "x": "14",
+                "y": "21",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "21",
+                "y": "7",
+                "orient": "v",
+				"border": "left"
+            },
+            {
+                "x": "28",
+                "y": "7",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "21",
+                "y": "14",
+                "orient": "v",
+				"border": "right"
+            },
+            {
+                "x": "28",
+                "y": "21",
+                "orient": "h",
+				"border": "none"
+            },
+            {
+                "x": "28",
+                "y": "14",
+                "orient": "v",
+				"border": "left"
+            },
+            {
+                "x": "21",
+                "y": "21",
+                "orient": "h",
+				"border": "top"
+            },
+            {
+                "x": "14",
+                "y": "14",
+                "orient": "h",
+				"border": "top"
+            }
+        ],
+        "bridges": [
+            {
+                "x": "7",
+                "y": "3.5",
+                "orient": "h"
+            },
+            {
+                "x": "3.5",
+                "y": "7",
+                "orient": "v",
+				"color": "green"
+            },
+            {
+                "x": "10.5",
+                "y": "7",
+                "orient": "v"
+            },
+            {
+                "x": "14",
+                "y": "3.5",
+                "orient": "h",
+				"color": "blue"
+            },
+            {
+                "x": "14",
+                "y": "10.5",
+                "orient": "h",
+				"color": "green"
+            },
+            {
+                "x": "3.5",
+                "y": "14",
+                "orient": "v"
+            },
+            {
+                "x": "10.5",
+                "y": "14",
+                "orient": "v"
+            },
+            {
+                "x": "21",
+                "y": "3.5",
+                "orient": "h",
+				"color": "orange"
+            },
+            {
+                "x": "21",
+                "y": "10.5",
+                "orient": "h"
+            },
+            {
+                "x": "21",
+                "y": "17.5",
+                "orient": "h",
+				"color": "orange"
+            },
+            {
+                "x": "7",
+                "y": "17.5",
+                "orient": "h"
+            },
+            {
+                "x": "17.5",
+                "y": "14",
+                "orient": "v",
+				"color": "red"
+            },
+            {
+                "x": "10.5",
+                "y": "21",
+                "orient": "v"
+            },
+            {
+                "x": "7",
+                "y": "24.5",
+                "orient": "h",
+				"color": "green"
+            },
+            {
+                "x": "17.5",
+                "y": "21",
+                "orient": "v",
+				"color": "blue"
+            },
+            {
+                "x": "24.5",
+                "y": "7",
+                "orient": "v"
+            },
+            {
+                "x": "24.5",
+                "y": "21",
+                "orient": "v",
+				"color": "red"
+            },
+            {
+                "x": "14",
+                "y": "24.5",
+                "orient": "h"
+            },
+            {
+                "x": "28",
+                "y": "10.5",
+                "orient": "h"
+            },
+            {
+                "x": "28",
+                "y": "17.5",
+                "orient": "h",
+				"color": "orange"
+            },
+            {
+                "x": "28",
+                "y": "24.5",
+                "orient": "h"
+            },
+            {
+                "x": "31.5",
+                "y": "7",
+                "orient": "v",
+				"color": "red"
+            },
+            {
+                "x": "35",
+                "y": "14",
+                "orient": "v",
+				"color": "green"
+            },
+            {
+                "x": "31.5",
+                "y": "21",
+                "orient": "v",
+				"color": "orange"
+            },
+            {
+                "x": "36.5",
+                "y": "7",
+                "orient": "v",
+				"color": "red"
+            },
+            {
+                "x": "36.5",
+                "y": "21",
+                "orient": "v",
+				"color": "green"
+            }
+        ],
+        "houses": [
+	        {
+	            "x": "22.5",
+	            "y": "26",
+	            "color": "orange",
+				"coins": "1"
+	        },
+	        {
+	            "x": "17.5",
+	            "y": "1",
+	            "color": "green",
+				"coins": "2"
+	        },
+	        {
+	            "x": "1",
+	            "y": "10",
+	            "color": "red",
+				"coins": "2"
+	        },
+	        {
+	            "x": "38",
+	            "y": "1",
+	            "color": "red",
+				"coins": "2"
+	        }
+        ],
+        "subways": [
+			{
+				"x1": "38",
+				"y1": "17.5",
+				"x2": "1",
+				"y2": "26",
+				"color": "orange"
+			}
+        ],
+        "teleporters": [
+			{
+				"x": "38",
+				"y": "26",
+				"color": "green"
+			},
+			{
+				"x": "26",
+				"y": "1",
+				"color": "red"
+			},
+			{
+				"x": "1",
+				"y": "20",
+				"color": "blue"
+			}
+        ]
+    }
+}
