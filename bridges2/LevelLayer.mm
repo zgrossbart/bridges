@@ -605,14 +605,12 @@
         _inMove = true;
         
         /*
-         * When the player rides a subway we use a fade out and fade in effect to make it
-         * easier to tell where the player is going.
+         * When the player jumps into the teleporter we want to spin, shrink, and fade them
+         * out all at the same time so it looks like they're getting sucked into the teleporter.
          */
-        //CCSequence* seq = [CCSequence actions:[CCRotateBy actionWithDuration:0.25 opacity:0.3], nil];
         [self.player.player runAction:[CCRotateBy actionWithDuration:0.5 angle:360]];
         [self.player.player runAction:[CCFadeTo actionWithDuration:0.5 opacity:0.0]];
         [self.player.player runAction:[CCScaleTo actionWithDuration:0.5 scale:0.25]];
-        [self.controller showMessage:@"Tap to jump out of the teleporter"];
     } else {
         if (_player.coins == 0) {
             [self.controller showMessage:@"You need more coins to jump"];

@@ -17,6 +17,7 @@
  ******************************************************************************/
 
 #import "TeleportNode.h"
+#import "StyleUtil.h"
 
 @interface TeleportNode()
 
@@ -24,6 +25,7 @@
 @property (readwrite, assign) LayerMgr *layerMgr;
 @property (nonatomic, assign, readwrite) int tag;
 @property (nonatomic, assign, readwrite) int coins;
+@property (readwrite, retain) UILabel *label;
 
 @property (readwrite, retain) CCSprite *teleporter;
 @end
@@ -41,6 +43,11 @@
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             self.teleporter.scale = IPAD_SCALE_FACTOR;
         }
+        
+        _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 16)];
+        _label.text = [NSString stringWithFormat:@"Jump out"];
+        [StyleUtil styleNodeLabel:_label];
+        _label.hidden = YES;
     }
     
     return self;
@@ -56,6 +63,26 @@
     CCSpriteFrame* frame;
     frame = [cache spriteFrameByName:[self getHighlightSpriteName]];
     [self.teleporter setDisplayFrame:frame];
+    
+    int y = [LayerMgr normalizeYForControl:self.teleporter.position.y] + (_label.frame.size.height / 2) - 3;
+    if (self.teleporter.position.y < [self.teleporter boundingBox].size.height) {
+        /*
+         * If this teleporter is close to the bottom of the screen
+         * then we'll move the level to the top of the sprite.
+         */
+        y = [LayerMgr normalizeYForControl:self.teleporter.position.y] - [self.teleporter boundingBox].size.height +(_label.frame.size.height / 2) - 8;
+    }
+    
+    int x = self.teleporter.position.x - (_label.frame.size.width / 2);
+    if (self.teleporter.position.x < [self.teleporter boundingBox].size.width) {
+        x = 2;
+        y += 2;
+    }
+    
+    _label.frame = CGRectMake(x, y, _label.frame.size.width, _label.frame.size.height);
+    
+    _label.hidden = NO;
+    
 }
 
 -(void)jumpOut {
@@ -67,6 +94,7 @@
     CCSpriteFrame* frame;
     frame = [cache spriteFrameByName:[self getSpriteName]];
     [self.teleporter setDisplayFrame:frame];
+    _label.hidden = YES;
 }
 
 -(void)setTeleportSprite:(CCSprite*)teleporter {
@@ -108,7 +136,9 @@
 }
 
 -(NSArray*) controls {
-    return [NSMutableArray arrayWithCapacity:0];
+    NSMutableArray *controls = [NSMutableArray arrayWithCapacity:1];
+    [controls addObject:self.label];
+    return controls;
 }
 
 -(void) undo {
@@ -118,6 +148,7 @@
 }
 
 -(void)dealloc {
+    [self.label release];
     [self.teleporter release];
     [super dealloc];
 }
