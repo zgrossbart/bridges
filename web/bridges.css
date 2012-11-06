@@ -10,7 +10,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 body {    
 	background: rgb(250, 250, 240);
     color: #000;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 24px;
     font-family: "ff-basic-gothic-web-pro", Verdana,Arial,Sans-serif;
 }
@@ -40,7 +40,7 @@ h2 {
 #buyit {
     position: absolute;
     top: 20px;
-    right: 25px;
+    right: 0px;
 }
 
 .weak {
