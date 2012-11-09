@@ -36,7 +36,7 @@
  * @param coins the previous coin count of the player
  * @param canVisit if the user can visit houses or not
  */
--(id) initWithPosAndNode:(CGPoint) pos:(id<GameNode>) node: (BridgeColor) color: (int) coins: (bool) canVisit;
+-(id) initWithPosAndNode:(CGPoint) pos node:(id<GameNode>) node color:(BridgeColor) color coins:(int) coins canVisit:(bool) canVisit;
 
 /** 
  * The previous player position

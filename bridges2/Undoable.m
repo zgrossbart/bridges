@@ -28,7 +28,7 @@
 
 @implementation Undoable
 
--(id) initWithPosAndNode:(CGPoint) pos:(id<GameNode>) node: (BridgeColor) color: (int) coins: (bool) canVisit {
+-(id) initWithPosAndNode:(CGPoint) pos node:(id<GameNode>) node color:(BridgeColor) color coins:(int) coins canVisit:(bool) canVisit {
     if( (self=[super init] )) {
         self.pos = pos;
         self.node = node;

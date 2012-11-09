@@ -452,7 +452,7 @@
     }
     
     if ([self canVisit] && ![node isVisited] && [self colorMatches:node]) {
-        [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins: _canVisit]];
+        [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos node:node color:_player.color coins:_player.coins canVisit:_canVisit]];
         _undoBtn.enabled = YES;
         if (node.coins > 0) {
             _player.coins++;
@@ -506,7 +506,7 @@
     
     if (_player.coins > 0 &&
         (node.color == cNone || _player.color == node.color)) {
-        [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins: _canVisit]];
+        [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos node:node color:_player.color coins:_player.coins canVisit:_canVisit]];
         _undoBtn.enabled = YES;
         
         _player.coins--;
@@ -590,8 +590,7 @@
     TeleportNode *node = [self findTeleport:teleport];
     
     if (_player.coins > 0 && (node.color == cNone || _player.color == node.color)) {
-        
-        [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :node: _player.color: _player.coins: _canVisit]];
+        [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos node:node color:_player.color coins:_player.coins canVisit:_canVisit]];
         _undoBtn.enabled = YES;
         self.undoBtn.enabled = NO;
         
@@ -751,7 +750,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     [mgr removeAllActionsFromTarget:player];
     [mgr resumeTarget:player];
     
-    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color: _player.coins: _canVisit]];
+    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos node:bridge color:_player.color coins:_player.coins canVisit:_canVisit]];
     _undoBtn.enabled = YES;
     
     [_player moveTo: ccp(location.x, location.y):true];
@@ -834,8 +833,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     [mgr removeAllActionsFromTarget:player];
     [mgr resumeTarget:player];
     
-    
-    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos :bridge: _player.color: _player.coins: _canVisit]];
+    [self.undoStack addObject: [[Undoable alloc] initWithPosAndNode:_prevPlayerPos node:bridge color:_player.color coins:_player.coins canVisit:_canVisit]];
     _undoBtn.enabled = YES;
     
     [_player moveTo: ccp(location.x, location.y):true];
