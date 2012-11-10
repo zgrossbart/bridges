@@ -12,27 +12,29 @@ body {
     color: #000;
     font-size: 20px;
     line-height: 24px;
-    font-family: "ff-basic-gothic-web-pro", Verdana,Arial,Sans-serif;
+    font-family: Avenir, "ff-basic-gothic-web-pro", Verdana,Arial,Sans-serif;
+	font-weight: 100;
 }
 
 h1 {
-    font-family: "ff-basic-gothic-web-pro", Verdana,Arial,Sans-serif;
-    font-size: 40px;
+    font-family: Avenir, "ff-basic-gothic-web-pro", Verdana,Arial,Sans-serif;
+    font-size: 48px;
 	line-height: 48px;
     text-align: left;
 	padding-top: 24px;
 	padding-bottom: 24px;
 	position: relative;
+	padding-right: 200px;
 }
 
 h2 {
-    font-family: "ff-basic-gothic-web-pro", Verdana,Arial,Sans-serif;
+    font-family: Avenir, "ff-basic-gothic-web-pro", Verdana,Arial,Sans-serif;
     font-size: 20px;
     text-align: center;
 }
 
 #main {
-    width: 960px;
+    max-width: 960px;
     margin: 0 auto;
     position: relative;
     padding-bottom: 4em;
@@ -51,4 +53,8 @@ h2 {
 
 p.imageBlock {
 	text-align: center;
+}
+
+p.imageBlock img {
+	max-width:100%;
 }
