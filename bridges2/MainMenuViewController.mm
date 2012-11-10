@@ -195,6 +195,8 @@
         [self playTapped:nil];
     }
     
+    [self.sectionViewController refresh];
+    
     [StyleUtil animateView:self.view];
 }
 

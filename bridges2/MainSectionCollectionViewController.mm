@@ -33,7 +33,7 @@
 
 @implementation MainSectionCollectionViewController
 
-- (id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView {
+-(id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.menuView = menuView;
@@ -42,8 +42,7 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+-(void)viewDidLoad {
     [super viewDidLoad];
     
     [StyleUtil styleMenuButton:self.backBtn];
@@ -62,15 +61,18 @@
     [self.collectionView reloadData];
 }
 
-- (void)didReceiveMemoryWarning
-{
+-(void)refresh {
+    [self.collectionView reloadData];
+}
+
+-(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 /**
  * This method gets called when the user taps on a cell in the collection view.
  */
-- (void)collectionView:(UICollectionView*) collectionView didSelectItemAtIndexPath:(NSIndexPath*) indexPath {
+-(void)collectionView:(UICollectionView*) collectionView didSelectItemAtIndexPath:(NSIndexPath*) indexPath {
     int index = indexPath.section * _noOfSection + indexPath.row;
     if (index < [[LevelMgr getLevelMgr].levelSets count]) {
         [self.menuView showLevels:index];

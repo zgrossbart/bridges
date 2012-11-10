@@ -30,6 +30,11 @@
  */
 - (id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView;
 
+/** 
+ * Refresh the data in this view.
+ */
+-(void)refresh;
+
 /**
  * The collection view contains all of the cells for this view.
  */
