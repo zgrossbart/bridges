@@ -29,6 +29,12 @@ MyContactListener::MyContactListener() : _contacts() {
 MyContactListener::~MyContactListener() {
 }
 
+/**
+ * This method is called when any two objects collide.  Since the game lays bridges
+ * over rivers then this method is called constantly.  However, we're only interested
+ * in knowing when the player runs into another object to we filter the events and
+ * just add events where the player is one side of the contact to our vector.
+ */
 void MyContactListener::BeginContact(b2Contact* contact) {
     MyContact myContact = { contact->GetFixtureA(), contact->GetFixtureB() };
     CCSprite *spriteA = (CCSprite *) contact->GetFixtureA()->GetBody()->GetUserData();

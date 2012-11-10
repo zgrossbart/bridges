@@ -75,7 +75,7 @@
  * The factory method for getting a static instance of a 
  * scene containing this layer.
  */
-+ (id) scene;
++(id) scene;
 
 /** 
  * Set the specified level as the current level.

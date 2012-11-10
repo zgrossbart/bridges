@@ -23,7 +23,8 @@
 /** 
  * The screen shot layer is a simple scene used when drawing
  * layer screen shots.  It's primary functions is to make sure 
- * our scene has a clear background.
+ * our scene has a clear background instead of the texture in 
+ * the normal playable scene.
  */
 @interface ScreenShotLayer : CCNode {
     

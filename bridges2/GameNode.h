@@ -20,7 +20,7 @@
 
 /**
  * A game node represents an object on the game board the user can interact 
- * with like a bridge or a house.
+ * with like a bridge,  house, subway, or teleporter.
  */
 @protocol GameNode <NSObject>
 @required
@@ -31,7 +31,7 @@
 -(void) addSprite;
 
 /**
- * Get the list of UIControls like coin label associated with this node.
+ * Get the list of UIControls, like the coin label, associated with this node.
  */
 -(NSArray*) controls;
 

@@ -41,6 +41,9 @@
  * the 0,0 point.  UIKit puts that point in the top left.  This method will
  * take a coordinate from the UIKit coordinate system and convert if to the
  * Cocos2d system.
+ *
+ * Cocos2d does have some utility methods for handling this conversion, but 
+ * it was easier to have one that did just what I needed.
  */
 +(float)normalizeYForControl:(float) y;
 

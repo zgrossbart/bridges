@@ -296,7 +296,7 @@
 		CEDEA376163475FB00E564A5 /* MainSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDEA375163475FB00E564A5 /* MainSectionView.xib */; };
 		CEDEA3791634769600E564A5 /* MainSectionViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA3781634769500E564A5 /* MainSectionViewController.mm */; };
 		CEDEA37C1634790B00E564A5 /* MainPageViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA37B1634790B00E564A5 /* MainPageViewController.mm */; };
-		CEDEA386163493DB00E564A5 /* LevelSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA385163493DA00E564A5 /* LevelSet.m */; };
+		CEDEA386163493DB00E564A5 /* LevelSet.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA385163493DA00E564A5 /* LevelSet.mm */; };
 		CEDED3E81604904E0022ABA7 /* up_and_down.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3E71604904E0022ABA7 /* up_and_down.json */; };
 		CEDED3EB160496650022ABA7 /* peninsulas.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDED3EA160496650022ABA7 /* peninsulas.json */; };
 		CEDF5E6D1622EACD003D89FA /* simple_box.json in Resources */ = {isa = PBXBuildFile; fileRef = CEDF5E6C1622EACD003D89FA /* simple_box.json */; };
@@ -850,7 +850,7 @@
 		CEDEA37A1634790A00E564A5 /* MainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageViewController.h; sourceTree = "<group>"; };
 		CEDEA37B1634790B00E564A5 /* MainPageViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainPageViewController.mm; sourceTree = "<group>"; };
 		CEDEA384163493DA00E564A5 /* LevelSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSet.h; sourceTree = "<group>"; };
-		CEDEA385163493DA00E564A5 /* LevelSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSet.m; sourceTree = "<group>"; };
+		CEDEA385163493DA00E564A5 /* LevelSet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelSet.mm; sourceTree = "<group>"; };
 		CEDED3E71604904E0022ABA7 /* up_and_down.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = up_and_down.json; sourceTree = "<group>"; };
 		CEDED3EA160496650022ABA7 /* peninsulas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = peninsulas.json; sourceTree = "<group>"; };
 		CEDF5E6C1622EACD003D89FA /* simple_box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple_box.json; sourceTree = "<group>"; };
@@ -1664,7 +1664,7 @@
 				CECE256615F2819200517973 /* LevelMgr.h */,
 				CECE256715F2819200517973 /* LevelMgr.mm */,
 				CEDEA384163493DA00E564A5 /* LevelSet.h */,
-				CEDEA385163493DA00E564A5 /* LevelSet.m */,
+				CEDEA385163493DA00E564A5 /* LevelSet.mm */,
 				CEDBC2E515EB8B5300094695 /* MyContactListener.h */,
 				CEDBC2E615EB8B5300094695 /* MyContactListener.mm */,
 				CEDBC2E215EB8AF600094695 /* PlayerNode.h */,
@@ -2139,7 +2139,7 @@
 				CED71AD6162999E900EF521F /* StyleUtil.mm in Sources */,
 				CEDEA3791634769600E564A5 /* MainSectionViewController.mm in Sources */,
 				CEDEA37C1634790B00E564A5 /* MainPageViewController.mm in Sources */,
-				CEDEA386163493DB00E564A5 /* LevelSet.m in Sources */,
+				CEDEA386163493DB00E564A5 /* LevelSet.mm in Sources */,
 				CEDBF08216352FD000E50F12 /* MainSectionCollectionViewController.mm in Sources */,
 				CED9E640163FFBE900B11616 /* TeleportNode.mm in Sources */,
 			);

@@ -84,7 +84,7 @@
             NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:[path stringByAppendingPathComponent:file] error:&error];
             NSDate *fileDate =[dictionary objectForKey:NSFileModificationDate];
             
-            Level *level = [[Level alloc] initWithJson:jsonString: file: fileDate: i];
+            Level *level = [[Level alloc] initWithJson:jsonString fileName:file fileDate:fileDate levelId:i];
             [levelObjs setObject:level forKey:level.levelId];
             [levelIds addObject:level.levelId];
         }

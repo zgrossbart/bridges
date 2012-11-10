@@ -18,7 +18,7 @@
 
 
 /**
- * These are used as tags for identifying items
+ * These are used as tags for identifying sprites
  * after collision detection.
  */
 static int const PLAYER = 0;

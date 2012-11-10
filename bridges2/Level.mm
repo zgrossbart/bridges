@@ -52,8 +52,7 @@
 
 @implementation Level
 
--(id) initWithJson:(NSString*) jsonString: (NSString*) fileName: (NSDate*) date: (NSInteger) levelId;
-{
+-(id) initWithJson:(NSString*) jsonString fileName:(NSString*) fileName fileDate:(NSDate*) date levelId:(NSInteger) levelId {
     if( (self=[super init] )) {
         self.bridges = [NSMutableArray arrayWithCapacity:10];
         self.bridge4s = [NSMutableArray arrayWithCapacity:3];
