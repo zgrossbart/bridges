@@ -38,6 +38,8 @@ h2 {
     margin: 0 auto;
     position: relative;
     padding-bottom: 4em;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 #buyit {
@@ -56,5 +58,5 @@ p.imageBlock {
 }
 
 p.imageBlock img {
-	max-width:100%;
+	max-width:95%;
 }
