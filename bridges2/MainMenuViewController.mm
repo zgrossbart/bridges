@@ -196,6 +196,7 @@
     }
     
     [self.sectionViewController refresh];
+    [self.pageViewController refresh];
     
     [StyleUtil animateView:self.view];
 }

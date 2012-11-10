@@ -29,7 +29,21 @@
     IBOutlet UIPageControl *_pageControl;
 }
 
+/**
+ * Create a new MenuPageViewController.
+ *
+ * @param nibNameOrNil the name of the NIB to load for this controller
+ * @param bundle the bundle to load with this controller
+ * @param menu the menu used with this controller
+ * @param mainView the main view which is the parent of this controller.
+ */
 -(id)initWithNibNameAndMenuView:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil menu:(MainMenuViewController*) menuView;
+
+/**
+ * Refresh the data in this view.  This updates the green checkmarks which indicate
+ * that you've won all the levels in a set.
+ */
+-(void)refresh;
 
 /**
  * The back button takes the user back to the main window

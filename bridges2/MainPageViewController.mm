@@ -97,6 +97,16 @@
     }
 }
 
+-(void)refresh {
+    for (int i = 0; i < [self.views count]; i++) {
+        MainSectionViewController *controller = (MainSectionViewController*) [self.views objectAtIndex:i];
+        if ([self hasWon:[LevelMgr getLevelSet:i]]) {
+            [controller.checkMark setImage:[UIImage imageNamed:@"green_check.png"]];
+        }
+    }
+    
+}
+
 -(void)setViewDetails: (MainSectionViewController*) controller page:(int)page {
     if ([[LevelMgr getLevelMgr].levelSets count] == page) {
         controller.label.text = @"More levels are coming soon";
