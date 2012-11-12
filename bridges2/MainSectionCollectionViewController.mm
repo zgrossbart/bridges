@@ -49,7 +49,7 @@
     
     [self.collectionView registerClass:[LevelCell class] forCellWithReuseIdentifier:@"levelCell"];
     
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    UICollectionViewFlowLayout *flowLayout = [[[UICollectionViewFlowLayout alloc] init] autorelease];
     
     CGSize s = CGSizeMake(250, 250);
     
