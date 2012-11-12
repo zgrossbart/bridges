@@ -298,7 +298,7 @@
         _noOfSection = 4;
     }
     
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    UICollectionViewFlowLayout *flowLayout = [[[UICollectionViewFlowLayout alloc] init] autorelease];
     
     CGSize s = CGSizeMake(IPAD_LEVEL_IMAGE_W + 30, IPAD_LEVEL_IMAGE_H + 20);
     
