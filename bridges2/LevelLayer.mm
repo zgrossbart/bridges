@@ -955,14 +955,14 @@ CGFloat CGPointToDegree(CGPoint point) {
  */
 -(void) showConfetti: (float) x: (float) y
 {
-    self.emitter = [[CCParticleSnow alloc] init];
+    self.emitter = [[CCParticleRain alloc] init];
     [self.emitter setScaleX:0.5];
     [self.emitter setScaleY:0.5];
     
     [self.emitter resetSystem];
     self.emitter.texture = [[CCTextureCache sharedTextureCache] addImage:@"confetti.png"];
     
-    self.emitter.duration = 2;
+    self.emitter.duration = 1.5;
     
     // gravity
     self.emitter.gravity = ccp(self.player.player.position.x, 90);
@@ -981,7 +981,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     // tagential
     self.emitter.tangentialAccel = 30;
-    self.emitter.tangentialAccelVar = 90;
+    self.emitter.tangentialAccelVar = 160;
     
     // life of particles
     self.emitter.life = 1;
@@ -990,17 +990,17 @@ CGFloat CGPointToDegree(CGPoint point) {
     // spin of particles
     self.emitter.startSpin = 15;
     self.emitter.startSpinVar = 5;
-    self.emitter.endSpin = 15;
-    self.emitter.endSpinVar = 5;
+    self.emitter.endSpin = 360;
+    self.emitter.endSpinVar = 180;
     
     // color of particles
-    ccColor4F startColor = {243.0f, 162.f, 162.0f, 1.0f};
+    ccColor4F startColor = {171.0f, 26.0f, 37.0f, 1.0f};
     self.emitter.startColor = startColor;
-    ccColor4F startColorVar = {74.0f, 204.0f, 236.0f, 1.0f};
+    ccColor4F startColorVar = {245.0f, 255.f, 72.0f, 1.0f};
     self.emitter.startColorVar = startColorVar;
-    ccColor4F endColor = {243.0f, 27.0f, 38.0f, 1.0f};
+    ccColor4F endColor = {255.0f, 223.0f, 85.0f, 1.0f};
     self.emitter.endColor = endColor;
-    ccColor4F endColorVar = {255.0f, 195.0f, 16.0f, 1.0f};
+    ccColor4F endColorVar = {255.0f, 131.0f, 62.0f, 1.0f};
     self.emitter.endColorVar = endColorVar;
     
     
@@ -1009,7 +1009,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     self.emitter.startSizeVar = 5.0f;
     self.emitter.endSize = kParticleStartSizeEqualToEndSize;
     // emits per second
-    self.emitter.totalParticles = 350;
+    self.emitter.totalParticles = 250;
     self.emitter.emissionRate = self.emitter.totalParticles/self.emitter.life;
     
     self.emitter.posVar = ccp(x + 20, y - 20);
@@ -1020,7 +1020,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     [self addChild: self.emitter z:10];
     self.emitter.autoRemoveOnFinish = YES;
     
-    [self scheduleOnce:@selector(doWon) delay:2];
+    [self scheduleOnce:@selector(doWon) delay:3];
 }
 
 -(void) doWon {
