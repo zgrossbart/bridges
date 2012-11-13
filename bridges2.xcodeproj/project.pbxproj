@@ -1013,7 +1013,6 @@
 		CE6D65E815EAC5FB00C7EDD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CED8E36B1652D5AA00116165 /* Sounds */,
 				CEE9ED0D16356FE200FF9FAC /* background_1024_768_River.png */,
 				CEBB885F160514D200538464 /* bridgesprites-hd.plist */,
 				CEBB8860160514D200538464 /* bridgesprites-hd.pvr.gz */,
@@ -1049,6 +1048,7 @@
 				CEEBCC39163DE3E700FF3F8F /* refresh@2x.png */,
 				CEF064A015F51B180061C872 /* refresh_d.png */,
 				CEEBCC38163DE3E700FF3F8F /* refresh_d@2x.png */,
+				CED8E36B1652D5AA00116165 /* Sounds */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

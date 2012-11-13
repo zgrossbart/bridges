@@ -198,12 +198,14 @@
 -(void)cross {
     
     if (self.coins > 0) {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"BridgeCrossPartial.wav"];
         self.coins--;
         _label.text = [NSString stringWithFormat:@"%i", self.coins];
+    } else {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"BridgeComplete.wav"];
     }
     
     if (self.coins == 0 && !self.crossed) {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"BridgeComplete.wav"];
         CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
         CCSpriteFrame* frame;
         if (self.vertical) {
@@ -213,10 +215,7 @@
         }
         [self.bridge setDisplayFrame:frame];
         self.crossed = true;
-    } else {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"BridgeCrossPartial.wav"];
-    }
-    
+    }    
 }
 
 -(NSArray*) controls {

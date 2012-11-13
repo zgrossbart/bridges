@@ -109,13 +109,14 @@
 
 -(void)visit {
     if (self.coins > 0) {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"HouseVisitPartial.wav"];
         self.coins--;
         _label.text = [NSString stringWithFormat:@"%i", self.coins];
+    } else {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"HouseVisitComplete.wav"];
     }
     
     if (self.coins == 0 && !self.visited) {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"HouseVisitComplete.wav"];
-        
         self.visited = true;
         
         float scale = 1.0;
@@ -135,10 +136,7 @@
                            [CCCallFunc actionWithTarget:self selector:@selector(visitEnded)],
                            flipRemainingHalf, nil];
         [self.house runAction:seq];
-    } else {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"HouseVisitPartial.wav"];
-    }
-    
+    }     
 }
 
 -(void)setHousePosition:(CGPoint)p {
