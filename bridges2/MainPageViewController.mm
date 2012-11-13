@@ -98,7 +98,7 @@
 }
 
 -(void)refresh {
-    for (int i = 0; i < [self.views count]; i++) {
+    for (int i = 0; i < [self.views count] - 1; i++) {
         MainSectionViewController *controller = (MainSectionViewController*) [self.views objectAtIndex:i];
         if ([self hasWon:[LevelMgr getLevelSet:i]]) {
             [controller.checkMark setImage:[UIImage imageNamed:@"green_check.png"]];
