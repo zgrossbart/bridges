@@ -19,6 +19,7 @@
 #import "HouseNode.h"
 #import "BridgeColors.h"
 #import "StyleUtil.h"
+#import "SimpleAudioEngine.h"
 
 @interface HouseNode()
 @property (readwrite, retain) CCSprite *house;
@@ -113,6 +114,7 @@
     }
     
     if (self.coins == 0 && !self.visited) {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"HouseVisitComplete.wav"];
         
         self.visited = true;
         
@@ -133,6 +135,8 @@
                            [CCCallFunc actionWithTarget:self selector:@selector(visitEnded)],
                            flipRemainingHalf, nil];
         [self.house runAction:seq];
+    } else {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"HouseVisitPartial.wav"];
     }
     
 }

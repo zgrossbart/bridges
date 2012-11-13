@@ -19,6 +19,7 @@
 #import "BridgeNode.h"
 #import "BridgeColors.h"
 #import "StyleUtil.h"
+#import "SimpleAudioEngine.h"
 
 @interface BridgeNode()
 @property (readwrite) bool vertical;
@@ -202,6 +203,7 @@
     }
     
     if (self.coins == 0 && !self.crossed) {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"BridgeComplete.wav"];
         CCSpriteFrameCache* cache = [CCSpriteFrameCache sharedSpriteFrameCache];
         CCSpriteFrame* frame;
         if (self.vertical) {
@@ -211,6 +213,8 @@
         }
         [self.bridge setDisplayFrame:frame];
         self.crossed = true;
+    } else {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"BridgeCrossPartial.wav"];
     }
     
 }

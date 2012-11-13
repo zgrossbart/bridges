@@ -22,6 +22,7 @@
 #import "StyleUtil.h"
 #import "MainPageViewController.h"
 #import "MainSectionCollectionViewController.h"
+#import "SimpleAudioEngine.h"
 
 @interface MainMenuViewController() {
     int _noOfSection;
@@ -64,11 +65,33 @@
     [StyleUtil styleMenuButton:_backBtn];
 }
 
+/**
+ * Each sound file takes a little while to load and it will slow down
+ * the game if we load them for the first time when we want to play them.
+ * This method preloads all of our sound effects so they're ready when
+ * we need them.
+ */
+-(void)preloadSounds {
+    
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    
+    NSError *error;
+    NSArray *sounds = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&error];
+    
+    for (NSString *file in sounds) {
+        if ([file hasSuffix:@".wav"]) {
+            [[SimpleAudioEngine sharedEngine] preloadEffect:path];
+        }
+    }
+}
+
 -(void)viewDidLoad {
     [super viewDidLoad];
     if (_checkImage == nil) {
         _checkImage = [UIImage imageNamed:@"green_check.png"];
     }
+    
+    [self preloadSounds];
     
     _noOfSection = 4;
     

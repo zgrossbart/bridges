@@ -261,6 +261,14 @@
 		CED807B91639D535005F100A /* sequential.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807B81639D535005F100A /* sequential.json */; };
 		CED807BB1639D6DE005F100A /* order_up.json in Resources */ = {isa = PBXBuildFile; fileRef = CED807BA1639D6DE005F100A /* order_up.json */; };
 		CED88B371616559000837558 /* spiral.json in Resources */ = {isa = PBXBuildFile; fileRef = CED88B361616559000837558 /* spiral.json */; };
+		CED8E3711652D65A00116165 /* Undo1.wav in Resources */ = {isa = PBXBuildFile; fileRef = CED8E36D1652D65A00116165 /* Undo1.wav */; };
+		CED8E3721652D65A00116165 /* Undo2.wav in Resources */ = {isa = PBXBuildFile; fileRef = CED8E36E1652D65A00116165 /* Undo2.wav */; };
+		CED8E3731652D65A00116165 /* BridgeComplete.wav in Resources */ = {isa = PBXBuildFile; fileRef = CED8E36F1652D65A00116165 /* BridgeComplete.wav */; };
+		CED8E3741652D65A00116165 /* BridgeCrossPartial.wav in Resources */ = {isa = PBXBuildFile; fileRef = CED8E3701652D65A00116165 /* BridgeCrossPartial.wav */; };
+		CED8E3781652D66B00116165 /* ColourChange.wav in Resources */ = {isa = PBXBuildFile; fileRef = CED8E3751652D66B00116165 /* ColourChange.wav */; };
+		CED8E3791652D66B00116165 /* HouseVisitComplete.wav in Resources */ = {isa = PBXBuildFile; fileRef = CED8E3761652D66B00116165 /* HouseVisitComplete.wav */; };
+		CED8E37A1652D66B00116165 /* HouseVisitPartial.wav in Resources */ = {isa = PBXBuildFile; fileRef = CED8E3771652D66B00116165 /* HouseVisitPartial.wav */; };
+		CED8E37C1652D67500116165 /* Restart.wav in Resources */ = {isa = PBXBuildFile; fileRef = CED8E37B1652D67500116165 /* Restart.wav */; };
 		CED948211641BC92002F1096 /* square_teleport.json in Resources */ = {isa = PBXBuildFile; fileRef = CED948201641BC92002F1096 /* square_teleport.json */; };
 		CED948241641C350002F1096 /* jump_around.json in Resources */ = {isa = PBXBuildFile; fileRef = CED948231641C350002F1096 /* jump_around.json */; };
 		CED983DC16275B590003D4B0 /* MainViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED983DB16275B590003D4B0 /* MainViewiPad.xib */; };
@@ -803,6 +811,14 @@
 		CED807B81639D535005F100A /* sequential.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sequential.json; sourceTree = "<group>"; };
 		CED807BA1639D6DE005F100A /* order_up.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order_up.json; sourceTree = "<group>"; };
 		CED88B361616559000837558 /* spiral.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spiral.json; sourceTree = "<group>"; };
+		CED8E36D1652D65A00116165 /* Undo1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Undo1.wav; sourceTree = "<group>"; };
+		CED8E36E1652D65A00116165 /* Undo2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Undo2.wav; sourceTree = "<group>"; };
+		CED8E36F1652D65A00116165 /* BridgeComplete.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BridgeComplete.wav; sourceTree = "<group>"; };
+		CED8E3701652D65A00116165 /* BridgeCrossPartial.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BridgeCrossPartial.wav; sourceTree = "<group>"; };
+		CED8E3751652D66B00116165 /* ColourChange.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ColourChange.wav; sourceTree = "<group>"; };
+		CED8E3761652D66B00116165 /* HouseVisitComplete.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HouseVisitComplete.wav; sourceTree = "<group>"; };
+		CED8E3771652D66B00116165 /* HouseVisitPartial.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HouseVisitPartial.wav; sourceTree = "<group>"; };
+		CED8E37B1652D67500116165 /* Restart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Restart.wav; sourceTree = "<group>"; };
 		CED948201641BC92002F1096 /* square_teleport.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square_teleport.json; sourceTree = "<group>"; };
 		CED948231641C350002F1096 /* jump_around.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jump_around.json; sourceTree = "<group>"; };
 		CED983DB16275B590003D4B0 /* MainViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewiPad.xib; sourceTree = "<group>"; };
@@ -1003,6 +1019,7 @@
 		CE6D65E815EAC5FB00C7EDD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CED8E36B1652D5AA00116165 /* Sounds */,
 				CEE9ED0D16356FE200FF9FAC /* background_1024_768_River.png */,
 				CEBB885F160514D200538464 /* bridgesprites-hd.plist */,
 				CEBB8860160514D200538464 /* bridgesprites-hd.pvr.gz */,
@@ -1644,6 +1661,21 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		CED8E36B1652D5AA00116165 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				CED8E36F1652D65A00116165 /* BridgeComplete.wav */,
+				CED8E3701652D65A00116165 /* BridgeCrossPartial.wav */,
+				CED8E3751652D66B00116165 /* ColourChange.wav */,
+				CED8E3761652D66B00116165 /* HouseVisitComplete.wav */,
+				CED8E3771652D66B00116165 /* HouseVisitPartial.wav */,
+				CED8E37B1652D67500116165 /* Restart.wav */,
+				CED8E36D1652D65A00116165 /* Undo1.wav */,
+				CED8E36E1652D65A00116165 /* Undo2.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		CEE7AF0315FBD07000DC0B7F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1959,6 +1991,14 @@
 				CED948241641C350002F1096 /* jump_around.json in Resources */,
 				CE814FC11642A26E0071ABE5 /* teleport_colors.json in Resources */,
 				CEE097CA16447C8100C8EC41 /* quilted_squares.json in Resources */,
+				CED8E3711652D65A00116165 /* Undo1.wav in Resources */,
+				CED8E3721652D65A00116165 /* Undo2.wav in Resources */,
+				CED8E3731652D65A00116165 /* BridgeComplete.wav in Resources */,
+				CED8E3741652D65A00116165 /* BridgeCrossPartial.wav in Resources */,
+				CED8E3781652D66B00116165 /* ColourChange.wav in Resources */,
+				CED8E3791652D66B00116165 /* HouseVisitComplete.wav in Resources */,
+				CED8E37A1652D66B00116165 /* HouseVisitPartial.wav in Resources */,
+				CED8E37C1652D67500116165 /* Restart.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,6 +26,7 @@
 #import "TeleportNode.h"
 #import "Level.h"
 #import "Undoable.h"
+#import "SimpleAudioEngine.h"
 
 //#define PTM_RATIO 32.0
 
@@ -205,6 +206,8 @@
         return;
     }
     
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Undo1.wav"];
+    
     Undoable *undo = [self.undoStack objectAtIndex:self.undoStack.count - 1];
     
     [undo.node undo];
@@ -227,6 +230,7 @@
 }
 
 -(void)refresh {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Restart.wav"];
     [self reset];
     Level *level = self.currentLevel;
     self.currentLevel = nil;
@@ -758,6 +762,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     [bridge enterBridge:_bridgeEntry];
     
     if (bridge.color != cNone) {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"ColourChange.wav"];
         [_player updateColor:bridge.color];
     }
 }
@@ -846,6 +851,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     _canVisit = true;
     
     if (bridge.color != cNone) {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"ColourChange.wav"];
         [_player updateColor:bridge.color];
     }
     
