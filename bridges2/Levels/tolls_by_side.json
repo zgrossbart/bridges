@@ -28,6 +28,18 @@
                 "y": "10-20",
                 "orient": "v",
 				"side": "right"
+            },
+            {
+                "x": "20",
+                "y": "20",
+                "orient": "h",
+				"border": "top"
+            },
+            {
+                "x": "20",
+                "y": "10",
+                "orient": "h",
+				"border": "bottom"
             }
         ],
         "bridges": [
