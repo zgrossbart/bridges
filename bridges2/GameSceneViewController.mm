@@ -133,6 +133,7 @@
 }
 
 -(IBAction)goHomeTapped:(id)sender {
+    [StyleUtil regress];
     [self.navigationController popViewControllerAnimated:NO];
 }
 

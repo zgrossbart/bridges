@@ -58,4 +58,14 @@
  */
 +(void)animateView:(UIView*) view;
 
+/**
+ * Play the advance sound when you move forward in the game.
+ */
++(void)advance;
+
+/**
+ * Play the regress sound when you move back to a previous screen in the game.
+ */
++(void)regress;
+
 @end

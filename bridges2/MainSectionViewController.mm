@@ -68,6 +68,7 @@
 }
 
 -(IBAction)playTapped:(id)sender {
+    [StyleUtil advance];
     if (self.index < [[LevelMgr getLevelMgr].levelSets count]) {
         [self.menuView showLevels:self.index];
     }    

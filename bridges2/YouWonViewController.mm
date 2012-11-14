@@ -89,12 +89,14 @@
 
 
 -(IBAction)replayTapped:(id)sender {
+    [StyleUtil advance];
     [self.layer refresh];
     [self.navigationController popViewControllerAnimated:NO];
     
 }
 
 -(IBAction)nextTapped:(id)sender {
+    [StyleUtil advance];
     int i = [[LevelMgr getLevelSet:self.currentSet].levelIds indexOfObject:self.currentLevel.levelId];
     
     if (i == [[LevelMgr getLevelSet:self.currentSet].levelIds count] - 1) {
@@ -112,6 +114,7 @@
 }
 
 -(IBAction)menuTapped:(id)sender {
+    [StyleUtil regress];
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 

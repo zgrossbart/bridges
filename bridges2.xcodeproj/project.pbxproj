@@ -357,6 +357,8 @@
 		CEF064A515F521AF0061C872 /* hello_bridges.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A415F521AF0061C872 /* hello_bridges.json */; };
 		CEF09587165404510026C287 /* Undo.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEF09586165404510026C287 /* Undo.wav */; };
 		CEF0958A165404840026C287 /* Restart.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEF09589165404840026C287 /* Restart.wav */; };
+		CEF0958C165409420026C287 /* Advance.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEF0958B165409420026C287 /* Advance.wav */; };
+		CEF0958E165409500026C287 /* Regress.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEF0958D165409500026C287 /* Regress.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -922,6 +924,8 @@
 		CEF064A415F521AF0061C872 /* hello_bridges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hello_bridges.json; sourceTree = "<group>"; };
 		CEF09586165404510026C287 /* Undo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Undo.wav; sourceTree = "<group>"; };
 		CEF09589165404840026C287 /* Restart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Restart.wav; sourceTree = "<group>"; };
+		CEF0958B165409420026C287 /* Advance.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Advance.wav; sourceTree = "<group>"; };
+		CEF0958D165409500026C287 /* Regress.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Regress.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1668,11 +1672,13 @@
 		CED8E36B1652D5AA00116165 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				CEF0958B165409420026C287 /* Advance.wav */,
 				CED8E36F1652D65A00116165 /* BridgeComplete.wav */,
 				CED8E3701652D65A00116165 /* BridgeCrossPartial.wav */,
 				CED8E3751652D66B00116165 /* ColourChange.wav */,
 				CED8E3761652D66B00116165 /* HouseVisitComplete.wav */,
 				CED8E3771652D66B00116165 /* HouseVisitPartial.wav */,
+				CEF0958D165409500026C287 /* Regress.wav */,
 				CEF09589165404840026C287 /* Restart.wav */,
 				CEF09586165404510026C287 /* Undo.wav */,
 			);
@@ -2003,6 +2009,8 @@
 				CEDDD7A81653CB990019ED9E /* iTunesArtwork@1024 in Resources */,
 				CEF09587165404510026C287 /* Undo.wav in Resources */,
 				CEF0958A165404840026C287 /* Restart.wav in Resources */,
+				CEF0958C165409420026C287 /* Advance.wav in Resources */,
+				CEF0958E165409500026C287 /* Regress.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

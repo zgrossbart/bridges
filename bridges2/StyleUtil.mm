@@ -19,6 +19,7 @@
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import "StyleUtil.h"
+#import "SimpleAudioEngine.h"
 
 @implementation StyleUtil
 
@@ -87,6 +88,14 @@
     view.alpha = 1;
     [UIView commitAnimations];
     
+}
+
++(void)advance {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Advance.wav"];
+}
+
++(void)regress {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Regress.wav"];
 }
 
 @end

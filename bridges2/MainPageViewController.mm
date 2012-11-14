@@ -164,6 +164,7 @@
 }
 
 -(IBAction)backToMainTapped:(id)sender {
+    [StyleUtil regress];
     [self.menuView backToMainTapped:sender];
 }
 

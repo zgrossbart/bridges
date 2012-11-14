@@ -108,6 +108,7 @@
 }
 
 -(void)selectLevel:(NSString*) key {
+    [StyleUtil advance];
     if (_GameSceneViewController == nil) {
         self.GameSceneViewController = [[[GameSceneViewController alloc] initWithNibName:nil bundle:nil] autorelease];
     }
@@ -239,6 +240,7 @@
 }
 
 -(IBAction)aboutTapped:(id)sender {
+    [StyleUtil advance];
     [[NSBundle mainBundle] loadNibNamed:@"AboutViewiPad" owner:self options:nil];
     
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@".html"];
@@ -256,6 +258,7 @@
 }
 
 -(IBAction)playTapped:(id)sender {
+    [StyleUtil advance];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         if (self.sectionViewController == nil) {
             self.sectionViewController = [[[MainSectionCollectionViewController alloc] initWithNibNameAndMenuView:nil bundle:nil menu:self] autorelease];
@@ -334,6 +337,7 @@
 }
 
 -(IBAction)backToMainTapped:(id)sender {
+    [StyleUtil regress];
     
     [self.navigationController popViewControllerAnimated:NO];
     

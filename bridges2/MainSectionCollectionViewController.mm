@@ -73,6 +73,7 @@
  * This method gets called when the user taps on a cell in the collection view.
  */
 -(void)collectionView:(UICollectionView*) collectionView didSelectItemAtIndexPath:(NSIndexPath*) indexPath {
+    [StyleUtil advance];
     int index = indexPath.section * _noOfSection + indexPath.row;
     if (index < [[LevelMgr getLevelMgr].levelSets count]) {
         [self.menuView showLevels:index];
@@ -170,6 +171,7 @@
 }
 
 - (IBAction)backBtnTapped:(id)sender {
+    [StyleUtil regress];
     [self.menuView backToMainTapped:sender];
 }
 
