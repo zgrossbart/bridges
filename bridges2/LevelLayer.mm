@@ -206,7 +206,7 @@
         return;
     }
     
-    //[[SimpleAudioEngine sharedEngine] playEffect:@"Undo1.wav"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Undo.wav"];
     
     Undoable *undo = [self.undoStack objectAtIndex:self.undoStack.count - 1];
     
@@ -230,7 +230,7 @@
 }
 
 -(void)refresh {
-    //[[SimpleAudioEngine sharedEngine] playEffect:@"Restart.wav"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Restart.wav"];
     [self reset];
     Level *level = self.currentLevel;
     self.currentLevel = nil;

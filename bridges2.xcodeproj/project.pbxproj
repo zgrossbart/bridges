@@ -355,6 +355,8 @@
 		CEF064A215F51B180061C872 /* refresh_d.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A015F51B180061C872 /* refresh_d.png */; };
 		CEF064A315F51B180061C872 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A115F51B180061C872 /* refresh.png */; };
 		CEF064A515F521AF0061C872 /* hello_bridges.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A415F521AF0061C872 /* hello_bridges.json */; };
+		CEF09587165404510026C287 /* Undo.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEF09586165404510026C287 /* Undo.wav */; };
+		CEF0958A165404840026C287 /* Restart.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEF09589165404840026C287 /* Restart.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -918,6 +920,8 @@
 		CEF064A015F51B180061C872 /* refresh_d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh_d.png; sourceTree = "<group>"; };
 		CEF064A115F51B180061C872 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		CEF064A415F521AF0061C872 /* hello_bridges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hello_bridges.json; sourceTree = "<group>"; };
+		CEF09586165404510026C287 /* Undo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Undo.wav; sourceTree = "<group>"; };
+		CEF09589165404840026C287 /* Restart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Restart.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1669,6 +1673,8 @@
 				CED8E3751652D66B00116165 /* ColourChange.wav */,
 				CED8E3761652D66B00116165 /* HouseVisitComplete.wav */,
 				CED8E3771652D66B00116165 /* HouseVisitPartial.wav */,
+				CEF09589165404840026C287 /* Restart.wav */,
+				CEF09586165404510026C287 /* Undo.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -1995,6 +2001,8 @@
 				CED8E37A1652D66B00116165 /* HouseVisitPartial.wav in Resources */,
 				CEDDD7A51653C9FF0019ED9E /* icon-144.png in Resources */,
 				CEDDD7A81653CB990019ED9E /* iTunesArtwork@1024 in Resources */,
+				CEF09587165404510026C287 /* Undo.wav in Resources */,
+				CEF0958A165404840026C287 /* Restart.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
