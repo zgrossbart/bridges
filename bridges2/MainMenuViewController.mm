@@ -480,6 +480,7 @@
     [_levelSetImage release];
     [_levelSetLabel release];
     [_soundBtn release];
+    [_soundBtn release];
     [super dealloc];
 }
 

@@ -38,6 +38,7 @@
     IBOutlet UIButton *_aboutBtn;
     IBOutlet UIButton *_backBtn;
     IBOutlet UILabel *_xOfY;
+    IBOutlet UIButton *_soundBtn;
 }
 
 /**
