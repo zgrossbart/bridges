@@ -82,6 +82,11 @@
 -(IBAction)playTapped:(id)sender;
 
 /**
+ * This method is called when the user toggles the game sounds on and off.
+ */
+-(IBAction)toggleSoundsTapped:(id)sender;
+
+/**
  * Show the levels in the specified set.
  */
 -(void)showLevels: (int)page;

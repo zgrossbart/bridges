@@ -55,7 +55,6 @@
         [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
     }
     [self viewDidLoad];
-    
     [self styleButtons];
 }
 
@@ -63,6 +62,7 @@
     [StyleUtil styleMenuButton:_playBtn];
     [StyleUtil styleMenuButton:_aboutBtn];
     [StyleUtil styleMenuButton:_backBtn];
+    [self updateSoundButtonImage];
 }
 
 /**
@@ -105,6 +105,7 @@
     
     _xOfY.text = [self getXofY];
     [StyleUtil styleLabel:_xOfY];
+    [self updateSoundButtonImage];
 }
 
 -(void)selectLevel:(NSString*) key {
@@ -221,6 +222,7 @@
     
     [self.sectionViewController refresh];
     [self.pageViewController refresh];
+    [self updateSoundButtonImage];
     
     [StyleUtil animateView:self.view];
 }
@@ -232,6 +234,7 @@
         [[NSBundle mainBundle] loadNibNamed:@"MainView" owner:self options:nil];
     }
     
+    [self updateSoundButtonImage];
     [self styleButtons];
 }
 
@@ -272,6 +275,32 @@
         
         [self.navigationController pushViewController:self.pageViewController animated:NO];
     }
+}
+
+-(void)updateSoundButtonImage {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"noSounds"]) {
+        [_soundBtn setImage:[UIImage imageNamed:@"soundoff.png"] forState:UIControlStateNormal];
+        [SimpleAudioEngine sharedEngine].effectsVolume = 0;
+    } else {
+        [_soundBtn setImage:[UIImage imageNamed:@"soundon.png"] forState:UIControlStateNormal];
+    }
+}
+
+-(IBAction)toggleSoundsTapped:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults boolForKey:@"noSounds"]) {
+        [defaults setBool:false forKey:@"noSounds"];
+        [_soundBtn setImage:[UIImage imageNamed:@"soundon.png"] forState:UIControlStateNormal];
+        [SimpleAudioEngine sharedEngine].effectsVolume = 1;
+        [StyleUtil advance];
+    } else {
+        [defaults setBool:true forKey:@"noSounds"];
+        [_soundBtn setImage:[UIImage imageNamed:@"soundoff.png"] forState:UIControlStateNormal];
+        [SimpleAudioEngine sharedEngine].effectsVolume = 0;
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
 }
 
 -(void)showLevels: (int)page {
@@ -450,6 +479,7 @@
     [_xOfY release];
     [_levelSetImage release];
     [_levelSetLabel release];
+    [_soundBtn release];
     [super dealloc];
 }
 

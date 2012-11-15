@@ -221,6 +221,10 @@
 		CEBD81F315EACA9D00EE27CF /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81F115EACA9D00EE27CF /* MainMenuViewController.xib */; };
 		CEBD81FD15EACDC100EE27CF /* GameSceneViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEBD81FB15EACDC100EE27CF /* GameSceneViewController.mm */; };
 		CEBD81FE15EACDC100EE27CF /* GameSceneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBD81FC15EACDC100EE27CF /* GameSceneView.xib */; };
+		CEC333061655702900DA25D6 /* soundoff.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC333041655702900DA25D6 /* soundoff.png */; };
+		CEC333071655702900DA25D6 /* soundoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC333051655702900DA25D6 /* soundoff@2x.png */; };
+		CEC3330B1655703100DA25D6 /* soundon.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC333091655703100DA25D6 /* soundon.png */; };
+		CEC3330C1655703100DA25D6 /* soundon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC3330A1655703100DA25D6 /* soundon@2x.png */; };
 		CEC65C0515F4C1CD0010EAC3 /* ScreenShotLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */; };
 		CEC8828416027431007DC0EA /* three_rivers.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC8828316027431007DC0EA /* three_rivers.json */; };
 		CEC88287160276B1007DC0EA /* twice_around.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC88286160276B1007DC0EA /* twice_around.json */; };
@@ -764,6 +768,10 @@
 		CEBD81FA15EACDC100EE27CF /* GameSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSceneViewController.h; sourceTree = "<group>"; };
 		CEBD81FB15EACDC100EE27CF /* GameSceneViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameSceneViewController.mm; sourceTree = "<group>"; };
 		CEBD81FC15EACDC100EE27CF /* GameSceneView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameSceneView.xib; sourceTree = "<group>"; };
+		CEC333041655702900DA25D6 /* soundoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundoff.png; sourceTree = "<group>"; };
+		CEC333051655702900DA25D6 /* soundoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundoff@2x.png"; sourceTree = "<group>"; };
+		CEC333091655703100DA25D6 /* soundon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundon.png; sourceTree = "<group>"; };
+		CEC3330A1655703100DA25D6 /* soundon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundon@2x.png"; sourceTree = "<group>"; };
 		CEC65C0315F4C1CD0010EAC3 /* ScreenShotLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenShotLayer.h; sourceTree = "<group>"; };
 		CEC65C0415F4C1CD0010EAC3 /* ScreenShotLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScreenShotLayer.mm; sourceTree = "<group>"; };
 		CEC8828316027431007DC0EA /* three_rivers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = three_rivers.json; sourceTree = "<group>"; };
@@ -1062,6 +1070,10 @@
 				CEEBCC39163DE3E700FF3F8F /* refresh@2x.png */,
 				CEF064A015F51B180061C872 /* refresh_d.png */,
 				CEEBCC38163DE3E700FF3F8F /* refresh_d@2x.png */,
+				CEC333041655702900DA25D6 /* soundoff.png */,
+				CEC333051655702900DA25D6 /* soundoff@2x.png */,
+				CEC333091655703100DA25D6 /* soundon.png */,
+				CEC3330A1655703100DA25D6 /* soundon@2x.png */,
 				CED8E36B1652D5AA00116165 /* Sounds */,
 			);
 			name = Resources;
@@ -2011,6 +2023,10 @@
 				CEF0958A165404840026C287 /* Restart.wav in Resources */,
 				CEF0958C165409420026C287 /* Advance.wav in Resources */,
 				CEF0958E165409500026C287 /* Regress.wav in Resources */,
+				CEC333061655702900DA25D6 /* soundoff.png in Resources */,
+				CEC333071655702900DA25D6 /* soundoff@2x.png in Resources */,
+				CEC3330B1655703100DA25D6 /* soundon.png in Resources */,
+				CEC3330C1655703100DA25D6 /* soundon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
