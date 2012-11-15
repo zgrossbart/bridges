@@ -158,7 +158,7 @@
     [_player runAction:_walkAction];
     
     CGFloat distance = [LayerMgr distanceBetweenTwoPoints:_player.position: p];
-    float velocity = 240/1; // 240pixels/1sec
+    float velocity = 340/1; // 340pixels/1sec
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         velocity = velocity * 2;
