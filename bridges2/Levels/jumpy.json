@@ -101,7 +101,8 @@
             {
                 "x": "24",
                 "y": "20",
-                "orient": "v"
+                "orient": "v",
+				"color": "red"
             },
             {
                 "x": "28",
@@ -124,8 +125,14 @@
             {
                 "x": "30",
                 "y": "12",
-                "coins": "2",
+                "coins": "1",
 				"color": "orange"
+            },
+            {
+                "x": "38",
+                "y": "26",
+                "coins": "1",
+				"color": "red"
             }
         ],
         "subways": [
