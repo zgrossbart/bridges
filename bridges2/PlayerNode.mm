@@ -90,6 +90,10 @@
     _spriteBody->SetTransform(b2Vec2(self.player.position.x,self.player.position.y), _spriteBody->GetAngle());
 }
 
+-(bool)isMoving {
+    return _moving;
+}
+
 -(void)updateColor:(BridgeColor)color {
     self.color = color;
     

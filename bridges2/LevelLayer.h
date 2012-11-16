@@ -55,6 +55,7 @@
     bool _inBridge;
     bool _inMove;
     bool _inJump;
+    bool _inRide;
     CCSprite *_subwayEnd;
     
     /*

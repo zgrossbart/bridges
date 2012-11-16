@@ -91,6 +91,8 @@
  */
 -(void)playerMoveEnded;
 
+-(bool)isMoving;
+
 /** 
  * The player sprite representing this node.
  */

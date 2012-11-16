@@ -496,12 +496,20 @@
     _canVisit = true;
     CCSequence* seq = [CCSequence actions:[CCFadeIn actionWithDuration:0.25],nil];
     [self.player.player runAction:seq];
+    _inRide = false;
 }
 
 -(void)rideSubway:(CCSprite *) player:(CCSprite*) subway {
-    if (_inMove) {
+    if (_inMove || _inRide) {
         return;
     }
+    _inRide = true;
+    CCActionManager *mgr = [player actionManager];
+    [mgr pauseTarget:player];
+    [mgr removeAllActionsFromTarget:player];
+    [mgr resumeTarget:player];
+    
+    
     /*
      * The player has run into a subway.  We need to ride the subway
      * if the player is the right color and bump it if it isn't
@@ -510,6 +518,7 @@
     
     if (_player.coins > 0 &&
         (node.color == cNone || _player.color == node.color)) {
+        
         [self.undoStack addObject: [[[Undoable alloc] initWithPosAndNode:_prevPlayerPos node:node color:_player.color coins:_player.coins canVisit:_canVisit] autorelease]];
         _undoBtn.enabled = YES;
         
@@ -539,6 +548,7 @@
         }
         [self showNoTapSprite:self.player.player.position];
         [self bumpObject:player:subway];
+        _inRide = false;
         
     }
     
@@ -1116,7 +1126,9 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     _inMove = false;
     
-    if (_inBridge) {
+    if (_inRide || [self.player isMoving]) {
+        return;
+    } else if (_inBridge) {
         [self finishCross4:location];
         return;
     } else if (_inJump) {
