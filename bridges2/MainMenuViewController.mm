@@ -239,7 +239,7 @@
 }
 
 -(IBAction)backToPageViewTapped:(id)sender {
-    [self playTapped:sender];
+    [self backToSectionView:false];
 }
 
 -(IBAction)aboutTapped:(id)sender {
@@ -261,7 +261,15 @@
 }
 
 -(IBAction)playTapped:(id)sender {
-    [StyleUtil advance];
+    [self backToSectionView:true];
+}
+
+-(void)backToSectionView: (bool) advance {
+    if (advance) {
+        [StyleUtil advance];
+    } else {
+        [StyleUtil regress];
+    }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         if (self.sectionViewController == nil) {
             self.sectionViewController = [[[MainSectionCollectionViewController alloc] initWithNibNameAndMenuView:nil bundle:nil menu:self] autorelease];
