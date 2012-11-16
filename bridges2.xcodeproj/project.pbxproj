@@ -11,6 +11,11 @@
 		CE00533516413AA000A99DFD /* color_out.json in Resources */ = {isa = PBXBuildFile; fileRef = CE00533416413AA000A99DFD /* color_out.json */; };
 		CE005337164148F800A99DFD /* triangle_jump.json in Resources */ = {isa = PBXBuildFile; fileRef = CE005336164148F800A99DFD /* triangle_jump.json */; };
 		CE0298C11624B4300028274B /* tic_tac_toe_two.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0298C01624B4300028274B /* tic_tac_toe_two.json */; };
+		CE0A8A8F1656A9FF001F491C /* Undo.wav in Resources */ = {isa = PBXBuildFile; fileRef = CE0A8A8E1656A9FF001F491C /* Undo.wav */; };
+		CE0A8A911656AA0B001F491C /* RideSubway.wav in Resources */ = {isa = PBXBuildFile; fileRef = CE0A8A901656AA0B001F491C /* RideSubway.wav */; };
+		CE0A8A931656AA16001F491C /* Error.wav in Resources */ = {isa = PBXBuildFile; fileRef = CE0A8A921656AA16001F491C /* Error.wav */; };
+		CE0A8A951656AA21001F491C /* CharacterPlace.wav in Resources */ = {isa = PBXBuildFile; fileRef = CE0A8A941656AA21001F491C /* CharacterPlace.wav */; };
+		CE0A8A971656AB5A001F491C /* RoundComplete.wav in Resources */ = {isa = PBXBuildFile; fileRef = CE0A8A961656AB5A001F491C /* RoundComplete.wav */; };
 		CE1477DB1604C32100C054B2 /* tile_test.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1477DA1604C32100C054B2 /* tile_test.json */; };
 		CE1BB78A16160ED900EBB61E /* classic_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78916160ED900EBB61E /* classic_colors.json */; };
 		CE1BB78D1616189F00EBB61E /* square_plus_one.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78C1616189F00EBB61E /* square_plus_one.json */; };
@@ -359,7 +364,6 @@
 		CEF064A215F51B180061C872 /* refresh_d.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A015F51B180061C872 /* refresh_d.png */; };
 		CEF064A315F51B180061C872 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A115F51B180061C872 /* refresh.png */; };
 		CEF064A515F521AF0061C872 /* hello_bridges.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A415F521AF0061C872 /* hello_bridges.json */; };
-		CEF09587165404510026C287 /* Undo.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEF09586165404510026C287 /* Undo.wav */; };
 		CEF0958A165404840026C287 /* Restart.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEF09589165404840026C287 /* Restart.wav */; };
 		CEF0958C165409420026C287 /* Advance.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEF0958B165409420026C287 /* Advance.wav */; };
 		CEF0958E165409500026C287 /* Regress.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEF0958D165409500026C287 /* Regress.wav */; };
@@ -370,6 +374,11 @@
 		CE00533416413AA000A99DFD /* color_out.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_out.json; sourceTree = "<group>"; };
 		CE005336164148F800A99DFD /* triangle_jump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle_jump.json; sourceTree = "<group>"; };
 		CE0298C01624B4300028274B /* tic_tac_toe_two.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tic_tac_toe_two.json; sourceTree = "<group>"; };
+		CE0A8A8E1656A9FF001F491C /* Undo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Undo.wav; sourceTree = "<group>"; };
+		CE0A8A901656AA0B001F491C /* RideSubway.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = RideSubway.wav; sourceTree = "<group>"; };
+		CE0A8A921656AA16001F491C /* Error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Error.wav; sourceTree = "<group>"; };
+		CE0A8A941656AA21001F491C /* CharacterPlace.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CharacterPlace.wav; sourceTree = "<group>"; };
+		CE0A8A961656AB5A001F491C /* RoundComplete.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = RoundComplete.wav; sourceTree = "<group>"; };
 		CE1477DA1604C32100C054B2 /* tile_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tile_test.json; sourceTree = "<group>"; };
 		CE1BB78916160ED900EBB61E /* classic_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = classic_colors.json; sourceTree = "<group>"; };
 		CE1BB78C1616189F00EBB61E /* square_plus_one.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square_plus_one.json; sourceTree = "<group>"; };
@@ -930,7 +939,6 @@
 		CEF064A015F51B180061C872 /* refresh_d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh_d.png; sourceTree = "<group>"; };
 		CEF064A115F51B180061C872 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		CEF064A415F521AF0061C872 /* hello_bridges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hello_bridges.json; sourceTree = "<group>"; };
-		CEF09586165404510026C287 /* Undo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Undo.wav; sourceTree = "<group>"; };
 		CEF09589165404840026C287 /* Restart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Restart.wav; sourceTree = "<group>"; };
 		CEF0958B165409420026C287 /* Advance.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Advance.wav; sourceTree = "<group>"; };
 		CEF0958D165409500026C287 /* Regress.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Regress.wav; sourceTree = "<group>"; };
@@ -1687,12 +1695,16 @@
 				CEF0958B165409420026C287 /* Advance.wav */,
 				CED8E36F1652D65A00116165 /* BridgeComplete.wav */,
 				CED8E3701652D65A00116165 /* BridgeCrossPartial.wav */,
+				CE0A8A941656AA21001F491C /* CharacterPlace.wav */,
 				CED8E3751652D66B00116165 /* ColourChange.wav */,
+				CE0A8A921656AA16001F491C /* Error.wav */,
 				CED8E3761652D66B00116165 /* HouseVisitComplete.wav */,
 				CED8E3771652D66B00116165 /* HouseVisitPartial.wav */,
 				CEF0958D165409500026C287 /* Regress.wav */,
 				CEF09589165404840026C287 /* Restart.wav */,
-				CEF09586165404510026C287 /* Undo.wav */,
+				CE0A8A901656AA0B001F491C /* RideSubway.wav */,
+				CE0A8A961656AB5A001F491C /* RoundComplete.wav */,
+				CE0A8A8E1656A9FF001F491C /* Undo.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -2019,7 +2031,6 @@
 				CED8E37A1652D66B00116165 /* HouseVisitPartial.wav in Resources */,
 				CEDDD7A51653C9FF0019ED9E /* icon-144.png in Resources */,
 				CEDDD7A81653CB990019ED9E /* iTunesArtwork@1024 in Resources */,
-				CEF09587165404510026C287 /* Undo.wav in Resources */,
 				CEF0958A165404840026C287 /* Restart.wav in Resources */,
 				CEF0958C165409420026C287 /* Advance.wav in Resources */,
 				CEF0958E165409500026C287 /* Regress.wav in Resources */,
@@ -2027,6 +2038,11 @@
 				CEC333071655702900DA25D6 /* soundoff@2x.png in Resources */,
 				CEC3330B1655703100DA25D6 /* soundon.png in Resources */,
 				CEC3330C1655703100DA25D6 /* soundon@2x.png in Resources */,
+				CE0A8A8F1656A9FF001F491C /* Undo.wav in Resources */,
+				CE0A8A911656AA0B001F491C /* RideSubway.wav in Resources */,
+				CE0A8A931656AA16001F491C /* Error.wav in Resources */,
+				CE0A8A951656AA21001F491C /* CharacterPlace.wav in Resources */,
+				CE0A8A971656AB5A001F491C /* RoundComplete.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

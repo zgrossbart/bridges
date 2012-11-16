@@ -971,6 +971,7 @@ CGFloat CGPointToDegree(CGPoint point) {
  */
 -(void) showConfetti: (float) x: (float) y
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"RoundComplete.wav"];
     self.emitter = [[CCParticleRain alloc] init];
     [self.emitter setScaleX:0.5];
     [self.emitter setScaleY:0.5];
@@ -1106,6 +1107,7 @@ CGFloat CGPointToDegree(CGPoint point) {
  * then we show the X icon with a little pulse animation.
  */
 -(void)showNoTapSprite: (CGPoint) p {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Error.wav"];
     CCSprite *x = [CCSprite spriteWithSpriteFrameName:@"x.png"];
     [_layerMgr addChildToSheet:x];
     
@@ -1135,6 +1137,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         [self jumpOut:location];
     } else if (_player == nil) {
         if (![self inObject:location]) {
+            [[SimpleAudioEngine sharedEngine] playEffect:@"CharacterPlace.wav"];
             [self spawnPlayer:location.x: location.y];
         } else {
             [self showNoTapSprite:location];

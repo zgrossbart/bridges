@@ -17,6 +17,7 @@
  ******************************************************************************/
 
 #import "SubwayNode.h"
+#import "SimpleAudioEngine.h"
 
 @interface SubwayNode()
 
@@ -85,6 +86,7 @@
 }
 
 -(CCSprite*)ride: (CCSprite*) entry {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"RideSubway.wav"];
     if (entry == self.subway1) {
         return self.subway2;
     } else if (entry == self.subway2) {
