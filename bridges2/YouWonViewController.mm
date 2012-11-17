@@ -61,21 +61,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated {
-    /*[UIView beginAnimations:@"View Flip" context:nil];
-    [UIView setAnimationDuration:0.80];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    
-    [UIView setAnimationTransition:
-     UIViewAnimationTransitionFlipFromRight
-                           forView:self.navigationController.view cache:NO];
-    
-    
-    //[self.navigationController pushViewController:menu animated:YES];
-    [UIView commitAnimations];
-    */
-    
     [StyleUtil animateView:self.view];
-    
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -104,7 +90,15 @@
          * Then we're at the end and we just go back to the menu
          */
         [self.navigationController popToRootViewControllerAnimated:NO];
-        [LevelMgr getLevelMgr].currentSet = self.currentSet + 1;
+        [LevelMgr getLevelMgr].showSetMenu = true;
+        if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+            /*
+             * If we're on the iPhone then we want to advance to the
+             * next menu section when the user presses next after winning
+             * the last level.
+             */
+            [LevelMgr getLevelMgr].currentSet = self.currentSet + 1;
+        }
     } else {
         NSString *key = [[LevelMgr getLevelSet:self.currentSet].levelIds objectAtIndex:i + 1];
         [self.layer setLevel:[[LevelMgr getLevelSet:self.currentSet].levels objectForKey:key]];

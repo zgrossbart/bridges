@@ -216,9 +216,11 @@
     [_collectionView reloadData];
     _xOfY.text = [self getXofY];
     
-    if ([LevelMgr getLevelMgr].currentSet > -1) {
+    if ([LevelMgr getLevelMgr].showSetMenu) {
+        [LevelMgr getLevelMgr].showSetMenu = false;
         [self playTapped:nil];
     }
+    
     
     [self.sectionViewController refresh];
     [self.pageViewController refresh];

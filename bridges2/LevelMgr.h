@@ -64,6 +64,13 @@
 @property (readwrite) int currentSet;
 
 /**
+ * This variable is kind of a hack.  The level manager shouldn't know anything
+ * about the UI that drives the game, but it's an easy shared object to communicate
+ * between the you won view and the main menu controller.
+ */
+@property (readwrite) bool showSetMenu;
+
+/**
  * The array of sorted level sets.
  */
 @property (readonly,copy) NSArray *levelSets;
