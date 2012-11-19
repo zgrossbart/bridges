@@ -81,7 +81,6 @@
     for (NSString *file in sounds) {
         if ([file hasSuffix:@".m4a"]) {
             [[SimpleAudioEngine sharedEngine] preloadEffect:path];
-            NSLog(@"preloading path: %@", path);
         }
     }
 }

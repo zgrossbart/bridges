@@ -66,7 +66,7 @@
     frame = [cache spriteFrameByName:[self getHighlightSpriteName]];
     [self.teleporter setDisplayFrame:frame];
     
-    int y = [LayerMgr normalizeYForControl:self.teleporter.position.y] + (_label.frame.size.height / 2) - 3;
+    int y = [LayerMgr normalizeYForControl:self.teleporter.position.y] + (_label.frame.size.height / 2) + 2;
     if (self.teleporter.position.y < [self.teleporter boundingBox].size.height) {
         /*
          * If this teleporter is close to the bottom of the screen
