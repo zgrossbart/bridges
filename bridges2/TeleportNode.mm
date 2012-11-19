@@ -18,6 +18,7 @@
 
 #import "TeleportNode.h"
 #import "StyleUtil.h"
+#import "SimpleAudioEngine.h"
 
 @interface TeleportNode()
 
@@ -54,6 +55,7 @@
 }
 
 -(void)jumpIn {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"TeleporterEnter.wav"];
     /*
      * When the player jumps into a teleporter we change to a 
      * highlight sprite to show which teleporter the player is 
@@ -86,6 +88,7 @@
 }
 
 -(void)jumpOut {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"TeleporterExit.wav"];
     /*
      * When the player jumps out of the teleporter we set back to 
      * the previous sprite without the highlight.
