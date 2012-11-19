@@ -55,7 +55,7 @@
 }
 
 -(void)jumpIn {
-    [[SimpleAudioEngine sharedEngine] playEffect:@"TeleporterEnter.wav"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"TeleporterEnter.m4a"];
     /*
      * When the player jumps into a teleporter we change to a 
      * highlight sprite to show which teleporter the player is 
@@ -88,7 +88,7 @@
 }
 
 -(void)jumpOut {
-    [[SimpleAudioEngine sharedEngine] playEffect:@"TeleporterExit.wav"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"TeleporterExit.m4a"];
     /*
      * When the player jumps out of the teleporter we set back to 
      * the previous sprite without the highlight.

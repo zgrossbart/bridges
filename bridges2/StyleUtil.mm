@@ -91,11 +91,11 @@
 }
 
 +(void)advance {
-    [[SimpleAudioEngine sharedEngine] playEffect:@"Advance.wav"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Advance.m4a"];
 }
 
 +(void)regress {
-    [[SimpleAudioEngine sharedEngine] playEffect:@"Regress.wav"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Regress.m4a"];
 }
 
 @end

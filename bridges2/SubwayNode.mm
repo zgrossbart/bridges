@@ -86,7 +86,7 @@
 }
 
 -(CCSprite*)ride: (CCSprite*) entry {
-    [[SimpleAudioEngine sharedEngine] playEffect:@"RideSubway.wav"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"RideSubway.m4a"];
     if (entry == self.subway1) {
         return self.subway2;
     } else if (entry == self.subway2) {

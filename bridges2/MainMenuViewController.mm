@@ -79,8 +79,9 @@
     NSArray *sounds = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&error];
     
     for (NSString *file in sounds) {
-        if ([file hasSuffix:@".wav"]) {
+        if ([file hasSuffix:@".m4a"]) {
             [[SimpleAudioEngine sharedEngine] preloadEffect:path];
+            NSLog(@"preloading path: %@", path);
         }
     }
 }

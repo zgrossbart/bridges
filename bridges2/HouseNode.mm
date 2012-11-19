@@ -109,11 +109,11 @@
 
 -(void)visit {
     if (self.coins > 0) {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"HouseVisitPartial.wav"];
+        [[SimpleAudioEngine sharedEngine] playEffect:@"HouseVisitPartial.m4a"];
         self.coins--;
         _label.text = [NSString stringWithFormat:@"%i", self.coins];
     } else {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"HouseVisitComplete.wav"];
+        [[SimpleAudioEngine sharedEngine] playEffect:@"HouseVisitComplete.m4a"];
     }
     
     if (self.coins == 0 && !self.visited) {

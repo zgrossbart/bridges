@@ -198,11 +198,11 @@
 -(void)cross {
     
     if (self.coins > 0) {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"BridgeCrossPartial.wav"];
+        [[SimpleAudioEngine sharedEngine] playEffect:@"BridgeCrossPartial.m4a"];
         self.coins--;
         _label.text = [NSString stringWithFormat:@"%i", self.coins];
     } else {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"BridgeComplete.wav"];
+        [[SimpleAudioEngine sharedEngine] playEffect:@"BridgeComplete.m4a"];
     }
     
     if (self.coins == 0 && !self.crossed) {

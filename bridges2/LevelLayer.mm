@@ -206,7 +206,7 @@
         return;
     }
     
-    [[SimpleAudioEngine sharedEngine] playEffect:@"Undo.wav"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Undo.m4a"];
     
     Undoable *undo = [self.undoStack objectAtIndex:self.undoStack.count - 1];
     
@@ -230,7 +230,7 @@
 }
 
 -(void)refresh {
-    [[SimpleAudioEngine sharedEngine] playEffect:@"Restart.wav"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Restart.m4a"];
     [self reset];
     Level *level = self.currentLevel;
     self.currentLevel = nil;
@@ -772,7 +772,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     [bridge enterBridge:_bridgeEntry];
     
     if (bridge.color != cNone) {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"ColourChange.wav"];
+        [[SimpleAudioEngine sharedEngine] playEffect:@"ColourChange.m4a"];
         [_player updateColor:bridge.color];
     }
 }
@@ -861,7 +861,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     _canVisit = true;
     
     if (bridge.color != cNone) {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"ColourChange.wav"];
+        [[SimpleAudioEngine sharedEngine] playEffect:@"ColourChange.m4a"];
         [_player updateColor:bridge.color];
     }
     
@@ -971,7 +971,7 @@ CGFloat CGPointToDegree(CGPoint point) {
  */
 -(void) showConfetti: (float) x: (float) y
 {
-    [[SimpleAudioEngine sharedEngine] playEffect:@"RoundComplete.wav"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"RoundComplete.m4a"];
     self.emitter = [[CCParticleRain alloc] init];
     [self.emitter setScaleX:0.5];
     [self.emitter setScaleY:0.5];
@@ -1107,7 +1107,7 @@ CGFloat CGPointToDegree(CGPoint point) {
  * then we show the X icon with a little pulse animation.
  */
 -(void)showNoTapSprite: (CGPoint) p {
-    [[SimpleAudioEngine sharedEngine] playEffect:@"Error.wav"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"Error.m4a"];
     CCSprite *x = [CCSprite spriteWithSpriteFrameName:@"x.png"];
     [_layerMgr addChildToSheet:x];
     
@@ -1137,7 +1137,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         [self jumpOut:location];
     } else if (_player == nil) {
         if (![self inObject:location]) {
-            [[SimpleAudioEngine sharedEngine] playEffect:@"CharacterPlace.wav"];
+            [[SimpleAudioEngine sharedEngine] playEffect:@"CharacterPlace.m4a"];
             [self spawnPlayer:location.x: location.y];
         } else {
             [self showNoTapSprite:location];
