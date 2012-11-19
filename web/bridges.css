@@ -60,3 +60,12 @@ p.imageBlock {
 p.imageBlock img {
 	max-width:95%;
 }
+
+div.videoBlock {
+	background: transparent url('iphone_frame.png') no-repeat scroll center center;
+	width: 431px;
+	height: 316px;
+	padding-left: 43px;
+	padding-top: 50px;
+	margin: 0 auto;
+}
