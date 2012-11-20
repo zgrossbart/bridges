@@ -1122,6 +1122,10 @@ CGFloat CGPointToDegree(CGPoint point) {
 }
 -(void)ccTouchesEnded:(NSSet*) touches withEvent:(UIEvent*) event {
     
+    if ([self.currentLevel hasWon]) {
+        return;
+    }
+    
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:[touch view]];
     location = [[CCDirector sharedDirector] convertToGL:location];
