@@ -7,8 +7,8 @@
                 "x": "22",
                 "y": "27",
                 "w": "16",
-                "h": "14",
-                "text": "Keep crossing the bridges until the counter gets to zero.\n\nEach cross costs one coin."
+                "h": "20",
+                "text": "Keep crossing the bridges until the counter gets to zero.\n\nEach cross costs one coin.\n\nYou can only visit a house if you're the same color."
             }
         ],
         "rivers": [
@@ -49,7 +49,7 @@
             },
             {
                 "x": "28",
-                "y": "10",
+                "y": "2",
                 "color": "red",
                 "coins": "1"
             }
