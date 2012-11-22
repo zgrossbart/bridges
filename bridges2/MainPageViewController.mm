@@ -108,6 +108,7 @@
 }
 
 -(void)setViewDetails: (MainSectionViewController*) controller page:(int)page {
+    controller.playBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     if ([[LevelMgr getLevelMgr].levelSets count] == page) {
         controller.label.text = @"More levels are coming soon";
         [controller.playBtn setImage:[UIImage imageNamed: @"more.png"] forState:UIControlStateNormal];
