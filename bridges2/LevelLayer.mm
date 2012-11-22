@@ -1145,7 +1145,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             [self spawnPlayer:location.x: location.y];
         } else {
             [self showNoTapSprite:location];
-            [self.controller showMessage:@"Start in an open space"];
+            [self.controller showMessage:@"You can't start on top of something"];
         }
     } else {
         _inCross = false;
