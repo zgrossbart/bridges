@@ -55,6 +55,18 @@
     
     _pageControl.numberOfPages = [[LevelMgr getLevelMgr].levelSets count] + 1;
     _pageControl.currentPage = 0;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults integerForKey:@"currentLevelSet"] > 0) {
+        _pageControl.currentPage = [defaults integerForKey:@"currentLevelSet"];
+        
+        for (int i = 0; i < _pageControl.currentPage; i++) {
+            [self loadScrollViewWithPage:i];
+            
+        }
+        
+        [self pageChanged:nil];
+    }
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)sender {
@@ -117,6 +129,13 @@
         [controller.playBtn setImage:[UIImage imageNamed: [LevelMgr getLevelSet:page].imageName] forState:UIControlStateNormal];
         if ([self hasWon:[LevelMgr getLevelSet:page]]) {
             [controller.checkMark setImage:[UIImage imageNamed:@"green_check.png"]];
+        }
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if (page == [defaults integerForKey:@"currentLevelSet"]) {
+            controller.label.font = [UIFont fontWithName:@"Avenir-Black" size:16];
+        } else {
+            controller.label.font = [UIFont fontWithName:@"Avenir-Book" size:16];
         }
     }
 }

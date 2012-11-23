@@ -136,6 +136,13 @@
         
         cell.screenshot.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
         cell.titleLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if (index == [defaults integerForKey:@"currentLevelSet"]) {
+            cell.titleLabel.font = [UIFont fontWithName:@"Avenir-Black" size:16];
+        } else {
+            cell.titleLabel.font = [UIFont fontWithName:@"Avenir-Book" size:16];
+        }
     }
     
     return cell;
