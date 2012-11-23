@@ -85,6 +85,8 @@
     [StyleUtil advance];
     int i = [[LevelMgr getLevelSet:self.currentSet].levelIds indexOfObject:self.currentLevel.levelId];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     if (i == [[LevelMgr getLevelSet:self.currentSet].levelIds count] - 1) {
         /* 
          * Then we're at the end and we just go back to the menu
@@ -99,10 +101,16 @@
              */
             [LevelMgr getLevelMgr].currentSet = self.currentSet + 1;
         }
+        
+        [defaults setNilValueForKey:@"currentLevelSet"];
+        [defaults setNilValueForKey:@"currentLevelKey"];
     } else {
         NSString *key = [[LevelMgr getLevelSet:self.currentSet].levelIds objectAtIndex:i + 1];
         [self.layer setLevel:[[LevelMgr getLevelSet:self.currentSet].levels objectForKey:key]];
         [self.navigationController popViewControllerAnimated:NO];
+        
+        [defaults setInteger:self.currentSet forKey:@"currentLevelSet"];
+        [defaults setObject:key forKey:@"currentLevelKey"];
     }
     
 }

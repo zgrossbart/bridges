@@ -114,6 +114,10 @@
         self.GameSceneViewController = [[[GameSceneViewController alloc] initWithNibName:nil bundle:nil] autorelease];
     }
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:self.currentSet forKey:@"currentLevelSet"];
+    [defaults setObject:key forKey:@"currentLevelKey"];
+    
     [self.GameSceneViewController showLevel:self.currentSet: [LevelMgr getLevel:self.currentSet :key]];
     [self.navigationController pushViewController:_GameSceneViewController animated:NO];
 }
@@ -173,7 +177,13 @@
     NSMutableString *name = [NSString stringWithFormat:@"%d. %@", [levelId intValue] + 1, [LevelMgr getLevel:self.currentSet :levelId].name];
     
     cell.textLabel.text = name;
-    cell.textLabel.font = [UIFont fontWithName:@"Avenir Book" size:16];
+    
+    if ([levelId isEqualToString:[defaults objectForKey:@"currentLevelKey"]] &&
+        self.currentSet == [defaults integerForKey:@"currentLevelSet"]) {
+        cell.textLabel.font = [UIFont fontWithName:@"Avenir-Black" size:16];
+    } else {
+        cell.textLabel.font = [UIFont fontWithName:@"Avenir-Book" size:16];
+    }
     
     return cell;
 }
@@ -431,6 +441,13 @@
             [cell.checkMark setImage:nil];
         }
         [cell setBorderVisible:true];
+        
+        if ([levelId isEqualToString:[defaults objectForKey:@"currentLevelKey"]] &&
+            self.currentSet == [defaults integerForKey:@"currentLevelSet"]) {
+            cell.titleLabel.font = [UIFont fontWithName:@"Avenir-Black" size:16];
+        } else {
+            cell.titleLabel.font = [UIFont fontWithName:@"Avenir-Book" size:16];
+        }
     }
     
     // Return the cell
