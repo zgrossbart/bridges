@@ -585,6 +585,7 @@
         _inMove = false;
         self.undoBtn.enabled = YES;
         _canVisit = true;
+        _inRide = false;
     } else {
         _inJump = true;
         _inMove = true;
@@ -595,7 +596,7 @@
 
 
 -(void)teleportJump:(CCSprite *) player:(CCSprite*) teleport {
-    if (_inMove) {
+    if (_inMove || _inRide) {
         return;
     }
     /*
@@ -604,6 +605,7 @@
     TeleportNode *node = [self findTeleport:teleport];
     
     if (_player.coins > 0 && (node.color == cNone || _player.color == node.color)) {
+        
         [self.undoStack addObject: [[[Undoable alloc] initWithPosAndNode:_prevPlayerPos node:node color:_player.color coins:_player.coins canVisit:_canVisit] autorelease]];
         _undoBtn.enabled = YES;
         self.undoBtn.enabled = NO;
@@ -612,10 +614,16 @@
         self.coinLbl.text = [NSString stringWithFormat:@"%i", _player.coins];
         
         [node jumpIn];
+        _inRide = true;
         _teleporter = node;
         
         _inJump = true;
         _inMove = true;
+        
+        CCActionManager *mgr = [player actionManager];
+        [mgr pauseTarget:player];
+        [mgr removeAllActionsFromTarget:player];
+        [mgr resumeTarget:player];
         
         /*
          * When the player jumps into the teleporter we want to spin, shrink, and fade them
@@ -1132,13 +1140,13 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     _inMove = false;
     
-    if (_inRide || [self.player isMoving]) {
+    if (_inJump) {
+        [self jumpOut:location];
+    } else if (_inRide || [self.player isMoving]) {
         return;
     } else if (_inBridge) {
         [self finishCross4:location];
         return;
-    } else if (_inJump) {
-        [self jumpOut:location];
     } else if (_player == nil) {
         if (![self inObject:location]) {
             [[SimpleAudioEngine sharedEngine] playEffect:@"CharacterPlace.m4a"];
