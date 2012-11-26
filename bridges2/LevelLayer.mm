@@ -838,7 +838,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             }
             int y = (object.position.y + ([object boundingBox].size.height / 2)) -
             ([player boundingBox].size.height / 2);
-            location = ccp((object.position.x - 8) -([player boundingBox].size.width), y);
+            location = ccp((object.position.x - 6) -([player boundingBox].size.height), y);
         } else if (_playerStart.x + [player boundingBox].size.width < object.position.x + padding) {
             // Then the player is to the left of the bridge
             if (bridge.direction != dRight && bridge.direction != dNone) {
