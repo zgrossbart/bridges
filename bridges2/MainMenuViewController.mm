@@ -118,6 +118,7 @@
     [defaults setInteger:self.currentSet forKey:@"currentLevelSet"];
     [defaults setObject:key forKey:@"currentLevelKey"];
     
+    [defaults synchronize];
     [self.GameSceneViewController showLevel:self.currentSet: [LevelMgr getLevel:self.currentSet :key]];
     [self.navigationController pushViewController:_GameSceneViewController animated:NO];
 }
