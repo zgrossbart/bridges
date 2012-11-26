@@ -102,8 +102,9 @@
             [LevelMgr getLevelMgr].currentSet = self.currentSet + 1;
         }
         
-        [defaults setNilValueForKey:@"currentLevelSet"];
-        [defaults setNilValueForKey:@"currentLevelKey"];
+        [defaults removeObjectForKey:@"currentLevelSet"];
+        [defaults removeObjectForKey:@"currentLevelKey"];
+        [defaults synchronize];
     } else {
         NSString *key = [[LevelMgr getLevelSet:self.currentSet].levelIds objectAtIndex:i + 1];
         [self.layer setLevel:[[LevelMgr getLevelSet:self.currentSet].levels objectForKey:key]];
