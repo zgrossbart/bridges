@@ -11,7 +11,6 @@
 		CE00533516413AA000A99DFD /* color_out.json in Resources */ = {isa = PBXBuildFile; fileRef = CE00533416413AA000A99DFD /* color_out.json */; };
 		CE005337164148F800A99DFD /* triangle_jump.json in Resources */ = {isa = PBXBuildFile; fileRef = CE005336164148F800A99DFD /* triangle_jump.json */; };
 		CE028465165ABA7400385DDA /* Advance.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CE028455165AB3D300385DDA /* Advance.m4a */; };
-		CE028466165ABA7400385DDA /* BridgeComplete.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CE028456165AB3D300385DDA /* BridgeComplete.m4a */; };
 		CE028467165ABA7400385DDA /* BridgeCrossPartial.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CE028457165AB3D300385DDA /* BridgeCrossPartial.m4a */; };
 		CE028468165ABA7400385DDA /* CharacterPlace.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CE028458165AB3D300385DDA /* CharacterPlace.m4a */; };
 		CE028469165ABA7400385DDA /* ColourChange.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CE028459165AB3D300385DDA /* ColourChange.m4a */; };
@@ -26,6 +25,7 @@
 		CE028472165ABA7400385DDA /* TeleporterExit.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CE028462165AB3D300385DDA /* TeleporterExit.m4a */; };
 		CE028473165ABA7400385DDA /* Undo.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CE028463165AB3D300385DDA /* Undo.m4a */; };
 		CE0298C11624B4300028274B /* tic_tac_toe_two.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0298C01624B4300028274B /* tic_tac_toe_two.json */; };
+		CE1229AE1663A56000E6DA36 /* BridgeComplete.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CE1229AD1663A4B900E6DA36 /* BridgeComplete.m4a */; };
 		CE1477DB1604C32100C054B2 /* tile_test.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1477DA1604C32100C054B2 /* tile_test.json */; };
 		CE1BB78A16160ED900EBB61E /* classic_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78916160ED900EBB61E /* classic_colors.json */; };
 		CE1BB78D1616189F00EBB61E /* square_plus_one.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78C1616189F00EBB61E /* square_plus_one.json */; };
@@ -376,7 +376,6 @@
 		CE00533416413AA000A99DFD /* color_out.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color_out.json; sourceTree = "<group>"; };
 		CE005336164148F800A99DFD /* triangle_jump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle_jump.json; sourceTree = "<group>"; };
 		CE028455165AB3D300385DDA /* Advance.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Advance.m4a; sourceTree = "<group>"; };
-		CE028456165AB3D300385DDA /* BridgeComplete.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = BridgeComplete.m4a; sourceTree = "<group>"; };
 		CE028457165AB3D300385DDA /* BridgeCrossPartial.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = BridgeCrossPartial.m4a; sourceTree = "<group>"; };
 		CE028458165AB3D300385DDA /* CharacterPlace.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = CharacterPlace.m4a; sourceTree = "<group>"; };
 		CE028459165AB3D300385DDA /* ColourChange.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColourChange.m4a; sourceTree = "<group>"; };
@@ -391,6 +390,7 @@
 		CE028462165AB3D300385DDA /* TeleporterExit.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = TeleporterExit.m4a; sourceTree = "<group>"; };
 		CE028463165AB3D300385DDA /* Undo.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Undo.m4a; sourceTree = "<group>"; };
 		CE0298C01624B4300028274B /* tic_tac_toe_two.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tic_tac_toe_two.json; sourceTree = "<group>"; };
+		CE1229AD1663A4B900E6DA36 /* BridgeComplete.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = BridgeComplete.m4a; sourceTree = "<group>"; };
 		CE1477DA1604C32100C054B2 /* tile_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tile_test.json; sourceTree = "<group>"; };
 		CE1BB78916160ED900EBB61E /* classic_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = classic_colors.json; sourceTree = "<group>"; };
 		CE1BB78C1616189F00EBB61E /* square_plus_one.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square_plus_one.json; sourceTree = "<group>"; };
@@ -1697,7 +1697,7 @@
 			isa = PBXGroup;
 			children = (
 				CE028455165AB3D300385DDA /* Advance.m4a */,
-				CE028456165AB3D300385DDA /* BridgeComplete.m4a */,
+				CE1229AD1663A4B900E6DA36 /* BridgeComplete.m4a */,
 				CE028457165AB3D300385DDA /* BridgeCrossPartial.m4a */,
 				CE028458165AB3D300385DDA /* CharacterPlace.m4a */,
 				CE028459165AB3D300385DDA /* ColourChange.m4a */,
@@ -1872,7 +1872,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE028465165ABA7400385DDA /* Advance.m4a in Resources */,
-				CE028466165ABA7400385DDA /* BridgeComplete.m4a in Resources */,
 				CE028467165ABA7400385DDA /* BridgeCrossPartial.m4a in Resources */,
 				CE028468165ABA7400385DDA /* CharacterPlace.m4a in Resources */,
 				CE028469165ABA7400385DDA /* ColourChange.m4a in Resources */,
@@ -1883,6 +1882,7 @@
 				CE02846E165ABA7400385DDA /* Restart.m4a in Resources */,
 				CE02846F165ABA7400385DDA /* RideSubway.m4a in Resources */,
 				CE028470165ABA7400385DDA /* RoundComplete.m4a in Resources */,
+				CE1229AE1663A56000E6DA36 /* BridgeComplete.m4a in Resources */,
 				CE028471165ABA7400385DDA /* TeleporterEnter.m4a in Resources */,
 				CE028472165ABA7400385DDA /* TeleporterExit.m4a in Resources */,
 				CE028473165ABA7400385DDA /* Undo.m4a in Resources */,
