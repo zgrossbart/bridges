@@ -69,3 +69,21 @@ div.videoBlock {
 	padding-top: 50px;
 	margin: 0 auto;
 }
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	color: #29aae7;
+}
+
+#buylink {
+	background: transparent url('icon.png') no-repeat scroll left center;
+	padding: 0px;
+	width: 450px;
+	margin: 20% auto 40%;
+	text-indent: 80px;
+	line-height: 80px;
+}
