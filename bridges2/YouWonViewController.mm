@@ -43,6 +43,8 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     [self styleButtons];
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_1024_768_River.png"]];
 }
 
 -(void)styleButtons {
