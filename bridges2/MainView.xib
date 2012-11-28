@@ -37,7 +37,7 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">319</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIImageView" id="498952561">
+					<object class="IBUIImageView" id="278537088">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{482, 300}</string>
@@ -183,7 +183,7 @@
 				<string key="NSFrame">{{0, 20}, {480, 300}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="498952561"/>
+				<reference key="NSNextKeyView" ref="278537088"/>
 				<reference key="IBUIBackgroundColor" ref="192603700"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
@@ -288,7 +288,7 @@
 							<reference ref="337762024"/>
 							<reference ref="163517255"/>
 							<reference ref="955297571"/>
-							<reference ref="498952561"/>
+							<reference ref="278537088"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -325,7 +325,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">27</int>
-						<reference key="object" ref="498952561"/>
+						<reference key="object" ref="278537088"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
