@@ -201,7 +201,7 @@
         [[SimpleAudioEngine sharedEngine] playEffect:@"BridgeCrossPartial.m4a"];
         self.coins--;
         _label.text = [NSString stringWithFormat:@"%i", self.coins];
-    } else {
+    } else if (self.color == cNone) {
         [[SimpleAudioEngine sharedEngine] playEffect:@"BridgeComplete.m4a"];
     }
     
