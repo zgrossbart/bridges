@@ -47,9 +47,8 @@ a:hover {
 
 #container {
     position: relative;
-    
     padding: 25px;
-    background: white;
+    background: rgb(250,250,240);
 }
 
 #expl {
@@ -123,11 +122,9 @@ span.level span {
 }
 
 #credits {
-position: relative;
-    
-padding: 25px;
-background: white;
-	
+	position: relative;
+	padding: 25px;
+	background: white;
 }
 
 div.left {
