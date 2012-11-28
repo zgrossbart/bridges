@@ -29,6 +29,7 @@
     IBOutlet UIButton *_menuButton;
     IBOutlet UIButton *_replayButton;
     IBOutlet UIButton *_nextButton;
+    IBOutlet UILabel *_xOfY;
 }
 
 /**

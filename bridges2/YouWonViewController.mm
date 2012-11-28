@@ -51,6 +51,23 @@
     [StyleUtil styleMenuButton:_nextButton];
     [StyleUtil styleMenuButton:_menuButton];
     [StyleUtil styleMenuButton:_replayButton];
+    
+    _xOfY.text = [self getXofY];
+    [StyleUtil styleLabel:_xOfY];
+}
+
+-(NSString*)getXofY {
+    int x = 0;
+    int y = [[LevelMgr getLevelSet:self.currentSet].levelIds count];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    for (NSString *levelId in [LevelMgr getLevelSet:self.currentSet].levelIds) {
+        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", [LevelMgr getLevel:self.currentSet :levelId].fileName]]) {
+            x ++;
+        }
+    }
+    
+    return [NSString stringWithFormat:@"%d of %d", x, y];
 }
 
 
@@ -67,6 +84,7 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
+    _xOfY.text = [self getXofY];
     self.view.alpha = 0;
     [UIView beginAnimations:@"fade in" context:nil];
     [UIView setAnimationDuration:0.5];
@@ -128,6 +146,7 @@
     [_nextButton release];
     [_replayButton release];
     [_menuButton release];
+    [_xOfY release];
     [super dealloc];
 }
 @end
