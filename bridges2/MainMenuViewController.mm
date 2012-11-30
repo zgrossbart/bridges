@@ -236,6 +236,17 @@
     [self.sectionViewController refresh];
     [self.pageViewController refresh];
     [self updateSoundButtonImage];
+   
+    /*
+     * There's no automatic way to load a special image for the iPhone 5 and
+     * we want a wider image for the background on the wider phone so we need
+     * to load it programmatically.
+     */
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad &&
+        [[UIScreen mainScreen] bounds].size.height == 568) {
+        [_mainImage setImage:[UIImage imageNamed:@"launch_iphone-568.png"]];
+        _mainImage.contentMode = UIViewContentModeTopLeft;
+    }
     
     [StyleUtil animateView:self.view];
 }
@@ -509,6 +520,7 @@
     [_levelSetLabel release];
     [_soundBtn release];
     [_soundBtn release];
+    [_mainImage release];
     [super dealloc];
 }
 
