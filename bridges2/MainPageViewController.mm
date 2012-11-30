@@ -47,7 +47,7 @@
     [StyleUtil styleMenuButton:self.backBtn];
     
 	_scrollView.pagingEnabled = YES;
-    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * ([[LevelMgr getLevelMgr].levelSets count] + 1), _scrollView.frame.size.height);
+    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * ([[LevelMgr getLevelMgr].levelSets count]), _scrollView.frame.size.height);
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.scrollsToTop = NO;
@@ -55,18 +55,6 @@
     
     _pageControl.numberOfPages = [[LevelMgr getLevelMgr].levelSets count] + 1;
     _pageControl.currentPage = 0;
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults integerForKey:@"currentLevelSet"] > 0) {
-        _pageControl.currentPage = [defaults integerForKey:@"currentLevelSet"];
-        
-        for (int i = 0; i < _pageControl.currentPage; i++) {
-            [self loadScrollViewWithPage:i];
-            
-        }
-        
-        [self pageChanged:nil];
-    }
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)sender {
