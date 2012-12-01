@@ -47,7 +47,7 @@
     [StyleUtil styleMenuButton:self.backBtn];
     
 	_scrollView.pagingEnabled = YES;
-    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * ([[LevelMgr getLevelMgr].levelSets count]), _scrollView.frame.size.height);
+    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * ([[LevelMgr getLevelMgr].levelSets count] + 1), _scrollView.frame.size.height);
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.scrollsToTop = NO;
