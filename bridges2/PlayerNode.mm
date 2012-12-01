@@ -38,15 +38,15 @@
         _tag = PLAYER;
         self.color = color;
         if (color == cRed) {
-            [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_red.png"]];
+            [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"player1_red.png"]];
         } else if (color == cBlue) {
-            [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_blue.png"]];
+            [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"player1_blue.png"]];
         } else if (color == cGreen) {
-            [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_green.png"]];
+            [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"player1_green.png"]];
         } else if (color == cOrange) {
-            [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1_orange.png"]];
+            [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"player1_orange.png"]];
         } else {
-            [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"octopus1.png"]];
+            [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"player1.png"]];
         }
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {

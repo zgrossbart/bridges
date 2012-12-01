@@ -2,7 +2,7 @@
 <data version="1.0">
     <struct type="Settings">
         <key>fileFormatVersion</key>
-        <int>1</int>
+        <int>0</int>
         <key>variation</key>
         <string>main</string>
         <key>verbose</key>
@@ -22,7 +22,7 @@
         <key>dataFormat</key>
         <string>cocos2d</string>
         <key>textureFileName</key>
-        <filename>../bridges2/bridgesprites.pvr.gz</filename>
+        <filename>../bridges2/bridgesprites-ipadhd.pvr.gz</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -44,7 +44,7 @@
         <key>jpgQuality</key>
         <uint>80</uint>
         <key>pngOptimizationLevel</key>
-        <uint>2</uint>
+        <uint>0</uint>
         <key>textureSubPath</key>
         <string></string>
         <key>textureFormat</key>
@@ -99,7 +99,7 @@
             <key>packageName</key>
             <string>Texture</string>
             <key>javaFileName</key>
-            <filename>bridgesprites.java</filename>
+            <filename>../bridges2/bridgesprites-ipadhd.java</filename>
             <key>wrap</key>
             <struct type="AndEngineWrap">
                 <key>s</key>
@@ -111,7 +111,7 @@
             <enum type="AndEngine::MagFilter">MagLinear</enum>
         </struct>
         <key>dataFileName</key>
-        <filename>../bridges2/bridgesprites.plist</filename>
+        <filename>../bridges2/bridgesprites-ipadhd.plist</filename>
         <key>mainExtension</key>
         <string></string>
         <key>forceIdenticalLayout</key>
@@ -141,6 +141,7 @@
         </struct>
         <key>fileList</key>
         <array>
+            <filename>background_1024_768_River.png</filename>
             <filename>boat.png</filename>
             <filename>bridge_3_left.png</filename>
             <filename>bridge_3_right.png</filename>
@@ -200,6 +201,11 @@
             <filename>octopus3.png</filename>
             <filename>octopus4.png</filename>
             <filename>octopus5.png</filename>
+            <filename>player1_blue.png</filename>
+            <filename>player1_green.png</filename>
+            <filename>player1_orange.png</filename>
+            <filename>player1_red.png</filename>
+            <filename>player1.png</filename>
             <filename>river_h_3.png</filename>
             <filename>river_h_5.png</filename>
             <filename>river_h_11.png</filename>
@@ -216,6 +222,7 @@
             <filename>river_v_nb.png</filename>
             <filename>river_v_r.png</filename>
             <filename>river_v_tl.png</filename>
+            <filename>river_v_ul.png</filename>
             <filename>river_v_ur.png</filename>
             <filename>river_v.png</filename>
             <filename>subway_blue.png</filename>
@@ -223,24 +230,17 @@
             <filename>subway_orange.png</filename>
             <filename>subway_red.png</filename>
             <filename>subway.png</filename>
-            <filename>x.png</filename>
-            <filename>background_1024_768_River.png</filename>
-            <filename>teleport_blue.png</filename>
-            <filename>teleport_green.png</filename>
-            <filename>teleport_orange.png</filename>
-            <filename>teleport_red.png</filename>
-            <filename>teleport.png</filename>
             <filename>teleport_blue_highlight.png</filename>
+            <filename>teleport_blue.png</filename>
             <filename>teleport_green_highlight.png</filename>
+            <filename>teleport_green.png</filename>
             <filename>teleport_highlight.png</filename>
             <filename>teleport_orange_highlight.png</filename>
+            <filename>teleport_orange.png</filename>
             <filename>teleport_red_highlight.png</filename>
-            <filename>player1_blue.png</filename>
-            <filename>player1_green.png</filename>
-            <filename>player1_orange.png</filename>
-            <filename>player1_red.png</filename>
-            <filename>player1.png</filename>
-            <filename>river_v_ul.png</filename>
+            <filename>teleport_red.png</filename>
+            <filename>teleport.png</filename>
+            <filename>x.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

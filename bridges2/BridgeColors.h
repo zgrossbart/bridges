@@ -103,4 +103,4 @@ static int const IPAD_LEVEL_IMAGE_H = 100;
  * second sprite sheet with the iPad sprites, but this is easier and makes
  * the download size of the app smaller.
  */
-static int const IPAD_SCALE_FACTOR = 2;
+static int const IPAD_SCALE_FACTOR = 1;

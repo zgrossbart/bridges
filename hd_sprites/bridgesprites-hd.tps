@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data version="1.0">
     <struct type="Settings">
+        <key>fileFormatVersion</key>
+        <int>1</int>
         <key>variation</key>
         <string>main</string>
         <key>verbose</key>
@@ -17,8 +19,6 @@
         <false/>
         <key>dpi</key>
         <uint>72</uint>
-        <key>allowFreeSize</key>
-        <false/>
         <key>dataFormat</key>
         <string>cocos2d</string>
         <key>textureFileName</key>
@@ -73,6 +73,12 @@
             <enum type="AlgorithmSettings::AlgorithmId">MaxRects</enum>
             <key>freeSizeMode</key>
             <enum type="AlgorithmSettings::AlgorithmFreeSizeMode">Best</enum>
+            <key>sizeConstraints</key>
+            <enum type="AlgorithmSettings::SizeConstraints">POT</enum>
+            <key>forceSquared</key>
+            <false/>
+            <key>forceWordAligned</key>
+            <false/>
             <key>maxRects</key>
             <struct type="AlgorithmMaxRectsSettings">
                 <key>heuristic</key>
@@ -122,16 +128,14 @@
             <double>1</double>
             <key>scaleMode</key>
             <enum type="ScaleMode">Smooth</enum>
-            <key>crop</key>
-            <false/>
             <key>innerPadding</key>
             <uint>0</uint>
             <key>extrude</key>
             <uint>0</uint>
             <key>trimThreshold</key>
             <uint>1</uint>
-            <key>trim</key>
-            <true/>
+            <key>trimMode</key>
+            <enum type="SpriteSettings::TrimMode">Trim</enum>
             <key>heuristicMask</key>
             <false/>
         </struct>
@@ -231,6 +235,17 @@
             <filename>teleport_highlight.png</filename>
             <filename>teleport_orange_highlight.png</filename>
             <filename>teleport_red_highlight.png</filename>
+            <filename>house_blue_visited.png</filename>
+            <filename>house_green_visited.png</filename>
+            <filename>house_orange_visited.png</filename>
+            <filename>house_red_visited.png</filename>
+            <filename>house_visited.png</filename>
+            <filename>player1_blue.png</filename>
+            <filename>player1_green.png</filename>
+            <filename>player1_orange.png</filename>
+            <filename>player1_red.png</filename>
+            <filename>player1.png</filename>
+            <filename>river_v_ul.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -25,6 +25,8 @@
 		CE028472165ABA7400385DDA /* TeleporterExit.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CE028462165AB3D300385DDA /* TeleporterExit.m4a */; };
 		CE028473165ABA7400385DDA /* Undo.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CE028463165AB3D300385DDA /* Undo.m4a */; };
 		CE0298C11624B4300028274B /* tic_tac_toe_two.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0298C01624B4300028274B /* tic_tac_toe_two.json */; };
+		CE0AAF4B166A9B110093F34E /* bridgesprites-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE0AAF49166A9B110093F34E /* bridgesprites-ipadhd.plist */; };
+		CE0AAF4C166A9B110093F34E /* bridgesprites-ipadhd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = CE0AAF4A166A9B110093F34E /* bridgesprites-ipadhd.pvr.gz */; };
 		CE1229AE1663A56000E6DA36 /* BridgeComplete.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CE1229AD1663A4B900E6DA36 /* BridgeComplete.m4a */; };
 		CE1477DB1604C32100C054B2 /* tile_test.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1477DA1604C32100C054B2 /* tile_test.json */; };
 		CE1BB78A16160ED900EBB61E /* classic_colors.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1BB78916160ED900EBB61E /* classic_colors.json */; };
@@ -394,6 +396,8 @@
 		CE028462165AB3D300385DDA /* TeleporterExit.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = TeleporterExit.m4a; sourceTree = "<group>"; };
 		CE028463165AB3D300385DDA /* Undo.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Undo.m4a; sourceTree = "<group>"; };
 		CE0298C01624B4300028274B /* tic_tac_toe_two.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tic_tac_toe_two.json; sourceTree = "<group>"; };
+		CE0AAF49166A9B110093F34E /* bridgesprites-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "bridgesprites-ipadhd.plist"; sourceTree = "<group>"; };
+		CE0AAF4A166A9B110093F34E /* bridgesprites-ipadhd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "bridgesprites-ipadhd.pvr.gz"; sourceTree = "<group>"; };
 		CE1229AD1663A4B900E6DA36 /* BridgeComplete.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = BridgeComplete.m4a; sourceTree = "<group>"; };
 		CE1477DA1604C32100C054B2 /* tile_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tile_test.json; sourceTree = "<group>"; };
 		CE1BB78916160ED900EBB61E /* classic_colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = classic_colors.json; sourceTree = "<group>"; };
@@ -1069,6 +1073,8 @@
 				CEE9ED0D16356FE200FF9FAC /* background_1024_768_River.png */,
 				CEBB885F160514D200538464 /* bridgesprites-hd.plist */,
 				CEBB8860160514D200538464 /* bridgesprites-hd.pvr.gz */,
+				CE0AAF49166A9B110093F34E /* bridgesprites-ipadhd.plist */,
+				CE0AAF4A166A9B110093F34E /* bridgesprites-ipadhd.pvr.gz */,
 				CEBB885B160514B700538464 /* bridgesprites.plist */,
 				CEBB885C160514B700538464 /* bridgesprites.pvr.gz */,
 				CED45E8215FB81EF0066F0FE /* coins.png */,
@@ -2075,6 +2081,8 @@
 				CE2CE8B41666467100C7A87E /* launch_iphone.png in Resources */,
 				CE2CE8B51666467100C7A87E /* launch_iphone@2x.png in Resources */,
 				CE2CE8B61666467100C7A87E /* launch_iphone-568.png in Resources */,
+				CE0AAF4B166A9B110093F34E /* bridgesprites-ipadhd.plist in Resources */,
+				CE0AAF4C166A9B110093F34E /* bridgesprites-ipadhd.pvr.gz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
