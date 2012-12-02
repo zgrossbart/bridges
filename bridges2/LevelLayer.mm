@@ -571,9 +571,6 @@
         [self.player.player runAction:[CCFadeIn actionWithDuration:0.25]];
         
         float scale = 1.0;
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            scale = IPAD_SCALE_FACTOR;
-        }
         
         [self.player.player runAction:[CCScaleTo actionWithDuration:0.5 scale:scale]];
         

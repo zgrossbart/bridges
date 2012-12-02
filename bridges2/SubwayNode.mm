@@ -40,11 +40,6 @@
         self.color = color;
         [self setSubwaySprite1:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
         [self setSubwaySprite2:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
-        
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            self.subway1.scale = IPAD_SCALE_FACTOR;
-            self.subway2.scale = IPAD_SCALE_FACTOR;
-        }
     }
     
     return self;

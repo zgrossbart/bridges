@@ -96,11 +96,3 @@ static int const IPHONE_LEVEL_IMAGE_H = 64;
  */
 static int const IPAD_LEVEL_IMAGE_W = 150;
 static int const IPAD_LEVEL_IMAGE_H = 100;
-
-/**
- * We scale up the node sprites on iPad since we have more room and the
- * larger sprites are a little easier to see.  We could just create a 
- * second sprite sheet with the iPad sprites, but this is easier and makes
- * the download size of the app smaller.
- */
-static int const IPAD_SCALE_FACTOR = 1;

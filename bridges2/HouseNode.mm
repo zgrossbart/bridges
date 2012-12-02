@@ -46,10 +46,6 @@
         self.visited = false;
         self.color = color;
         [self setHouseSprite:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            self.house.scale = IPAD_SCALE_FACTOR;
-        }
-        
         self.coins = coins;
         
         if (self.coins > 0) {
@@ -120,9 +116,6 @@
         self.visited = true;
         
         float scale = 1.0;
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            scale = IPAD_SCALE_FACTOR;
-        }
         
         /*
          * If this is the last visit to a house then we want to show

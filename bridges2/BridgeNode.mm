@@ -54,10 +54,6 @@
         self.direction = dir;
         
         [self setBridgeSprite:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            self.bridge.scale = IPAD_SCALE_FACTOR;
-        }
-        
         self.coins = coins;
         
         if (self.coins > 0) {

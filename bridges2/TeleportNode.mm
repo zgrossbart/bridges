@@ -41,10 +41,6 @@
         self.color = color;
         [self setTeleportSprite:[CCSprite spriteWithSpriteFrameName:[self getSpriteName]]];
         
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            self.teleporter.scale = IPAD_SCALE_FACTOR;
-        }
-        
         _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 16)];
         _label.text = [NSString stringWithFormat:@"Jump out"];
         [StyleUtil styleNodeLabel:_label];
