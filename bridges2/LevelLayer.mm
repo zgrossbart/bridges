@@ -901,7 +901,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     
-    float step = [player boundingBox].size.width * 1.6;
+    float step = [object boundingBox].size.width * 1.2;
     
     if (object.tag == SUBWAY) {
         /*
@@ -909,7 +909,7 @@ CGFloat CGPointToDegree(CGPoint point) {
          * need a larger space to make sure we move off of 
          * the sprite.
          */
-        step = [player boundingBox].size.width * 1.8;
+        step = [object boundingBox].size.width * 1.2;
     }
     
     _player.player.position = [self pointOnLine: _playerStart: _player.player.position: step];
