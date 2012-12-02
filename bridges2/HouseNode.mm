@@ -142,7 +142,17 @@
 -(void)setHousePosition:(CGPoint)p {
     self.house.position = ccp(p.x, p.y);
     if (_label != nil) {
-        _label.frame = CGRectMake(p.x + (self.house.scale * 3), ([LayerMgr normalizeYForControl:p.y] - _label.frame.size.height) - (self.house.scale * 3), _label.frame.size.width, _label.frame.size.height);
+        if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] &&
+            ([UIScreen mainScreen].scale == 2.0) &&
+            UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            /*
+             * The iPad retina uses very large icons and we need a little more space
+             * between the sprite and the label.
+             */
+            _label.frame = CGRectMake(p.x + (self.house.scale * 3) + 5, ([LayerMgr normalizeYForControl:p.y] - _label.frame.size.height) - (self.house.scale * 3) - 7, _label.frame.size.width, _label.frame.size.height);
+        } else {
+            _label.frame = CGRectMake(p.x + (self.house.scale * 3), ([LayerMgr normalizeYForControl:p.y] - _label.frame.size.height) - (self.house.scale * 3), _label.frame.size.width, _label.frame.size.height);
+        }
     }
 }
 
