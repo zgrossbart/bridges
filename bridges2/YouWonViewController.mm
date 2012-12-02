@@ -95,7 +95,6 @@
 
 
 -(IBAction)replayTapped:(id)sender {
-    [StyleUtil advance];
     [self.layer refresh];
     [self.navigationController popViewControllerAnimated:NO];
     
