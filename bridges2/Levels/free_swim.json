@@ -3,6 +3,16 @@
         "id": "56",
         "name": "Free swim",
         "rivers": [
+	        {
+	            "x": "8-32",
+	            "y": "5",
+	            "orient": "h"
+	        },
+	        {
+	            "x": "8-32",
+	            "y": "24",
+	            "orient": "h"
+	        },
             {
                 "x": "8",
                 "y": "5-24",
@@ -26,14 +36,28 @@
 				"side": "right"
             },
             {
-                "x": "8-32",
+                "x": "16",
                 "y": "5",
-                "orient": "h"
+                "orient": "h",
+				"border": "bottom"
             },
             {
-                "x": "8-32",
+                "x": "16",
                 "y": "24",
-                "orient": "h"
+                "orient": "h",
+				"border": "top"
+            },
+            {
+                "x": "24",
+                "y": "5",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "24",
+                "y": "24",
+                "orient": "h",
+				"border": "top"
             }
         ],
         "bridges": [
