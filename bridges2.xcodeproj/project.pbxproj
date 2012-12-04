@@ -375,6 +375,7 @@
 		CEF064A215F51B180061C872 /* refresh_d.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A015F51B180061C872 /* refresh_d.png */; };
 		CEF064A315F51B180061C872 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A115F51B180061C872 /* refresh.png */; };
 		CEF064A515F521AF0061C872 /* hello_bridges.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A415F521AF0061C872 /* hello_bridges.json */; };
+		CEF30E75166E269800E69E3C /* NewLevel.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CEF30E73166E25BF00E69E3C /* NewLevel.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -958,6 +959,7 @@
 		CEF064A015F51B180061C872 /* refresh_d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh_d.png; sourceTree = "<group>"; };
 		CEF064A115F51B180061C872 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		CEF064A415F521AF0061C872 /* hello_bridges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hello_bridges.json; sourceTree = "<group>"; };
+		CEF30E73166E25BF00E69E3C /* NewLevel.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewLevel.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1730,6 +1732,7 @@
 				CE02845A165AB3D300385DDA /* Error.m4a */,
 				CE02845B165AB3D300385DDA /* HouseVisitComplete.m4a */,
 				CE02845C165AB3D300385DDA /* HouseVisitPartial.m4a */,
+				CEF30E73166E25BF00E69E3C /* NewLevel.m4a */,
 				CE02845D165AB3D300385DDA /* Regress.m4a */,
 				CE02845E165AB3D300385DDA /* Restart.m4a */,
 				CE02845F165AB3D300385DDA /* RideSubway.m4a */,
@@ -1941,6 +1944,7 @@
 				CECDC54815F6C54000D266FD /* green_check.png in Resources */,
 				CECE688D15F750F70042A7DF /* house_by_river.json in Resources */,
 				CECE689015F752780042A7DF /* two_bridges.json in Resources */,
+				CEF30E75166E269800E69E3C /* NewLevel.m4a in Resources */,
 				CECE689215F754BA0042A7DF /* start_anywhere.json in Resources */,
 				CECE689415F75AE60042A7DF /* corners.json in Resources */,
 				CECE689D15F76E120042A7DF /* bullseye.json in Resources */,

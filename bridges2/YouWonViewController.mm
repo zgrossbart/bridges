@@ -101,7 +101,7 @@
 }
 
 -(IBAction)nextTapped:(id)sender {
-    [StyleUtil advance];
+    
     int i = [[LevelMgr getLevelSet:self.currentSet].levelIds indexOfObject:self.currentLevel.levelId];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -110,6 +110,7 @@
         /* 
          * Then we're at the end and we just go back to the menu
          */
+        [StyleUtil advance];
         [self.navigationController popToRootViewControllerAnimated:NO];
         [LevelMgr getLevelMgr].showSetMenu = true;
         if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
@@ -125,6 +126,7 @@
         [defaults removeObjectForKey:@"currentLevelKey"];
         [defaults synchronize];
     } else {
+        [StyleUtil newLevel];
         NSString *key = [[LevelMgr getLevelSet:self.currentSet].levelIds objectAtIndex:i + 1];
         [self.layer setLevel:[[LevelMgr getLevelSet:self.currentSet].levels objectForKey:key]];
         [self.navigationController popViewControllerAnimated:NO];

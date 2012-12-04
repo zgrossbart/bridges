@@ -68,4 +68,9 @@
  */
 +(void)regress;
 
+/**
+ * Play the new level sound.
+ */
++(void)newLevel;
+
 @end

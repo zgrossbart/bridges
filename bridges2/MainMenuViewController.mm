@@ -109,7 +109,7 @@
 }
 
 -(void)selectLevel:(NSString*) key {
-    [StyleUtil advance];
+    [StyleUtil newLevel];
     if (_GameSceneViewController == nil) {
         self.GameSceneViewController = [[[GameSceneViewController alloc] initWithNibName:nil bundle:nil] autorelease];
     }

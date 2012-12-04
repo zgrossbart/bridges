@@ -98,4 +98,8 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"Regress.m4a"];
 }
 
++(void)newLevel {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"NewLevel.m4a"];
+}
+
 @end
