@@ -50,12 +50,16 @@
         }
         
         NSMutableArray *walkAnimFrames = [NSMutableArray array];
-        for(int i = 1; i <= 5; ++i) {
-            [walkAnimFrames addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
-              [NSString stringWithFormat:@"octopus%d.png", i]]];
-        }
-        
+        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus1.png"]];
+        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus2.png"]];
+        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus3.png"]];
+        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus2.png"]];
+        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus1.png"]];
+        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus4.png"]];
+        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus5.png"]];
+        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus4.png"]];
+        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus1.png"]];
+                
         CCAnimation *walkAnim = [CCAnimation
                                  animationWithSpriteFrames:walkAnimFrames delay:0.1f];
         self.walkAction = [CCRepeatForever actionWithAction:

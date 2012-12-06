@@ -822,7 +822,7 @@ CGFloat CGPointToDegree(CGPoint point) {
                 return;
             }
             int x = (object.position.x + ([object boundingBox].size.width / 2)) - ([player boundingBox].size.width / 2);
-            location = ccp(x, (object.position.y) - ([player boundingBox].size.height + 6));
+            location = ccp(x, (object.position.y) - ([object boundingBox].size.height + 6));
         }
     } else {
         if (_playerStart.x > (object.position.x + [object boundingBox].size.width) - padding) {
