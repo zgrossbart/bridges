@@ -48,7 +48,6 @@
 		CE424A28163898E200FE61CE /* three_rivers_subway.json in Resources */ = {isa = PBXBuildFile; fileRef = CE424A27163898E200FE61CE /* three_rivers_subway.json */; };
 		CE424A2B16389A5900FE61CE /* subway_color.json in Resources */ = {isa = PBXBuildFile; fileRef = CE424A2A16389A5900FE61CE /* subway_color.json */; };
 		CE453BC715F174A900053407 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CE453BC615F174A900053407 /* JSONKit.m */; };
-		CE50FFB316137A8A00235E87 /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50FFB216137A8A00235E87 /* confetti.png */; };
 		CE50FFB81613932400235E87 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50FFB71613932400235E87 /* fire.png */; };
 		CE53D25B16060D090064F167 /* islands.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25A16060D090064F167 /* islands.json */; };
 		CE53D25E160612510064F167 /* squares.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25D160612510064F167 /* squares.json */; };
@@ -376,6 +375,8 @@
 		CEF064A315F51B180061C872 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A115F51B180061C872 /* refresh.png */; };
 		CEF064A515F521AF0061C872 /* hello_bridges.json in Resources */ = {isa = PBXBuildFile; fileRef = CEF064A415F521AF0061C872 /* hello_bridges.json */; };
 		CEF30E75166E269800E69E3C /* NewLevel.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CEF30E73166E25BF00E69E3C /* NewLevel.m4a */; };
+		CEF59A1A1670DA720091F94D /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF59A191670DA720091F94D /* confetti.png */; };
+		CEF59A1C1670DA860091F94D /* confetti@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF59A1B1670DA860091F94D /* confetti@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -421,7 +422,6 @@
 		CE424A2A16389A5900FE61CE /* subway_color.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = subway_color.json; sourceTree = "<group>"; };
 		CE453BC515F174A900053407 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		CE453BC615F174A900053407 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		CE50FFB216137A8A00235E87 /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
 		CE50FFB71613932400235E87 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
 		CE53D25A16060D090064F167 /* islands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = islands.json; sourceTree = "<group>"; };
 		CE53D25D160612510064F167 /* squares.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = squares.json; sourceTree = "<group>"; };
@@ -960,6 +960,8 @@
 		CEF064A115F51B180061C872 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		CEF064A415F521AF0061C872 /* hello_bridges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hello_bridges.json; sourceTree = "<group>"; };
 		CEF30E73166E25BF00E69E3C /* NewLevel.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewLevel.m4a; sourceTree = "<group>"; };
+		CEF59A191670DA720091F94D /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
+		CEF59A1B1670DA860091F94D /* confetti@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "confetti@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1080,7 +1082,8 @@
 				CEBB885B160514B700538464 /* bridgesprites.plist */,
 				CEBB885C160514B700538464 /* bridgesprites.pvr.gz */,
 				CED45E8215FB81EF0066F0FE /* coins.png */,
-				CE50FFB216137A8A00235E87 /* confetti.png */,
+				CEF59A191670DA720091F94D /* confetti.png */,
+				CEF59A1B1670DA860091F94D /* confetti@2x.png */,
 				CE303A84160B3D5000F1D3CD /* Default-568h@2x.png */,
 				CE6D65EB15EAC5FB00C7EDD7 /* Default-Landscape~ipad.png */,
 				CE6D65E915EAC5FB00C7EDD7 /* Default.png */,
@@ -1943,6 +1946,8 @@
 				CEF064A515F521AF0061C872 /* hello_bridges.json in Resources */,
 				CECDC54815F6C54000D266FD /* green_check.png in Resources */,
 				CECE688D15F750F70042A7DF /* house_by_river.json in Resources */,
+				CEF59A1C1670DA860091F94D /* confetti@2x.png in Resources */,
+				CEF59A1A1670DA720091F94D /* confetti.png in Resources */,
 				CECE689015F752780042A7DF /* two_bridges.json in Resources */,
 				CEF30E75166E269800E69E3C /* NewLevel.m4a in Resources */,
 				CECE689215F754BA0042A7DF /* start_anywhere.json in Resources */,
@@ -1974,7 +1979,6 @@
 				CE303A85160B3D5000F1D3CD /* Default-568h@2x.png in Resources */,
 				CE6BFB96160CADBD0037CFE4 /* MainMenuCollectionView.xib in Resources */,
 				CE6BFB9C160CB03B0037CFE4 /* LevelCell.xib in Resources */,
-				CE50FFB316137A8A00235E87 /* confetti.png in Resources */,
 				CE50FFB81613932400235E87 /* fire.png in Resources */,
 				CECCE9821615389A0091707C /* quilt.json in Resources */,
 				CE7F8328161600920012A4FA /* classic.json in Resources */,
