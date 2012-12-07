@@ -1,8 +1,7 @@
 {
     "level": {
-        "id": "57",
         "name": "Keep riding",
-		"coins": "5",
+		"coins": "7",
         "rivers": [
             {
                 "x": "10",
