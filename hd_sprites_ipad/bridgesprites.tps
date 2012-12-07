@@ -241,6 +241,22 @@
             <filename>teleport_red.png</filename>
             <filename>teleport.png</filename>
             <filename>x.png</filename>
+            <filename>octopus2_blue.png</filename>
+            <filename>octopus2_green.png</filename>
+            <filename>octopus2_orange.png</filename>
+            <filename>octopus2_red.png</filename>
+            <filename>octopus3_blue.png</filename>
+            <filename>octopus3_green.png</filename>
+            <filename>octopus3_orange.png</filename>
+            <filename>octopus3_red.png</filename>
+            <filename>octopus4_blue.png</filename>
+            <filename>octopus4_green.png</filename>
+            <filename>octopus4_orange.png</filename>
+            <filename>octopus4_red.png</filename>
+            <filename>octopus5_blue.png</filename>
+            <filename>octopus5_green.png</filename>
+            <filename>octopus5_orange.png</filename>
+            <filename>octopus5_red.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -49,21 +49,7 @@
             [self setPlayerSprite:[CCSprite spriteWithSpriteFrameName:@"player1.png"]];
         }
         
-        NSMutableArray *walkAnimFrames = [NSMutableArray array];
-        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus1.png"]];
-        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus2.png"]];
-        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus3.png"]];
-        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus2.png"]];
-        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus1.png"]];
-        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus4.png"]];
-        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus5.png"]];
-        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus4.png"]];
-        [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: @"octopus1.png"]];
-                
-        CCAnimation *walkAnim = [CCAnimation
-                                 animationWithSpriteFrames:walkAnimFrames delay:0.1f];
-        self.walkAction = [CCRepeatForever actionWithAction:
-                           [CCAnimate actionWithAnimation:walkAnim]];
+        [self createWalkAnimation:@""];
         
         _spriteBody = [_manager addChildToSheet:self.player:YES];
     }
@@ -73,6 +59,38 @@
 
 -(b2Body*)getSpriteBody {
     return _spriteBody;
+}
+
+/**
+ * When the player changes color we need to stop the walking animation in the 
+ * current color and create a new walking animation sequence with the new color.
+ *
+ * @param color thw new player color or an empty string if the player is black
+ */
+-(void)createWalkAnimation: (NSString*) color {
+    BOOL isActionDone = [_walkAction isDone];
+    
+    [_player stopAction:_walkAction];
+    
+    NSMutableArray *walkAnimFrames = [NSMutableArray array];
+    [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"octopus1%@.png", color]]];
+    [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"octopus2%@.png", color]]];
+    [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"octopus3%@.png", color]]];
+    [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"octopus2%@.png", color]]];
+    [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"octopus1%@.png", color]]];
+    [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"octopus4%@.png", color]]];
+    [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"octopus5%@.png", color]]];
+    [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"octopus4%@.png", color]]];
+    [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"octopus1%@.png", color]]];
+    
+    CCAnimation *walkAnim = [CCAnimation
+                             animationWithSpriteFrames:walkAnimFrames delay:0.1f];
+    self.walkAction = [CCRepeatForever actionWithAction:
+                       [CCAnimate actionWithAnimation:walkAnim]];
+    
+    if (isActionDone) {
+        [_player runAction:_walkAction];
+    }
 }
 
 -(void)playerMoveEnded {
@@ -101,15 +119,20 @@
     CCSpriteFrame* frame;
     
     if (color == cRed) {
-        frame = [cache spriteFrameByName:@"octopus1_red.png"];
+        frame = [cache spriteFrameByName:@"player1_red.png"];
+        [self createWalkAnimation:@"_red"];
     } else if (color == cBlue) {
-        frame = [cache spriteFrameByName:@"octopus1_blue.png"];
+        frame = [cache spriteFrameByName:@"player1_blue.png"];
+        [self createWalkAnimation:@"_blue"];
     } else if (color == cGreen) {
-        frame = [cache spriteFrameByName:@"octopus1_green.png"];
+        frame = [cache spriteFrameByName:@"player1_green.png"];
+        [self createWalkAnimation:@"_green"];
     } else if (color == cOrange) {
-        frame = [cache spriteFrameByName:@"octopus1_orange.png"];
+        frame = [cache spriteFrameByName:@"player1_orange.png"];
+        [self createWalkAnimation:@"_orange"];
     } else {
         frame = [cache spriteFrameByName:@"octopus1.png"];
+        [self createWalkAnimation:@""];
     }
     
     [self.player setDisplayFrame:frame];
@@ -192,6 +215,7 @@
      */
     
     self.player = nil;
+    
     self.walkAction = nil;
     
     [super dealloc];
