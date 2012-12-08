@@ -1003,7 +1003,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     // tagential
     self.emitter.tangentialAccel = 30;
-    self.emitter.tangentialAccelVar = 160;
+    self.emitter.tangentialAccelVar = 60;
     
     // life of particles
     self.emitter.life = 1;
@@ -1028,7 +1028,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     // size, in pixels
     self.emitter.startSize = 50.0f;
-    self.emitter.startSizeVar = 5.0f;
+    self.emitter.startSizeVar = 20.0f;
     self.emitter.endSize = kParticleStartSizeEqualToEndSize;
     // emits per second
     self.emitter.totalParticles = 250;
