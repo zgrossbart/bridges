@@ -21,6 +21,30 @@
                 "x": "25",
                 "y": "10-20",
                 "orient": "v"
+            },
+            {
+                "x": "10",
+                "y": "10",
+                "orient": "v",
+				"border": "left"
+            },
+            {
+                "x": "10",
+                "y": "20",
+                "orient": "v",
+				"border": "left"
+            },
+            {
+                "x": "25",
+                "y": "10",
+                "orient": "h",
+				"border": "bottom"
+            },
+            {
+                "x": "25",
+                "y": "20",
+                "orient": "h",
+				"border": "top"
             }
 			
         ],
