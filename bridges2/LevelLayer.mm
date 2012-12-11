@@ -811,7 +811,7 @@ CGFloat CGPointToDegree(CGPoint point) {
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
-            int x = (object.position.x + ([object boundingBox].size.width / 2)) - ([player boundingBox].size.width / 2);
+            int x = object.position.x;
             location = ccp(x, object.position.y + [object boundingBox].size.height + 5);
         } else if (_playerStart.y > (object.position.y + [object boundingBox].size.height) - padding) {
             // Then the player is above the bridge
@@ -821,7 +821,7 @@ CGFloat CGPointToDegree(CGPoint point) {
                 [self bumpObject:player :bridge.bridge];
                 return;
             }
-            int x = (object.position.x + ([object boundingBox].size.width / 2)) - ([player boundingBox].size.width / 2);
+            int x = object.position.x;
             location = ccp(x, (object.position.y) - ([object boundingBox].size.height + 6));
         }
     } else {
@@ -1067,7 +1067,7 @@ CGFloat CGPointToDegree(CGPoint point) {
  * an object and false otherwise.
  */
 -(bool)inObject:(CGPoint) p {
-    CGRect pRect = CGRectMake(p.x - (15), p.y - (15), 30, 30);
+    CGRect pRect = CGRectMake(p.x - (10), p.y - (10), 20, 20);
     
     for (BridgeNode *n in self.currentLevel.bridges) {
         if (CGRectIntersectsRect([n.bridge boundingBox], pRect)) {
