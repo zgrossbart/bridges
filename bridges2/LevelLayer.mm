@@ -898,7 +898,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     
-    float step = [object boundingBox].size.width * 1.2;
+    float step = [object boundingBox].size.width * 1.6;
     
     if (object.tag == SUBWAY) {
         /*
