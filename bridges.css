@@ -83,7 +83,11 @@ a:hover {
 	background: transparent url('icon.png') no-repeat scroll left center;
 	padding: 0px;
 	width: 450px;
-	margin: 20% auto 40%;
+	margin: 20% auto 0;
 	text-indent: 80px;
 	line-height: 80px;
+}
+
+#buylinksub {
+    margin: 0 auto 40%;
 }
