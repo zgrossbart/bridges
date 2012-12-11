@@ -207,7 +207,7 @@
  */
 -(IBAction)rateGame {
     [[UIApplication sharedApplication]
-     openURL:[NSURL URLWithString:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=409954448"]];
+     openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/seven-bridges/id586598714?ls=1&mt=8"]];
 }
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
