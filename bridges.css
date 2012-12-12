@@ -21,8 +21,8 @@ h1 {
     font-size: 48px;
 	line-height: 48px;
     text-align: left;
-	padding-top: 24px;
-	padding-bottom: 24px;
+	padding-top: 32px;
+	padding-bottom: 21px;
 	position: relative;
 	padding-right: 200px;
 }
@@ -55,6 +55,7 @@ h2 {
 
 p.imageBlock {
 	text-align: center;
+	height: 360px;
 }
 
 p.imageBlock img {
@@ -67,7 +68,7 @@ div.videoBlock {
 	height: 316px;
 	padding-left: 43px;
 	padding-top: 50px;
-	margin: 0 auto;
+	margin: -20px auto 0;
 }
 
 a {
@@ -83,11 +84,19 @@ a:hover {
 	background: transparent url('icon.png') no-repeat scroll left center;
 	padding: 0px;
 	width: 450px;
-	margin: 20% auto 0;
+	margin: 300px auto 5px;
 	text-indent: 80px;
 	line-height: 80px;
 }
 
 #buylinksub {
     margin: 0 auto 60%;
+}
+
+#mapSetTitle {
+	margin-top: 14px;
+}
+
+#levelsImage {
+	height: 644px;
 }
