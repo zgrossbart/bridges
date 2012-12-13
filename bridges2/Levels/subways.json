@@ -7,8 +7,8 @@
                 "x": "22",
                 "y": "27",
                 "w": "16",
-                "h": "10",
-                "text": "Ride the subways as much as you want, but every ride costs a coin."
+                "h": "14",
+                "text": "Ride the subways as much as you want, but every ride costs a coin.\n\nVisit the houses to get more coins."
             }
         ],
 		"player": {
