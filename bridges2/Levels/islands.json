@@ -2,6 +2,10 @@
     "level": {
         "id": "16",
         "name": "Islands",
+		"hint": {
+			"x": "30",
+			"y": "5"
+		},
         "rivers": [
             {
                 "x": "8-r",

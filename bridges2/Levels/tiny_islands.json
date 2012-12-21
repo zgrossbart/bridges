@@ -1,6 +1,10 @@
 {
     "level": {
         "name": "Tiny islands",
+		"hint": {
+			"x": "35",
+			"y": "7"
+		},
         "rivers": [
             {
 	            "x": "3-10",

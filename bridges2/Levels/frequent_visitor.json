@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "40",
         "name": "Frequent visitor",
+		"hint": {
+			"x": "15",
+			"y": "15"
+		},
         "rivers": [
             {
                 "x": "l-r",

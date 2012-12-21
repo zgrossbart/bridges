@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "39",
         "name": "Full of bridges",
+		"hint": {
+			"x": "2",
+			"y": "22"
+		},
         "rivers": [
             {
                 "x": "l-r",

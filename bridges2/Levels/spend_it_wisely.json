@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "48",
         "name": "Spend it wisely",
+		"hint": {
+			"x": "10",
+			"y": "20"
+		},
 		"coins": "3",
         "rivers": [
             {

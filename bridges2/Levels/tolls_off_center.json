@@ -2,6 +2,10 @@
     "level": {
         "id": "58",
         "name": "Tolls off center",
+		"hint": {
+			"x": "2",
+			"y": "2"
+		},
         "rivers": [
             {
                 "x": "l-10",

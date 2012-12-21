@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "51",
         "name": "Corridors",
+		"hint": {
+			"x": "10",
+			"y": "25"
+		},
         "rivers": [
             {
                 "x": "l-r",

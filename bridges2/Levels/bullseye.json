@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "21",
         "name": "Bullseye",
+		"hint": {
+			"x": "5",
+			"y": "20"
+		},
         "rivers": [
             {
                 "x": "17-23",

@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "34",
         "name": "The color diamond",
+		"hint": {
+			"x": "15",
+			"y": "15"
+		},
         "rivers": [
             {
                 "x": "8-32",

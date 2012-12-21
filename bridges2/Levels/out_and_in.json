@@ -1,6 +1,10 @@
 {
     "level": {
         "name": "Out and in",
+		"hint": {
+			"x": "20",
+			"y": "15"
+		},
         "rivers": [
             {
 	            "x": "17-23",

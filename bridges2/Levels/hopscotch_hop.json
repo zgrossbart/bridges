@@ -1,6 +1,10 @@
 {
     "level": {
         "name": "Hopscotch hop",
+		"hint": {
+			"x": "5",
+			"y": "15"
+		},
         "rivers": [
             {
                 "x": "l-20",

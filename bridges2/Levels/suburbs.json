@@ -1,6 +1,10 @@
 {
     "level": {
         "name": "Suburbs",
+		"hint": {
+			"x": "15",
+			"y": "2"
+		},
         "rivers": [
             {
                 "x": "l-r",

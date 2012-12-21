@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "43",
         "name": "Color quilt",
+		"hint": {
+			"x": "2",
+			"y": "15"
+		},
         "rivers": [
             {
                 "x": "10",

@@ -1,6 +1,10 @@
 {
     "level": {
         "name": "Square tolls together",
+		"hint": {
+			"x": "20",
+			"y": "20"
+		},
 		"coins": "4",
         "rivers": [
             {

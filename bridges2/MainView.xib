@@ -42,6 +42,7 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{482, 300}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="337762024"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<int key="IBUIContentMode">9</int>
@@ -57,6 +58,7 @@
 						<int key="NSvFlags">303</int>
 						<string key="NSFrame">{{190, 71}, {100, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="955297571"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -92,6 +94,7 @@
 						<int key="NSvFlags">303</int>
 						<string key="NSFrame">{{190, 165}, {100, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="170821840"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -113,6 +116,7 @@
 						<int key="NSvFlags">291</int>
 						<string key="NSFrame">{{57, 0}, {414, 40}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="163517255"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -153,6 +157,7 @@
 						<int key="NSvFlags">265</int>
 						<string key="NSFrame">{{431, 250}, {40, 40}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -177,6 +182,7 @@
 				</array>
 				<string key="NSFrame">{{0, 20}, {480, 300}}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="278537088"/>
 				<reference key="IBUIBackgroundColor" ref="192603700"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
@@ -350,7 +356,121 @@
 			<nil key="sourceID"/>
 			<int key="maxID">28</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">MainMenuViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="aboutTapped:">id</string>
+						<string key="backToMainTapped:">id</string>
+						<string key="backToPageViewTapped:">id</string>
+						<string key="handleSwipe:">id</string>
+						<string key="playTapped:">id</string>
+						<string key="toggleSoundsTapped:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="aboutTapped:">
+							<string key="name">aboutTapped:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="backToMainTapped:">
+							<string key="name">backToMainTapped:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="backToPageViewTapped:">
+							<string key="name">backToPageViewTapped:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="handleSwipe:">
+							<string key="name">handleSwipe:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="playTapped:">
+							<string key="name">playTapped:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="toggleSoundsTapped:">
+							<string key="name">toggleSoundsTapped:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="_aboutBtn">UIButton</string>
+						<string key="_backBtn">UIButton</string>
+						<string key="_levelSetLabel">UILabel</string>
+						<string key="_mainImage">UIImageView</string>
+						<string key="_mainTable">UITableView</string>
+						<string key="_navItem">UINavigationItem</string>
+						<string key="_playBtn">UIButton</string>
+						<string key="_resetBtn">UIBarButtonItem</string>
+						<string key="_soundBtn">UIButton</string>
+						<string key="_webView">UIWebView</string>
+						<string key="_xOfY">UILabel</string>
+						<string key="collectionView">UICollectionView</string>
+						<string key="levelSetImage">UIImageView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="_aboutBtn">
+							<string key="name">_aboutBtn</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="_backBtn">
+							<string key="name">_backBtn</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="_levelSetLabel">
+							<string key="name">_levelSetLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="_mainImage">
+							<string key="name">_mainImage</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="_mainTable">
+							<string key="name">_mainTable</string>
+							<string key="candidateClassName">UITableView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="_navItem">
+							<string key="name">_navItem</string>
+							<string key="candidateClassName">UINavigationItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="_playBtn">
+							<string key="name">_playBtn</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="_resetBtn">
+							<string key="name">_resetBtn</string>
+							<string key="candidateClassName">UIBarButtonItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="_soundBtn">
+							<string key="name">_soundBtn</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="_webView">
+							<string key="name">_webView</string>
+							<string key="candidateClassName">UIWebView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="_xOfY">
+							<string key="name">_xOfY</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="collectionView">
+							<string key="name">collectionView</string>
+							<string key="candidateClassName">UICollectionView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="levelSetImage">
+							<string key="name">levelSetImage</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/MainMenuViewController.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">

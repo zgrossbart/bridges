@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "36",
         "name": "Square colors together",
+		"hint": {
+			"x": "20",
+			"y": "20"
+		},
         "rivers": [
             {
                 "x": "5-35",

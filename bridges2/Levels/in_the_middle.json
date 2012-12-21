@@ -2,6 +2,10 @@
     "level": {
         "id": "17",
         "name": "In the middle",
+		"hint": {
+			"x": "3",
+			"y": "20"
+		},
         "rivers": [
             {
                 "x": "8",

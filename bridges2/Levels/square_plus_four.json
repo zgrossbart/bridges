@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "34",
         "name": "Square plus four",
+		"hint": {
+			"x": "15",
+			"y": "15"
+		},
         "rivers": [
             {
                 "x": "l-34",

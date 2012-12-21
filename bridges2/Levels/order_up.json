@@ -2,6 +2,10 @@
     "level": {
         "name": "Order up",
 		"coins": "4",
+		"hint": {
+			"x": "20",
+			"y": "15"
+		},	
         "rivers": [
             {
 	            "x": "17-23",

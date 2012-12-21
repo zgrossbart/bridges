@@ -1,6 +1,10 @@
 {
     "level": {
         "name": "House of another color",
+		"hint": {
+			"x": "22",
+			"y": "15"
+		},
         "rivers": [
             {
                 "x": "18",

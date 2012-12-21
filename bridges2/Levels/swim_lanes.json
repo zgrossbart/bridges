@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "19",
         "name": "Swim lanes",
+		"hint": {
+			"x": "28",
+			"y": "20"
+		},
         "rivers": [
 	        {
 	            "x": "8-32",
