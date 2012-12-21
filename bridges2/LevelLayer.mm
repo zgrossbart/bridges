@@ -121,6 +121,13 @@
         [self spawnPlayer:self.currentLevel.playerPos.x :self.currentLevel.playerPos.y];
     }
     
+    if (self.currentLevel.hintPos.x > -1) {
+        self.hintBtn.hidden = NO;
+        self.hintBtn.enabled = YES;
+    } else {
+        self.hintBtn.hidden = YES;
+    }
+    
     if ([self.currentLevel hasCoins]) {
         self.coinLbl.text = [NSString stringWithFormat:@"%i", self.currentLevel.coins];
         self.coinImage.hidden = NO;
@@ -167,6 +174,7 @@
     
     [self.undoStack removeAllObjects];
     _undoBtn.enabled = NO;
+    _hintBtn.enabled = NO;
     
     [_player dealloc];
     _player = nil;
@@ -226,7 +234,13 @@
     } else {
         _undoBtn.enabled = YES;
     }
-    
+}
+
+-(void)hint {
+    if (self.currentLevel.hintPos.x > -1) {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"CharacterPlace.m4a"];
+        [self spawnPlayer:self.currentLevel.hintPos.x :self.currentLevel.hintPos.y];
+    }
 }
 
 -(void)refresh {
@@ -1057,6 +1071,8 @@ CGFloat CGPointToDegree(CGPoint point) {
     _player = [[PlayerNode alloc] initWithColor:cBlack:_layerMgr];
     _player.player.position = ccp(x, y);
     
+    _hintBtn.enabled = NO;
+    
     if ([self.currentLevel hasCoins]) {
         self.player.coins = self.currentLevel.coins;
     }
@@ -1125,6 +1141,22 @@ CGFloat CGPointToDegree(CGPoint point) {
     
     [x runAction:scaleSeq];
 }
+
+-(void)showHintTapSprite: (CGPoint) p {
+    CCSprite *x = [CCSprite spriteWithSpriteFrameName:@"octopus1.png"];
+    [_layerMgr addChildToSheet:x];
+    
+    x.position = p;
+    
+    
+    id scaleUpAction =  [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.25 scaleX:1.25 scaleY:1.25] rate:0.5];
+    id scaleDownAction = [CCEaseInOut actionWithAction:[CCScaleTo actionWithDuration:0.25 scaleX:0.75 scaleY:0.75] rate:0.5];
+    CCSequence *scaleSeq = [CCSequence actions:scaleUpAction, scaleDownAction, [CCHide action], nil];
+    
+    [x runAction:scaleSeq];
+}
+
+
 -(void)ccTouchesEnded:(NSSet*) touches withEvent:(UIEvent*) event {
     
     if ([self.currentLevel hasWon]) {

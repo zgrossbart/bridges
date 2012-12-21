@@ -156,6 +156,11 @@
 @property (readonly) CGPoint playerPos;
 
 /**
+ * The position of the starting hint
+ */
+@property (readonly) CGPoint hintPos;
+
+/**
  * The screen shot image of this level used in the menu screens
  */
 @property (readwrite, retain) UIImage *screenshot;

@@ -2,6 +2,10 @@
     "level": {
         "id": "4",
         "name": "Start anywhere",
+		"hint": {
+			"x": "5",
+			"y": "5"
+		},
         "labels": [
         	{
             	"x": "22",
@@ -9,6 +13,13 @@
 				"w": "16",
 				"h": "10",
 				"text": "Sometimes you choose where to start.  Tap any island."
+			},
+        	{
+            	"x": "22",
+				"y": "12",
+				"w": "16",
+				"h": "10",
+				"text": "The hint button (?) shows you where to start if you need help."
 			}
         ],
         "rivers": [

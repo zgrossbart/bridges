@@ -47,6 +47,10 @@
 		CE39AC9315FBA146005607B0 /* GameSceneViewiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE39AC9115FBA145005607B0 /* GameSceneViewiPad.xib */; };
 		CE424A28163898E200FE61CE /* three_rivers_subway.json in Resources */ = {isa = PBXBuildFile; fileRef = CE424A27163898E200FE61CE /* three_rivers_subway.json */; };
 		CE424A2B16389A5900FE61CE /* subway_color.json in Resources */ = {isa = PBXBuildFile; fileRef = CE424A2A16389A5900FE61CE /* subway_color.json */; };
+		CE439E801684E9E8009BB330 /* hint_d.png in Resources */ = {isa = PBXBuildFile; fileRef = CE439E7C1684E9E8009BB330 /* hint_d.png */; };
+		CE439E811684E9E8009BB330 /* hint_d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE439E7D1684E9E8009BB330 /* hint_d@2x.png */; };
+		CE439E821684E9E8009BB330 /* hint.png in Resources */ = {isa = PBXBuildFile; fileRef = CE439E7E1684E9E8009BB330 /* hint.png */; };
+		CE439E831684E9E8009BB330 /* hint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE439E7F1684E9E8009BB330 /* hint@2x.png */; };
 		CE453BC715F174A900053407 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CE453BC615F174A900053407 /* JSONKit.m */; };
 		CE50FFB81613932400235E87 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = CE50FFB71613932400235E87 /* fire.png */; };
 		CE53D25B16060D090064F167 /* islands.json in Resources */ = {isa = PBXBuildFile; fileRef = CE53D25A16060D090064F167 /* islands.json */; };
@@ -430,6 +434,10 @@
 		CE39AC9115FBA145005607B0 /* GameSceneViewiPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameSceneViewiPad.xib; sourceTree = "<group>"; };
 		CE424A27163898E200FE61CE /* three_rivers_subway.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = three_rivers_subway.json; sourceTree = "<group>"; };
 		CE424A2A16389A5900FE61CE /* subway_color.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = subway_color.json; sourceTree = "<group>"; };
+		CE439E7C1684E9E8009BB330 /* hint_d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hint_d.png; sourceTree = "<group>"; };
+		CE439E7D1684E9E8009BB330 /* hint_d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hint_d@2x.png"; sourceTree = "<group>"; };
+		CE439E7E1684E9E8009BB330 /* hint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hint.png; sourceTree = "<group>"; };
+		CE439E7F1684E9E8009BB330 /* hint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hint@2x.png"; sourceTree = "<group>"; };
 		CE453BC515F174A900053407 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		CE453BC615F174A900053407 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		CE50FFB71613932400235E87 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
@@ -1118,6 +1126,10 @@
 				CE6D65ED15EAC5FB00C7EDD7 /* fps_images.png */,
 				CECDC54715F6C54000D266FD /* green_check.png */,
 				CED9E63B163FE40A00B11616 /* green_check@2x.png */,
+				CE439E7C1684E9E8009BB330 /* hint_d.png */,
+				CE439E7D1684E9E8009BB330 /* hint_d@2x.png */,
+				CE439E7E1684E9E8009BB330 /* hint.png */,
+				CE439E7F1684E9E8009BB330 /* hint@2x.png */,
 				CE6D65F315EAC5FB00C7EDD7 /* Icon-72.png */,
 				CE6D65F515EAC5FB00C7EDD7 /* Icon-Small-50.png */,
 				CE6D65F715EAC5FB00C7EDD7 /* Icon-Small.png */,
@@ -2133,6 +2145,10 @@
 				CE96B31A167BBDAD00E155EF /* icon-144.png in Resources */,
 				CE96B31B167BBE6C00E155EF /* Default@2x.png in Resources */,
 				CE96B31D167BBEC900E155EF /* Default.png in Resources */,
+				CE439E801684E9E8009BB330 /* hint_d.png in Resources */,
+				CE439E811684E9E8009BB330 /* hint_d@2x.png in Resources */,
+				CE439E821684E9E8009BB330 /* hint.png in Resources */,
+				CE439E831684E9E8009BB330 /* hint@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

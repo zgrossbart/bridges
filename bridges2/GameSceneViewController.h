@@ -36,6 +36,7 @@
     IBOutlet UILabel *_coinLabel;
     IBOutlet UIImageView *_coinImage;
     IBOutlet UILabel *_levelTitle;
+    IBOutlet UIButton *_hintBtn;
 
 }
 
@@ -81,6 +82,10 @@
  * the game scene.
  */
 -(IBAction)undoTapped:(id)sender;
+
+-(IBAction)hintTapped:(id)sender;
+
+
 
 /**
  * Tapping the refresh button completely reloads the level and resets

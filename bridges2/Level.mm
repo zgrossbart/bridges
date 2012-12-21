@@ -47,6 +47,7 @@
 @property (readwrite, retain) NSDate *date;
 @property (readwrite, retain) NSString *levelId;
 @property (readwrite) CGPoint playerPos;
+@property (readwrite) CGPoint hintPos;
 @property (readwrite) int tileCount;
 @end
 
@@ -134,12 +135,18 @@
 
 -(void)loadSprites {
     
-    
     if ([self.levelData objectForKey:@"player"] != nil) {
         self.playerPos = [self tileToPoint:[self parseInt:[[self.levelData objectForKey:@"player"] objectForKey:@"x"]]:
                              [self parseInt:[[self.levelData objectForKey:@"player"] objectForKey:@"y"]]];
     } else {
         self.playerPos = ccp(-1, -1);
+    }
+    
+    if ([self.levelData objectForKey:@"hint"] != nil) {
+        self.hintPos = [self tileToPoint:[self parseInt:[[self.levelData objectForKey:@"hint"] objectForKey:@"x"]]:
+                          [self parseInt:[[self.levelData objectForKey:@"hint"] objectForKey:@"y"]]];
+    } else {
+        self.hintPos = ccp(-1, -1);
     }
     
     if ([_levelData objectForKey:@"tiles"] != nil) {

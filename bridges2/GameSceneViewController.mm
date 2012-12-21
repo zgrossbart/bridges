@@ -69,6 +69,7 @@
     CCScene *scene = [LevelLayer scene];
     _layer = (LevelLayer*)[scene getChildByTag:LEVEL];
     _layer.undoBtn = _undoBtn;
+    _layer.hintBtn = _hintBtn;
     _layer.coinLbl = _coinLabel;
     _layer.coinImage = _coinImage;
     _layer.view = self.view;
@@ -130,6 +131,10 @@
     [_undoBtn setImage:[UIImage imageNamed:@"left_arrow.png"] forState:UIControlStateNormal];
     [_undoBtn setImage:[UIImage imageNamed:@"left_arrow_d.png"] forState:UIControlStateDisabled];
     _undoBtn.enabled = NO;
+    
+    [_hintBtn setImage:[UIImage imageNamed:@"hint.png"] forState:UIControlStateNormal];
+    [_hintBtn setImage:[UIImage imageNamed:@"hint_d.png"] forState:UIControlStateDisabled];
+    _hintBtn.enabled = NO;
 }
 
 -(IBAction)goHomeTapped:(id)sender {
@@ -143,6 +148,10 @@
 
 -(IBAction)refreshTapped:(id)sender {
     [_layer refresh];
+}
+
+-(IBAction)hintTapped:(id)sender {
+    [_layer hint];
 }
 
 -(void)viewDidUnload
@@ -238,6 +247,7 @@
     [_coinLabel release];
     [_coinImage release];
     [_levelTitle release];
+    [_hintBtn release];
     [super dealloc];
 }
 

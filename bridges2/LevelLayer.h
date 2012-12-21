@@ -102,6 +102,11 @@
  */
 -(void)reset;
 
+/**
+ * Place the player at the hint location for this level
+ */
+-(void)hint;
+
 /** 
  * Holds the current level this layer is working work
  */
@@ -111,6 +116,11 @@
  * Sets the undo button so the layer can enable and disable it correctly.
  */
 @property (nonatomic, retain) UIButton *undoBtn;
+
+/**
+ * Sets the undo hint so the layer can enable and disable it correctly.
+ */
+@property (nonatomic, retain) UIButton *hintBtn;
 
 /** 
  * The coin label shows the current number of coins the player has.
