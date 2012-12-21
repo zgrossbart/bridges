@@ -245,7 +245,7 @@
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad &&
         [[UIScreen mainScreen] bounds].size.height == 568) {
         [_mainImage setImage:[UIImage imageNamed:@"launch_iphone-568.png"]];
-        _mainImage.contentMode = UIViewContentModeTopLeft;
+        _mainImage.contentMode = UIViewContentModeScaleToFill;
     }
     
     [StyleUtil animateView:self.view];
