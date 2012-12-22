@@ -20,8 +20,13 @@ You can also run the game for free in Xcode with three steps:
 1. Open the project in Xcode.
 1. Click the run button.
 
+Make a new level
+--------------------------------------
 
-The Rules
+Want an easy way to contribute to the game?  Make a new level.  Each level is defined in a [simple level definition file](https://github.com/zgrossbart/bridges/wiki/Level-Specification).  Make a really awesome level and I'll include it in the game.
+
+
+Screenshots
 --------------------------------------
 
 The basic rules of the game are simple.  
