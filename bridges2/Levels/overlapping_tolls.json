@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "50",
         "name": "Overlapping tolls",
+		"hint": {
+			"x": "21",
+			"y": "25"
+		},
 		"rivers": [
 	        {
 	            "x": "l-15",

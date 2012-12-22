@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "52",
         "name": "Jumpy",
+		"hint": {
+			"x": "20",
+			"y": "5"
+		},
         "rivers": [
             {
                 "x": "l-r",

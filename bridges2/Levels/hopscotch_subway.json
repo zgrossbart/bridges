@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "54",
         "name": "Hopscotch subway",
+		"hint": {
+			"x": "5",
+			"y": "15"
+		},
         "rivers": [
             {
                 "x": "l-20",

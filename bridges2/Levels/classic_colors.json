@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "20",
         "name": "Classic colors",
+		"hint": {
+			"x": "25",
+			"y": "5"
+		},
         "rivers": [
 	        {
 	            "x": "8",

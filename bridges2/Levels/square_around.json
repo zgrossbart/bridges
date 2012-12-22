@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "24",
         "name": "Square around",
+		"hint": {
+			"x": "10",
+			"y": "10"
+		},
         "rivers": [
             {
                 "x": "5-35",

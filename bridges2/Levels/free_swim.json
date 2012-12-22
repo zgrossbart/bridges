@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "56",
         "name": "Free swim",
+		"hint": {
+			"x": "28",
+			"y": "20"
+		},
         "rivers": [
 	        {
 	            "x": "8-32",

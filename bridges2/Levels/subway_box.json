@@ -2,6 +2,10 @@
     "level": {
 		"coins": "1",
         "name": "Subway box",
+		"hint": {
+			"x": "20",
+			"y": "15"
+		},
         "rivers": [
             {
                 "x": "10",

@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "9",
         "name": "Economics",
+		"hint": {
+			"x": "10",
+			"y": "20"
+		},
         "labels": [
             {
                 "x": "22",

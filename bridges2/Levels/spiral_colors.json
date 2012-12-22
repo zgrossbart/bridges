@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "60",
         "name": "Spiral colors",
+		"hint": {
+			"x": "5",
+			"y": "15"
+		},
         "rivers": [
             {
                 "x": "10",

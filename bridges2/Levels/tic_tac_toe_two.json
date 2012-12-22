@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "47",
         "name": "Tic tac toe two",
+		"hint": {
+			"x": "15",
+			"y": "25"
+		},
         "rivers": [
             {
                 "x": "10",

@@ -2,7 +2,7 @@
     "level": {
         "name": "Hop out",
 		"hint": {
-			"x": "50",
+			"x": "5",
 			"y": "20"
 		},
         "rivers": [

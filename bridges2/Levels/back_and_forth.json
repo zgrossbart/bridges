@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "49",
         "name": "Back and forth",
+		"hint": {
+			"x": "20",
+			"y": "20"
+		},
 		"coins": "4",
         "rivers": [
             {

@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "59",
         "name": "Overlapping subways",
+		"hint": {
+			"x": "20",
+			"y": "25"
+		},
 		"coins": "1",
 		"rivers": [
 	        {
