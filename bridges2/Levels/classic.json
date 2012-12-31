@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "18",
         "name": "The classic",
+		"hint": {
+			"x": "15",
+			"y": "5"
+		},
         "rivers": [
             {
                 "x": "8",

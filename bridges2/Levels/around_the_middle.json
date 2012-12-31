@@ -1,6 +1,10 @@
 {
     "level": {
         "name": "Around the middle",
+		"hint": {
+			"x": "3",
+			"y": "22"
+		},
         "rivers": [
 	        {
 	            "x": "10-30",
