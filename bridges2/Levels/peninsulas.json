@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "15",
         "name": "Peninsulas",
+		"hint": {
+			"x": "2",
+			"y": "15"
+		},
         "rivers": [
             {
                 "x": "l-15",

@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "5",
         "name": "One-way bridges",
+		"hint": {
+			"x": "5",
+			"y": "5"
+		},
         "labels": [
         	{
             	"x": "22",

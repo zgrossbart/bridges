@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "13",
         "name": "Corners",
+		"hint": {
+			"x": "2",
+			"y": "2"
+		},
         "rivers": [
             {
                 "x": "l-8",
