@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "28",
         "name": "Off center",
+		"hint": {
+			"x": "2",
+			"y": "2"
+		},
         "rivers": [
             {
                 "x": "l-10",

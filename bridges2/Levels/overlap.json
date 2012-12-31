@@ -1,7 +1,10 @@
 {
     "level": {
-        "id": "38",
         "name": "Overlap",
+		"hint": {
+			"x": "20",
+			"y": "25"
+		},
 		"rivers": [
 	        {
 	            "x": "l-15",
