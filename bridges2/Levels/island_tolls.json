@@ -1,6 +1,10 @@
 {
     "level": {
         "name": "Toll islands",
+		"hint": {
+			"x": "2",
+			"y": "15"
+		},
         "rivers": [
             {
                 "x": "8-r",
