@@ -1,6 +1,10 @@
 {
     "level": {
-        "name": "Visiting",
+        "name": "Visit again",
+		"hint": {
+			"x": "10",
+			"y": "20"
+		},
         "labels": [
             {
                 "x": "22",
