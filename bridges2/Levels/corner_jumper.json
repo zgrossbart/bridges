@@ -2,8 +2,8 @@
     "level": {
         "name": "Corner jumper",
 		"hint": {
-			"x": "20",
-			"y": "5"
+			"x": "2",
+			"y": "22"
 		},
         "rivers": [
             {
