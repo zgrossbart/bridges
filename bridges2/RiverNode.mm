@@ -31,7 +31,7 @@
 
 @implementation RiverNode
 
--(id)initWithFrame: (CGRect) frame: (NSMutableArray*) rivers: (BOOL) vert: (int) side {
+-(id)initWithFrame: (CGRect) frame rivers:(NSMutableArray*) rivers vert:(BOOL) vert side:(int) side {
 
     if ((self=[super init] )) {
         self.frame = frame;

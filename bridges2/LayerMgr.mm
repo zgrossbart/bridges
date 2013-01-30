@@ -29,7 +29,7 @@
     
 }
 
-+(CGFloat) distanceBetweenTwoPoints: (CGPoint) point1: (CGPoint) point2 {
++(CGFloat) distanceBetweenTwoPoints: (CGPoint) point1 point2:(CGPoint) point2 {
     CGFloat dx = point2.x - point1.x;
     CGFloat dy = point2.y - point1.y;
     return sqrt(dx*dx + dy*dy );
@@ -37,7 +37,7 @@
 
 
 
--(id) initWithSpriteSheet:(CCSpriteBatchNode*) spriteSheet:(b2World*) world {
+-(id) initWithSpriteSheet:(CCSpriteBatchNode*) spriteSheet world:(b2World*) world {
     self.sheet = spriteSheet;
     _world = world;
     self.addBoxes = true;
@@ -45,15 +45,15 @@
 }
 
 -(b2Body*)addChildToSheet:(CCSprite*) sprite {
-    return [self addChildToSheet:sprite :FALSE];
+    return [self addChildToSheet:sprite bullet:FALSE];
 }
 
--(b2Body*)addChildToSheet:(CCSprite*) sprite: (bool) bullet {
+-(b2Body*)addChildToSheet:(CCSprite*) sprite bullet:(bool) bullet {
     
     b2Body *body = nil;
     
     if (self.addBoxes) {
-        body = [self addBoxBodyForSprite:sprite:YES];
+        body = [self addBoxBodyForSprite:sprite bullet:YES];
     }
     
     [self.sheet addChild:sprite];
@@ -64,7 +64,7 @@
 -(b2Body*)addChildToSheetParent:(CCSprite*) sprite {
     b2Body *body = nil;
     if (self.addBoxes) {
-        body = [self addBoxBodyForSprite:sprite:NO];
+        body = [self addBoxBodyForSprite:sprite bullet:NO];
     }
     
     [self.sheet.parent addChild:sprite];
@@ -74,10 +74,10 @@
 }
 
 -(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite {
-    return [self addBoxBodyForSprite:sprite:NO];
+    return [self addBoxBodyForSprite:sprite bullet:NO];
 }
 
--(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite: (bool) bullet {
+-(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite bullet:(bool) bullet {
     
     if (sprite.tag == RIVEROVERLAY ||
         sprite.tag == RIVERJOINT) {

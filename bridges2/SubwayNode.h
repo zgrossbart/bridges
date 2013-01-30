@@ -34,7 +34,7 @@
  * @param color the color constant for this bridge
  * @param layerMgr the layer manager instance to add sprites to
  */
--(id)initWithColor: (BridgeColor) color :(LayerMgr*) layerMgr;
+-(id)initWithColor: (BridgeColor) color layerMgr:(LayerMgr*) layerMgr;
 
 /**
  * Ride the subway starting from the entry sprite.

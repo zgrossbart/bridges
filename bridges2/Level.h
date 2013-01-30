@@ -53,7 +53,7 @@
  * @param view the UIView to add any controls required for 
  *        this level too
  */
--(void) addSprites: (LayerMgr*) layerMgr:(UIView*) view;
+-(void) addSprites: (LayerMgr*) layerMgr view:(UIView*) view;
 
 /**
  * Remove all of the sprites and controls this level has added
@@ -61,7 +61,7 @@
  *
  * @param layerMgr the layer manager to remove sprites from
  */
--(void) removeSprites:(LayerMgr*) layerMgr: (UIView*) view;
+-(void) removeSprites:(LayerMgr*) layerMgr view:(UIView*) view;
 
 /**
  * Unload all of the sprites loaded by this level.  This level removes

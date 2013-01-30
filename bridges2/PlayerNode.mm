@@ -32,7 +32,7 @@
 @synthesize moveAction = _moveAction;
 @synthesize walkAction = _walkAction;
 
--(id)initWithColor:(BridgeColor) color:(LayerMgr*) layerMgr {
+-(id)initWithColor:(BridgeColor) color layerMgr:(LayerMgr*) layerMgr {
     if( (self=[super init] )) {
         _manager = layerMgr;
         _tag = PLAYER;
@@ -51,7 +51,7 @@
         
         [self createWalkAnimation:@""];
         
-        _spriteBody = [_manager addChildToSheet:self.player:YES];
+        _spriteBody = [_manager addChildToSheet:self.player bullet:YES];
     }
     
     return self;
@@ -143,7 +143,7 @@
     self.player.tag = [self tag];
 }
 
--(void)moveTo:(CGPoint)p:(bool)force {
+-(void)moveTo:(CGPoint)p force:(bool)force {
     if (force) {
         _moving = false;
     }
@@ -160,7 +160,7 @@
         return;
     }
     
-    CGFloat distance = [LayerMgr distanceBetweenTwoPoints:_player.position: p];
+    CGFloat distance = [LayerMgr distanceBetweenTwoPoints:_player.position point2:p];
     float velocity = 240/1; // 240pixels/1sec
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -184,7 +184,7 @@
     
     [_player runAction:_walkAction];
     
-    CGFloat distance = [LayerMgr distanceBetweenTwoPoints:_player.position: p];
+    CGFloat distance = [LayerMgr distanceBetweenTwoPoints:_player.position point2:p];
     float velocity = 340/1; // 340pixels/1sec
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {

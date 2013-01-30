@@ -48,7 +48,7 @@
  * @param set the index of the set containing this level
  * @param levelId the ID of the level to find
  */
-+(Level*)getLevel: (int) set: (NSString*) levelId;
++(Level*)getLevel: (int) set levelId:(NSString*) levelId;
 
 /** 
  * Generate a set of images of each level in the documents directory.

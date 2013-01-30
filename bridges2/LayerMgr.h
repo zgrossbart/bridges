@@ -34,7 +34,7 @@
 /**
  * Calculate the difference between two points.
  */
-+(CGFloat) distanceBetweenTwoPoints: (CGPoint) point1: (CGPoint) point2;
++(CGFloat) distanceBetweenTwoPoints: (CGPoint) point1 point2:(CGPoint) point2;
 
 /**
  * Cocos2d calculates all coordinates with the bottom left of the screen as
@@ -53,7 +53,7 @@
  * @param spriteSheet the sprite sheet for managing sprites
  * @param world the box2d world for this game layer
  */
--(id) initWithSpriteSheet:(CCSpriteBatchNode*) spriteSheet:(b2World*) world;
+-(id) initWithSpriteSheet:(CCSpriteBatchNode*) spriteSheet world:(b2World*) world;
 
 /**
  * Add a sprite to the sprite sheet for display
@@ -81,7 +81,7 @@
  *
  * @return the box2d body for this sprite
  */
--(b2Body*)addChildToSheet:(CCSprite*) sprite: (bool) bullet;
+-(b2Body*)addChildToSheet:(CCSprite*) sprite bullet:(bool) bullet;
 
 /**
  * Add a box2d body for this sprite to support collision detection.
@@ -100,7 +100,7 @@
  *
  * @return the box2d body for this sprite
  */
--(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite: (bool) bullet;
+-(b2Body*)addBoxBodyForSprite:(CCSprite *)sprite bullet:(bool) bullet;
 
 /**
  * Remove all the sprites from the sprite sheet.  This is called when reloading a

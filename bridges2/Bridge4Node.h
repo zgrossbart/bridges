@@ -37,7 +37,7 @@
  * color the color of this bridge
  * the layer manager for use with this node
  */
--(id)initWithTagAndColor: (BridgeColor)color: (LayerMgr*)layerMgr;
+-(id)initWithTagAndColor: (BridgeColor)color layerMgr:(LayerMgr*)layerMgr;
 
 /**
  * Called to finish crossing the bridge after enterring and choosing an exit direction

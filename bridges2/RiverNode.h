@@ -32,7 +32,7 @@
  * @param vert true if this river is vertical and false otherwise
  * @param the side of this river as defined in BridgeColors.h
  */
--(id)initWithFrame: (CGRect) frame: (NSMutableArray*) rivers: (BOOL) vert: (int) side;
+-(id)initWithFrame: (CGRect) frame rivers:(NSMutableArray*) rivers vert:(BOOL) vert side:(int) side;
 
 /**
  * Returns true if this specific sprite is contained in this node and false

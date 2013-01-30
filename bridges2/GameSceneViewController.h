@@ -69,7 +69,7 @@
 /**
  * Show the specified level and make it playable.
  */
--(void)showLevel:(int) set: (Level*) level;
+-(void)showLevel:(int) set level:(Level*) level;
 
 /**
  * Tapping the home button sends the user back to the menu screen to 

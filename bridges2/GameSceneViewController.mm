@@ -83,7 +83,7 @@
     _hasInit = true;
 }
 
--(void)showLevel:(int) set: (Level*) level {
+-(void)showLevel:(int) set level:(Level*) level {
     
     if (!_hasInit) {
         [self setupCocos2D];

@@ -33,7 +33,7 @@
 
 @implementation TeleportNode
 
--(id)initWithColor: (BridgeColor) color :(LayerMgr*) layerMgr {
+-(id)initWithColor: (BridgeColor) color layerMgr:(LayerMgr*) layerMgr {
     
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;

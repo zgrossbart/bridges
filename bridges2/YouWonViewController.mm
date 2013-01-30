@@ -62,7 +62,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     for (NSString *levelId in [LevelMgr getLevelSet:self.currentSet].levelIds) {
-        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", [LevelMgr getLevel:self.currentSet :levelId].fileName]]) {
+        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", [LevelMgr getLevel:self.currentSet levelId:levelId].fileName]]) {
             x ++;
         }
     }

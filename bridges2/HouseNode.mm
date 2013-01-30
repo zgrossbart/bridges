@@ -33,12 +33,12 @@
 
 @implementation HouseNode
 
--(id)initWithColor:(BridgeColor) color:(LayerMgr*) layerMgr {
+-(id)initWithColor:(BridgeColor) color layerMgr:(LayerMgr*) layerMgr {
     self = [super init];
-    return [self initWithColorAndCoins: color :layerMgr :0];
+    return [self initWithColorAndCoins :color layerMgr:layerMgr coins:0];
 }
     
--(id)initWithColorAndCoins:(BridgeColor) color:(LayerMgr*) layerMgr: (int) coins {
+-(id)initWithColorAndCoins:(BridgeColor) color layerMgr:(LayerMgr*) layerMgr coins:(int) coins {
     
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;

@@ -54,7 +54,7 @@
     return [[LevelMgr getLevelMgr].levelSets objectAtIndex:index];
 }
 
-+(Level*)getLevel: (int) set: (NSString*) levelId {
++(Level*)getLevel: (int) set levelId:(NSString*) levelId {
     return [[LevelMgr getLevelSet:set].levels objectForKey:levelId];
 }
 
@@ -222,7 +222,7 @@
          * them in a different thread so we don't slow down the UI.
          */
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self doDrawLevels:bounds:levels];
+            [self doDrawLevels:bounds levels:levels];
         });
         
     }
@@ -232,7 +232,7 @@
  * This method actually draws the screen shots for each level as needed so it
  * can load show them in the menu screens.
  */
--(void)doDrawLevels:(CGRect) bounds: (NSMutableArray*) levels {
+-(void)doDrawLevels:(CGRect) bounds levels:(NSMutableArray*) levels {
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);        
     
@@ -243,7 +243,7 @@
     CCSpriteBatchNode *spriteSheet = [[CCSpriteBatchNode batchNodeWithFile:@"bridgesprites.pvr.gz"
                                        capacity:200] retain];
     
-    LayerMgr *layerMgr = [[LayerMgr alloc] initWithSpriteSheet:spriteSheet:nil];
+    LayerMgr *layerMgr = [[LayerMgr alloc] initWithSpriteSheet:spriteSheet world:nil];
     layerMgr.addBoxes = false;
     
     CGSize s = CGSizeMake(IPHONE_LEVEL_IMAGE_W, IPHONE_LEVEL_IMAGE_H);
@@ -278,7 +278,7 @@
          * Bug 1439 has been logged for this memory leak: 
          * http://code.google.com/p/cocos2d-iphone/issues/detail?id=1439
          */
-        [level addSprites:layerMgr:nil];
+        [level addSprites:layerMgr view:nil];
         scene.scale = s.height/bounds.size.height;
         scene.position = ccp(0,0);
         scene.anchorPoint = ccp(0, 0);

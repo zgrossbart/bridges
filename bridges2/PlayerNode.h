@@ -43,7 +43,7 @@
  * @param color the color for this player
  * @param layerMgr the layer manager used to handle the player sprites
  */
--(id)initWithColor:(BridgeColor) color:(LayerMgr*) layerMgr;
+-(id)initWithColor:(BridgeColor) color layerMgr:(LayerMgr*) layerMgr;
 
 /** 
  * The player can change color by walking over colored bridges.  This
@@ -83,7 +83,7 @@
  *              moving.  This flag forces the move even if the player
  *              is in the middle of a move.
  */
--(void)moveTo:(CGPoint)p:(bool)force;
+-(void)moveTo:(CGPoint)p force:(bool)force;
 
 /** 
  * Called to update the player node and indicate a move operation is 

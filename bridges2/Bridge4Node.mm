@@ -30,7 +30,7 @@
 
 @implementation Bridge4Node
 
--(id) initWithTagAndColor:(BridgeColor) color :(LayerMgr *) layerMgr {
+-(id) initWithTagAndColor:(BridgeColor) color layerMgr:(LayerMgr *) layerMgr {
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;
         self.tag = BRIDGE4;

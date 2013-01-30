@@ -35,7 +35,7 @@
  * @param color the color constant for this teleporter
  * @param layerMgr the layer manager instance to add sprites to
  */
--(id)initWithColor: (BridgeColor) color :(LayerMgr*) layerMgr;
+-(id)initWithColor: (BridgeColor) color layerMgr:(LayerMgr*) layerMgr;
 
 /**
  * Jump into this teleporter

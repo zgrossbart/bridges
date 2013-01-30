@@ -136,15 +136,15 @@
 -(void)loadSprites {
     
     if ([self.levelData objectForKey:@"player"] != nil) {
-        self.playerPos = [self tileToPoint:[self parseInt:[[self.levelData objectForKey:@"player"] objectForKey:@"x"]]:
-                             [self parseInt:[[self.levelData objectForKey:@"player"] objectForKey:@"y"]]];
+        self.playerPos = [self tileToPoint:[self parseInt:[[self.levelData objectForKey:@"player"] objectForKey:@"x"]]
+                                          y:[self parseInt:[[self.levelData objectForKey:@"player"] objectForKey:@"y"]]];
     } else {
         self.playerPos = ccp(-1, -1);
     }
     
     if ([self.levelData objectForKey:@"hint"] != nil) {
-        self.hintPos = [self tileToPoint:[self parseInt:[[self.levelData objectForKey:@"hint"] objectForKey:@"x"]]:
-                          [self parseInt:[[self.levelData objectForKey:@"hint"] objectForKey:@"y"]]];
+        self.hintPos = [self tileToPoint:[self parseInt:[[self.levelData objectForKey:@"hint"] objectForKey:@"x"]]
+                                        y:[self parseInt:[[self.levelData objectForKey:@"hint"] objectForKey:@"y"]]];
     } else {
         self.hintPos = ccp(-1, -1);
     }
@@ -165,7 +165,7 @@
         NSString *side = [r objectForKey:@"side"];
         NSString *border = [r objectForKey:@"border"];
         
-        [self addRivers:x:y:[dir isEqualToString:@"v"]:[self getSide:side]:border];
+        [self addRivers:x ySpec:y vert:[dir isEqualToString:@"v"] side:[self getSide:side] border:border];
     }
     
     /*
@@ -180,8 +180,8 @@
         NSString *color = [b objectForKey:@"color"];
         NSString *coins = [b objectForKey:@"coins"];
         
-        [self addBridge:[self parseInt:x]:[self parseInt:y]:
-         [orient isEqualToString:@"v"]:[self getDir:dir]:[self getColor:color]:coins];
+        [self addBridge:[self parseInt:x] y:[self parseInt:y] vert:[orient isEqualToString:@"v"]
+                       dir:[self getDir:dir] color:[self getColor:color] coins:coins];
     }
     
     /*
@@ -193,7 +193,7 @@
         NSString *y = [b objectForKey:@"y"];
         NSString *color = [b objectForKey:@"color"];
         
-        [self addBridge4:[self parseInt:x]:[self parseInt:y]:[self getColor:color]];
+        [self addBridge4:[self parseInt:x] y:[self parseInt:y] color:[self getColor:color]];
     }
     
     /*
@@ -207,7 +207,7 @@
             NSString *color = [h objectForKey:@"color"];
             NSString *coins = [h objectForKey:@"coins"];
             
-            [self addHouse:[self parseInt:x]:[self parseInt:y]:[self getColor:color]:coins];
+            [self addHouse:[self parseInt:x] y:[self parseInt:y] color:[self getColor:color] coins:coins];
         }
     }
     
@@ -223,7 +223,7 @@
             NSString *y2 = [h objectForKey:@"y2"];
             NSString *color = [h objectForKey:@"color"];
             
-            [self addSubway:[self parseInt:x1]:[self parseInt:y1]:[self parseInt:x2]:[self parseInt:y2]:[self getColor:color]];
+            [self addSubway:[self parseInt:x1] y1:[self parseInt:y1] x2:[self parseInt:x2] y2:[self parseInt:y2] color:[self getColor:color]];
         }
     }
     
@@ -237,7 +237,7 @@
             NSString *y = [h objectForKey:@"y"];
             NSString *color = [h objectForKey:@"color"];
             
-            [self addTeleport:[self parseInt:x]:[self parseInt:y]:[self getColor:color]];
+            [self addTeleport:[self parseInt:x] y:[self parseInt:y] color:[self getColor:color]];
         }
     }
     
@@ -253,7 +253,7 @@
             NSString *h = [l objectForKey:@"h"];
             NSString *text = [l objectForKey:@"text"];
             
-            [self addLabel:[self parseInt:x]:[self parseInt:y]:[self parseInt:w]:[self parseInt:h]:text];
+            [self addLabel:[self parseInt:x] y:[self parseInt:y] w:[self parseInt:w] h:[self parseInt:h] text:text];
         }
     }
 }
@@ -291,7 +291,7 @@
 /**
  * Remove the sprites and controls for this level from the game scene
  */
--(void)removeSprites:(LayerMgr*) layerMgr: (UIView*) view {
+-(void)removeSprites:(LayerMgr*) layerMgr view:(UIView*) view {
     self.layerMgr = layerMgr;
     
     if (self.rivers.count == 0) {
@@ -321,12 +321,12 @@
  * Add the sprites and controls from this level to the game.  This will
  * create the sprite objects if they don't exist yet.
  */
--(void)addSprites: (LayerMgr*) layerMgr: (UIView*) view {
+-(void)addSprites: (LayerMgr*) layerMgr view:(UIView*) view {
     
     self.layerMgr = layerMgr;
     
     if (self.rivers.count > 0) {
-        [self removeSprites:self.layerMgr: view];
+        [self removeSprites:self.layerMgr view:view];
     }
     
     [self loadSprites];
@@ -417,7 +417,7 @@
  * @param side the side of this river.  This variable controls adding rounded corners to the ends of the river
  * @param border the option border specifiers.  This value is used for river joints.
  */
--(void)addRivers:(NSString*) xSpec:(NSString*) ySpec:(BOOL) vert: (int) side: (NSString*) border {
+-(void)addRivers:(NSString*) xSpec ySpec:(NSString*) ySpec vert:(BOOL) vert side:(int) side border:(NSString*) border {
     /*
      * There are a few ways to define a tile coordinate.
      * You can define a simple number like 5 or 12, you 
@@ -517,7 +517,7 @@
      * tiles at a random interval to make the river a little more interesting.
      */
     if (vert) {
-        CCSprite *river = [self addRiver:xi1:yi1:vert:1:border];
+        CCSprite *river = [self addRiver:xi1 y:yi1 vert:vert range:1 border:border];
         
         if (border == nil) {
             float height = (yi2 - yi1) + 2;
@@ -548,14 +548,14 @@
         if (DRAW_RIVER_OVERLAY) {
             for (float j = yi1 + rSprite.contentSize.height; j <= yi2 - rSprite.contentSize.height;) {
                 // getRiverRange returns 1, 3, 5 or 11; the width in tiles of the next segment
-                int range = [self getRiverRange:j:yi2];
+                int range = [self getRiverRange:j size:yi2];
                 if (j + (range * (rSprite.contentSize.height / 2)) > yi2 ||
                     j - (range * (rSprite.contentSize.height / 2)) < yi1) {
                     range = 1;
                 }
                 
                 if (range > 1) {
-                    CCSprite *r = [self addRiver:xi1:j:vert:range:border];
+                    CCSprite *r = [self addRiver:xi1 y:j vert:vert range:range border:border];
                     r.tag = RIVEROVERLAY;
                     [rivers addObject:r];
                 }
@@ -565,7 +565,7 @@
             }
         }
     } else {
-        CCSprite *river = [self addRiver:xi1:yi1:vert:1:border];
+        CCSprite *river = [self addRiver:xi1 y:yi1 vert:vert range:1 border:border];
         
         if (border == nil) {
             float width = (xi2 - xi1) - (river.contentSize.width / 3);
@@ -580,7 +580,7 @@
         
         if (DRAW_RIVER_OVERLAY) {
             for (float i = xi1 + rSprite.contentSize.width; i <= xi2 - rSprite.contentSize.width;) {
-                int range = [self getRiverRange:i:xi2];
+                int range = [self getRiverRange:i size:xi2];
                 
                 if (i + (range * (rSprite.contentSize.width / 2)) > xi2 ||
                     i - (range * (rSprite.contentSize.width / 2)) < xi1) {
@@ -588,7 +588,7 @@
                 }
                 
                 if (range > 1) {
-                    CCSprite *r = [self addRiver:i:yi1:vert:range:border];
+                    CCSprite *r = [self addRiver:i y:yi1 vert:vert range:range border:border];
                     r.tag = RIVEROVERLAY;
                     [rivers addObject:r];
                 }
@@ -659,7 +659,7 @@
         frame = CGRectMake(start.x, start.y, end.x - start.x, rSprite.contentSize.height - 1);
     }
     
-    RiverNode *node = [[[RiverNode alloc] initWithFrame:frame: rivers: vert: side] autorelease];
+    RiverNode *node = [[[RiverNode alloc] initWithFrame:frame rivers:rivers vert:vert side:side] autorelease];
     [self.rivers addObject:node];
 }
 
@@ -718,7 +718,7 @@
  * @param index the index of the point in the river array.
  * @param size the total length of the river array.
  */
--(float)getRiverRange: (float) index: (float) size {
+-(float)getRiverRange: (float) index size:(float) size {
     
     int r;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -747,7 +747,7 @@
  * @param range the range of the sprite.  This controls which image we use
  * @param border the border of the sprite.  This also controls part of which image we use
  */
--(CCSprite*)addRiver:(float) x:(float) y:(BOOL) vert: (int) range: (NSString*) border {
+-(CCSprite*)addRiver:(float) x y:(float) y vert:(BOOL) vert range: (int) range border: (NSString*) border {
     CCSprite *river;
     if (vert) {
         if ([border isEqualToString:@"left"]) {
@@ -809,11 +809,11 @@
  * @param y the y coordinate of the bridge node
  * @param color the color of the bridge.  Right now we just support none of 4 way bridges
  */
--(Bridge4Node*)addBridge4:(float) x:(float) y:(BridgeColor) color {
+-(Bridge4Node*)addBridge4:(float) x y:(float) y color:(BridgeColor) color {
     
-    Bridge4Node *bridgeNode = [[[Bridge4Node alloc] initWithTagAndColor:color:self.layerMgr] autorelease];
+    Bridge4Node *bridgeNode = [[[Bridge4Node alloc] initWithTagAndColor:color layerMgr:self.layerMgr] autorelease];
 
-    CGPoint startPos = [self tileToPoint:x:y];
+    CGPoint startPos = [self tileToPoint:x y:y];
     
     [bridgeNode setBridgePosition:startPos];
     
@@ -833,10 +833,10 @@
  * @param color the color of the bridge
  * @param coins the number of coins it takes to fully cross this bridge
  */
--(BridgeNode*)addBridge:(float) x:(float) y:(bool) vertical:(BridgeDir) dir: (BridgeColor) color: (NSString*) coins {
+-(BridgeNode*)addBridge:(float) x y:(float) y vert:(bool) vertical dir:(BridgeDir) dir color: (BridgeColor) color coins: (NSString*) coins {
     
-    BridgeNode *bridgeNode = [[[BridgeNode alloc] initWithOrientAndDirAndCoins:vertical:dir:color:self.layerMgr: [self coins:coins]] autorelease];
-    CGPoint startPos = [self tileToPoint:x:y];
+    BridgeNode *bridgeNode = [[[BridgeNode alloc] initWithOrientAndDirAndCoins:vertical dir:dir color:color layerMgr:self.layerMgr coins:[self coins:coins]] autorelease];
+    CGPoint startPos = [self tileToPoint:x y:y];
     
     [bridgeNode setBridgePosition:startPos];
     
@@ -854,14 +854,14 @@
  * @param w the width of this label
  * @param h the minimum height of this label.  The height will grow to support more text.
  */
--(UIButton*)addLabel:(float) x:(float) y:(float) w:(float) h:(NSString*) text {
+-(UIButton*)addLabel:(float) x y:(float) y w:(float) w h:(float) h text:(NSString*) text {
 
     /*
      * We make all labels buttons so the button consumes taps and the player
      * doesn't get lost under the labels.
      */
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    CGPoint s = [self tileToPoint:x:y];
+    CGPoint s = [self tileToPoint:x y:y];
     
     s = ccp(s.x, [LayerMgr normalizeYForControl:s.y]);
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -932,10 +932,10 @@
  * @param color the color of this house
  * @param coins the number of coins available at this house
  */
--(HouseNode*)addHouse:(float) x:(float) y:(BridgeColor) color:(NSString*) coins {
+-(HouseNode*)addHouse:(float) x y:(float) y color:(BridgeColor) color coins:(NSString*) coins {
     
-    HouseNode *houseNode = [[[HouseNode alloc] initWithColorAndCoins:color:self.layerMgr:[self coins:coins]] autorelease];
-    CGPoint startPos = [self tileToPoint:x:y];
+    HouseNode *houseNode = [[[HouseNode alloc] initWithColorAndCoins:color layerMgr:self.layerMgr coins:[self coins:coins]] autorelease];
+    CGPoint startPos = [self tileToPoint:x y:y];
     
     [houseNode setHousePosition:startPos];
     
@@ -954,12 +954,12 @@
  * @param y2 the y coordinate of the second subway
  * @param color the color of the subway
  */
--(SubwayNode*)addSubway:(float) x1:(float) y1:(float) x2:(float) y2:(BridgeColor) color {
+-(SubwayNode*)addSubway:(float) x1 y1:(float) y1 x2:(float) x2 y2:(float) y2 color:(BridgeColor) color {
     
-    SubwayNode *subwayNode = [[[SubwayNode alloc] initWithColor:color:self.layerMgr] autorelease];
+    SubwayNode *subwayNode = [[[SubwayNode alloc] initWithColor:color layerMgr:self.layerMgr] autorelease];
     
-    subwayNode.subway1.position = [self tileToPoint:x1:y1];
-    subwayNode.subway2.position = [self tileToPoint:x2:y2];
+    subwayNode.subway1.position = [self tileToPoint:x1 y:y1];
+    subwayNode.subway2.position = [self tileToPoint:x2 y:y2];
     
     [self.subways addObject:subwayNode];
     
@@ -974,11 +974,11 @@
  * @param y the y coordinate of the teleporter
  * @param color the color of the subway
  */
--(TeleportNode*)addTeleport:(float) x:(float) y:(BridgeColor) color {
+-(TeleportNode*)addTeleport:(float) x y:(float) y color:(BridgeColor) color {
     
-    TeleportNode *teleportNode = [[[TeleportNode alloc] initWithColor:color:self.layerMgr] autorelease];
+    TeleportNode *teleportNode = [[[TeleportNode alloc] initWithColor:color layerMgr:self.layerMgr] autorelease];
     
-    teleportNode.teleporter.position = [self tileToPoint:x:y];
+    teleportNode.teleporter.position = [self tileToPoint:x y:y];
     
     [self.teleports addObject:teleportNode];
     
@@ -1006,7 +1006,7 @@
 /**
  * Convert a position in tiles to a point on the screen
  */
--(CGPoint)tileToPoint:(float) x: (float)y {
+-(CGPoint)tileToPoint:(float) x y:(float) y {
     return CGPointMake(x * self.layerMgr.tileSize.width,
                        y * self.layerMgr.tileSize.height);
 }

@@ -35,17 +35,17 @@
 
 @implementation BridgeNode
 
--(id) initWithOrient:(bool) vertical:(BridgeColor) color:(LayerMgr*) layerMgr {
+-(id) initWithOrient:(bool) vertical color:(BridgeColor) color layerMgr:(LayerMgr*) layerMgr {
     self=[super init];
-    return [self initWithOrientAndDir:vertical:dNone:color:layerMgr];
+    return [self initWithOrientAndDir:vertical dir:dNone color:color layerMgr:layerMgr];
 }
 
--(id)initWithOrientAndDir: (bool)vertical:(BridgeDir)dir: (BridgeColor) color:(LayerMgr*) layerMgr {
+-(id)initWithOrientAndDir: (bool)vertical dir:(BridgeDir)dir color:(BridgeColor) color layerMgr:(LayerMgr*) layerMgr {
     self=[super init];
-    return [self initWithOrientAndDirAndCoins:vertical:dNone:color:layerMgr:0];
+    return [self initWithOrientAndDirAndCoins:vertical dir:dNone color:color layerMgr:layerMgr coins:0];
 }
 
--(id)initWithOrientAndDirAndCoins: (bool)vertical:(BridgeDir)dir:(BridgeColor) color:(LayerMgr*) layerMgr:(int)coins {
+-(id)initWithOrientAndDirAndCoins: (bool)vertical dir:(BridgeDir)dir color:(BridgeColor) color layerMgr:(LayerMgr*) layerMgr coins:(int)coins {
     if( (self=[super init] )) {
         self.layerMgr = layerMgr;
         self.tag = BRIDGE;

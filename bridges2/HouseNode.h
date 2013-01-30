@@ -36,7 +36,7 @@
  * @param color the color of this house
  * @param layerMgr the layer manager to use for this house instance
  */
--(id)initWithColor:(BridgeColor) color:(LayerMgr*) layerMgr;
+-(id)initWithColor:(BridgeColor) color layerMgr:(LayerMgr*) layerMgr;
 
 /**
  * Create a new house with the specified color
@@ -45,7 +45,7 @@
  * @param layerMgr the layer manager to use for this house instance
  * @param coins the number of coins this house can provide
  */
--(id)initWithColorAndCoins:(BridgeColor) color:(LayerMgr*) layerMgr: (int) coins;
+-(id)initWithColorAndCoins:(BridgeColor) color layerMgr:(LayerMgr*) layerMgr coins:(int) coins;
 
 /**
  * Visit this house and subtract one coin.

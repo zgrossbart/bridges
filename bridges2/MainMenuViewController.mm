@@ -119,7 +119,7 @@
     [defaults setObject:key forKey:@"currentLevelKey"];
     
     [defaults synchronize];
-    [self.GameSceneViewController showLevel:self.currentSet: [LevelMgr getLevel:self.currentSet :key]];
+    [self.GameSceneViewController showLevel:self.currentSet level:[LevelMgr getLevel:self.currentSet levelId:key]];
     [self.navigationController pushViewController:_GameSceneViewController animated:NO];
 }
 
@@ -165,17 +165,17 @@
         [imageView release];
     }
 
-    cell.imageView.image = [LevelMgr getLevel:self.currentSet :levelId].screenshot;
+    cell.imageView.image = [LevelMgr getLevel:self.currentSet levelId:levelId].screenshot;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", [LevelMgr getLevel:self.currentSet :levelId].fileName]]) {
+    if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", [LevelMgr getLevel:self.currentSet levelId:levelId].fileName]]) {
         
         [((UIImageView*) cell.accessoryView) setImage:_checkImage];
     } else {
         ((UIImageView*) cell.accessoryView).image = nil;
     }
     
-    NSMutableString *name = [NSString stringWithFormat:@"%d. %@", [levelId intValue] + 1, [LevelMgr getLevel:self.currentSet :levelId].name];
+    NSMutableString *name = [NSString stringWithFormat:@"%d. %@", [levelId intValue] + 1, [LevelMgr getLevel:self.currentSet levelId:levelId].name];
     
     cell.textLabel.text = name;
     
@@ -366,7 +366,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     for (NSString *levelId in [LevelMgr getLevelSet:self.currentSet].levelIds) {
-        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", [LevelMgr getLevel:self.currentSet :levelId].fileName]]) {
+        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", [LevelMgr getLevel:self.currentSet levelId:levelId].fileName]]) {
             x ++;
         }
     }
@@ -441,13 +441,13 @@
     } else {
         NSString *levelId = [[LevelMgr getLevelSet:self.currentSet].levelIds objectAtIndex:index];
         
-        NSMutableString *name = [NSString stringWithFormat:@"%d. %@", [levelId intValue] + 1, [LevelMgr getLevel:self.currentSet :levelId].name];
+        NSMutableString *name = [NSString stringWithFormat:@"%d. %@", [levelId intValue] + 1, [LevelMgr getLevel:self.currentSet levelId:levelId].name];
         
         [cell.titleLabel setText:name];
-        [cell.screenshot setImage:[LevelMgr getLevel:self.currentSet :levelId].screenshot];
+        [cell.screenshot setImage:[LevelMgr getLevel:self.currentSet levelId:levelId].screenshot];
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", [LevelMgr getLevel:self.currentSet :levelId].fileName]]) {
+        if ([defaults boolForKey:[NSString stringWithFormat:@"%@-won", [LevelMgr getLevel:self.currentSet levelId:levelId].fileName]]) {
             [cell.checkMark setImage:_checkImage];
         } else {
             [cell.checkMark setImage:nil];

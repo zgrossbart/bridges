@@ -96,7 +96,7 @@
         self.undoStack = [NSMutableArray arrayWithCapacity:20];
         _canVisit = true;
         
-        _layerMgr = [[LayerMgr alloc] initWithSpriteSheet:_spriteSheet:_world];
+        _layerMgr = [[LayerMgr alloc] initWithSpriteSheet:_spriteSheet world:_world];
         
         self.isTouchEnabled = YES;
     }
@@ -115,10 +115,10 @@
         _layerMgr.tileSize = CGSizeMake(s.height / self.currentLevel.tileCount, s.height / self.currentLevel.tileCount);
     }
     
-    [self.currentLevel addSprites:_layerMgr:self.view];
+    [self.currentLevel addSprites:_layerMgr view:self.view];
     
     if (self.currentLevel.playerPos.x > -1) {
-        [self spawnPlayer:self.currentLevel.playerPos.x :self.currentLevel.playerPos.y];
+        [self spawnPlayer:self.currentLevel.playerPos.x y:self.currentLevel.playerPos.y];
     }
     
     if (self.currentLevel.hintPos.x > -1) {
@@ -169,7 +169,7 @@
 -(void)reset {
     
     [_layerMgr removeAll];
-    [self.currentLevel removeSprites: _layerMgr: self.view];
+    [self.currentLevel removeSprites: _layerMgr view:self.view];
     [self.currentLevel unloadSprites];
     
     [self.undoStack removeAllObjects];
@@ -239,7 +239,7 @@
 -(void)hint {
     if (self.currentLevel.hintPos.x > -1) {
         [[SimpleAudioEngine sharedEngine] playEffect:@"CharacterPlace.m4a"];
-        [self spawnPlayer:self.currentLevel.hintPos.x :self.currentLevel.hintPos.y];
+        [self spawnPlayer:self.currentLevel.hintPos.x y:self.currentLevel.hintPos.y];
     }
 }
 
@@ -374,29 +374,29 @@
             CCSprite *spriteB = (CCSprite *) bodyB->GetUserData();
             
             if (spriteA.tag == RIVER && spriteB.tag == PLAYER) {
-                [self bumpObject:spriteB:spriteA];
+                [self bumpObject:spriteB object:spriteA];
             } else if (spriteA.tag == PLAYER && spriteB.tag == RIVER) {
-                [self bumpObject:spriteA:spriteB];
+                [self bumpObject:spriteA object:spriteB];
             } else if (spriteA.tag == BRIDGE && spriteB.tag == PLAYER) {
-                [self crossBridge:spriteB:spriteA];
+                [self crossBridge:spriteB bridge:spriteA];
             } else if (spriteA.tag == PLAYER && spriteB.tag == BRIDGE) {
-                [self crossBridge:spriteA:spriteB];
+                [self crossBridge:spriteA bridge:spriteB];
             } else if (spriteA.tag == BRIDGE4 && spriteB.tag == PLAYER) {
-                [self crossBridge4:spriteB:spriteA];
+                [self crossBridge4:spriteB bridge:spriteA];
             } else if (spriteA.tag == PLAYER && spriteB.tag == BRIDGE4) {
-                [self crossBridge4:spriteA:spriteB];
+                [self crossBridge4:spriteA bridge:spriteB];
             } else if (spriteA.tag == HOUSE && spriteB.tag == PLAYER) {
-                [self visitHouse:spriteB:spriteA];
+                [self visitHouse:spriteB house:spriteA];
             } else if (spriteA.tag == PLAYER && spriteB.tag == HOUSE) {
-                [self visitHouse:spriteA:spriteB];
+                [self visitHouse:spriteA house:spriteB];
             } else if (spriteA.tag == SUBWAY && spriteB.tag == PLAYER) {
-                [self rideSubway:spriteB:spriteA];
+                [self rideSubway:spriteB subway:spriteA];
             } else if (spriteA.tag == SUBWAY && spriteB.tag == HOUSE) {
-                [self rideSubway:spriteA:spriteB];
+                [self rideSubway:spriteA subway:spriteB];
             } else if (spriteA.tag == TELEPORT && spriteB.tag == PLAYER) {
-                [self teleportJump:spriteB:spriteA];
+                [self teleportJump:spriteB teleport:spriteA];
             } else if (spriteA.tag == TELEPORT && spriteB.tag == HOUSE) {
-                [self teleportJump:spriteA:spriteB];
+                [self teleportJump:spriteA teleport:spriteB];
             }
         }
     }
@@ -454,7 +454,7 @@
     return nil;
 }
 
--(void)visitHouse:(CCSprite *) player:(CCSprite*) house {
+-(void)visitHouse:(CCSprite *) player house:(CCSprite*) house {
     /*
      * The player has run into a house.  We need to visit the house
      * if the player is the right color and bump it if it isn't
@@ -482,7 +482,7 @@
         [self showNoTapSprite:self.player.player.position];
     }
     
-    [self bumpObject:player:house];
+    [self bumpObject:player object:house];
     
 }
 
@@ -506,14 +506,14 @@
 
 -(void)finishSubway {
     _inMove = false;
-    [self bumpObject:self.player.player:_subwayEnd];
+    [self bumpObject:self.player.player object:_subwayEnd];
     _canVisit = true;
     CCSequence* seq = [CCSequence actions:[CCFadeIn actionWithDuration:0.25],nil];
     [self.player.player runAction:seq];
     _inRide = false;
 }
 
--(void)rideSubway:(CCSprite *) player:(CCSprite*) subway {
+-(void)rideSubway:(CCSprite *) player subway:(CCSprite*) subway {
     if (_inMove || _inRide) {
         return;
     }
@@ -561,7 +561,7 @@
             [self.controller showMessage:@"Change color to ride this subway"];
         }
         [self showNoTapSprite:self.player.player.position];
-        [self bumpObject:player:subway];
+        [self bumpObject:player object:subway];
         _inRide = false;
         
     }
@@ -606,7 +606,7 @@
 }
 
 
--(void)teleportJump:(CCSprite *) player:(CCSprite*) teleport {
+-(void)teleportJump:(CCSprite *) player teleport:(CCSprite*) teleport {
     if (_inMove || _inRide) {
         return;
     }
@@ -650,13 +650,13 @@
             [self.controller showMessage:@"Change color to jump through this teleporter"];
         }
         [self showNoTapSprite:self.player.player.position];
-        [self bumpObject:player:teleport];
+        [self bumpObject:player object:teleport];
         
     }
     
 }
 
--(void)crossBridge:(CCSprite *) player:(CCSprite*) bridge {
+-(void)crossBridge:(CCSprite *) player bridge:(CCSprite*) bridge {
     /*
      * The player has run into a bridge.  We need to cross the bridge
      * if it hasn't been crossed yet and not if it has.
@@ -665,20 +665,20 @@
     
     if ([node isCrossed]) {
         [self showNoTapSprite:self.player.player.position];
-        [self bumpObject:player:bridge];
+        [self bumpObject:player object:bridge];
         [self.controller showMessage:@"You already crossed this bridge"];
     } else if (node.coins > 0 && _player.coins < 1) {
         [self showNoTapSprite:self.player.player.position];
-        [self bumpObject:player:bridge];
+        [self bumpObject:player object:bridge];
         [self.controller showMessage:@"You need more coins to cross"];
     } else {
         _inCross = true;
-        [self doCross:player:node:bridge];
+        [self doCross:player bridge:node object:bridge];
     }
     
 }
 
--(void)crossBridge4:(CCSprite *) player:(CCSprite*) bridge {
+-(void)crossBridge4:(CCSprite *) player bridge:(CCSprite*) bridge {
     
     if (_inBridge) {
         return;
@@ -690,11 +690,11 @@
     Bridge4Node *node = [self findBridge4:bridge];
     
     if ([node isCrossed]) {
-        [self bumpObject:player:bridge];
+        [self bumpObject:player object:bridge];
     } else {
         _inCross = true;
         _inBridge = true;
-        [self doCross4:player:node:bridge];
+        [self doCross4:player bridge:node object:bridge];
     }
     
 }
@@ -738,7 +738,7 @@
         location = ccp(_currentBridge.bridge.position.x, (_currentBridge.bridge.position.y -([_currentBridge.bridge boundingBox].size.height / 2)) -([_player.player boundingBox].size.height));
     }
     
-    [_player moveTo: location:true];
+    [_player moveTo: location force:true];
     
     [_currentBridge cross];
     _canVisit = true;
@@ -754,7 +754,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     return bearingDegrees;
 }
 
--(void)doCross4:(CCSprite *) player:(Bridge4Node*) bridge:(CCSprite*) object {
+-(void)doCross4:(CCSprite *) player bridge:(Bridge4Node*) bridge object:(CCSprite*) object {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     _inMove = true;
@@ -786,7 +786,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     [self.undoStack addObject: [[[Undoable alloc] initWithPosAndNode:_prevPlayerPos node:bridge color:_player.color coins:_player.coins canVisit:_canVisit] autorelease]];
     _undoBtn.enabled = YES;
     
-    [_player moveTo: ccp(location.x, location.y):true];
+    [_player moveTo: ccp(location.x, location.y) force:true];
     
     [bridge enterBridge:_bridgeEntry];
     
@@ -803,7 +803,7 @@ CGFloat CGPointToDegree(CGPoint point) {
  * @param bridge the bridge node the player is crossing
  * @param object the sprite corresponding to the bridge the player is crossing
  */
--(void)doCross:(CCSprite*) player:(BridgeNode*) bridge:(CCSprite*) object {
+-(void)doCross:(CCSprite*) player bridge:(BridgeNode*) bridge object:(CCSprite*) object {
     CCActionManager *mgr = [player actionManager];
     [mgr pauseTarget:player];
     _inMove = true;
@@ -822,7 +822,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             if (bridge.direction != dUp && bridge.direction != dNone) {
                 _inMove = false;
                 [self.controller showMessage:@"Cross this bridge from the other side"];
-                [self bumpObject:player :bridge.bridge];
+                [self bumpObject:player object:bridge.bridge];
                 return;
             }
             int x = object.position.x;
@@ -832,7 +832,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             if (bridge.direction != dDown && bridge.direction != dNone) {
                 _inMove = false;
                 [self.controller showMessage:@"Cross this bridge from the other side"];
-                [self bumpObject:player :bridge.bridge];
+                [self bumpObject:player object:bridge.bridge];
                 return;
             }
             int x = object.position.x;
@@ -844,7 +844,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             if (bridge.direction != dLeft && bridge.direction != dNone) {
                 _inMove = false;
                 [self.controller showMessage:@"Cross this bridge from the other side"];
-                [self bumpObject:player: bridge.bridge];
+                [self bumpObject:player object:bridge.bridge];
                 return;
             }
             int y = (object.position.y + ([object boundingBox].size.height / 2)) -
@@ -855,7 +855,7 @@ CGFloat CGPointToDegree(CGPoint point) {
             if (bridge.direction != dRight && bridge.direction != dNone) {
                 _inMove = false;
                 [self.controller showMessage:@"Cross this bridge from the other side"];
-                [self bumpObject:player :bridge.bridge];
+                [self bumpObject:player object:bridge.bridge];
                 return;
             }
             int y = (object.position.y + ([object boundingBox].size.height / 2)) -
@@ -870,7 +870,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     [self.undoStack addObject: [[[Undoable alloc] initWithPosAndNode:_prevPlayerPos node:bridge color:_player.color coins:_player.coins canVisit:_canVisit] autorelease]];
     _undoBtn.enabled = YES;
     
-    [_player moveTo: ccp(location.x, location.y):true];
+    [_player moveTo: ccp(location.x, location.y) force:true];
     
     if (bridge.coins > 0) {
         _player.coins--;
@@ -900,7 +900,7 @@ CGFloat CGPointToDegree(CGPoint point) {
  * we can't use the position of the objects to determine their
  * direction and we have to use the original starting position instead.
  */
--(void)bumpObject:(CCSprite *) player:(CCSprite*) object {
+-(void)bumpObject:(CCSprite *) player object:(CCSprite*) object {
     
     
     if (_inMove) {
@@ -923,7 +923,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         step = [object boundingBox].size.width * 1.2;
     }
     
-    _player.player.position = [self pointOnLine: _playerStart: _player.player.position: step];
+    _player.player.position = [self pointOnLine: _playerStart p2:_player.player.position distance:step];
     
     [_player playerMoveEnded];
     
@@ -943,19 +943,19 @@ CGFloat CGPointToDegree(CGPoint point) {
  * @param p2 the second point defining the line
  * @param distance the distance along the line to travel
  */
--(CGPoint)pointOnLine: (CGPoint) p1: (CGPoint) p2: (int) distance {
+-(CGPoint)pointOnLine: (CGPoint) p1 p2:(CGPoint) p2 distance:(int) distance {
     double rads = atan2(p2.y - p1.y, p2.x - p1.x);
     
     double x3 = p2.x - distance * cos(rads);
     double y3 = p2.y - distance * sin(rads);
     
-    if ([LayerMgr distanceBetweenTwoPoints:p1 :p2] == 0) {
+    if ([LayerMgr distanceBetweenTwoPoints:p1 point2:p2] == 0) {
         return p1;
-    } else if ([LayerMgr distanceBetweenTwoPoints:p1 :p2] < distance) {
+    } else if ([LayerMgr distanceBetweenTwoPoints:p1 point2:p2] < distance) {
         return p1;
     }
     
-    if ([LayerMgr distanceBetweenTwoPoints:p1 :p2] < _layerMgr.tileSize.width) {
+    if ([LayerMgr distanceBetweenTwoPoints:p1 point2:p2] < _layerMgr.tileSize.width) {
         /*
          * If the player is really close to the object they bumped into
          * then bumping them back along the line they approached from 
@@ -980,7 +980,7 @@ CGFloat CGPointToDegree(CGPoint point) {
         [defaults setBool:TRUE forKey:[NSString stringWithFormat:@"%@-won", self.currentLevel.fileName]];
         [defaults synchronize];
         
-        [self showConfetti:self.player.player.position.x:self.player.player.position.y];
+        [self showConfetti:self.player.player.position.x y:self.player.player.position.y];
     }    
 }
 
@@ -988,7 +988,7 @@ CGFloat CGPointToDegree(CGPoint point) {
  * When the player wins a level we show a small animation of stars to celebrate.
  * We show this animation with a particle emitter.
  */
--(void) showConfetti: (float) x: (float) y
+-(void) showConfetti: (float) x y:(float) y
 {
     [[SimpleAudioEngine sharedEngine] playEffect:@"RoundComplete.m4a"];
     self.emitter = [[CCParticleRain alloc] init];
@@ -1066,9 +1066,9 @@ CGFloat CGPointToDegree(CGPoint point) {
     [self.controller won];
 }
 
--(void)spawnPlayer:(int) x: (int) y {
+-(void)spawnPlayer:(int) x y:(int) y {
     
-    _player = [[PlayerNode alloc] initWithColor:cBlack:_layerMgr];
+    _player = [[PlayerNode alloc] initWithColor:cBlack layerMgr:_layerMgr];
     _player.player.position = ccp(x, y);
     
     _hintBtn.enabled = NO;
@@ -1179,7 +1179,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     } else if (_player == nil) {
         if (![self inObject:location]) {
             [[SimpleAudioEngine sharedEngine] playEffect:@"CharacterPlace.m4a"];
-            [self spawnPlayer:location.x: location.y];
+            [self spawnPlayer:location.x y:location.y];
         } else {
             [self showNoTapSprite:location];
             [self.controller showMessage:@"You can't start on top of something"];
