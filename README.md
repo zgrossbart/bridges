@@ -31,56 +31,56 @@ Screenshots
 
 The basic rules of the game are simple.  
 
-![Hello Bridges Level](/zgrossbart/bridges/master/screenshots/hellobridges.png)
+![Hello Bridges Level](https://raw.github.com/zgrossbart/bridges/master/screenshots/hellobridges.png)
 
-![Two Bridges Level](/zgrossbart/bridges/master/screenshots/twobridges.png)
+![Two Bridges Level](https://raw.github.com/zgrossbart/bridges/master/screenshots/twobridges.png)
 
 Here are some sample levels:
 
 Economics
 --------------------------------------
 
-![Economics Level](/zgrossbart/bridges/master/screenshots/economics.png)
+![Economics Level](https://raw.github.com/zgrossbart/bridges/master/screenshots/economics.png)
 
 A House of Another Color
 --------------------------------------
 
-![House of Another Color Level](/zgrossbart/bridges/master/screenshots/different_color.png)
+![House of Another Color Level](https://raw.github.com/zgrossbart/bridges/master/screenshots/different_color.png)
 
 Color Diamonds
 --------------------------------------
 
-![Color Diamonds Level](/zgrossbart/bridges/master/screenshots/colored_diamonds.png)
+![Color Diamonds Level](https://raw.github.com/zgrossbart/bridges/master/screenshots/colored_diamonds.png)
 
 Full of Islands
 --------------------------------------
 
-![Full of Islands Level](/zgrossbart/bridges/master/screenshots/fullofislands.png)
+![Full of Islands Level](https://raw.github.com/zgrossbart/bridges/master/screenshots/fullofislands.png)
 
 Square together
 --------------------------------------
 
-![Square Together Level](/zgrossbart/bridges/master/screenshots/squaretogether.png)
+![Square Together Level](https://raw.github.com/zgrossbart/bridges/master/screenshots/squaretogether.png)
 
 Subways
 --------------------------------------
 
-![Subway Level](/zgrossbart/bridges/master/screenshots/subway.png)
+![Subway Level](https://raw.github.com/zgrossbart/bridges/master/screenshots/subway.png)
 
 Spend It Wisely
 --------------------------------------
 
-![Spend It Wisely Level](/zgrossbart/bridges/master/screenshots/spenditwisely.png)
+![Spend It Wisely Level](https://raw.github.com/zgrossbart/bridges/master/screenshots/spenditwisely.png)
 
 Corridors
 --------------------------------------
 
-![Corridors Level](/zgrossbart/bridges/master/screenshots/corridors.png)
+![Corridors Level](https://raw.github.com/zgrossbart/bridges/master/screenshots/corridors.png)
 
 Hopscotch Subway
 --------------------------------------
 
-![Hopscotch Subway Level](/zgrossbart/bridges/master/screenshots/hopscotch_subway.png)
+![Hopscotch Subway Level](https://raw.github.com/zgrossbart/bridges/master/screenshots/hopscotch_subway.png)
 
 The real game has 80 levels.
 
