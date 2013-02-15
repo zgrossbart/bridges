@@ -5,7 +5,7 @@
         <title>The Seven Bridges of Königsberg</title> 
         
         <link rel="stylesheet" href="bridges.css" type="text/css" media="screen">
-        <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="viewport" content="width=device-width" />
         
         <script type="text/javascript" src="//use.typekit.net/ran8aft.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -21,6 +21,28 @@
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
         </script>
+		
+		<script>
+		// Edit to suit your needs.
+		var ADAPT_CONFIG = {
+		  // Where is your CSS?
+		  path: 'css/',
+
+		  // false = Only run once, when page first loads.
+		  // true = Change on window resize and page tilt.
+		  dynamic: true,
+
+		  // First range entry is the minimum.
+		  // Last range entry is the maximum.
+		  // Separate ranges by "to" keyword.
+		  range: [
+		    '0px to 450px  = portrait.css',
+			'450px to 800px  = mobile.css'
+		  ]
+		};
+		</script>
+		<script src="adapt.min.js"></script>
+		
     </head> 
     <body>
         <div id="main">

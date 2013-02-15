@@ -1,0 +1,12 @@
+#buyit {
+	position: static;
+	margin-top: 1em;
+	text-align: center;
+	width: 425px;
+	margin: 15% auto 20px;
+}
+
+h1 {
+	padding-right: 0px;
+	text-align: center;
+}
