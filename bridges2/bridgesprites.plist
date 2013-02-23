@@ -176,7 +176,7 @@
             <key>bridge_blue_down.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{410,270},{25,25}}</string>
+                <string>{{410,271},{25,25}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -371,7 +371,7 @@
             <key>bridge_left.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{416,243},{25,25}}</string>
+                <string>{{416,244},{25,25}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -592,7 +592,7 @@
             <key>house.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{472,210},{20,20}}</string>
+                <string>{{423,222},{20,20}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -618,15 +618,15 @@
             <key>house_gray.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{423,222},{20,19}}</string>
+                <string>{{472,210},{20,20}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{20,19}}</string>
+                <string>{{0,0},{20,20}}</string>
                 <key>sourceSize</key>
-                <string>{20,19}</string>
+                <string>{20,20}</string>
             </dict>
             <key>house_green.png</key>
             <dict>
@@ -1522,7 +1522,7 @@
             <key>size</key>
             <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:0edfc9a95cd06a0dc3169308bf707fa8$</string>
+            <string>$TexturePacker:SmartUpdate:eb90b9e88508348a9f0126edef2e4d7a$</string>
             <key>textureFileName</key>
             <string>bridgesprites.pvr.gz</string>
         </dict>
