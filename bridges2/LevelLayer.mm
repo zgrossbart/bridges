@@ -178,7 +178,11 @@
     
     [_player dealloc];
     _player = nil;
+    _inCross = false;
+    _inBridge = false;
+    _inMove = false;
     _inJump = false;
+    _inRide = false;
     
     _canVisit = true;
     

@@ -1039,6 +1039,12 @@
         }
     }
     
+    for (TeleportNode *t in self.teleports) {
+        for (UIControl *c in [t controls]) {
+            [controls addObject:c];
+        }
+    }
+    
     return controls;
 }
 
