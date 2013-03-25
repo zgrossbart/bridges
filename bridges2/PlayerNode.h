@@ -91,6 +91,13 @@
  */
 -(void)playerMoveEnded;
 
+/** 
+ * This method determines if the player is moving or not.  When 
+ * the player is moving we don't want to update the starting 
+ * point or reset other player variables. 
+ *  
+ * @return true if the player is moving and false otherwise 
+ */
 -(bool)isMoving;
 
 /** 
