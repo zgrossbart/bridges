@@ -1,7 +1,7 @@
 The Seven Bridges of Königsberg
 ==================================================
 
-Welcome to the source page for Seven Bridges.  Make sure to [check out our front page](http://zgrossbart.github.com/bridges/) for more information and some cool videos.
+Welcome to the source page for Seven Bridges.  Make sure to [check out our front page](http://zgrossbart.github.io/bridges/) for more information and some cool videos.
 
 The city of Königsberg in Prussia (now [Kaliningrad, Russia](https://maps.google.com/maps?q=Kaliningrad,+Russia&hl=en&ie=UTF8&ll=54.704615,20.515723&spn=0.01246,0.033023&sll=42.036922,-71.683501&sspn=4.140734,3.416748&hnear=Kaliningrad,+%D1%82.%D0%BF.%D0%B3.+%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4,+Kaliningrad+Oblast,+Russia&t=m&z=16)) was built around two rivers with [seven bridges](http://en.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg). For years the residents tried to cross each bridge without crossing any of them more than once.
 
